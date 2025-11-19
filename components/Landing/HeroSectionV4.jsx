@@ -41,7 +41,7 @@ const HeroSection = () => {
       <div className="h-[calc(100%-80px)] md:bg-primary-blue w-full  relative text-white rounded-[5px] rounded-bl-[50px] rounded-br-none ">
         <div className="h-full w-full flex flex-col md:flex-row">
           <div className="w-full h-[60%] md:h-full md:w-[40%] pl-[var(--container-small-padding)] flex flex-col justify-end md:justify-center ">
-            <h1 className="text-white text-30 md:text-5xl font-montserrat font-bold italic mt-5">
+            <h1 className="text-white text-30 md:text-[60px] font-noto-sans italic tracking-widest leading-[1.2] mt-5">
               We Are <br /> Digital <br className="hidden md:block" />{' '}
               Mavericks.
             </h1>
