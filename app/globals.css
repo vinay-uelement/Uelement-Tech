@@ -1,26 +1,589 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@layer base {
+  /* LATO */
+  @font-face {
+    font-family: 'Lato';
+    src: url('/fonts/Lato/Lato-Thin.ttf') format('truetype');
+    font-weight: 100;
+  }
+  @font-face {
+    font-family: 'Lato';
+    src: url('/fonts/Lato/Lato-Light.ttf') format('truetype');
+    font-weight: 300;
+  }
+  @font-face {
+    font-family: 'Lato';
+    src: url('/fonts/Lato/Lato-Regular.ttf') format('truetype');
+    font-weight: 400;
+  }
+  @font-face {
+    font-family: 'Lato';
+    src: url('/fonts/Lato/Lato-Bold.ttf') format('truetype');
+    font-weight: 700;
+  }
+  @font-face {
+    font-family: 'Lato';
+    src: url('/fonts/Lato/Lato-Black.ttf') format('truetype');
+    font-weight: 900;
+  }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+  /* POPPINS */
+  @font-face {
+    font-family: 'Poppins';
+    src: url('/fonts/Poppins/Poppins-Thin.ttf') format('truetype');
+    font-weight: 100;
+  }
+  @font-face {
+    font-family: 'Poppins';
+    src: url('/fonts/Poppins/Poppins-ExtraLight.ttf') format('truetype');
+    font-weight: 200;
+  }
+  @font-face {
+    font-family: 'Poppins';
+    src: url('/fonts/Poppins/Poppins-Light.ttf') format('truetype');
+    font-weight: 300;
+  }
+  @font-face {
+    font-family: 'Poppins';
+    src: url('/fonts/Poppins/Poppins-Regular.ttf') format('truetype');
+    font-weight: 400;
+  }
+  @font-face {
+    font-family: 'Poppins';
+    src: url('/fonts/Poppins/Poppins-Medium.ttf') format('truetype');
+    font-weight: 500;
+  }
+  @font-face {
+    font-family: 'Poppins';
+    src: url('/fonts/Poppins/Poppins-SemiBold.ttf') format('truetype');
+    font-weight: 600;
+  }
+  @font-face {
+    font-family: 'Poppins';
+    src: url('/fonts/Poppins/Poppins-Bold.ttf') format('truetype');
+    font-weight: 700;
+  }
+  @font-face {
+    font-family: 'Poppins';
+    src: url('/fonts/Poppins/Poppins-ExtraBold.ttf') format('truetype');
+    font-weight: 800;
+  }
+  @font-face {
+    font-family: 'Poppins';
+    src: url('/fonts/Poppins/Poppins-Black.ttf') format('truetype');
+    font-weight: 900;
+  }
 
-@media (prefers-color-scheme: dark) {
+  /* ROBOTO (Static Regular Weights) */
+  @font-face {
+    font-family: 'Roboto';
+    src: url('/fonts/Roboto/static/Roboto-Thin.ttf') format('truetype');
+    font-weight: 100;
+  }
+  @font-face {
+    font-family: 'Roboto';
+    src: url('/fonts/Roboto/static/Roboto-Light.ttf') format('truetype');
+    font-weight: 300;
+  }
+  @font-face {
+    font-family: 'Roboto';
+    src: url('/fonts/Roboto/static/Roboto-Regular.ttf') format('truetype');
+    font-weight: 400;
+  }
+  @font-face {
+    font-family: 'Roboto';
+    src: url('/fonts/Roboto/static/Roboto-Medium.ttf') format('truetype');
+    font-weight: 500;
+  }
+  @font-face {
+    font-family: 'Roboto';
+    src: url('/fonts/Roboto/static/Roboto-SemiBold.ttf') format('truetype');
+    font-weight: 600;
+  }
+  @font-face {
+    font-family: 'Roboto';
+    src: url('/fonts/Roboto/static/Roboto-Bold.ttf') format('truetype');
+    font-weight: 700;
+  }
+  @font-face {
+    font-family: 'Roboto';
+    src: url('/fonts/Roboto/static/Roboto-Black.ttf') format('truetype');
+    font-weight: 900;
+  }
+  @font-face {
+    font-family: 'Roboto';
+    src: url('/fonts/Roboto/Roboto-Italic-VariableFont_wdth,wght.ttf')
+      format('truetype');
+    font-weight: 100 900;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  /* Montserrat Variable Font */
+  @font-face {
+    font-family: 'Montserrat';
+    src: url('/fonts/Montserrat/Montserrat-VariableFont_wght.ttf')
+      format('truetype');
+    font-weight: 100 900; /* supports all weights from 100 to 900 */
+    font-style: normal;
+    font-display: swap;
+  }
+
+  /* Montserrat Italic Variable Font */
+  @font-face {
+    font-family: 'Montserrat';
+    src: url('/fonts/Montserrat/Montserrat-Italic-VariableFont_wght.ttf')
+      format('truetype');
+    font-weight: 100 900;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  /* Fallback Regular (in case variable font fails) */
+  @font-face {
+    font-family: 'Montserrat';
+    src: url('/fonts/Montserrat/static/Montserrat-Regular.ttf')
+      format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  /* DM Serif */
+  @font-face {
+    font-family: 'DM Serif';
+    src: url('/fonts/DM_Serif_Text/DMSerifText-Regular.ttf') format('truetype');
+    font-display: swap;
+  }
+
+  /* Noto Sans */
+  @font-face {
+    font-family: 'Noto Sans';
+    src: url('/fonts/Noto_Sans/NotoSans-VariableFont_wdth,wght.ttf')
+      format('truetype');
+    font-display: swap;
+  }
+
+  /* Reddit Sans */
+  @font-face {
+    font-family: 'Reddit Sans';
+    src: url('/fonts/Reddit_Sans/RedditSans-VariableFont_wght.ttf')
+      format('truetype');
+    font-display: swap;
+  }
+
+  /* end of font */
+
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --outer-padding: 10px;
+    --container-small-padding: 80px;
+    --section-block-padding: 75px;
+  }
+
+  @media (width <= 48rem /* 768px */) {
+    :root {
+      --container-small-padding: 40px;
+    }
+  }
+  @media (width <= 40rem /* 640px */) {
+    :root {
+      --container-small-padding: 20px;
+    }
+  }
+
+  /* RESET BROWSER STYLE */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    overflow-x: hidden;
+    background: #ffffff;
+    font-family: 'Roboto';
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    line-height: 1.25;
+  }
+  p,
+  label,
+  textarea {
+    font-family: 'Reddit Sans';
+    line-height: 1.5;
+  }
+
+  button {
+    @apply px-3 py-1 cursor-pointer transition-all ease-in-out duration-300;
+  }
+
+  img,
+  video {
+    display: block;
+  }
+
+  input,
+  textarea {
+    @apply outline-none w-full;
+  }
+
+  input[type='number']::-webkit-inner-spin-button,
+  input[type='number']::-webkit-outer-spin-button {
+    display: none;
+  }
+
+  ::-webkit-scrollbar {
+    width: 7px;
+    height: 7px;
+  }
+  ::-webkit-scrollbar-track {
+    @apply bg-gray-50 rounded-xl;
+  }
+  ::-webkit-scrollbar-track:hover {
+    @apply bg-gray-200;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-primary-blue/50 rounded-xl;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer utilities {
+  .container-outer {
+    @apply px-[10px] max-w-[1920px] mx-auto;
+  }
+  .container-small {
+    @apply max-w-[1600px] mx-auto w-[90%];
+  }
+  .container-padding {
+    @apply px-5 sm:px-10 md:px-20;
+  }
+
+  .page-title {
+    @apply font-roboto font-bold text-[50px] md:text-[60px] lg:text-[75px] xl:text-[100px] 2xl:text-[140px] 3xl:text-[180px];
+  }
+  .title {
+    @apply font-dm-serif text-2xl md:text-3xl lg:text-4xl;
+  }
+  .title-small {
+    @apply font-dm-serif text-2xl;
+  }
+  .btn-1 {
+    @apply text-16 xl:text-18 bg-black hover:scale-105 text-white rounded-[40px] py-2 px-6 2xl:px-7 2xl:py-2;
+  }
+  .btn-primary {
+    @apply text-16 xl:text-18 bg-[#0C142D] hover:scale-105 text-white rounded-[40px] py-2 px-6 2xl:px-7 2xl:py-2;
+  }
+  .btn-glass {
+    @apply bg-[#D4D4D470] rounded-[40px] text-16 xl:text-18 py-2 hover:shadow-inset-white;
+  }
+}
+
+/*  FONTS */
+@theme {
+  --font-lato: Lato;
+  --font-poppins: Poppins;
+  --font-roboto: Roboto;
+  --font-montserrat: Montserrat;
+  --font-dm-serif: 'DM Serif';
+  --font-noto-sans: 'Noto Sans';
+  --font-reddit-sans: 'Reddit Sans';
+
+  /* COLORS */
+  --color-primary-blue: #0c142d;
+  --color-muted-blue-100: #cdd5db;
+  --color-muted-blue-200: #a4b5c4;
+  --color-muted-blue-300: #4b6382;
+  --color-secondary-100: #b6842c;
+  --color-secondary-200: #f3e7d3;
+  --color-gray-8080: #808080;
+  --color-honey-gold-100: #f3e7d3;
+  --color-about-white: #cdd5db;
+  --color-honey-gold-200: #9b7025;
+
+  /* FONT SIZE */
+  --text-10: 10px;
+  --text-11: 11px;
+  --text-12: 12px;
+  --text-13: 13px;
+  --text-14: 14px;
+  --text-16: 16px;
+  --text-18: 18px;
+  --text-20: 20px;
+  --text-22: 22px;
+  --text-24: 24px;
+  --text-26: 26px;
+  --text-28: 28px;
+  --text-30: 30px;
+  --text-32: 32px;
+  --text-34: 34px;
+  --text-35: 35px;
+  --text-36: 36px;
+  --text-38: 38px;
+  --text-40: 40px;
+  --text-42: 42px;
+  --text-45: 45px;
+
+  /* Shadow */
+  --shadow-down: 0 4px 4px 1px rgba(0, 0, 0, 0.2);
+  --shadow-left-down: -4px 4px 4px 0px #00000040;
+  --shadow-circle: 0px 0px 12px 0px #00000029;
+  --shadow-hover: inset 0px 0px 12px 0px #00000029;
+  --shadow-inset-white: inset 0px 0px 12px 0px #ffffff70;
+
+  --breakpoint-3xl: 120rem;
+}
+
+/* hero */
+
+.hero-social .left-shape::after {
+  content: '';
+  position: absolute;
+  z-index: 20;
+  right: -50px;
+  bottom: 0px;
+  width: 50px;
+  height: 50px;
+  background-color: var(--color-primary-blue);
+  border-radius: 50%;
+}
+.hero-social .left-shape::before {
+  content: '';
+  position: absolute;
+  z-index: 10;
+  right: -25px;
+  bottom: 0;
+  width: 50px;
+  height: 25px;
+  background-color: white;
+}
+.hero-social .right-shape::after {
+  content: '';
+  position: absolute;
+  z-index: 20;
+  right: -50px;
+  bottom: 0px;
+  width: 50px;
+  height: 50px;
+  background-color: var(--color-primary-blue);
+  border-radius: 50%;
+}
+.hero-social .right-shape::before {
+  content: '';
+  position: absolute;
+  z-index: 10;
+  right: -25px;
+  bottom: 0;
+  width: 50px;
+  height: 25px;
+  background-color: white;
+}
+
+/* hero end */
+
+#footer {
+  background-size: 515px;
+}
+#footer .newsletter .newsletter-inner {
+  box-shadow: 0px 4px 4px 1px rgba(0, 0, 0, 0.15) inset;
+}
+
+.testimonial-slick .slick-list .slick-track {
+  display: flex;
+  gap: 80px;
+}
+.testimonial-slick .slick-dots {
+  bottom: -50px;
+  width: fit-content;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+.testimonial-slick .slick-dots li button:before {
+  font-size: 15px;
+  color: #c7c7c7;
+  opacity: 1;
+}
+.testimonial-slick .slick-dots li.slick-active button:before {
+  color: var(--color-secondary-100);
+}
+.testimonial-slick .slick-prev,
+.testimonial-slick .slick-next {
+  top: unset;
+  bottom: -59px;
+  margin: auto;
+  font-size: 25px;
+}
+.testimonial-slick .slick-prev {
+  left: 35vw;
+}
+.testimonial-slick .slick-next {
+  right: 35vw;
+}
+.testimonial-slick .slick-prev::before,
+.testimonial-slick .slick-next::before {
+  content: '';
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  filter: invert(56%) sepia(25%) saturate(1094%) hue-rotate(360deg)
+    brightness(92%) contrast(95%);
+}
+.testimonial-slick .slick-prev::before {
+  background-image: url('/public/icons/global/left-chev.svg');
+}
+.testimonial-slick .slick-next::before {
+  background-image: url('/public/icons/global/right-chev.svg');
+}
+
+/* service section */
+#tabs {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  align-items: flex-end;
+  gap: 23px;
+  /* box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); */
+  overflow: visible;
+}
+#tabs li {
+  margin: 0;
+  position: relative;
+  transition: all 300ms ease-in-out;
+}
+/* #tabs li:not(.current)::before {
+  content: "";
+  position: absolute;
+  width: calc(100% + 22px);
+  height: .5px;
+  bottom: 0px;
+  right: -32px;
+  z-index: 70;
+  box-shadow: 3.71px 0px 3.71px 0px #00000040;
+  background: transparent;
+} */
+
+#tabs button {
+  background: #f3e7d3;
+  padding: 0.8em 2.5em;
+  width: 170px;
+  display: block;
+  text-decoration: none;
+  color: #222;
+  font-size: 0.9rem;
+  font-weight: 500;
+  border-radius: 10px 10px 0 0;
+  position: relative;
+  transition: all 300ms ease-in-out;
+}
+
+/* Default slanted edge for inactive tabs */
+#tabs button::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: -15px;
+  width: 40px;
+  height: 99%;
+  background: #f3e7d3; /* Same as inactive tab background */
+  transform: skewX(40deg);
+  border-radius: 0 5px 0 0;
+  z-index: 50;
+  transition: all 300ms ease-in-out;
+  box-shadow: 3px -2px 2px 0px #00000040;
+}
+@media (width >= 120rem /* 1920px */) {
+  #tabs button::after {
+    height: 100%;
+  }
+}
+#tabs li:not(.current) button::after {
+  box-shadow:
+    3px -2px 2px 0px #00000040,
+    /* outer shadow (top-right) */ inset 0px -5px 5px -6px #00000040; /* inner shadow (bottom to top) */
+}
+
+#tabs li.current button {
+  background-color: white;
+}
+#tabs li.current button::after {
+  background-color: white;
+}
+
+.behind-idea-image {
+  box-shadow: 4px 4px 4px 0 rgba(0, 0, 0, 0.25);
+}
+.ribbon-border {
+  background-image: url('/images/global/ribbon-border.svg');
+  background-repeat: repeat-y;
+}
+.white-ribbon-border {
+  background-image: url('/images/global/white-ribbon.svg');
+  background-repeat: repeat-y;
+}
+
+/* DrivingGrowth Section */
+.driving-slider .slick-track {
+  display: flex !important;
+  gap: 15px !important;
+}
+.driving-slider .slick-slide.slick-active.slick-current {
+  transform: scaleY(1);
+}
+.driving-slider .slick-slide.slick-active {
+  transform: scaleY(0.92);
+  transform-origin: top;
+}
+.driving-slider .slick-slide {
+  transition: all ease-in-out 0.7s;
+}
+
+/*------------------------------------------------------------------------------------------------------------------------------------------------ MEDIA QUERIES -----------------------------------------------------------------------------------------------------------------*/
+
+@media screen and (max-width: 1400px) {
+  .testimonial-slick .slick-list .slick-track {
+    gap: 60px;
+  }
+}
+@media screen and (max-width: 1024px) {
+  #footer {
+    background-size: 0;
+  }
+  .testimonial-slick .slick-list .slick-track {
+    gap: 30px;
+  }
+  .testimonial-slick .slick-prev {
+    left: 20vw;
+  }
+  .testimonial-slick .slick-next {
+    right: 20vw;
+  }
+}
+@media screen and (max-width: 640px) {
+  .hero-social .right-shape::after {
+    right: -30px;
+    width: 30px;
+    height: 30px;
+  }
+  .hero-social .right-shape::before {
+    right: -15px;
+    width: 50px;
+    height: 15px;
+  }
+  .testimonial-slick .slick-prev {
+    left: 75px;
+  }
+  .testimonial-slick .slick-next {
+    right: 75px;
+  }
 }

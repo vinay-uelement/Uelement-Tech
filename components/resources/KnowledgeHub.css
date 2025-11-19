@@ -1,0 +1,95 @@
+.blog-card {
+  box-shadow: 0px 4px 12px 0px #00000029;
+}
+
+.knowledge-slider-container {
+  min-height: 0;
+  min-width: 0;
+}
+
+.knowledge-slider-container .slick-prev,
+.knowledge-slider-container .slick-next {
+  width: 45px;
+  height: 45px;
+  z-index: 10;
+  background: white;
+  border-radius: 50%;
+  box-shadow: 0px 4.44px 4.44px 0px #00000040;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  position: absolute;
+}
+
+/* Change arrow icon color */
+.knowledge-slider-container .slick-prev:before {
+  background-image: url("/public/icons/global/left-chev.svg");
+}
+.knowledge-slider-container .slick-next:before {
+  background-image: url("/public/icons/global/right-chev.svg");
+}
+.knowledge-slider-container .slick-prev:before,
+.knowledge-slider-container .slick-next:before {
+  content: "";
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
+/* Position adjustments */
+.knowledge-slider-container .slick-prev {
+  left: calc((-1 * var(--container-small-padding)) + 10px);
+}
+.knowledge-slider-container .slick-next {
+  right: calc((-1 * var(--container-small-padding)) + 10px);
+}
+
+/* Basic dot style */
+.knowledge-slider-container .slick-dots {
+  bottom: -40px; /* adjust if needed */
+  display: flex !important;
+  justify-content: center;
+  /* gap: 3px; */
+}
+
+.knowledge-slider-container .slick-dots li {
+  transition: all 0.3s ease;
+  width: 5px;
+  height: 5px;
+}
+
+.knowledge-slider-container .slick-dots li button:before {
+  font-size: 8px;
+  color: #d9d9d9;
+  opacity: 0.5;
+  transition: all 0.3s ease;
+}
+
+/*  active dot  */
+.knowledge-slider-container .slick-dots li.slick-active button:before {
+  font-size: 14px;
+  opacity: 1;
+  color: #0c142d;
+}
+
+.knowledge-slider-container .slick-dots li.slick-active ~ li button:before,
+.knowledge-slider-container .slick-dots li.slick-active button:before {
+  transition: all 0.3s ease;
+}
+
+.knowledge-slider-container .slick-dots li.nearby button:before {
+  font-size: 14px;
+  opacity: 0.8;
+}
+
+@media screen and (max-width: 768px) {
+  .knowledge-slider-container .slick-prev,
+  .knowledge-slider-container .slick-next {
+    width: 30px;
+    height: 30px;
+  }
+}
