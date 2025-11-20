@@ -1,6 +1,6 @@
 const ServicesList = () => {
   return (
-    <section className="bg-white">
+    <section className="bg-white mb-[75px]">
       {/* service one */}
 
       <div className="container-padding">

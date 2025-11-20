@@ -281,9 +281,10 @@ const Navbar = () => {
               {/* desktop dropdown */}
               <div
                 ref={dropdownRef}
-                className={`w-[calc(100%+40px)] absolute  -left-10 bg-[#D4D4D344] backdrop-blur-2xl text-primary-blue  z-[30]  top-9 flex rounded-b-[20px] overflow-hidden transition-all duration-300 ease-in-out ${
-                  hoveredMenu && hoveredMenu?.children ? 'h-[350px]' : 'h-0 '
-                }`}
+                className={`w-[calc(100%+40px)] absolute -left-10 bg-[#00000050] backdrop-blur-2xl backdrop-saturate-150
+    shadow-xl text-primary-blue z-[30] top-9 flex rounded-b-[20px] overflow-hidden transition-all duration-300 ease-in-out ${
+      hoveredMenu && hoveredMenu?.children ? 'h-[350px]' : 'h-0 '
+    }`}
               >
                 <div className="pt-9 pb-3 px-4 flex w-full">
                   <div

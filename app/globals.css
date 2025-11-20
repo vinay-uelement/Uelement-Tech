@@ -47,18 +47,19 @@
     font-display: swap;
   }
 
+  @font-face {
+    font-family: 'Noto Sans';
+    src: url('/fonts/Noto_Sans/NotoSans-VariableFont_wdth,wght.ttf')
+      format('truetype');
+    font-weight: 100 900;
+    font-style: normal;
+    font-display: swap;
+  }
+
   /* Reddit Sans */
   @font-face {
     font-family: 'Reddit Sans';
     src: url('/fonts/Reddit_Sans/RedditSans-Regular.ttf') format('truetype');
-    font-display: swap;
-    font-weight: 400;
-  }
-
-  @font-face {
-    font-family: 'Noto Sans';
-    src: url('/fonts/Noto_Sans/NotoSans-Italic-VariableFont_wdth,wght.ttf')
-      format('truetype');
     font-display: swap;
     font-weight: 400;
   }
@@ -204,9 +205,11 @@
   --color-muted-blue-200: #a4b5c4;
   --color-muted-blue-300: #4b6382;
   --color-secondary: #9b7025;
+  --color-secondary-200: #FFFAF2;
   --color-gray-8080: #808080;
   --color-about-white: #cdd5db;
   --color-secondary-muted: #fff4e4;
+  --color-honey-gold-300: #FFF4E4;
 
   /* FONT SIZE */
   --text-10: 10px;

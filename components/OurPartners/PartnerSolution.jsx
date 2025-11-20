@@ -140,8 +140,8 @@ const PartnerSolution = () => {
   };
 
   return (
-    <div className="py-10 xl:py-16">
-      <div className="title-div text-white text-center mb-14">
+    <div className="bg-white py-[var(--section-block-padding)]">
+      <div className="title-div text-black text-center mb-14">
         <h4 className="title mt-3 mb-2">
           Solutions We Provide to Our Partners
         </h4>
@@ -152,7 +152,7 @@ const PartnerSolution = () => {
       </div>
 
       {/* Tabs & Content */}
-      <div className="bg-primary-blue container-padding w-full overflow-hidden">
+      <div className="bg-white container-padding w-full overflow-hidden">
         {/* Desktop Tabs */}
         <ul id="tabs" className="hidden md:flex w-full">
           {tabs.map((tab, i) => (
@@ -167,15 +167,8 @@ const PartnerSolution = () => {
                 tab.id === selectedTab.id ? 'current' : ''
               } relative cursor-pointer`}
             >
-              <button className=" px-4 py-2">{tab.title}</button>
-              <div
-                // style={{
-                //   background: `radial-gradient(circle at bottom left, rgba(0,0,0,0.3) 0%, #f3e7d3 50%)`,
-                // }}
-                // style={{
-                //   boxShadow: "-1px 3px 6px rgba(0, 0, 0, 0.3)",
-                //   // background: `radial-gradient(circle at bottom left, rgba(0,0,0,0.3) 0%, #f3e7d3 50%)`,
-                // }}
+              <button className="px-4 py-2">{tab.title}</button>
+              {/* <div
                 className={`size-[16px] absolute  -right-[45px] -bottom-0 z-[40] rounded-full ${
                   i === tabs.length - 1 ? 'bg-red-600' : 'bg-green-600'
                 } `}
@@ -184,7 +177,7 @@ const PartnerSolution = () => {
                 className={`h-[2px] w-[40px] absolute ${
                   tab.id === selectedTab.id ? 'bg-blue-600' : ' bg-violet-600'
                 } -right-[39px] bottom-0 z-30 `}
-              ></div>
+              ></div> */}
             </li>
           ))}
         </ul>
@@ -201,15 +194,15 @@ const PartnerSolution = () => {
             isSearchable={false}
           />
           {/* Slanted end like ::after */}
-          <span className="absolute -bottom-1 right-0 h-[calc(100%+4px)] w-9 bg-white skew-x-[30deg] rounded-tr-md pointer-events-none z-50"></span>
+          <span className="absolute -bottom-1 right-0 h-[calc(100%+4px)] w-9 bg-[#FCFCFC] skew-x-[30deg] rounded-tr-md pointer-events-none z-50"></span>
           <div className="size-7 absolute bg-primary-blue -right-8 -bottom-0 z-40 rounded-full "></div>
           <div className="h-3 w-9 absolute bg-white -right-4 bottom-0  z-30  "></div>
         </div>
 
         {/* Tab Content */}
-        <div className="bg-white rounded-[10px] rounded-tl-none">
+        <div className="bg-primary-blue rounded-[10px] rounded-tl-none">
           <div className="flex justify-center">
-            <h6 className="title border-b-3 border-b-secondary w-fit px-10 pb-2 mt-10">
+            <h6 className="title border-b-3 border-b-[#D3AF37] text-white w-fit px-10 pb-2 mt-10">
               {selectedTab.title}
             </h6>
           </div>

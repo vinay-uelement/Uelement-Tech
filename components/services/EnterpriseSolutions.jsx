@@ -33,7 +33,7 @@ const solutions = [
 
 const EnterpriseSolutions = () => {
   return (
-    <section className="pb-[var(--section-block-padding)] container-padding bg-white text-white">
+    <section className="py-[var(--section-block-padding)] container-padding bg-white text-black">
       <div className="text-center flex flex-col items-center">
         <h1 className="title">Our Enterprise Solutions</h1>
         <p className="text-20 md:max-w-1/2">

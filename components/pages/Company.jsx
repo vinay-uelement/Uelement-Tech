@@ -7,12 +7,13 @@ import TrustedPartnerShip from '../company/TrustedPartnerShip';
 const Company = () => {
   return (
     <div>
-      <EmpoweringInnovation />
-      <div className="bg-[#e8e8e8]">
-        <UelementRoot />
-        <TrustedPartnerShip />
-        <ContactUs />
+      <div className="container-outer">
+        <EmpoweringInnovation />
       </div>
+        <div className="">
+          <UelementRoot />
+          <TrustedPartnerShip />
+        </div>
     </div>
   );
 };

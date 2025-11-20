@@ -186,7 +186,7 @@ const ContactUs = () => {
               {/* Submit Button */}
               <div className="flex justify-center sm:justify-end">
                 <button
-                  className="bg-[#9B7025] hover:bg-[#9B7025]/90 text-white font-poppins text-14 sm:text-16 px-8 sm:px-10 py-2.5 sm:py-3 rounded-[40px] transition-all duration-300 hover:scale-105 w-full sm:w-auto shadow-[0px_4px_5px_0px_rgba(0,0,0,0.20)]"
+                  className="bg-[#9B7025] hover:bg-[#9B7025]/90 text-white font-reddit-sans text-14 sm:text-16 px-8 sm:px-10 py-2.5 sm:py-3 rounded-[40px] transition-all duration-300 hover:scale-105 w-full sm:w-auto shadow-[0px_4px_5px_0px_rgba(0,0,0,0.20)]"
                   type="submit"
                 >
                   Request a meeting
@@ -342,7 +342,7 @@ const FooterContent = () => {
                   className="font-reddit-sans text-13 sm:text-14 text-gray-700 w-full placeholder:text-gray-400"
                 />
               </div>
-              <button className="bg-[#9B7025] hover:bg-[#9B7025]/90 text-white font-poppins text-13 sm:text-14 rounded-[40px] w-full py-3 transition-all duration-300 hover:scale-105">
+              <button className="bg-[#9B7025] hover:bg-[#9B7025]/90 text-white font-reddit-sans text-13 sm:text-14 rounded-[40px] w-full py-3 transition-all duration-300 hover:scale-105">
                 Submit Now
               </button>
             </div>
