@@ -79,7 +79,7 @@ const DrivingGrowthSection = () => {
       <div className="flex lg:items-center flex-col lg:flex-row gap-7 lg:pb-8 xl:pb-10 2xl:pb-12">
         {/* Left Side Numbers */}
         <div className="flex-1">
-          <span className="font-light text-black text-14 block mb-5 xl:mb-2 lg:hidden">
+          <span className="slash block lg:hidden">
             /Service Segment
           </span>
 
@@ -99,10 +99,10 @@ const DrivingGrowthSection = () => {
             </div>
           </div>
 
-          <span className="font-light text-black text-14 mb-1 xl:mb-2 hidden lg:block">
+          <span className="slash hidden lg:block">
             /Service Segment
           </span>
-          <h3 className="title-small mb-1 xl:mb-2">
+          <h3 className="title">
             Driving growth through strategic collaborations
           </h3>
           <p className="font-light hidden lg:block">

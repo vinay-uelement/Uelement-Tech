@@ -14,7 +14,7 @@ const ContactUs = () => {
       className="container-padding bg-primary-blue py-[var(--section-block-padding)]"
     >
       <div className="title-div text-white text-center mb-10">
-        <p className="text-14 font-light">/Contact Us</p>
+        <p className="slash">/Contact Us</p>
         <h4 className="title mt-3">
           Ready to Transform Your Enterprise Security?
         </h4>

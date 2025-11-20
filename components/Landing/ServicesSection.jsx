@@ -87,12 +87,12 @@ const ServicesSection = () => {
   return (
     <section>
       {/* Header */}
-      <div className="bg-honey-gold-300 container-padding py-6">
-        <p className="font-light text-14 font-roboto">/Services</p>
-        <h2 className="title !font-normal mt-4 text-primary-blue">
+      <div className="bg-honey-gold-300 rounded-[10px] container-padding py-6">
+        <p className="slash">/Services</p>
+        <h2 className="title text-primary-blue">
           Our Enterprise Solutions
         </h2>
-        <p className="mt-4 max-w-[80%] font-montserrat">
+        <p className="text-18 max-w-[80%] font-reddit-sans">
           Comprehensive services designed to protect, optimize, and transform{' '}
           <br />
           your business operations.
@@ -121,7 +121,7 @@ const ServicesSection = () => {
                     tab.id !== selectedTab.id &&
                     'inset 0px -5px 5px -6px #00000040',
                 }}
-                className=" px-4 py-2 font-dm-serif !font-normal"
+                className=" px-4 py-2 font-montserrat"
               >
                 {tab.title}
               </button>
@@ -130,7 +130,7 @@ const ServicesSection = () => {
         </ul>
 
         {/* Mobile Dropdown */}
-        <div className="md:hidden relative z-10 w-full max-w-[200px] pe-5 font-dm-serif ">
+        <div className="md:hidden relative z-10 w-full max-w-[200px] pe-5 font-montserrat">
           <Select
             value={{ value: selectedTab.id, label: selectedTab.title }}
             onChange={(option) =>
@@ -148,8 +148,8 @@ const ServicesSection = () => {
 
         {/* Tab Content */}
         <div className="bg-primary-blue text-white  p-5 md:p-10 rounded-[10px] rounded-tl-none">
-          <h6 className=" text-30 font-dm-serif">{selectedTab.title}</h6>
-          <p className=" text-18 italic mt-6 font-reddit-sans">
+          <h6 className=" text-30 font-montserrat">{selectedTab.title}</h6>
+          <p className=" text-18 tracking-wider mt-6 font-reddit-sans font-light">
             {selectedTab.desc}
           </p>
 

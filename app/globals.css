@@ -30,18 +30,17 @@
 
   /* Montserrat Variable Font */
   @font-face {
-    font-family: 'Montserrat';
-    src: url('/fonts/Montserrat/Montserrat-Bold.ttf')
-      format('truetype');
-    font-weight: 100 900; /* supports all weights from 100 to 900 */
-    font-style: normal;
-    font-display: swap;
-  }
+  font-family: 'Montserrat';
+  src: url('/fonts/Montserrat/Montserrat-VariableFont_wght.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
 
   /* Fallback Regular (in case variable font fails) */
   @font-face {
     font-family: 'Montserrat';
-    src: url('/fonts/Montserrat/static/Montserrat-Medium.ttf')
+    src: url('/fonts/Montserrat/Montserrat-Medium.ttf')
       format('truetype');
     font-weight: 400;
     font-style: normal;
@@ -110,7 +109,7 @@
   body {
     overflow-x: hidden;
     background: #ffffff;
-    font-family: 'Roboto';
+    font-family: 'Reddit Sans';
   }
 
   h1,
@@ -172,15 +171,8 @@
   .container-padding {
     @apply px-5 sm:px-10 md:px-20;
   }
-
-  .page-title {
-    @apply font-roboto font-bold text-[50px] md:text-[60px] lg:text-[75px] xl:text-[100px] 2xl:text-[140px] 3xl:text-[180px];
-  }
   .title {
-    @apply font-dm-serif text-2xl md:text-3xl lg:text-4xl;
-  }
-  .title-small {
-    @apply font-dm-serif text-2xl;
+    @apply font-montserrat font-bold text-2xl md:text-3xl lg:text-4xl mb-4 md:mb-6 3xl:mb-8;
   }
   .btn-1 {
     @apply text-16 xl:text-18 bg-black hover:scale-105 text-white rounded-[40px] py-2 px-6 2xl:px-7 2xl:py-2;
@@ -190,6 +182,12 @@
   }
   .btn-glass {
     @apply bg-[#D4D4D470] rounded-[40px] text-16 xl:text-18 py-2 hover:shadow-inset-white;
+  }
+  .slash{
+  @apply text-14 md:text-16 3xl:text-18 font-reddit-sans mb-6 md:mb-8 3xl:mb-10;
+  }
+  .sub-title{
+    @apply font-montserrat text-20 md:text-24 3xl:text-28 mb-10 md:mb-14
   }
 }
 
