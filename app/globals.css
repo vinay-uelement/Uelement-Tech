@@ -214,6 +214,7 @@
   --color-honey-gold-100: #f3e7d3;
   --color-about-white: #cdd5db;
   --color-honey-gold-200: #9b7025;
+  --color-honey-gold-300: #FFF4E4;
 
   /* FONT SIZE */
   --text-10: 10px;
@@ -382,7 +383,7 @@
 } */
 
 #tabs button {
-  background: #f3e7d3;
+  background: #fff;
   padding: 0.8em 2.5em;
   width: 170px;
   display: block;
@@ -403,7 +404,7 @@
   right: -15px;
   width: 40px;
   height: 99%;
-  background: #f3e7d3; /* Same as inactive tab background */
+  background: #fff; /* Same as inactive tab background */
   transform: skewX(40deg);
   border-radius: 0 5px 0 0;
   z-index: 50;
@@ -422,10 +423,12 @@
 }
 
 #tabs li.current button {
-  background-color: white;
+  background-color: #0c142d;
+  color: white;
+
 }
 #tabs li.current button::after {
-  background-color: white;
+  background-color: #0c142d;
 }
 
 .behind-idea-image {
@@ -494,4 +497,8 @@
   .testimonial-slick .slick-next {
     right: 75px;
   }
+}
+
+.r15{
+  border-radius: 15px;
 }

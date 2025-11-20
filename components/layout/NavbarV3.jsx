@@ -232,11 +232,11 @@ const Navbar = () => {
             {/* desktop */}
             <div className="flex-1 relative  hidden md:block">
               <div className="w-[calc(100%+40px)] h-full bg-[#32323259] backdrop-blur-lg rounded-[40px] -ml-10 px-3 hidden md:flex items-center relative z-50">
-                <div className="size-10 bg-white rounded-full relative">
+                <div className="size-10 bg-[#9B7025] rounded-full relative">
                   <img
                     src="/icons/global/92_small.svg"
                     alt="92"
-                    className="absolute bottom-1 left-1"
+                    className="absolute top-1 right-1"
                   />
                 </div>
                 <div
@@ -252,7 +252,7 @@ const Navbar = () => {
                     >
                       <Link
                         href={navItem.link}
-                        className="flex items-center text-[#ebebeb] px-3  relative h-full"
+                        className="flex items-center font-reddit-sans text-[#ebebeb] px-3  relative h-full"
                       >
                         {navItem.children && (
                           <span
@@ -272,7 +272,7 @@ const Navbar = () => {
                 </div>
                 <Link
                   href={'/contact-us'}
-                  className="bg-white rounded-[40px] font-roboto text-16 xl:text-18 px-8 py-2 h-fit hover:shadow-hover"
+                  className="bg-white rounded-[40px] font-reddit-sans text-16 xl:text-18 px-8 py-2 h-fit hover:shadow-hover"
                 >
                   Contact us
                 </Link>
@@ -293,7 +293,7 @@ const Navbar = () => {
                       'border-r border-primary-blue'
                     }`}
                   >
-                    <div className="text-20 text-white font-poppins">
+                    <div className="text-20 text-white font-reddit-sans">
                       {hoveredMenu?.label}
                     </div>
                     {hoveredMenu?.children?.map((child) => (
@@ -302,10 +302,10 @@ const Navbar = () => {
                         href={'#'}
                         className="block py-4 border-b-[0.5px] last:border-none border-primary-blue hover:text-primary-blue max-w-[90%]"
                       >
-                        <div className="font-semibold text-14 text-[#E8E8E8]">
+                        <div className="font-semibold text-14 text-[#E8E8E8] font-reddit-sans">
                           {child.label}
                         </div>
-                        <div className="text-12 font-light text-[#E8E8E8]">
+                        <div className="text-12 font-light text-[#E8E8E8] font-reddit-sans">
                           {child.desc}
                         </div>
                       </Link>
@@ -404,7 +404,7 @@ const Navbar = () => {
           <div className="flex-1 flex items-center justify-end">
             <Link
               href={'/contact-us'}
-              className="bg-primary-blue text-white rounded-[40px] font-roboto text-16 xl:text-18 px-8 py-2 h-fit hover:shadow-hover"
+              className="bg-primary-blue text-white rounded-[40px] font-reddit-sans text-16 xl:text-18 px-8 py-2 h-fit hover:shadow-hover"
             >
               Contact us
             </Link>

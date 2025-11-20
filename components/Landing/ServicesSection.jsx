@@ -87,7 +87,7 @@ const ServicesSection = () => {
   return (
     <section>
       {/* Header */}
-      <div className="bg-honey-gold-100 container-padding py-6">
+      <div className="bg-honey-gold-300 container-padding py-6">
         <p className="font-light text-14 font-roboto">/Services</p>
         <h2 className="title !font-normal mt-4 text-primary-blue">
           Our Enterprise Solutions
@@ -100,7 +100,7 @@ const ServicesSection = () => {
       </div>
 
       {/* Tabs & Content */}
-      <div className="bg-primary-blue  container-padding py-[var(--section-block-padding)] w-full overflow-hidden">
+      <div className="bg-honey-gold-300  container-padding py-[var(--section-block-padding)] w-full overflow-hidden">
         {/* Desktop Tabs */}
         <ul id="tabs" className="hidden md:flex w-full">
           {tabs.map((tab, i) => (
@@ -147,7 +147,7 @@ const ServicesSection = () => {
         </div>
 
         {/* Tab Content */}
-        <div className="bg-white  p-5 md:p-10 rounded-[10px] rounded-tl-none">
+        <div className="bg-primary-blue text-white  p-5 md:p-10 rounded-[10px] rounded-tl-none">
           <h6 className=" text-30 font-dm-serif">{selectedTab.title}</h6>
           <p className=" text-18 italic mt-6 font-reddit-sans">
             {selectedTab.desc}
@@ -155,8 +155,8 @@ const ServicesSection = () => {
 
           {/* Slides */}
           <div className="flex flex-col md:flex-row gap-y-5 md:items-center justify-between mt-3">
-            <button className="btn-primary">Learn More</button>
-            <div className="bg-honey-gold-100 shadow-down p-5 rounded-[10px] text-12 font-bold text-primary-blue max-w-[400px]">
+            <button className="btn-primary !bg-[#9B7025]">Learn More</button>
+            <div className="bg-white shadow-down p-5 rounded-[10px] text-12 font-bold text-primary-blue max-w-[400px]">
               <div className="relative w-full overflow-hidden">
                 <div
                   className="flex transition-transform duration-500 ease-in-out w-full"

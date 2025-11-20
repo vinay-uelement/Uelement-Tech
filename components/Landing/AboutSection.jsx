@@ -51,24 +51,36 @@ const transformBullet = [
 export default function AboutSection() {
   return (
     <div>
+    <div className="p-10 bg-primary-blue r15">
       <div className="flex flex-col-reverse md:flex-row">
-        <div className="md:w-1/4 h-[100px] md:h-auto bg-about-white flex justify-end items-end md:items-center">
-          <img
-            src="/icons/global/UElement_Logo_White-new.svg"
-            alt="uelement"
-            className="max-h-[90%] w-auto hidden md:block -mr-3"
-          />
-          <img
-            src="/icons/global/UElement_Logo_White 3.svg"
-            alt="uelement"
-            className="opacity-10 w-full block md:hidden -mb-3"
-          />
+        {/* LEFT WHITE BOX */}
+        <div className="md:w-1/2 bg-[#FFF8F0] r15 py-12 px-6 md:px-12 relative">
+          {/* vertical dotted line */}
+          <div className="hidden md:block absolute top-12 bottom-12 left-1/2 border-r-2 border-dotted border-[#C5C5C5]"></div>
+
+          {/* horizontal dotted line */}
+          <div className="hidden md:block absolute left-12 right-12 top-1/2 border-t-2 border-dotted border-[#C5C5C5]"></div>
+
+          <div className="grid grid-cols-2 gap-y-16">
+            {bullet.map((point) => (
+              <div key={point.id} className="text-center">
+                <p className="text-[42px] font-bold text-[#A67620] leading-none">
+                  {point.number}
+                </p>
+                <p className="text-[18px] mt-3 text-[#4A4A4A] font-light">
+                  {point.desc}
+                </p>
+              </div>
+            ))}
+          </div>
         </div>
+
+        {/* RIGHT BLUE BOX */}
         <div className="flex-1 bg-primary-blue pe-[var(--container-small-padding)] md:pe-0 ps-[var(--container-small-padding)] text-white py-[var(--section-block-padding)]">
           <div className="w-full">
             <p className="font-light text-14 font-roboto">/About us</p>
             <h2 className="title !font-normal mt-4 font-dm-serif ">
-              Innovative Digital solutions to <br className="hidden md:block" />{" "}
+              Innovative Digital solutions to <br className="hidden md:block" />
               Accelerate our Business Growth
             </h2>
             <p className="mt-4 md:max-w-[80%] font-reddit-sans ">
@@ -76,24 +88,13 @@ export default function AboutSection() {
               scale rapidly, adapt intelligently, and achieve sustainable
               growth. By seamlessly integrating innovation with strategic
               insight, we transform challenges into opportunities, delivering
-              measurable impact in today’s dynamic business landscape
+              measurable impact in today’s dynamic business landscape.
             </p>
-
-            <div className="flex justify-center md:justify-start flex-wrap gap-4 md:gap-8 mt-[75px]">
-              {bullet.map((point) => (
-                <div
-                  key={point.id}
-                  className="w-[140px] md:max-w-[160px] text-center border-[0.03px] border-[#aaaaaa]/30 rounded-[20px] bg-[#D4D4D41A] backdrop-blur-2xl px-1 py-6"
-                >
-                  <p className="font-bold text-30">{point.number}</p>
-                  <p className="font-light font-roboto">{point.desc}</p>
-                </div>
-              ))}
-            </div>
           </div>
         </div>
       </div>
-      <div className="w-full bg-muted-blue-300 text-white   py-[var(--section-block-padding)]">
+    </div>
+      <div className="w-full bg-white text-black   py-[var(--section-block-padding)]">
         <div className="container-padding">
           <div className="flex flex-col md:flex-row gap-16">
             <div className="flex-1">
@@ -101,7 +102,7 @@ export default function AboutSection() {
               <h2 className="title !font-normal mt-4 ">
                 How We Transform Your Enterprise
               </h2>
-              <p className="mt-4 text-white/50">
+              <p className="mt-4 text-black w-full md:w-[70%]">
                 Our proven 3-step approach delivers measurable results for
                 enterprise clients across industries, combining deep domain
                 expertise, innovative digital solutions, and data-driven
@@ -111,12 +112,12 @@ export default function AboutSection() {
                 rapidly evolving market.
               </p>
 
-              <button className="text-16 xl:text-18 bg-white text-black rounded-full  py-2 px-9 mt-8 hidden md:block">
+              <button className="text-16 xl:text-18 bg-black text-white rounded-full  py-2 px-9 mt-8 hidden md:block">
                 Learn More
               </button>
             </div>
             <div className="flex-1 grid grid-cols-1 md:grid-cols-2 relative">
-              <div className="hidden md:block absolute h-[80%] w-[1px] border-r-4 border-dotted top-1/2 -translate-y-1/2  left-1/2 -translate-x-1/2"></div>
+              <div className="hidden md:block absolute h-[80%] w-[1px] border-r-2 border-[#c5c5c5] border-dotted top-1/2 -translate-y-1/2  left-1/2 -translate-x-1/2"></div>
               {transformBullet.map((data, i) => (
                 <div
                   key={data.id}
@@ -127,9 +128,9 @@ export default function AboutSection() {
                   <div className="size-[50px] flex items-center justify-center bg-primary-blue rounded-full ">
                     <img src={data.icon} alt={data.title} />
                   </div>
-                  <h6 className="mt-4  font-dm-serif">{data.title}</h6>
+                  <h6 className="mt-4 font-dm-serif">{data.title}</h6>
                   <p
-                    className={`mt-2 text-12 text-white/50  md:w-full ${
+                    className={`mt-2 text-12 text-black  md:w-full ${
                       i % 2 === 0 ? "text-right" : "text-left"
                     } md:text-left`}
                   >
@@ -137,7 +138,7 @@ export default function AboutSection() {
                   </p>
                   {(i === 2 || i === 3) && (
                     <div
-                      className={`hidden md:block absolute w-[80%] h-[1px] border-t-4 border-dotted -top-[2px]   ${
+                      className={`hidden md:block absolute w-[80%] h-[1px] border-t-2 border-[#c5c5c5] border-dotted -top-[2px]   ${
                         i === 2 ? "right-[6px]" : "left-[6px]"
                       }`}
                     ></div>
@@ -146,7 +147,7 @@ export default function AboutSection() {
               ))}
             </div>
 
-            <button className="text-16 xl:text-18 bg-white text-black rounded-full  py-2 px-9 mt-8  md:hidden">
+            <button className="text-16 xl:text-18 bg-black text-white rounded-full  py-2 px-9 mt-8  md:hidden">
               Learn More
             </button>
           </div>

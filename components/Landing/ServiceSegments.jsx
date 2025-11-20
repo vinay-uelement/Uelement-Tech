@@ -47,7 +47,7 @@ const ServiceSegments = () => {
           solutions.
         </p>
         <div className="mt-12  hidden md:grid md:grid-cols-4 gap-6 text-left">
-          <div className="p-6 md:pb-30 pb-15 bg-primary-blue rounded-[5px] text-white relative">
+          <div className="p-6 md:pb-30 pb-15 bg-primary-blue rounded-[10px] text-white relative">
             <h6 className="font-dm-serif  text-24 max-w-[80%] ">
               SI <br /> Partnerships <br /> (SI)
             </h6>
@@ -57,10 +57,12 @@ const ServiceSegments = () => {
             </p>
 
             <div className="size-[60px] bg-honey-gold-200 absolute -top-3 -right-3 flex items-center justify-center text-30">
+              <span className='absolute top-0 right-0'>
               {ReactIcons.arrowOutWard}
+              </span>
             </div>
           </div>
-          <div className="p-6 pb-20 bg-primary-blue rounded-[5px] text-white relative">
+          <div className="p-6 pb-20 bg-primary-blue rounded-[10px] text-white relative">
             <h6 className="font-dm-serif  text-24 max-w-[80%] ">
               Professional <br /> Services <br /> (PS)
             </h6>
@@ -70,10 +72,12 @@ const ServiceSegments = () => {
             </p>
 
             <div className="size-[60px] bg-honey-gold-200 absolute -top-3 -right-3 flex items-center justify-center text-30">
+              <span className='absolute top-0 right-0'>
               {ReactIcons.arrowOutWard}
+              </span>
             </div>
           </div>
-          <div className="p-6 pb-20 bg-primary-blue rounded-[5px] text-white relative">
+          <div className="p-6 pb-20 bg-primary-blue rounded-[10px] text-white relative">
             <h6 className="font-dm-serif  text-24 max-w-[80%] ">
               Managed <br /> Service <br /> Provider
             </h6>
@@ -83,10 +87,12 @@ const ServiceSegments = () => {
             </p>
 
             <div className="size-[60px] bg-honey-gold-200 absolute -top-3 -right-3 flex items-center justify-center text-30">
+              <span className='absolute top-0 right-0'>
               {ReactIcons.arrowOutWard}
+              </span>
             </div>
           </div>
-          <div className="p-6 pb-20 bg-primary-blue rounded-[5px] text-white relative">
+          <div className="p-6 pb-20 bg-primary-blue rounded-[10px] text-white relative">
             <h6 className="font-dm-serif  text-24 max-w-[80%] ">
               Digital <br /> Transformation <br />
               Solutions
@@ -97,7 +103,9 @@ const ServiceSegments = () => {
             </p>
 
             <div className="size-[60px] bg-honey-gold-200 absolute -top-3 -right-3 flex items-center justify-center text-30">
+              <span className='absolute top-0 right-0'>
               {ReactIcons.arrowOutWard}
+              </span>
             </div>
           </div>
         </div>
