@@ -33,7 +33,7 @@ const solutions = [
 
 const EnterpriseSolutions = () => {
   return (
-    <section className="py-[var(--section-block-padding)] container-padding bg-primary-blue text-white">
+    <section className="pb-[var(--section-block-padding)] container-padding bg-white text-white">
       <div className="text-center flex flex-col items-center">
         <h1 className="title">Our Enterprise Solutions</h1>
         <p className="text-20 md:max-w-1/2">
@@ -45,7 +45,7 @@ const EnterpriseSolutions = () => {
         {solutions.map((solution) => (
           <div
             key={solution.id}
-            className="p-6 bg-white rounded-[10px] h-[540px] 2xl:h-[590px] flex flex-col"
+            className="p-6 bg-[#F6F6F6] rounded-[10px] h-[540px] 2xl:h-[590px] flex flex-col"
           >
             <div className="h-[220px] 2xl:h-[280px] relative">
               <img

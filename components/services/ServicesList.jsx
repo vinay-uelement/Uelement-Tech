@@ -1,10 +1,10 @@
 const ServicesList = () => {
   return (
-    <section className="bg-primary-blue">
+    <section className="bg-white">
       {/* service one */}
 
-      <div className="container-padding py-[var(--section-block-padding)]">
-        <div className="flex flex-col md:flex-row gap-20 bg-[#D4D4D41A] border-[0.5px] border-[#D4D4D4]/50 rounded-[5px] p-6 md:p-12">
+      <div className="container-padding">
+        <div className="flex flex-col md:flex-row gap-20 bg-[#F3F3F3] border-[0.5px] border-[#D4D4D4]/50 rounded-[5px] p-6 md:p-12">
           <div className="flex-1">
             <img
               src="/images/service/service-one.jpg"
@@ -18,11 +18,11 @@ const ServicesList = () => {
                 02
               </div>
               <div className=" w-[60px] md:w-[120px] h-[4px] bg-white"></div>
-              <div className="text-24 md:text-30 text-white font-semibold ml-1">
+              <div className="text-24 md:text-30 text-black font-semibold ml-1">
                 Cloud Solutions
               </div>
             </div>
-            <div className="text-white my-12 text-end">
+            <div className="text-black my-12 text-end">
               <h6 className="font-semibold text-20">
                 Architecting and Optimizing perfect Cloud Solutions.
               </h6>
@@ -43,19 +43,19 @@ const ServicesList = () => {
       </div>
       {/* service two */}
 
-      <div className="container-padding bg-[#4B6382] py-[var(--section-block-padding)]">
-        <div className="flex flex-col md:flex-row gap-20  ">
+      <div className="container-padding">
+        <div className="flex flex-col bg-[#E0E0E0] md:flex-row gap-20 p-6 md:p-12">
           <div className="flex-1 flex flex-col ">
             <div className="flex items-center">
-              <div className="size-[60px] bg-primary-blue text-white flex items-center justify-center font-bold text-20 rounded-full">
+              <div className="size-[60px] bg-primary-blue text-black flex items-center justify-center font-bold text-20 rounded-full">
                 01
               </div>
               <div className="w-[60px] md:w-[120px] h-[4px] bg-white"></div>
-              <div className="text-24  md:text-30 text-white font-semibold ml-1">
+              <div className="text-24  md:text-30 text-black font-semibold ml-1">
                 Cloud Solutions
               </div>
             </div>
-            <div className="text-white my-12 ">
+            <div className="text-black my-12 ">
               <h6 className="font-semibold text-20">
                 Architecting and Optimizing perfect Cloud Solutions.
               </h6>
@@ -84,8 +84,8 @@ const ServicesList = () => {
 
       {/* service three */}
 
-      <div className="container-padding py-[var(--section-block-padding)]">
-        <div className="flex flex-col md:flex-row gap-20 bg-[#D4D4D41A] border-[0.5px] border-[#D4D4D4]/50 rounded-[5px] p-6 md:p-12">
+      <div className="container-padding">
+        <div className="flex flex-col md:flex-row gap-20 bg-[#F3F3F3] border-[0.5px] border-[#D4D4D4]/50 rounded-[5px] p-6 md:p-12">
           <div className="flex-1">
             <img
               src="/images/service/service-three.jpg"
@@ -99,11 +99,11 @@ const ServicesList = () => {
                 03
               </div>
               <div className="w-[60px] hidden md:block md:w-[120px] h-[4px] bg-white"></div>
-              <div className="text-24 md:text-30 text-white font-semibold mr-1">
+              <div className="text-24 md:text-30 text-black font-semibold mr-1">
                 Ai & Machine Learning
               </div>
             </div>
-            <div className="text-white my-12 text-end">
+            <div className="text-black my-12 text-end">
               <h6 className="font-semibold text-20">
                 Complete Enterprise Security.
               </h6>
