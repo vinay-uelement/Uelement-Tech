@@ -30,18 +30,18 @@
 
   /* Montserrat Variable Font */
   @font-face {
-  font-family: 'Montserrat';
-  src: url('/fonts/Montserrat/Montserrat-VariableFont_wght.ttf') format('truetype');
-  font-weight: 100 900;
-  font-style: normal;
-  font-display: swap;
-}
+    font-family: 'Montserrat';
+    src: url('/fonts/Montserrat/Montserrat-VariableFont_wght.ttf')
+      format('truetype');
+    font-weight: 100 900;
+    font-style: normal;
+    font-display: swap;
+  }
 
   /* Fallback Regular (in case variable font fails) */
   @font-face {
     font-family: 'Montserrat';
-    src: url('/fonts/Montserrat/Montserrat-Medium.ttf')
-      format('truetype');
+    src: url('/fonts/Montserrat/Montserrat-Medium.ttf') format('truetype');
     font-weight: 400;
     font-style: normal;
     font-display: swap;
@@ -50,8 +50,7 @@
   /* Reddit Sans */
   @font-face {
     font-family: 'Reddit Sans';
-    src: url('/fonts/Reddit_Sans/RedditSans-Regular.ttf')
-      format('truetype');
+    src: url('/fonts/Reddit_Sans/RedditSans-Regular.ttf') format('truetype');
     font-display: swap;
     font-weight: 400;
   }
@@ -66,17 +65,15 @@
 
   @font-face {
     font-family: 'Noto Sans';
-    src: url('/fonts/Noto_Sans/NotoSans-BoldItalic.ttf')
-      format('truetype');
-      font-style: italic;
+    src: url('/fonts/Noto_Sans/NotoSans-BoldItalic.ttf') format('truetype');
+    font-style: italic;
     font-display: swap;
     font-weight: 600;
   }
 
   @font-face {
     font-family: 'Reddit Sans';
-    src: url('/fonts/Reddit_Sans/RedditSans-Light.ttf')
-      format('truetype');
+    src: url('/fonts/Reddit_Sans/RedditSans-Light.ttf') format('truetype');
     font-display: swap;
     font-weight: 100;
   }
@@ -183,11 +180,11 @@
   .btn-glass {
     @apply bg-[#D4D4D470] rounded-[40px] text-16 xl:text-18 py-2 hover:shadow-inset-white;
   }
-  .slash{
-  @apply text-14 md:text-16 3xl:text-18 font-reddit-sans mb-6 md:mb-8 3xl:mb-10;
+  .slash {
+    @apply text-14 md:text-16 3xl:text-18 font-reddit-sans mb-6 md:mb-8 3xl:mb-10;
   }
-  .sub-title{
-    @apply font-montserrat text-20 md:text-24 3xl:text-28 mb-10 md:mb-14
+  .sub-title {
+    @apply font-montserrat text-20 md:text-24 3xl:text-28 mb-10 md:mb-14;
   }
 }
 
@@ -206,13 +203,10 @@
   --color-muted-blue-100: #cdd5db;
   --color-muted-blue-200: #a4b5c4;
   --color-muted-blue-300: #4b6382;
-  --color-secondary-100: #b6842c;
-  --color-secondary-200: #f3e7d3;
+  --color-secondary: #9b7025;
   --color-gray-8080: #808080;
-  --color-honey-gold-100: #f3e7d3;
   --color-about-white: #cdd5db;
-  --color-honey-gold-200: #9b7025;
-  --color-honey-gold-300: #FFF4E4;
+  --color-secondary-muted: #fff4e4;
 
   /* FONT SIZE */
   --text-10: 10px;
@@ -318,7 +312,7 @@
   opacity: 1;
 }
 .testimonial-slick .slick-dots li.slick-active button:before {
-  color: var(--color-secondary-100);
+  color: var(--color-secondary);
 }
 .testimonial-slick .slick-prev,
 .testimonial-slick .slick-next {
@@ -423,7 +417,6 @@
 #tabs li.current button {
   background-color: #0c142d;
   color: white;
-
 }
 #tabs li.current button::after {
   background-color: #0c142d;
@@ -497,6 +490,6 @@
   }
 }
 
-.r15{
+.r15 {
   border-radius: 15px;
 }

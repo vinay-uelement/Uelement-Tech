@@ -1,8 +1,8 @@
-import React from "react";
+import React from 'react';
 
 const TestimonialCard = () => {
   return (
-    <div className="bg-secondary-200 rounded-[5px] px-4 sm:px-10 py-5 flex flex-col-reverse sm:flex-col gap-3 sm:gap-5 lg:gap-10">
+    <div className="bg-secondary rounded-[5px] px-4 sm:px-10 py-5 flex flex-col-reverse sm:flex-col gap-3 sm:gap-5 lg:gap-10">
       <div className="flex gap-3 sm:gap-5 items-start flex-col sm:flex-row">
         <img
           src="/icons/landing/quote.svg"
@@ -13,7 +13,7 @@ const TestimonialCard = () => {
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cursus nibh
           mauris, nec turpis orci lectus maecenas. Suspendisse sed magna eget
           nibh in turpis. Consequat duis diam lacus arcu. Faucibus venenatis
-          felis id augue sit cursus pellentesque enim arcu.{" "}
+          felis id augue sit cursus pellentesque enim arcu.{' '}
         </p>
       </div>
       <div className="flex gap-3 items-center flex-col sm:flex-row">

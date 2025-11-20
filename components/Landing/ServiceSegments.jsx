@@ -1,29 +1,29 @@
-'use client'
+'use client';
 import { ReactIcons } from '@/utils/ReactIcons';
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 import Slider from 'react-slick';
 
 const services = [
   {
     id: 1,
-    title: "SI  Partnerships (SI)",
-    desc: "Designing, Deploying & Delivering Next-Gen Cybersecurity, Cloud & Al Solutions together with OEM partners",
+    title: 'SI  Partnerships (SI)',
+    desc: 'Designing, Deploying & Delivering Next-Gen Cybersecurity, Cloud & Al Solutions together with OEM partners',
   },
   {
     id: 2,
-    title: "Professional Services (PS)",
-    desc: "Designing, Deploying & Delivering Next-Gen Cybersecurity, Cloud & Al Solutions together with OEM partners",
+    title: 'Professional Services (PS)',
+    desc: 'Designing, Deploying & Delivering Next-Gen Cybersecurity, Cloud & Al Solutions together with OEM partners',
   },
   {
     id: 3,
-    title: "Managed Service Provider ",
-    desc: "Designing, Deploying & Delivering Next-Gen Cybersecurity, Cloud & Al Solutions together with OEM partners",
+    title: 'Managed Service Provider ',
+    desc: 'Designing, Deploying & Delivering Next-Gen Cybersecurity, Cloud & Al Solutions together with OEM partners',
   },
   {
     id: 4,
-    title: "Digital Transformation Solutions (DTS) ",
-    desc: "Designing, Deploying & Delivering Next-Gen Cybersecurity, Cloud & Al Solutions together with OEM partners",
+    title: 'Digital Transformation Solutions (DTS) ',
+    desc: 'Designing, Deploying & Delivering Next-Gen Cybersecurity, Cloud & Al Solutions together with OEM partners',
   },
 ];
 
@@ -39,9 +39,7 @@ const ServiceSegments = () => {
   return (
     <div className="py-[var(--section-block-padding)] container-padding">
       <div className="text-center">
-        <h1 className="title">
-          Service Segments
-        </h1>
+        <h1 className="title">Service Segments</h1>
         <p className="sub-title">
           Empowering your journey with innovative, user-centric digital
           solutions.
@@ -56,9 +54,9 @@ const ServiceSegments = () => {
               Al Solutions together with OEM partners
             </p>
 
-            <div className="size-[60px] bg-honey-gold-200 absolute -top-3 -right-3 flex items-center justify-center text-30">
-              <span className='absolute top-0 right-0'>
-              {ReactIcons.arrowOutWard}
+            <div className="size-[60px] bg-secondary absolute -top-3 -right-3 flex items-center justify-center text-30">
+              <span className="absolute top-0 right-0">
+                {ReactIcons.arrowOutWard}
               </span>
             </div>
           </div>
@@ -71,9 +69,9 @@ const ServiceSegments = () => {
               Al Solutions together with OEM partners
             </p>
 
-            <div className="size-[60px] bg-honey-gold-200 absolute -top-3 -right-3 flex items-center justify-center text-30">
-              <span className='absolute top-0 right-0'>
-              {ReactIcons.arrowOutWard}
+            <div className="size-[60px] bg-secondary absolute -top-3 -right-3 flex items-center justify-center text-30">
+              <span className="absolute top-0 right-0">
+                {ReactIcons.arrowOutWard}
               </span>
             </div>
           </div>
@@ -86,9 +84,9 @@ const ServiceSegments = () => {
               Al Solutions together with OEM partners
             </p>
 
-            <div className="size-[60px] bg-honey-gold-200 absolute -top-3 -right-3 flex items-center justify-center text-30">
-              <span className='absolute top-0 right-0'>
-              {ReactIcons.arrowOutWard}
+            <div className="size-[60px] bg-secondary absolute -top-3 -right-3 flex items-center justify-center text-30">
+              <span className="absolute top-0 right-0">
+                {ReactIcons.arrowOutWard}
               </span>
             </div>
           </div>
@@ -102,9 +100,9 @@ const ServiceSegments = () => {
               Al Solutions together with OEM partners
             </p>
 
-            <div className="size-[60px] bg-honey-gold-200 absolute -top-3 -right-3 flex items-center justify-center text-30">
-              <span className='absolute top-0 right-0'>
-              {ReactIcons.arrowOutWard}
+            <div className="size-[60px] bg-secondary absolute -top-3 -right-3 flex items-center justify-center text-30">
+              <span className="absolute top-0 right-0">
+                {ReactIcons.arrowOutWard}
               </span>
             </div>
           </div>
@@ -118,7 +116,7 @@ const ServiceSegments = () => {
                     {service.title}
                   </h6>
                   <p className="text-14 font-light mt-6">{service.desc}</p>
-                  <div className="w-[60px] h-[60px] bg-honey-gold-200 shadow-left-down absolute -top-3 -right-3 flex items-center justify-center text-30">
+                  <div className="w-[60px] h-[60px] bg-secondary shadow-left-down absolute -top-3 -right-3 flex items-center justify-center text-30">
                     {ReactIcons.arrowOutWard}
                   </div>
                 </div>

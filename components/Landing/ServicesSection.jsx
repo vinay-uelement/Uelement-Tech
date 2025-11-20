@@ -87,11 +87,9 @@ const ServicesSection = () => {
   return (
     <section>
       {/* Header */}
-      <div className="bg-honey-gold-300 rounded-[10px] container-padding py-6">
+      <div className="bg-secondary-muted rounded-[10px] container-padding py-6">
         <p className="slash">/Services</p>
-        <h2 className="title text-primary-blue">
-          Our Enterprise Solutions
-        </h2>
+        <h2 className="title text-primary-blue">Our Enterprise Solutions</h2>
         <p className="text-18 max-w-[80%] font-reddit-sans">
           Comprehensive services designed to protect, optimize, and transform{' '}
           <br />
@@ -100,7 +98,7 @@ const ServicesSection = () => {
       </div>
 
       {/* Tabs & Content */}
-      <div className="bg-honey-gold-300  container-padding py-[var(--section-block-padding)] w-full overflow-hidden">
+      <div className="bg-secondary-muted  container-padding py-[var(--section-block-padding)] w-full overflow-hidden">
         {/* Desktop Tabs */}
         <ul id="tabs" className="hidden md:flex w-full">
           {tabs.map((tab, i) => (

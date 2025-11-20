@@ -1,4 +1,4 @@
-'use client'
+'use client';
 import { ReactIcons } from '@/utils/ReactIcons';
 import Checkbox from '../formElements/Checkbox/Checkbox';
 import InputField from '../formElements/InputField/InputField';
@@ -134,7 +134,7 @@ const ContactUs = () => {
                 ></textarea>
               </div>
               <button
-                className="btn-1 !bg-secondary-100 ml-auto block mt-2 sm:mt-5 !font-reddit-sans"
+                className="btn-1 !bg-secondary ml-auto block mt-2 sm:mt-5 !font-reddit-sans"
                 type="submit"
               >
                 Request a meeting

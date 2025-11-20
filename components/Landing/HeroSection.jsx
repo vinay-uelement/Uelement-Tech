@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { ReactIcons } from "../../../utils/ReactIcons";
+import { useState } from 'react';
+import { ReactIcons } from '../../../utils/ReactIcons';
 
 const HeroSection = () => {
   const socials = [
@@ -18,9 +18,9 @@ const HeroSection = () => {
   ];
 
   const slides = [
-    "Architecting and Optimizing perfect Cloud Solutions.",
-    "Empowering Security with Next-Gen Cyber Intelligence.",
-    "Scaling AI-driven Innovation for Smarter Enterprises.",
+    'Architecting and Optimizing perfect Cloud Solutions.',
+    'Empowering Security with Next-Gen Cyber Intelligence.',
+    'Scaling AI-driven Innovation for Smarter Enterprises.',
   ];
 
   const [index, setIndex] = useState(0);
@@ -55,7 +55,7 @@ const HeroSection = () => {
             <a
               href="#"
               key={social.id}
-              className="size-10 md:size-14 flex items-center text-white justify-center shadow-down hover:shadow-hover bg-[var(--color-secondary-100)] relative z-40 text-22 transition-shadow duration-1000 ease-in-out"
+              className="size-10 md:size-14 flex items-center text-white justify-center shadow-down hover:shadow-hover bg-[var(--color-secondary)] relative z-40 text-22 transition-shadow duration-1000 ease-in-out"
             >
               {social.icon}
             </a>
@@ -71,7 +71,7 @@ const HeroSection = () => {
           className="size-11  md:hidden bg-white rounded-full text-black text-20 flex items-center justify-center hover:bg-gray-200 disabled:bg-white/50 transition"
         >
           {ReactIcons.leftChev}
-        </button>{" "}
+        </button>{' '}
         <div className="bg-[#D4D4D41A] backdrop-blur-2xl rounded-4xl flex items-center justify-between ps-6 pe-3 h-full">
           <div className="relative flex-1 overflow-hidden">
             <div

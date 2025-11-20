@@ -177,14 +177,12 @@ const PartnerSolution = () => {
                 //   // background: `radial-gradient(circle at bottom left, rgba(0,0,0,0.3) 0%, #f3e7d3 50%)`,
                 // }}
                 className={`size-[16px] absolute  -right-[45px] -bottom-0 z-[40] rounded-full ${
-                  i === tabs.length - 1
-                    ? 'bg-primary-blue '
-                    : 'bg-honey-gold-100'
+                  i === tabs.length - 1 ? 'bg-red-600' : 'bg-green-600'
                 } `}
               ></div>
               <div
                 className={`h-[2px] w-[40px] absolute ${
-                  tab.id === selectedTab.id ? 'bg-white' : 'bg-honey-gold-100'
+                  tab.id === selectedTab.id ? 'bg-blue-600' : ' bg-violet-600'
                 } -right-[39px] bottom-0 z-30 `}
               ></div>
             </li>
@@ -211,7 +209,7 @@ const PartnerSolution = () => {
         {/* Tab Content */}
         <div className="bg-white rounded-[10px] rounded-tl-none">
           <div className="flex justify-center">
-            <h6 className="title border-b-3 border-b-secondary-100 w-fit px-10 pb-2 mt-10">
+            <h6 className="title border-b-3 border-b-secondary w-fit px-10 pb-2 mt-10">
               {selectedTab.title}
             </h6>
           </div>
@@ -233,7 +231,7 @@ const PartnerSolution = () => {
                   {item?.tags?.map((innderItem, InnerInd) => (
                     <h6
                       key={InnerInd}
-                      className="font-medium text-secondary-100 first:ml-0 last:border-r-0 border-r-2 border-r-[#1C1C1C] pr-2 ml-2"
+                      className="font-medium text-secondary first:ml-0 last:border-r-0 border-r-2 border-r-[#1C1C1C] pr-2 ml-2"
                     >
                       {innderItem}
                     </h6>
