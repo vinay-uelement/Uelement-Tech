@@ -3,12 +3,51 @@ import { ReactIcons } from '@/utils/ReactIcons';
 import Link from 'next/link';
 import Checkbox from '../formElements/Checkbox/Checkbox';
 import InputField from '../formElements/InputField/InputField';
+import Icon from '../resources/Icon';
 
 const Footer = () => {
   return (
     <div>
       <ContactUs />
       <FooterContent />
+      {/* Bottom Bar */}
+      <div className="border-t border-white/10 pt-6 sm:pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 bg-primary-blue container-padding py-8 lg:py-12">
+        <div className="flex flex-wrap gap-3 sm:gap-5 lg:gap-8 justify-center sm:justify-start text-center">
+          <Link
+            href="/about"
+            className="font-reddit-sans text-[#808080] text-13 sm:text-16 hover:text-white transition-colors"
+          >
+            About us
+          </Link>
+          <Link
+            href="/contact"
+            className="font-reddit-sans text-[#808080] text-13 sm:text-16 hover:text-white transition-colors"
+          >
+            Contact
+          </Link>
+          <Link
+            href="/privacy"
+            className="font-reddit-sans text-[#808080] text-13 sm:text-16 hover:text-white transition-colors"
+          >
+            Privacy policy
+          </Link>
+          <Link
+            href="/sitemap"
+            className="font-reddit-sans text-[#808080] text-13 sm:text-16 hover:text-white transition-colors"
+          >
+            Sitemap
+          </Link>
+          <Link
+            href="/terms"
+            className="font-reddit-sans text-[#808080] text-13 sm:text-16 hover:text-white transition-colors"
+          >
+            Terms of Use
+          </Link>
+        </div>
+        <p className="font-reddit-sans text-[#808080] text-13 sm:text-16">
+          © 2025, All Rights Reserved
+        </p>
+      </div>
     </div>
   );
 };
@@ -32,13 +71,11 @@ const ContactUs = () => {
       <div className="container-padding py-10 sm:py-12 lg:py-16">
         {/* Title Section - positioned in gray area */}
         <div className="title-div text-primary-blue text-center mb-8 sm:mb-10 lg:mb-12">
-          <p className="text-12 sm:text-14 font-light text-gray-600">
-            /Contact Us
-          </p>
-          <h4 className="font-montserrat font-bold text-24 sm:text-32 lg:text-40 xl:text-45 mt-3 mb-3 leading-tight">
+          <p className="slash text-[#1f1f1f]">/Contact Us</p>
+          <h4 className="font-montserrat leading-tight text-2xl md:text-3xl lg:text-4xl mb-10 md:mb-14">
             Ready to Transform Your Enterprise Security?
           </h4>
-          <p className="font-reddit-sans font-light max-w-[750px] mx-auto text-13 sm:text-14 lg:text-16 text-gray-700 leading-relaxed">
+          <p className=" max-w-[750px] mx-auto  text-[#1f1f1f] leading-relaxed">
             Empower your enterprise with smarter, scalable security that adapts
             to new threats—keeping your business safe, agile, and resilient.
           </p>
@@ -47,9 +84,9 @@ const ContactUs = () => {
         {/* Form Card - sits at the intersection */}
         <div className="max-w-[1400px] mx-auto bg-white rounded-[5px] p-[8px] sm:p-[10px] grid grid-cols-1 lg:grid-cols-[40%_60%] shadow-[0px_4px_72.2px_0px_rgba(0,0,0,0.25)]">
           {/* Left Side - Contact Information */}
-          <div className="bg-primary-blue rounded-[5px] p-6 sm:p-8 lg:p-10 xl:p-12 text-white flex flex-col justify-between gap-8 lg:gap-10 relative overflow-hidden">
+          <div className="bg-primary-blue rounded-[5px] p-6 sm:p-8 lg:p-10 xl:p-12 text-white flex flex-col justify-start gap-8 lg:gap-16 relative overflow-hidden min-h-[350px]">
             {/* Large 92 Background */}
-            <div className="absolute bottom-0 right-4 text-[140px] sm:text-[160px] lg:text-[180px] xl:text-[200px] font-bold text-white/5 select-none pointer-events-none leading-none">
+            <div className="absolute -bottom-8 -right-3 text-[160px] sm:text-[180px] lg:text-[200px] xl:text-[250px] font-bold text-[#111f3f] select-none pointer-events-none leading-none">
               92
             </div>
 
@@ -62,19 +99,17 @@ const ContactUs = () => {
               </p>
             </div>
 
-            <div className="flex flex-col gap-5 lg:gap-6 xl:gap-7 text-14 lg:text-16 relative z-10">
+            <div className="flex flex-col gap-5 lg:gap-6 xl:gap-9 text-14 lg:text-16 relative z-10">
               <div className="flex items-center justify-start font-reddit-sans gap-3 lg:gap-4">
-                <span className="text-18 lg:text-20">{ReactIcons.phone}</span>
+                <Icon name="phone" />
                 <span>+1012 3456 789</span>
               </div>
               <div className="flex items-center justify-start font-reddit-sans gap-3 lg:gap-4">
-                <span className="text-18 lg:text-20">{ReactIcons.email}</span>
+                <Icon name="email" />
                 <span>demo@gmail.com</span>
               </div>
               <div className="flex items-start justify-start font-reddit-sans gap-3 lg:gap-4">
-                <span className="text-18 lg:text-20 mt-1">
-                  {ReactIcons.gps}
-                </span>
+                <Icon name="location" />
                 <span className="text-left leading-relaxed">
                   132 Dartmouth Street Boston, Massachusetts 02156 United States
                 </span>
@@ -167,131 +202,133 @@ const ContactUs = () => {
 
 const FooterContent = () => {
   return (
-    <footer className="bg-primary-blue pt-10 sm:pt-12 lg:pt-16 pb-6 container-padding">
+    <footer className="bg-primary-blue pt-2 lg:pt-4 pb-6 container-padding">
       <div className="max-w-[1400px] mx-auto">
         {/* Main Footer Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-[1.2fr_auto_auto_1fr] gap-8 sm:gap-10 lg:gap-12 xl:gap-16 pb-8 sm:pb-10 lg:pb-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-10 lg:gap-12 xl:gap-16 pb-8 sm:pb-10 lg:pb-12">
           {/* Company Details */}
           <div className="company-details">
             <img
               src="/icons/global/UElement_Logo_White 3.svg"
               alt="UElement logo"
-              className="h-[35px] sm:h-[40px] w-auto mb-4 sm:mb-5"
+              className="h-[35px] sm:h-[48px] w-auto mb-4 mb-20"
             />
-            <p className="text-white/60 font-reddit-sans text-13 sm:text-14 mb-6 sm:mb-8 max-w-[280px]">
+            <p className="text-[#808080] mb-6 sm:mb-8 ">
               Empowering Secure Digital Transformation
             </p>
 
             {/* Social Icons */}
-            <div className="flex text-18 sm:text-20 items-center justify-start gap-2">
+            <div className="flex items-center justify-start gap-6">
               <Link
                 href="#"
-                className="size-[36px] sm:size-[40px] rounded-full grid place-content-center hover:translate-y-[-3px] duration-300 ease-in-out transition-all hover:text-white/70"
+                className=" hover:translate-y-[-3px] duration-300 ease-in-out transition-all hover:text-white/70"
               >
-                <span>{ReactIcons.facebook}</span>
+                <Icon name="linkedin" size={35} />
               </Link>
               <Link
                 href="#"
-                className="size-[36px] sm:size-[40px] rounded-full grid place-content-center hover:translate-y-[-3px] duration-300 ease-in-out transition-all hover:text-white/70"
+                className="  hover:translate-y-[-3px] duration-300 ease-in-out transition-all hover:text-white/70"
               >
-                <span>{ReactIcons.facebook}</span>
+                <Icon name="facebook" size={35} />
               </Link>
               <Link
                 href="#"
-                className="size-[36px] sm:size-[40px] rounded-full grid place-content-center hover:translate-y-[-3px] duration-300 ease-in-out transition-all hover:text-white/70"
+                className="  hover:translate-y-[-3px] duration-300 ease-in-out transition-all hover:text-white/70"
               >
-                <span>{ReactIcons.facebook}</span>
+                <Icon name="instagram" size={35} />
               </Link>
               <Link
                 href="#"
-                className="size-[36px] sm:size-[40px] rounded-full grid place-content-center hover:translate-y-[-3px] duration-300 ease-in-out transition-all hover:text-white/70"
+                className="  hover:translate-y-[-3px] duration-300 ease-in-out transition-all hover:text-white/70"
               >
-                <span>{ReactIcons.facebook}</span>
+                <Icon name="twitter" size={35} />
               </Link>
               <Link
                 href="#"
-                className="size-[36px] sm:size-[40px] rounded-full grid place-content-center hover:translate-y-[-3px] duration-300 ease-in-out transition-all hover:text-white/70"
+                className="  hover:translate-y-[-3px] duration-300 ease-in-out transition-all hover:text-white/70"
               >
-                <span>{ReactIcons.facebook}</span>
+                <Icon name="youtube" size={35} />
               </Link>
               <Link
                 href="#"
-                className="size-[36px] sm:size-[40px] rounded-full grid place-content-center hover:translate-y-[-3px] duration-300 ease-in-out transition-all hover:text-white/70"
+                className="  hover:translate-y-[-3px] duration-300 ease-in-out transition-all hover:text-white/70"
               >
-                <span>{ReactIcons.facebook}</span>
+                <Icon name="github" size={35} />
               </Link>
             </div>
           </div>
 
-          {/* Company Links */}
-          <div className="company-links">
-            <h6 className="font-poppins font-semibold text-14 sm:text-16 text-white uppercase mb-4 sm:mb-5">
-              COMPANY
-            </h6>
-            <div className="flex flex-col gap-3 sm:gap-4">
-              <Link
-                href="/about"
-                className="font-reddit-sans text-white/70 text-13 sm:text-14 hover:text-white transition-colors"
-              >
-                About
-              </Link>
-              <Link
-                href="/services"
-                className="font-reddit-sans text-white/70 text-13 sm:text-14 hover:text-white transition-colors"
-              >
-                Services
-              </Link>
-              <Link
-                href="/partners"
-                className="font-reddit-sans text-white/70 text-13 sm:text-14 hover:text-white transition-colors"
-              >
-                Partners
-              </Link>
-              <Link
-                href="/career"
-                className="font-reddit-sans text-white/70 text-13 sm:text-14 hover:text-white transition-colors"
-              >
-                Career
-              </Link>
+          <div className="flex flex-row md-flex-col justify-center gap-32 md:gap-20 my-6 md:my-0">
+            {/* Company Links */}
+            <div className="company-links">
+              <h6 className=" font-semibold text-14 sm:text-16 text-white uppercase mb-4 sm:mb-5 tracking-widest">
+                COMPANY
+              </h6>
+              <div className="flex flex-col gap-3 sm:gap-4">
+                <Link
+                  href="/about"
+                  className="font-reddit-sans text-white/70 text-13 sm:text-14 hover:text-white transition-colors"
+                >
+                  About
+                </Link>
+                <Link
+                  href="/services"
+                  className="font-reddit-sans text-white/70 text-13 sm:text-14 hover:text-white transition-colors"
+                >
+                  Services
+                </Link>
+                <Link
+                  href="/partners"
+                  className="font-reddit-sans text-white/70 text-13 sm:text-14 hover:text-white transition-colors"
+                >
+                  Partners
+                </Link>
+                <Link
+                  href="/career"
+                  className="font-reddit-sans text-white/70 text-13 sm:text-14 hover:text-white transition-colors"
+                >
+                  Career
+                </Link>
+              </div>
             </div>
-          </div>
 
-          {/* Resources Links */}
-          <div className="resources-links">
-            <h6 className="font-poppins font-semibold text-14 sm:text-16 text-white uppercase mb-4 sm:mb-5">
-              RESOURCES
-            </h6>
-            <div className="flex flex-col gap-3 sm:gap-4">
-              <Link
-                href="/resources/ebooks"
-                className="font-reddit-sans text-white/70 text-13 sm:text-14 hover:text-white transition-colors"
-              >
-                Free eBooks
-              </Link>
-              <Link
-                href="/resources/tutorial"
-                className="font-reddit-sans text-white/70 text-13 sm:text-14 hover:text-white transition-colors"
-              >
-                Development Tutorial
-              </Link>
-              <Link
-                href="/blog"
-                className="font-reddit-sans text-white/70 text-13 sm:text-14 hover:text-white transition-colors"
-              >
-                How to - Blog
-              </Link>
-              <Link
-                href="/resources/playlist"
-                className="font-reddit-sans text-white/70 text-13 sm:text-14 hover:text-white transition-colors"
-              >
-                Youtube Playlist
-              </Link>
+            {/* Resources Links */}
+            <div className="resources-links">
+              <h6 className=" font-semibold text-14 sm:text-16 text-white uppercase mb-4 sm:mb-5 tracking-widest">
+                RESOURCES
+              </h6>
+              <div className="flex flex-col gap-3 sm:gap-4">
+                <Link
+                  href="/resources/ebooks"
+                  className="font-reddit-sans text-white/70 text-13 sm:text-14 hover:text-white transition-colors"
+                >
+                  Free eBooks
+                </Link>
+                <Link
+                  href="/resources/tutorial"
+                  className="font-reddit-sans text-white/70 text-13 sm:text-14 hover:text-white transition-colors"
+                >
+                  Development Tutorial
+                </Link>
+                <Link
+                  href="/blog"
+                  className="font-reddit-sans text-white/70 text-13 sm:text-14 hover:text-white transition-colors"
+                >
+                  How to - Blog
+                </Link>
+                <Link
+                  href="/resources/playlist"
+                  className="font-reddit-sans text-white/70 text-13 sm:text-14 hover:text-white transition-colors"
+                >
+                  Youtube Playlist
+                </Link>
+              </div>
             </div>
           </div>
 
           {/* Newsletter */}
-          <div className="newsletter">
-            <h6 className="font-poppins font-semibold text-14 sm:text-16 text-white uppercase mb-4 sm:mb-5">
+          <div className="newsletter ml-10">
+            <h6 className=" font-semibold text-14 sm:text-16 text-white uppercase mb-4 sm:mb-5 tracking-widest">
               NEWSLETTER
             </h6>
             <div className="max-w-[300px]">
@@ -310,45 +347,6 @@ const FooterContent = () => {
               </button>
             </div>
           </div>
-        </div>
-
-        {/* Bottom Bar */}
-        <div className="border-t border-white/10 pt-6 sm:pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <div className="flex flex-wrap gap-3 sm:gap-5 lg:gap-8 justify-center sm:justify-start text-center">
-            <Link
-              href="/about"
-              className="font-reddit-sans text-white/60 text-11 sm:text-13 hover:text-white transition-colors"
-            >
-              About us
-            </Link>
-            <Link
-              href="/contact"
-              className="font-reddit-sans text-white/60 text-11 sm:text-13 hover:text-white transition-colors"
-            >
-              Contact
-            </Link>
-            <Link
-              href="/privacy"
-              className="font-reddit-sans text-white/60 text-11 sm:text-13 hover:text-white transition-colors"
-            >
-              Privacy policy
-            </Link>
-            <Link
-              href="/sitemap"
-              className="font-reddit-sans text-white/60 text-11 sm:text-13 hover:text-white transition-colors"
-            >
-              Sitemap
-            </Link>
-            <Link
-              href="/terms"
-              className="font-reddit-sans text-white/60 text-11 sm:text-13 hover:text-white transition-colors"
-            >
-              Terms of Use
-            </Link>
-          </div>
-          <p className="font-reddit-sans text-white/60 text-11 sm:text-13">
-            © 2025, All Rights Reserved
-          </p>
         </div>
       </div>
     </footer>
