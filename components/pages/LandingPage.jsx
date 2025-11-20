@@ -22,7 +22,7 @@ const LandingPage = () => {
         <ServicesSection />
       </div>
       {/* <Testimonial /> */}
-      <ContactUs />
+      {/* <ContactUs /> */}
     </div>
   );
 };
