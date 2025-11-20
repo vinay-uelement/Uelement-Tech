@@ -201,7 +201,7 @@ const HeroSection = () => {
         ))}
       </div>
       {/* background */}
-      <div className="hidden md:block h-full md:h-full w-full md:w-1/2 absolute right-0 bg-[url(/images/landing/UElement-Mudra.png)] rounded-tr-4xl rounded-br-[50px] bg-no-repeat bg-contain bg-right-bottom "></div>
+      <div className="hidden md:block h-full md:h-full w-full md:w-1/2 absolute right-0 bg-[url(/images/landing/Mudra.svg)] rounded-tr-4xl rounded-br-[50px] bg-no-repeat bg-contain bg-right-bottom "></div>
       {/* mobile bg */}
       <div
         className="block md:hidden absolute inset-0 w-full h-full -z-10"
