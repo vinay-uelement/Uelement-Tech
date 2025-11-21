@@ -202,7 +202,7 @@ const Navbar = () => {
       <nav
         className={`w-[90vw]  md:w-full  container-outer shadow-down md:shadow-none bg-primary-blue rounded-[12px] md:rounded-none pe-4 md:pe-0 md:bg-transparent  h-15 flex justify-between fixed z-[80] left-1/2 -translate-x-1/2 
       ${
-        isScrolled ? 'top-3' : 'top-9'
+        isScrolled ? 'top-2' : 'top-6'
       } transition-all duration-700 ease-in-out`}
       >
         <div className="w-full container-padding ">

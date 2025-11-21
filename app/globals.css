@@ -84,6 +84,7 @@
     --outer-padding: 10px;
     --container-small-padding: 80px;
     --section-block-padding: 75px;
+    --mobile-navbar-gap: 100px;
   }
 
   @media (width <= 48rem /* 768px */) {

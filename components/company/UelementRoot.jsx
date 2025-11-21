@@ -43,7 +43,7 @@ const UelementRoot = () => {
             className="w-full behind-idea-image rounded-[10px]"
           />
       
-          <button className="btn-primary ml-auto block mt-4 md:mt-8 rounded-[50px]">
+          <button className="btn-primary mx-auto md:ml-auto block mt-6 rounded-[50px]">
             Contact us
           </button>
         </div>
