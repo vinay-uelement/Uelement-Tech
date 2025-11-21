@@ -113,11 +113,12 @@ const DrivingGrowthSection = () => {
           </button>
         </div>
 
-        <div className="relative  overflow-visible w-full md:w-1/2 driving-slider">
-          <div className="absolute inset-y-0 -left-7 md:-left-16 flex items-center z-20">
+        <div className="relative overflow-visible w-full md:w-1/2 driving-slider">
+          {/* Left Navigation Button */}
+          <div className="absolute inset-y-0 -left-4 md:-left-7 lg:-left-16 flex items-center z-20">
             <div
               onClick={prevSlide}
-              className="size-[44px] text-20 lg:text-24 size-[30px] xl:size-[60px] rounded-full bg-[#DEDEDE] shadow-down grid place-content-center cursor-pointer transition text-white lg:text-primary-blue"
+              className="size-[32px] md:size-[44px] xl:size-[60px] text-20 lg:text-24 rounded-full bg-[#DEDEDE] shadow-down grid place-content-center cursor-pointer transition text-white lg:text-primary-blue"
             >
               <span>{ReactIcons.leftChev}</span>
             </div>
@@ -157,11 +158,11 @@ const DrivingGrowthSection = () => {
               return (
                 <div key={item.id}>
                   <div
-                    className={`dg-card-wrapper ${posClass}`}
+                    className={`dg-card-wrapper ml-6 md:ml-0 ${posClass}`}
                     style={{ zIndex, position: 'relative' }}
                   >
                     <div
-                      className="relative w-[280px] h-[280px] md:w-[320px] md:h-[320px] xl:w-[370px] xl:h-[370px] 2xl:w-[450px] 2xl:h-[450px] rounded-[5px] sm:rounded-[10px] lg:rounded-[20px] overflow-hidden"
+                      className="relative w-[200px] h-[280px] md:w-[320px] md:h-[320px] xl:w-[370px] xl:h-[370px] 2xl:w-[450px] 2xl:h-[450px] rounded-[15px] overflow-hidden"
                       style={{
                         backgroundImage: `url(${item.img})`,
                         backgroundSize: 'cover',
@@ -171,12 +172,12 @@ const DrivingGrowthSection = () => {
                       <div className="box-inner bg-black/65  h-full w-full rounded-[5px] sm:rounded-[10px] lg:rounded-[20px] p-3 relative z-10">
                         <div
                           style={{ opacity: textOpacity }}
-                          className="transition-opacity duration-700 h-full flex flex-col gap-8 text-center px-10 py-4 "
+                          className="transition-opacity duration-700 h-full flex flex-col gap-8 text-center px-2 md:px-10 py-4 "
                         >
-                          <h5 className="text-24 xl:text-30 text-white mb-2 font-dm-serif">
+                          <h5 className="text-20 xl:text-30 text-white mb-0 md:mb-2 font-dm-serif">
                             {item.title}
                           </h5>
-                          <p className="text-16 2xl:text-20 text-white font-light mb-auto">
+                          <p className="text-12 2xl:text-20 text-white font-light mb-auto">
                             {item.desc}
                           </p>
                         </div>
@@ -188,10 +189,11 @@ const DrivingGrowthSection = () => {
             })}
           </Slider>
 
-          <div className="absolute inset-y-0 -right-16 flex items-center z-20">
+          {/* Right Navigation Button */}
+          <div className="absolute inset-y-0 -right-4 md:-right-7 lg:-right-16 flex items-center z-20">
             <div
               onClick={nextSlide}
-              className="size-[44px] text-20 lg:text-24 xl:size-[60px] rounded-full bg-[#DEDEDE] shadow-down grid place-content-center cursor-pointer transition text-white lg:text-primary-blue"
+              className="size-[32px] md:size-[44px] xl:size-[60px] text-20 lg:text-24 rounded-full bg-[#DEDEDE] shadow-down grid place-content-center cursor-pointer transition text-white lg:text-primary-blue"
             >
               <span>{ReactIcons.rightChev}</span>
             </div>
