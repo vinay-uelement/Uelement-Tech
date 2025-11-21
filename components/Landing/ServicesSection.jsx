@@ -83,7 +83,8 @@ const ServicesSection = () => {
     dropdownIndicator: (provided) => ({
       ...provided,
       color: '#fff',
-      padding: '0 8px',
+      padding: '0 4px',
+      margin: '0 16px 0 0',
     }),
     indicatorSeparator: () => ({
       display: 'none',
