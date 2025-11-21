@@ -35,8 +35,8 @@ const ServicesSection = () => {
     setIndex((prev) => (prev - 1 + slides.length) % slides.length);
 
   return (
-    <section className="bg-secondary-muted py-10 sm:py-12 lg:py-16 container-padding rounded-t-[10px]">
-      <div className="max-w-[1400px] mx-auto">
+    <section className="bg-secondary-muted py-10 sm:py-12 lg:py-16 container-padding rounded-t-[10px] mb-20">
+      <div className=" mx-auto">
         {/* Header */}
         <div className="mb-8 sm:mb-10 lg:mb-12">
           <p className="text-12 sm:text-14 text-gray-600 mb-3">/Services</p>
@@ -50,18 +50,18 @@ const ServicesSection = () => {
         </div>
 
         {/* Tabs & Content */}
-        <div className="relative">
+        <div className="relative ">
           {/* Desktop Tabs */}
           <div className="hidden md:flex gap-0 mb-0">
             {tabs.map((tab) => (
               <button
                 key={tab.id}
                 onClick={() => setSelectedTab(tab)}
-                className={`relative px-20 py-3 font-montserrat font-medium text-14 lg:text-16 rounded-tl-[10px] transition-all duration-300 ease-in-out overflow-hidden ${
+                className={`relative px-20 py-3 font-montserrat font-medium text-14 lg:text-16 rounded-tl-[10px] transition-all duration-300 ease-in-out overflow-hidden  ${
                   tab.id === selectedTab.id
                     ? 'bg-primary-blue text-white shadow-[0px_4px_5px_0px_rgba(0,0,0,0.20)]'
                     : 'bg-[#FCFCFC] text-[#9E9E9E] hover:bg-gray-100 border border-[#E0E0E0]'
-                }`}
+                } `}
                 style={{
                   clipPath:
                     'polygon(0 0, calc(100% - 30px) 0, 100% 100%, 0 100%)',
@@ -102,7 +102,7 @@ const ServicesSection = () => {
           </div>
 
           {/* Tab Content */}
-          <div className="bg-primary-blue text-white p-6 sm:p-8 lg:p-10 xl:p-12 rounded-[10px] rounded-tl-none transition-all duration-300 ease-in-out">
+          <div className="bg-primary-blue text-white p-2 sm:p-4 lg:p-6 xl:p-8 rounded-[10px] rounded-tl-none transition-all duration-300 ease-in-out shadow-[3.71px_0px_3.71px_0px_rgba(0,0,0,0.25)]">
             {/* Content with fade transition */}
             <div className="animate-fade-in">
               <h3 className="font-montserrat font-semibold text-24 sm:text-28 lg:text-32 mb-4 sm:mb-6">
@@ -121,20 +121,20 @@ const ServicesSection = () => {
                 </div>
 
                 {/* Slider Card with External Navigation */}
-                <div className="relative flex items-center gap-4 ml-auto">
+                <div className="w-full md:w-auto relative flex items-center gap-2 sm:gap-4 md:ml-auto">
                   {/* Left Arrow - Outside card */}
                   <button
                     disabled={index === 0}
                     onClick={prevSlide}
-                    className="size-9 sm:size-10 bg-white rounded-full text-primary-blue flex items-center justify-center hover:bg-white/90 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300 flex-shrink-0"
+                    className="size-8 sm:size-9 md:size-10 bg-white rounded-full text-primary-blue flex items-center justify-center hover:bg-white/90 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300 flex-shrink-0"
                   >
-                    <span className="text-16 sm:text-18">
+                    <span className="text-14 sm:text-16 md:text-18">
                       {ReactIcons.leftChev}
                     </span>
                   </button>
 
                   {/* Slider Card */}
-                  <div className="bg-white rounded-[10px] p-5 sm:p-6 max-w-[500px]">
+                  <div className="bg-white rounded-[10px] p-4 sm:p-5 md:p-6 flex-1 md:max-w-[500px] min-w-0">
                     {/* Slider Content */}
                     <div className="relative overflow-hidden">
                       <div
@@ -157,9 +157,9 @@ const ServicesSection = () => {
                   <button
                     disabled={index === slides.length - 1}
                     onClick={nextSlide}
-                    className="size-9 sm:size-10 bg-white rounded-full text-primary-blue flex items-center justify-center hover:bg-white/90 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300 flex-shrink-0"
+                    className="size-8 sm:size-9 md:size-10 bg-white rounded-full text-primary-blue flex items-center justify-center hover:bg-white/90 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300 flex-shrink-0"
                   >
-                    <span className="text-16 sm:text-18">
+                    <span className="text-14 sm:text-16 md:text-18">
                       {ReactIcons.rightChev}
                     </span>
                   </button>
