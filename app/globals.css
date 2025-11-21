@@ -444,42 +444,38 @@
   display: flex !important;
   gap: 0px !important;
 }
-.driving-slider .slick-slide.slick-active.slick-current {
-  transform: scaleY(1);
-}
-.driving-slider .slick-slide.slick-active {
-  transform: scaleY(0.92);
-  transform-origin: top;
-}
+
 .driving-slider .slick-slide {
   transition: all ease-in-out 0.7s;
 }
 
 .dg-card-wrapper{
   transition: all 0.6s ease;
+  opacity: 20;
 }
 
 .dg-left-big{
   transform: scale(1);
-  z-index: 5;
+  z-index: 12;
   opacity: 1;
 }
 
 .dg-center-medium{
-  transform: scale(0.85);
-  z-index: 4;
-  opacity: 0.7;
+  transform: scale(0.9);
+  z-index: 7;
+  opacity: 0.85;
 }
 
 .dg-right-small{
-  transform: scale(0.7);
-  z-index: 3;
-  opacity: 0.4;
+  transform: scale(0.8);
+  z-index: 5;
+  opacity: 0.7;
 }
 
 .dg-hidden-small{
   transform: scale(0.6);
   opacity: 0;
+  z-index:0;
 }
 
 /*------------------------------------------------------------------------------------------------------------------------------------------------ MEDIA QUERIES -----------------------------------------------------------------------------------------------------------------*/

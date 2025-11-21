@@ -57,6 +57,7 @@ const DrivingGrowthSection = () => {
     arrows: false,
     fade: false,
     beforeChange: (oldIndex, newIndex) => setActive(newIndex),
+    
   };
 
   const nextSlide = () => {
@@ -118,12 +119,12 @@ const DrivingGrowthSection = () => {
           </button>
         </div>
 
-        <div className="relative overflow-visible lg:w-[450px] xl:w-[550px] 2xl:w-[700px] driving-slider">
+        <div className="relative px-[15px] overflow-visible lg:w-[450px] xl:w-[550px] 2xl:w-[700px] driving-slider">
 
-          <div className="absolute inset-y-0 -left-16 flex items-center z-20">
+          <div className="absolute inset-y-0 -left-7 md:-left-16 flex items-center z-20">
             <div
               onClick={prevSlide}
-              className="size-[44px] text-20 lg:text-24 xl:size-[60px] rounded-full bg-[#DEDEDE] shadow-down grid place-content-center cursor-pointer transition text-white lg:text-primary-blue"
+              className="size-[44px] text-20 lg:text-24 size-[30px] xl:size-[60px] rounded-full bg-[#DEDEDE] shadow-down grid place-content-center cursor-pointer transition text-white lg:text-primary-blue"
             >
               <span>{ReactIcons.leftChev}</span>
             </div>
@@ -147,7 +148,7 @@ const DrivingGrowthSection = () => {
               return (
               <div key={item.id} className={`dg-card-wrapper ${posClass}`}>
                 <div
-                  className="relative flex-1 h-[300px] xl:h-[370px] 2xl:h-[70vh] max-h-[450px] rounded-[5px] sm:rounded-[10px] lg:rounded-[20px] overflow-hidden"
+                  className="relative flex-1 w-[200px] md:w-[320px] h-[300px] xl:h-[370px] 2xl:h-[70vh] max-h-[450px] rounded-[5px] sm:rounded-[10px] lg:rounded-[20px] overflow-hidden"
                   style={{
                     backgroundImage: `url(${item.img})`,
                     backgroundSize: "cover",
