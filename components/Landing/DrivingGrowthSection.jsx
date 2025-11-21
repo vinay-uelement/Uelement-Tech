@@ -1,45 +1,45 @@
-'use client'
-import React, { useRef, useState } from "react";
-import Slider from "react-slick";
+'use client';
+import React, { useRef, useState } from 'react';
+import Slider from 'react-slick';
 import { ReactIcons } from '@/utils/ReactIcons';
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 
 const slides = [
   {
     id: 1,
-    number: "01",
-    title: "SI Partnerships (SI)",
-    desc: "Designing, Deploying & Delivering Next-Gen Cybersecurity, Cloud & AI Solutions together with OEM partners",
-    img: "/images/landing/si-partnership.jpg",
+    number: '01',
+    title: 'SI Partnerships (SI)',
+    desc: 'Designing, Deploying & Delivering Next-Gen Cybersecurity, Cloud & AI Solutions together with OEM partners',
+    img: '/images/landing/si-partnership.jpg',
   },
   {
     id: 2,
-    number: "02",
-    title: "Professional Services (PS)",
-    desc: "Accelerating digital transformation with expert consulting and seamless implementations.",
-    img: "/images/landing/professional-services.jpg",
+    number: '02',
+    title: 'Professional Services (PS)',
+    desc: 'Accelerating digital transformation with expert consulting and seamless implementations.',
+    img: '/images/landing/professional-services.jpg',
   },
   {
     id: 3,
-    number: "03",
-    title: "Cloud Solutions",
-    desc: "Optimizing IT infrastructure with scalable, secure and cost-effective cloud solutions.",
-    img: "/images/landing/managed-ser2.jpg",
+    number: '03',
+    title: 'Cloud Solutions',
+    desc: 'Optimizing IT infrastructure with scalable, secure and cost-effective cloud solutions.',
+    img: '/images/landing/managed-ser2.jpg',
   },
   {
     id: 4,
-    number: "04",
-    title: "Managed Services",
-    desc: "Ensuring business continuity with 24/7 proactive monitoring and management.",
-    img: "/images/landing/manage-service.jpg",
+    number: '04',
+    title: 'Managed Services',
+    desc: 'Ensuring business continuity with 24/7 proactive monitoring and management.',
+    img: '/images/landing/manage-service.jpg',
   },
   {
     id: 5,
-    number: "05",
-    title: "Cloud Modernization",
-    desc: "Modernizing workloads and enabling cloud-native scalability for enterprises.",
-    img: "/images/landing/cloud-solution.jpg",
+    number: '05',
+    title: 'Cloud Modernization',
+    desc: 'Modernizing workloads and enabling cloud-native scalability for enterprises.',
+    img: '/images/landing/cloud-solution.jpg',
   },
 ];
 
@@ -47,7 +47,6 @@ const DrivingGrowthSection = () => {
   const [active, setActive] = useState(0);
   const sliderRef = useRef(null);
 
-  // React Slick settings
   const settings = {
     dots: true,
     infinite: true,
@@ -57,7 +56,7 @@ const DrivingGrowthSection = () => {
     arrows: false,
     fade: false,
     beforeChange: (oldIndex, newIndex) => setActive(newIndex),
-    
+    centerMode: false,
   };
 
   const nextSlide = () => {
@@ -68,7 +67,6 @@ const DrivingGrowthSection = () => {
     sliderRef.current.slickPrev();
   };
 
-  // Left side numbers ordered rotation
   const orderedNumbers = [
     ...slides.slice(active, active + 1),
     ...slides.slice(active + 1),
@@ -80,9 +78,7 @@ const DrivingGrowthSection = () => {
       <div className="flex lg:items-center flex-col lg:flex-row gap-18 lg:pb-8 xl:pb-10 2xl:pb-12">
         {/* Left Side Numbers */}
         <div className="flex-1">
-          <span className="slash block lg:hidden">
-            /Service Segment
-          </span>
+          <span className="slash block lg:hidden">/Service Segment</span>
 
           <div className="mb-7 xl:mb-10 flex items-center">
             <div className="circle size-[50px] min-w-[50px] xl:size-[70px] rounded-full bg-white grid place-content-center shadow-down font-bold italic text-20 xl:text-24 transition-all duration-500">
@@ -100,9 +96,7 @@ const DrivingGrowthSection = () => {
             </div>
           </div>
 
-          <span className="slash hidden lg:block">
-            /Service Segment
-          </span>
+          <span className="slash hidden lg:block">/Service Segment</span>
           <h3 className="title">
             Driving growth through strategic collaborations
           </h3>
@@ -119,8 +113,7 @@ const DrivingGrowthSection = () => {
           </button>
         </div>
 
-        <div className="relative px-[15px] overflow-visible lg:w-[450px] xl:w-[550px] 2xl:w-[700px] driving-slider">
-
+        <div className="relative  overflow-visible w-full md:w-1/2 driving-slider">
           <div className="absolute inset-y-0 -left-7 md:-left-16 flex items-center z-20">
             <div
               onClick={prevSlide}
@@ -131,7 +124,7 @@ const DrivingGrowthSection = () => {
           </div>
 
           {/* Right Side Slider (React Slick) */}
-          <Slider ref={sliderRef} {...settings} >
+          <Slider ref={sliderRef} {...settings}>
             {slides.map((item, index) => {
               const total = slides.length;
 
@@ -139,36 +132,60 @@ const DrivingGrowthSection = () => {
               const centerIndex = (active + 1) % total;
               const rightIndex = (active + 2) % total;
 
-              let posClass ="";
-              if(index === leftIndex) posClass = "dg-left-big";
-              else if( index === centerIndex) posClass = "dg-center-medium";
-              else if( index === rightIndex) posClass = "dg-right-small";
-              else posClass = "dg-hidden-small";
+              let posClass = '';
+              let zIndex = 1;
+              let textOpacity = 0;
+
+              if (index === leftIndex) {
+                posClass = 'dg-left-big';
+                zIndex = 30;
+                textOpacity = 1;
+              } else if (index === centerIndex) {
+                posClass = 'dg-center-medium';
+                zIndex = 20;
+                textOpacity = 0.6;
+              } else if (index === rightIndex) {
+                posClass = 'dg-right-small';
+                zIndex = 10;
+                textOpacity = 0.3;
+              } else {
+                posClass = 'dg-hidden-small';
+                zIndex = 0;
+                textOpacity = 0;
+              }
 
               return (
-              <div key={item.id} className={`dg-card-wrapper ${posClass}`}>
-                <div
-                  className="relative flex-1 w-[200px] md:w-[320px] h-[300px] xl:h-[370px] 2xl:h-[70vh] max-h-[450px] rounded-[5px] sm:rounded-[10px] lg:rounded-[20px] overflow-hidden"
-                  style={{
-                    backgroundImage: `url(${item.img})`,
-                    backgroundSize: "cover",
-                    backgroundPosition: "center",
-                  }}
-                >
-                  <div className="box-inner bg-black/70 h-full rounded-[5px] sm:rounded-[10px] lg:rounded-[20px] p-3 relative z-10">
-                    <h5 className="text-18 xl:text-20 text-white mb-2 font-dm-serif">
-                      {item.title}
-                    </h5>
-                    <p className="text-14 2xl:text-16 text-white font-light">
-                      {item.desc}
-                    </p>
-                    <button className="text-16 2xl:text-18 text-white bg-[#D4D4D470] btn-glass px-6 absolute bottom-5 left-3">
-                      Learn More
-                    </button>
+                <div key={item.id}>
+                  <div
+                    className={`dg-card-wrapper ${posClass}`}
+                    style={{ zIndex, position: 'relative' }}
+                  >
+                    <div
+                      className="relative w-[280px] h-[280px] md:w-[320px] md:h-[320px] xl:w-[370px] xl:h-[370px] 2xl:w-[450px] 2xl:h-[450px] rounded-[5px] sm:rounded-[10px] lg:rounded-[20px] overflow-hidden"
+                      style={{
+                        backgroundImage: `url(${item.img})`,
+                        backgroundSize: 'cover',
+                        backgroundPosition: 'center',
+                      }}
+                    >
+                      <div className="box-inner bg-black/65  h-full w-full rounded-[5px] sm:rounded-[10px] lg:rounded-[20px] p-3 relative z-10">
+                        <div
+                          style={{ opacity: textOpacity }}
+                          className="transition-opacity duration-700 h-full flex flex-col gap-8 text-center px-10 py-4 "
+                        >
+                          <h5 className="text-24 xl:text-30 text-white mb-2 font-dm-serif">
+                            {item.title}
+                          </h5>
+                          <p className="text-16 2xl:text-20 text-white font-light mb-auto">
+                            {item.desc}
+                          </p>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
-              </div>
-            )})}
+              );
+            })}
           </Slider>
 
           <div className="absolute inset-y-0 -right-16 flex items-center z-20">
@@ -180,6 +197,7 @@ const DrivingGrowthSection = () => {
             </div>
           </div>
         </div>
+
         {/* Mobile Text Section */}
         <p className="font-light block lg:hidden pt-12">
           SI Partnerships (SI) represents strategic alliances that help
