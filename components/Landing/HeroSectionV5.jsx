@@ -27,12 +27,12 @@ const HeroSectionV5 = () => {
       <div className="h-[calc(100%-80px)] w-full relative text-white rounded-[5px] rounded-bl-[50px] rounded-br-none ">
         <div className="h-full w-full flex flex-col md:flex-row">
           <div className="w-full h-[60%] md:h-full md:w-[40%] pl-[var(--container-small-padding)] flex flex-col justify-end md:justify-center ">
-            <h1 className="text-white text-30 md:text-[60px] font-noto-sans italic tracking-widest leading-[1.2] mt-5">
+            <h1 className="text-white text-32 md:text-[70px] font-noto-sans italic tracking-wider leading-[1.2] mt-5">
               We Are <br /> Digital <br className="hidden md:block" />{' '}
               Mavericks.
             </h1>
             <p className="mt-8 text-16 md:text-20 font-reddit-sans md:mb-20 mb-8 font-normal">
-              Engineering Quantum-Driven Digital Synapses at the intersection of
+              Engineering Quantum-Driven Digital Synapses at <br /> the intersection of
               Cybersecurity, Cloud & AI.
             </p>
             <button
@@ -47,7 +47,7 @@ const HeroSectionV5 = () => {
           </div>
         </div>
 
-      <div className="absolute left-1/2 hidden md:flex -translate-x-1/2 -bottom-10 w-[90%] md:w-2/3  items-center bg-[#D4D4D41A] backdrop-blur-2xl rounded-[40px] px-1 py-1 shadow-lg z-50">
+      <div className="absolute left-1/2 hidden md:flex -translate-x-1/2 -bottom-[20px] w-[90%] md:w-2/3  items-center bg-[#D4D4D41A] backdrop-blur-2xl rounded-[40px] px-2 py-2 shadow-lg z-50">
         <button
           onClick={prevSlide}
           className="size-11 bg-white rounded-full text-black text-2xl flex items-center justify-center hover:bg-gray-200 transition"
@@ -104,7 +104,7 @@ const HeroSectionV5 = () => {
         </div>
       </div>
       {/* background */}
-      <div className="hidden md:block h-full md:h-full w-full md:w-1/2 absolute right-0 bg-[url(/images/landing/Mudra.svg)] rounded-tr-4xl rounded-br-[50px] bg-no-repeat bg-contain bg-right-bottom "></div>
+      <div className="hidden md:block h-full w-full md:w-[55%] absolute right-0 bottom-0 bg-[url(/images/landing/Mudra.svg)] rounded-tr-4xl rounded-br-[50px] h-[700px] bg-no-repeat bg-contain bg-right-bottom "></div>
       {/* mobile bg */}
       <div
         className="block md:hidden absolute inset-0 w-full h-full -z-10"

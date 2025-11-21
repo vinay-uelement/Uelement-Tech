@@ -45,7 +45,7 @@ const EnterpriseSolutions = () => {
         {solutions.map((solution) => (
           <div
             key={solution.id}
-            className="p-6 bg-[#F6F6F6] rounded-[10px] h-[540px] 2xl:h-[590px] flex flex-col"
+            className="p-6 bg-[#F6F6F6] rounded-[10px] h-[540px] 2xl:h-[590px] flex flex-col transition-all duration-300 shadow hover:shadow-[0px_8px_20px_0px_rgba(0,0,0,0.5)]"
           >
             <div className="h-[220px] 2xl:h-[280px] relative">
               <img
@@ -67,13 +67,13 @@ const EnterpriseSolutions = () => {
               <p className="font-light text-[#5F6D7E] mt-3 flex-1 ">
                 {solution.description}
               </p>
-              <Link
+              {/* <Link
                 href="/"
                 className="font-semibold text-primary-blue  mt-3 flex items-center gap-1 "
               >
                 Learn more
                 {ReactIcons.arrowRight}
-              </Link>
+              </Link> */}
             </div>
           </div>
         ))}
