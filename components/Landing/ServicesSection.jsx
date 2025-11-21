@@ -114,17 +114,29 @@ const ServicesSection = () => {
 
               {/* Learn More Button & Slider Container */}
               <div className="flex flex-col md:flex-row gap-6 items-center justify-between">
-                <div className=''>
+                <div>
                   <button className="bg-[#9B7025] hover:bg-[#9B7025]/90 text-white font-poppins text-14 sm:text-16 px-8 py-3 rounded-[40px] transition-all duration-300 hover:scale-105 w-fit">
                     Learn More
                   </button>
                 </div>
 
-                {/* Slider Card */}
-                <div className=''>
-                  <div className="bg-white rounded-[10px] p-5 sm:p-6 max-w-[500px] ml-auto relative">
+                {/* Slider Card with External Navigation */}
+                <div className="relative flex items-center gap-4 ml-auto">
+                  {/* Left Arrow - Outside card */}
+                  <button
+                    disabled={index === 0}
+                    onClick={prevSlide}
+                    className="size-9 sm:size-10 bg-white rounded-full text-primary-blue flex items-center justify-center hover:bg-white/90 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300 flex-shrink-0"
+                  >
+                    <span className="text-16 sm:text-18">
+                      {ReactIcons.leftChev}
+                    </span>
+                  </button>
+
+                  {/* Slider Card */}
+                  <div className="bg-white rounded-[10px] p-5 sm:p-6 max-w-[500px]">
                     {/* Slider Content */}
-                    <div className="relative overflow-hidden mb-4">
+                    <div className="relative overflow-hidden">
                       <div
                         className="flex transition-transform duration-500 ease-in-out"
                         style={{ transform: `translateX(-${index * 100}%)` }}
@@ -139,29 +151,18 @@ const ServicesSection = () => {
                         ))}
                       </div>
                     </div>
-
-                    {/* Navigation Arrows */}
-                    <div className="flex justify-between items-center gap-4">
-                      <button
-                        disabled={index === 0}
-                        onClick={prevSlide}
-                        className="size-8 sm:size-9 bg-primary-blue rounded-full text-white flex items-center justify-center hover:bg-primary-blue/90 disabled:bg-primary-blue/50 disabled:cursor-not-allowed transition-all duration-300"
-                      >
-                        <span className="text-14 sm:text-16">
-                          {ReactIcons.leftChev}
-                        </span>
-                      </button>
-                      <button
-                        disabled={index === slides.length - 1}
-                        onClick={nextSlide}
-                        className="size-8 sm:size-9 bg-primary-blue rounded-full text-white flex items-center justify-center hover:bg-primary-blue/90 disabled:bg-primary-blue/50 disabled:cursor-not-allowed transition-all duration-300"
-                      >
-                        <span className="text-14 sm:text-16">
-                          {ReactIcons.rightChev}
-                        </span>
-                      </button>
-                    </div>
                   </div>
+
+                  {/* Right Arrow - Outside card */}
+                  <button
+                    disabled={index === slides.length - 1}
+                    onClick={nextSlide}
+                    className="size-9 sm:size-10 bg-white rounded-full text-primary-blue flex items-center justify-center hover:bg-white/90 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300 flex-shrink-0"
+                  >
+                    <span className="text-16 sm:text-18">
+                      {ReactIcons.rightChev}
+                    </span>
+                  </button>
                 </div>
               </div>
             </div>
