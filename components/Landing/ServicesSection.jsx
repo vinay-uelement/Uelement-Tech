@@ -1,10 +1,6 @@
 'use client';
 import { useState } from 'react';
 import { ReactIcons } from '@/utils/ReactIcons';
-import dynamic from 'next/dynamic';
-const Select = dynamic(() => import('react-select'), {
-  ssr: false,
-});
 
 const ServicesSection = () => {
   const tabs = [
@@ -16,12 +12,12 @@ const ServicesSection = () => {
     {
       id: 2,
       title: 'AI & ML',
-      desc: 'At U-Element, we deliver cutting-edge Cybersecurity, AI Integration, Enterprise Cloud, Custom Product Development and Quantum Computing Solutions tailored to our clients’ needs. By leveraging advanced technologies, strategic partnerships and a commitment to excellence, we enable businesses to solve complex challenges, achieve sustainable growth and thrive in a secure digital future.',
+      desc: 'At U-Element, we deliver cutting-edge Cybersecurity, AI Integration, Enterprise Cloud, Custom Product Development and Quantum Computing Solutions tailored to our clients needs. By leveraging advanced technologies, strategic partnerships and a commitment to excellence, we enable businesses to solve complex challenges, achieve sustainable growth and thrive in a secure digital future.',
     },
     {
       id: 3,
       title: 'Cyber Security',
-      desc: 'At U-Element, we deliver cutting-edge Cybersecurity, AI Integration, Enterprise Cloud, Custom Product Development and Quantum Computing Solutions tailored to our clients’ needs. By leveraging advanced technologies, strategic partnerships and a commitment to excellence, we enable businesses to solve complex challenges, achieve sustainable growth and thrive in a secure digital future.',
+      desc: 'At U-Element, we deliver cutting-edge Cybersecurity, AI Integration, Enterprise Cloud, Custom Product Development and Quantum Computing Solutions tailored to our clients needs. By leveraging advanced technologies, strategic partnerships and a commitment to excellence, we enable businesses to solve complex challenges, achieve sustainable growth and thrive in a secure digital future.',
     },
   ];
 
@@ -38,153 +34,136 @@ const ServicesSection = () => {
   const prevSlide = () =>
     setIndex((prev) => (prev - 1 + slides.length) % slides.length);
 
-  // React Select options
-  const options = tabs.map((tab) => ({
-    value: tab.id,
-    label: tab.title,
-  }));
-
-  // Custom styles for react-select
-  const customStyles = {
-    control: (provided) => ({
-      ...provided,
-      backgroundColor: '#ffffff',
-      border: 'none',
-      padding: '0.25rem 0.5rem',
-      fontWeight: 'bold',
-      borderRadius: '10px 0 0 0',
-      ouline: 'none',
-      boxShadow: 'none',
-      '&:hover': {
-        border: 'none', // no border on hover
-      },
-    }),
-    singleValue: (provided) => ({
-      ...provided,
-      color: '#000',
-      fontWeight: 'bold',
-    }),
-    option: (provided, state) => ({
-      ...provided,
-      backgroundColor: state.isSelected ? '#0c142d' : '#fff',
-      color: state.isSelected ? '#fff' : '#000',
-    }),
-    dropdownIndicator: (provided) => ({
-      ...provided,
-      color: '#000',
-    }),
-    indicatorSeparator: () => ({
-      display: 'none', // hides the line
-    }),
-    menu: (provided) => ({
-      ...provided,
-      borderRadius: '10px',
-      overflow: 'hidden',
-      marginLeft: '16px',
-    }),
-  };
-
   return (
-    <section className='mb-[75px]'>
-      {/* Header */}
-      <div className="bg-honey-gold-300 rounded-[10px] container-padding py-6">
-        <p className="slash">/Services</p>
-        <h2 className="title text-primary-blue">Our Enterprise Solutions</h2>
-        <p className="text-18 max-w-[80%] font-reddit-sans">
-          Comprehensive services designed to protect, optimize, and transform{' '}
-          <br />
-          your business operations.
-        </p>
-      </div>
+    <section className="bg-secondary-muted py-10 sm:py-12 lg:py-16 container-padding rounded-t-[10px]">
+      <div className="max-w-[1400px] mx-auto">
+        {/* Header */}
+        <div className="mb-8 sm:mb-10 lg:mb-12">
+          <p className="text-12 sm:text-14 text-gray-600 mb-3">/Services</p>
+          <h2 className="font-montserrat font-bold text-28 sm:text-36 lg:text-40 xl:text-45 text-primary-blue mb-3 sm:mb-4">
+            Our Enterprise Solutions
+          </h2>
+          <p className="font-reddit-sans text-14 sm:text-16 lg:text-18 text-gray-700 max-w-[600px]">
+            Comprehensive services designed to protect, optimize, and transform
+            your business operations.
+          </p>
+        </div>
 
-      {/* Tabs & Content */}
-      <div className="bg-honey-gold-300  container-padding py-[var(--section-block-padding)] w-full overflow-hidden">
-        {/* Desktop Tabs */}
-        <ul id="tabs" className="hidden md:flex w-full">
-          {tabs.map((tab, i) => (
-            <li
-              key={tab.id}
-              style={{
-                zIndex:
-                  tab.id === selectedTab.id ? tabs.length + 1 : tabs.length - i,
-              }}
-              onClick={() => setSelectedTab(tab)}
-              className={`${
-                tab.id === selectedTab.id ? 'current' : ''
-              } relative cursor-pointer`}
-            >
+        {/* Tabs & Content */}
+        <div className="relative">
+          {/* Desktop Tabs */}
+          <div className="hidden md:flex gap-0 mb-0">
+            {tabs.map((tab) => (
               <button
+                key={tab.id}
+                onClick={() => setSelectedTab(tab)}
+                className={`relative px-20 py-3 font-montserrat font-medium text-14 lg:text-16 rounded-tl-[10px] transition-all duration-300 ease-in-out overflow-hidden ${
+                  tab.id === selectedTab.id
+                    ? 'bg-primary-blue text-white shadow-[0px_4px_5px_0px_rgba(0,0,0,0.20)]'
+                    : 'bg-[#FCFCFC] text-[#9E9E9E] hover:bg-gray-100 border border-[#E0E0E0]'
+                }`}
                 style={{
-                  boxShadow:
-                    tab.id !== selectedTab.id &&
-                    'inset 0px -5px 5px -6px #00000040',
+                  clipPath:
+                    'polygon(0 0, calc(100% - 30px) 0, 100% 100%, 0 100%)',
+                  paddingRight: '',
                 }}
-                className=" px-4 py-2 font-montserrat"
               >
                 {tab.title}
               </button>
-            </li>
-          ))}
-        </ul>
+            ))}
+          </div>
 
-        {/* Mobile Dropdown */}
-        <div className="md:hidden relative z-10 w-full max-w-[200px] pe-5 font-montserrat">
-          <Select
-            value={{ value: selectedTab.id, label: selectedTab.title }}
-            onChange={(option) =>
-              setSelectedTab(tabs.find((tab) => tab.id === option.value))
-            }
-            options={options}
-            styles={customStyles}
-            isSearchable={false}
-          />
-          {/* Slanted end like ::after */}
-          <span className="absolute -bottom-1 right-0 h-[calc(100%+4px)] w-9 bg-white skew-x-[30deg] rounded-tr-md pointer-events-none z-50"></span>
-          <div className="size-7 absolute bg-primary-blue -right-8 -bottom-0 z-40 rounded-full "></div>
-          <div className="h-3 w-9 absolute bg-white -right-4 bottom-0  z-30  "></div>
-        </div>
+          {/* Mobile Dropdown */}
+          <div className="md:hidden mb-0">
+            <div className="relative inline-block">
+              <select
+                value={selectedTab.id}
+                onChange={(e) =>
+                  setSelectedTab(
+                    tabs.find((tab) => tab.id === parseInt(e.target.value))
+                  )
+                }
+                className="bg-primary-blue text-white font-montserrat font-medium text-14 px-6 py-3 pr-20 appearance-none cursor-pointer outline-none rounded-tl-[10px]"
+                style={{
+                  clipPath:
+                    'polygon(0 0, calc(100% - 30px) 0, 100% 100%, 0 100%)',
+                }}
+              >
+                {tabs.map((tab) => (
+                  <option key={tab.id} value={tab.id}>
+                    {tab.title}
+                  </option>
+                ))}
+              </select>
+              <span className="absolute right-8 top-1/2 -translate-y-1/2 pointer-events-none text-white ">
+                ▼
+              </span>
+            </div>
+          </div>
 
-        {/* Tab Content */}
-        <div className="bg-primary-blue text-white  p-5 md:p-10 rounded-[10px] rounded-tl-none">
-          <h6 className=" text-30 font-montserrat">{selectedTab.title}</h6>
-          <p className=" text-18 tracking-wider mt-6 font-reddit-sans font-light">
-            {selectedTab.desc}
-          </p>
+          {/* Tab Content */}
+          <div className="bg-primary-blue text-white p-6 sm:p-8 lg:p-10 xl:p-12 rounded-[10px] rounded-tl-none transition-all duration-300 ease-in-out">
+            {/* Content with fade transition */}
+            <div className="animate-fade-in">
+              <h3 className="font-montserrat font-semibold text-24 sm:text-28 lg:text-32 mb-4 sm:mb-6">
+                {selectedTab.title}
+              </h3>
+              <p className="font-reddit-sans font-light text-14 sm:text-16 lg:text-18 leading-relaxed mb-8 sm:mb-10 lg:mb-12 max-w-[900px]">
+                {selectedTab.desc}
+              </p>
 
-          {/* Slides */}
-          <div className="flex flex-col md:flex-row gap-y-5 md:items-center justify-between mt-3">
-            <button className="btn-primary !bg-[#9B7025]">Learn More</button>
-            <div className="bg-white shadow-down p-5 rounded-[10px] text-12 font-bold text-primary-blue max-w-[400px]">
-              <div className="relative w-full overflow-hidden">
-                <div
-                  className="flex transition-transform duration-500 ease-in-out w-full"
-                  style={{ transform: `translateX(-${index * 100}%)` }}
-                >
-                  {slides.map((text, i) => (
-                    <div
-                      key={i}
-                      className="min-w-full flex items-center text-12 font-reddit-sans"
-                    >
-                      {text}
-                    </div>
-                  ))}
+              {/* Learn More Button & Slider Container */}
+              <div className="flex flex-col md:flex-row gap-6 items-center justify-between">
+                <div>
+                  <button className="bg-[#9B7025] hover:bg-[#9B7025]/90 text-white font-poppins text-14 sm:text-16 px-8 py-3 rounded-[40px] transition-all duration-300 hover:scale-105 w-fit">
+                    Learn More
+                  </button>
                 </div>
-              </div>
-              <div className="flex justify-between  gap-2 mt-3 ">
-                <button
-                  disabled={index === 0}
-                  onClick={prevSlide}
-                  className="size-7 !p-0 bg-primary-blue rounded-full text-white  font-bold flex items-center justify-center hover:bg-primary-blue/90 disabled:bg-primary-blue/50 transition"
-                >
-                  {ReactIcons.leftChev}
-                </button>
-                <button
-                  disabled={index === slides.length - 1}
-                  onClick={nextSlide}
-                  className="size-7 !p-0 bg-primary-blue rounded-full text-white  font-bold flex items-center justify-center hover:bg-primary-blue/90 disabled:bg-primary-blue/50 transition"
-                >
-                  {ReactIcons.rightChev}
-                </button>
+
+                {/* Slider Card with External Navigation */}
+                <div className="relative flex items-center gap-4 ml-auto">
+                  {/* Left Arrow - Outside card */}
+                  <button
+                    disabled={index === 0}
+                    onClick={prevSlide}
+                    className="size-9 sm:size-10 bg-white rounded-full text-primary-blue flex items-center justify-center hover:bg-white/90 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300 flex-shrink-0"
+                  >
+                    <span className="text-16 sm:text-18">
+                      {ReactIcons.leftChev}
+                    </span>
+                  </button>
+
+                  {/* Slider Card */}
+                  <div className="bg-white rounded-[10px] p-5 sm:p-6 max-w-[500px]">
+                    {/* Slider Content */}
+                    <div className="relative overflow-hidden">
+                      <div
+                        className="flex transition-transform duration-500 ease-in-out"
+                        style={{ transform: `translateX(-${index * 100}%)` }}
+                      >
+                        {slides.map((text, i) => (
+                          <div
+                            key={i}
+                            className="min-w-full text-primary-blue font-reddit-sans text-12 sm:text-13 font-medium"
+                          >
+                            {text}
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Right Arrow - Outside card */}
+                  <button
+                    disabled={index === slides.length - 1}
+                    onClick={nextSlide}
+                    className="size-9 sm:size-10 bg-white rounded-full text-primary-blue flex items-center justify-center hover:bg-white/90 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300 flex-shrink-0"
+                  >
+                    <span className="text-16 sm:text-18">
+                      {ReactIcons.rightChev}
+                    </span>
+                  </button>
+                </div>
               </div>
             </div>
           </div>
