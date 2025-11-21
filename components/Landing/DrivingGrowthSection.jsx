@@ -49,10 +49,10 @@ const DrivingGrowthSection = () => {
 
   // React Slick settings
   const settings = {
-    dots: false,
+    dots: true,
     infinite: true,
     speed: 700,
-    slidesToShow: 2,
+    slidesToShow: 3,
     slidesToScroll: 1,
     arrows: false,
     fade: false,
@@ -76,7 +76,7 @@ const DrivingGrowthSection = () => {
 
   return (
     <section className="container-small">
-      <div className="flex lg:items-center flex-col lg:flex-row gap-7 lg:pb-8 xl:pb-10 2xl:pb-12">
+      <div className="flex lg:items-center flex-col lg:flex-row gap-18 lg:pb-8 xl:pb-10 2xl:pb-12">
         {/* Left Side Numbers */}
         <div className="flex-1">
           <span className="slash block lg:hidden">
@@ -118,11 +118,34 @@ const DrivingGrowthSection = () => {
           </button>
         </div>
 
-        {/* Right Side Slider (React Slick) */}
-        <div className="relative lg:w-[450px] xl:w-[550px] 2xl:w-[700px] flex gap-2 driving-slider">
-          <Slider ref={sliderRef} {...settings} className="w-full">
-            {slides.map((item) => (
-              <div key={item.id}>
+        <div className="relative overflow-visible lg:w-[450px] xl:w-[550px] 2xl:w-[700px] driving-slider">
+
+          <div className="absolute inset-y-0 -left-16 flex items-center z-20">
+            <div
+              onClick={prevSlide}
+              className="size-[44px] text-20 lg:text-24 xl:size-[60px] rounded-full bg-[#DEDEDE] shadow-down grid place-content-center cursor-pointer transition text-white lg:text-primary-blue"
+            >
+              <span>{ReactIcons.leftChev}</span>
+            </div>
+          </div>
+
+          {/* Right Side Slider (React Slick) */}
+          <Slider ref={sliderRef} {...settings} >
+            {slides.map((item, index) => {
+              const total = slides.length;
+
+              const leftIndex = active % total;
+              const centerIndex = (active + 1) % total;
+              const rightIndex = (active + 2) % total;
+
+              let posClass ="";
+              if(index === leftIndex) posClass = "dg-left-big";
+              else if( index === centerIndex) posClass = "dg-center-medium";
+              else if( index === rightIndex) posClass = "dg-right-small";
+              else posClass = "dg-hidden-small";
+
+              return (
+              <div key={item.id} className={`dg-card-wrapper ${posClass}`}>
                 <div
                   className="relative flex-1 h-[300px] xl:h-[370px] 2xl:h-[70vh] max-h-[450px] rounded-[5px] sm:rounded-[10px] lg:rounded-[20px] overflow-hidden"
                   style={{
@@ -144,26 +167,18 @@ const DrivingGrowthSection = () => {
                   </div>
                 </div>
               </div>
-            ))}
+            )})}
           </Slider>
 
-          {/* Navigation Arrows */}
-          <div className="flex items-center gap-3 absolute -bottom-14 lg:-bottom-12 2xl:-bottom-16 right-0 w-full lg:w-[230px] xl:w-[270px] 2xl:w-[350px] justify-between lg:justify-[unset] lg:right-0 z-20">
-            <div
-              onClick={prevSlide}
-              className="size-[44px] text-20 lg:text-24 xl:size-[60px] rounded-full bg-primary-blue lg:bg-white shadow-down grid place-content-center cursor-pointer transition text-white lg:text-primary-blue"
-            >
-              <span>{ReactIcons.leftChev}</span>
-            </div>
+          <div className="absolute inset-y-0 -right-16 flex items-center z-20">
             <div
               onClick={nextSlide}
-              className="size-[44px] text-20 lg:text-24 xl:size-[60px] rounded-full bg-primary-blue lg:bg-white shadow-down grid place-content-center cursor-pointer transition text-white lg:text-primary-blue"
+              className="size-[44px] text-20 lg:text-24 xl:size-[60px] rounded-full bg-[#DEDEDE] shadow-down grid place-content-center cursor-pointer transition text-white lg:text-primary-blue"
             >
               <span>{ReactIcons.rightChev}</span>
             </div>
           </div>
         </div>
-
         {/* Mobile Text Section */}
         <p className="font-light block lg:hidden pt-12">
           SI Partnerships (SI) represents strategic alliances that help
