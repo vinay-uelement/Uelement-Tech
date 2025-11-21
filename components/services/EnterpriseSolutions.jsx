@@ -1,5 +1,5 @@
-import { ReactIcons } from '@/utils/ReactIcons';
-import Link from 'next/link';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 
 const solutions = [
   {
@@ -67,13 +67,6 @@ const EnterpriseSolutions = () => {
               <p className="font-light text-[#5F6D7E] mt-3 flex-1 ">
                 {solution.description}
               </p>
-              {/* <Link
-                href="/"
-                className="font-semibold text-primary-blue  mt-3 flex items-center gap-1 "
-              >
-                Learn more
-                {ReactIcons.arrowRight}
-              </Link> */}
             </div>
           </div>
         ))}

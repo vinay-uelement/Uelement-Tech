@@ -12,17 +12,17 @@ const ServicesList = () => {
               className="md:h-[400px] w-auto object-cover "
             />
           </div>
-          <div className="flex-1 flex flex-col items-end">
+          <div className="flex-1 flex flex-col items-start">
             <div className="flex items-center">
-              <div className="size-[60px] bg-[#F3E7D3] flex items-center justify-center font-bold text-20 rounded-full">
-                02
+              <div className="size-[60px] bg-[#D7D7D7] flex items-center justify-center font-bold text-20 rounded-full">
+                01
               </div>
-              <div className=" w-[60px] md:w-[120px] h-[4px] bg-white"></div>
-              <div className="text-24 md:text-30 text-black font-semibold ml-1">
-                Cloud Solutions
+              <div className=" w-[60px] md:w-[120px] h-[4px] bg-[#D2D2D2]"></div>
+              <div className="text-24 md:text-30 text-black font-semibold ml-3">
+                Cybersecurity
               </div>
             </div>
-            <div className="text-black my-12 text-end">
+            <div className="text-black my-12 text-start">
               <h6 className="font-semibold text-20">
                 Architecting and Optimizing perfect Cloud Solutions.
               </h6>
@@ -35,7 +35,7 @@ const ServicesList = () => {
                 levels of data security.
               </p>
             </div>
-            <button className="btn-primary !bg-white !text-black !rounded-[5px] ml-auto block">
+            <button className="btn-primary !bg-white !text-black !rounded-[5px] mr-auto block">
               Contact us
             </button>
           </div>
@@ -47,11 +47,11 @@ const ServicesList = () => {
         <div className="flex flex-col bg-[#E0E0E0] md:flex-row gap-20 p-6 md:p-12">
           <div className="flex-1 flex flex-col ">
             <div className="flex items-center">
-              <div className="size-[60px] bg-primary-blue text-black flex items-center justify-center font-bold text-20 rounded-full">
-                01
+              <div className="size-[60px] bg-[#9C9C9C] text-black flex items-center justify-center font-bold text-20 rounded-full">
+                02
               </div>
-              <div className="w-[60px] md:w-[120px] h-[4px] bg-white"></div>
-              <div className="text-24  md:text-30 text-black font-semibold ml-1">
+              <div className="w-[60px] md:w-[120px] h-[4px] bg-[#9c9c9c]"></div>
+              <div className="text-24  md:text-30 text-black font-semibold ml-3">
                 Cloud Solutions
               </div>
             </div>
@@ -68,7 +68,7 @@ const ServicesList = () => {
                 levels of data security.
               </p>
             </div>
-            <button className="btn-primary !bg-white !text-black !rounded-[5px] ml-auto block">
+            <button className="btn-primary !bg-white !text-black !rounded-[5px] mr-auto block">
               Get a Demo
             </button>
           </div>
@@ -93,17 +93,17 @@ const ServicesList = () => {
               className="md:h-[400px] w-auto object-cover"
             />
           </div>
-          <div className="flex-1 flex flex-col items-end">
-            <div className="flex flex-row-reverse items-center">
-              <div className="size-[60px] bg-[#F3E7D3] flex items-center justify-center font-bold text-20 rounded-full">
+          <div className="flex-1 flex flex-col items-start">
+            <div className="flex flex-row items-center">
+              <div className="size-[60px] bg-[#D7D7D7] flex items-center justify-center font-bold text-20 rounded-full">
                 03
               </div>
-              <div className="w-[60px] hidden md:block md:w-[120px] h-[4px] bg-white"></div>
-              <div className="text-24 md:text-30 text-black font-semibold mr-1">
+              <div className="w-[60px] hidden md:block md:w-[120px] h-[4px] bg-[#D2D2D2]"></div>
+              <div className="text-24 md:text-30 text-black font-semibold ml-3">
                 Ai & Machine Learning
               </div>
             </div>
-            <div className="text-black my-12 text-end">
+            <div className="text-black my-12">
               <h6 className="font-semibold text-20">
                 Complete Enterprise Security.
               </h6>

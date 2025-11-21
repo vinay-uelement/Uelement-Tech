@@ -200,9 +200,9 @@ const PartnerSolution = () => {
         </div>
 
         {/* Tab Content */}
-        <div className="bg-primary-blue rounded-[10px] rounded-tl-none">
+        <div className="bg-primary-blue rounded-[10px] rounded-tl-none py-[var(--section-block-padding)]">
           <div className="flex justify-center">
-            <h6 className="title border-b-3 border-b-[#D3AF37] text-white w-fit px-10 pb-2 mt-10">
+            <h6 className="title border-b-3 border-b-[#D3AF37] text-white w-fit px-10 pb-2">
               {selectedTab.title}
             </h6>
           </div>

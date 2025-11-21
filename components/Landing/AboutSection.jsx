@@ -56,18 +56,18 @@ export default function AboutSection() {
           {/* LEFT WHITE BOX */}
           <div className="md:w-1/2 bg-[#FFF8F0] r15 py-12 px-6 md:px-12 relative">
             {/* vertical dotted line */}
-            <div className="hidden md:block absolute top-12 bottom-12 left-1/2 border-r-2 border-dotted border-[#C5C5C5]"></div>
+            <div className="hidden md:block absolute top-12 bottom-12 left-1/2 border-r-2 border-dashed border-[#C5C5C5]"></div>
 
             {/* horizontal dotted line */}
-            <div className="hidden md:block absolute left-12 right-12 top-1/2 border-t-2 border-dotted border-[#C5C5C5]"></div>
+            <div className="hidden md:block absolute left-12 right-12 top-1/2 border-t-2 border-dashed border-[#C5C5C5]"></div>
 
-            <div className="grid grid-cols-2 gap-y-20 gap-x-10 place-items-center">
+            <div className="grid grid-cols-2 gap-y-30 gap-x-10 place-items-center">
               {bullet.map((point) => (
                 <div
                   key={point.id}
                   className="text-center flex flex-col items-center"
                 >
-                  <p className="text-[42px] font-bold text-[#A67620] leading-none">
+                  <p className="text-[42px] font-extrabold font-reddit-sans text-[#A67620] leading-none">
                     {point.number}
                   </p>
                   <p className="text-[18px] mt-3 text-[#4A4A4A] font-light max-w-[160px]">
@@ -103,9 +103,7 @@ export default function AboutSection() {
           <div className="flex flex-col md:flex-row gap-16">
             <div className="flex-1">
               <p className="slash">/About us</p>
-              <h2 className="title">
-                How We Transform Your Enterprise
-              </h2>
+              <h2 className="title">How We Transform Your Enterprise</h2>
               <p className="mt-4 text-black w-full md:w-[80%]">
                 Our proven 3-step approach delivers measurable results for
                 enterprise clients across industries, combining deep domain
@@ -120,35 +118,33 @@ export default function AboutSection() {
                 Learn More
               </button>
             </div>
-            <div className="flex-1 grid grid-cols-1 md:grid-cols-2 relative">
-              <div className="hidden md:block absolute h-[80%] w-[1px] border-r-2 border-[#c5c5c5] border-dotted top-1/2 -translate-y-1/2  left-1/2 -translate-x-1/2"></div>
-              {transformBullet.map((data, i) => (
-                <div
-                  key={data.id}
-                  className={`flex flex-col relative ${
-                    i % 2 === 0 ? 'items-end pe-8 ' : 'items-start ps-8'
-                  } ${i === 2 || i === 3 ? ' pt-6' : ' pb-6'} md:items-start`}
-                >
-                  <div className="size-[50px] flex items-center justify-center bg-primary-blue rounded-full ">
-                    <img src={data.icon} alt={data.title} />
+            <div className="relative  flex-1">
+              {/* Vertical center line */}
+              <div className="absolute left-1/2 top-0 bottom-0 border-l-2 border-dotted border-gray-300 transform -translate-x-1/2"></div>
+
+              {/* Horizontal center line */}
+              <div className="absolute top-1/2 left-0 right-0 border-t-2 border-dotted border-gray-300 transform -translate-y-1/2"></div>
+
+              {/* 2x2 Grid */}
+              <div className="grid grid-cols-2 gap-20 max-w-5xl mx-auto relative z-10">
+                {transformBullet.map((data) => (
+                  <div key={data.id} className="flex flex-col items-start">
+                    <div className="size-[50px] flex items-center justify-center bg-primary-blue rounded-full ">
+                      <img
+                        src={data.icon}
+                        alt={data.title}
+                        className="w-auto"
+                      />
+                    </div>
+                    <h3 className="text-16 mt-4 font-reddit-sans tracking-wider font-bold">
+                      {data.title}
+                    </h3>
+                    <p className="mt-2 text-12 text-black font-medium md:w-full">
+                      {data.desc}
+                    </p>
                   </div>
-                  <h6 className="text-16 mt-4 font-reddit-sans tracking-wider">{data.title}</h6>
-                  <p
-                    className={`mt-2 text-12 text-black font-medium md:w-full ${
-                      i % 2 === 0 ? 'text-right' : 'text-left'
-                    } md:text-left`}
-                  >
-                    {data.desc}
-                  </p>
-                  {(i === 2 || i === 3) && (
-                    <div
-                      className={`hidden md:block absolute w-[80%] h-[1px] border-t-2 border-[#c5c5c5] border-dotted -top-[2px]   ${
-                        i === 2 ? 'right-[6px]' : 'left-[6px]'
-                      }`}
-                    ></div>
-                  )}
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
 
             <button className="text-16 xl:text-18 bg-black text-white rounded-full  py-2 px-9 mt-8  md:hidden">
