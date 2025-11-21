@@ -102,7 +102,7 @@ const ServicesSection = () => {
           </div>
 
           {/* Tab Content */}
-          <div className="bg-primary-blue text-white p-2 sm:p-4 lg:p-6 xl:p-8 rounded-[10px] rounded-tl-none transition-all duration-300 ease-in-out shadow-[3.71px_0px_3.71px_0px_rgba(0,0,0,0.25)]">
+          <div className="bg-primary-blue text-white p-6 xl:p-8 rounded-[10px] rounded-tl-none transition-all duration-300 ease-in-out shadow-[3.71px_0px_3.71px_0px_rgba(0,0,0,0.25)]">
             {/* Content with fade transition */}
             <div className="animate-fade-in">
               <h3 className="font-montserrat font-semibold text-24 sm:text-28 lg:text-32 mb-4 sm:mb-6">
