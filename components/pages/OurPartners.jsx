@@ -8,7 +8,6 @@ const OurPartners = () => {
       <PartnersHero />
       <div className="container-outer">
         <PartnerSolution />
-        <ContactUs />
       </div>
     </div>
   );
