@@ -62,7 +62,7 @@ const ContactUs = () => {
       {/* Split Background */}
       <div className="absolute inset-0 -z-10">
         {/* Top half - Light Gray */}
-        <div className="h-[60%] bg-[#F3F3F3]"></div>
+        <div className="h-[60%] bg-[#F3F3F3] mx-2"></div>
         {/* Bottom half - Navy Blue */}
         <div className="h-[40%] bg-primary-blue"></div>
       </div>

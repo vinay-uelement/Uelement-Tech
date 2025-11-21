@@ -108,6 +108,7 @@
     overflow-x: hidden;
     background: #ffffff;
     font-family: 'Reddit Sans';
+    color: #232223;
   }
 
   h1,
@@ -205,11 +206,11 @@
   --color-muted-blue-200: #a4b5c4;
   --color-muted-blue-300: #4b6382;
   --color-secondary: #9b7025;
-  --color-secondary-200: #FFFAF2;
+  --color-secondary-200: #fffaf2;
   --color-gray-8080: #808080;
   --color-about-white: #cdd5db;
   --color-secondary-muted: #fff4e4;
-  --color-honey-gold-300: #FFF4E4;
+  --color-honey-gold-300: #fff4e4;
 
   /* FONT SIZE */
   --text-10: 10px;
@@ -522,4 +523,19 @@
 
 .r15 {
   border-radius: 15px;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.4s ease-in-out;
 }

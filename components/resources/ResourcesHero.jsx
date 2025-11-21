@@ -2,7 +2,7 @@ import React from "react";
 
 const ResourcesHero = () => {
   return (
-    <div className="container-padding pt-[96px]">
+    <div className="container-padding pt-[75px]">
       <div className="py-[var(--section-block-padding)] mt-[var(--section-block-padding)] rounded-[5px] flex flex-col md:flex-row gap-y-6 bg-white">
         <div className="flex-1 flex flex-col justify-center pl-[var(--container-small-padding)]">
           <h1 className="title text-primary-blue">

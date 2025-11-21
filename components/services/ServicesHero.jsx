@@ -16,11 +16,11 @@ const ServicesHero = () => {
   const prevSlide = () => setIndex((prev) => (prev - 1 + slides.length) % slides.length);
 
   return (
-    <div className="mt-[var(--outer-padding)] rounded-[8px] h-screen relative flex items-center bg-[#0C142D]">
+    <div className="mt-[var(--outer-padding)] rounded-[8px] md:h-screen h-[calc(100vh+250px)] relative flex items-center bg-[#0C142D]">
       <div className="container-padding w-full flex flex-col lg:flex-row gap-10 justify-between">
         {/* Left: Text Content */}
         <div className="text-white flex-1">
-          <div className="font-noto-sans font-normal text-[45px]">/Our Services</div>
+          <div className="font-noto-sans font-normal text-32 md:text-[45px]">/Our Services</div>
           <div className='mb-12 ml-4 font-light text-[#9e9e9e] font-reddit-sans'>Comprehensive Services Designed</div>
           <div className="title tracking-wider !font-medium md:w-[90%] w-full">
             The standard lorem ipsum passage has been a printer's
@@ -46,7 +46,7 @@ const ServicesHero = () => {
       </div>
 
       {/* Carousel/Slider Bar - bottom absolute */}
-      <div className="absolute left-1/2 -translate-x-1/2 bottom-12 w-[90%] md:w-2/3 flex items-center bg-[#D4D4D41A] backdrop-blur-2xl rounded-[40px] px-1 py-1 shadow-lg z-50">
+      <div className="absolute left-1/2 -translate-x-1/2 md:bottom-12 bottom-4 w-[90%] md:w-2/3 flex items-center bg-[#D4D4D41A] backdrop-blur-2xl rounded-[40px] px-1 py-1 shadow-lg z-50">
         <button
           onClick={prevSlide}
           className="size-11 bg-white rounded-full text-black text-2xl flex items-center justify-center hover:bg-gray-200 transition"
@@ -55,7 +55,7 @@ const ServicesHero = () => {
           {ReactIcons.leftChev}
         </button>
         <div className="flex-1 flex items-center justify-center min-h-[30px]">
-          <span className="font-noto-sans italic text-base md:text-lg text-white text-center transition-all duration-500">
+          <span className="font-noto-sans italic text-14 md:text-18 text-white text-center transition-all duration-500">
             {slides[index]}
           </span>
         </div>
