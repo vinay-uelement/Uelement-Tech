@@ -4,6 +4,7 @@ import Slider from 'react-slick';
 import { ReactIcons } from '@/utils/ReactIcons';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
+import Dots from '../../components/Dots';
 
 const slides = [
   {
@@ -48,7 +49,7 @@ const DrivingGrowthSection = () => {
   const sliderRef = useRef(null);
 
   const settings = {
-    dots: true,
+    dots: false,
     infinite: true,
     speed: 700,
     slidesToShow: 3,
@@ -113,7 +114,7 @@ const DrivingGrowthSection = () => {
           </button>
         </div>
 
-        <div className="relative overflow-visible w-full md:w-1/2 driving-slider">
+        <div className="relative overflow-visible w-full md:w-1/2 driving-slider md:pl-[16px] xl:pl-[20px]">
           {/* Left Navigation Button */}
           <div className="absolute inset-y-0 -left-4 md:-left-7 lg:-left-16 flex items-center z-20">
             <div
@@ -162,7 +163,7 @@ const DrivingGrowthSection = () => {
                     style={{ zIndex, position: 'relative' }}
                   >
                     <div
-                      className="relative w-[200px] h-[280px] md:w-[320px] md:h-[320px] xl:w-[370px] xl:h-[370px] 2xl:w-[450px] 2xl:h-[450px] rounded-[15px] overflow-hidden"
+                      className="relative w-[200px] h-[280px] md:w-[320px] md:h-[320px] xl:w-[360px] xl:h-[370px] 2xl:w-[360px] 2xl:h-[450px] rounded-[15px] overflow-hidden"
                       style={{
                         backgroundImage: `url(${item.img})`,
                         backgroundSize: 'cover',
@@ -198,6 +199,14 @@ const DrivingGrowthSection = () => {
               <span>{ReactIcons.rightChev}</span>
             </div>
           </div>
+
+          <Dots
+            slides={slides}
+            active={active}
+            onGoTo={(i) => sliderRef.current && sliderRef.current.slickGoTo(i)}
+            className='mt-5'
+          />
+
         </div>
 
         {/* Mobile Text Section */}
