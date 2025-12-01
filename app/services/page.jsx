@@ -1,8 +1,9 @@
 import Services from '@/components/pages/Services'
 import React from 'react'
 
+
 export const metadata = {
-  title: 'Services',
+  title: 'Services | UElement',
   description: 'Explore our wide range of services including web development, consulting, and digital strategy.',
   openGraph: {
     title: 'Services | U-Element',

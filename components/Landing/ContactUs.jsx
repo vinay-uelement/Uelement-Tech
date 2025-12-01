@@ -1,4 +1,4 @@
-'use client'
+'use client';
 import { ReactIcons } from '@/utils/ReactIcons';
 import Checkbox from '../formElements/Checkbox/Checkbox';
 import InputField from '../formElements/InputField/InputField';
@@ -14,7 +14,7 @@ const ContactUs = () => {
       className="container-padding bg-primary-blue py-[var(--section-block-padding)]"
     >
       <div className="title-div text-white text-center mb-10">
-        <p className="text-14 font-light">/Contact Us</p>
+        <p className="slash">/Contact Us</p>
         <h4 className="title mt-3">
           Ready to Transform Your Enterprise Security?
         </h4>
@@ -134,7 +134,7 @@ const ContactUs = () => {
                 ></textarea>
               </div>
               <button
-                className="btn-1 !bg-secondary-100 ml-auto block mt-2 sm:mt-5 !font-reddit-sans"
+                className="btn-1 !bg-secondary ml-auto block mt-2 sm:mt-5 !font-reddit-sans"
                 type="submit"
               >
                 Request a meeting

@@ -40,7 +40,7 @@ export const ReactIcons = {
   facebook: <FaFacebookF />,
   github: <FaGithub />,
   chevDown: <LuChevronDown />,
-  email2: <IoMailOutline />,
+  emailemail2: <IoMailOutline />,
   arrowOutWard: <MdOutlineArrowOutward />,
   hamburgerMenu: <GiHamburgerMenu />,
   slash: <TbBackslash />,

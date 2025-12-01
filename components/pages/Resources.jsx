@@ -9,7 +9,6 @@ const Resources = () => {
       <ResourcesHero />
       <ResourcesPointSection />
       <KnowledgeHub />
-      <ContactUs />
     </div>
   );
 };

@@ -31,9 +31,9 @@
   /* Montserrat Variable Font */
   @font-face {
     font-family: 'Montserrat';
-    src: url('/fonts/Montserrat/Montserrat-Bold.ttf')
+    src: url('/fonts/Montserrat/Montserrat-VariableFont_wght.ttf')
       format('truetype');
-    font-weight: 100 900; /* supports all weights from 100 to 900 */
+    font-weight: 100 900;
     font-style: normal;
     font-display: swap;
   }
@@ -41,9 +41,17 @@
   /* Fallback Regular (in case variable font fails) */
   @font-face {
     font-family: 'Montserrat';
-    src: url('/fonts/Montserrat/static/Montserrat-Medium.ttf')
-      format('truetype');
+    src: url('/fonts/Montserrat/Montserrat-Medium.ttf') format('truetype');
     font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Noto Sans';
+    src: url('/fonts/Noto_Sans/NotoSans-VariableFont_wdth,wght.ttf')
+      format('truetype');
+    font-weight: 100 900;
     font-style: normal;
     font-display: swap;
   }
@@ -51,33 +59,22 @@
   /* Reddit Sans */
   @font-face {
     font-family: 'Reddit Sans';
-    src: url('/fonts/Reddit_Sans/RedditSans-Regular.ttf')
-      format('truetype');
+    src: url('/fonts/Reddit_Sans/RedditSans-Regular.ttf') format('truetype');
     font-display: swap;
     font-weight: 400;
   }
 
   @font-face {
     font-family: 'Noto Sans';
-    src: url('/fonts/Noto_Sans/NotoSans-Italic-VariableFont_wdth,wght.ttf')
-      format('truetype');
-    font-display: swap;
-    font-weight: 400;
-  }
-
-  @font-face {
-    font-family: 'Noto Sans';
-    src: url('/fonts/Noto_Sans/NotoSans-BoldItalic.ttf')
-      format('truetype');
-      font-style: italic;
+    src: url('/fonts/Noto_Sans/NotoSans-BoldItalic.ttf') format('truetype');
+    font-style: italic;
     font-display: swap;
     font-weight: 600;
   }
 
   @font-face {
     font-family: 'Reddit Sans';
-    src: url('/fonts/Reddit_Sans/RedditSans-Light.ttf')
-      format('truetype');
+    src: url('/fonts/Reddit_Sans/RedditSans-Light.ttf') format('truetype');
     font-display: swap;
     font-weight: 100;
   }
@@ -87,6 +84,7 @@
     --outer-padding: 10px;
     --container-small-padding: 80px;
     --section-block-padding: 75px;
+    --mobile-navbar-gap: 100px;
   }
 
   @media (width <= 48rem /* 768px */) {
@@ -110,7 +108,8 @@
   body {
     overflow-x: hidden;
     background: #ffffff;
-    font-family: 'Roboto';
+    font-family: 'Reddit Sans';
+    color: #232223;
   }
 
   h1,
@@ -172,15 +171,14 @@
   .container-padding {
     @apply px-5 sm:px-10 md:px-20;
   }
-
-  .page-title {
-    @apply font-roboto font-bold text-[50px] md:text-[60px] lg:text-[75px] xl:text-[100px] 2xl:text-[140px] 3xl:text-[180px];
+  .slash {
+    @apply text-14 md:text-16 3xl:text-18 font-reddit-sans mb-6 md:mb-8 3xl:mb-10;
   }
   .title {
-    @apply font-dm-serif text-2xl md:text-3xl lg:text-4xl;
+    @apply font-montserrat font-bold text-2xl md:text-3xl lg:text-4xl mb-4 md:mb-6 3xl:mb-8;
   }
-  .title-small {
-    @apply font-dm-serif text-2xl;
+  .sub-title {
+    @apply font-montserrat text-20 md:text-24 3xl:text-28 mb-10 md:mb-14;
   }
   .btn-1 {
     @apply text-16 xl:text-18 bg-black hover:scale-105 text-white rounded-[40px] py-2 px-6 2xl:px-7 2xl:py-2;
@@ -208,12 +206,12 @@
   --color-muted-blue-100: #cdd5db;
   --color-muted-blue-200: #a4b5c4;
   --color-muted-blue-300: #4b6382;
-  --color-secondary-100: #b6842c;
-  --color-secondary-200: #f3e7d3;
+  --color-secondary: #9b7025;
+  --color-secondary-200: #fffaf2;
   --color-gray-8080: #808080;
-  --color-honey-gold-100: #f3e7d3;
   --color-about-white: #cdd5db;
-  --color-honey-gold-200: #9b7025;
+  --color-secondary-muted: #fff4e4;
+  --color-honey-gold-300: #fff4e4;
 
   /* FONT SIZE */
   --text-10: 10px;
@@ -319,7 +317,7 @@
   opacity: 1;
 }
 .testimonial-slick .slick-dots li.slick-active button:before {
-  color: var(--color-secondary-100);
+  color: var(--color-secondary);
 }
 .testimonial-slick .slick-prev,
 .testimonial-slick .slick-next {
@@ -382,7 +380,7 @@
 } */
 
 #tabs button {
-  background: #f3e7d3;
+  background: #fff;
   padding: 0.8em 2.5em;
   width: 170px;
   display: block;
@@ -403,7 +401,7 @@
   right: -15px;
   width: 40px;
   height: 99%;
-  background: #f3e7d3; /* Same as inactive tab background */
+  background: #fff; /* Same as inactive tab background */
   transform: skewX(40deg);
   border-radius: 0 5px 0 0;
   z-index: 50;
@@ -422,10 +420,11 @@
 }
 
 #tabs li.current button {
-  background-color: white;
+  background-color: #0c142d;
+  color: white;
 }
 #tabs li.current button::after {
-  background-color: white;
+  background-color: #0c142d;
 }
 
 .behind-idea-image {
@@ -443,7 +442,7 @@
 /* DrivingGrowth Section */
 .driving-slider .slick-track {
   display: flex !important;
-  gap: 15px !important;
+  gap: 0px !important;
 }
 .driving-slider .slick-slide.slick-active.slick-current {
   transform: scaleY(1);
@@ -454,6 +453,33 @@
 }
 .driving-slider .slick-slide {
   transition: all ease-in-out 0.7s;
+}
+
+.dg-card-wrapper {
+  transition: all 0.6s ease;
+}
+
+.dg-left-big {
+  transform: scale(1);
+  z-index: 5;
+  opacity: 1;
+}
+
+.dg-center-medium {
+  transform: scale(0.85);
+  z-index: 4;
+  opacity: 0.7;
+}
+
+.dg-right-small {
+  transform: scale(0.7);
+  z-index: 3;
+  opacity: 0.4;
+}
+
+.dg-hidden-small {
+  transform: scale(0.6);
+  opacity: 0;
 }
 
 /*------------------------------------------------------------------------------------------------------------------------------------------------ MEDIA QUERIES -----------------------------------------------------------------------------------------------------------------*/
@@ -494,4 +520,39 @@
   .testimonial-slick .slick-next {
     right: 75px;
   }
+}
+
+.r15 {
+  border-radius: 15px;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.4s ease-in-out;
+}
+
+/* Partner boxes slider dots */
+.partner-boxes-slider .slick-dots {
+  bottom: -30px;
+}
+
+.partner-boxes-slider .slick-dots li button:before {
+  font-size: 12px;
+  color: #9b7025;
+  opacity: 0.5;
+}
+
+.partner-boxes-slider .slick-dots li.slick-active button:before {
+  color: #9b7025;
+  opacity: 1;
 }

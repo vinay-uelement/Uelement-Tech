@@ -1,11 +1,21 @@
 'use client';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import dynamic from 'next/dynamic';
+import Slider from 'react-slick';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
+
 const Select = dynamic(() => import('react-select'), {
   ssr: false,
 });
 
 const PartnerSolution = () => {
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
   const tabs = [
     {
       id: 1,
@@ -15,21 +25,21 @@ const PartnerSolution = () => {
           logo: '/icons/global/paloalto.svg',
           tagline: 'Value Added Reseller',
           boxTitle: 'Solution',
-          desc: 'We help businesses integrate Palo Alto’s advanced firewalls into their infrastructure to enable intelligent traffic control, threat prevention, and deep packet inspection for robust network security.',
+          desc: "We help businesses integrate Palo Alto's advanced firewalls into their infrastructure to enable intelligent traffic control, threat prevention, and deep packet inspection for robust network security.",
           tags: ['Red Hat AI', 'Red Hat enterprice linux'],
         },
         {
           logo: '/icons/global/aws.svg',
           tagline: 'Value Added Reseller',
           boxTitle: 'Solution',
-          desc: 'We help businesses integrate Palo Alto’s advanced firewalls into their infrastructure to enable intelligent traffic control, threat prevention, and deep packet inspection for robust network security.',
+          desc: "We help businesses integrate Palo Alto's advanced firewalls into their infrastructure to enable intelligent traffic control, threat prevention, and deep packet inspection for robust network security.",
           tags: ['Red Hat AI', 'Red Hat enterprice linux'],
         },
         {
           logo: '/icons/global/paloalto.svg',
           tagline: 'Value Added Reseller',
           boxTitle: 'Solution',
-          desc: 'We help businesses integrate Palo Alto’s advanced firewalls into their infrastructure to enable intelligent traffic control, threat prevention, and deep packet inspection for robust network security.',
+          desc: "We help businesses integrate Palo Alto's advanced firewalls into their infrastructure to enable intelligent traffic control, threat prevention, and deep packet inspection for robust network security.",
           tags: ['Red Hat AI', 'Red Hat enterprice linux'],
         },
       ],
@@ -42,21 +52,21 @@ const PartnerSolution = () => {
           logo: '/icons/global/paloalto.svg',
           tagline: 'Value Added Reseller',
           boxTitle: 'Solution',
-          desc: 'We help businesses integrate Palo Alto’s advanced firewalls into their infrastructure to enable intelligent traffic control, threat prevention, and deep packet inspection for robust network security.',
+          desc: "We help businesses integrate Palo Alto's advanced firewalls into their infrastructure to enable intelligent traffic control, threat prevention, and deep packet inspection for robust network security.",
           tags: ['Red Hat AI', 'Red Hat enterprice linux'],
         },
         {
           logo: '/icons/global/aws.svg',
           tagline: 'Value Added Reseller',
           boxTitle: 'Solution',
-          desc: 'We help businesses integrate Palo Alto’s advanced firewalls into their infrastructure to enable intelligent traffic control, threat prevention, and deep packet inspection for robust network security.',
+          desc: "We help businesses integrate Palo Alto's advanced firewalls into their infrastructure to enable intelligent traffic control, threat prevention, and deep packet inspection for robust network security.",
           tags: ['Red Hat AI', 'Red Hat enterprice linux'],
         },
         {
           logo: '/icons/global/paloalto.svg',
           tagline: 'Value Added Reseller',
           boxTitle: 'Solution',
-          desc: 'We help businesses integrate Palo Alto’s advanced firewalls into their infrastructure to enable intelligent traffic control, threat prevention, and deep packet inspection for robust network security.',
+          desc: "We help businesses integrate Palo Alto's advanced firewalls into their infrastructure to enable intelligent traffic control, threat prevention, and deep packet inspection for robust network security.",
           tags: ['Red Hat AI', 'Red Hat enterprice linux'],
         },
       ],
@@ -69,21 +79,21 @@ const PartnerSolution = () => {
           logo: '/icons/global/paloalto.svg',
           tagline: 'Value Added Reseller',
           boxTitle: 'Solution',
-          desc: 'We help businesses integrate Palo Alto’s advanced firewalls into their infrastructure to enable intelligent traffic control, threat prevention, and deep packet inspection for robust network security.',
+          desc: "We help businesses integrate Palo Alto's advanced firewalls into their infrastructure to enable intelligent traffic control, threat prevention, and deep packet inspection for robust network security.",
           tags: ['Red Hat AI', 'Red Hat enterprice linux'],
         },
         {
           logo: '/icons/global/aws.svg',
           tagline: 'Value Added Reseller',
           boxTitle: 'Solution',
-          desc: 'We help businesses integrate Palo Alto’s advanced firewalls into their infrastructure to enable intelligent traffic control, threat prevention, and deep packet inspection for robust network security.',
+          desc: "We help businesses integrate Palo Alto's advanced firewalls into their infrastructure to enable intelligent traffic control, threat prevention, and deep packet inspection for robust network security.",
           tags: ['Red Hat AI', 'Red Hat enterprice linux'],
         },
         {
           logo: '/icons/global/paloalto.svg',
           tagline: 'Value Added Reseller',
           boxTitle: 'Solution',
-          desc: 'We help businesses integrate Palo Alto’s advanced firewalls into their infrastructure to enable intelligent traffic control, threat prevention, and deep packet inspection for robust network security.',
+          desc: "We help businesses integrate Palo Alto's advanced firewalls into their infrastructure to enable intelligent traffic control, threat prevention, and deep packet inspection for robust network security.",
           tags: ['Red Hat AI', 'Red Hat enterprice linux'],
         },
       ],
@@ -91,7 +101,6 @@ const PartnerSolution = () => {
   ];
 
   const [selectedTab, setSelectedTab] = useState(tabs[0]);
-  const [index, setIndex] = useState(0);
 
   // React Select options
   const options = tabs.map((tab) => ({
@@ -103,45 +112,66 @@ const PartnerSolution = () => {
   const customStyles = {
     control: (provided) => ({
       ...provided,
-      backgroundColor: '#ffffff',
+      backgroundColor: 'transparent',
       border: 'none',
-      padding: '0.25rem 0.5rem',
-      fontWeight: 'bold',
-      borderRadius: '10px 0 0 0',
-      ouline: 'none',
+      padding: '0.5rem 0.75rem',
+      fontWeight: '500',
+      borderRadius: '10px 10px 0 0',
+      outline: 'none',
       boxShadow: 'none',
+      cursor: 'pointer',
+      position: 'relative',
+      zIndex: 10,
       '&:hover': {
-        border: 'none', // no border on hover
+        border: 'none',
       },
     }),
     singleValue: (provided) => ({
       ...provided,
-      color: '#000',
-      fontWeight: 'bold',
+      color: '#fff',
+      fontWeight: '500',
     }),
     option: (provided, state) => ({
       ...provided,
       backgroundColor: state.isSelected ? '#0c142d' : '#fff',
       color: state.isSelected ? '#fff' : '#000',
+      cursor: 'pointer',
     }),
     dropdownIndicator: (provided) => ({
       ...provided,
-      color: '#000',
+      color: '#fff',
+      padding: '0 4px',
+      margin: '0 16px 0 0',
     }),
     indicatorSeparator: () => ({
-      display: 'none', // hides the line
+      display: 'none',
     }),
     menu: (provided) => ({
       ...provided,
       borderRadius: '10px',
       overflow: 'hidden',
-      marginLeft: '16px',
+      marginTop: '4px',
+      zIndex: 9999,
+    }),
+    menuPortal: (provided) => ({
+      ...provided,
+      zIndex: 9999,
     }),
   };
 
+  // Slider settings for mobile
+  const sliderSettings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    arrows: false,
+  };
+
   return (
-    <div className="py-10 xl:py-16">
-      <div className="title-div text-white text-center mb-14">
+    <div className="bg-white py-[var(--section-block-padding)]">
+      <div className="title-div text-black text-center mb-8 sm:mb-10 lg:mb-14 ">
         <h4 className="title mt-3 mb-2">
           Solutions We Provide to Our Partners
         </h4>
@@ -152,95 +182,124 @@ const PartnerSolution = () => {
       </div>
 
       {/* Tabs & Content */}
-      <div className="bg-primary-blue container-padding w-full overflow-hidden">
+      <div className="bg-white w-full overflow-hidden ">
         {/* Desktop Tabs */}
-        <ul id="tabs" className="hidden md:flex w-full">
-          {tabs.map((tab, i) => (
-            <li
+        <div className="hidden md:flex gap-0 mb-0 ">
+          {tabs.map((tab) => (
+            <button
               key={tab.id}
-              style={{
-                zIndex:
-                  tab.id === selectedTab.id ? tabs.length + 1 : tabs.length - i,
-              }}
               onClick={() => setSelectedTab(tab)}
-              className={`${
-                tab.id === selectedTab.id ? 'current' : ''
-              } relative cursor-pointer`}
+              className={`relative px-20 py-3 font-montserrat font-medium text-14 lg:text-16 rounded-tl-[10px] transition-all duration-300 ease-in-out overflow-hidden ${
+                tab.id === selectedTab.id
+                  ? 'bg-primary-blue text-white shadow-[0px_4px_5px_0px_rgba(0,0,0,0.20)]'
+                  : 'bg-[#FCFCFC] text-[#9E9E9E] hover:bg-gray-100 border border-[#E0E0E0]'
+              }`}
+              style={{
+                clipPath:
+                  'polygon(0 0, calc(100% - 30px) 0, 100% 100%, 0 100%)',
+              }}
             >
-              <button className=" px-4 py-2">{tab.title}</button>
-              <div
-                // style={{
-                //   background: `radial-gradient(circle at bottom left, rgba(0,0,0,0.3) 0%, #f3e7d3 50%)`,
-                // }}
-                // style={{
-                //   boxShadow: "-1px 3px 6px rgba(0, 0, 0, 0.3)",
-                //   // background: `radial-gradient(circle at bottom left, rgba(0,0,0,0.3) 0%, #f3e7d3 50%)`,
-                // }}
-                className={`size-[16px] absolute  -right-[45px] -bottom-0 z-[40] rounded-full ${
-                  i === tabs.length - 1
-                    ? 'bg-primary-blue '
-                    : 'bg-honey-gold-100'
-                } `}
-              ></div>
-              <div
-                className={`h-[2px] w-[40px] absolute ${
-                  tab.id === selectedTab.id ? 'bg-white' : 'bg-honey-gold-100'
-                } -right-[39px] bottom-0 z-30 `}
-              ></div>
-            </li>
+              {tab.title}
+            </button>
           ))}
-        </ul>
+        </div>
 
         {/* Mobile Dropdown */}
-        <div className="md:hidden relative z-10 w-full max-w-[200px] pe-5 ">
-          <Select
-            value={{ value: selectedTab.id, label: selectedTab.title }}
-            onChange={(option) =>
-              setSelectedTab(tabs.find((tab) => tab.id === option.value))
-            }
-            options={options}
-            styles={customStyles}
-            isSearchable={false}
-          />
-          {/* Slanted end like ::after */}
-          <span className="absolute -bottom-1 right-0 h-[calc(100%+4px)] w-9 bg-white skew-x-[30deg] rounded-tr-md pointer-events-none z-50"></span>
-          <div className="size-7 absolute bg-primary-blue -right-8 -bottom-0 z-40 rounded-full "></div>
-          <div className="h-3 w-9 absolute bg-white -right-4 bottom-0  z-30  "></div>
+        <div className="md:hidden mb-0 relative z-50">
+          <div className="relative inline-block w-full max-w-[200px]">
+            <div
+              className="absolute inset-0 bg-primary-blue pointer-events-none rounded-tl-[10px]"
+              style={{
+                clipPath:
+                  'polygon(0 0, calc(100% - 30px) 0, 100% 100%, 0 100%)',
+              }}
+            />
+            <Select
+              value={{ value: selectedTab.id, label: selectedTab.title }}
+              onChange={(option) =>
+                setSelectedTab(tabs.find((tab) => tab.id === option.value))
+              }
+              options={options}
+              styles={customStyles}
+              isSearchable={false}
+              menuPortalTarget={isMounted ? document.body : null}
+              menuPosition="fixed"
+            />
+          </div>
         </div>
 
         {/* Tab Content */}
-        <div className="bg-white rounded-[10px] rounded-tl-none">
-          <div className="flex justify-center">
-            <h6 className="title border-b-3 border-b-secondary-100 w-fit px-10 pb-2 mt-10">
-              {selectedTab.title}
-            </h6>
-          </div>
-          <div className="flex flex-wrap gap-6 xl:gap-10 p-8 mt-6">
-            {selectedTab.boxes?.map((item, ind) => (
-              <div
-                key={ind}
-                className="flex-1 min-w-[250px] white-ribbon-border bg-secondary-200 py-8 pl-14 pr-6 rounded-[18px] [box-shadow:3px_0px_3px_1px_rgba(0,0,0,0.25)]"
-              >
-                <img src={item.logo} className="mb-1" alt="logo" />
-                <p className="font-light text-[#1C1C1C] mb-3">{item.tagline}</p>
-                <h6 className="font-bold text-[#1C1C1C] mb-1">
-                  {item.boxTitle}
-                </h6>
-                <p className="font-poppins font-light text-14 text-[#1C1C1C]">
-                  {item.desc}
-                </p>
-                <div className="flex flex-wrap text-13 2xl:text-14 leading-[1.1] mt-4">
-                  {item?.tags?.map((innderItem, InnerInd) => (
-                    <h6
-                      key={InnerInd}
-                      className="font-medium text-secondary-100 first:ml-0 last:border-r-0 border-r-2 border-r-[#1C1C1C] pr-2 ml-2"
-                    >
-                      {innderItem}
-                    </h6>
-                  ))}
+        <div className="bg-primary-blue rounded-[10px] rounded-tl-none py-10 sm:py-10 lg:py-[var(--section-block-padding)] ">
+          <div className="animate-fade-in ">
+            {/* Title with underline */}
+            <div className="flex justify-center mb-6 sm:mb-8 lg:mb-10">
+              <h6 className="title border-b-3 border-b-[#D3AF37] text-white w-fit px-6 sm:px-10 pb-2">
+                {selectedTab.title}
+              </h6>
+            </div>
+
+            {/* Desktop: Flex wrap layout */}
+            <div className="hidden md:flex flex-wrap justify-center gap-6 xl:gap-10 px-4 sm:px-8">
+              {selectedTab.boxes?.map((item, ind) => (
+                <div
+                  key={ind}
+                  className="flex-1 min-w-[280px] max-w-[400px] white-ribbon-border bg-secondary-200 py-8 pl-14 pr-6 rounded-[18px] shadow-[3px_0px_3px_1px_rgba(0,0,0,0.25)]"
+                >
+                  <img src={item.logo} className="mb-1 h-10" alt="logo" />
+                  <p className="font-light text-[#1C1C1C] mb-3 text-14">
+                    {item.tagline}
+                  </p>
+                  <h6 className="font-bold text-[#1C1C1C] mb-1 text-16">
+                    {item.boxTitle}
+                  </h6>
+                  <p className="font-reddit-sans font-light text-14 text-[#1C1C1C]">
+                    {item.desc}
+                  </p>
+                  <div className="flex flex-wrap text-13 2xl:text-14 leading-[1.1] mt-4">
+                    {item?.tags?.map((innerItem, innerInd) => (
+                      <h6
+                        key={innerInd}
+                        className="font-medium text-secondary first:ml-0 last:border-r-0 border-r-2 border-r-[#1C1C1C] pr-2 ml-2"
+                      >
+                        {innerItem}
+                      </h6>
+                    ))}
+                  </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
+
+            {/* Mobile: Slider */}
+            <div className="md:hidden px-4 partner-boxes-slider">
+              <Slider {...sliderSettings}>
+                {selectedTab.boxes?.map((item, ind) => (
+                  <div key={ind} className="px-2">
+                    <div className="white-ribbon-border bg-secondary-200 py-8 pl-14 pr-6 rounded-[18px] shadow-[3px_0px_3px_1px_rgba(0,0,0,0.25)]">
+                      <img src={item.logo} className="mb-1 h-10" alt="logo" />
+                      <p className="font-light text-[#1C1C1C] mb-3 text-14">
+                        {item.tagline}
+                      </p>
+                      <h6 className="font-bold text-[#1C1C1C] mb-1 text-16">
+                        {item.boxTitle}
+                      </h6>
+                      <p className="font-reddit-sans font-light text-14 text-[#1C1C1C]">
+                        {item.desc}
+                      </p>
+                      <div className="flex flex-wrap text-13 leading-[1.1] mt-4">
+                        {item?.tags?.map((innerItem, innerInd) => (
+                          <h6
+                            key={innerInd}
+                            className="font-medium text-secondary first:ml-0 last:border-r-0 border-r-2 border-r-[#1C1C1C] pr-2 ml-2"
+                          >
+                            {innerItem}
+                          </h6>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </Slider>
+            </div>
           </div>
         </div>
       </div>

@@ -1,8 +1,9 @@
 import OurPartners from '@/components/pages/OurPartners'
 import React from 'react'
 
+
 export const metadata = {
-  title: 'Our Partners',
+  title: 'Our Partners | UElement',
   description: 'Discover the strategic partners we collaborate with to deliver exceptional value to our clients.',
   openGraph: {
     title: 'Our Partners | U-Element',

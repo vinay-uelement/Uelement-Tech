@@ -4,11 +4,10 @@ import PartnerSolution from '../OurPartners/PartnerSolution';
 
 const OurPartners = () => {
   return (
-    <div className="bg-primary-blue">
+    <div className="container-outer">
       <PartnersHero />
       <div className="container-outer">
         <PartnerSolution />
-        <ContactUs />
       </div>
     </div>
   );

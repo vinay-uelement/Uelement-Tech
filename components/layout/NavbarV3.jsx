@@ -202,7 +202,7 @@ const Navbar = () => {
       <nav
         className={`w-[90vw]  md:w-full  container-outer shadow-down md:shadow-none bg-primary-blue rounded-[12px] md:rounded-none pe-4 md:pe-0 md:bg-transparent  h-15 flex justify-between fixed z-[80] left-1/2 -translate-x-1/2 
       ${
-        isScrolled ? 'top-3' : 'top-9'
+        isScrolled ? 'top-2' : 'top-6'
       } transition-all duration-700 ease-in-out`}
       >
         <div className="w-full container-padding ">
@@ -232,11 +232,11 @@ const Navbar = () => {
             {/* desktop */}
             <div className="flex-1 relative  hidden md:block">
               <div className="w-[calc(100%+40px)] h-full bg-[#32323259] backdrop-blur-lg rounded-[40px] -ml-10 px-3 hidden md:flex items-center relative z-50">
-                <div className="size-10 bg-white rounded-full relative">
+                <div className="size-10 bg-[#9B7025] rounded-full relative">
                   <img
                     src="/icons/global/92_small.svg"
                     alt="92"
-                    className="absolute bottom-1 left-1"
+                    className="absolute top-1 right-1"
                   />
                 </div>
                 <div
@@ -252,7 +252,7 @@ const Navbar = () => {
                     >
                       <Link
                         href={navItem.link}
-                        className="flex items-center text-[#ebebeb] px-3  relative h-full"
+                        className="flex items-center font-reddit-sans text-[#ebebeb] px-3  relative h-full"
                       >
                         {navItem.children && (
                           <span
@@ -272,7 +272,7 @@ const Navbar = () => {
                 </div>
                 <Link
                   href={'/contact-us'}
-                  className="bg-white rounded-[40px] font-roboto text-16 xl:text-18 px-8 py-2 h-fit hover:shadow-hover"
+                  className="bg-white rounded-[40px] font-reddit-sans text-16 xl:text-18 px-8 py-2 h-fit hover:shadow-hover"
                 >
                   Contact us
                 </Link>
@@ -281,9 +281,10 @@ const Navbar = () => {
               {/* desktop dropdown */}
               <div
                 ref={dropdownRef}
-                className={`w-[calc(100%+40px)] absolute  -left-10 bg-[#D4D4D344] backdrop-blur-2xl text-primary-blue  z-[30]  top-9 flex rounded-b-[20px] overflow-hidden transition-all duration-300 ease-in-out ${
-                  hoveredMenu && hoveredMenu?.children ? 'h-[350px]' : 'h-0 '
-                }`}
+                className={`w-[calc(100%+40px)] absolute -left-10 bg-[#00000050] backdrop-blur-2xl backdrop-saturate-150
+    shadow-xl text-primary-blue z-[30] top-9 flex rounded-b-[20px] overflow-hidden transition-all duration-300 ease-in-out ${
+      hoveredMenu && hoveredMenu?.children ? 'h-[350px]' : 'h-0 '
+    }`}
               >
                 <div className="pt-9 pb-3 px-4 flex w-full">
                   <div
@@ -293,7 +294,7 @@ const Navbar = () => {
                       'border-r border-primary-blue'
                     }`}
                   >
-                    <div className="text-20 text-white font-poppins">
+                    <div className="text-20 text-white font-reddit-sans">
                       {hoveredMenu?.label}
                     </div>
                     {hoveredMenu?.children?.map((child) => (
@@ -302,10 +303,10 @@ const Navbar = () => {
                         href={'#'}
                         className="block py-4 border-b-[0.5px] last:border-none border-primary-blue hover:text-primary-blue max-w-[90%]"
                       >
-                        <div className="font-semibold text-14 text-[#E8E8E8]">
+                        <div className="font-semibold text-14 text-[#E8E8E8] font-reddit-sans">
                           {child.label}
                         </div>
-                        <div className="text-12 font-light text-[#E8E8E8]">
+                        <div className="text-12 font-light text-[#E8E8E8] font-reddit-sans">
                           {child.desc}
                         </div>
                       </Link>
@@ -404,7 +405,7 @@ const Navbar = () => {
           <div className="flex-1 flex items-center justify-end">
             <Link
               href={'/contact-us'}
-              className="bg-primary-blue text-white rounded-[40px] font-roboto text-16 xl:text-18 px-8 py-2 h-fit hover:shadow-hover"
+              className="bg-primary-blue text-white rounded-[40px] font-reddit-sans text-16 xl:text-18 px-8 py-2 h-fit hover:shadow-hover"
             >
               Contact us
             </Link>

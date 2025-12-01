@@ -1,8 +1,9 @@
 import Contact from '@/components/pages/Contact'
 import React from 'react'
 
+
 export const metadata = {
-  title: 'Contact Us',
+  title: 'Contact Us | UElement',
   description: 'Get in touch with U-Element for your digital transformation needs. We are here to help.',
   openGraph: {
     title: 'Contact Us | U-Element',

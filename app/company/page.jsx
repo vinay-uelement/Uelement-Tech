@@ -2,7 +2,7 @@ import Company from '@/components/pages/Company';
 import React from 'react';
 
 export const metadata = {
-  title: 'Company',
+  title: 'Company | UElement',
   description: 'Learn more about U-Element, our mission, vision, and the team driving digital innovation.',
   openGraph: {
     title: 'Company | U-Element',

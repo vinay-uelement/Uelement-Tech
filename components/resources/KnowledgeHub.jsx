@@ -71,21 +71,38 @@ const categories = [
   },
 ];
 
+// Custom Previous Arrow
+const CustomPrevArrow = (props) => {
+  const { onClick } = props;
+  return (
+    <button
+      onClick={onClick}
+      className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-full z-10 size-12 md:size-14 bg-white rounded-full shadow-[0px_4px_10px_rgba(0,0,0,0.15)] flex items-center justify-center hover:scale-110 transition-all duration-300 text-primary-blue text-18 md:text-20"
+      aria-label="Previous"
+    >
+      {ReactIcons.leftChev}
+    </button>
+  );
+};
+
+// Custom Next Arrow
+const CustomNextArrow = (props) => {
+  const { onClick } = props;
+  return (
+    <button
+      onClick={onClick}
+      className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-full z-10 size-12 md:size-14 bg-white rounded-full shadow-[0px_4px_10px_rgba(0,0,0,0.15)] flex items-center justify-center hover:scale-110 transition-all duration-300 text-primary-blue text-18 md:text-20"
+      aria-label="Next"
+    >
+      {ReactIcons.rightChev}
+    </button>
+  );
+};
+
 const KnowledgeHub = () => {
   const sliderRef = useRef(null);
-
-  //   const handleDotSize = (currentIndex) => {
-  //     const dots = document.querySelectorAll(".slick-dots li");
-  //     dots.forEach((dot, i) => {
-  //       dot.classList.remove("nearby");
-  //       if (i === currentIndex - 1 || i === currentIndex + 1) {
-  //         dot.classList.add("nearby");
-  //       }
-  //     });
-  //   };
-
   const [slidesToShow, setSlidesToShow] = useState(3);
-  const [currentSection, setCurrentSection] = useState('blogs');
+  const [currentSection, setCurrentSection] = useState(1);
 
   useEffect(() => {
     const handleResize = () => {
@@ -108,11 +125,10 @@ const KnowledgeHub = () => {
     infinite: true,
     slidesToScroll: 1,
     initialSlide: 0,
+    arrows: true,
+    prevArrow: <CustomPrevArrow />,
+    nextArrow: <CustomNextArrow />,
   };
-
-  //   useEffect(() => {
-  //     handleDotSize(0);
-  //   }, []);
 
   return (
     <div className="container-padding bg-white py-[var(--section-block-padding)]">
@@ -125,7 +141,7 @@ const KnowledgeHub = () => {
         <div className="w-full md:w-[600px] mt-12 relative">
           <input
             type="search"
-            className="border border-primary-blue rounded-[10px] h-[50px] px-3 pe-11"
+            className="border border-primary-blue rounded-[10px] h-[50px] px-3 pe-11 w-full"
             placeholder="Search here"
           />
           <div className="h-[50px] w-10 flex items-center justify-center absolute right-0 top-1/2 -translate-y-1/2">
@@ -134,12 +150,12 @@ const KnowledgeHub = () => {
         </div>
       </div>
 
-      {/*  Category Buttons Section */}
+      {/* Category Buttons Section */}
       <div className="flex items-center justify-center my-12">
         <div className="w-fit flex items-center justify-center gap-6 relative">
           {/* Active underline */}
           <div
-            className={`w-[110px] h-[3px] bg-primary-blue absolute -bottom-1 left-0 transition-all duration-500 ease-in-out `}
+            className="w-[110px] h-[3px] bg-primary-blue absolute -bottom-1 left-0 transition-all duration-500 ease-in-out"
             style={{
               transform: `translateX(${(currentSection - 1) * 138}px)`,
             }}
@@ -160,17 +176,17 @@ const KnowledgeHub = () => {
         </div>
       </div>
 
-      {/* 🔹 Slider Section */}
-      <div className="knowledge-slider-container">
+      {/* Slider Section */}
+      <div className="knowledge-slider-container relative px-8 md:px-12">
         <Slider ref={sliderRef} {...settings}>
           {blogs.map((blog) => (
-            <div key={blog.id} className="p-6">
-              <div className="p-6 bg-white rounded-[10px] h-[540px] 2xl:h-[590px] flex flex-col blog-card w-full">
+            <div key={blog.id} className="p-3 md:p-4">
+              <div className="p-6 bg-white rounded-[10px] h-[540px] 2xl:h-[590px] flex flex-col blog-card w-full shadow-lg">
                 <div className="h-[200px] md:h-[220px] 2xl:h-[280px] relative">
                   <img
                     src={blog.image}
                     alt={blog.title}
-                    className="h-full w-full object-cover"
+                    className="h-full w-full object-cover rounded-[10px]"
                   />
                   <div className="bg-primary-blue size-12 rounded-full absolute right-3 -bottom-6 flex items-center justify-center">
                     <img
@@ -180,18 +196,18 @@ const KnowledgeHub = () => {
                   </div>
                 </div>
                 <div className="pt-6 flex flex-col flex-1">
-                  <div className="bg-primary-blue rounded-[5px] text-white px-3 py-1 w-fit">
+                  <div className="bg-primary-blue rounded-[5px] text-white px-3 py-1 w-fit text-12">
                     {blog.label}
                   </div>
-                  <h6 className="text-22 font-semibold text-black mt-4 whitespace-pre-line">
+                  <h6 className="text-22 font-semibold mt-4 whitespace-pre-line">
                     {blog.title}
                   </h6>
-                  <p className="font-light text-[#5F6D7E] mt-3 flex-1">
+                  <p className="font-light text-[#5F6D7E] mt-3 flex-1 text-14">
                     {blog.desc}
                   </p>
                   <Link
                     href="/"
-                    className="font-semibold text-primary-blue mt-3 flex items-center gap-1"
+                    className="font-semibold text-primary-blue mt-3 flex items-center gap-1 text-14 hover:gap-2 transition-all duration-300"
                   >
                     Learn more
                     {ReactIcons.arrowRight}

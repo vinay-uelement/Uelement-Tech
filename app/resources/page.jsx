@@ -2,7 +2,7 @@ import Resources from '@/components/pages/Resources'
 import React from 'react'
 
 export const metadata = {
-  title: 'Resources',
+  title: 'Resources | UElement',
   description: 'Explore our resources, case studies, and insights on the latest trends in digital transformation.',
   openGraph: {
     title: 'Resources | U-Element',

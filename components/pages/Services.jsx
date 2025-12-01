@@ -6,13 +6,11 @@ import ServicesList from '../services/ServicesList';
 const Services = () => {
   return (
     <div>
-      <div className="bg-primary-blue">
+      <div className="container-outer">
         <ServicesHero />
       </div>
       <EnterpriseSolutions />
       <ServicesList />
-
-      <ContactUs />
     </div>
   );
 };
