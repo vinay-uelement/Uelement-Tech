@@ -39,7 +39,7 @@ const ServiceSegments = () => {
   return (
     <div className="py-[var(--section-block-padding)] container-padding">
       <div className="text-center">
-        <h1 className="title">Service Segments</h1>
+        <h1 className="fl1-sep">Service Segments</h1>
         <p className="sub-title">
           Empowering your journey with innovative, user-centric digital
           solutions.

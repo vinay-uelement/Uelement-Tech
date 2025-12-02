@@ -114,7 +114,7 @@ export default function AboutSection() {
                 rapidly evolving market.
               </p>
 
-              <button className="text-16 xl:text-18 bg-black text-white rounded-full  py-2 px-9 mt-8 hidden md:block">
+              <button className="btn-blue mt-8 hidden md:block">
                 Learn More
               </button>
             </div>
@@ -147,7 +147,7 @@ export default function AboutSection() {
               </div>
             </div>
 
-            <button className="text-16 xl:text-18 bg-black text-white rounded-full  py-2 px-9 mt-8  md:hidden">
+            <button className="btn-blue mt-8  md:hidden">
               Learn More
             </button>
           </div>

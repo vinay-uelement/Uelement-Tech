@@ -186,7 +186,7 @@ const ContactUs = () => {
               {/* Submit Button */}
               <div className="flex justify-center sm:justify-end">
                 <button
-                  className="bg-[#9B7025] hover:bg-[#9B7025]/90 text-white font-reddit-sans text-14 sm:text-16 px-8 sm:px-10 py-2.5 sm:py-3 rounded-[40px] transition-all duration-300 hover:scale-105 w-full sm:w-auto shadow-[0px_4px_5px_0px_rgba(0,0,0,0.20)]"
+                  className="btn-yellow hover:scale-101"
                   type="submit"
                 >
                   Request a meeting
@@ -332,7 +332,7 @@ const FooterContent = () => {
               NEWSLETTER
             </h6>
             <div className="max-w-[300px]">
-              <div className="relative bg-white rounded-[40px] px-4 py-3 flex items-center gap-2 mb-3">
+              <div className="relative bg-white rounded-[9px] px-4 py-3 flex items-center gap-2 mb-3">
                 <span className="text-gray-400 text-16">
                   {ReactIcons.email2}
                 </span>
@@ -342,7 +342,7 @@ const FooterContent = () => {
                   className="font-reddit-sans text-13 sm:text-14 text-gray-700 w-full placeholder:text-gray-400"
                 />
               </div>
-              <button className="bg-[#9B7025] hover:bg-[#9B7025]/90 text-white font-reddit-sans text-13 sm:text-14 rounded-[40px] w-full py-3 transition-all duration-300 hover:scale-105">
+              <button className="btn-yellow w-full hover:scale-101">
                 Submit Now
               </button>
             </div>

@@ -28,6 +28,12 @@
     font-weight: 900;
   }
 
+  @font-face {
+    font-family: 'Cal Sans';
+    src: url('/fonts/Cal_Sans/CalSans-SemiBold.ttf') format('truetype');
+    font-weight: 800;
+  }
+
   /* Montserrat Variable Font */
   @font-face {
     font-family: 'Montserrat';
@@ -59,25 +65,11 @@
   /* Reddit Sans */
   @font-face {
     font-family: 'Reddit Sans';
-    src: url('/fonts/Reddit_Sans/RedditSans-Regular.ttf') format('truetype');
+    src: url('/fonts/Reddit_Sans/RedditSans-VariableFont_wght.ttf') format('truetype');
     font-display: swap;
-    font-weight: 400;
+    font-weight: 100 900;
   }
 
-  @font-face {
-    font-family: 'Noto Sans';
-    src: url('/fonts/Noto_Sans/NotoSans-BoldItalic.ttf') format('truetype');
-    font-style: italic;
-    font-display: swap;
-    font-weight: 600;
-  }
-
-  @font-face {
-    font-family: 'Reddit Sans';
-    src: url('/fonts/Reddit_Sans/RedditSans-Light.ttf') format('truetype');
-    font-display: swap;
-    font-weight: 100;
-  }
   /* end of font */
 
   :root {
@@ -186,8 +178,32 @@
   .btn-primary {
     @apply text-16 xl:text-18 bg-[#0C142D] hover:scale-105 text-white rounded-[40px] py-2 px-6 2xl:px-7 2xl:py-2;
   }
-  .btn-glass {
-    @apply bg-[#D4D4D470] rounded-[40px] text-16 xl:text-18 py-2 hover:shadow-inset-white;
+  .btn-yellow {
+    @apply bg-[#9B7025] rounded-[9px] text-white font-reddit-sans font-semibold shadow-[1px_4px_2px_0px_rgba(0,0,0,0.15)] text-12 md:text-18 py-2 px-[40px] hover:shadow-inset-white transition-all duration-300;
+  }
+  .btn-blue {
+    @apply bg-[#0C142D] text-white font-reddit-sans font-semibold shadow-[1px_4px_2px_0px_rgba(0,0,0,0.15)] rounded-[9px] text-12 md:text-18 py-2 px-[40px] hover:shadow-inset-white transition-all duration-300;
+  }
+  .fl-main{
+    @apply font-cal-sans text-white text-26 md:text-[60px];
+  }
+  .fl-slash{
+    @apply text-12 md:text-20 font-reddit-sans font-medium mb-6 md:mb-8 3xl:mb-10 text-[#23223] tracking-[0.03em];
+  }
+  .fl1{
+    @apply font-noto-sans font-bold text-18 md:text-30 mb-4 md:mb-6 3xl:mb-8 text-[#232223] tracking-[0.03em];
+  }
+  .fl1-sep{
+    @apply font-noto-sans font-semibold text-20 md:text-[35px] mb-4 md:mb-6 3xl:mb-8 text-[#232223] tracking-[0.03em];
+  }
+  .fl2{
+    @apply font-montserrat font-semibold text-16 md:text-[26px] text-[#232223] mb-2 md:mb-4 3xl:mb-6 tracking-[0.03em];
+  }
+  .fl3{
+    @apply font-reddit-sans font-light text-14 md:text-16 text-[#232223] tracking-[0.03em];
+  }
+  .fl4{
+    @apply font-noto-sans italic text-12 md:text-20 font-medium text-white tracking-[0.03em];
   }
 }
 
@@ -200,6 +216,7 @@
   --font-dm-serif: 'DM Serif';
   --font-noto-sans: 'Noto Sans';
   --font-reddit-sans: 'Reddit Sans';
+  --font-cal-sans: 'Cal Sans';
 
   /* COLORS */
   --color-primary-blue: #0c142d;

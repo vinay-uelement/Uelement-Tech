@@ -134,7 +134,7 @@ const ContactUs = () => {
                 ></textarea>
               </div>
               <button
-                className="btn-1 !bg-secondary ml-auto block mt-2 sm:mt-5 !font-reddit-sans"
+                className="btn-yellow ml-auto block mt-2 sm:mt-5"
                 type="submit"
               >
                 Request a meeting

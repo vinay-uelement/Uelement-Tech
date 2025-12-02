@@ -35,7 +35,7 @@ const ServicesList = () => {
                 levels of data security.
               </p>
             </div>
-            <button className="btn-primary !bg-white !text-black !rounded-[5px] mr-auto block">
+            <button className="btn-blue mr-auto block">
               Contact us
             </button>
           </div>
@@ -68,7 +68,7 @@ const ServicesList = () => {
                 levels of data security.
               </p>
             </div>
-            <button className="btn-primary !bg-white !text-black !rounded-[5px] mr-auto block">
+            <button className="btn-blue w-fit auto block">
               Get a Demo
             </button>
           </div>

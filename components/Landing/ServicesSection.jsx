@@ -176,7 +176,7 @@ const ServicesSection = () => {
 
               <div className="flex flex-col md:flex-row gap-6 items-center justify-between">
                 <div>
-                  <button className="bg-[#9B7025] hover:bg-[#9B7025]/90 text-white font-poppins text-14 sm:text-16 px-8 py-3 rounded-[40px] transition-all duration-300 hover:scale-105 w-fit">
+                  <button className="btn-yellow hover:scale-101">
                     Learn More
                   </button>
                 </div>
