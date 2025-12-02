@@ -27,7 +27,7 @@ const HeroSectionV5 = () => {
       <div className="h-[calc(100%-80px)] w-full relative text-white rounded-[5px] rounded-bl-[50px] rounded-br-none ">
         <div className="h-full w-full flex flex-col md:flex-row">
           <div className="w-full h-[60%] md:h-full md:w-[40%] pl-[var(--container-small-padding)] flex flex-col justify-end md:justify-center ">
-            <h1 className="text-white text-32 md:text-[70px] font-noto-sans italic tracking-wider leading-[1.2] mt-5">
+            <h1 className="fl-main tracking-wider leading-[1.2] mt-5">
               We Are <br /> Digital <br className="hidden md:block" />{' '}
               Mavericks.
             </h1>
@@ -37,7 +37,7 @@ const HeroSectionV5 = () => {
             </p>
             <button
               onClick={handleContactus}
-              className="btn-glass !bg-[#9B7025] w-fit px-9 mt-8"
+              className="btn-yellow w-fit mt-8"
             >
               Contact Us
             </button>
@@ -56,7 +56,7 @@ const HeroSectionV5 = () => {
           {ReactIcons.leftChev}
         </button>
         <div className="flex-1 flex items-center justify-center min-h-[30px]">
-          <span className="font-noto-sans italic text-base md:text-lg text-white text-center transition-all duration-500">
+          <span className="fl4 text-center transition-all duration-500">
             {slides[index]}
           </span>
         </div>

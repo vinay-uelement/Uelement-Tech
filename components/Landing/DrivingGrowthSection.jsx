@@ -99,13 +99,13 @@ const DrivingGrowthSection = () => {
             </div>
           </div>
 
-          <span className="slash hidden lg:block">
+          <span className="fl-slash hidden lg:block">
             /Service Segment
           </span>
-          <h3 className="title">
+          <h3 className="fl1">
             Driving growth through strategic collaborations
           </h3>
-          <p className="font-light hidden lg:block">
+          <p className="fl3 hidden lg:block">
             SI Partnerships (SI) represents strategic alliances that help
             organizations grow, innovate, and expand their reach. It focuses on
             collaboration with trusted partners to drive mutual value and
@@ -113,7 +113,7 @@ const DrivingGrowthSection = () => {
             new opportunities, strengthen capabilities, and achieve shared
             goals.
           </p>
-          <button className="btn-1 mt-4 xl:mt-5 hidden lg:block">
+          <button className="btn-blue mt-4 xl:mt-5 hidden lg:block">
             Learn More
           </button>
         </div>
@@ -161,9 +161,6 @@ const DrivingGrowthSection = () => {
                     <p className="text-14 2xl:text-16 text-white font-light">
                       {item.desc}
                     </p>
-                    <button className="text-16 2xl:text-18 text-white bg-[#D4D4D470] btn-glass px-6 absolute bottom-5 left-3">
-                      Learn More
-                    </button>
                   </div>
                 </div>
               </div>
@@ -187,9 +184,6 @@ const DrivingGrowthSection = () => {
           long-term success. Through these partnerships, businesses can unlock
           new opportunities, strengthen capabilities, and achieve shared goals.
         </p>
-        <button className="btn-1 mt-0 xl:mt-5 block mx-auto w-[150px] lg:w-auto lg:hidden">
-          Learn More
-        </button>
       </div>
     </section>
   );

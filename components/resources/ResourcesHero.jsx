@@ -12,7 +12,7 @@ const ResourcesHero = () => {
             Access whitepapers, case studies, and expert insights designed to
             help your business innovate and scale.
           </p>
-          <button className="btn-primary mt-6 w-fit">Contact Us</button>
+          <button className="btn-blue mt-6 w-fit">Contact Us</button>
         </div>
         <div className="flex-1">
           <img
