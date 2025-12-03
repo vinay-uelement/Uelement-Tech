@@ -1,5 +1,6 @@
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
+import GlobalSlider from '@/components/Slider/GlobalSlider';
 
 const solutions = [
   {
@@ -29,48 +30,29 @@ const solutions = [
     description:
       'Our Enterprise Cloud Solutions provide Global Businesses with optimized, scalable, secure, and efficient cloud infrastructure tailored to their needs.',
   },
+  {
+    id: 4,
+    image: '/images/global/security.png',
+    icon: '/icons/global/enterprise-icon.svg',
+    label: 'Cyber Security',
+    title: 'Complete Enterprise \n Security.',
+    description:
+      'We deliver comprehensive Enterprise Security Solutions & Services that safeguard critical assets, ensure compliance, and mitigate risks.',
+  },
 ];
 
 const EnterpriseSolutions = () => {
   return (
     <section className="py-[var(--section-block-padding)] container-padding bg-white text-black">
       <div className="text-center flex flex-col items-center">
-        <h1 className="title">Our Enterprise Solutions</h1>
-        <p className="text-20 md:max-w-1/2">
-          Comprehensive services designed to protect, optimize, and transform
-          your business operations.
+        <h1 className="fl1 !text-[30px]">Define. Build. Run.</h1>
+        <p className=" fl3 mb-4 md:max-w-1/2">
+          Our four service pillars cover the full lifecycle of technology adoption,
+          modernization, and ongoing optimization.
         </p>
       </div>
-      <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6 2xl:gap-12">
-        {solutions.map((solution) => (
-          <div
-            key={solution.id}
-            className="p-6 bg-[#F6F6F6] rounded-[10px] h-[540px] 2xl:h-[590px] flex flex-col transition-all duration-300 shadow hover:shadow-[0px_8px_20px_0px_rgba(0,0,0,0.5)]"
-          >
-            <div className="h-[220px] 2xl:h-[280px] relative">
-              <img
-                src={solution.image}
-                alt={solution.title}
-                className="h-full w-full object-cover"
-              />
-              <div className="bg-primary-blue size-12 rounded-full absolute right-3 -bottom-6 flex items-center justify-center">
-                <img src={solution.icon} alt={solution.label} />
-              </div>
-            </div>
-            <div className="pt-6 flex flex-col flex-1">
-              <div className="bg-primary-blue rounded-[5px] text-white px-3 py-1 w-fit">
-                {solution.label}
-              </div>
-              <h6 className="text-22 font-semibold text-black mt-4 whitespace-pre-line">
-                {solution.title}
-              </h6>
-              <p className="font-light text-[#5F6D7E] mt-3 flex-1 ">
-                {solution.description}
-              </p>
-            </div>
-          </div>
-        ))}
-      </div>
+  
+      <GlobalSlider data={solutions} />
     </section>
   );
 };
