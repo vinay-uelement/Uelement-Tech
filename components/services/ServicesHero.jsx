@@ -22,10 +22,10 @@ const ServicesHero = () => {
         <div className="text-white flex-1">
           <div className="fl3 !text-[#ffffff] text-[20px]"><span className='text-[#9B7025] font-bold'>/</span>Our Services</div>
           <div className='mb-12  fl3 !text-[#ffffff] '>Service Delivery Models</div>
-          <div className="font-noto-sans font-medium text-[#ffffff] text-[25px] tracking-wider !font-medium md:w-[90%] w-full">
+          <div className="font-noto-sans font-medium text-[#ffffff] text-[25px] max-sm:text-[16px] tracking-wider !font-medium md:w-[90%] w-full">
             Four integrated frameworks that define, build, run, and secure your enterprise technology landscape.
           </div>
-          <div className="fl3 !text-[#ffffff] leading-relaxed mt-5 md:w-[80%] w-full max-sm:hidden">
+          <div className="fl3 !text-[#ffffff] leading-relaxed mt-5 md:w-[80%] w-full max-sm:text-[12px]">
             UElement Technologies acts as a full-stack partner, delivering integrated, end-to-end solutions designed to help your business achieve sustainable growth and thrive in a secure digital future. Our four core Service Delivery Models ensure we can engage with your organization at every level—from strategic advisory and full-stack development to managing infrastructure and compliance. This integrated approach ensures powerful synergies, eliminating complexity and accelerating time-to-market.
           </div>
         </div>

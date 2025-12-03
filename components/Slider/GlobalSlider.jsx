@@ -27,51 +27,63 @@ const GlobalSlider = ({ data }) => {
     return 5;
   };
 
-  const settings = {
-    dots: true,
-    infinite: true,
-    slidesToShow: 3,
-    slidesToScroll: 1,
+ const settings = {
+  dots: true,
+  infinite: true,
+  slidesToShow: 3,   
+  slidesToScroll: 1,
 
-    autoplay: true,
-    autoplaySpeed: 5000,
-    pauseOnHover: false,
-    arrows: false,
+  autoplay: true,
+  autoplaySpeed: 5000,
+  pauseOnHover: false,
+  arrows: false,
 
-    beforeChange: (current, next) => {
-      setActiveIndex(next);
-    },
+  beforeChange: (current, next) => {
+    setActiveIndex(next);
+  },
 
-    appendDots: dots => (
-      <div>
-        <ul className="flex justify-center items-center gap-1 mt-10">{dots}</ul>
-      </div>
-    ),
+  appendDots: dots => (
+    <div>
+      <ul className="flex justify-center items-center gap-1 mt-10">{dots}</ul>
+    </div>
+  ),
 
-    customPaging: (i) => {
-      const size = getDotSize(i);
-
-      return (
+  customPaging: (i) => {
+    const size = getDotSize(i);
+    return (
+      <div
+        className="flex items-center justify-center"
+        style={{ width: "20px", height: "20px" }}
+      >
         <div
-          className="flex items-center justify-center"
           style={{
-            width: "20px",
-            height: "20px",
+            width: size,
+            height: size,
+            borderRadius: "50%",
+            background: i === activeIndex ? "#0C142D" : "#D9D9D9",
+            transition: "all 0.3s ease",
           }}
-        >
-          <div
-            style={{
-              width: size,
-              height: size,
-              borderRadius: "50%",
-              background: i === activeIndex ? "#0C142D" : "#D9D9D9",
-              transition: "all 0.3s ease",
-            }}
-          ></div>
-        </div>
-      );
+        ></div>
+      </div>
+    );
+  },
+
+  responsive: [
+    {
+      breakpoint: 1024,   
+      settings: {
+        slidesToShow: 2,
+      },
     },
-  };
+    {
+      breakpoint: 768,   
+      settings: {
+        slidesToShow: 1,
+      },
+    },
+  ],
+};
+
 
   if (!data || data.length === 0) return null;
 
