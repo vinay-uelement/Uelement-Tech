@@ -71,11 +71,11 @@ const ContactUs = () => {
       <div className="container-padding py-10 sm:py-12 lg:py-16">
         {/* Title Section - positioned in gray area */}
         <div className="title-div text-primary-blue text-center mb-8 sm:mb-10 lg:mb-12">
-          <p className="slash text-[#1f1f1f]">/Contact Us</p>
-          <h4 className="font-montserrat leading-tight text-2xl md:text-3xl lg:text-4xl mb-10 md:mb-14">
+          <p className="fl-slash">/Contact Us</p>
+          <h4 className="fl1 leading-tight mb-10 md:mb-14">
             Ready to Transform Your Enterprise Security?
           </h4>
-          <p className=" max-w-[750px] mx-auto  text-[#1f1f1f] leading-relaxed">
+          <p className="fl3 max-w-[750px] mx-auto leading-relaxed">
             Empower your enterprise with smarter, scalable security that adapts
             to new threats—keeping your business safe, agile, and resilient.
           </p>
@@ -213,7 +213,7 @@ const FooterContent = () => {
               alt="UElement logo"
               className="h-[35px] sm:h-[48px] w-auto mb-4 mb-20"
             />
-            <p className="text-[#808080] mb-6 sm:mb-8 ">
+            <p className="text-[#808080] font-reddit-sans text-[14px] mb-6 sm:mb-8 ">
               Empowering Secure Digital Transformation
             </p>
 
@@ -267,25 +267,25 @@ const FooterContent = () => {
               <div className="flex flex-col gap-3 sm:gap-4">
                 <Link
                   href="/about"
-                  className="font-reddit-sans text-white/70 text-13 sm:text-14 hover:text-white transition-colors"
+                  className="fl3 !text-[#e2e2e2] text-13 sm:text-16 hover:text-white transition-colors"
                 >
                   About
                 </Link>
                 <Link
                   href="/services"
-                  className="font-reddit-sans text-white/70 text-13 sm:text-14 hover:text-white transition-colors"
+                  className="fl3 !text-[#e2e2e2] text-13 sm:text-16 hover:text-white transition-colors"
                 >
                   Services
                 </Link>
                 <Link
                   href="/partners"
-                  className="font-reddit-sans text-white/70 text-13 sm:text-14 hover:text-white transition-colors"
+                  className="fl3 !text-[#e2e2e2] text-13 sm:text-16 hover:text-white transition-colors"
                 >
                   Partners
                 </Link>
                 <Link
                   href="/career"
-                  className="font-reddit-sans text-white/70 text-13 sm:text-14 hover:text-white transition-colors"
+                  className="fl3 !text-[#e2e2e2] text-13 sm:text-16 hover:text-white transition-colors"
                 >
                   Career
                 </Link>
@@ -300,25 +300,25 @@ const FooterContent = () => {
               <div className="flex flex-col gap-3 sm:gap-4">
                 <Link
                   href="/resources/ebooks"
-                  className="font-reddit-sans text-white/70 text-13 sm:text-14 hover:text-white transition-colors"
+                  className="fl3 !text-[#e2e2e2] text-13 sm:text-16 hover:text-white transition-colors"
                 >
                   Free eBooks
                 </Link>
                 <Link
                   href="/resources/tutorial"
-                  className="font-reddit-sans text-white/70 text-13 sm:text-14 hover:text-white transition-colors"
+                  className="fl3 !text-[#e2e2e2] text-13 sm:text-16 hover:text-white transition-colors"
                 >
                   Development Tutorial
                 </Link>
                 <Link
                   href="/blog"
-                  className="font-reddit-sans text-white/70 text-13 sm:text-14 hover:text-white transition-colors"
+                  className="fl3 !text-[#e2e2e2] text-13 sm:text-16 hover:text-white transition-colors"
                 >
                   How to - Blog
                 </Link>
                 <Link
                   href="/resources/playlist"
-                  className="font-reddit-sans text-white/70 text-13 sm:text-14 hover:text-white transition-colors"
+                  className="fl3 !text-[#e2e2e2] text-13 sm:text-16 hover:text-white transition-colors"
                 >
                   Youtube Playlist
                 </Link>

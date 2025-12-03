@@ -31,7 +31,7 @@ const HeroSectionV5 = () => {
               We Are <br /> Digital <br className="hidden md:block" />{' '}
               Mavericks.
             </h1>
-            <p className="mt-8 text-16 md:text-20 font-reddit-sans md:mb-20 mb-8 font-normal">
+            <p className="mt-8 fl3 !text-[#ffffff] !text-[20px] max-sm:text-[12px] md:mb-20 mb-8 ">
               Engineering Quantum-Driven Digital Synapses at <br /> the intersection of
               Cybersecurity, Cloud & AI.
             </p>

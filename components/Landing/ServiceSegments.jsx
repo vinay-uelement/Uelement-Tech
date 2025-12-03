@@ -40,16 +40,16 @@ const ServiceSegments = () => {
     <div className="py-[var(--section-block-padding)] container-padding">
       <div className="text-center">
         <h1 className="fl1-sep">Service Segments</h1>
-        <p className="sub-title">
+        <p className="fl3 mb-10 md:mb-14">
           Empowering your journey with innovative, user-centric digital
           solutions.
         </p>
         <div className="hidden md:grid md:grid-cols-4 gap-6 text-left">
           <div className="p-6 md:pb-30 pb-15 bg-primary-blue rounded-[10px] text-white relative">
-            <h6 className="sub-title max-w-[80%] ">
+            <h6 className="font-noto-sans font-medium text-18 md:text-24  mb-10 md:mb-14 max-w-[80%] ">
               SI <br /> Partnerships <br /> (SI)
             </h6>
-            <p className="text-14 font-light mt-6 font-reddit-sans">
+            <p className="fl3 !text-[#ffffff] mt-6 ">
               Designing, Deploying & Delivering Next-Gen Cybersecurity, Cloud &
               Al Solutions together with OEM partners
             </p>
@@ -61,10 +61,10 @@ const ServiceSegments = () => {
             </div>
           </div>
           <div className="p-6 pb-20 bg-primary-blue rounded-[10px] text-white relative">
-            <h6 className="sub-title max-w-[80%] ">
+            <h6 className="font-noto-sans font-medium text-18 md:text-24  mb-10 md:mb-14max-w-[80%] ">
               Professional <br /> Services <br /> (PS)
             </h6>
-            <p className="text-14 font-light mt-6 font-reddit-sans">
+            <p className="fl3 !text-[#ffffff] mt-6">
               Designing, Deploying & Delivering Next-Gen Cybersecurity, Cloud &
               Al Solutions together with OEM partners
             </p>
@@ -76,10 +76,10 @@ const ServiceSegments = () => {
             </div>
           </div>
           <div className="p-6 pb-20 bg-primary-blue rounded-[10px] text-white relative">
-            <h6 className="sub-title max-w-[80%] ">
+            <h6 className="font-noto-sans font-medium text-18 md:text-24  mb-10 md:mb-14 max-w-[80%] ">
               Managed <br /> Service <br /> Provider
             </h6>
-            <p className="text-14 font-light mt-6 font-reddit-sans">
+            <p className="fl3 !text-[#ffffff] mt-6">
               Designing, Deploying & Delivering Next-Gen Cybersecurity, Cloud &
               Al Solutions together with OEM partners
             </p>
@@ -91,11 +91,11 @@ const ServiceSegments = () => {
             </div>
           </div>
           <div className="p-6 pb-20 bg-primary-blue rounded-[10px] text-white relative">
-            <h6 className="sub-title max-w-[80%] ">
+            <h6 className="font-noto-sans font-medium text-18 md:text-24  mb-10 md:mb-14 max-w-[80%] ">
               Digital <br /> Transformation <br />
               Solutions
             </h6>
-            <p className="text-14 font-light mt-6 font-reddit-sans">
+            <p className="fl3 !text-[#ffffff] mt-6">
               Designing, Deploying & Delivering Next-Gen Cybersecurity, Cloud &
               Al Solutions together with OEM partners
             </p>

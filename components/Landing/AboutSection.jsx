@@ -50,6 +50,8 @@ const transformBullet = [
 
 export default function AboutSection() {
   return (
+
+    
     <div>
       <div className="p-10 bg-primary-blue r15">
         <div className="flex flex-col-reverse md:flex-row">
@@ -81,13 +83,13 @@ export default function AboutSection() {
           {/* RIGHT BLUE BOX */}
           <div className="flex-1 bg-primary-blue pe-[var(--container-small-padding)] md:pe-0 ps-[var(--container-small-padding)] text-white py-[var(--section-block-padding)]">
             <div className="w-full">
-              <p className="slash">/About us</p>
-              <h2 className="title">
+              <p className="fl-slash">/About us</p>
+              <h2 className="fl1 !text-[#FFF9FF] !text-[30px] ">
                 Innovative Digital solutions to{' '}
                 <br className="hidden md:block" />
                 Accelerate our Business Growth
               </h2>
-              <p className="mt-4 md:max-w-[80%] font-reddit-sans ">
+              <p className="mt-4 md:max-w-[80%] fl3 !text-[16px] !text-[#FFF9FF] ">
                 We craft future-ready digital solutions that empower businesses
                 to scale rapidly, adapt intelligently, and achieve sustainable
                 growth. By seamlessly integrating innovation with strategic
@@ -102,8 +104,8 @@ export default function AboutSection() {
         <div className="container-padding">
           <div className="flex flex-col md:flex-row gap-16">
             <div className="flex-1">
-              <p className="slash">/About us</p>
-              <h2 className="title">How We Transform Your Enterprise</h2>
+              <p className="fl-slash">/About us</p>
+              <h2 className="fl1 !text-[30px]">How We Transform Your Enterprise</h2>
               <p className="mt-4 text-black w-full md:w-[80%]">
                 Our proven 3-step approach delivers measurable results for
                 enterprise clients across industries, combining deep domain
@@ -136,10 +138,10 @@ export default function AboutSection() {
                         className="w-auto"
                       />
                     </div>
-                    <h3 className="text-16 mt-4 font-reddit-sans tracking-wider font-bold">
+                    <h3 className="text-20 mt-4 font-reddit-sans tracking-wider font-semibold">
                       {data.title}
                     </h3>
-                    <p className="mt-2 text-12 text-black font-medium md:w-full">
+                    <p className="mt-2 text-14 text-[#23222380] font-reddit-sans font-medium md:w-full">
                       {data.desc}
                     </p>
                   </div>

@@ -79,7 +79,7 @@ const DrivingGrowthSection = () => {
       <div className="flex lg:items-center flex-col lg:flex-row gap-18 lg:pb-8 xl:pb-10 2xl:pb-12">
         {/* Left Side Numbers */}
         <div className="flex-1">
-          <span className="slash block lg:hidden">
+          <span className="fl-slash block lg:hidden ">
             /Service Segment
           </span>
 
