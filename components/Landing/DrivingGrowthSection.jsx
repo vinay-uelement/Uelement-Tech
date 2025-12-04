@@ -117,7 +117,7 @@ const DrivingGrowthSection = () => {
     <section className="container-small">
       <div className="flex lg:items-center flex-col lg:flex-row gap-18 lg:pb-8 xl:pb-10 2xl:pb-12">
         {/* Left Side Numbers */}
-        <div className="flex-1">
+        <div className="flex-1 lg:mr-[30px] ">
           <span className="fl-slash block lg:hidden ">/Service Segment</span>
 
           <div className="mb-7 xl:mb-10 flex items-center">
@@ -140,7 +140,7 @@ const DrivingGrowthSection = () => {
           <h3 className="fl1">
             Driving growth through strategic collaborations
           </h3>
-          <p className="fl3 hidden lg:block">
+          <p className="fl3 lg:block">
             SI Partnerships (SI) represents strategic alliances that help
             organizations grow, innovate, and expand their reach. It focuses on
             collaboration with trusted partners to drive mutual value and
@@ -148,7 +148,7 @@ const DrivingGrowthSection = () => {
             new opportunities, strengthen capabilities, and achieve shared
             goals.
           </p>
-          <button className="btn-blue mt-4 xl:mt-5 hidden lg:block">
+          <button className="btn-blue mt-4 xl:mt-20 hidden lg:block">
             Learn More
           </button>
         </div>
@@ -237,14 +237,19 @@ const DrivingGrowthSection = () => {
             </div>
           </div>
         </div>
+        <div className='flex justify-center'>
+        <button className="btn-blue mt-4 lg:hidden w-fit  ">
+            Learn More
+          </button>
+          </div>
         {/* Mobile Text Section */}
-        <p className="font-light block lg:hidden pt-12">
+        {/* <p className="font-light block lg:hidden pt-12">
           SI Partnerships (SI) represents strategic alliances that help
           organizations grow, innovate, and expand their reach. It focuses on
           collaboration with trusted partners to drive mutual value and
           long-term success. Through these partnerships, businesses can unlock
           new opportunities, strengthen capabilities, and achieve shared goals.
-        </p>
+        </p> */}
       </div>
     </section>
   );

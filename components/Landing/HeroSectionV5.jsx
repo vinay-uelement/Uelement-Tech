@@ -27,17 +27,17 @@ const HeroSectionV5 = () => {
       <div className="h-[calc(100%-80px)] w-full relative text-white rounded-[4px] rounded-bl-[50px] rounded-br-none">
         <div className="h-full w-full flex flex-col md:flex-row">
           <div className="w-full h-[60%] md:h-full md:w-[40%] pl-[var(--container-small-padding)] flex flex-col justify-end md:justify-center ">
-            <h1 className="fl-main italic tracking-wider leading-[1.2] mt-5">
-              We Are <br /> Digital <br className="hidden md:block" />{' '}
+            <h1 className="fl-main tracking-wider leading-[1.2] mt-5">
+              We Are <br/> Digital <br className=" md:block" />{' '}
               Mavericks.
             </h1>
-            <p className="mt-8 fl3 !text-[#ffffff] !text-[20px] max-sm:text-[12px] md:mb-20 mb-8 ">
+            <p className="mt-3 fl3 !text-[#ffffff] !text-[12px] md:!text-[20px] md:mb-18 mb-8 ">
               Engineering Quantum-Driven Digital Synapses at <br /> the intersection of
               Cybersecurity, Cloud & AI.
             </p>
             <button
               onClick={handleContactus}
-              className="btn-yellow w-fit mt-8"
+              className="btn-yellow w-fit"
             >
               Contact Us
             </button>
@@ -55,7 +55,7 @@ const HeroSectionV5 = () => {
         >
           {ReactIcons.leftChev}
         </button>
-        <div className="flex-1 flex items-center justify-center min-h-[30px]">
+        <div className="flex-1 flex pl-[40px] min-h-[30px]">
           <span className="fl4 text-center transition-all duration-500">
             {slides[index]}
           </span>
@@ -69,7 +69,7 @@ const HeroSectionV5 = () => {
         </button>
       </div>
         {/* slider for mobile */}
-        <div className="absolute z-30 w-full  h-[60px] overflow-hidden bottom-28 md:bottom-2 left-1 md:-left-[30px] flex md:hidden items-center gap-2 px-1 sm:px-2 md:px-0 ">
+        <div className="absolute z-30 w-full  h-[60px] overflow-hidden bottom-1 md:bottom-2 left-1 md:-left-[30px] flex md:hidden items-center gap-2 px-1 sm:px-2 md:px-0 ">
           <button
             disabled={index === 0}
             onClick={prevSlide}
@@ -86,7 +86,7 @@ const HeroSectionV5 = () => {
                 {slides.map((text, i) => (
                   <div
                     key={i}
-                    className="min-w-full flex items-center font-noto-sans italic text-12  md:text-20 text-white"
+                    className="min-w-full flex items-center fl4 md:!text-20 text-white"
                   >
                     {text}
                   </div>
@@ -114,11 +114,7 @@ const HeroSectionV5 = () => {
           backgroundSize: 'contain',
           backgroundPosition: 'bottom',
           backgroundRepeat: 'no-repeat',
-          WebkitMask:
-            "url('/icons/landing/mobile-bg.svg') no-repeat center / cover",
-          mask: "url('/icons/landing/mobile-bg.svg') no-repeat center / cover",
-          WebkitMaskRepeat: 'no-repeat',
-          maskRepeat: 'no-repeat',
+          
         }}
       ></div>
     </section>
