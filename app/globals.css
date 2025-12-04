@@ -188,7 +188,7 @@
     @apply text-16 xl:text-18 bg-[#0C142D] hover:scale-105 text-white rounded-[40px] py-2 px-6 2xl:px-7 2xl:py-2;
   }
   .btn-yellow {
-    @apply bg-[#9B7025] rounded-[9px] text-white font-reddit-sans font-semibold shadow-[1px_4px_2px_0px_rgba(0,0,0,0.15)] text-12 md:text-18 py-2 px-[40px] hover:shadow-inset-white transition-all duration-300;
+    @apply bg-[#9B7025] rounded-[4px] text-white font-reddit-sans font-semibold shadow-[1px_4px_2px_0px_rgba(0,0,0,0.15)] text-12 md:text-18 py-2 px-[40px] hover:shadow-inset-white transition-all duration-300;
   }
   .btn-blue {
     @apply bg-[#0C142D] text-white font-reddit-sans font-semibold shadow-[1px_4px_2px_0px_rgba(0,0,0,0.15)] rounded-[9px] text-12 md:text-18 py-2 px-[40px] hover:shadow-inset-white transition-all duration-300;

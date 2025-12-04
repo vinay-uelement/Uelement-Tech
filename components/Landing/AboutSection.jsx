@@ -51,7 +51,7 @@ const transformBullet = [
 export default function AboutSection() {
   return (
 
-    
+
     <div>
       <div className="p-10 bg-primary-blue r15">
         <div className="flex flex-col-reverse md:flex-row">
@@ -84,17 +84,17 @@ export default function AboutSection() {
           <div className="flex-1 bg-primary-blue pe-[var(--container-small-padding)] md:pe-0 ps-[var(--container-small-padding)] text-white py-[var(--section-block-padding)]">
             <div className="w-full">
               <p className="fl-slash">/About us</p>
-              <h2 className="fl1 !text-[#FFF9FF] !text-[30px] ">
-                Innovative Digital solutions to{' '}
+              <h2 className="fl1 !text-[#FFF9FF]">
+                Precision, Trust. Your Full-Stack{' '}
                 <br className="hidden md:block" />
-                Accelerate our Business Growth
+                Partner for Secure Future
               </h2>
               <p className="mt-4 md:max-w-[80%] fl3 !text-[16px] !text-[#FFF9FF] ">
-                We craft future-ready digital solutions that empower businesses
-                to scale rapidly, adapt intelligently, and achieve sustainable
-                growth. By seamlessly integrating innovation with strategic
-                insight, we transform challenges into opportunities, delivering
-                measurable impact in today’s dynamic business landscape.
+                Established by innovators in 2024, UElement Technologies is dedicated to solving complex challenges across
+                Cybersecurity, Cloud, and AI with unparalleled expertise. We eliminate the complexity of managing multiple vendors
+                by delivering an integrated, seamless service portfolio. Our relentless commitment to excellence and
+                future-forward vision, including pioneering work in Quantum Computing, is designed to ensure your organization
+                achieves sustainable growth and thrives in a secure digital future.
               </p>
             </div>
           </div>
@@ -105,15 +105,12 @@ export default function AboutSection() {
           <div className="flex flex-col md:flex-row gap-16">
             <div className="flex-1">
               <p className="fl-slash">/About us</p>
-              <h2 className="fl1 !text-[30px]">How We Transform Your Enterprise</h2>
-              <p className="mt-4 text-black w-full md:w-[80%]">
-                Our proven 3-step approach delivers measurable results for
-                enterprise clients across industries, combining deep domain
-                expertise, innovative digital solutions, and data-driven
-                strategies. By streamlining processes, enhancing customer
-                experiences, and enabling smarter decision-making, we empower
-                businesses to achieve sustainable growth and stay ahead in a
-                rapidly evolving market.
+              <h2 className="fl1">Established by Innovators to Define Tomorrow's Digital Landscape.</h2>
+              <p className="fl3 mt-4 text-black w-full md:w-[80%]">
+               UElement Technologies was founded in 2024 by innovators committed to excellence and trust. Our foundation is built
+                on unwavering honesty and ethical accountability. We strategically focus on Cybersecurity, AI, and Cloud to strengthen
+                 the digital landscape. We embrace curiosity and drive transformative solutions, channeling our ambition into the 
+                 future of Quantum Computing.
               </p>
 
               <button className="btn-blue mt-8 hidden md:block">
