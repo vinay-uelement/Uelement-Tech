@@ -44,9 +44,9 @@ const solutions = [
 const EnterpriseSolutions = () => {
   return (
     <section className="py-[var(--section-block-padding)] container-padding bg-white text-black">
-      <div className="text-center flex flex-col items-center">
-        <h1 className="fl1 !text-[30px]">Define. Build. Run.</h1>
-        <p className=" fl3 mb-4 md:max-w-1/2">
+      <div className="text-center flex flex-col md:items-center">
+        <h1 className="fl1">Define. Build. Run.</h1>
+        <p className=" fl3 mb-4 md:max-w-1/2 w-full">
           Our four service pillars cover the full lifecycle of technology adoption,
           modernization, and ongoing optimization.
         </p>

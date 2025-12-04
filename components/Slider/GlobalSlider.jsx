@@ -9,13 +9,8 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import './GlobalSlider.css'; 
 
-
-
-
 const GlobalSlider = ({ data }) => {
   const sliderRef = useRef(null);
-  
-
   const [activeIndex, setActiveIndex] = useState(0);
 
    const getDotSize = (dotIndex) => {
@@ -88,13 +83,11 @@ const GlobalSlider = ({ data }) => {
   if (!data || data.length === 0) return null;
 
   return (
-    <div className="knowledge-slider-container relative px-8 md:px-12">
+    <div className="relative px-8 md:px-12">
       <Slider ref={sliderRef} {...settings}>
         {data.map((item) => (
           <div key={item.id} className="p-3 md:p-4">
-            <div className="p-6 bg-white rounded-[10px] h-[540px] 2xl:h-[590px] flex flex-col blog-card w-full shadow-lg">
-              
-              
+            <div className="p-6 bg-white rounded-[10px] h-[540px] 2xl:h-[590px] flex flex-col w-full shadow-lg">
               <div className="h-[200px] md:h-[220px] 2xl:h-[280px] relative">
                 <img src={item.image} alt={item.title} className="h-full w-full object-cover rounded-[10px]" />
                 <div className="bg-primary-blue size-12 rounded-full absolute right-3 -bottom-6 flex items-center justify-center">
@@ -108,22 +101,22 @@ const GlobalSlider = ({ data }) => {
 
               
               <div className="pt-6 flex flex-col flex-1">
-                <div className="bg-primary-blue rounded-[5px] text-white px-3 py-1 w-fit text-12">
+                <div className="bg-[#E1E1E1] r5 text-black-1 px-3 py-1 w-fit font-reddit-sans font-semibold">
                   {item.label}
                 </div>
-                <h6 className="text-22 font-semibold mt-4 whitespace-pre-line">
+                <h6 className="fl1-sep md:!text-20 mt-4 whitespace-pre-line">
                   {item.title}
                 </h6>
                 
-                <p className="font-light text-[#5F6D7E] mt-3 flex-1 text-14">
+                <p className="fl3 !text-[#5F6D7E] flex-1">
                   {item.desc || item.description}
                 </p>
-                <Link
+                {/* <Link
                   href={item.link || '/'}
                   className="font-semibold text-primary-blue mt-3 flex items-center gap-1 text-14 hover:gap-2 transition-all duration-300"
                 >
                   Learn more {ReactIcons.arrowRight}
-                </Link>
+                </Link> */}
               </div>
             </div>
           </div>
