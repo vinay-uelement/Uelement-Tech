@@ -270,7 +270,13 @@
   --shadow-hover: inset 0px 0px 12px 0px #00000029;
   --shadow-inset-white: inset 0px 0px 12px 0px #ffffff70;
 
-  --breakpoint-3xl: 120rem;
+   --breakpoint-sm: 600px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 992px;
+  --breakpoint-xl: 1200px;
+  --breakpoint-2xl: 1400px;
+  --breakpoint-3xl: 1600px;
+  --breakpoint-4xl: 1920px;
 }
 
 /* hero */
