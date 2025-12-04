@@ -37,20 +37,19 @@ const ServiceSegments = () => {
     speed: 500,
   };
   return (
-    <div className="py-[var(--section-block-padding)] container-padding">
+    <div className=" container-padding">
       <div className="text-center">
         <h1 className="fl1-sep">Our Domains</h1>
         <p className="fl3 mb-10 md:mb-14">
           Deep expertise across four critical technology domains, from Zero Trust to Quantum Readiness.
         </p>
         <div className="hidden md:grid md:grid-cols-4 gap-6 text-left">
-          <div className="p-6 md:pb-30 pb-15 bg-primary-blue rounded-[10px] text-white relative">
+          <div className="p-6 md:pb-30 pb-15 bg-primary-blue rounded-[4px] text-white relative">
             <h6 className="font-noto-sans font-medium text-18 md:text-24  mb-10 md:mb-14 max-w-[80%] ">
-              SI <br /> Partnerships <br /> (SI)
+               Digital <br /> Safety <br /> 
             </h6>
             <p className="fl3 !text-[#ffffff] mt-6 ">
-              Designing, Deploying & Delivering Next-Gen Cybersecurity, Cloud &
-              Al Solutions together with OEM partners
+              Securing the Future with Quantum-Resistant and Zero Trust Architecture.
             </p>
 
             <div className="size-[60px] bg-secondary absolute -top-3 -right-3 flex items-center justify-center text-30">
@@ -59,13 +58,12 @@ const ServiceSegments = () => {
               </span>
             </div>
           </div>
-          <div className="p-6 pb-20 bg-primary-blue rounded-[10px] text-white relative">
+          <div className="p-6 pb-20 bg-primary-blue rounded-[4px] text-white relative">
             <h6 className="font-noto-sans font-medium text-18 md:text-24  mb-10 md:mb-14max-w-[80%] ">
-              Professional <br /> Services <br /> (PS)
+              Cloud<br /> Mastery <br /> 
             </h6>
             <p className="fl3 !text-[#ffffff] mt-6">
-              Designing, Deploying & Delivering Next-Gen Cybersecurity, Cloud &
-              Al Solutions together with OEM partners
+              Architecting, Optimizing, and Managing Seamless Multi-Cloud Environments.
             </p>
 
             <div className="size-[60px] bg-secondary absolute -top-3 -right-3 flex items-center justify-center text-30">
@@ -74,13 +72,12 @@ const ServiceSegments = () => {
               </span>
             </div>
           </div>
-          <div className="p-6 pb-20 bg-primary-blue rounded-[10px] text-white relative">
+          <div className="p-6 pb-20 bg-primary-blue rounded-[4px] text-white relative">
             <h6 className="font-noto-sans font-medium text-18 md:text-24  mb-10 md:mb-14 max-w-[80%] ">
-              Managed <br /> Service <br /> Provider
+              Accelerated <br />AI <br />
             </h6>
             <p className="fl3 !text-[#ffffff] mt-6">
-              Designing, Deploying & Delivering Next-Gen Cybersecurity, Cloud &
-              Al Solutions together with OEM partners
+              Accelerating Intelligence with Responsible AI and Advanced Analytics.
             </p>
 
             <div className="size-[60px] bg-secondary absolute -top-3 -right-3 flex items-center justify-center text-30">
@@ -89,14 +86,13 @@ const ServiceSegments = () => {
               </span>
             </div>
           </div>
-          <div className="p-6 pb-20 bg-primary-blue rounded-[10px] text-white relative">
+          <div className="p-6 pb-20 bg-primary-blue rounded-[4px] text-white relative">
             <h6 className="font-noto-sans font-medium text-18 md:text-24  mb-10 md:mb-14 max-w-[80%] ">
-              Digital <br /> Transformation <br />
-              Solutions
+              Future <br /> Tech <br />
+              
             </h6>
             <p className="fl3 !text-[#ffffff] mt-6">
-              Designing, Deploying & Delivering Next-Gen Cybersecurity, Cloud &
-              Al Solutions together with OEM partners
+              Pioneering Transformation with Quantum, Web3, and Digital Modernization.
             </p>
 
             <div className="size-[60px] bg-secondary absolute -top-3 -right-3 flex items-center justify-center text-30">
