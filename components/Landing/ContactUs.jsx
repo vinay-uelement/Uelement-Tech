@@ -23,8 +23,8 @@ const ContactUs = () => {
           new threats—keeping your business safe, agile, and resilient.
         </p>
       </div>
-      <div className=" bg-white rounded-[5px] p-[10px] grid grid-cols-1 lg:grid-cols-[40%_60%]">
-        <div className="bg-primary-blue rounded-[5px] p-5 lg:p-10 text-white flex flex-col gap-10 md:gap-20 bg-[url(/images/landing/92-image-for-contact-us-section.svg)] bg-no-repeat bg-bottom-right">
+      <div className=" bg-white rounded-[4px] p-[10px] grid grid-cols-1 lg:grid-cols-[40%_60%]">
+        <div className="bg-primary-blue rounded-[4px] p-5 lg:p-10 text-white flex flex-col gap-10 md:gap-20 bg-[url(/images/landing/92-image-for-contact-us-section.svg)] bg-no-repeat bg-bottom-right">
           <div className="font-poppins text-left">
             <h5 className="2xl:text-28 xl:text-24 md:text-22 text-20 font-dm-serif">
               Contact Information

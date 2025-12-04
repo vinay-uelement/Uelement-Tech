@@ -13,24 +13,40 @@ const PartnersHero = () => {
   const [index, setIndex] = useState(0);
 
   const nextSlide = () => setIndex((prev) => (prev + 1) % slides.length);
-  const prevSlide = () => setIndex((prev) => (prev - 1 + slides.length) % slides.length);
+  const prevSlide = () =>
+    setIndex((prev) => (prev - 1 + slides.length) % slides.length);
 
   return (
     <div className="mt-[var(--outer-padding)] rounded-[8px] lg:h-screen h-auto relative flex flex-col lg:flex-row items-center bg-primary-blue">
-      <div className="container-padding w-full flex flex-col lg:flex-row gap-10 justify-between  mt-[var(--mobile-navbar-gap)] lg:my-0">
+      <div className="container-padding w-full flex flex-col lg:flex-row gap-10 justify-between mt-[var(--mobile-navbar-gap)] lg:my-0">
         {/* Left: Text Content */}
-        <div className="text-white flex-1">
-          <div className="font-noto-sans font-normal text-32 md:text-[45px]">/Our Partners</div>
-          <div className='mb-12 ml-4 font-light text-[#9e9e9e] font-reddit-sans'>Comprehensive Services Designed</div>
-          <div className="title tracking-wider !font-medium md:w-[90%] w-full">
-            The standard lorem ipsum passage has been a printer's
+        <div className="text-white flex-1 flex flex-col justify-between">
+          <div>
+            <div className="fl3 !text-[#ffffff] md:!text-[20px]">
+              <span className="text-[#9B7025] pr-2 font-bold">/</span>Our
+              Partners
+            </div>{' '}
+            <div className="mb-12 fl3 !text-[#9E9E9E] ">
+              Comprehensive Services Designed
+            </div>
           </div>
-          <div className="font-reddit-sans text-base font-light leading-relaxed md:w-[80%] w-full">
-            At U-Element, we're dedicated to empowering organizations with
-            intelligent, secure, and scalable digital solutions. Since our
-            founding, we've combined expertise in AI, cybersecurity, cloud
-            computing, and digital transformation to help businesses thrive in
-            an ever-evolving technological landscape.
+          <div>
+            <div className="fl1 !text-[#ffffff] !font-medium md:w-[90%] w-full">
+              Strategic Relationships with 15+ World-Class Technology Leaders.
+            </div>
+            <div className="fl3 !text-[#ffffff] mt-4 md:w-[90%] w-full">
+              Our extensive partner ecosystem is fundamental to UElement’s
+              promise of delivering integrated, best-in-class solutions. We
+              cultivate strategic relationships with over 15+ global technology
+              leaders across all four of our core domains: Cloud, Cybersecurity,
+              AI, and Quantum Computing. This allows us to leverage certified
+              expertise and cutting-edge platforms from partners like AWS,
+              Google Cloud, Microsoft Azure, Palo Alto Networks, NVIDIA, and IBM
+              Quantum. For our clients, this means access to fully integrated
+              technologies, reduced vendor complexity, and a guarantee that your
+              solutions are built on the most reliable and future-ready stacks
+              available.
+            </div>
           </div>
         </div>
         {/* Right: Image */}
@@ -46,7 +62,7 @@ const PartnersHero = () => {
       </div>
 
       {/* Carousel/Slider Bar - bottom absolute */}
-       <div className="mt-10 lg:mt-0 mb-[var(--mobile-navbar-gap)] lg:mb-0 flex items-center lg:absolute lg:left-1/2 lg:-translate-x-1/2 lg:bottom-12 w-full lg:w-2/3  bg-[#D4D4D41A] backdrop-blur-2xl rounded-[40px] px-1 py-1 shadow-lg z-50">
+      <div className="my-10 lg:mt-0 lg:mb-0 flex items-center lg:absolute lg:left-1/2 lg:-translate-x-1/2 lg:bottom-12 w-[90%] lg:w-2/3  bg-[#D4D4D41A] backdrop-blur-2xl rounded-[40px] px-1 py-1 shadow-lg z-50">
         <button
           onClick={prevSlide}
           className="size-11 bg-white rounded-full text-black text-2xl flex items-center justify-center hover:bg-gray-200 transition"
@@ -55,7 +71,7 @@ const PartnersHero = () => {
           {ReactIcons.leftChev}
         </button>
         <div className="flex-1 flex items-center justify-center min-h-[30px]">
-          <span className="font-noto-sans italic text-14 md:text-lg text-white text-center transition-all duration-500">
+          <span className="fl4 text-center transition-all duration-500">
             {slides[index]}
           </span>
         </div>

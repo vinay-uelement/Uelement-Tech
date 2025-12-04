@@ -196,7 +196,7 @@ const KnowledgeHub = () => {
                   </div>
                 </div>
                 <div className="pt-6 flex flex-col flex-1">
-                  <div className="bg-primary-blue rounded-[5px] text-white px-3 py-1 w-fit text-12">
+                  <div className="bg-primary-blue rounded-[4px] text-white px-3 py-1 w-fit text-12">
                     {blog.label}
                   </div>
                   <h6 className="text-22 font-semibold mt-4 whitespace-pre-line">
