@@ -32,19 +32,19 @@ const transformBullet = [
     id: 2,
     title: 'Implement & Integrate',
     icon: '/icons/landing/settings.svg',
-    desc: 'Assess the current situation to identify needs and gaps. Strategize by setting clear goals and creating a focused action plan.',
+    desc: 'Re-architect cloud environments, design secure infrastructure (Iaac), and develop product MVPs with clear roadmaps',
   },
   {
     id: 3,
     title: 'Optimize & Solution',
     icon: '/icons/landing/ticked-light.svg',
-    desc: 'Assess the current situation to identify needs and gaps. Strategize by setting clear goals and creating a focused action plan.',
+    desc: 'Execute full-stack development, platform integration, cloud migration, and deploy Zero Trust/Quantum Security solutions.',
   },
   {
     id: 4,
     title: 'Implement & Integrate',
     icon: '/icons/landing/ticked-light.svg',
-    desc: 'Assess the current situation to identify needs and gaps. Strategize by setting clear goals and creating a focused action plan.',
+    desc: 'Provide ongoing Managed Cloud Infra, SecOps, FinOps, and continuous performance optimization.',
   },
 ];
 
@@ -113,7 +113,7 @@ export default function AboutSection() {
                  future of Quantum Computing.
               </p>
 
-              <button className="btn-blue mt-8 hidden md:block">
+              <button className="btn-blue mt-14 hidden md:block">
                 Learn More
               </button>
             </div>
@@ -138,7 +138,7 @@ export default function AboutSection() {
                     <h3 className="text-20 mt-4 font-reddit-sans tracking-wider font-semibold">
                       {data.title}
                     </h3>
-                    <p className="mt-2 text-14 text-[#23222380] font-reddit-sans font-medium md:w-full">
+                    <p className="mt-2 fl3 font-medium md:w-full">
                       {data.desc}
                     </p>
                   </div>
@@ -158,7 +158,7 @@ export default function AboutSection() {
                     <h3 className="text-20 mt-4 font-reddit-sans tracking-wider font-semibold">
                       {data.title}
                     </h3>
-                    <p className="mt-2 text-14 text-[#23222380] font-reddit-sans font-medium md:w-full">
+                    <p className="mt-2 fl3 md:w-full">
                       {data.desc}
                     </p>
                   </div>
