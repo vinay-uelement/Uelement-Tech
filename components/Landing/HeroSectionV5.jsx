@@ -27,11 +27,11 @@ const HeroSectionV5 = () => {
       <div className="h-[calc(100%-80px)] w-full relative text-white rounded-[4px] rounded-bl-[50px] rounded-br-none">
         <div className="h-full w-full flex flex-col md:flex-row">
           <div className="w-full h-[60%] md:h-full md:w-[40%] pl-[var(--container-small-padding)] flex flex-col justify-end md:justify-center ">
-            <h1 className="fl-main tracking-wider leading-[1.2] mt-5">
+            <h1 className="fl-main italic tracking-wider leading-[1.2] mt-5">
               We Are <br/> Digital <br className=" md:block" />{' '}
               Mavericks.
             </h1>
-            <p className="mt-3 fl3 !text-[#ffffff] !text-[12px] md:!text-[20px] md:mb-18 mb-8 ">
+            <p className="mt-8 fl3 !text-[#ffffff] !text-[12px] md:!text-[20px] md:mb-20 mb-8 ">
               Engineering Quantum-Driven Digital Synapses at <br /> the intersection of
               Cybersecurity, Cloud & AI.
             </p>
@@ -42,7 +42,7 @@ const HeroSectionV5 = () => {
               Contact Us
             </button>
           </div>
-          <div className="flex-1 h-[40%]  md:h-full flex items-end justify-end ">
+          <div className="flex-1 h-[40%] md:h-full flex items-end justify-end ">
             {/* <div className="h-[85%] w-[80%]  md:w-full bg-[url(/images/landing/UElement-Mudra.png)] rounded-tr-4xl rounded-br-4xl bg-no-repeat bg-contain bg-right-bottom"></div> */}
           </div>
         </div>
@@ -69,7 +69,7 @@ const HeroSectionV5 = () => {
         </button>
       </div>
         {/* slider for mobile */}
-        <div className="absolute z-30 w-full  h-[60px] overflow-hidden bottom-1 md:bottom-2 left-1 md:-left-[30px] flex md:hidden items-center gap-2 px-1 sm:px-2 md:px-0 ">
+        <div className="absolute z-30 w-full h-[60px] overflow-hidden bottom-1 md:bottom-2 left-1 md:-left-[30px] flex md:hidden items-center gap-2 px-1 sm:px-2 md:px-0 ">
           <button
             disabled={index === 0}
             onClick={prevSlide}
@@ -103,7 +103,6 @@ const HeroSectionV5 = () => {
           </button>
         </div>
       </div>
-      {/* background */}
       <div className="hidden md:block h-full w-full md:w-[55%] absolute right-0 bottom-0 bg-[url(/images/landing/Mudra.svg)] rounded-tr-4xl rounded-br-[50px] h-[700px] bg-no-repeat bg-contain bg-right-bottom "></div>
       {/* mobile bg */}
       <div
