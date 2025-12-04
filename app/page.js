@@ -11,7 +11,7 @@ export const metadata = {
     siteName: 'U-Element',
     images: [
       {
-        url: '/images/landing/Mudra.svg',
+        url: '/images/landing/ue92-banner.jpg',
         width: 1200,
         height: 630,
         alt: 'U-Element Home',
@@ -24,7 +24,7 @@ export const metadata = {
     card: 'summary_large_image',
     title: 'Home | U-Element',
     description: 'Welcome to U-Element. We provide digital transformation solutions to help your business grow.',
-    images: ['/images/landing/UElement-Mudra.png'],
+    images: ['/images/landing/ue92-banner.jpg'],
   },
 };
 
