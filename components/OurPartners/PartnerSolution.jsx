@@ -172,12 +172,11 @@ const PartnerSolution = () => {
   return (
     <div className="bg-white py-[var(--section-block-padding)]">
       <div className="title-div text-black text-center mb-8 sm:mb-10 lg:mb-14 ">
-        <h4 className="title mt-3 mb-2">
-          Solutions We Provide to Our Partners
+        <h4 className="fl1 mt-3 mb-2">
+           Focus on Ecosystem and Trust
         </h4>
-        <p className="font-light max-w-[750px] mx-auto text-14 lg:text-16">
-          Empowering growth through tailored strategies and innovative
-          solutions.
+        <p className="fl3 max-w-[750px] mx-auto">
+          Leveraging 15+ strategic alliances to deliver best-in-class, fully certified solutions.
         </p>
       </div>
 
@@ -189,10 +188,10 @@ const PartnerSolution = () => {
             <button
               key={tab.id}
               onClick={() => setSelectedTab(tab)}
-              className={`relative px-20 py-3 font-montserrat font-medium text-14 lg:text-16 rounded-tl-[10px] transition-all duration-300 ease-in-out overflow-hidden ${
+              className={`relative px-20 py-3 md:text-26 text-14 font-noto-sans text-[#9E9E9E] rounded-tl-[10px] transition-all duration-300 ease-in-out overflow-hidden ${
                 tab.id === selectedTab.id
-                  ? 'bg-primary-blue text-white shadow-[0px_4px_5px_0px_rgba(0,0,0,0.20)]'
-                  : 'bg-[#FCFCFC] text-[#9E9E9E] hover:bg-gray-100 border border-[#E0E0E0]'
+                  ? 'bg-primary-blue font-noto-sans font-semibold text-white shadow-[0px_4px_5px_0px_rgba(0,0,0,0.20)]'
+                  : 'bg-[#FCFCFC] hover:bg-gray-100 border border-[#E0E0E0]'
               }`}
               style={{
                 clipPath:
@@ -233,7 +232,7 @@ const PartnerSolution = () => {
           <div className="animate-fade-in ">
             {/* Title with underline */}
             <div className="flex justify-center mb-6 sm:mb-8 lg:mb-10">
-              <h6 className="title border-b-3 border-b-[#D3AF37] text-white w-fit px-6 sm:px-10 pb-2">
+              <h6 className="fl1 border-b-3 border-b-[#D3AF37] !text-white w-fit px-6 sm:px-10 pb-2">
                 {selectedTab.title}
               </h6>
             </div>
@@ -246,20 +245,20 @@ const PartnerSolution = () => {
                   className="flex-1 min-w-[280px] max-w-[400px] white-ribbon-border bg-secondary-200 py-8 pl-14 pr-6 rounded-[18px] shadow-[3px_0px_3px_1px_rgba(0,0,0,0.25)]"
                 >
                   <img src={item.logo} className="mb-1 h-10" alt="logo" />
-                  <p className="font-light text-[#1C1C1C] mb-3 text-14">
+                  <p className="fl3 my-4">
                     {item.tagline}
                   </p>
-                  <h6 className="font-bold text-[#1C1C1C] mb-1 text-16">
+                  <h6 className="fl1 md:!text-[18px] text-[#1C1C1C] mb-1">
                     {item.boxTitle}
                   </h6>
-                  <p className="font-reddit-sans font-light text-14 text-[#1C1C1C]">
+                  <p className="fl3 md:!text-12 text-[#1C1C1C]">
                     {item.desc}
                   </p>
-                  <div className="flex flex-wrap text-13 2xl:text-14 leading-[1.1] mt-4">
+                  <div className="flex flex-wrap text-13 2xl:text-14 leading-[1.1] mt-6">
                     {item?.tags?.map((innerItem, innerInd) => (
                       <h6
                         key={innerInd}
-                        className="font-medium text-secondary first:ml-0 last:border-r-0 border-r-2 border-r-[#1C1C1C] pr-2 ml-2"
+                        className="font-bold font-reddit-sans md:text-[14px] text-[12px] text-secondary first:ml-0 last:border-r-0 border-r-2 border-r-[#1C1C1C] pr-2 ml-2"
                       >
                         {innerItem}
                       </h6>
