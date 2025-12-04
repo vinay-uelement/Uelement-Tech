@@ -75,8 +75,8 @@ const ContactUs = () => {
           </p>
         </div>
 
-        <div className="max-w-[1400px] mx-auto bg-white rounded-[5px] p-[8px] sm:p-[10px] grid grid-cols-1 lg:grid-cols-[40%_60%] shadow-[0px_4px_72.2px_0px_rgba(0,0,0,0.25)]">
-          <div className="bg-primary-blue rounded-[5px] p-6 sm:p-8 lg:p-10 xl:p-12 text-white flex flex-col justify-start gap-8 lg:gap-16 relative overflow-hidden min-h-[350px]">
+        <div className="max-w-[1400px] mx-auto bg-white rounded-[4px] p-[8px] sm:p-[10px] grid grid-cols-1 lg:grid-cols-[40%_60%] shadow-[0px_4px_72.2px_0px_rgba(0,0,0,0.25)]">
+          <div className="bg-primary-blue rounded-[4px] p-6 sm:p-8 lg:p-10 xl:p-12 text-white flex flex-col justify-start gap-8 lg:gap-16 relative overflow-hidden min-h-[350px]">
             <div className="absolute -bottom-8 -right-3 text-[160px] sm:text-[180px] lg:text-[200px] xl:text-[250px] font-bold text-[#111f3f] select-none pointer-events-none leading-none">
               92
             </div>

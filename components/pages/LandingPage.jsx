@@ -5,6 +5,7 @@ import ServiceSegments from '../Landing/ServiceSegments';
 import Highlight from '../Landing/Highlights';
 import ServicesSection from '../Landing/ServicesSection';
 import HeroSection from '../Landing/HeroSectionV5';
+import Testimonial from '../Landing/Testimonial';
 
 const LandingPage = () => {
   return (

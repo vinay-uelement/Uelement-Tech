@@ -2,7 +2,7 @@ import React from 'react';
 
 const TestimonialCard = () => {
   return (
-    <div className="bg-secondary rounded-[5px] px-4 sm:px-10 py-5 flex flex-col-reverse sm:flex-col gap-3 sm:gap-5 lg:gap-10">
+    <div className="bg-secondary rounded-[4px] px-4 sm:px-10 py-5 flex flex-col-reverse sm:flex-col gap-3 sm:gap-5 lg:gap-10">
       <div className="flex gap-3 sm:gap-5 items-start flex-col sm:flex-row">
         <img
           src="/icons/landing/quote.svg"

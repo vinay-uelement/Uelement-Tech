@@ -208,7 +208,7 @@ const DrivingGrowthSection = () => {
                         backgroundPosition: 'center',
                       }}
                     >
-                      <div className="box-inner bg-black/65  h-full w-full rounded-[5px] sm:rounded-[10px] lg:rounded-[20px] p-3 relative z-10">
+                      <div className="box-inner bg-black/65  h-full w-full rounded-[4px] sm:rounded-[10px] lg:rounded-[20px] p-3 relative z-10">
                         <div
                           style={{ opacity: textOpacity }}
                           className="transition-opacity duration-700 h-full flex flex-col gap-8 text-center px-2 md:px-10 py-4 "
