@@ -1,0 +1,21 @@
+{
+  "family": "uelement-website-next",
+  "networkMode": "awsvpc",
+  "requiresCompatibilities": ["FARGATE"],
+  "cpu": "512",
+  "memory": "1024",
+  "executionRoleArn": "arn:aws:iam::<ACCOUNT_ID>:role/ecsTaskExecutionRole",
+  "taskRoleArn": "arn:aws:iam::<ACCOUNT_ID>:role/ecsTaskRole",
+  "containerDefinitions": [
+    {
+      "name": "uelement-web",
+      "image": "<IMAGE_URI>",
+      "portMappings": [{ "containerPort": 3000, "protocol": "tcp" }],
+      "essential": true,
+      "environment": [
+        { "name": "NODE_ENV", "value": "production" },
+        { "name": "NEXT_PUBLIC_API_URL", "value": "https://example.com" }
+      ]
+    }
+  ]
+}
