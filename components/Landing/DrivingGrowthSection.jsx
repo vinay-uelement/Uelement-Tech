@@ -47,15 +47,13 @@ const DrivingGrowthSection = () => {
   const [active, setActive] = useState(0);
   const sliderRef = useRef(null);
 
-  // React Slick settings
-  // Calculate dot size based on distance from active slide
   const getDotSize = (dotIndex) => {
-    const distance = Math.abs(active - dotIndex);
+    const distance = Math.abs(active-dotIndex);
 
-    if (distance === 0) return 16; // active
-    if (distance === 1) return 12; // next medium
-    if (distance === 2) return 8;  // small
-    return 5;                      // tiny
+    if (distance === 0) return 16; 
+    if (distance === 1) return 12; 
+    if (distance === 2) return 8;  
+    return 5;                      
   };
 
   const settings = {
@@ -73,7 +71,7 @@ const DrivingGrowthSection = () => {
 
     appendDots: dots => (
       <div>
-        <ul className="flex justify-center items-center gap-1 mt-10">{dots}</ul>
+        <ul className="flex justify-center items-center">{dots}</ul>
       </div>
     ),
 
@@ -82,7 +80,7 @@ const DrivingGrowthSection = () => {
 
       return (
         <div
-          className="flex items-center justify-center"
+          className="flex items-center justify-center mt-5"
           style={{ width: "20px", height: "20px" }}
         >
           <div
@@ -156,10 +154,10 @@ const DrivingGrowthSection = () => {
         </div>
 
         <div className="relative overflow-visible lg:w-[450px] xl:w-[550px] 2xl:w-[700px] driving-slider">
-          <div className="absolute inset-y-0 -left-16 flex items-center z-20">
+          <div className="absolute inset-y-0 -left-8 md:-left-18 flex items-center z-20">
             <div
               onClick={prevSlide}
-              className="size-[44px] text-20 lg:text-24 xl:size-[60px] rounded-full bg-[#DEDEDE] shadow-down grid place-content-center cursor-pointer transition text-white lg:text-primary-blue"
+              className="size-[34px] text-20 lg:text-24 xl:size-[60px] rounded-full bg-[#DEDEDE] shadow-down grid place-content-center cursor-pointer transition text-white lg:text-primary-blue"
             >
               <span>{ReactIcons.leftChev}</span>
             </div>
@@ -230,10 +228,10 @@ const DrivingGrowthSection = () => {
             })}
           </Slider>
 
-          <div className="absolute inset-y-0 -right-16 flex items-center z-20">
+          <div className="absolute inset-y-0 -right-8 md:-right-18 flex items-center z-20">
             <div
               onClick={nextSlide}
-              className="size-[44px] text-20 lg:text-24 xl:size-[60px] rounded-full bg-[#DEDEDE] shadow-down grid place-content-center cursor-pointer transition text-white lg:text-primary-blue"
+              className="size-[34px] text-20 lg:text-24 xl:size-[60px] rounded-full bg-[#DEDEDE] shadow-down grid place-content-center cursor-pointer transition text-white lg:text-primary-blue"
             >
               <span>{ReactIcons.rightChev}</span>
             </div>
