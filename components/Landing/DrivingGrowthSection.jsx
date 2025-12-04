@@ -48,12 +48,12 @@ const DrivingGrowthSection = () => {
   const sliderRef = useRef(null);
 
   const getDotSize = (dotIndex) => {
-    const distance = Math.abs(active-dotIndex);
+    const distance = Math.abs(active - dotIndex);
 
-    if (distance === 0) return 16; 
-    if (distance === 1) return 12; 
-    if (distance === 2) return 8;  
-    return 5;                      
+    if (distance === 0) return 16;
+    if (distance === 1) return 12;
+    if (distance === 2) return 8;
+    return 5;
   };
 
   const settings = {
@@ -69,7 +69,7 @@ const DrivingGrowthSection = () => {
 
     beforeChange: (_, next) => setActive(next),
 
-    appendDots: dots => (
+    appendDots: (dots) => (
       <div>
         <ul className="flex justify-center items-center">{dots}</ul>
       </div>
@@ -81,22 +81,21 @@ const DrivingGrowthSection = () => {
       return (
         <div
           className="flex items-center justify-center mt-5"
-          style={{ width: "20px", height: "20px" }}
+          style={{ width: '20px', height: '20px' }}
         >
           <div
             style={{
               width: size,
               height: size,
-              borderRadius: "50%",
-              background: i === active ? "#0C142D" : "#D9D9D9",
-              transition: "all 0.3s ease",
+              borderRadius: '50%',
+              background: i === active ? '#0C142D' : '#D9D9D9',
+              transition: 'all 0.3s ease',
             }}
           ></div>
         </div>
       );
     },
   };
-
 
   const nextSlide = () => {
     sliderRef.current.slickNext();
@@ -117,7 +116,7 @@ const DrivingGrowthSection = () => {
     <section className="container-small">
       <div className="flex lg:items-center flex-col lg:flex-row gap-18 lg:pb-8 xl:pb-10 2xl:pb-12">
         {/* Left Side Numbers */}
-        <div className="flex-1 lg:mr-[30px] ">
+        <div className="flex-1 lg:mr-[30px] md:w-[60%] w-full">
           <span className="fl-slash block lg:hidden ">/Service Segment</span>
 
           <div className="mb-7 xl:mb-10 flex items-center">
@@ -153,8 +152,8 @@ const DrivingGrowthSection = () => {
           </button>
         </div>
 
-        <div className="relative overflow-visible lg:w-[450px] xl:w-[550px] 2xl:w-[700px] driving-slider">
-          <div className="absolute inset-y-0 -left-8 md:-left-18 flex items-center z-20">
+        <div className="relative overflow-visible lg:w-[250px] xl:w-[450px] 2xl:w-[600px] driving-slider">
+          <div className="absolute inset-y-0 -left-4 md:-left-18 flex items-center z-20">
             <div
               onClick={prevSlide}
               className="size-[34px] text-20 lg:text-24 xl:size-[60px] rounded-full bg-[#DEDEDE] shadow-down grid place-content-center cursor-pointer transition text-white lg:text-primary-blue"
@@ -201,14 +200,14 @@ const DrivingGrowthSection = () => {
                     style={{ zIndex, position: 'relative' }}
                   >
                     <div
-                      className="relative w-[200px] h-[280px] md:w-[320px] md:h-[320px] xl:w-[360px] xl:h-[370px] 2xl:w-[360px] 2xl:h-[450px] rounded-[15px] overflow-hidden"
+                      className="relative w-[200px] h-[280px] md:w-[320px] md:h-[320px] xl:w-[360px] xl:h-[370px] 2xl:w-[360px] 2xl:h-[450px] rounded-[0px] overflow-hidden"
                       style={{
                         backgroundImage: `url(${item.img})`,
                         backgroundSize: 'cover',
                         backgroundPosition: 'center',
                       }}
                     >
-                      <div className="box-inner bg-black/65  h-full w-full rounded-[4px] sm:rounded-[10px] lg:rounded-[20px] p-3 relative z-10">
+                      <div className="bg-black/65 h-full w-full p-3 relative z-10">
                         <div
                           style={{ opacity: textOpacity }}
                           className="transition-opacity duration-700 h-full flex flex-col gap-8 text-center px-2 md:px-10 py-4 "
@@ -228,7 +227,7 @@ const DrivingGrowthSection = () => {
             })}
           </Slider>
 
-          <div className="absolute inset-y-0 -right-8 md:-right-18 flex items-center z-20">
+          <div className="absolute inset-y-0 -right-4 md:-right-18 flex items-center z-20">
             <div
               onClick={nextSlide}
               className="size-[34px] text-20 lg:text-24 xl:size-[60px] rounded-full bg-[#DEDEDE] shadow-down grid place-content-center cursor-pointer transition text-white lg:text-primary-blue"
@@ -237,19 +236,11 @@ const DrivingGrowthSection = () => {
             </div>
           </div>
         </div>
-        <div className='flex justify-center'>
-        <button className="btn-blue mt-4 lg:hidden w-fit  ">
+        <div className="flex justify-center">
+          <button className="btn-blue mt-4 lg:hidden w-fit  ">
             Learn More
           </button>
-          </div>
-        {/* Mobile Text Section */}
-        {/* <p className="font-light block lg:hidden pt-12">
-          SI Partnerships (SI) represents strategic alliances that help
-          organizations grow, innovate, and expand their reach. It focuses on
-          collaboration with trusted partners to drive mutual value and
-          long-term success. Through these partnerships, businesses can unlock
-          new opportunities, strengthen capabilities, and achieve shared goals.
-        </p> */}
+        </div>
       </div>
     </section>
   );
