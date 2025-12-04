@@ -48,6 +48,16 @@ const DrivingGrowthSection = () => {
   const sliderRef = useRef(null);
 
   // React Slick settings
+  // Calculate dot size based on distance from active slide
+  const getDotSize = (dotIndex) => {
+    const distance = Math.abs(active - dotIndex);
+
+    if (distance === 0) return 16; // active
+    if (distance === 1) return 12; // next medium
+    if (distance === 2) return 8;  // small
+    return 5;                      // tiny
+  };
+
   const settings = {
     dots: true,
     infinite: true,
@@ -56,8 +66,39 @@ const DrivingGrowthSection = () => {
     slidesToScroll: 1,
     arrows: false,
     fade: false,
-    beforeChange: (oldIndex, newIndex) => setActive(newIndex),
+    autoplay: true,
+    autoplaySpeed: 5000,
+
+    beforeChange: (_, next) => setActive(next),
+
+    appendDots: dots => (
+      <div>
+        <ul className="flex justify-center items-center gap-1 mt-10">{dots}</ul>
+      </div>
+    ),
+
+    customPaging: (i) => {
+      const size = getDotSize(i);
+
+      return (
+        <div
+          className="flex items-center justify-center"
+          style={{ width: "20px", height: "20px" }}
+        >
+          <div
+            style={{
+              width: size,
+              height: size,
+              borderRadius: "50%",
+              background: i === active ? "#0C142D" : "#D9D9D9",
+              transition: "all 0.3s ease",
+            }}
+          ></div>
+        </div>
+      );
+    },
   };
+
 
   const nextSlide = () => {
     sliderRef.current.slickNext();
