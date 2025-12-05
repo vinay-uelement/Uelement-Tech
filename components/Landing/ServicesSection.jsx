@@ -170,7 +170,7 @@ const ServicesSection = () => {
               <h3 className="font-montserrat font-semibold text-24 sm:text-28 lg:text-32 mb-4 sm:mb-6">
                 {selectedTab.title}
               </h3>
-              <p className="font-reddit-sans font-light text-14 sm:text-16 lg:text-18 leading-relaxed mb-8 sm:mb-10 lg:mb-12 max-w-[900px]">
+              <p className="font-reddit-sans font-light text-14 sm:text-16 lg:text-18 leading-relaxed mb-8 sm:mb-16 lg:mb-20">
                 {selectedTab.desc}
               </p>
 
