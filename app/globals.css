@@ -378,10 +378,10 @@
     brightness(92%) contrast(95%);
 }
 .testimonial-slick .slick-prev::before {
-  background-image: url('/public/icons/global/left-chev.svg');
+  background-image: url('/icons/global/left-chev.svg');
 }
 .testimonial-slick .slick-next::before {
-  background-image: url('/public/icons/global/right-chev.svg');
+  background-image: url('/icons/global/right-chev.svg');
 }
 
 /* service section */
