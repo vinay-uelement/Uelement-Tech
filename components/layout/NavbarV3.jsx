@@ -230,7 +230,7 @@ const Navbar = () => {
             </button>
 
             {/* desktop */}
-            <div className="flex-1 relative  hidden md:block">
+            <div className="flex-1 relative hidden md:block">
               <div className="w-[calc(100%+40px)] h-full bg-[#32323259] backdrop-blur-lg rounded-[40px] -ml-10 px-3 hidden md:flex items-center relative z-50">
                 <div className="size-10 bg-[#9B7025] rounded-full relative">
                   <img

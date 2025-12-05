@@ -53,17 +53,17 @@ export default function AboutSection() {
 
 
     <div>
-      <div className="p-10 bg-primary-blue r15">
+      <div className="p-10 bg-primary-blue rounded-[4px]">
         <div className="flex flex-col-reverse xl:flex-row">
           {/* LEFT WHITE BOX */}
-          <div className="xl:w-1/2 bg-[#FFF8F0] r15 py-15 px-6 md:px-12 relative">
+          <div className="xl:w-1/2 bg-[#FFF8F0] rounded-[4px] py-5 md:py-15 px-6 md:px-12 relative">
             {/* vertical dotted line */}
-            <div className="absolute bottom-12 top-12 left-1/2 border-r-2 border-dashed border-[#C5C5C5]"></div>
+            <div className="absolute bottom-12 top-12 left-1/2 border-r-2 border-dashed border-[#00000019] md:border-[#C5C5C5]"></div>
 
             {/* horizontal dotted line */}
-            <div className="absolute left-4 right-4 md:left-12 md:right-12 top-1/2 border-t-2 border-dashed border-[#C5C5C5]"></div>
+            <div className="absolute left-12 right-12 top-1/2 border-t-2 border-dashed border-[#00000019] md:border-[#C5C5C5]"></div>
 
-            <div className="grid grid-cols-2 gap-y-30 gap-x-10 place-items-center">
+            <div className="grid grid-cols-2 gap-y-15 md:gap-y-30 gap-x-10 place-items-center">
               {bullet.map((point) => (
                 <div
                   key={point.id}
@@ -72,7 +72,7 @@ export default function AboutSection() {
                   <p className="text-20 md:text-[42px] font-extrabold font-reddit-sans text-[#A67620] leading-none">
                     {point.number}
                   </p>
-                  <p className="text-[18px] mt-3 text-[#4A4A4A] font-light max-w-[160px]">
+                  <p className="!text-12 md:!text-[18px] fl3 mt-3 text-[#4A4A4A] font-light max-w-[160px]">
                     {point.desc}
                   </p>
                 </div>
@@ -81,15 +81,15 @@ export default function AboutSection() {
           </div>
 
           {/* RIGHT BLUE BOX */}
-          <div className="flex-1 bg-primary-blue pe-[var(--container-small-padding)] md:pe-0 ps-[var(--container-small-padding)] text-white py-[var(--section-block-padding)]">
+          <div className="flex-1 bg-primary-blue pe-[var(--container-small-padding)] md:pe-0 ps-[var(--container-small-padding)] text-white md:py-[var(--section-block-padding)]">
             <div className="w-full">
-              <p className="fl-slash">/About us</p>
-              <h2 className="fl1 !text-[#FFF9FF]">
+              <p className="fl-slash text-center md:text-left">/About us</p>
+              <h2 className="fl1 !text-[#FFF9FF] text-center md:text-left">
                 Precision, Trust. Your Full-Stack{' '}
                 <br className="hidden md:block" />
                 Partner for Secure Future
               </h2>
-              <p className="mt-4 md:max-w-[80%] fl3 !text-[16px] !text-[#FFF9FF] ">
+              <p className="mt-4 md:max-w-[80%] fl3 !text-[16px] !text-[#FFF9FF] text-center md:text-left mb-8 md:mb-0">
                 Established by innovators in 2024, UElement Technologies is dedicated to solving complex challenges across
                 Cybersecurity, Cloud, and AI with unparalleled expertise. We eliminate the complexity of managing multiple vendors
                 by delivering an integrated, seamless service portfolio. Our relentless commitment to excellence and
@@ -102,7 +102,7 @@ export default function AboutSection() {
       </div>
       <div className="w-full bg-white text-black py-[var(--section-block-padding)]">
         <div className="container-padding">
-          <div className="flex flex-col md:flex-row gap-16">
+          <div className="flex flex-col xl:flex-row gap-16">
             <div className="flex-1">
               <p className="fl-slash">/About us</p>
               <h2 className="fl1">Established by Innovators to Define Tomorrow's Digital Landscape.</h2>
@@ -124,8 +124,8 @@ export default function AboutSection() {
               {/* Horizontal center line */}
               <div className="absolute top-1/2 md:block hidden left-0 right-0 border-t-2 border-dotted border-gray-300 transform -translate-y-1/2"></div>
 
-              {/* 2x2 Grid */}
-              <div className="grid grid-cols-1 gap-20 max-w-5xl mx-auto relative z-10 md:hidden">
+              {/* 2x2 Grid Mobile */}
+              <div className="grid grid-cols-1 gap-10 max-w-5xl mx-auto relative z-10 md:hidden">
                 {transformBullet.map((data) => (
                   <div key={data.id} className={`flex flex-col ${data.id % 2 !== 0 ? "items-start" : "items-end"}`}>
                     <div className="size-[50px] flex items-center justify-center bg-primary-blue rounded-full ">
@@ -145,6 +145,7 @@ export default function AboutSection() {
                 ))}
               </div>
 
+              {/* Desktop  */}
               <div className="grid grid-cols-2 gap-20 max-w-5xl mx-auto relative z-10 hidden md:grid">
                 {transformBullet.map((data) => (
                   <div key={data.id} className="flex flex-col items-start">
@@ -166,7 +167,7 @@ export default function AboutSection() {
               </div>
             </div>
 
-            <button className="btn-blue mt-8 w-fit mx-auto md:hidden">
+            <button className="btn-blue w-fit mx-auto md:hidden">
               Learn More
             </button>
           </div>

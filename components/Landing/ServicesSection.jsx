@@ -71,7 +71,7 @@ const ServicesSection = () => {
     }),
     singleValue: (provided) => ({
       ...provided,
-      
+      color: '#fff',
       fontWeight: '500',
     }),
     option: (provided, state) => ({
@@ -82,6 +82,7 @@ const ServicesSection = () => {
     }),
     dropdownIndicator: (provided) => ({
       ...provided,
+      color: '#fff',
       padding: '0 4px',
       margin: '0 16px 0 0',
     }),
@@ -102,16 +103,17 @@ const ServicesSection = () => {
   };
 
   return (
-    <section className="bg-primary-blue  py-10 sm:py-12 lg:py-16 container-padding rounded-t-[10px] mb-10">
+    <section className="bg-secondary-muted py-10 sm:py-12 lg:py-16 container-padding rounded-t-[10px] mb-10">
       <div className=" mx-auto">
         {/* Header */}
         <div className="mb-8 sm:mb-10 lg:mb-12">
-          <p className="fl-slash !text-[#ffffff] mb-3">/Services</p>
-          <h2 className="fl1 !text-[#ffffff] mb-3 sm:mb-4">
+          <p className="text-12 sm:text-14 text-gray-600 mb-3">/Services</p>
+          <h2 className="fl1 !text-primary-blue mb-3 sm:mb-4">
             Our Enterprise Solutions
           </h2>
-          <p className="fl3 !text-[#ffffff] max-w-[800px] ">
-            Comprehensive services designed to protect, optimize, and transform your business operations. 
+          <p className="font-reddit-sans text-14 sm:text-16 lg:text-18 text-gray-700 max-w-[600px]">
+            Comprehensive services designed to protect, optimize, and transform
+            your business operations.
           </p>
         </div>
 
@@ -125,8 +127,8 @@ const ServicesSection = () => {
                 onClick={() => setSelectedTab(tab)}
                 className={`relative px-20 py-3 font-montserrat font-medium text-14 lg:text-16 rounded-tl-[10px] transition-all duration-300 ease-in-out overflow-hidden ${
                   tab.id === selectedTab.id
-                    ? 'bg-[#fff4e4] text-primary-blue shadow-[0px_4px_5px_0px_rgba(0,0,0,0.20)]'
-                    : 'bg-[#FCFCFC] text-primary-blue hover:bg-gray-100 border border-[#E0E0E0]'
+                    ? 'bg-primary-blue text-white shadow-[0px_4px_5px_0px_rgba(0,0,0,0.20)]'
+                    : 'bg-[#FCFCFC] text-[#9E9E9E] hover:bg-gray-100 border border-[#E0E0E0]'
                 }`}
                 style={{
                   clipPath:
@@ -140,9 +142,9 @@ const ServicesSection = () => {
 
           {/* Mobile Dropdown */}
           <div className="md:hidden mb-0 relative z-50">
-            <div className="relative inline-block w-full max-w-[200px] ">
+            <div className="relative inline-block w-full max-w-[200px]">
               <div
-                className="absolute inset-0 bg-[#ffffff] pointer-events-none rounded-tl-[10px]"
+                className="absolute inset-0 bg-primary-blue pointer-events-none rounded-tl-[10px]"
                 style={{
                   clipPath:
                     'polygon(0 0, calc(100% - 30px) 0, 100% 100%, 0 100%)',
@@ -163,18 +165,18 @@ const ServicesSection = () => {
           </div>
 
           {/* Tab Content */}
-          <div className="bg-white text-primary-blue  p-6 sm:p-8 lg:p-10 xl:p-12 rounded-[10px] rounded-tl-none transition-all duration-300 ease-in-out shadow-[3.71px_0px_3.71px_0px_rgba(0,0,0,0.25)]">
+          <div className="bg-primary-blue text-white p-6 sm:p-8 lg:p-10 xl:p-12 rounded-[10px] rounded-tl-none transition-all duration-300 ease-in-out shadow-[3.71px_0px_3.71px_0px_rgba(0,0,0,0.25)]">
             <div className="animate-fade-in">
-              <h3 className="fl1-sep mb-4 sm:mb-6">
+              <h3 className="font-montserrat font-semibold text-24 sm:text-28 lg:text-32 mb-4 sm:mb-6">
                 {selectedTab.title}
               </h3>
-              <p className="fl3 leading-relaxed mb-8 sm:mb-10 lg:mb-12 max-w-[1100px]">
+              <p className="font-reddit-sans font-light text-14 sm:text-16 lg:text-18 leading-relaxed mb-8 sm:mb-16 lg:mb-20">
                 {selectedTab.desc}
               </p>
 
               <div className="flex flex-col md:flex-row gap-6 items-center justify-between">
-                <div className='hidden md:block'>
-                  <button className="btn-yellow hover:scale-101 mt-8">
+                <div>
+                  <button className="btn-yellow hover:scale-101">
                     Learn More
                   </button>
                 </div>
@@ -183,14 +185,14 @@ const ServicesSection = () => {
                   <button
                     disabled={index === 0}
                     onClick={prevSlide}
-                    className="size-8 sm:size-9 md:size-10 text-white rounded-full bg-primary-blue flex items-center justify-center disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300 flex-shrink-0"
+                    className="size-8 sm:size-9 md:size-10 bg-white rounded-full text-primary-blue flex items-center justify-center hover:bg-white/90 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300 flex-shrink-0"
                   >
                     <span className="text-14 sm:text-16 md:text-18">
                       {ReactIcons.leftChev}
                     </span>
                   </button>
 
-                  <div className="bg-primary-blue  rounded-[10px] p-4 sm:p-5 md:p-6 flex-1 md:max-w-[500px] min-w-0">
+                  <div className="bg-white rounded-[10px] p-4 sm:p-5 md:p-6 flex-1 md:max-w-[500px] min-w-0">
                     <div className="relative overflow-hidden">
                       <div
                         className="flex transition-transform duration-500 ease-in-out"
@@ -199,7 +201,7 @@ const ServicesSection = () => {
                         {slides.map((text, i) => (
                           <div
                             key={i}
-                            className="min-w-full text-white font-reddit-sans text-12 sm:text-13 font-medium"
+                            className="min-w-full text-primary-blue font-reddit-sans text-12 sm:text-13 font-medium"
                           >
                             {text}
                           </div>
@@ -211,17 +213,11 @@ const ServicesSection = () => {
                   <button
                     disabled={index === slides.length - 1}
                     onClick={nextSlide}
-                    className="size-8 sm:size-9 md:size-10 text-white rounded-full bg-primary-blue flex items-center justify-center  disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300 flex-shrink-0"
+                    className="size-8 sm:size-9 md:size-10 bg-white rounded-full text-primary-blue flex items-center justify-center hover:bg-white/90 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300 flex-shrink-0"
                   >
                     <span className="text-14 sm:text-16 md:text-18">
                       {ReactIcons.rightChev}
                     </span>
-                  </button>
-                  
-                </div>
-                <div className='md:hidden'>
-                  <button className="btn-yellow hover:scale-101 mt-4">
-                    Learn More
                   </button>
                 </div>
               </div>

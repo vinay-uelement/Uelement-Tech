@@ -6,6 +6,7 @@ import Highlight from '../Landing/Highlights';
 import ServicesSection from '../Landing/ServicesSection';
 import HeroSection from '../Landing/HeroSectionV5';
 import Testimonial from '../Landing/Testimonial';
+import HighlightV2 from '../Landing/HighlightsV2';
 
 const LandingPage = () => {
   return (
@@ -15,7 +16,7 @@ const LandingPage = () => {
         <DrivingGrowthSection />
       </div>
       <div>
-        <Highlight />
+        <HighlightV2 />
       </div>
       <div>
         <AboutSection />
