@@ -4,7 +4,7 @@ set -euo pipefail
 APP_NAME="uelement"
 STAGING_DIR="/opt/codedeploy/${APP_NAME}/staging"
 LIVE_DIR="/var/www/${APP_NAME}"
-BUILD_DIR="${STAGING_DIR}/dist"
+BUILD_DIR="${STAGING_DIR}/out"
 NGINX_WEBROOT="/usr/share/nginx/html"
 
 log() { echo "[$(date +%Y-%m-%dT%H:%M:%S)] [AfterInstall] $*"; }
