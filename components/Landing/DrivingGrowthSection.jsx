@@ -4,7 +4,6 @@ import Slider from 'react-slick';
 import { ReactIcons } from '@/utils/ReactIcons';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import Dots from '../../components/Dots';
 
 const slides = [
   {
@@ -48,6 +47,15 @@ const DrivingGrowthSection = () => {
   const [active, setActive] = useState(0);
   const sliderRef = useRef(null);
 
+  const getDotSize = (dotIndex) => {
+    const distance = Math.abs(active - dotIndex);
+
+    if (distance === 0) return 16;
+    if (distance === 1) return 12;
+    if (distance === 2) return 8;
+    return 5;
+  };
+
   const settings = {
     dots: false,
     infinite: true,
@@ -56,8 +64,37 @@ const DrivingGrowthSection = () => {
     slidesToScroll: 1,
     arrows: false,
     fade: false,
-    beforeChange: (oldIndex, newIndex) => setActive(newIndex),
-    centerMode: false,
+    autoplay: true,
+    autoplaySpeed: 5000,
+
+    beforeChange: (_, next) => setActive(next),
+
+    appendDots: (dots) => (
+      <div>
+        <ul className="flex justify-center items-center">{dots}</ul>
+      </div>
+    ),
+
+    customPaging: (i) => {
+      const size = getDotSize(i);
+
+      return (
+        <div
+          className="flex items-center justify-center mt-5"
+          style={{ width: '20px', height: '20px' }}
+        >
+          <div
+            style={{
+              width: size,
+              height: size,
+              borderRadius: '50%',
+              background: i === active ? '#0C142D' : '#D9D9D9',
+              transition: 'all 0.3s ease',
+            }}
+          ></div>
+        </div>
+      );
+    },
   };
 
   const nextSlide = () => {
@@ -78,8 +115,8 @@ const DrivingGrowthSection = () => {
     <section className="container-small">
       <div className="flex lg:items-center flex-col lg:flex-row gap-18 lg:pb-8 xl:pb-10 2xl:pb-12">
         {/* Left Side Numbers */}
-        <div className="flex-1">
-          <span className="slash block lg:hidden">/Service Segment</span>
+        <div className="flex-1 lg:mr-[30px] md:w-[60%] w-full">
+          <span className="fl-slash block lg:hidden ">/Service Segment</span>
 
           <div className="mb-7 xl:mb-10 flex items-center">
             <div className="circle size-[50px] min-w-[50px] xl:size-[70px] rounded-full bg-white grid place-content-center shadow-down font-bold italic text-20 xl:text-24 transition-all duration-500">
@@ -97,11 +134,11 @@ const DrivingGrowthSection = () => {
             </div>
           </div>
 
-          <span className="slash hidden lg:block">/Service Segment</span>
-          <h3 className="title">
+          <span className="fl-slash hidden lg:block">/Service Segment</span>
+          <h3 className="fl1">
             Driving growth through strategic collaborations
           </h3>
-          <p className="font-light hidden lg:block">
+          <p className="fl3 lg:block">
             SI Partnerships (SI) represents strategic alliances that help
             organizations grow, innovate, and expand their reach. It focuses on
             collaboration with trusted partners to drive mutual value and
@@ -109,17 +146,16 @@ const DrivingGrowthSection = () => {
             new opportunities, strengthen capabilities, and achieve shared
             goals.
           </p>
-          <button className="btn-1 mt-4 xl:mt-5 hidden lg:block">
+          <button className="btn-blue mt-4 xl:mt-20 hidden lg:block">
             Learn More
           </button>
         </div>
 
-        <div className="relative overflow-visible w-full md:w-1/2 driving-slider md:pl-[16px] xl:pl-[20px]">
-          {/* Left Navigation Button */}
-          <div className="absolute inset-y-0 -left-4 md:-left-7 lg:-left-16 flex items-center z-20">
+        <div className="relative overflow-visible lg:w-[250px] xl:w-[450px] 2xl:w-[600px] driving-slider">
+          <div className="absolute inset-y-0 -left-4 md:-left-18 flex items-center z-20">
             <div
               onClick={prevSlide}
-              className="size-[32px] md:size-[44px] xl:size-[60px] text-20 lg:text-24 rounded-full bg-[#DEDEDE] shadow-down grid place-content-center cursor-pointer transition text-white lg:text-primary-blue"
+              className="size-[34px] text-20 lg:text-24 xl:size-[60px] rounded-full bg-[#DEDEDE] shadow-down grid place-content-center cursor-pointer transition text-white lg:text-primary-blue"
             >
               <span>{ReactIcons.leftChev}</span>
             </div>
@@ -163,14 +199,14 @@ const DrivingGrowthSection = () => {
                     style={{ zIndex, position: 'relative' }}
                   >
                     <div
-                      className="relative w-[200px] h-[280px] md:w-[320px] md:h-[320px] xl:w-[360px] xl:h-[370px] 2xl:w-[360px] 2xl:h-[450px] rounded-[15px] overflow-hidden"
+                      className="relative w-[200px] h-[280px] md:w-[320px] md:h-[320px] xl:w-[360px] xl:h-[370px] 2xl:w-[360px] 2xl:h-[450px] rounded-[0px] overflow-hidden"
                       style={{
                         backgroundImage: `url(${item.img})`,
                         backgroundSize: 'cover',
                         backgroundPosition: 'center',
                       }}
                     >
-                      <div className="box-inner bg-black/65  h-full w-full rounded-[5px] sm:rounded-[10px] lg:rounded-[20px] p-3 relative z-10">
+                      <div className="bg-black/65 h-full w-full p-3 relative z-10">
                         <div
                           style={{ opacity: textOpacity }}
                           className="transition-opacity duration-700 h-full flex flex-col gap-8 text-center px-2 md:px-10 py-4 "
@@ -190,11 +226,10 @@ const DrivingGrowthSection = () => {
             })}
           </Slider>
 
-          {/* Right Navigation Button */}
-          <div className="absolute inset-y-0 -right-4 md:-right-7 lg:-right-16 flex items-center z-20">
+          <div className="absolute inset-y-0 -right-4 md:-right-18 flex items-center z-20">
             <div
               onClick={nextSlide}
-              className="size-[32px] md:size-[44px] xl:size-[60px] text-20 lg:text-24 rounded-full bg-[#DEDEDE] shadow-down grid place-content-center cursor-pointer transition text-white lg:text-primary-blue"
+              className="size-[34px] text-20 lg:text-24 xl:size-[60px] rounded-full bg-[#DEDEDE] shadow-down grid place-content-center cursor-pointer transition text-white lg:text-primary-blue"
             >
               <span>{ReactIcons.rightChev}</span>
             </div>
@@ -208,18 +243,11 @@ const DrivingGrowthSection = () => {
           />
 
         </div>
-
-        {/* Mobile Text Section */}
-        <p className="font-light block lg:hidden pt-12">
-          SI Partnerships (SI) represents strategic alliances that help
-          organizations grow, innovate, and expand their reach. It focuses on
-          collaboration with trusted partners to drive mutual value and
-          long-term success. Through these partnerships, businesses can unlock
-          new opportunities, strengthen capabilities, and achieve shared goals.
-        </p>
-        <button className="btn-1 mt-0 xl:mt-5 block mx-auto w-[150px] lg:w-auto lg:hidden">
-          Learn More
-        </button>
+        <div className="flex justify-center">
+          <button className="btn-blue mt-4 lg:hidden w-fit  ">
+            Learn More
+          </button>
+        </div>
       </div>
     </section>
   );

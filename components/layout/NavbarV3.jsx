@@ -209,7 +209,7 @@ const Navbar = () => {
           <div className=" flex justify-between  h-full w-full relative">
             <Link
               href={'/'}
-              className="bg-primary-blue rounded-l-[22px] rounded-tl-[5px] md:w-[290px] h-full ps-4 flex items-center"
+              className="bg-primary-blue rounded-l-[22px] rounded-tl-[4px] md:w-[290px] h-full ps-4 flex items-center"
             >
               <img
                 src="/icons/global/UElement_Logo_White 3.svg"
@@ -252,7 +252,7 @@ const Navbar = () => {
                     >
                       <Link
                         href={navItem.link}
-                        className="flex items-center font-reddit-sans text-[#ebebeb] px-3  relative h-full"
+                        className="flex items-center font-reddit-sans font-semibold text-18 text-[#fff] px-3 uppercase relative h-full"
                       >
                         {navItem.children && (
                           <span
@@ -282,7 +282,7 @@ const Navbar = () => {
               <div
                 ref={dropdownRef}
                 className={`w-[calc(100%+40px)] absolute -left-10 bg-[#00000050] backdrop-blur-2xl backdrop-saturate-150
-    shadow-xl text-primary-blue z-[30] top-9 flex rounded-b-[20px] overflow-hidden transition-all duration-300 ease-in-out ${
+    shadow-xl text-[#fff] z-[30] top-9 flex rounded-b-[22px] overflow-hidden transition-all duration-300 ease-in-out ${
       hoveredMenu && hoveredMenu?.children ? 'h-[350px]' : 'h-0 '
     }`}
               >
@@ -291,29 +291,30 @@ const Navbar = () => {
                     className={`flex-[2]  ${
                       hoveredMenu &&
                       hoveredMenu?.children &&
-                      'border-r border-primary-blue'
+                      ''
+                      // border-r border-primary-blue
                     }`}
                   >
-                    <div className="text-20 text-white font-reddit-sans">
+                    <div className="text-22 text-white font-reddit-sans font-semibold border-b-[0.5px] border-[#ebebeb] pb-2">
                       {hoveredMenu?.label}
                     </div>
                     {hoveredMenu?.children?.map((child) => (
                       <Link
                         key={child.id}
                         href={'#'}
-                        className="block py-4 border-b-[0.5px] last:border-none border-primary-blue hover:text-primary-blue max-w-[90%]"
+                        className="block py-4  last:border-none border-primary-blue hover:text-primary-blue max-w-[100%]"
                       >
-                        <div className="font-semibold text-14 text-[#E8E8E8] font-reddit-sans">
+                        <div className="font-semibold text-18 text-[#fff] font-reddit-sans uppercase">
                           {child.label}
                         </div>
-                        <div className="text-12 font-light text-[#E8E8E8] font-reddit-sans">
+                        <div className="text-16 font-light text-[#fff] font-reddit-sans">
                           {child.desc}
                         </div>
                       </Link>
                     ))}
                   </div>
 
-                  <div className="flex-1 w-full flex items-center justify-center min-h-full relative pl-4 -mt-4">
+                  {/* <div className="flex-1 w-full flex items-center justify-center min-h-full relative pl-4 -mt-4">
                     {hoveredMenu && (
                       <Slider
                         {...settings}
@@ -341,7 +342,7 @@ const Navbar = () => {
                         ))}
                       </Slider>
                     )}
-                  </div>
+                  </div> */}
                 </div>
               </div>
             </div>

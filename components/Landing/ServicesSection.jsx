@@ -108,7 +108,7 @@ const ServicesSection = () => {
         {/* Header */}
         <div className="mb-8 sm:mb-10 lg:mb-12">
           <p className="text-12 sm:text-14 text-gray-600 mb-3">/Services</p>
-          <h2 className="font-montserrat font-bold text-28 sm:text-36 lg:text-40 xl:text-45 text-primary-blue mb-3 sm:mb-4">
+          <h2 className="fl1 !text-primary-blue mb-3 sm:mb-4">
             Our Enterprise Solutions
           </h2>
           <p className="font-reddit-sans text-14 sm:text-16 lg:text-18 text-gray-700 max-w-[600px]">
@@ -176,7 +176,7 @@ const ServicesSection = () => {
 
               <div className="flex flex-col md:flex-row gap-6 items-center justify-between">
                 <div>
-                  <button className="bg-[#9B7025] hover:bg-[#9B7025]/90 text-white font-poppins text-14 sm:text-16 px-8 py-3 rounded-[40px] transition-all duration-300 hover:scale-105 w-fit">
+                  <button className="btn-yellow hover:scale-101">
                     Learn More
                   </button>
                 </div>

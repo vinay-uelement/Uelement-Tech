@@ -33,6 +33,12 @@
     font-weight: 900;
   }
 
+  @font-face {
+    font-family: 'Cal Sans';
+    src: url('/fonts/Cal_Sans/CalSans-SemiBold.ttf') format('truetype');
+    font-weight: 800;
+  }
+
   /* Montserrat Variable Font */
   @font-face {
     font-family: 'Montserrat';
@@ -62,24 +68,9 @@
   /* Reddit Sans */
   @font-face {
     font-family: 'Reddit Sans';
-    src: url('/fonts/Reddit_Sans/RedditSans-Regular.ttf') format('truetype');
+    src: url('/fonts/Reddit_Sans/RedditSans-VariableFont_wght.ttf') format('truetype');
     font-display: swap;
-    font-weight: 400;
-  }
-
-  @font-face {
-    font-family: 'Noto Sans';
-    src: url('/fonts/Noto_Sans/NotoSans-BoldItalic.ttf') format('truetype');
-    font-style: italic;
-    font-display: swap;
-    font-weight: 600;
-  }
-
-  @font-face {
-    font-family: 'Reddit Sans';
-    src: url('/fonts/Reddit_Sans/RedditSans-Light.ttf') format('truetype');
-    font-display: swap;
-    font-weight: 100;
+    font-weight: 100 900;
   }
 
   /* end of font */
@@ -188,7 +179,15 @@
   .container-padding {
     @apply px-5 sm:px-10 md:px-20;
   }
-
+  .section-block-padding {
+    @apply py-10 md:py-16 3xl:py-22;
+  }
+  .section-block-top {
+    @apply pt-10 md:pt-16 3xl:pt-22;
+  }
+  .section-block-bottom {
+    @apply pb-10 md:pb-16 3xl:pb-22;
+  }
   .slash {
     @apply text-14 md:text-16 3xl:text-18 font-reddit-sans mb-6 md:mb-8 3xl:mb-10;
   }
@@ -208,9 +207,32 @@
   .btn-primary {
     @apply text-16 xl:text-18 bg-[#0C142D] hover:scale-105 text-white rounded-[40px] py-2 px-6 2xl:px-7 2xl:py-2;
   }
-
-  .btn-glass {
-    @apply bg-[#D4D4D470] rounded-[40px] text-16 xl:text-18 py-2 hover:shadow-inset-white;
+  .btn-yellow {
+    @apply bg-[#9B7025] rounded-[4px] text-white font-reddit-sans font-semibold shadow-[1px_4px_2px_0px_rgba(0,0,0,0.15)] text-12 md:text-18 py-2 px-[40px] hover:shadow-inset-white transition-all duration-300;
+  }
+  .btn-blue {
+    @apply bg-[#0C142D] text-white font-reddit-sans font-semibold shadow-[1px_4px_2px_0px_rgba(0,0,0,0.15)] rounded-[9px] text-12 md:text-18 py-2 px-[40px] hover:shadow-inset-white transition-all duration-300;
+  }
+  .fl-main{
+    @apply font-cal-sans text-white text-26 md:text-[60px];
+  }
+  .fl-slash{
+    @apply text-12 md:text-20 font-reddit-sans font-medium mb-6 md:mb-8 3xl:mb-10 text-[#23223] tracking-[0.03em];
+  }
+  .fl1{
+    @apply font-noto-sans font-bold text-18 md:text-30 mb-4 md:mb-6 3xl:mb-8 text-[#232223] tracking-[0.03em];
+  }
+  .fl1-sep{
+    @apply font-noto-sans font-semibold text-20 md:text-[35px] mb-4 md:mb-6 3xl:mb-8 text-[#232223] tracking-[0.03em];
+  }
+  .fl2{
+    @apply font-montserrat font-semibold text-16 md:text-[26px] text-[#232223] mb-2 md:mb-4 3xl:mb-6 tracking-[0.03em];
+  }
+  .fl3{
+    @apply font-reddit-sans font-light text-14 md:text-16 text-[#232223] tracking-[0.03em];
+  }
+  .fl4{
+    @apply font-noto-sans italic text-12 md:text-20 font-medium text-white tracking-[0.03em];
   }
 }
 
@@ -223,6 +245,7 @@
   --font-dm-serif: 'DM Serif';
   --font-noto-sans: 'Noto Sans';
   --font-reddit-sans: 'Reddit Sans';
+  --font-cal-sans: 'Cal Sans';
 
   /* COLORS */
   --color-primary-blue: #0c142d;
@@ -235,6 +258,7 @@
   --color-about-white: #cdd5db;
   --color-secondary-muted: #fff4e4;
   --color-honey-gold-300: #fff4e4;
+  --color-black-1: #232223
 
   /* FONT SIZE */
   --text-10: 10px;
@@ -266,14 +290,13 @@
   --shadow-hover: inset 0px 0px 12px 0px #00000029;
   --shadow-inset-white: inset 0px 0px 12px 0px #ffffff70;
 
-  --breakpoint-sm: 600px;
+   --breakpoint-sm: 600px;
   --breakpoint-md: 768px;
   --breakpoint-lg: 992px;
   --breakpoint-xl: 1200px;
   --breakpoint-2xl: 1400px;
   --breakpoint-3xl: 1600px;
   --breakpoint-4xl: 1920px;
-
 }
 
 /* hero */
@@ -534,77 +557,6 @@
   pointer-events: none;
 }
 
-.dg-dots-wrapper {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  padding-top: 12px;
-}
-
-.dg-dots-inner {
-  display: flex;
-  gap: 12px;
-  align-items: center;
-  perspective: 800px;
-  will-change: transform;
-}
-
-/* base dot */
-.dg-dot {
-  width: 10px;
-  height: 10px;
-  border-radius: 9999px;
-  border: 0;
-  padding: 0;
-  background: #cfcfcf;
-  /* default light */
-  cursor: pointer;
-  transition: transform .32s cubic-bezier(.2, .9, .2, 1), box-shadow .32s, background .24s;
-  display: inline-block;
-  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.06);
-}
-
-
-.dg-dot--active {
-  width: 18px;
-  height: 18px;
-  background: #111;
-  /* dark center */
-  transform: translateZ(14px) rotateX(6deg) scale(1);
-  box-shadow: 0 12px 26px rgba(0, 0, 0, 0.28), inset 0 -3px 6px rgba(255, 255, 255, 0.03);
-}
-
-
-@media (hover: hover) and (pointer: fine) {
-  .dg-dot:hover {
-    transform: translateZ(6px) rotateX(3deg) scale(1.06);
-  }
-
-  .dg-dot--active:hover {
-    transform: translateZ(18px) rotateX(6deg) scale(1.04);
-  }
-
-  .dg-dot:focus {
-    outline: none;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.18);
-    transform: translateZ(16px) rotateX(6deg) scale(1.05);
-  }
-}
-
-/* Make dots a bit smaller on very small screens */
-@media (max-width: 420px) {
-  .dg-dot {
-    width: 8px;
-    height: 8px;
-  }
-
-  .dg-dot--active {
-    width: 14px;
-    height: 14px;
-  }
-}
-
-
 /*------------------------------------------------------------------------------------------------------------------------------------------------ MEDIA QUERIES -----------------------------------------------------------------------------------------------------------------*/
 
 @media screen and (max-width: 1400px) {
@@ -655,6 +607,14 @@
 
 .r15 {
   border-radius: 15px;
+}
+
+.r5 {
+  border-radius: 5px;
+}
+
+.r10 {
+  border-radius: 10px;
 }
 
 @keyframes fade-in {

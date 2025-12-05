@@ -1,124 +1,95 @@
+const servicesData = [
+  {
+    id: '01',
+    title: 'Cybersecurity',
+    img: '/images/service/service-one.jpg',
+    heading: 'Secure Your Digital Perimeter and Supply Chain.',
+    desc: 'Establish an end-to-end defense across your enterprise, covering Application Security, Network Security, and Cloud Security. We enforce Zero Trust principles, provide SASE and CNAPP solutions, and guarantee data protection against threats, including future Quantum-Resistant Security (QKD)',
+    bg: 'md:bg-[#F3F3F3] bg-white',
+    badgeBg: 'bg-[#D7D7D7]',
+    lineBg: 'bg-[#D2D2D2]',
+  },
+  {
+    id: '02',
+    title: 'Cloud Solutions',
+    img: '/images/service/service-two.jpg',
+    heading: 'Optimize Performance, Lower Cloud Spend (FinOps).',
+    desc: 'Accelerate cloud migration and modernization across Multi/Hybrid-cloud, Private Cloud, and Government Cloud (GCC). Achieve unparalleled efficiency through automated DevOps practices, FinOps cost governance, and infrastructure built as IaaC (Infrastructure as Code).',
+    bg: 'bg-[#E0E0E0]',
+    badgeBg: 'bg-[#9C9C9C]',
+    lineBg: 'bg-[#9C9C9C]',
+  },
+  {
+    id: '03',
+    title: 'AI & Machine Learning',
+    img: '/images/service/service-three.jpg',
+    heading: 'Operationalize AI for Real-Time Business Intelligence',
+    desc: 'Deploy specialized AI models (Edge AI, Computer Vision, Conversational AI) for everything from customer engagement to sophisticated Predictive Analysis. We use AIOps/MLOps frameworks to seamlessly build, train, and scale reliable production systems using the latest LLMs & NLP.',
+    bg: 'md:bg-[#F3F3F3] bg-white',
+    badgeBg: 'bg-[#D7D7D7]',
+    lineBg: 'bg-[#D2D2D2]',
+  },
+];
+
 const ServicesList = () => {
   return (
     <section className="bg-white mb-[75px]">
-      {/* service one */}
+      {servicesData.map((service, index) => {
+        const isReversed = index % 2 !== 0;
+        const isFirst = index === 0;
+        const isLast = index === servicesData.length - 1;
 
-      <div className="container-padding">
-        <div className="flex flex-col md:flex-row gap-20 bg-[#F3F3F3] border-[0.5px] border-[#D4D4D4]/50 rounded-[5px] p-6 md:p-12">
-          <div className="flex-1">
-            <img
-              src="/images/service/service-one.jpg"
-              alt="service"
-              className="md:h-[400px] w-auto object-cover "
-            />
-          </div>
-          <div className="flex-1 flex flex-col items-start">
-            <div className="flex items-center">
-              <div className="size-[60px] bg-[#D7D7D7] flex items-center justify-center font-bold text-20 rounded-full">
-                01
+        return (
+          <div key={service.id} className="container-padding">
+            <div
+              className={`flex ${
+                isReversed
+                  ? 'flex-col md:flex-row-reverse'
+                  : 'flex-col md:flex-row'
+              } gap-10 md:gap-20 ${service.bg} p-6 md:p-12  ${
+                isFirst
+                  ? 'rounded-t-[15px]'
+                  : isLast
+                    ? 'rounded-b-[15px]'
+                    : 'rounded-[2px]'
+              }`}
+            >
+              <div className="flex-1">
+                <img
+                  src={service.img}
+                  alt={service.title}
+                  className="md:h-[400px] w-full object-cover rounded-[8px]"
+                />
               </div>
-              <div className=" w-[60px] md:w-[120px] h-[4px] bg-[#D2D2D2]"></div>
-              <div className="text-24 md:text-30 text-black font-semibold ml-3">
-                Cybersecurity
-              </div>
-            </div>
-            <div className="text-black my-12 text-start">
-              <h6 className="font-semibold text-20">
-                Architecting and Optimizing perfect Cloud Solutions.
-              </h6>
-              <p className="mt-6 text-14 font-light">
-                Our Enterprise Cloud Solutions empower global businesses with an
-                optimized, scalable, and secure cloud infrastructure tailored to
-                their unique needs. Designed to enhance efficiency and
-                adaptability, our solutions enable organizations to manage
-                growing demands, streamline operations, and maintain the highest
-                levels of data security.
-              </p>
-            </div>
-            <button className="btn-primary !bg-white !text-black !rounded-[5px] mr-auto block">
-              Contact us
-            </button>
-          </div>
-        </div>
-      </div>
-      {/* service two */}
 
-      <div className="container-padding">
-        <div className="flex flex-col bg-[#E0E0E0] md:flex-row gap-20 p-6 md:p-12">
-          <div className="flex-1 flex flex-col ">
-            <div className="flex items-center">
-              <div className="size-[60px] bg-[#9C9C9C] text-black flex items-center justify-center font-bold text-20 rounded-full">
-                02
-              </div>
-              <div className="w-[60px] md:w-[120px] h-[4px] bg-[#9c9c9c]"></div>
-              <div className="text-24  md:text-30 text-black font-semibold ml-3">
-                Cloud Solutions
-              </div>
-            </div>
-            <div className="text-black my-12 ">
-              <h6 className="font-semibold text-20">
-                Architecting and Optimizing perfect Cloud Solutions.
-              </h6>
-              <p className="mt-6 text-14 font-light">
-                Our Enterprise Cloud Solutions empower global businesses with an
-                optimized, scalable, and secure cloud infrastructure tailored to
-                their unique needs. Designed to enhance efficiency and
-                adaptability, our solutions enable organizations to manage
-                growing demands, streamline operations, and maintain the highest
-                levels of data security.
-              </p>
-            </div>
-            <button className="btn-primary !bg-white !text-black !rounded-[5px] mr-auto block">
-              Get a Demo
-            </button>
-          </div>
-          <div className="flex-1">
-            <img
-              src="/images/service/service-two.jpg"
-              alt="service"
-              className="md:h-[400px] w-auto object-cover"
-            />
-          </div>
-        </div>
-      </div>
+              <div className="flex-1 flex flex-col items-start justify-around">
+                <div className="flex items-center">
+                  <div
+                    className={`size-[60px] ${service.badgeBg} flex items-center justify-center italic font-reddit-sans font-bold text-20 rounded-full`}
+                  >
+                    {service.id}
+                  </div>
+                  <div
+                    className={`w-[60px] md:w-[120px] h-[4px] ${service.lineBg}`}
+                  ></div>
+                  <div className="font-reddit-sans font-semibold text-20 text-[#020202] ml-3">
+                    {service.title}
+                  </div>
+                </div>
 
-      {/* service three */}
+                <div className="text-black my-6 md:my-12 text-start">
+                  <h6 className="fl1-sep md:!text-[26px]">{service.heading}</h6>
+                  <p className="mt-6 fl3">{service.desc}</p>
+                </div>
 
-      <div className="container-padding">
-        <div className="flex flex-col md:flex-row gap-20 bg-[#F3F3F3] border-[0.5px] border-[#D4D4D4]/50 rounded-[5px] p-6 md:p-12">
-          <div className="flex-1">
-            <img
-              src="/images/service/service-three.jpg"
-              alt="service"
-              className="md:h-[400px] w-auto object-cover"
-            />
-          </div>
-          <div className="flex-1 flex flex-col items-start">
-            <div className="flex flex-row items-center">
-              <div className="size-[60px] bg-[#D7D7D7] flex items-center justify-center font-bold text-20 rounded-full">
-                03
-              </div>
-              <div className="w-[60px] hidden md:block md:w-[120px] h-[4px] bg-[#D2D2D2]"></div>
-              <div className="text-24 md:text-30 text-black font-semibold ml-3">
-                Ai & Machine Learning
+                <button className="btn-blue md:self-start self-center my-4">
+                  Learn More
+                </button>
               </div>
             </div>
-            <div className="text-black my-12">
-              <h6 className="font-semibold text-20">
-                Complete Enterprise Security.
-              </h6>
-              <p className="mt-6 text-14 font-light">
-                Our Enterprise Cloud Solutions empower global businesses with an
-                optimized, scalable, and secure cloud infrastructure tailored to
-                their unique needs. Designed to enhance efficiency and
-                adaptability, our solutions enable organizations to manage
-                growing demands, streamline operations, and maintain the highest
-                levels of data security.
-              </p>
-            </div>
           </div>
-        </div>
-      </div>
+        );
+      })}
     </section>
   );
 };

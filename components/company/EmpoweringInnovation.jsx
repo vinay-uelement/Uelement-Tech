@@ -53,7 +53,7 @@ const EmpoweringInnovation = () => {
               {bullet.map((point) => (
                 <div
                   key={point.id}
-                  className="w-[120px] xl:w-[140px] md:max-w-[160px] text-center border-[0.03px] border-[#d4d4d420] rounded-[5px] bg-[#D4D4D41A] backdrop-blur-2xl px-1 py-6 text-white"
+                  className="w-[120px] xl:w-[140px] md:max-w-[160px] text-center border-[0.03px] border-[#d4d4d420] rounded-[4px] bg-[#D4D4D41A] backdrop-blur-2xl px-1 py-6 text-white"
                 >
                   <p className="font-bold text-20 xl:text-30">{point.number}</p>
                   <p className="font-light text-12 xl:text-16">{point.desc}</p>

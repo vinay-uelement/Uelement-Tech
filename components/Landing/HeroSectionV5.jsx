@@ -23,26 +23,26 @@ const HeroSectionV5 = () => {
     }
   };
   return (
-    <section className="h-screen mt-[var(--outer-padding)] flex flex-col rounded-[8px] md:bg-primary-blue relative rounded-br-[5px]">
-      <div className="h-[calc(100%-80px)] w-full relative text-white rounded-[5px] rounded-bl-[50px] rounded-br-none ">
+    <section className="h-screen mt-[var(--outer-padding)] flex flex-col rounded-[8px] md:bg-primary-blue relative">
+      <div className="h-[calc(100%-80px)] w-full relative text-white rounded-[4px] rounded-bl-[50px] rounded-br-none">
         <div className="h-full w-full flex flex-col md:flex-row">
           <div className="w-full h-[60%] md:h-full md:w-[40%] pl-[var(--container-small-padding)] flex flex-col justify-end md:justify-center ">
-            <h1 className="text-white text-32 md:text-[70px] font-noto-sans italic tracking-wider leading-[1.2] mt-5">
-              We Are <br /> Digital <br className="hidden md:block" />{' '}
+            <h1 className="fl-main italic tracking-wider leading-[1.2] mt-5">
+              We Are <br/> Digital <br className=" md:block" />{' '}
               Mavericks.
             </h1>
-            <p className="mt-8 text-16 md:text-20 font-reddit-sans md:mb-20 mb-8 font-normal">
+            <p className="mt-8 fl3 !text-[#ffffff] !text-[12px] md:!text-[20px] md:mb-20 mb-8 ">
               Engineering Quantum-Driven Digital Synapses at <br /> the intersection of
               Cybersecurity, Cloud & AI.
             </p>
             <button
               onClick={handleContactus}
-              className="btn-glass !bg-[#9B7025] w-fit px-9 mt-8"
+              className="btn-yellow w-fit"
             >
               Contact Us
             </button>
           </div>
-          <div className="flex-1 h-[40%]  md:h-full flex items-end justify-end ">
+          <div className="flex-1 h-[40%] md:h-full flex items-end justify-end ">
             {/* <div className="h-[85%] w-[80%]  md:w-full bg-[url(/images/landing/UElement-Mudra.png)] rounded-tr-4xl rounded-br-4xl bg-no-repeat bg-contain bg-right-bottom"></div> */}
           </div>
         </div>
@@ -55,8 +55,8 @@ const HeroSectionV5 = () => {
         >
           {ReactIcons.leftChev}
         </button>
-        <div className="flex-1 flex items-center justify-center min-h-[30px]">
-          <span className="font-noto-sans italic text-base md:text-lg text-white text-center transition-all duration-500">
+        <div className="flex-1 flex pl-[40px] min-h-[30px]">
+          <span className="fl4 text-center transition-all duration-500">
             {slides[index]}
           </span>
         </div>
@@ -69,7 +69,7 @@ const HeroSectionV5 = () => {
         </button>
       </div>
         {/* slider for mobile */}
-        <div className="absolute z-30 w-full  h-[60px] overflow-hidden bottom-28 md:bottom-2 left-1 md:-left-[30px] flex md:hidden items-center gap-2 px-1 sm:px-2 md:px-0 ">
+        <div className="absolute z-30 w-full h-[60px] overflow-hidden bottom-1 md:bottom-2 left-1 md:-left-[30px] flex md:hidden items-center gap-2 px-1 sm:px-2 md:px-0 ">
           <button
             disabled={index === 0}
             onClick={prevSlide}
@@ -86,7 +86,7 @@ const HeroSectionV5 = () => {
                 {slides.map((text, i) => (
                   <div
                     key={i}
-                    className="min-w-full flex items-center font-noto-sans italic text-12  md:text-20 text-white"
+                    className="min-w-full flex items-center fl4 md:!text-20 text-white"
                   >
                     {text}
                   </div>
@@ -103,7 +103,6 @@ const HeroSectionV5 = () => {
           </button>
         </div>
       </div>
-      {/* background */}
       <div className="hidden md:block h-full w-full md:w-[55%] absolute right-0 bottom-0 bg-[url(/images/landing/Mudra.svg)] rounded-tr-4xl rounded-br-[50px] h-[700px] bg-no-repeat bg-contain bg-right-bottom "></div>
       {/* mobile bg */}
       <div
@@ -114,11 +113,7 @@ const HeroSectionV5 = () => {
           backgroundSize: 'contain',
           backgroundPosition: 'bottom',
           backgroundRepeat: 'no-repeat',
-          WebkitMask:
-            "url('/icons/landing/mobile-bg.svg') no-repeat center / cover",
-          mask: "url('/icons/landing/mobile-bg.svg') no-repeat center / cover",
-          WebkitMaskRepeat: 'no-repeat',
-          maskRepeat: 'no-repeat',
+          
         }}
       ></div>
     </section>

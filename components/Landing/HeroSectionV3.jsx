@@ -50,7 +50,7 @@ const HeroSection = () => {
             </p>
             <button
               onClick={handleContactus}
-              className="btn-glass  w-fit px-9 mt-8"
+              className="btn-yellow  w-fit px-9 mt-8"
             >
               Contact Us
             </button>

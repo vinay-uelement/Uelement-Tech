@@ -1,3 +1,5 @@
+"use client"
+
 import TestimonialCard from "./TestimonialCard";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";

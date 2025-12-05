@@ -39,7 +39,7 @@ const HeroSection = () => {
             Engineering Digital Synapses at the Intersection of Cybersecurity,
             Cloud & AI.
           </p>
-          <button className="btn-glass  w-fit px-9 mt-8">Contact Us</button>
+          <button className="btn-yellow  w-fit px-9 mt-8">Contact Us</button>
         </div>
         <div className="flex-1 h-[40%]  md:h-full flex items-end justify-end ">
           <div className="h-[85%] w-[80%]  md:w-full bg-[url(/images/landing/UElement-Mudra.png)] rounded-tr-4xl rounded-br-4xl bg-no-repeat bg-contain bg-right-bottom"></div>

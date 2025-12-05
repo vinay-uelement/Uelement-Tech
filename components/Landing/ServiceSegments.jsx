@@ -7,23 +7,23 @@ import Slider from 'react-slick';
 const services = [
   {
     id: 1,
-    title: 'SI  Partnerships (SI)',
-    desc: 'Designing, Deploying & Delivering Next-Gen Cybersecurity, Cloud & Al Solutions together with OEM partners',
+    title: 'Digital Safety',
+    desc: 'Securing the Future with Quantum-Resistant and Zero Trust Architecture.',
   },
   {
     id: 2,
-    title: 'Professional Services (PS)',
-    desc: 'Designing, Deploying & Delivering Next-Gen Cybersecurity, Cloud & Al Solutions together with OEM partners',
+    title: 'Cloud Mastery',
+    desc: 'Architecting, Optimizing, and Managing Seamless Multi-Cloud Environments.',
   },
   {
     id: 3,
-    title: 'Managed Service Provider ',
-    desc: 'Designing, Deploying & Delivering Next-Gen Cybersecurity, Cloud & Al Solutions together with OEM partners',
+    title: 'Accelerated AI',
+    desc: 'Accelerating Intelligence with Responsible AI and Advanced Analytics.',
   },
   {
     id: 4,
-    title: 'Digital Transformation Solutions (DTS) ',
-    desc: 'Designing, Deploying & Delivering Next-Gen Cybersecurity, Cloud & Al Solutions together with OEM partners',
+    title: 'Future Tech',
+    desc: 'Pioneering Transformation with Quantum, Web3, and Digital Modernization.',
   },
 ];
 
@@ -39,17 +39,16 @@ const ServiceSegments = () => {
   return (
     <div className="py-[var(--section-block-padding)] container-padding">
       <div className="text-center">
-        <h1 className="title">Service Segments</h1>
-        <p className="sub-title">
-          Empowering your journey with innovative, user-centric digital
-          solutions.
+        <h1 className="fl1-sep">Our Domains</h1>
+        <p className="fl3 mb-10 md:mb-14">
+          Deep expertise across four critical technology domains, from Zero Trust to Quantum Readiness.
         </p>
         <div className="hidden md:grid md:grid-cols-4 gap-6 text-left">
           <div className="p-6 md:pb-30 pb-15 bg-primary-blue rounded-[10px] text-white relative">
-            <h6 className="sub-title max-w-[80%] ">
+            <h6 className="font-noto-sans font-medium text-18 md:text-24  mb-10 md:mb-14 max-w-[80%] ">
               SI <br /> Partnerships <br /> (SI)
             </h6>
-            <p className="text-14 font-light mt-6 font-reddit-sans">
+            <p className="fl3 !text-[#ffffff] mt-6 ">
               Designing, Deploying & Delivering Next-Gen Cybersecurity, Cloud &
               Al Solutions together with OEM partners
             </p>
@@ -61,10 +60,10 @@ const ServiceSegments = () => {
             </div>
           </div>
           <div className="p-6 pb-20 bg-primary-blue rounded-[10px] text-white relative">
-            <h6 className="sub-title max-w-[80%] ">
+            <h6 className="font-noto-sans font-medium text-18 md:text-24  mb-10 md:mb-14max-w-[80%] ">
               Professional <br /> Services <br /> (PS)
             </h6>
-            <p className="text-14 font-light mt-6 font-reddit-sans">
+            <p className="fl3 !text-[#ffffff] mt-6">
               Designing, Deploying & Delivering Next-Gen Cybersecurity, Cloud &
               Al Solutions together with OEM partners
             </p>
@@ -76,10 +75,10 @@ const ServiceSegments = () => {
             </div>
           </div>
           <div className="p-6 pb-20 bg-primary-blue rounded-[10px] text-white relative">
-            <h6 className="sub-title max-w-[80%] ">
+            <h6 className="font-noto-sans font-medium text-18 md:text-24  mb-10 md:mb-14 max-w-[80%] ">
               Managed <br /> Service <br /> Provider
             </h6>
-            <p className="text-14 font-light mt-6 font-reddit-sans">
+            <p className="fl3 !text-[#ffffff] mt-6">
               Designing, Deploying & Delivering Next-Gen Cybersecurity, Cloud &
               Al Solutions together with OEM partners
             </p>
@@ -91,11 +90,11 @@ const ServiceSegments = () => {
             </div>
           </div>
           <div className="p-6 pb-20 bg-primary-blue rounded-[10px] text-white relative">
-            <h6 className="sub-title max-w-[80%] ">
+            <h6 className="font-noto-sans font-medium text-18 md:text-24  mb-10 md:mb-14 max-w-[80%] ">
               Digital <br /> Transformation <br />
               Solutions
             </h6>
-            <p className="text-14 font-light mt-6 font-reddit-sans">
+            <p className="fl3 !text-[#ffffff] mt-6">
               Designing, Deploying & Delivering Next-Gen Cybersecurity, Cloud &
               Al Solutions together with OEM partners
             </p>
