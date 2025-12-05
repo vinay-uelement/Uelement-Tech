@@ -317,9 +317,9 @@ const FooterContent = () => {
               NEWSLETTER
             </h6>
             <div className="max-w-[300px]">
-              <div className="relative bg-white rounded-[9px] px-4 py-3 flex items-center gap-2 mb-3">
+              <div className="relative bg-white rounded-[4px] px-4 py-3 flex items-center gap-2 mb-3">
                 <span className="text-gray-400 text-16">
-                  {ReactIcons.email2}
+                  {ReactIcons.email}
                 </span>
                 <input
                   type="email"

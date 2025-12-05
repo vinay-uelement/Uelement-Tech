@@ -109,7 +109,7 @@ const HeroSectionV5 = () => {
         className="block md:hidden absolute inset-0 w-full h-full -z-10"
         style={{
           backgroundColor: '#0C142D',
-          backgroundImage: "url('/images/landing/Mudra.svg')",
+          backgroundImage: "url('/images/landing/UElement-Mudra.png')",
           backgroundSize: 'contain',
           backgroundPosition: 'bottom',
           backgroundRepeat: 'no-repeat',
