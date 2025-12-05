@@ -1,0 +1,54 @@
+# Build Next.js static export and prepare artifacts for CodeDeploy to EC2 (Nginx static hosting)
+version: 0.2
+
+env:
+  variables:
+    NODE_ENV: "production"
+    APP_NAME: "uelement"                   # used for target folder names on EC2
+    DIST_DIR: "out"                        # Next.js static export output
+
+phases:
+  install:
+    runtime-versions:
+      nodejs: 22
+    commands:
+      - echo "Ensuring Node.js >=20.9 (Next.js requirement)"
+      - |
+        if ! command -v node >/dev/null 2>&1 || [ "$(node -p "process.versions.node.split('.')[0]")" -lt 20 ]; then
+          echo "Installing Node.js 22 via NodeSource..."
+          if command -v yum >/dev/null 2>&1 || command -v dnf >/dev/null 2>&1; then
+            curl -fsSL https://rpm.nodesource.com/setup_22.x | bash -
+            (command -v yum >/dev/null 2>&1 && yum install -y nodejs) || (command -v dnf >/dev/null 2>&1 && dnf install -y nodejs)
+          elif command -v apt-get >/dev/null 2>&1; then
+            curl -fsSL https://deb.nodesource.com/setup_22.x | bash -
+            apt-get install -y nodejs
+          else
+            echo "Unable to install Node.js: unsupported package manager"; exit 1
+          fi
+        fi
+      - node -v
+      - npm -v
+      - echo "Installing npm dependencies from package-lock"
+      - npm ci --include=dev --no-audit --no-fund --unsafe-perm
+  build:
+    commands:
+      - echo "Building static Next.js export to ${DIST_DIR}/"
+      - npm run build
+      # Verify build output
+      - ls -la "$DIST_DIR" || (echo "$DIST_DIR/ was not created"; exit 2)
+  post_build:
+    commands:
+      - echo "Build complete, preparing artifacts for CodeDeploy..."
+      # Optionally validate the build output
+      - ls -la "$DIST_DIR"
+
+artifacts:
+  files:
+    # CodeDeploy manifest & scripts
+    - appspec.yaml
+    - scripts/**/*
+    # Nginx site config (optional but recommended)
+    - nginx/nginx.conf
+    # Built site
+    - out/**/*      # <- ensure this matches DIST_DIR above
+  discard-paths: no
