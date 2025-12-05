@@ -212,10 +212,10 @@ const DrivingGrowthSection = () => {
                           style={{ opacity: textOpacity }}
                           className="transition-opacity duration-700 h-full flex flex-col gap-8 text-center px-2 md:px-10 py-4 "
                         >
-                          <h5 className="text-20 xl:text-30 text-white mb-0 md:mb-2 font-dm-serif">
+                          <h5 className="text-14 xl:text-24 font-notos-sans font-medium text-white mb-0 md:mb-2">
                             {item.title}
                           </h5>
-                          <p className="text-12 2xl:text-20 text-white font-light mb-auto">
+                          <p className="fl3 !text-white mb-auto">
                             {item.desc}
                           </p>
                         </div>
