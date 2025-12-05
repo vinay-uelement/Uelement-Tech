@@ -9,23 +9,22 @@ env:
 
 phases:
   install:
-    runtime-versions:
-      nodejs: 22
     commands:
-      - echo "Ensuring Node.js >=20.9 (Next.js requirement)"
       - |
+        # Ensure Node.js >=20; prefer musl build (works on AL2 without newer glibc)
+        export NODE_VERSION=20.18.0
         if ! command -v node >/dev/null 2>&1 || [ "$(node -p "process.versions.node.split('.')[0]")" -lt 20 ]; then
-          echo "Installing Node.js 22 via NodeSource..."
-          if command -v yum >/dev/null 2>&1 || command -v dnf >/dev/null 2>&1; then
-            curl -fsSL https://rpm.nodesource.com/setup_22.x | bash -
-            (command -v yum >/dev/null 2>&1 && yum install -y nodejs) || (command -v dnf >/dev/null 2>&1 && dnf install -y nodejs)
-          elif command -v apt-get >/dev/null 2>&1; then
-            curl -fsSL https://deb.nodesource.com/setup_22.x | bash -
-            apt-get install -y nodejs
+          echo "Installing Node.js ${NODE_VERSION} (musl binary preferred)..."
+          mkdir -p /opt/nodejs
+          if curl -fL "https://nodejs.org/dist/v${NODE_VERSION}/node-v${NODE_VERSION}-linux-x64-musl.tar.xz" -o /tmp/node.tar.xz; then
+            tar -xJf /tmp/node.tar.xz -C /opt/nodejs --strip-components=1
+          elif curl -fL "https://nodejs.org/dist/v${NODE_VERSION}/node-v${NODE_VERSION}-linux-x64.tar.xz" -o /tmp/node.tar.xz; then
+            tar -xJf /tmp/node.tar.xz -C /opt/nodejs --strip-components=1
           else
-            echo "Unable to install Node.js: unsupported package manager"; exit 1
+            echo "Failed to download Node.js ${NODE_VERSION} tarball"; exit 1
           fi
         fi
+      - export PATH="/opt/nodejs/bin:${PATH}"
       - node -v
       - npm -v
       - echo "Installing npm dependencies from package-lock"
