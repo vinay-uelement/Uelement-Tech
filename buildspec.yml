@@ -1,0 +1,49 @@
+# Build Vite app and prepare artifacts for CodeDeploy to EC2 (Nginx static hosting)
+version: 0.2
+
+env:
+  variables:
+    NODE_ENV: "production"
+    APP_NAME: "uelement"                   # used for target folder names on EC2
+    DIST_DIR: "dist"                       # Vite output (adjust if different)
+
+phases:
+  install:
+    runtime-versions:
+      nodejs: 22
+    commands:
+      - echo "Forcing clean npm install (removing node_modules and package-lock.json)"
+      - rm -rf node_modules package-lock.json
+      - echo "Running npm install (verbose)"
+      - npm install --include=dev --no-audit --no-fund --verbose --unsafe-perm
+
+      # Explicitly install the platform-specific rollup native package and fail if it cannot be installed
+      - echo "Installing @rollup/rollup-linux-x64-gnu@4.52.3"
+      - npm i --no-audit --no-fund @rollup/rollup-linux-x64-gnu@4.52.3 --no-save --verbose --unsafe-perm
+
+      - echo "Verifying rollup native package resolution"
+      - node -e "try{console.log(require.resolve('@rollup/rollup-linux-x64-gnu')); process.exit(0)}catch(e){console.error('resolve failed',e.message); process.exit(2)}"
+
+      - ls node_modules/@vitejs/plugin-react || (echo "@vitejs/plugin-react is missing"; exit 2)
+  build:
+    commands:
+      # Build with dev dependencies available
+      - NODE_ENV=development npm run build
+      # Verify build output
+      - ls -la dist || echo "dist/ was not created"
+  post_build:
+    commands:
+      - echo "Build complete, preparing artifacts for CodeDeploy..."
+      # Optionally validate the build output
+      - ls -la "$DIST_DIR"
+
+artifacts:
+  files:
+    # CodeDeploy manifest & scripts
+    - appspec.yaml
+    - scripts/**/*
+    # Nginx site config (optional but recommended)
+    - nginx/uelement.conf
+    # Built site
+    - dist/**/*     # <- ensure this matches DIST_DIR above
+  discard-paths: no

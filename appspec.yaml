@@ -1,0 +1,34 @@
+version: 0.0
+os: linux
+
+# Specify where to copy the artifacts
+files:
+  - source: /
+    destination: /opt/codedeploy/uelement/staging
+
+# Permissions for the deployed files
+permissions:
+  - object: /opt/codedeploy/uelement/staging/scripts
+    pattern: "*.sh"
+    mode: 755
+    type:
+      - file
+
+# Deployment hooks
+hooks:
+  BeforeInstall:
+    - location: scripts/install_dependencies.sh
+      timeout: 300
+      runas: root
+  AfterInstall:
+    - location: scripts/after_install.sh
+      timeout: 300
+      runas: root
+  ApplicationStart:
+    - location: scripts/start_server.sh
+      timeout: 60
+      runas: root
+  ValidateService:
+    - location: scripts/validate_service.sh
+      timeout: 60
+      runas: root
