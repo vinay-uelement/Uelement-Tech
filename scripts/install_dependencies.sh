@@ -14,7 +14,7 @@ error() {
 APP_NAME="uelement"
 STAGING_DIR="/opt/codedeploy/${APP_NAME}/staging"
 LIVE_DIR="/var/www/${APP_NAME}"
-NGINX_SITE_CONF_SOURCE="${STAGING_DIR}/nginx/uelement.conf"
+NGINX_SITE_CONF_SOURCE="${STAGING_DIR}/nginx/nginx.conf"
 NGINX_SITE_CONF_TARGET="/etc/nginx/conf.d/uelement.conf"
 
 log "Starting installation process..."
