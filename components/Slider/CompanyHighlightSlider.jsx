@@ -9,8 +9,6 @@ import 'slick-carousel/slick/slick-theme.css';
 
 const CompanyHighlightSlider = ({ data }) => {
   const sliderRef = useRef(null);
-
-  // ⭐ Track the current active slide
   const [activeIndex, setActiveIndex] = useState(0);
 
   const getDotSize = (dotIndex) => {
@@ -71,30 +69,28 @@ const CompanyHighlightSlider = ({ data }) => {
   if (!data || data.length === 0) return null;
 
   return (
-    <div className="px-[8px] md:px-[16px] pb-[16px] py-[12px]">
+    <div className="px-2 md:px-4 pb-4 py-3">
       <Slider ref={sliderRef} {...settings}>
         {data.map((item) => (
           <div key={item.id} className="">
 
-            {/* IMAGE */}
             <img
               src={item.image}
               alt={item.title}
               className="w-full h-[420px] md:h-[500px] object-cover rounded-[4px]"
             />
 
-            {/* CONTENT */}
             <div className="mt-6 px-1 md:px-2 mb-6">
               <h2 className="fl2 mb-4">
                 {item.title}
               </h2>
 
-              <div className="grid grid-cols-1 md:grid-cols-[3fr_1fr] gap-6">
+              <div className="grid grid-cols-1 gap-6">
                 <p className="fl3">
                   {item.desc}
                 </p>
 
-                <div className="flex md:justify-end items-center">
+                <div className="w-full flex justify-center items-center">
                   <Link href={item.link}>
                     <button className="btn-blue">
                       Learn More
@@ -103,7 +99,6 @@ const CompanyHighlightSlider = ({ data }) => {
                 </div>
               </div>
             </div>
-
           </div>
         ))}
       </Slider>

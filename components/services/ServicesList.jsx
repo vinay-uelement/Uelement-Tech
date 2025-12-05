@@ -54,6 +54,19 @@ const ServicesList = () => {
                     : 'rounded-[2px]'
               }`}
             >
+              <div className="md:hidden flex items-center">
+                <div
+                  className={`size-[60px] ${service.badgeBg} flex md:hidden items-center justify-center italic font-reddit-sans font-bold text-20 rounded-full`}
+                >
+                  {service.id}
+                </div>
+                <div
+                  className={`w-[60px] md:w-[120px] h-[4px] ${service.lineBg}`}
+                ></div>
+                <div className="font-reddit-sans font-semibold text-20 text-[#020202] ml-3">
+                  {service.title}
+                </div>
+              </div>
               <div className="flex-1">
                 <img
                   src={service.img}
@@ -63,7 +76,7 @@ const ServicesList = () => {
               </div>
 
               <div className="flex-1 flex flex-col items-start justify-around">
-                <div className="flex items-center">
+                <div className="hidden md:flex items-center">
                   <div
                     className={`size-[60px] ${service.badgeBg} flex items-center justify-center italic font-reddit-sans font-bold text-20 rounded-full`}
                   >
