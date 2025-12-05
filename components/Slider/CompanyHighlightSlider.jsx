@@ -71,7 +71,7 @@ const CompanyHighlightSlider = ({ data }) => {
   if (!data || data.length === 0) return null;
 
   return (
-    <div className="px-2 md:px-4 pb-4">
+    <div className="px-[8px] md:px-[16px] pb-[16px] py-[12px]">
       <Slider ref={sliderRef} {...settings}>
         {data.map((item) => (
           <div key={item.id} className="">
@@ -80,7 +80,7 @@ const CompanyHighlightSlider = ({ data }) => {
             <img
               src={item.image}
               alt={item.title}
-              className="w-full h-[420px] md:h-[500px] object-cover rounded-xl"
+              className="w-full h-[420px] md:h-[500px] object-cover rounded-[4px]"
             />
 
             {/* CONTENT */}

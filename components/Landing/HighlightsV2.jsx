@@ -50,7 +50,7 @@ export default function HighlightV2() {
   
     <div className=" w-full container-padding  pt-[53] sm:pt-[63px]  md:pt-[90px] lg:pt-[153px] px-4 z-10">
        
-      <div className="bg-[#F3F3F3] rounded-2xl p-4 md:p-8 lg:p-10  mb-20 ">
+      <div className="bg-[#F3F3F3] rounded-[4px] p-4 md:p-8 lg:p-10  mb-20 ">
       
         <CompanyHighlightSlider data={sliderData} />
       </div>
