@@ -188,14 +188,14 @@ const PartnerSolution = () => {
             <button
               key={tab.id}
               onClick={() => setSelectedTab(tab)}
-              className={`relative px-20 py-3 md:text-26 text-14 font-noto-sans text-[#9E9E9E] rounded-tl-[10px] transition-all duration-300 ease-in-out overflow-hidden ${
+              className={`relative px-20 py-2 md:text-24 text-18 text-[#9E9E9E] rounded-tl-[10px] transition-all duration-300 ease-in-out overflow-hidden ${
                 tab.id === selectedTab.id
-                  ? 'bg-primary-blue font-noto-sans font-semibold text-white shadow-[0px_4px_5px_0px_rgba(0,0,0,0.20)]'
-                  : 'bg-[#FCFCFC] hover:bg-gray-100 border border-[#E0E0E0]'
+                  ? 'bg-primary-blue font-noto-sans font-semibold text-white shadow-[0px_4px_5px_0px_rgba(0,0,0,0.0)] font-noto-sans font-semibold'
+                  : 'bg-[#FCFCFC] hover:bg-gray-100 border border-[#E0E0E0] font-noto-sans'
               }`}
               style={{
                 clipPath:
-                  'polygon(0 0, calc(100% - 30px) 0, 100% 100%, 0 100%)',
+                  'polygon(0 0, calc(100% - 30px) 0, 100% 101%, 0 101%)',
               }}
             >
               {tab.title}
@@ -207,7 +207,7 @@ const PartnerSolution = () => {
         <div className="md:hidden mb-0 relative z-50">
           <div className="relative inline-block w-full max-w-[200px]">
             <div
-              className="absolute inset-0 bg-primary-blue pointer-events-none rounded-tl-[10px]"
+              className="absolute inset-0 bg-primary-blue pointer-events-none rounded-tl-[4px]"
               style={{
                 clipPath:
                   'polygon(0 0, calc(100% - 30px) 0, 100% 100%, 0 100%)',
@@ -228,7 +228,7 @@ const PartnerSolution = () => {
         </div>
 
         {/* Tab Content */}
-        <div className="bg-primary-blue rounded-[10px] rounded-tl-none py-10 sm:py-10 lg:py-[var(--section-block-padding)] ">
+        <div className="bg-primary-blue rounded-[4px] rounded-tl-none py-10 sm:py-10 lg:py-[var(--section-block-padding)] ">
           <div className="animate-fade-in ">
             {/* Title with underline */}
             <div className="flex justify-center mb-6 sm:mb-8 lg:mb-10">
@@ -242,7 +242,7 @@ const PartnerSolution = () => {
               {selectedTab.boxes?.map((item, ind) => (
                 <div
                   key={ind}
-                  className="flex-1 min-w-[280px] max-w-[400px] white-ribbon-border bg-secondary-200 py-8 pl-14 pr-6 rounded-[18px] shadow-[3px_0px_3px_1px_rgba(0,0,0,0.25)]"
+                  className="flex-1 min-w-[280px] max-w-[400px] white-ribbon-border bg-secondary-200 py-8 pl-14 pr-6 rounded-[4px] shadow-[3px_0px_3px_1px_rgba(0,0,0,0.25)]"
                 >
                   <img src={item.logo} className="mb-1 h-10" alt="logo" />
                   <p className="fl3 my-4">
@@ -273,7 +273,7 @@ const PartnerSolution = () => {
               <Slider {...sliderSettings}>
                 {selectedTab.boxes?.map((item, ind) => (
                   <div key={ind} className="px-2">
-                    <div className="white-ribbon-border bg-secondary-200 py-8 pl-14 pr-6 rounded-[18px] shadow-[3px_0px_3px_1px_rgba(0,0,0,0.25)]">
+                    <div className="white-ribbon-border bg-secondary-200 py-8 pl-14 pr-6 rounded-[4px] shadow-[3px_0px_3px_1px_rgba(0,0,0,0.25)]">
                       <img src={item.logo} className="mb-1 h-10" alt="logo" />
                       <p className="font-light text-[#1C1C1C] mb-3 text-14">
                         {item.tagline}

@@ -7,7 +7,7 @@ import TrustedPartnerShip from '../company/TrustedPartnerShip';
 const Company = () => {
   return (
     <div>
-      <div className="container-outer">
+      <div>
         <EmpoweringInnovation />
       </div>
         <div className="">

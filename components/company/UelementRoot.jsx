@@ -36,11 +36,11 @@ const UelementRoot = () => {
             difference.
           </p>
         </div>
-        <div className="flex-1 bg-[#f3f3f3] p-6 rounded-[10px]">
+        <div className="flex-1 bg-[#f3f3f3] p-6 rounded-[4px]">
           <img
             src="/images/company/behind-idea.jpg"
             alt="image"
-            className="w-full behind-idea-image rounded-[10px]"
+            className="w-full behind-idea-image rounded-[4px]"
           />
       
           <button className="btn-blue mx-auto md:ml-auto block mt-6">

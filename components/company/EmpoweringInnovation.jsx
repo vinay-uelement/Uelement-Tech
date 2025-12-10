@@ -35,7 +35,7 @@ const EmpoweringInnovation = () => {
     setIndex((prev) => (prev - 1 + slides.length) % slides.length);
 
   return (
-    <div className="mt-[var(--outer-padding)] rounded-[8px]  mt-[100px] lg:h-screen h-auto relative flex flex-col lg:flex-row items-center bg-primary-blue">
+    <div className="lg:h-screen h-auto relative flex flex-col lg:flex-row items-center bg-primary-blue">
       <div className="container-padding w-full flex flex-col lg:flex-row gap-10 justify-between  mt-[var(--mobile-navbar-gap)] lg:my-0">
         {/* Left: Text Content */}
         <div className="text-white flex-1">

@@ -141,7 +141,7 @@ const KnowledgeHub = () => {
         <div className="w-full md:w-[600px] mt-12 relative">
           <input
             type="search"
-            className="border border-primary-blue rounded-[10px] h-[50px] px-3 pe-11 w-full"
+            className="border border-primary-blue rounded-[4px] h-[50px] px-3 pe-11 w-full"
             placeholder="Search here"
           />
           <div className="h-[50px] w-10 flex items-center justify-center absolute right-0 top-1/2 -translate-y-1/2">
@@ -181,12 +181,12 @@ const KnowledgeHub = () => {
         <Slider ref={sliderRef} {...settings}>
           {blogs.map((blog) => (
             <div key={blog.id} className="p-3 md:p-4">
-              <div className="p-6 bg-white rounded-[10px] h-[540px] 2xl:h-[590px] flex flex-col blog-card w-full shadow-lg">
+              <div className="p-6 bg-white rounded-[4px] h-[540px] 2xl:h-[590px] flex flex-col blog-card w-full shadow-lg">
                 <div className="h-[200px] md:h-[220px] 2xl:h-[280px] relative">
                   <img
                     src={blog.image}
                     alt={blog.title}
-                    className="h-full w-full object-cover rounded-[10px]"
+                    className="h-full w-full object-cover rounded-[4px]"
                   />
                   <div className="bg-primary-blue size-12 rounded-full absolute right-3 -bottom-6 flex items-center justify-center">
                     <img

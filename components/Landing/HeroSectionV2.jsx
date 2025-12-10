@@ -100,7 +100,7 @@ const HeroSection = () => {
         </div>
 
         {/* slider for desktop */}
-        <div className="flex-1 relative z-60 rounded-[10px]">
+        <div className="flex-1 relative z-60 rounded-[4px]">
           <div className="hidden absolute z-30 w-full  h-[60px] overflow-hidden  bottom-28 md:bottom-2 left-0 md:-left-[30px]  md:flex items-center gap-2 px-2 md:px-0 ">
             <div className="bg-[#D4D4D41A] backdrop-blur-2xl rounded-4xl flex items-center justify-between ps-6 pe-3 h-full">
               <div className="relative flex-1 overflow-hidden">

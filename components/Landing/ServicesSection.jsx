@@ -71,7 +71,7 @@ const ServicesSection = () => {
     }),
     singleValue: (provided) => ({
       ...provided,
-      color: '#fff',
+      color: '#000',
       fontWeight: '500',
     }),
     option: (provided, state) => ({
@@ -103,15 +103,15 @@ const ServicesSection = () => {
   };
 
   return (
-    <section className="bg-secondary-muted py-10 sm:py-12 lg:py-16 container-padding rounded-t-[10px] mb-10">
+    <section className="bg-primary-blue py-10 sm:py-12 lg:py-16 container-padding rounded-[4px] mb-10">
       <div className=" mx-auto">
         {/* Header */}
         <div className="mb-8 sm:mb-10 lg:mb-12">
-          <p className="text-12 sm:text-14 text-gray-600 mb-3">/Services</p>
-          <h2 className="fl1 !text-primary-blue mb-3 sm:mb-4">
+          <p className="text-12 sm:text-14 !text-white mb-3">/Services</p>
+          <h2 className="fl1 !text-white mb-3 sm:mb-4">
             Our Enterprise Solutions
           </h2>
-          <p className="font-reddit-sans text-14 sm:text-16 lg:text-18 text-gray-700 max-w-[600px]">
+          <p className="font-reddit-sans text-14 sm:text-16 lg:text-18 text-white max-w-[600px]">
             Comprehensive services designed to protect, optimize, and transform
             your business operations.
           </p>
@@ -125,14 +125,14 @@ const ServicesSection = () => {
               <button
                 key={tab.id}
                 onClick={() => setSelectedTab(tab)}
-                className={`relative px-20 py-3 font-montserrat font-medium text-14 lg:text-16 rounded-tl-[10px] transition-all duration-300 ease-in-out overflow-hidden ${
+                className={`relative px-20 w-[330px] py-2 text-18 md:text-24 rounded-tl-[4px] transition-all duration-300 ease-in-out overflow-hidden ${
                   tab.id === selectedTab.id
-                    ? 'bg-primary-blue text-white shadow-[0px_4px_5px_0px_rgba(0,0,0,0.20)]'
-                    : 'bg-[#FCFCFC] text-[#9E9E9E] hover:bg-gray-100 border border-[#E0E0E0]'
+                    ? 'bg-secondary-muted text-black shadow-[0px_4px_5px_0px_rgba(0,0,0,0.0)] font-noto-sans font-semibold '
+                    : 'bg-[#FCFCFC] text-[#505050] hover:bg-gray-100 border border-[#E0E0E0] font-noto-sans '
                 }`}
                 style={{
                   clipPath:
-                    'polygon(0 0, calc(100% - 30px) 0, 100% 100%, 0 100%)',
+                    'polygon(0 0, calc(100% - 30px) 0, 100% 101%, 0 101%)',
                 }}
               >
                 {tab.title}
@@ -144,7 +144,7 @@ const ServicesSection = () => {
           <div className="md:hidden mb-0 relative z-50">
             <div className="relative inline-block w-full max-w-[200px]">
               <div
-                className="absolute inset-0 bg-primary-blue pointer-events-none rounded-tl-[10px]"
+                className="absolute inset-0 bg-secondary-muted pointer-events-none rounded-tl-[10px]"
                 style={{
                   clipPath:
                     'polygon(0 0, calc(100% - 30px) 0, 100% 100%, 0 100%)',
@@ -165,12 +165,12 @@ const ServicesSection = () => {
           </div>
 
           {/* Tab Content */}
-          <div className="bg-primary-blue text-white p-6 sm:p-8 lg:p-10 xl:p-12 rounded-[10px] rounded-tl-none transition-all duration-300 ease-in-out shadow-[3.71px_0px_3.71px_0px_rgba(0,0,0,0.25)]">
+          <div className="bg-secondary-muted text-white p-6 sm:p-8 lg:p-10 xl:p-12 rounded-[4px] rounded-tl-none transition-all duration-300 ease-in-out shadow-[3.71px_0px_3.71px_0px_rgba(0,0,0,0.25)]">
             <div className="animate-fade-in">
-              <h3 className="font-montserrat font-semibold text-24 sm:text-28 lg:text-32 mb-4 sm:mb-6">
+              <h3 className="fl1 mb-4 sm:mb-6">
                 {selectedTab.title}
               </h3>
-              <p className="font-reddit-sans font-light text-14 sm:text-16 lg:text-18 leading-relaxed mb-8 sm:mb-16 lg:mb-20">
+              <p className="fl3 leading-relaxed mb-8 sm:mb-16 lg:mb-20">
                 {selectedTab.desc}
               </p>
 
@@ -192,7 +192,7 @@ const ServicesSection = () => {
                     </span>
                   </button>
 
-                  <div className="bg-white rounded-[10px] p-4 sm:p-5 md:p-6 flex-1 md:max-w-[500px] min-w-0">
+                  <div className="bg-primary-blue rounded-[4px] p-4 sm:p-5 md:p-6 flex-1 md:max-w-[500px] min-w-0">
                     <div className="relative overflow-hidden">
                       <div
                         className="flex transition-transform duration-500 ease-in-out"
@@ -201,7 +201,7 @@ const ServicesSection = () => {
                         {slides.map((text, i) => (
                           <div
                             key={i}
-                            className="min-w-full text-primary-blue font-reddit-sans text-12 sm:text-13 font-medium"
+                            className="min-w-full text-white font-reddit-sans text-12 sm:text-14 font-light"
                           >
                             {text}
                           </div>

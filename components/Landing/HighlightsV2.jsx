@@ -41,13 +41,13 @@ export default function HighlightV2() {
 
   return (
       <div className="relative w-full flex flex-col items-center ">
-        <p className="absolute font-noto-sans font-semibold text-[#36363633] text-[60px] sm:text-[70px] md:text-[100px] lg:text-[150px] leading-none ">
+        <p className="absolute font-cal-sans font-semibold text-[#36363633] text-[60px] sm:text-[70px] md:text-[100px] lg:text-[150px] leading-none ">
           HIGHLIGHTS</p>
       
   
     <div className=" w-full container-padding  pt-[50] sm:pt-[60px]  md:pt-[90px] lg:pt-[120px] px-4 z-10">
        
-      <div className="bg-[#F3F3F3] rounded-[4px] p-4 md:p-8 lg:p-10  mb-20 ">
+      <div className="light-glass rounded-[4px] p-4 md:p-8 lg:p-10  mb-20 ">
       
         <CompanyHighlightSlider data={sliderData} />
       </div>

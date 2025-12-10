@@ -87,9 +87,9 @@ const GlobalSlider = ({ data }) => {
       <Slider ref={sliderRef} {...settings}>
         {data.map((item) => (
           <div key={item.id} className="p-3 md:p-4">
-            <div className="p-6 bg-white rounded-[10px] h-[540px] 2xl:h-[590px] flex flex-col w-full shadow-lg">
+            <div className="p-6 bg-white rounded-[4px] h-[540px] 2xl:h-[590px] flex flex-col w-full shadow-lg">
               <div className="h-[200px] md:h-[220px] 2xl:h-[280px] relative">
-                <img src={item.image} alt={item.title} className="h-full w-full object-cover rounded-[10px]" />
+                <img src={item.image} alt={item.title} className="h-full w-full object-cover rounded-[4px]" />
                 <div className="bg-primary-blue size-12 rounded-full absolute right-3 -bottom-6 flex items-center justify-center">
                   
                   <img 

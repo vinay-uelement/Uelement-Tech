@@ -82,9 +82,7 @@ const ContactUs = () => {
             </div>
 
             <div className="relative z-10">
-              <h5 className="fl1 !text-white">
-                Contact Information
-              </h5>
+              <h5 className="fl1 !text-white">Contact Information</h5>
               <p className="text-[#C9C9C9] font-reddit-sans font-medium md:text-[18px] text-14 mt-2">
                 Say something to start a live chat!
               </p>
@@ -93,16 +91,17 @@ const ContactUs = () => {
             <div className="flex flex-col gap-5 lg:gap-6 xl:gap-9 text-14 lg:text-16 relative z-10">
               <div className="flex items-center justify-start font-reddit-sans gap-3 lg:gap-4">
                 <Icon name="phone" />
-                <span>+1012 3456 789</span>
+                <span>+91 762 069 0561</span>
               </div>
               <div className="flex items-center justify-start font-reddit-sans gap-3 lg:gap-4">
                 <Icon name="email" />
-                <span>demo@gmail.com</span>
+                <span>contact@uelement.in</span>
               </div>
               <div className="flex items-start justify-start font-reddit-sans gap-3 lg:gap-4">
                 <Icon name="location" />
                 <span className="text-left leading-relaxed">
-                  132 Dartmouth Street Boston, Massachusetts 02156 United States
+                  UElement Technologies Pvt. Ltd. 9th Floor, Pride Gateway, Sr.
+                  No. 112, Baner, Pune,
                 </span>
               </div>
             </div>
@@ -172,10 +171,7 @@ const ContactUs = () => {
               </div>
 
               <div className="flex justify-center sm:justify-end">
-                <button
-                  className="btn-yellow hover:scale-101"
-                  type="submit"
-                >
+                <button className="btn-yellow hover:scale-101" type="submit">
                   Request a meeting
                 </button>
               </div>

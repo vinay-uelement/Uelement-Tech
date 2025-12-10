@@ -10,7 +10,7 @@ import HighlightV2 from '../Landing/HighlightsV2';
 
 const LandingPage = () => {
   return (
-    <div className="container-outer">
+    <div>
       <HeroSection />
       <div className="py-[75px]">
         <DrivingGrowthSection />
@@ -24,7 +24,7 @@ const LandingPage = () => {
       <div>
         <ServiceSegments />
       </div>
-      <div>
+      <div className="container-outer">
         <ServicesSection />
       </div>
       {/* <Testimonial /> */}

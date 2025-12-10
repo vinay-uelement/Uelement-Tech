@@ -17,12 +17,12 @@ const PartnersHero = () => {
     setIndex((prev) => (prev - 1 + slides.length) % slides.length);
 
   return (
-    <div className="mt-[var(--outer-padding)] rounded-[8px] lg:h-screen h-auto relative flex flex-col lg:flex-row items-center bg-primary-blue">
+    <div className="lg:h-screen h-auto relative flex flex-col lg:flex-row items-center bg-primary-blue">
       <div className="container-padding w-full flex flex-col lg:flex-row gap-10 justify-between mt-[var(--mobile-navbar-gap)] lg:my-0">
         {/* Left: Text Content */}
         <div className="text-white flex-1 flex flex-col justify-between">
           <div>
-            <div className="fl3 !text-[#ffffff] md:!text-[20px]">
+            <div className="fl3 !text-[#ffffff] md:!text-[24px]">
               <span className="text-[#9B7025] pr-2 font-bold">/</span>Our
               Partners
             </div>{' '}

@@ -17,12 +17,12 @@ const ServicesHero = () => {
     setIndex((prev) => (prev - 1 + slides.length) % slides.length);
 
   return (
-    <div className="mt-[var(--outer-padding)] rounded-[8px] lg:h-screen h-auto relative flex lg:flex-row flex-col items-center bg-[#0C142D]">
+    <div className="lg:h-screen h-auto relative flex lg:flex-row flex-col items-center bg-[#0C142D]">
       <div className="container-padding w-full flex flex-col lg:flex-row items-stretch gap-10 justify-between mt-[var(--mobile-navbar-gap)] lg:my-0">
         {/* Left: Text Content */}
         <div className="text-white flex-1 flex flex-col justify-between">
           <div>
-            <div className="fl3 !text-[#ffffff] md:!text-[20px]">
+            <div className="fl3 !text-[#ffffff] md:!text-[24px]">
               <span className="text-[#9B7025] pr-2 font-bold">/</span>Our Services
             </div>
             <div className="mb-12 fl3 !text-[#9E9E9E] ">

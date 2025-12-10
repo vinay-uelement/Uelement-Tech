@@ -232,12 +232,8 @@ const Navbar = () => {
             {/* desktop */}
             <div className="flex-1 relative hidden md:block">
               <div className="w-[calc(100%+40px)] h-full bg-[#32323259] backdrop-blur-lg rounded-[40px] -ml-10 px-3 hidden md:flex items-center relative z-50">
-                <div className="size-10 bg-[#9B7025] rounded-full relative">
-                  <img
-                    src="/icons/global/92_small.svg"
-                    alt="92"
-                    className="absolute top-1 right-1"
-                  />
+                <div className="size-10 bg-[#9B7025] rounded-full flex-shrink-0 relative">
+                  <span className='absolute -top-[3px] right-[3px] font-bold text-22 font-reddit-sans text-white'>92</span>
                 </div>
                 <div
                   ref={navRef}

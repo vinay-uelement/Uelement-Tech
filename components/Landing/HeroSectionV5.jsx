@@ -23,7 +23,7 @@ const HeroSectionV5 = () => {
     }
   };
   return (
-    <section className="h-screen mt-[var(--outer-padding)] flex flex-col rounded-[8px] md:bg-primary-blue relative">
+    <section className="h-screen flex flex-col md:bg-primary-blue relative">
       <div className="h-[calc(100%-80px)] w-full relative text-white rounded-[4px] rounded-bl-[50px] rounded-br-none">
         <div className="h-full w-full flex flex-col md:flex-row">
           <div className="w-full h-[60%] md:h-full md:w-[40%] pl-[var(--container-small-padding)] flex flex-col justify-end md:justify-center ">
