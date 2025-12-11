@@ -242,7 +242,7 @@ const PartnerSolution = () => {
               {selectedTab.boxes?.map((item, ind) => (
                 <div
                   key={ind}
-                  className="flex-1 min-w-[280px] max-w-[400px] white-ribbon-border bg-secondary-200 py-8 pl-14 pr-6 rounded-[4px] shadow-[3px_0px_3px_1px_rgba(0,0,0,0.25)]"
+                  className="flex-1 min-w-[280px] max-w-[400px] white-ribbon-border bg-secondary-200 py-10 pl-14 pr-6 rounded-[10px] shadow-[3px_0px_3px_1px_rgba(0,0,0,0.25)]"
                 >
                   <img src={item.logo} className="mb-1 h-10" alt="logo" />
                   <p className="fl3 my-4">
@@ -273,7 +273,7 @@ const PartnerSolution = () => {
               <Slider {...sliderSettings}>
                 {selectedTab.boxes?.map((item, ind) => (
                   <div key={ind} className="px-2">
-                    <div className="white-ribbon-border bg-secondary-200 py-8 pl-14 pr-6 rounded-[4px] shadow-[3px_0px_3px_1px_rgba(0,0,0,0.25)]">
+                    <div className="ribbon-mobile md:white-ribbon-border bg-secondary-200 py-8 pl-14 pr-6 rounded-[4px] shadow-[3px_0px_3px_1px_rgba(0,0,0,0.25)]">
                       <img src={item.logo} className="mb-1 h-10" alt="logo" />
                       <p className="font-light text-[#1C1C1C] mb-3 text-14">
                         {item.tagline}

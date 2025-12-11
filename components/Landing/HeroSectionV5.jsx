@@ -55,7 +55,7 @@ const HeroSectionV5 = () => {
         >
           {ReactIcons.leftChev}
         </button>
-        <div className="flex-1 flex pl-[40px] min-h-[30px]">
+        <div className="flex-1 flex items-center justify-center w-full min-h-[30px]">
           <span className="fl4 text-center transition-all duration-500">
             {slides[index]}
           </span>

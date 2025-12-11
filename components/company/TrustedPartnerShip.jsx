@@ -20,7 +20,7 @@ const TrustedPartnerShip = () => {
           <div className="title-div text-center mb-10 text-primary-blue">
             <p className="fl-slash">/Partners</p>
             <h4 className="fl2 mt-3 mb-2">
-              TFocus on Integration and Expertise
+              Focus on Integration and Expertise
             </h4>
             <p className="mx-auto fl3 text-14">
               A network of $15+$ strategic alliances ensuring seamless technology synergy across Cloud, AI, and Security.

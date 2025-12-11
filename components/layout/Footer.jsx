@@ -4,8 +4,12 @@ import Link from 'next/link';
 import Checkbox from '../formElements/Checkbox/Checkbox';
 import InputField from '../formElements/InputField/InputField';
 import Icon from '../resources/Icon';
+import { usePathname } from 'next/navigation';
 
 const Footer = () => {
+  const pathname = usePathname();
+  if (pathname === '/contact-us') return null;
+  
   return (
     <div>
       <ContactUs />
@@ -247,7 +251,7 @@ const FooterContent = () => {
               </h6>
               <div className="flex flex-col gap-3 sm:gap-4 font-reddit-sans font-light">
                 <Link
-                  href="/about"
+                  href="/company"
                   className="fl3 !text-[#e2e2e2] text-13 sm:text-16 hover:text-white transition-colors"
                 >
                   About
@@ -259,17 +263,17 @@ const FooterContent = () => {
                   Services
                 </Link>
                 <Link
-                  href="/partners"
+                  href="/our-partners"
                   className="fl3 !text-[#e2e2e2] text-13 sm:text-16 hover:text-white transition-colors"
                 >
                   Partners
                 </Link>
-                <Link
+                {/* <Link
                   href="/career"
                   className="fl3 !text-[#e2e2e2] text-13 sm:text-16 hover:text-white transition-colors"
                 >
                   Career
-                </Link>
+                </Link> */}
               </div>
             </div>
 
@@ -280,25 +284,25 @@ const FooterContent = () => {
               </h6>
               <div className="flex flex-col gap-3 sm:gap-4 font-reddit-sans font-light">
                 <Link
-                  href="/resources/ebooks"
+                  href="/resources"
                   className="fl3 !text-[#e2e2e2] text-13 sm:text-16 hover:text-white transition-colors"
                 >
                   Free eBooks
                 </Link>
                 <Link
-                  href="/resources/tutorial"
+                  href="/resources"
                   className="fl3 !text-[#e2e2e2] text-13 sm:text-16 hover:text-white transition-colors"
                 >
                   Development Tutorial
                 </Link>
                 <Link
-                  href="/blog"
+                  href="/resources"
                   className="fl3 !text-[#e2e2e2] text-13 sm:text-16 hover:text-white transition-colors"
                 >
                   How to - Blog
                 </Link>
                 <Link
-                  href="/resources/playlist"
+                  href="/resources"
                   className="fl3 !text-[#e2e2e2] text-13 sm:text-16 hover:text-white transition-colors"
                 >
                   Youtube Playlist

@@ -468,6 +468,11 @@
   background-repeat: repeat-y;
 }
 
+.ribbon-mobile {
+  background-image: url('/images/global/Vector 280.svg');
+  background-repeat: repeat-y;
+}
+
 /* DrivingGrowth Section */
 .driving-slider .slick-track {
   display: flex !important;
