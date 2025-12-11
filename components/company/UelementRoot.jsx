@@ -4,14 +4,14 @@ const UelementRoot = () => {
           <img
             src="/icons/global/dark-logo.svg"
             alt="logo"
-            className="w-[150px] md:w-[200px] 2xl:w-[250px] mb-5 md:mb-10 mx-auto"
+            className="w-[200px] md:w-[300px] 2xl:w-[450px] mb-5 md:mb-10 mx-auto"
           />
-      <div className="flex flex-col md:flex-row gap-10 md:gap-[60px] 2xl:gap-[85px]">
+      <div className="flex flex-col md:flex-row gap-10 md:gap-[50px] 2xl:gap-[65px]">
         <div className="flex-1">
-          <h4 className="text-18 xl:text-20 2xl:text-24 text-black mt-5 mb-4 font-montserrat">
+          <h4 className="fl2 !font-medium mt-5 mb-4">
             Behind every idea, there's a team driven to make a difference.
           </h4>
-          <p className="font-light text-black text-14 xl:text-16 mb-3 md:w-[90%] w-full">
+          <p className="fl3 mb-3 md:w-[100%] w-full">
             Rooted in Pune, the land of valor and innovation, U-Element draws
             inspiration from the legacy of Chhatrapati Shivaji Maharaj and the
             resilience of Rajgad Fort. Just as these symbols represent strength,
@@ -23,10 +23,10 @@ const UelementRoot = () => {
             landscape. Our foundation is Maratha in spirit — bold in vision,
             strategic in execution, and unwavering in commitment.
           </p>
-          <h4 className="text-18 xl:text-20 2xl:text-24 text-black font-montserrat mb-4 mt-10">
+          <h4 className="fl2 !font-medium mb-4 mt-8">
             Behind every idea, there's a team driven to make a difference.
           </h4>
-          <p className="font-light text-black text-14 xl:text-16 mb-3 md:w-[90%] w-full">
+          <p className="fl3 mb-3 md:w-[100%] w-full">
             We are a team driven by creativity, innovation, and purpose. Our
             journey is shaped by the belief that design and ideas have the power
             to solve real problems and create meaningful connections. With every
@@ -40,7 +40,7 @@ const UelementRoot = () => {
           <img
             src="/images/company/behind-idea.jpg"
             alt="image"
-            className="w-full behind-idea-image rounded-[4px]"
+            className="w-full rounded-[4px]"
           />
       
           <button className="btn-blue mx-auto md:ml-auto block mt-6">

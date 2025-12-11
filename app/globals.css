@@ -191,7 +191,7 @@
     @apply bg-[#9B7025] rounded-[4px] text-white font-reddit-sans font-semibold shadow-[1px_4px_2px_0px_rgba(0,0,0,0.15)] text-12 md:text-16 xl:text-18 py-2 px-[40px] hover:shadow-inset-white transition-all duration-300;
   }
   .btn-blue {
-    @apply bg-[#0C142D] text-white font-reddit-sans font-semibold shadow-[1px_4px_2px_0px_rgba(0,0,0,0.15)] rounded-[9px] text-12 md:text-16 xl:text-18 py-2 px-[40px] hover:shadow-inset-white transition-all duration-300;
+    @apply bg-[#0C142D] text-white font-reddit-sans font-semibold shadow-[1px_4px_2px_0px_rgba(0,0,0,0.15)] rounded-[4px] text-12 md:text-16 xl:text-18 py-2 px-[40px] hover:shadow-inset-white transition-all duration-300;
   }
   .fl-main{
     @apply font-cal-sans text-white text-26 md:text-[50px] xl:text-[60px];
@@ -458,10 +458,6 @@
 }
 #tabs li.current button::after {
   background-color: #0c142d;
-}
-
-.behind-idea-image {
-  box-shadow: 4px 4px 4px 0 rgba(0, 0, 0, 0.25);
 }
 .ribbon-border {
   background-image: url('/images/global/ribbon-border.svg');

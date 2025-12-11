@@ -29,8 +29,8 @@ const ResourcesPointSection = () => {
               <img src={data.icon} alt={data.title} />
             </div>
             <div className="mt-6">
-              <h6 className="text-20 font-semibold">{data.title}</h6>
-              <p className="text-14 mt-6">{data.desc}</p>
+              <h6 className="text-20 font-reddit-sans !text-white">{data.title}</h6>
+              <p className="fl3 mt-6 !text-white">{data.desc}</p>
             </div>
           </div>
         ))}

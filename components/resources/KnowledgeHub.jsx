@@ -133,8 +133,8 @@ const KnowledgeHub = () => {
   return (
     <div className="container-padding bg-white py-[var(--section-block-padding)]">
       <div className="flex flex-col items-center">
-        <h6 className="title text-primary-blue">Explore Our Knowledge Hub</h6>
-        <p className="mt-3 md:text-20 font-bold text-primary-blue md:max-w-[50%] text-center">
+        <h6 className="fl1 !text-primary-blue">Explore Our Knowledge Hub</h6>
+        <p className="mt-3 font-reddit-sans !text-primary-blue md:max-w-[50%] text-center">
           Access insights, research, and expert guidance to help your business
           innovate, scale, and stay ahead in a rapidly evolving digital world.
         </p>
@@ -167,7 +167,7 @@ const KnowledgeHub = () => {
               key={cat.id}
               className="w-[110px] flex flex-col items-center"
             >
-              <div className="size-20 bg-primary-blue rounded-full flex items-center justify-center">
+              <div className={`size-20 ${currentSection === cat.id ? "bg-primary-blue" : "bg-[#DEDEDE]"} rounded-full flex items-center justify-center`}>
                 <img src={cat.icon} alt={cat.name} />
               </div>
               <div className="mt-1">{cat.name}</div>
@@ -188,7 +188,7 @@ const KnowledgeHub = () => {
                     alt={blog.title}
                     className="h-full w-full object-cover rounded-[4px]"
                   />
-                  <div className="bg-primary-blue size-12 rounded-full absolute right-3 -bottom-6 flex items-center justify-center">
+                  <div className="bg-[#ffffff] shadow-md size-12 rounded-full absolute right-3 -bottom-6 flex items-center justify-center">
                     <img
                       src={'/icons/global/enterprise-icon.svg'}
                       alt={blog.label}
@@ -196,7 +196,7 @@ const KnowledgeHub = () => {
                   </div>
                 </div>
                 <div className="pt-6 flex flex-col flex-1">
-                  <div className="bg-primary-blue rounded-[4px] text-white px-3 py-1 w-fit text-12">
+                  <div className="bg-[#E1E1E1] rounded-[4px] capitalize text-[#232223] px-3 py-1 w-fit text-16">
                     {blog.label}
                   </div>
                   <h6 className="text-22 font-semibold mt-4 whitespace-pre-line">

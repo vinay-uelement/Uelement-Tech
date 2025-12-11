@@ -20,10 +20,10 @@ const PartnersHero = () => {
     <div className="lg:h-screen h-auto relative flex flex-col lg:flex-row items-center bg-primary-blue">
       <div className="container-padding w-full flex flex-col lg:flex-row gap-10 justify-between mt-[var(--mobile-navbar-gap)] lg:my-0">
         {/* Left: Text Content */}
-        <div className="text-white flex-1 flex flex-col justify-between">
+        <div className="text-white flex-1 flex flex-col ">
           <div>
             <div className="fl3 !text-[#ffffff] md:!text-[24px]">
-              <span className="text-[#9B7025] pr-2 font-bold">/</span>Our
+              <span className="text-[#9B7025] pr-2 font-bold">/</span>Global
               Partners
             </div>{' '}
             <div className="mb-12 fl3 !text-[#9E9E9E] ">
@@ -51,11 +51,11 @@ const PartnersHero = () => {
         </div>
         {/* Right: Image */}
         <div className="flex-1">
-          <div className="rounded-xl overflow-hidden shadow-lg w-full">
+          <div className="overflow-hidden shadow-lg w-full">
             <img
-              src="/images/service/service-hero.svg"
+              src="/images/our-partners/hero-one.svg"
               alt="Team meeting"
-              className="w-full h-auto object-cover"
+              className="w-full rounded-[4px] h-auto object-cover"
             />
           </div>
         </div>

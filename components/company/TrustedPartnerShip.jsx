@@ -15,18 +15,15 @@ const TrustedPartnerShip = () => {
 
   return (
     <div className="bg-primary-blue py-[var(--section-block-padding)]">
-      <div className="container-small py-[var(--section-block-padding)]">
-        <div className="w-full sm:w-[80%] mx-auto bg-white p-8 pb-12 ribbon-border">
+      <div className="container-small md:py-[var(--section-block-padding)]">
+        <div className="w-full sm:w-[80%] mx-auto bg-white p-8 pb-12 ribbon-border rounded-[10px]">
           <div className="title-div text-center mb-10 text-primary-blue">
-            <p className="text-14 font-light">/Partners</p>
-            <h4 className="title mt-3 mb-2">
-              Trusted Partnerships That Drive Success
+            <p className="fl-slash">/Partners</p>
+            <h4 className="fl2 mt-3 mb-2">
+              TFocus on Integration and Expertise
             </h4>
-            <p className="mx-auto text-14">
-              At Uelement, we believe that great partnerships are built on
-              trust, collaboration, and shared vision. Over the years, we've
-              worked hand-in-hand with industry leaders and innovative brands to
-              deliver meaningful solutions that drive mutual growth and success.
+            <p className="mx-auto fl3 text-14">
+              A network of $15+$ strategic alliances ensuring seamless technology synergy across Cloud, AI, and Security.
             </p>
           </div>
           <div className="partners">

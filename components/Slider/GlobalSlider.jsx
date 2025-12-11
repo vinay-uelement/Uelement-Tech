@@ -90,7 +90,7 @@ const GlobalSlider = ({ data }) => {
             <div className="p-6 bg-white rounded-[4px] h-[540px] 2xl:h-[590px] flex flex-col w-full shadow-lg">
               <div className="h-[200px] md:h-[220px] 2xl:h-[280px] relative">
                 <img src={item.image} alt={item.title} className="h-full w-full object-cover rounded-[4px]" />
-                <div className="bg-primary-blue size-12 rounded-full absolute right-3 -bottom-6 flex items-center justify-center">
+                <div className="bg-[#FFFFFF] shadow-md size-12 rounded-full absolute right-3 -bottom-6 flex items-center justify-center">
                   
                   <img 
                     src={item.icon ? item.icon : '/icons/global/enterprise-icon.svg'} 
@@ -98,8 +98,6 @@ const GlobalSlider = ({ data }) => {
                   />
                 </div>
               </div>
-
-              
               <div className="pt-6 flex flex-col flex-1">
                 <div className="bg-[#E1E1E1] r5 text-black-1 px-3 py-1 w-fit font-reddit-sans font-semibold">
                   {item.label}
