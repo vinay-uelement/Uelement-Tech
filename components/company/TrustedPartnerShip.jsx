@@ -18,7 +18,7 @@ const TrustedPartnerShip = () => {
       <div className="container-small md:py-[var(--section-block-padding)]">
         <div className="w-full sm:w-[80%] mx-auto bg-white p-8 pb-12 ribbon-border rounded-[10px]">
           <div className="title-div text-center mb-10 text-primary-blue">
-            <p className="fl-slash">/Partners</p>
+            <p className="fl-slash">/Expertise</p>
             <h4 className="fl2 mt-3 mb-2">
               Focus on Integration and Expertise
             </h4>

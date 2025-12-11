@@ -1,6 +1,6 @@
 import Image from 'next/image';
 
-const Icon = ({ name, className = '', size = 30, alt = '' }) => {
+const Icon = ({ name, className = '', size = 24, alt = '' }) => {
   return (
     <Image
       src={`/icons/footer/${name}.svg`}

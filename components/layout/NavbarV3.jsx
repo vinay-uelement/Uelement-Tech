@@ -84,17 +84,17 @@ const navbarList = [
       {
         id: 1,
         label: 'AI & ML',
-        desc: 'WIZ | PALOALTO | REDHAT | AWS',
+        desc: 'Intelligent Automation',
       },
       {
         id: 2,
         label: 'Cybersecurity',
-        desc: 'WIZ | PALOALTO | REDHAT | AWS',
+        desc: 'Zero-Trust Protection',
       },
       {
         id: 3,
         label: 'Cloud Solutions',
-        desc: 'WIZ | PALOALTO | REDHAT | AWS',
+        desc: 'Cloud-Native Platforms',
       },
     ],
     images: [

@@ -127,7 +127,7 @@ export default function AboutSection() {
               {/* 2x2 Grid Mobile */}
               <div className="grid grid-cols-1 gap-10 max-w-5xl mx-auto relative z-10 xl:hidden">
                 {transformBullet.map((data) => (
-                  <div key={data.id} className={`flex flex-col ${data.id % 2 !== 0 ? "items-start" : "items-end"}`}>
+                  <div key={data.id} className={`flex flex-col ${data.id % 2 !== 0 ? "items-start text-left" : "items-end text-right"}`}>
                     <div className="size-[50px] flex items-center justify-center bg-primary-blue rounded-full ">
                       <img
                         src={data.icon}
