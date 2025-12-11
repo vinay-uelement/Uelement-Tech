@@ -4,6 +4,8 @@ import Link from 'next/link';
 import Checkbox from '../formElements/Checkbox/Checkbox';
 import InputField from '../formElements/InputField/InputField';
 import Icon from '../resources/Icon';
+import { useState } from 'react';
+import useWeb3Forms from '@web3forms/react';
 
 const Contact = () => {
   return (
@@ -52,8 +54,111 @@ const Contact = () => {
 };
 
 const ContactUs = () => {
-  const contactFormHandler = (e) => {
+  const [formData, setFormData] = useState({
+    firstName: '',
+    lastName: '',
+    email: '',
+    phone: '',
+    message: '',
+    subjects: {
+      cyberSecurity: false,
+      enterpriseCloud: false,
+      artificialIntelligence: false,
+      digitalTransformation: false,
+    },
+  });
+
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState({ type: '', message: '' });
+
+  // Web3Forms Integration
+  const { submit } = useWeb3Forms({
+    access_key: '5f0b55f8-1ed0-46cd-a518-c13ca9686c6f',
+    settings: {
+      from_name: 'UElement Contact Form',
+      subject: 'New Contact Form Submission from Contact Page',
+    },
+    onSuccess: (message) => {
+      console.log('Success:', message);
+      setSubmitStatus({
+        type: 'success',
+        message: 'Thank you! Your message has been sent successfully.',
+      });
+      setIsSubmitting(false);
+
+      // Reset form after 3 seconds
+      setTimeout(() => {
+        resetForm();
+        setSubmitStatus({ type: '', message: '' });
+      }, 3000);
+    },
+    onError: (message) => {
+      console.log('Error:', message);
+      setSubmitStatus({
+        type: 'error',
+        message: 'Oops! Something went wrong. Please try again.',
+      });
+      setIsSubmitting(false);
+    },
+  });
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
+  };
+
+  const handleCheckboxChange = (e) => {
+    const { id, checked } = e.target;
+    setFormData((prev) => ({
+      ...prev,
+      subjects: {
+        ...prev.subjects,
+        [id]: checked,
+      },
+    }));
+  };
+
+  const resetForm = () => {
+    setFormData({
+      firstName: '',
+      lastName: '',
+      email: '',
+      phone: '',
+      message: '',
+      subjects: {
+        cyberSecurity: false,
+        enterpriseCloud: false,
+        artificialIntelligence: false,
+        digitalTransformation: false,
+      },
+    });
+  };
+
+  const contactFormHandler = async (e) => {
     e.preventDefault();
+    setIsSubmitting(true);
+    setSubmitStatus({ type: '', message: '' });
+
+    // Get selected subjects as a comma-separated string
+    const selectedSubjects = Object.keys(formData.subjects)
+      .filter((key) => formData.subjects[key])
+      .map((key) => key.replace(/([A-Z])/g, ' $1').trim())
+      .join(', ');
+
+    // Prepare data for Web3Forms
+    const submissionData = {
+      firstName: formData.firstName,
+      lastName: formData.lastName,
+      email: formData.email,
+      phone: formData.phone,
+      message: formData.message,
+      subjects: selectedSubjects || 'None selected',
+    };
+
+    await submit(submissionData);
   };
 
   return (
@@ -109,6 +214,19 @@ const ContactUs = () => {
 
           {/* Right Side - Contact Form */}
           <div className="p-4 sm:p-6 lg:p-8 xl:p-10">
+            {/* Success/Error Message */}
+            {submitStatus.message && (
+              <div
+                className={`mb-6 p-4 rounded-[4px] ${
+                  submitStatus.type === 'success'
+                    ? 'bg-green-100 text-green-700 border border-green-300'
+                    : 'bg-red-100 text-red-700 border border-red-300'
+                }`}
+              >
+                {submitStatus.message}
+              </div>
+            )}
+
             <form
               autoComplete="off"
               className="flex flex-col gap-5 lg:gap-7"
@@ -120,6 +238,8 @@ const ContactUs = () => {
                     label="First Name"
                     placeholder="John"
                     name="firstName"
+                    value={formData.firstName}
+                    onChangeHandler={handleInputChange}
                   />
                 </div>
                 <div>
@@ -127,16 +247,27 @@ const ContactUs = () => {
                     label="Last Name"
                     placeholder="Doe"
                     name="lastName"
+                    value={formData.lastName}
+                    onChangeHandler={handleInputChange}
                   />
                 </div>
                 <div>
-                  <InputField label="Email" placeholder="" name="email" />
+                  <InputField
+                    label="Email"
+                    placeholder="john@example.com"
+                    name="email"
+                    type="email"
+                    value={formData.email}
+                    onChangeHandler={handleInputChange}
+                  />
                 </div>
                 <div>
                   <InputField
                     label="Phone Number"
                     placeholder="+1 012 3456 789"
                     name="phone"
+                    value={formData.phone}
+                    onChangeHandler={handleInputChange}
                   />
                 </div>
               </div>
@@ -146,15 +277,29 @@ const ContactUs = () => {
                   Select Subject?
                 </h6>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                  <Checkbox label="Cyber security" id="cyberSecurity" />
-                  <Checkbox label="Enterprise Cloud" id="enterpriseCloud" />
+                  <Checkbox
+                    label="Cyber security"
+                    id="cyberSecurity"
+                    checked={formData.subjects.cyberSecurity}
+                    onChange={handleCheckboxChange}
+                  />
+                  <Checkbox
+                    label="Enterprise Cloud"
+                    id="enterpriseCloud"
+                    checked={formData.subjects.enterpriseCloud}
+                    onChange={handleCheckboxChange}
+                  />
                   <Checkbox
                     label="Artificial Intelligence"
                     id="artificialIntelligence"
+                    checked={formData.subjects.artificialIntelligence}
+                    onChange={handleCheckboxChange}
                   />
                   <Checkbox
                     label="Digital Transformation"
                     id="digitalTransformation"
+                    checked={formData.subjects.digitalTransformation}
+                    onChange={handleCheckboxChange}
                   />
                 </div>
               </div>
@@ -164,6 +309,9 @@ const ContactUs = () => {
                   Message
                 </label>
                 <textarea
+                  name="message"
+                  value={formData.message}
+                  onChange={handleInputChange}
                   placeholder="Write your message.."
                   rows="1"
                   className="w-full placeholder:text-gray-8080 border-b border-b-[#D7D7D7] font-reddit-sans text-14 py-2 resize-none focus:border-primary-blue transition-colors"
@@ -171,8 +319,12 @@ const ContactUs = () => {
               </div>
 
               <div className="flex justify-center sm:justify-end">
-                <button className="btn-yellow hover:scale-101" type="submit">
-                  Request a meeting
+                <button
+                  className="btn-yellow hover:scale-101 disabled:opacity-50 disabled:cursor-not-allowed"
+                  type="submit"
+                  disabled={isSubmitting}
+                >
+                  {isSubmitting ? 'Sending...' : 'Request a meeting'}
                 </button>
               </div>
             </form>
