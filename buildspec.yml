@@ -14,6 +14,7 @@ phases:
     commands:
       # Ensure Node 20 on AL2 (fallback to musl build to avoid glibc mismatch)
       - export NODE_VERSION=20.18.0
+      - yum install -y musl
       - |
         if ! command -v node >/dev/null 2>&1 || [ "$(node -p "process.versions.node.split('.')[0]")" -lt 20 ]; then
           echo "Installing Node.js ${NODE_VERSION} (musl build for AL2)..."
