@@ -10,11 +10,16 @@ env:
 phases:
   install:
     runtime-versions:
-      nodejs: 20
+      nodejs: 22
     commands:
-      # Node 20 is provided by the CodeBuild image runtime (recommended: aws/codebuild/standard:7.0+ or AL2023)
-      - node -v
-      - node -e 'const v = process.versions.node; if (parseInt(v.split(".")[0],10) < 20) { console.error(`Node ${v} < 20; update CodeBuild image to aws/codebuild/standard:7.0 (or newer/AL2023) so runtime-versions can install Node 20+.`); process.exit(1); }'
+      - echo "Forcing clean npm install (removing node_modules and package-lock.json)"
+      - rm -rf node_modules package-lock.json
+      - echo "Running npm install (verbose)"
+      - npm install --include=dev --no-audit --no-fund --verbose --unsafe-perm
+
+      # Explicitly install the platform-specific rollup native package and fail if it cannot be installed
+      - echo "Installing @rollup/rollup-linux-x64-gnu@4.52.3"
+      - npm i --no-audit --no-fund @rollup/rollup-linux-x64-gnu@4.52.3 --no-save --verbose --unsafe-perm
       - npm ci
 
 
