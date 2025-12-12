@@ -9,9 +9,17 @@ env:
 
 phases:
   install:
-    runtime-versions:
-      nodejs: 22
     commands:
+      # Build and install Node.js from source to ensure >=20.18 on AL2 (avoids glibc mismatch)
+      - export NODE_VERSION=22.11.0
+      - yum install -y gcc-c++ make python3 tar xz
+      - curl -fsSL "https://nodejs.org/dist/v${NODE_VERSION}/node-v${NODE_VERSION}.tar.xz" -o /tmp/node.tar.xz
+      - mkdir -p /tmp/node-src && tar -xJf /tmp/node.tar.xz -C /tmp/node-src --strip-components=1
+      - cd /tmp/node-src && ./configure --prefix=/opt/nodejs && make -j"$(nproc)" && make install
+      - export PATH="/opt/nodejs/bin:${PATH}"
+      - node -v
+
+      # Fresh dependency install with the new Node.js version
       - echo "Forcing clean npm install (removing node_modules and package-lock.json)"
       - rm -rf node_modules package-lock.json
       - echo "Running npm install (verbose)"
