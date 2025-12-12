@@ -9,25 +9,11 @@ env:
 
 phases:
   install:
+    runtime-versions:
+      nodejs: 20
     commands:
-      # Build and install Node.js from source to ensure >=20.18 on AL2 (avoids glibc mismatch)
-      - export NODE_VERSION=22.11.0
-      - yum install -y gcc-c++ make python3 tar xz
-      - curl -fsSL "https://nodejs.org/dist/v${NODE_VERSION}/node-v${NODE_VERSION}.tar.xz" -o /tmp/node.tar.xz
-      - mkdir -p /tmp/node-src && tar -xJf /tmp/node.tar.xz -C /tmp/node-src --strip-components=1
-      - cd /tmp/node-src && ./configure --prefix=/opt/nodejs && make -j"$(nproc)" && make install
-      - export PATH="/opt/nodejs/bin:${PATH}"
       - node -v
-
-      # Fresh dependency install with the new Node.js version
-      - echo "Forcing clean npm install (removing node_modules and package-lock.json)"
-      - rm -rf node_modules package-lock.json
-      - echo "Running npm install (verbose)"
-      - npm install --include=dev --no-audit --no-fund --verbose --unsafe-perm
-
-      # Explicitly install the platform-specific rollup native package and fail if it cannot be installed
-      - echo "Installing @rollup/rollup-linux-x64-gnu@4.52.3"
-      - npm i --no-audit --no-fund @rollup/rollup-linux-x64-gnu@4.52.3 --no-save --verbose --unsafe-perm
+      - node -e 'const v = process.versions.node.split(".").map(Number); if (v[0] < 20) { console.error(`Node ${process.versions.node} < 20; update CodeBuild image to aws/codebuild/standard:7.0 or newer/AL2023 so runtime-versions can install Node 20+. Currently running on an image that only supports Node 18.`); process.exit(1); }'
       - npm ci
 
 
