@@ -14,6 +14,7 @@ phases:
     commands:
       # Node 20 is provided by the CodeBuild image runtime (recommended: aws/codebuild/standard:7.0+ or AL2023)
       - node -v
+      - node -e 'const v = process.versions.node; if (parseInt(v.split(".")[0],10) < 20) { console.error(`Node ${v} < 20; update CodeBuild image to aws/codebuild/standard:7.0 (or newer/AL2023) so runtime-versions can install Node 20+.`); process.exit(1); }'
       - npm ci
 
 
