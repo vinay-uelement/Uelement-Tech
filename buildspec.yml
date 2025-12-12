@@ -12,18 +12,7 @@ phases:
     runtime-versions:
       nodejs: 20
     commands:
-      # Ensure Node 20 on AL2 (fallback to musl build to avoid glibc mismatch)
-      - export NODE_VERSION=20.18.0
-      - yum install -y musl
-      - |
-        if ! command -v node >/dev/null 2>&1 || [ "$(node -p "process.versions.node.split('.')[0]")" -lt 20 ]; then
-          echo "Installing Node.js ${NODE_VERSION} (musl build for AL2)..."
-          mkdir -p /opt/nodejs
-          curl -fsSL "https://unofficial-builds.nodejs.org/download/release/v${NODE_VERSION}/node-v${NODE_VERSION}-linux-x64-musl.tar.xz" -o /tmp/node.tar.xz
-          tar -xJf /tmp/node.tar.xz -C /opt/nodejs --strip-components=1
-          rm -f /tmp/node.tar.xz
-        fi
-      - export PATH="/opt/nodejs/bin:${PATH}"
+      # Node 20 is provided by the CodeBuild image runtime (recommended: aws/codebuild/standard:7.0+ or AL2023)
       - node -v
       - npm ci
 
