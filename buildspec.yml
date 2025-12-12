@@ -14,7 +14,8 @@ phases:
     commands:
       - node -v
       - node -e 'const v = process.versions.node.split(".").map(Number); if (v[0] < 20) { console.error(`Node ${process.versions.node} < 20; update CodeBuild image to aws/codebuild/standard:7.0 or newer/AL2023 so runtime-versions can install Node 20+. Currently running on an image that only supports Node 18.`); process.exit(1); }'
-      - npm ci
+      # Install both prod + dev deps (Tailwind/PostCSS lives in devDependencies)
+      - npm ci --include=dev
 
 
   build:
