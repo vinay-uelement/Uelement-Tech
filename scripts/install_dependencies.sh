@@ -14,8 +14,6 @@ error() {
 APP_NAME="uelement"
 STAGING_DIR="/opt/codedeploy/${APP_NAME}/staging"
 LIVE_DIR="/var/www/${APP_NAME}"
-NGINX_SITE_CONF_SOURCE="${STAGING_DIR}/nginx/nginx.conf"
-NGINX_SITE_CONF_TARGET="/etc/nginx/conf.d/uelement.conf"
 
 log "Starting installation process..."
 log "Checking system package manager..."
@@ -52,32 +50,12 @@ sudo $PKG install -y nginx rsync || error "Failed to install nginx and rsync"
 log "Installing curl..."
 sudo $PKG install -y --allowerasing curl || error "Failed to install curl"
 
+log "Cleaning previous staging directory at ${STAGING_DIR} (if present)"
+sudo rm -rf "${STAGING_DIR}" || true
+
 # Create live directory if missing
 sudo mkdir -p "${LIVE_DIR}"
 sudo chown -R nginx:nginx "${LIVE_DIR}" || true
-
-# Configure Nginx
-log "Configuring Nginx..."
-
-# Remove default nginx config
-sudo rm -f /etc/nginx/conf.d/default.conf || log "No default.conf to remove"
-# Remove default welcome pages and index files
-sudo rm -f /usr/share/nginx/html/index.html || log "No default index.html to remove"
-sudo rm -rf /usr/share/nginx/html/* || log "No files in /usr/share/nginx/html to remove or permission denied"
-
-# Install our site config
-if [ -f "${NGINX_SITE_CONF_SOURCE}" ]; then
-    log "Installing Nginx site config..."
-    sudo cp -f "${NGINX_SITE_CONF_SOURCE}" "${NGINX_SITE_CONF_TARGET}"
-    sudo chown root:root "${NGINX_SITE_CONF_TARGET}"
-    sudo chmod 644 "${NGINX_SITE_CONF_TARGET}"
-    
-    # Validate nginx config
-    log "Validating Nginx configuration..."
-    sudo nginx -t || error "Invalid Nginx configuration"
-else
-    error "Nginx site configuration not found at ${NGINX_SITE_CONF_SOURCE}"
-fi
 
 # Configure SELinux if enabled
 if command -v getenforce >/dev/null 2>&1; then

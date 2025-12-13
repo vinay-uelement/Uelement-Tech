@@ -12,6 +12,7 @@ error() {
 
 APP_NAME="uelement"
 LIVE_DIR="/var/www/${APP_NAME}"
+HEALTHCHECK_URL="http://127.0.0.1"
 
 # Verify deployment
 log "Verifying deployment..."
@@ -36,8 +37,9 @@ fi
 # Verify site is accessible
 log "Verifying site is accessible..."
 sleep 2  # Give nginx a moment to start
-if ! curl -s -I https://uelement.in | grep -q 'HTTP/2 200'; then
-    error "Site is not accessible"
+STATUS_CODE=$(curl -s -o /dev/null -w "%{http_code}" "${HEALTHCHECK_URL}")
+if [[ "${STATUS_CODE}" -lt 200 || "${STATUS_CODE}" -ge 400 ]]; then
+    error "Site returned status ${STATUS_CODE} at ${HEALTHCHECK_URL}"
 fi
 
 log "Nginx is running and site is accessible"

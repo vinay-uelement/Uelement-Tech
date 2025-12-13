@@ -1,4 +1,4 @@
-import CompanyHighlightSlider from "../slider/CompanyHighlightSlider";
+import CompanyHighlightSlider from "../Slider/CompanyHighlightSlider";
 
 export default function HighlightV2() {
 
