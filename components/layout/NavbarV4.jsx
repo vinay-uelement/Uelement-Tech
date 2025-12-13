@@ -113,9 +113,10 @@ const navbarList = [
   { id: 4, label: 'Company', link: '/company' },
 ];
 
-const NON_CLICKABLE_MENUS = [2, 3]; // Resources (id: 2) and Partnership (id: 3)
+// IDs that should always show dropdowns but not be clickable
+const ALWAYS_EXPANDED_MENUS = [2, 3]; // Resources (id: 2) and Partnership (id: 3)
 
-const Navbar = () => {
+const NavbarV4 = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [showMobileNav, setShowMobileNav] = useState(false);
   const [hoveredMenu, setHoveredMenu] = useState(null);
@@ -139,6 +140,14 @@ const Navbar = () => {
     adaptiveHeight: true,
   };
 
+  const handleContactus = () => {
+    const contactSection = document.getElementById('contactus');
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  // handle scroll for top spacing
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 0);
@@ -236,45 +245,39 @@ const Navbar = () => {
                       key={navItem.id}
                       className="group min-h-full"
                       onMouseEnter={() => {
-                        setHoveredMenu(navItem);
+                        // Allow hover only for items not in ALWAYS_EXPANDED_MENUS
+                        if (!ALWAYS_EXPANDED_MENUS.includes(navItem.id)) {
+                          setHoveredMenu(navItem);
+                        }
                       }}
                     >
-                      {NON_CLICKABLE_MENUS.includes(navItem.id) ? (
-                        <div
-                          className="flex items-center font-reddit-sans font-semibold text-18 text-[#fff] px-3 uppercase relative h-full cursor-not-allowed opacity-100"
-                        >
-                          {navItem.children && (
-                            <span
-                              className={`transition-all duration-500 ${
-                                hoveredMenu?.id === navItem?.id
-                                  ? 'rotate-0'
-                                  : 'rotate-45'
-                              }`}
-                            >
-                              {ReactIcons.slash}
-                            </span>
-                          )}
-                          {navItem.label}
-                        </div>
-                      ) : (
-                        <Link
-                          href={navItem.link}
-                          className="flex items-center font-reddit-sans font-semibold text-18 text-[#fff] px-3 uppercase relative h-full cursor-pointer"
-                        >
-                          {navItem.children && (
-                            <span
-                              className={`transition-all duration-500 ${
-                                hoveredMenu?.id === navItem?.id
-                                  ? 'rotate-0'
-                                  : 'rotate-45'
-                              }`}
-                            >
-                              {ReactIcons.slash}
-                            </span>
-                          )}
-                          {navItem.label}
-                        </Link>
-                      )}
+                      <Link
+                        href={ALWAYS_EXPANDED_MENUS.includes(navItem.id) ? '#' : navItem.link}
+                        onClick={(e) => {
+                          // Prevent navigation for always-expanded items
+                          if (ALWAYS_EXPANDED_MENUS.includes(navItem.id)) {
+                            e.preventDefault();
+                          }
+                        }}
+                        className={`flex items-center font-reddit-sans font-semibold text-18 text-[#fff] px-3 uppercase relative h-full ${
+                          ALWAYS_EXPANDED_MENUS.includes(navItem.id)
+                            ? 'cursor-not-allowed opacity-75'
+                            : 'cursor-pointer'
+                        }`}
+                      >
+                        {navItem.children && (
+                          <span
+                            className={`transition-all duration-500 ${
+                              hoveredMenu?.id === navItem?.id || ALWAYS_EXPANDED_MENUS.includes(navItem.id)
+                                ? 'rotate-0'
+                                : 'rotate-45'
+                            }`}
+                          >
+                            {ReactIcons.slash}
+                          </span>
+                        )}
+                        {navItem.label}
+                      </Link>
                     </div>
                   ))}
                 </div>
@@ -291,7 +294,11 @@ const Navbar = () => {
                 ref={dropdownRef}
                 className={`w-[calc(100%+40px)] absolute -left-10 bg-[#00000050] backdrop-blur-2xl backdrop-saturate-150
     shadow-xl text-[#fff] z-[30] top-9 flex rounded-b-[22px] overflow-hidden transition-all duration-300 ease-in-out ${
-      hoveredMenu && hoveredMenu?.children ? 'h-[350px]' : 'h-0'
+      hoveredMenu && hoveredMenu?.children 
+        ? 'h-[350px]' 
+        : ALWAYS_EXPANDED_MENUS.includes(hoveredMenu?.id || -1) && hoveredMenu?.children
+        ? 'h-[350px]'
+        : 'h-0'
     }`}
               >
                 <div className="pt-9 pb-3 px-4 flex w-full">
@@ -300,32 +307,17 @@ const Navbar = () => {
                       {hoveredMenu?.label}
                     </div>
                     {hoveredMenu?.children?.map((child) => (
-                      NON_CLICKABLE_MENUS.includes(hoveredMenu.id) ? (
-                        <div
-                          key={child.id}
-                          className="block py-4 last:border-none border-primary-blue max-w-[100%] pointer-events-none opacity-100"
-                        >
-                          <div className="font-semibold text-18 text-[#fff] font-reddit-sans uppercase">
-                            {child.label}
-                          </div>
-                          <div className="text-16 font-light text-[#fff] font-reddit-sans">
-                            {child.desc}
-                          </div>
+                      <div
+                        key={child.id}
+                        className="block py-4 last:border-none border-primary-blue max-w-[100%] pointer-events-none"
+                      >
+                        <div className="font-semibold text-18 text-[#fff] font-reddit-sans uppercase">
+                          {child.label}
                         </div>
-                      ) : (
-                        <Link
-                          key={child.id}
-                          href={'#'}
-                          className="block py-4 last:border-none border-primary-blue hover:text-primary-blue max-w-[100%]"
-                        >
-                          <div className="font-semibold text-18 text-[#fff] font-reddit-sans uppercase">
-                            {child.label}
-                          </div>
-                          <div className="text-16 font-light text-[#fff] font-reddit-sans">
-                            {child.desc}
-                          </div>
-                        </Link>
-                      )
+                        <div className="text-16 font-light text-[#fff] font-reddit-sans">
+                          {child.desc}
+                        </div>
+                      </div>
                     ))}
                   </div>
                 </div>
@@ -349,70 +341,55 @@ const Navbar = () => {
             <div key={navItem.id} className="">
               <div
                 onClick={() => {
-                  if (!NON_CLICKABLE_MENUS.includes(navItem.id)) {
+                  // Prevent expansion for always-expanded items
+                  if (!ALWAYS_EXPANDED_MENUS.includes(navItem.id)) {
                     setExpandedMobileMenu((prev) =>
                       prev === navItem.id ? null : navItem.id
                     );
                   }
                 }}
                 className={`flex justify-between items-center border-b-[0.5px] border-primary-blue text-white font-semibold pb-1 ${
-                  NON_CLICKABLE_MENUS.includes(navItem.id)
+                  ALWAYS_EXPANDED_MENUS.includes(navItem.id)
                     ? 'cursor-not-allowed opacity-75'
                     : 'cursor-pointer'
                 }`}
               >
-                {NON_CLICKABLE_MENUS.includes(navItem.id) ? (
-                  <span className="h-10 flex items-end">
-                    {navItem.label}
-                  </span>
-                ) : (
-                  <Link
-                    href={navItem.link}
-                    onClick={(e) => {
+                <Link
+                  href={ALWAYS_EXPANDED_MENUS.includes(navItem.id) ? '#' : navItem.link}
+                  onClick={(e) => {
+                    if (ALWAYS_EXPANDED_MENUS.includes(navItem.id)) {
+                      e.preventDefault();
+                    } else {
                       setShowMobileNav(false);
-                    }}
-                    className="h-10 flex items-end"
-                  >
-                    {navItem.label}
-                  </Link>
-                )}
+                    }
+                  }}
+                  className="h-10 flex items-end"
+                >
+                  {navItem.label}
+                </Link>
                 {navItem.children && ReactIcons.chevDown}
               </div>
 
+              {/* Show expanded content for always-expanded items or when explicitly expanded */}
               <div
                 className={`overflow-hidden transition-all duration-300 ${
-                  expandedMobileMenu === navItem.id
+                  expandedMobileMenu === navItem.id || ALWAYS_EXPANDED_MENUS.includes(navItem.id)
                     ? 'h-[220px]'
                     : 'h-0'
                 }`}
               >
                 {navItem.children?.map((child) => (
-                  NON_CLICKABLE_MENUS.includes(navItem.id) ? (
-                    <div
-                      key={child.id}
-                      className="block py-2 border-b-[0.5px] last:border-none border-primary-blue max-w-[90%] pointer-events-none opacity-75"
-                    >
-                      <div className="font-semibold text-14 text-[#E8E8E8]">
-                        {child.label}
-                      </div>
-                      <div className="text-12 font-light text-[#E8E8E8]">
-                        {child.desc}
-                      </div>
+                  <div
+                    key={child.id}
+                    className="block py-2 border-b-[0.5px] last:border-none border-primary-blue max-w-[90%] pointer-events-none opacity-75"
+                  >
+                    <div className="font-semibold text-14 text-[#E8E8E8]">
+                      {child.label}
                     </div>
-                  ) : (
-                    <Link
-                      key={child.id}
-                      href={'#'}
-                      className="block py-2 border-b-[0.5px] last:border-none border-primary-blue hover:text-primary-blue max-w-[90%]"
-                    >
-                      <div className="font-semibold text-14 text-[#E8E8E8]">
-                        {child.label}
-                      </div>
-                      <div className="text-12 font-light text-[#E8E8E8]">
-                        {child.desc}
-                      </div>
-                    </Link>
-                  )
+                    <div className="text-12 font-light text-[#E8E8E8]">
+                      {child.desc}
+                    </div>
+                  </div>
                 ))}
               </div>
             </div>
@@ -431,4 +408,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
+export default NavbarV4;
