@@ -241,7 +241,7 @@ const Navbar = () => {
                     >
                       {NON_CLICKABLE_MENUS.includes(navItem.id) ? (
                         <div
-                          className="flex items-center font-reddit-sans font-semibold text-18 text-[#fff] px-3 uppercase relative h-full cursor-not-allowed opacity-100"
+                          className="flex items-center font-reddit-sans font-semibold md:text-16 xl:text-18 text-[#fff] px-3 uppercase relative h-full cursor-not-allowed opacity-100"
                         >
                           {navItem.children && (
                             <span
@@ -259,7 +259,7 @@ const Navbar = () => {
                       ) : (
                         <Link
                           href={navItem.link}
-                          className="flex items-center font-reddit-sans font-semibold text-18 text-[#fff] px-3 uppercase relative h-full cursor-pointer"
+                          className="flex items-center font-reddit-sans font-semibold md:text-16 xl:text-18 text-[#fff] px-3 uppercase relative h-full cursor-pointer"
                         >
                           {navItem.children && (
                             <span
@@ -296,7 +296,7 @@ const Navbar = () => {
               >
                 <div className="pt-9 pb-3 px-4 flex w-full">
                   <div className="flex-[2]">
-                    <div className="text-22 text-white font-reddit-sans font-semibold border-b-[0.5px] border-[#ebebeb] pb-2">
+                    <div className="md:text-18 xl:text-22 text-white font-reddit-sans font-semibold border-b-[0.5px] border-[#ebebeb] pb-2">
                       {hoveredMenu?.label}
                     </div>
                     {hoveredMenu?.children?.map((child) => (
@@ -305,10 +305,10 @@ const Navbar = () => {
                           key={child.id}
                           className="block py-4 last:border-none border-primary-blue max-w-[100%] pointer-events-none opacity-100"
                         >
-                          <div className="font-semibold text-18 text-[#fff] font-reddit-sans uppercase">
+                          <div className="font-semibold md:text-16 xl:text-18 text-[#fff] font-reddit-sans capitalize">
                             {child.label}
                           </div>
-                          <div className="text-16 font-light text-[#fff] font-reddit-sans">
+                          <div className="md:text-14 xl:text-16 font-light text-[#fff] font-reddit-sans">
                             {child.desc}
                           </div>
                         </div>
@@ -318,7 +318,7 @@ const Navbar = () => {
                           href={'#'}
                           className="block py-4 last:border-none border-primary-blue hover:text-primary-blue max-w-[100%]"
                         >
-                          <div className="font-semibold text-18 text-[#fff] font-reddit-sans uppercase">
+                          <div className="font-semibold text-18 text-[#fff] font-reddit-sans captalize">
                             {child.label}
                           </div>
                           <div className="text-16 font-light text-[#fff] font-reddit-sans">

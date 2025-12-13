@@ -9,36 +9,52 @@ const slides = [
   {
     id: 1,
     number: '01',
-    title: 'SI Partnerships (SI)',
-    desc: 'Designing, Deploying & Delivering Next-Gen Cybersecurity, Cloud & AI Solutions together with OEM partners',
+    title: 'SI Partnerships (System Integrators)',
+    desc:
+      'Designing, deploying, and delivering next-gen Cybersecurity, Cloud & AI solutions with OEM partners.',
+    desc1:
+      'SI Partnerships focus on building long-term strategic alliances with leading system integrators and OEM partners. These collaborations enable enterprises to co-create innovative solutions, accelerate go-to-market strategies, and deliver scalable, secure, and future-ready technology offerings. By combining complementary strengths, SI partnerships drive mutual growth, operational efficiency, and sustained business value.',
     img: '/images/landing/si-partnership.jpg',
   },
   {
     id: 2,
     number: '02',
     title: 'Professional Services (PS)',
-    desc: 'Accelerating digital transformation with expert consulting and seamless implementations.',
+    desc:
+      'Accelerating digital transformation through expert consulting and seamless implementations.',
+    desc1:
+      'Our Professional Services are designed to help organizations navigate complex technology transformations with confidence. From strategic advisory and solution design to implementation and optimization, our experts ensure smooth execution aligned with business goals. This enables faster adoption, reduced risk, and measurable outcomes across digital initiatives.',
     img: '/images/landing/professional-services.jpg',
   },
   {
     id: 3,
     number: '03',
-    title: 'Cloud Solutions',
-    desc: 'Optimizing IT infrastructure with scalable, secure and cost-effective cloud solutions.',
+    title: 'Cloud Solutions & Platforms',
+    desc:
+      'Optimizing IT infrastructure with scalable, secure, and cost-effective cloud solutions.',
+    desc1:
+      'Cloud Solutions empower enterprises to build flexible, resilient, and high-performance IT environments. We help organizations design, migrate, and manage cloud platforms that enhance agility, improve security posture, and optimize operational costs. Our approach ensures cloud strategies are aligned with long-term business and scalability needs.',
     img: '/images/landing/managed-ser2.jpg',
   },
   {
     id: 4,
     number: '04',
     title: 'Managed Services',
-    desc: 'Ensuring business continuity with 24/7 proactive monitoring and management.',
+    desc:
+      'Ensuring business continuity with 24/7 proactive monitoring and management.',
+    desc1:
+      'Managed Services provide continuous oversight, monitoring, and optimization of critical IT systems. With round-the-clock support, proactive issue resolution, and performance optimization, businesses can focus on innovation while we ensure stability, security, and operational excellence across their technology landscape.',
     img: '/images/landing/manage-service.jpg',
   },
   {
     id: 5,
     number: '05',
+    number: '05',
     title: 'Cloud Modernization',
-    desc: 'Modernizing workloads and enabling cloud-native scalability for enterprises.',
+    desc:
+      'Modernizing workloads and enabling cloud-native scalability for enterprises.',
+    desc1:
+      'Cloud Modernization helps organizations transform legacy systems into agile, cloud-native architectures. By modernizing applications, data, and infrastructure, enterprises gain improved performance, enhanced security, and faster innovation cycles. This enables future-ready operations and long-term digital competitiveness.',
     img: '/images/landing/cloud-solution.jpg',
   },
 ];
@@ -114,7 +130,7 @@ const DrivingGrowthSection = () => {
 
   return (
     <section className="container-small">
-      <div className="flex lg:items-center flex-col lg:flex-row gap-18 lg:pb-8 xl:pb-10 2xl:pb-12">
+      <div className="flex lg:items-center flex-col lg:flex-row gap-20 lg:pb-8 xl:pb-10 2xl:pb-12">
         {/* Left Side Numbers */}
         <div className="flex-1 lg:mr-[30px] md:w-[60%] w-full">
           <span className="fl-slash block lg:hidden ">/Service Segment</span>
@@ -137,26 +153,21 @@ const DrivingGrowthSection = () => {
 
           <span className="fl-slash hidden lg:block">/Service Segment</span>
           <h3 className="fl1">
-            Driving growth through strategic collaborations
+            {slides[active].title}
           </h3>
-          <p className="fl3 lg:block">
-            SI Partnerships (SI) represents strategic alliances that help
-            organizations grow, innovate, and expand their reach. It focuses on
-            collaboration with trusted partners to drive mutual value and
-            long-term success. Through these partnerships, businesses can unlock
-            new opportunities, strengthen capabilities, and achieve shared
-            goals.
+          <p className="fl3 lg:block md:w-[90%] w-full md:text-justify text-left">
+            {slides[active].desc1}
           </p>
-          <button className="btn-blue mt-4 xl:mt-20 hidden lg:block">
+          <button className="btn-blue mt-4 lg:mt-20 hidden lg:block">
             Learn More
           </button>
         </div>
 
-        <div className="relative overflow-visible lg:w-[250px] xl:w-[450px] 2xl:w-[600px] driving-slider">
+        <div className="relative overflow-visible md:!w-[40%] w-full driving-slider">
           <div className="absolute inset-y-0 -left-4 md:-left-18 flex items-center z-20">
             <div
               onClick={prevSlide}
-              className="size-[34px] text-20 lg:text-24 xl:size-[60px] rounded-full bg-[#DEDEDE] shadow-down grid place-content-center cursor-pointer transition text-white lg:text-primary-blue"
+              className="size-[34px] text-20 lg:text-24 xl:size-[60px] rounded-full bg-[#DEDEDE] shadow-down grid place-content-center cursor-pointer transition text-black lg:text-primary-blue"
             >
               <span>{ReactIcons.leftChev}</span>
             </div>
@@ -200,7 +211,7 @@ const DrivingGrowthSection = () => {
                     style={{ zIndex, position: 'relative' }}
                   >
                     <div
-                      className="relative w-[200px] h-[280px] md:w-[320px] md:h-[320px] xl:w-[360px] xl:h-[370px] 2xl:w-[360px] 2xl:h-[450px] rounded-[0px] overflow-hidden"
+                      className="relative w-[200px] h-[280px] md:w-[320px] md:h-[320px] xl:w-[360px] xl:h-[370px] 2xl:w-[360px] 2xl:h-[450px] rounded-[4px] overflow-hidden"
                       style={{
                         backgroundImage: `url(${item.img})`,
                         backgroundSize: 'cover',
@@ -227,10 +238,10 @@ const DrivingGrowthSection = () => {
             })}
           </Slider>
 
-          <div className="absolute inset-y-0 -right-4 md:-right-18 flex items-center z-20">
+          <div className="absolute inset-y-0 -right-4 md:-right-18 xl:-right-17 flex items-center z-20">
             <div
               onClick={nextSlide}
-              className="size-[34px] text-20 lg:text-24 xl:size-[60px] rounded-full bg-[#DEDEDE] shadow-down grid place-content-center cursor-pointer transition text-white lg:text-primary-blue"
+              className="size-[34px] text-20 lg:text-24 xl:size-[60px] rounded-full bg-[#DEDEDE] shadow-down grid place-content-center cursor-pointer transition text-black lg:text-primary-blue"
             >
               <span>{ReactIcons.rightChev}</span>
             </div>
