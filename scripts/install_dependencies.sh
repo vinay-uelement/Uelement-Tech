@@ -12,6 +12,7 @@ error() {
 }
 
 APP_NAME="uelement"
+STAGING_DIR="/opt/codedeploy/${APP_NAME}/staging"
 LIVE_DIR="/var/www/${APP_NAME}"
 
 log "Starting installation process..."
@@ -48,6 +49,9 @@ sudo $PKG install -y nginx rsync || error "Failed to install nginx and rsync"
 # Install curl separately with --allowerasing to handle conflicts
 log "Installing curl..."
 sudo $PKG install -y --allowerasing curl || error "Failed to install curl"
+
+log "Cleaning previous staging directory at ${STAGING_DIR} (if present)"
+sudo rm -rf "${STAGING_DIR}" || true
 
 # Create live directory if missing
 sudo mkdir -p "${LIVE_DIR}"
