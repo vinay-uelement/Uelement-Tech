@@ -34,7 +34,7 @@ const solutions = [
     id: 4,
     image: '/images/global/security.png',
     icon: '/icons/global/enterprise-icon.svg',
-    label: 'Cyber Security',
+    label: 'Future Tech',
     title: 'Pioneering Transformation with Quantum Readiness.',
     description:
       'Driving next-wave technology in Quantum Computing (QKD) and Web3. We execute critical App Modernization, Sassification, and Mainframe-to-Cloud migration.',

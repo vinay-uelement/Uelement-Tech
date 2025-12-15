@@ -1,3 +1,6 @@
+"use client";
+import { useRouter } from "next/navigation";
+
 const servicesData = [
   {
     id: '01',
@@ -32,6 +35,7 @@ const servicesData = [
 ];
 
 const ServicesList = () => {
+  const router = useRouter();
   return (
     <section className="bg-white mb-[75px]">
       {servicesData.map((service, index) => {
@@ -95,8 +99,11 @@ const ServicesList = () => {
                   <p className="mt-6 fl3">{service.desc}</p>
                 </div>
 
-                <button className="btn-blue md:self-start self-center my-4 md:mb-0 md:mt-4">
-                  Learn More
+                <button
+                  className="btn-blue md:self-start self-center my-4 md:mb-0 md:mt-4"
+                  onClick={() => router.push('/contact-us')}
+                >
+                  Schedule a Demo
                 </button>
               </div>
             </div>

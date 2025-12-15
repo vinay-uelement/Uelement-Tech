@@ -424,7 +424,7 @@ const FooterContent = () => {
             </div>
 
             {/* Resources Links */}
-            <div className="resources-links">
+            {/* <div className="resources-links">
               <h6 className=" font-semibold text-14 sm:text-22 font-reddit-sans text-white uppercase mb-4 sm:mb-5">
                 RESOURCES
               </h6>
@@ -454,15 +454,15 @@ const FooterContent = () => {
                   Youtube Playlist
                 </Link>
               </div>
-            </div>
+            </div> */}
           </div>
 
           {/* Newsletter */}
-          <div className="newsletter ml-10">
+          <div className="newsletter ml-auto">
             <h6 className=" font-semibold text-14 sm:text-22 font-reddit-sans text-white uppercase mb-4 sm:mb-5">
               NEWSLETTER
             </h6>
-            <div className="max-w-[300px]">
+            <div className="w-[350px]">
               <div className="relative bg-white rounded-[4px] px-4 py-3 flex items-center gap-2 mb-3">
                 <span className="text-gray-400 text-16">
                   {ReactIcons.email}

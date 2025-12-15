@@ -162,10 +162,10 @@ const DrivingGrowthSection = () => {
         </div>
 
         <div className="relative overflow-visible md:!w-[40%] w-full driving-slider">
-          <div className="absolute inset-y-0 -left-4 md:-left-18 flex items-center z-20">
+          <div className="absolute inset-y-0 -left-4 md:-left-15 flex items-center z-20">
             <div
               onClick={prevSlide}
-              className="size-[34px] text-20 lg:text-24 xl:size-[60px] rounded-full bg-[#DEDEDE] shadow-down grid place-content-center cursor-pointer transition text-black lg:text-primary-blue"
+              className="size-[26px] xl:size-[40px] text-20 lg:text-26 rounded-full bg-[#DEDEDE] shadow-down grid place-content-center cursor-pointer transition text-black lg:text-primary-blue"
             >
               <span>{ReactIcons.leftChev}</span>
             </div>
@@ -234,10 +234,10 @@ const DrivingGrowthSection = () => {
             })}
           </Slider>
 
-          <div className="absolute inset-y-0 -right-4 md:-right-18 xl:-right-17 flex items-center z-20">
+          <div className="absolute inset-y-0 -right-4 md:-right-18 xl:-right-14 flex items-center z-20">
             <div
               onClick={nextSlide}
-              className="size-[34px] text-20 lg:text-24 xl:size-[60px] rounded-full bg-[#DEDEDE] shadow-down grid place-content-center cursor-pointer transition text-black lg:text-primary-blue"
+              className="size-[26px] xl:size-[40px] text-20 lg:text-26  rounded-full bg-[#DEDEDE] shadow-down grid place-content-center cursor-pointer transition text-black lg:text-primary-blue"
             >
               <span>{ReactIcons.rightChev}</span>
             </div>
