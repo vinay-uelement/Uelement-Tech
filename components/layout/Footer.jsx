@@ -31,19 +31,19 @@ const Footer = () => {
             Contact
           </Link>
           <Link
-            href="/"
+            href="/legal?page=privacy"
             className="font-reddit-sans text-[#808080] text-13 sm:text-16 hover:text-white transition-colors"
           >
             Privacy policy
           </Link>
           <Link
-            href="/"
+            href="/legal?page=sitemap"
             className="font-reddit-sans text-[#808080] text-13 sm:text-16 hover:text-white transition-colors"
           >
             Sitemap
           </Link>
           <Link
-            href="/"
+            href="/legal?page=terms"
             className="font-reddit-sans text-[#808080] text-13 sm:text-16 hover:text-white transition-colors"
           >
             Terms of Use

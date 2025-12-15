@@ -1,0 +1,58 @@
+import Link from 'next/link';
+
+export default function SitemapContent() {
+  return (
+    <div className="space-y-10">
+      {/* Main Navigation Pages */}
+      <div className="space-y-6">
+        <h2 className="fl1-sep !text-white">Main Navigation Pages</h2>
+        <div className="space-y-3 pl-2">
+          <SitemapLink href="/solutions">Solutions</SitemapLink>
+          <SitemapLink href="/resources">Resources</SitemapLink>
+          <SitemapLink href="/partnership">Partnership</SitemapLink>
+          <SitemapLink href="/company">Company</SitemapLink>
+        </div>
+      </div>
+
+      <div className="h-px bg-gradient-to-r from-[#D9B24C] to-transparent" />
+
+      {/* Solutions */}
+      <div className="space-y-6">
+        <h2 className="fl1-sep !text-white">Solutions</h2>
+        <div className="space-y-3 pl-2">
+          <SitemapLink href="/solutions/ai-ml">AI / ML</SitemapLink>
+          <SitemapLink href="/solutions/cybersecurity">
+            Cybersecurity
+          </SitemapLink>
+          <SitemapLink href="/solutions/cloud-computing">
+            Cloud Computing
+          </SitemapLink>
+        </div>
+      </div>
+
+      <div className="h-px bg-gradient-to-r from-[#D9B24C] to-transparent" />
+
+      {/* Supports & Legal */}
+      <div className="space-y-6">
+        <h2 className="fl1-sep !text-white">Supports & Legal</h2>
+        <div className="space-y-3 pl-2">
+          <SitemapLink href="/legal/privacy">Privacy Policy</SitemapLink>
+          <SitemapLink href="/legal/terms">Terms of Use</SitemapLink>
+          <SitemapLink href="/legal/legal">Legal</SitemapLink>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function SitemapLink({ href, children }) {
+  return (
+    <Link
+      href={href}
+      className="flex items-center text-white/70 hover:text-white transition group"
+    >
+      <span className="inline-block w-2 h-2 rounded-full bg-[#D9B24C] mr-3 group-hover:scale-125 transition-transform" />
+      {children}
+    </Link>
+  );
+}

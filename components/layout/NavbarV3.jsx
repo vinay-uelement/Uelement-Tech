@@ -116,7 +116,7 @@ const navbarList = [
   { id: 4, label: 'Company', link: '/company' },
 ];
 
-const NON_CLICKABLE_MENUS = [2, 3]; // Resources (id: 2) and Partnership (id: 3)
+const NON_CLICKABLE_MENUS = [2]; // Resources (id: 2)
 
 const Navbar = () => {
   const router = useRouter();

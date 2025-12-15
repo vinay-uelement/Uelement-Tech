@@ -77,7 +77,6 @@ const HeroSectionV5 = () => {
     setIsPaused(false);
   };
 
-
   return (
     <section className="h-screen flex flex-col md:bg-primary-blue relative">
       <div className="h-[calc(100%-80px)] w-full relative text-white rounded-[4px] rounded-bl-[50px] rounded-br-none">
@@ -112,10 +111,20 @@ const HeroSectionV5 = () => {
           >
             {ReactIcons.leftChev}
           </button>
-          <div className="flex-1 flex items-center justify-center w-full min-h-[30px]">
-            <span className="fl4 text-center transition-all duration-500">
-              {slides[index]}
-            </span>
+          <div className="flex-1 overflow-hidden w-full min-h-[30px]">
+            <div
+              className="flex transition-transform duration-500 ease-in-out"
+              style={{ transform: `translateX(-${index * 100}%)` }}
+            >
+              {slides.map((text, i) => (
+                <div
+                  key={i}
+                  className="min-w-full flex items-center justify-center"
+                >
+                  <span className="fl4 text-center text-white">{text}</span>
+                </div>
+              ))}
+            </div>
           </div>
           <button
             onClick={nextSlide}

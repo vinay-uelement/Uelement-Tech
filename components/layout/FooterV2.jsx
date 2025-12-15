@@ -31,19 +31,19 @@ const FooterV2 = () => {
             Contact
           </Link>
           <Link
-            href="/"
+            href="/legal?page=privacy"
             className="font-reddit-sans text-[#808080] text-13 sm:text-16 hover:text-white transition-colors"
           >
             Privacy policy
           </Link>
           <Link
-            href="/"
+            href="/legal?page=sitemap"
             className="font-reddit-sans text-[#808080] text-13 sm:text-16 hover:text-white transition-colors"
           >
             Sitemap
           </Link>
           <Link
-            href="/"
+            href="/legal?page=terms"
             className="font-reddit-sans text-[#808080] text-13 sm:text-16 hover:text-white transition-colors"
           >
             Terms of Use
@@ -392,257 +392,90 @@ const FooterContent = () => {
   };
   return (
     <>
-    <footer className="hidden md:block bg-primary-blue pt-2 lg:pt-4 pb-6 container-padding">
-      <div className="max-w-[1400px] mx-auto">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-10 lg:gap-12 xl:gap-16 pb-8 sm:pb-10 lg:pb-12">
-          {/* Company Details */}
-          <div className="company-details">
-            <img
-              src="/icons/global/UElement_Logo_White 3.svg"
-              alt="UElement logo"
-              className="h-[35px] sm:h-[48px] w-auto mb-6 md:mb-20"
-            />
-            <p className="text-[#808080] font-reddit-sans text-[14px] mb-6 sm:mb-8 ">
-              Empowering Secure Digital Transformation
-            </p>
-
-            <div className="flex items-center justify-start gap-6">
-              <Link
-                href="https://www.linkedin.com/company/uelement-technologies/posts/?feedView=all"
-                className=" hover:translate-y-[-3px] duration-300 ease-in-out transition-all hover:text-white/70"
-              >
-                <Icon name="linkedin" size={35} />
-              </Link>
-              {/* <Link
-                href="#"
-                className="  hover:translate-y-[-3px] duration-300 ease-in-out transition-all hover:text-white/70"
-              >
-                <Icon name="facebook" size={35} />
-              </Link> */}
-              <Link
-                href="https://www.instagram.com/u_element_india?igsh=MTZtejZ4djB4MHdqbw=="
-                className="  hover:translate-y-[-3px] duration-300 ease-in-out transition-all hover:text-white/70"
-              >
-                <Icon name="instagram" size={35} />
-              </Link>
-              {/* <Link
-                href="#"
-                className="  hover:translate-y-[-3px] duration-300 ease-in-out transition-all hover:text-white/70"
-              >
-                <Icon name="twitter" size={35} />
-              </Link> */}
-              {/* <Link
-                href="#"
-                className="  hover:translate-y-[-3px] duration-300 ease-in-out transition-all hover:text-white/70"
-              >
-                <Icon name="youtube" size={35} />
-              </Link> */}
-              {/* <Link
-                href="#"
-                className="  hover:translate-y-[-3px] duration-300 ease-in-out transition-all hover:text-white/70"
-              >
-                <Icon name="github" size={35} />
-              </Link> */}
-            </div>
-          </div>
-
-          <div className="flex flex-row md-flex-col justify-center gap-32 md:gap-20 my-6 md:my-0">
-            {/* Company Links */}
-            <div className="company-links">
-              <h6 className=" font-semibold text-14 sm:text-22 font-reddit-sans text-white uppercase mb-4 sm:mb-5">
-                COMPANY
-              </h6>
-              <div className="flex flex-col gap-3 sm:gap-4 font-reddit-sans font-light">
-                <Link
-                  href="/company"
-                  className="fl3 !text-[#e2e2e2] text-13 sm:text-16 hover:text-white transition-colors"
-                >
-                  About
-                </Link>
-                <Link
-                  href="/services"
-                  className="fl3 !text-[#e2e2e2] text-13 sm:text-16 hover:text-white transition-colors"
-                >
-                  Services
-                </Link>
-                {/* <Link
-                  href="/our-partners"
-                  className="fl3 !text-[#e2e2e2] text-13 sm:text-16 hover:text-white transition-colors"
-                >
-                  Partners
-                </Link> */}
-              </div>
-            </div>
-
-            {/* Resources Links */}
-            {/* <div className="resources-links">
-              <h6 className=" font-semibold text-14 sm:text-22 font-reddit-sans text-white uppercase mb-4 sm:mb-5">
-                RESOURCES
-              </h6>
-              <div className="flex flex-col gap-3 sm:gap-4 font-reddit-sans font-light">
-                <Link
-                  href="/resources"
-                  className="fl3 !text-[#e2e2e2] text-13 sm:text-16 hover:text-white transition-colors"
-                >
-                  Free eBooks
-                </Link>
-                <Link
-                  href="/resources"
-                  className="fl3 !text-[#e2e2e2] text-13 sm:text-16 hover:text-white transition-colors"
-                >
-                  Development Tutorial
-                </Link>
-                <Link
-                  href="/resources"
-                  className="fl3 !text-[#e2e2e2] text-13 sm:text-16 hover:text-white transition-colors"
-                >
-                  How to - Blog
-                </Link>
-                <Link
-                  href="/resources"
-                  className="fl3 !text-[#e2e2e2] text-13 sm:text-16 hover:text-white transition-colors"
-                >
-                  Youtube Playlist
-                </Link>
-              </div>
-            </div> */}
-          </div>
-
-          {/* Newsletter */}
-          <div className="newsletter ml-auto">
-            <h6 className="font-semibold text-14 sm:text-22 font-reddit-sans text-white uppercase mb-4 sm:mb-5">
-              NEWSLETTER
-            </h6>
-
-            {newsletterStatus.message && (
-              <div
-                className={`mb-3 rounded-[4px] px-3 py-2 text-13 sm:text-14 ${
-                  newsletterStatus.type === 'success'
-                    ? 'bg-green-100 text-green-700 border border-green-300'
-                    : 'bg-red-100 text-red-700 border border-red-300'
-                }`}
-              >
-                {newsletterStatus.message}
-              </div>
-            )}
-
-            <form
-              className="w-[200px] md:w-[350px] space-y-3"
-              onSubmit={handleNewsletterSubmit}
-            >
-              <div className="relative bg-white rounded-[4px] px-4 py-3 flex items-center gap-2">
-                <span className="text-gray-400 text-16">
-                  {ReactIcons.email}
-                </span>
-                <input
-                  type="email"
-                  name="email"
-                  required
-                  value={newsletterEmail}
-                  onChange={(e) => setNewsletterEmail(e.target.value)}
-                  placeholder="Email Address"
-                  className="font-reddit-sans text-13 sm:text-14 text-gray-700 w-full placeholder:text-gray-400 outline-none"
-                />
-              </div>
-              <button
-                className="btn-yellow w-full hover:scale-101 disabled:opacity-50 disabled:cursor-not-allowed"
-                type="submit"
-                disabled={newsletterSubmitting}
-              >
-                {newsletterSubmitting ? 'Submitting...' : 'Submit Now'}
-              </button>
-            </form>
-          </div>
-        </div>
-      </div>
-    </footer>
-    <footer className="block md:hidden bg-primary-blue pt-2 lg:pt-4 pb-6 container-padding">
-      <div className="max-w-[1400px] mx-auto">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-10 lg:gap-12 xl:gap-16 pb-8 sm:pb-10 lg:pb-12">
-          {/* Company Details */}
-          <div className="company-details flex flex-col justify-center items-center">
-            <img
-              src="/icons/global/UElement_Logo_White 3.svg"
-              alt="UElement logo"
-              className="h-[30px] sm:h-[48px] w-auto mb-2 md:mb-20"
-            />
-          </div>
-
-          <div className="flex flex-row md-flex-col justify-center gap-32 md:gap-20 my-6 md:my-0">
-            {/* Company Links */}
-            <div className="company-links">
-              <h6 className=" font-semibold text-14 sm:text-22 font-reddit-sans text-white uppercase mb-4 sm:mb-5">
-                COMPANY
-              </h6>
-              <div className="flex flex-col gap-3 sm:gap-4 font-reddit-sans font-light">
-                <Link
-                  href="/company"
-                  className="fl3 !text-[#e2e2e2] text-13 sm:text-16 hover:text-white transition-colors"
-                >
-                  About
-                </Link>
-                <Link
-                  href="/services"
-                  className="fl3 !text-[#e2e2e2] text-13 sm:text-16 hover:text-white transition-colors"
-                >
-                  Services
-                </Link>
-                {/* <Link
-                  href="/our-partners"
-                  className="fl3 !text-[#e2e2e2] text-13 sm:text-16 hover:text-white transition-colors"
-                >
-                  Partners
-                </Link> */}
-              </div>
-            </div>
-
-            <div>
+      <footer className="hidden md:block bg-primary-blue pt-2 lg:pt-4 pb-6 container-padding">
+        <div className="max-w-[1400px] mx-auto">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-10 lg:gap-12 xl:gap-16 pb-8 sm:pb-10 lg:pb-12">
+            {/* Company Details */}
+            <div className="company-details">
+              <img
+                src="/icons/global/UElement_Logo_White 3.svg"
+                alt="UElement logo"
+                className="h-[35px] sm:h-[48px] w-auto mb-6 md:mb-20"
+              />
               <p className="text-[#808080] font-reddit-sans text-[14px] mb-6 sm:mb-8 ">
-              Empowering Secure  <br />  Digital Transformation
-            </p>
+                Empowering Secure Digital Transformation
+              </p>
 
-            <div className="flex items-center justify-start gap-6">
-              <Link
-                href="https://www.linkedin.com/company/uelement-technologies/posts/?feedView=all"
-                className=" hover:translate-y-[-3px] duration-300 ease-in-out transition-all hover:text-white/70"
-              >
-                <Icon name="linkedin" size={35} />
-              </Link>
-              {/* <Link
+              <div className="flex items-center justify-start gap-6">
+                <Link
+                  href="https://www.linkedin.com/company/uelement-technologies/posts/?feedView=all"
+                  className=" hover:translate-y-[-3px] duration-300 ease-in-out transition-all hover:text-white/70"
+                >
+                  <Icon name="linkedin" size={35} />
+                </Link>
+                {/* <Link
                 href="#"
                 className="  hover:translate-y-[-3px] duration-300 ease-in-out transition-all hover:text-white/70"
               >
                 <Icon name="facebook" size={35} />
               </Link> */}
-              <Link
-                href="https://www.instagram.com/u_element_india?igsh=MTZtejZ4djB4MHdqbw=="
-                className="  hover:translate-y-[-3px] duration-300 ease-in-out transition-all hover:text-white/70"
-              >
-                <Icon name="instagram" size={35} />
-              </Link>
-              {/* <Link
+                <Link
+                  href="https://www.instagram.com/u_element_india?igsh=MTZtejZ4djB4MHdqbw=="
+                  className="  hover:translate-y-[-3px] duration-300 ease-in-out transition-all hover:text-white/70"
+                >
+                  <Icon name="instagram" size={35} />
+                </Link>
+                {/* <Link
                 href="#"
                 className="  hover:translate-y-[-3px] duration-300 ease-in-out transition-all hover:text-white/70"
               >
                 <Icon name="twitter" size={35} />
               </Link> */}
-              {/* <Link
+                {/* <Link
                 href="#"
                 className="  hover:translate-y-[-3px] duration-300 ease-in-out transition-all hover:text-white/70"
               >
                 <Icon name="youtube" size={35} />
               </Link> */}
-              {/* <Link
+                {/* <Link
                 href="#"
                 className="  hover:translate-y-[-3px] duration-300 ease-in-out transition-all hover:text-white/70"
               >
                 <Icon name="github" size={35} />
               </Link> */}
-            </div>
+              </div>
             </div>
 
-            {/* Resources Links */}
-            {/* <div className="resources-links">
+            <div className="flex flex-row md-flex-col justify-center gap-32 md:gap-20 my-6 md:my-0">
+              {/* Company Links */}
+              <div className="company-links">
+                <h6 className=" font-semibold text-14 sm:text-22 font-reddit-sans text-white uppercase mb-4 sm:mb-5">
+                  COMPANY
+                </h6>
+                <div className="flex flex-col gap-3 sm:gap-4 font-reddit-sans font-light">
+                  <Link
+                    href="/company"
+                    className="fl3 !text-[#e2e2e2] text-13 sm:text-16 hover:text-white transition-colors"
+                  >
+                    About
+                  </Link>
+                  <Link
+                    href="/services"
+                    className="fl3 !text-[#e2e2e2] text-13 sm:text-16 hover:text-white transition-colors"
+                  >
+                    Services
+                  </Link>
+                  {/* <Link
+                  href="/our-partners"
+                  className="fl3 !text-[#e2e2e2] text-13 sm:text-16 hover:text-white transition-colors"
+                >
+                  Partners
+                </Link> */}
+                </div>
+              </div>
+
+              {/* Resources Links */}
+              {/* <div className="resources-links">
               <h6 className=" font-semibold text-14 sm:text-22 font-reddit-sans text-white uppercase mb-4 sm:mb-5">
                 RESOURCES
               </h6>
@@ -673,56 +506,223 @@ const FooterContent = () => {
                 </Link>
               </div>
             </div> */}
-          </div>
+            </div>
 
-          {/* Newsletter */}
-          <div className="newsletter mx-auto">
-            <h6 className="font-semibold text-14 sm:text-22 font-reddit-sans text-white uppercase mb-4 sm:mb-5">
-              NEWSLETTER
-            </h6>
+            {/* Newsletter */}
+            <div className="newsletter ml-auto">
+              <h6 className="font-semibold text-14 sm:text-22 font-reddit-sans text-white uppercase mb-4 sm:mb-5">
+                NEWSLETTER
+              </h6>
 
-            {newsletterStatus.message && (
-              <div
-                className={`mb-3 rounded-[4px] px-3 py-2 text-13 sm:text-14 ${
-                  newsletterStatus.type === 'success'
-                    ? 'bg-green-100 text-green-700 border border-green-300'
-                    : 'bg-red-100 text-red-700 border border-red-300'
-                }`}
+              {newsletterStatus.message && (
+                <div
+                  className={`mb-3 rounded-[4px] px-3 py-2 text-13 sm:text-14 ${
+                    newsletterStatus.type === 'success'
+                      ? 'bg-green-100 text-green-700 border border-green-300'
+                      : 'bg-red-100 text-red-700 border border-red-300'
+                  }`}
+                >
+                  {newsletterStatus.message}
+                </div>
+              )}
+
+              <form
+                className="w-[200px] md:w-[350px] space-y-3"
+                onSubmit={handleNewsletterSubmit}
               >
-                {newsletterStatus.message}
-              </div>
-            )}
-
-            <form
-              className="w-[300px] md:w-[350px] space-y-3"
-              onSubmit={handleNewsletterSubmit}
-            >
-              <div className="relative bg-white rounded-[4px] px-4 py-3 flex items-center gap-2">
-                <span className="text-gray-400 text-16">
-                  {ReactIcons.email}
-                </span>
-                <input
-                  type="email"
-                  name="email"
-                  required
-                  value={newsletterEmail}
-                  onChange={(e) => setNewsletterEmail(e.target.value)}
-                  placeholder="Email Address"
-                  className="font-reddit-sans text-13 sm:text-14 text-gray-700 w-full placeholder:text-gray-400 outline-none"
-                />
-              </div>
-              <button
-                className="btn-yellow w-full hover:scale-101 disabled:opacity-50 disabled:cursor-not-allowed"
-                type="submit"
-                disabled={newsletterSubmitting}
-              >
-                {newsletterSubmitting ? 'Submitting...' : 'Submit Now'}
-              </button>
-            </form>
+                <div className="relative bg-white rounded-[4px] px-4 py-3 flex items-center gap-2">
+                  <span className="text-gray-400 text-16">
+                    {ReactIcons.email}
+                  </span>
+                  <input
+                    type="email"
+                    name="email"
+                    required
+                    value={newsletterEmail}
+                    onChange={(e) => setNewsletterEmail(e.target.value)}
+                    placeholder="Email Address"
+                    className="font-reddit-sans text-13 sm:text-14 text-gray-700 w-full placeholder:text-gray-400 outline-none"
+                  />
+                </div>
+                <button
+                  className="btn-yellow w-full hover:scale-101 disabled:opacity-50 disabled:cursor-not-allowed"
+                  type="submit"
+                  disabled={newsletterSubmitting}
+                >
+                  {newsletterSubmitting ? 'Submitting...' : 'Submit Now'}
+                </button>
+              </form>
+            </div>
           </div>
         </div>
-      </div>
-    </footer>
+      </footer>
+      <footer className="block md:hidden bg-primary-blue pt-2 lg:pt-4 pb-6 container-padding">
+        <div className="max-w-[1400px] mx-auto">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-10 lg:gap-12 xl:gap-16 pb-8 sm:pb-10 lg:pb-12">
+            {/* Company Details */}
+            <div className="company-details flex flex-col justify-center items-center">
+              <img
+                src="/icons/global/UElement_Logo_White 3.svg"
+                alt="UElement logo"
+                className="h-[30px] sm:h-[48px] w-auto mb-2 md:mb-20"
+              />
+            </div>
+
+            <div className="flex flex-row md-flex-col justify-center gap-32 md:gap-20 my-6 md:my-0">
+              {/* Company Links */}
+              <div className="company-links">
+                <h6 className=" font-semibold text-14 sm:text-22 font-reddit-sans text-white uppercase mb-4 sm:mb-5">
+                  COMPANY
+                </h6>
+                <div className="flex flex-col gap-3 sm:gap-4 font-reddit-sans font-light">
+                  <Link
+                    href="/company"
+                    className="fl3 !text-[#e2e2e2] text-13 sm:text-16 hover:text-white transition-colors"
+                  >
+                    About
+                  </Link>
+                  <Link
+                    href="/services"
+                    className="fl3 !text-[#e2e2e2] text-13 sm:text-16 hover:text-white transition-colors"
+                  >
+                    Services
+                  </Link>
+                  {/* <Link
+                  href="/our-partners"
+                  className="fl3 !text-[#e2e2e2] text-13 sm:text-16 hover:text-white transition-colors"
+                >
+                  Partners
+                </Link> */}
+                </div>
+              </div>
+
+              <div>
+                <p className="text-[#808080] font-reddit-sans text-[14px] mb-6 sm:mb-8 ">
+                  Empowering Secure <br /> Digital Transformation
+                </p>
+
+                <div className="flex items-center justify-start gap-6">
+                  <Link
+                    href="https://www.linkedin.com/company/uelement-technologies/posts/?feedView=all"
+                    className=" hover:translate-y-[-3px] duration-300 ease-in-out transition-all hover:text-white/70"
+                  >
+                    <Icon name="linkedin" size={35} />
+                  </Link>
+                  {/* <Link
+                href="#"
+                className="  hover:translate-y-[-3px] duration-300 ease-in-out transition-all hover:text-white/70"
+              >
+                <Icon name="facebook" size={35} />
+              </Link> */}
+                  <Link
+                    href="https://www.instagram.com/u_element_india?igsh=MTZtejZ4djB4MHdqbw=="
+                    className="  hover:translate-y-[-3px] duration-300 ease-in-out transition-all hover:text-white/70"
+                  >
+                    <Icon name="instagram" size={35} />
+                  </Link>
+                  {/* <Link
+                href="#"
+                className="  hover:translate-y-[-3px] duration-300 ease-in-out transition-all hover:text-white/70"
+              >
+                <Icon name="twitter" size={35} />
+              </Link> */}
+                  {/* <Link
+                href="#"
+                className="  hover:translate-y-[-3px] duration-300 ease-in-out transition-all hover:text-white/70"
+              >
+                <Icon name="youtube" size={35} />
+              </Link> */}
+                  {/* <Link
+                href="#"
+                className="  hover:translate-y-[-3px] duration-300 ease-in-out transition-all hover:text-white/70"
+              >
+                <Icon name="github" size={35} />
+              </Link> */}
+                </div>
+              </div>
+
+              {/* Resources Links */}
+              {/* <div className="resources-links">
+              <h6 className=" font-semibold text-14 sm:text-22 font-reddit-sans text-white uppercase mb-4 sm:mb-5">
+                RESOURCES
+              </h6>
+              <div className="flex flex-col gap-3 sm:gap-4 font-reddit-sans font-light">
+                <Link
+                  href="/resources"
+                  className="fl3 !text-[#e2e2e2] text-13 sm:text-16 hover:text-white transition-colors"
+                >
+                  Free eBooks
+                </Link>
+                <Link
+                  href="/resources"
+                  className="fl3 !text-[#e2e2e2] text-13 sm:text-16 hover:text-white transition-colors"
+                >
+                  Development Tutorial
+                </Link>
+                <Link
+                  href="/resources"
+                  className="fl3 !text-[#e2e2e2] text-13 sm:text-16 hover:text-white transition-colors"
+                >
+                  How to - Blog
+                </Link>
+                <Link
+                  href="/resources"
+                  className="fl3 !text-[#e2e2e2] text-13 sm:text-16 hover:text-white transition-colors"
+                >
+                  Youtube Playlist
+                </Link>
+              </div>
+            </div> */}
+            </div>
+
+            {/* Newsletter */}
+            <div className="newsletter mx-auto">
+              <h6 className="font-semibold text-14 sm:text-22 font-reddit-sans text-white uppercase mb-4 sm:mb-5">
+                NEWSLETTER
+              </h6>
+
+              {newsletterStatus.message && (
+                <div
+                  className={`mb-3 rounded-[4px] px-3 py-2 text-13 sm:text-14 ${
+                    newsletterStatus.type === 'success'
+                      ? 'bg-green-100 text-green-700 border border-green-300'
+                      : 'bg-red-100 text-red-700 border border-red-300'
+                  }`}
+                >
+                  {newsletterStatus.message}
+                </div>
+              )}
+
+              <form
+                className="w-[300px] md:w-[350px] space-y-3"
+                onSubmit={handleNewsletterSubmit}
+              >
+                <div className="relative bg-white rounded-[4px] px-4 py-3 flex items-center gap-2">
+                  <span className="text-gray-400 text-16">
+                    {ReactIcons.email}
+                  </span>
+                  <input
+                    type="email"
+                    name="email"
+                    required
+                    value={newsletterEmail}
+                    onChange={(e) => setNewsletterEmail(e.target.value)}
+                    placeholder="Email Address"
+                    className="font-reddit-sans text-13 sm:text-14 text-gray-700 w-full placeholder:text-gray-400 outline-none"
+                  />
+                </div>
+                <button
+                  className="btn-yellow w-full hover:scale-101 disabled:opacity-50 disabled:cursor-not-allowed"
+                  type="submit"
+                  disabled={newsletterSubmitting}
+                >
+                  {newsletterSubmitting ? 'Submitting...' : 'Submit Now'}
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </footer>
     </>
   );
 };
