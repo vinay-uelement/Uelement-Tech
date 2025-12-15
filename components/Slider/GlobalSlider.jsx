@@ -10,6 +10,7 @@ const GlobalSlider = ({ data }) => {
   const sliderRef = useRef(null);
   const [activeIndex, setActiveIndex] = useState(0);
   const [slidesToShow, setSlidesToShow] = useState(3);
+  const [isPaused, setIsPaused] = useState(false);
 
   const getDotSize = (dotIndex) => {
     const distance = Math.abs(activeIndex - dotIndex);
@@ -36,6 +37,35 @@ const GlobalSlider = ({ data }) => {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
+  // Pause autoplay
+  const handlePause = () => {
+    if (sliderRef.current) {
+      sliderRef.current.slickPause();
+      setIsPaused(true);
+    }
+  };
+
+  // Resume autoplay
+  const handlePlay = () => {
+    if (sliderRef.current) {
+      sliderRef.current.slickPlay();
+      setIsPaused(false);
+    }
+  };
+
+  // Handle touch start 
+  const handleTouchStart = () => {
+    handlePause();
+  };
+
+  // Handle touch enda
+  const handleTouchEnd = () => {
+    // Resume after a short delay to allow swipe to complete
+    setTimeout(() => {
+      handlePlay();
+    }, 300);
+  };
+
   const settings = {
     dots: true,
     infinite: true,
@@ -44,7 +74,8 @@ const GlobalSlider = ({ data }) => {
     adaptiveHeight: true,
     autoplay: true,
     autoplaySpeed: 5000,
-    pauseOnHover: false,
+    pauseOnHover: false, // We'll handle this manually
+    pauseOnFocus: false, // We'll handle this manually
     arrows: false,
 
     beforeChange: (_, next) => setActiveIndex(next),
@@ -85,7 +116,13 @@ const GlobalSlider = ({ data }) => {
   if (!data || data.length === 0) return null;
 
   return (
-    <div className="relative px-4 sm:px-6 md:px-8 lg:px-12">
+    <div
+      className="relative px-4 sm:px-6 md:px-8 lg:px-12"
+      onMouseEnter={handlePause}
+      onMouseLeave={handlePlay}
+      onTouchStart={handleTouchStart}
+      onTouchEnd={handleTouchEnd}
+    >
       <Slider ref={sliderRef} {...settings}>
         {data.map((item) => (
           <div key={item.id} className="p-2 sm:p-3 md:p-4">
@@ -114,7 +151,10 @@ const GlobalSlider = ({ data }) => {
 
                 <h6 className="mt-3 sm:mt-4">
                   {item.title.split('\n').map((line, i) => (
-                    <span key={i} className='font-noto-sans md:text-16 text-14 font-semibold'>
+                    <span
+                      key={i}
+                      className="font-noto-sans md:text-16 text-14 font-semibold"
+                    >
                       {line}
                       <br />
                     </span>
