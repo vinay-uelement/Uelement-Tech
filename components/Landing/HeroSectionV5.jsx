@@ -11,16 +11,26 @@ const HeroSectionV5 = () => {
   ];
 
   const [index, setIndex] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
+  const [isMounted, setIsMounted] = useState(false);
+  const [touchStart, setTouchStart] = useState(0);
+  const [touchEnd, setTouchEnd] = useState(0);
   const router = useRouter();
 
+  // Fix hydration error by only rendering after mount
   useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
+  useEffect(() => {
+    if (isPaused || !isMounted) return;
+
     const interval = setInterval(() => {
       setIndex((prev) => (prev + 1) % slides.length);
     }, 4000);
 
-    // Cleanup
     return () => clearInterval(interval);
-  }, [slides.length]);
+  }, [slides.length, isPaused, isMounted]);
 
   const nextSlide = () => setIndex((prev) => (prev + 1) % slides.length);
   const prevSlide = () =>
@@ -29,6 +39,44 @@ const HeroSectionV5 = () => {
   const handleContactus = () => {
     router.push('/contact-us');
   };
+
+  // Pause handlers
+  const handlePauseStart = () => setIsPaused(true);
+  const handlePauseEnd = () => setIsPaused(false);
+
+  // Swipe gesture handlers for mobile
+  const handleTouchStart = (e) => {
+    setTouchStart(e.targetTouches[0].clientX);
+    setIsPaused(true);
+  };
+
+  const handleTouchMove = (e) => {
+    setTouchEnd(e.targetTouches[0].clientX);
+  };
+
+  const handleTouchEnd = () => {
+    if (!touchStart || !touchEnd) {
+      setIsPaused(false);
+      return;
+    }
+
+    const distance = touchStart - touchEnd;
+    const minSwipeDistance = 50; // Minimum distance for a swipe
+
+    if (distance > minSwipeDistance) {
+      // Swiped left - go to next slide
+      nextSlide();
+    } else if (distance < -minSwipeDistance) {
+      // Swiped right - go to previous slide
+      prevSlide();
+    }
+
+    // Reset
+    setTouchStart(0);
+    setTouchEnd(0);
+    setIsPaused(false);
+  };
+
 
   return (
     <section className="h-screen flex flex-col md:bg-primary-blue relative">
@@ -51,7 +99,12 @@ const HeroSectionV5 = () => {
           </div>
         </div>
 
-        <div className="absolute left-1/2 hidden md:flex -translate-x-1/2 2xl:-bottom-[25px] md:-bottom-[20px] w-[90%] md:w-2/3 items-center bg-[#D4D4D41A] backdrop-blur-2xl rounded-[40px] px-1 py-1 shadow-lg z-50">
+        {/* Desktop slider with hover pause */}
+        <div
+          className="absolute left-1/2 hidden md:flex -translate-x-1/2 2xl:-bottom-[25px] md:-bottom-[20px] w-[90%] md:w-2/3 items-center bg-[#D4D4D41A] backdrop-blur-2xl rounded-[40px] px-1 py-1 shadow-lg z-50"
+          onMouseEnter={handlePauseStart}
+          onMouseLeave={handlePauseEnd}
+        >
           <button
             onClick={prevSlide}
             className="size-10 bg-white rounded-full text-black text-2xl flex items-center justify-center hover:bg-gray-200 transition"
@@ -73,7 +126,13 @@ const HeroSectionV5 = () => {
           </button>
         </div>
 
-        <div className="absolute z-30 w-full h-[50px] overflow-hidden bottom-0 flex md:hidden items-center px-2">
+        {/* Mobile slider with swipe support */}
+        <div
+          className="absolute z-30 w-full h-[50px] overflow-hidden bottom-0 flex md:hidden items-center px-2"
+          onTouchStart={handleTouchStart}
+          onTouchMove={handleTouchMove}
+          onTouchEnd={handleTouchEnd}
+        >
           <div className="bg-[#D4D4D41A] backdrop-blur-2xl rounded-4xl flex items-center justify-center px-6 h-full w-full">
             <div className="relative flex-1 overflow-hidden">
               <div
