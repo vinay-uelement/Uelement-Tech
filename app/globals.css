@@ -212,7 +212,7 @@
     @apply font-reddit-sans font-light text-14 xl:text-16 text-[#232223] tracking-[0.03em];
   }
   .fl4{
-    @apply font-noto-sans italic text-12 md:text-16 xl:text-20 font-medium text-white tracking-[0.03em];
+    @apply font-noto-sans italic text-12 md:text-14 xl:text-18 font-medium text-white tracking-[0.03em];
   }
 }
 

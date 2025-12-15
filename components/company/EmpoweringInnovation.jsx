@@ -23,9 +23,9 @@ const bullet = [
 
 const EmpoweringInnovation = () => {
   const slides = [
-    'Architecting and Optimizing perfect Cloud Solutions.',
-    'Empowering Security with Next-Gen Cyber Intelligence.',
-    'Scaling AI-driven Innovation for Smarter Enterprises.',
+    'Engineering Quantum-Driven Digital Synapses.',
+    'Digital Mavericks at Cloud, Cyber, and AI Intersections.',
+    `Building Resilient Enterprises for Tomorrow's Challenges.`,
   ];
 
   const [index, setIndex] = useState(0);

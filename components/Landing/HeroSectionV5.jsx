@@ -42,10 +42,10 @@ const HeroSectionV5 = () => {
           </div>
         </div>
 
-        <div className="absolute left-1/2 hidden md:flex -translate-x-1/2 -bottom-[20px] w-[90%] md:w-2/3  items-center bg-[#D4D4D41A] backdrop-blur-2xl rounded-[40px] px-2 py-2 shadow-lg z-50">
+        <div className="absolute left-1/2 hidden md:flex -translate-x-1/2 2xl:-bottom-[25px] md:-bottom-[20px] w-[90%] md:w-2/3 items-center bg-[#D4D4D41A] backdrop-blur-2xl rounded-[40px] px-2 py-2 shadow-lg z-50">
           <button
             onClick={prevSlide}
-            className="size-11 bg-white rounded-full text-black text-2xl flex items-center justify-center hover:bg-gray-200 transition"
+            className="size-9 bg-white rounded-full text-black text-2xl flex items-center justify-center hover:bg-gray-200 transition"
             aria-label="Previous slide"
           >
             {ReactIcons.leftChev}
@@ -57,7 +57,7 @@ const HeroSectionV5 = () => {
           </div>
           <button
             onClick={nextSlide}
-            className="size-11 bg-white rounded-full text-black text-2xl flex items-center justify-center hover:bg-gray-200 transition"
+            className="size-9 bg-white rounded-full text-black text-2xl flex items-center justify-center hover:bg-gray-200 transition"
             aria-label="Next slide"
           >
             {ReactIcons.rightChev}
