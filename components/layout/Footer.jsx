@@ -340,6 +340,56 @@ const ContactUs = () => {
 };
 
 const FooterContent = () => {
+  const [newsletterEmail, setNewsletterEmail] = useState('');
+  const [newsletterSubmitting, setNewsletterSubmitting] = useState(false);
+  const [newsletterStatus, setNewsletterStatus] = useState({
+    type: '',
+    message: '',
+  });
+
+  // Web3Forms hook for newsletter
+  const { submit: submitNewsletter } = useWeb3Forms({
+    access_key: '5f0b55f8-1ed0-46cd-a518-c13ca9686c6f',
+    settings: {
+      from_name: 'UElement Newsletter',
+      subject: 'New Newsletter Subscription from Website',
+    },
+    onSuccess: (message, data) => {
+      console.log('Newsletter success:', message, data);
+      setNewsletterStatus({
+        type: 'success',
+        message: 'Thanks for subscribing to our newsletter.',
+      });
+      setNewsletterSubmitting(false);
+      setNewsletterEmail('');
+      setTimeout(() => {
+        setNewsletterStatus({ type: '', message: '' });
+      }, 3000);
+    },
+    onError: (message, data) => {
+      console.log('Newsletter error:', message, data);
+      setNewsletterStatus({
+        type: 'error',
+        message: 'Subscription failed. Please try again.',
+      });
+      setNewsletterSubmitting(false);
+    },
+  });
+
+  const handleNewsletterSubmit = async (e) => {
+    e.preventDefault();
+    if (!newsletterEmail) return;
+
+    setNewsletterSubmitting(true);
+    setNewsletterStatus({ type: '', message: '' });
+
+    const data = {
+      email: newsletterEmail,
+      form_type: 'Newsletter Subscription',
+    };
+
+    await submitNewsletter(data);
+  };
   return (
     <footer className="bg-primary-blue pt-2 lg:pt-4 pb-6 container-padding">
       <div className="max-w-[1400px] mx-auto">
@@ -462,21 +512,45 @@ const FooterContent = () => {
             <h6 className=" font-semibold text-14 sm:text-22 font-reddit-sans text-white uppercase mb-4 sm:mb-5">
               NEWSLETTER
             </h6>
-            <div className="w-[350px]">
-              <div className="relative bg-white rounded-[4px] px-4 py-3 flex items-center gap-2 mb-3">
+
+            {newsletterStatus.message && (
+              <div
+                className={`mb-3 rounded-[4px] px-3 py-2 text-13 sm:text-14 ${
+                  newsletterStatus.type === 'success'
+                    ? 'bg-green-100 text-green-700 border border-green-300'
+                    : 'bg-red-100 text-red-700 border border-red-300'
+                }`}
+              >
+                {newsletterStatus.message}
+              </div>
+            )}
+
+            <form
+              className="max-w-[300px] space-y-3"
+              onSubmit={handleNewsletterSubmit}
+            >
+              <div className="relative bg-white rounded-[4px] px-4 py-3 flex items-center gap-2">
                 <span className="text-gray-400 text-16">
                   {ReactIcons.email}
                 </span>
                 <input
                   type="email"
+                  name="email"
+                  required
+                  value={newsletterEmail}
+                  onChange={(e) => setNewsletterEmail(e.target.value)}
                   placeholder="Email Address"
-                  className="font-reddit-sans text-13 sm:text-14 text-gray-700 w-full placeholder:text-gray-400"
+                  className="font-reddit-sans text-13 sm:text-14 text-gray-700 w-full placeholder:text-gray-400 outline-none"
                 />
               </div>
-              <button className="btn-yellow w-full hover:scale-101">
-                Submit Now
+              <button
+                className="btn-yellow w-full hover:scale-101 disabled:opacity-50 disabled:cursor-not-allowed"
+                type="submit"
+                disabled={newsletterSubmitting}
+              >
+                {newsletterSubmitting ? 'Submitting...' : 'Submit Now'}
               </button>
-            </div>
+            </form>
           </div>
         </div>
       </div>
