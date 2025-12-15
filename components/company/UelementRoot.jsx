@@ -12,11 +12,11 @@ const UelementRoot = () => {
             Behind every idea, there's a team driven to make a difference.
           </h4>
           <p className="fl3 mb-3 md:w-[100%] w-full">
-            Rooted in Pune, the land of valor and innovation, U-Element draws
+            Rooted in Pune, the land of valor and innovation, UElement draws
             inspiration from the legacy of Chhatrapati Shivaji Maharaj and the
             resilience of Rajgad Fort. Just as these symbols represent strength,
             strategy, and vision, we bring the same spirit into the digital era.
-            At U-Element, we empower organizations with intelligent, secure, and
+            At UElement, we empower organizations with intelligent, secure, and
             scalable digital solutions. With expertise in AI, cybersecurity,
             cloud computing, and digital transformation, we help businesses not
             only adapt but also lead in today’s ever-evolving technological

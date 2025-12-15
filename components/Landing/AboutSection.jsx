@@ -1,3 +1,6 @@
+'use client';
+import { useRouter } from 'next/navigation';
+
 const bullet = [
   {
     id: 1,
@@ -49,9 +52,8 @@ const transformBullet = [
 ];
 
 export default function AboutSection() {
+  const router = useRouter();
   return (
-
-
     <div>
       <div className="p-10 bg-primary-blue rounded-[4px]">
         <div className="flex flex-col-reverse xl:flex-row">
@@ -90,11 +92,15 @@ export default function AboutSection() {
                 Partner for Secure Future
               </h2>
               <p className="mt-4 xl:max-w-[80%] fl3 !text-[16px] !text-[#FFF9FF] text-center xl:text-left mb-8 xl:mb-0">
-                Established by innovators in 2024, UElement Technologies is dedicated to solving complex challenges across
-                Cybersecurity, Cloud, and AI with unparalleled expertise. We eliminate the complexity of managing multiple vendors
-                by delivering an integrated, seamless service portfolio. Our relentless commitment to excellence and
-                future-forward vision, including pioneering work in Quantum Computing, is designed to ensure your organization
-                achieves sustainable growth and thrives in a secure digital future.
+                Established by innovators in 2024, UElement Technologies is
+                dedicated to solving complex challenges across Cybersecurity,
+                Cloud, and AI with unparalleled expertise. We eliminate the
+                complexity of managing multiple vendors by delivering an
+                integrated, seamless service portfolio. Our relentless
+                commitment to excellence and future-forward vision, including
+                pioneering work in Quantum Computing, is designed to ensure your
+                organization achieves sustainable growth and thrives in a secure
+                digital future.
               </p>
             </div>
           </div>
@@ -105,15 +111,24 @@ export default function AboutSection() {
           <div className="flex flex-col xl:flex-row gap-16">
             <div className="flex-1">
               <p className="fl-slash">/About us</p>
-              <h2 className="fl1 xl:w-[80%] w-full">Established by Innovators to Define Tomorrow's Digital Landscape.</h2>
+              <h2 className="fl1 xl:w-[80%] w-full">
+                Established by Innovators to Define Tomorrow's Digital
+                Landscape.
+              </h2>
               <p className="fl3 mt-4 text-black w-full xl:w-[80%]">
-               UElement Technologies was founded in 2024 by innovators committed to excellence and trust. Our foundation is built
-                on unwavering honesty and ethical accountability. We strategically focus on Cybersecurity, AI, and Cloud to strengthen
-                 the digital landscape. We embrace curiosity and drive transformative solutions, channeling our ambition into the 
-                 future of Quantum Computing.
+                UElement Technologies was founded in 2024 by innovators
+                committed to excellence and trust. Our foundation is built on
+                unwavering honesty and ethical accountability. We strategically
+                focus on Cybersecurity, AI, and Cloud to strengthen the digital
+                landscape. We embrace curiosity and drive transformative
+                solutions, channeling our ambition into the future of Quantum
+                Computing.
               </p>
 
-              <button className="btn-blue mt-14 hidden xl:block">
+              <button
+                className="btn-blue mt-14 hidden xl:block"
+                onClick={() => router.push('/company')}
+              >
                 Learn More
               </button>
             </div>
@@ -127,7 +142,10 @@ export default function AboutSection() {
               {/* 2x2 Grid Mobile */}
               <div className="grid grid-cols-1 gap-10 max-w-5xl mx-auto relative z-10 xl:hidden">
                 {transformBullet.map((data) => (
-                  <div key={data.id} className={`flex flex-col ${data.id % 2 !== 0 ? "items-start text-left" : "items-end text-right"}`}>
+                  <div
+                    key={data.id}
+                    className={`flex flex-col ${data.id % 2 !== 0 ? 'items-start text-left' : 'items-end text-right'}`}
+                  >
                     <div className="size-[50px] flex items-center justify-center bg-primary-blue rounded-full ">
                       <img
                         src={data.icon}
@@ -159,15 +177,16 @@ export default function AboutSection() {
                     <h3 className="text-20 mt-4 font-reddit-sans tracking-wider font-semibold">
                       {data.title}
                     </h3>
-                    <p className="mt-2 fl3 xl:w-full">
-                      {data.desc}
-                    </p>
+                    <p className="mt-2 fl3 xl:w-full">{data.desc}</p>
                   </div>
                 ))}
               </div>
             </div>
 
-            <button className="btn-blue w-fit mx-auto xl:hidden">
+            <button
+              className="btn-blue w-fit mx-auto xl:hidden"
+              onClick={() => router.push('/company')}
+            >
               Learn More
             </button>
           </div>

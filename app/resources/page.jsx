@@ -5,16 +5,16 @@ export const metadata = {
   title: 'Resources | UElement',
   description: 'Explore our resources, case studies, and insights on the latest trends in digital transformation.',
   openGraph: {
-    title: 'Resources | U-Element',
+    title: 'Resources | UElement',
     description: 'Explore our resources, case studies, and insights on the latest trends in digital transformation.',
     url: 'https://uelement.in/resources',
-    siteName: 'U-Element',
+    siteName: 'UElement',
     images: [
       {
         url: '/images/resources/resources_hero.jpg',
         width: 1200,
         height: 630,
-        alt: 'U-Element Resources',
+        alt: 'UElement Resources',
       },
     ],
     locale: 'en_US',
@@ -22,7 +22,7 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Resources | U-Element',
+    title: 'Resources | UElement',
     description: 'Explore our resources, case studies, and insights on the latest trends in digital transformation.',
     images: ['/images/resources/resources_hero.jpg'],
   },

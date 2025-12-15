@@ -3,18 +3,18 @@ import Image from 'next/image';
 
 export const metadata = {
   title: 'Home | UElement',
-  description: 'Welcome to U-Element. We provide digital transformation solutions to help your business grow.',
+  description: 'Welcome to UElement. We provide digital transformation solutions to help your business grow.',
   openGraph: {
-    title: 'Home | U-Element',
-    description: 'Welcome to U-Element. We provide digital transformation solutions to help your business grow.',
+    title: 'Home | UElement',
+    description: 'Welcome to UElement. We provide digital transformation solutions to help your business grow.',
     url: 'https://uelement.in',
-    siteName: 'U-Element',
+    siteName: 'UElement',
     images: [
       {
         url: '/images/landing/ue92-banner.jpg',
         width: 1200,
         height: 630,
-        alt: 'U-Element Home',
+        alt: 'UElement Home',
       },
     ],
     locale: 'en_US',
@@ -22,8 +22,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Home | U-Element',
-    description: 'Welcome to U-Element. We provide digital transformation solutions to help your business grow.',
+    title: 'Home | UElement',
+    description: 'Welcome to UElement. We provide digital transformation solutions to help your business grow.',
     images: ['/images/landing/ue92-banner.jpg'],
   },
 };

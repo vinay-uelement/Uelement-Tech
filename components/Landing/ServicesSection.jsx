@@ -2,12 +2,14 @@
 import { useState, useEffect } from 'react';
 import { ReactIcons } from '@/utils/ReactIcons';
 import dynamic from 'next/dynamic';
+import { useRouter } from 'next/navigation';
 
 const Select = dynamic(() => import('react-select'), {
   ssr: false,
 });
 
 const ServicesSection = () => {
+  const router = useRouter();
   const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {
@@ -18,24 +20,24 @@ const ServicesSection = () => {
     {
       id: 1,
       title: 'Cloud Security',
-      desc: 'At U-Element, we specialize in delivering scalable and secure cloud solutions tailored to meet the unique needs of startups. Our offerings enable businesses to reduce infrastructure costs, enhance operational efficiency, and scale seamlessly as they grow. By leveraging cutting-edge technologies and industry best practices, we empower startups to innovate and compete effectively in the digital landscape.',
+      desc: 'At UElement, we specialize in delivering scalable and secure cloud solutions tailored to meet the unique needs of startups. Our offerings enable businesses to reduce infrastructure costs, enhance operational efficiency, and scale seamlessly as they grow. By leveraging cutting-edge technologies and industry best practices, we empower startups to innovate and compete effectively in the digital landscape.',
     },
     {
       id: 2,
       title: 'AI & ML',
-      desc: 'At U-Element, we deliver cutting-edge Cybersecurity, AI Integration, Enterprise Cloud, Custom Product Development and Quantum Computing Solutions tailored to our clients needs. By leveraging advanced technologies, strategic partnerships and a commitment to excellence, we enable businesses to solve complex challenges, achieve sustainable growth and thrive in a secure digital future.',
+      desc: 'At UElement, we deliver cutting-edge Cybersecurity, AI Integration, Enterprise Cloud, Custom Product Development and Quantum Computing Solutions tailored to our clients needs. By leveraging advanced technologies, strategic partnerships and a commitment to excellence, we enable businesses to solve complex challenges, achieve sustainable growth and thrive in a secure digital future.',
     },
     {
       id: 3,
       title: 'Cyber Security',
-      desc: 'At U-Element, we deliver cutting-edge Cybersecurity, AI Integration, Enterprise Cloud, Custom Product Development and Quantum Computing Solutions tailored to our clients needs. By leveraging advanced technologies, strategic partnerships and a commitment to excellence, we enable businesses to solve complex challenges, achieve sustainable growth and thrive in a secure digital future.',
+      desc: 'At UElement, we deliver cutting-edge Cybersecurity, AI Integration, Enterprise Cloud, Custom Product Development and Quantum Computing Solutions tailored to our clients needs. By leveraging advanced technologies, strategic partnerships and a commitment to excellence, we enable businesses to solve complex challenges, achieve sustainable growth and thrive in a secure digital future.',
     },
   ];
 
   const [selectedTab, setSelectedTab] = useState(tabs[0]);
 
   const slides = [
-    'At U-Element, we offer scalable and secure cloud solutions tailored for startups. Our services enable businesses to reduce infrastructure costs, enhance operational efficiency, and scale seamlessly as they grow.',
+    'At UElement, we offer scalable and secure cloud solutions tailored for startups. Our services enable businesses to reduce infrastructure costs, enhance operational efficiency, and scale seamlessly as they grow.',
     'Empowering Security with Next-Gen Cyber Intelligence to proactively detect threats, safeguard critical data, and ensure uncompromised business continuity',
     'Scaling AI-Driven Innovation for Smarter Enterprises by integrating intelligent automation, predictive analytics, and real-time decision-making capabilities.',
   ];
@@ -82,7 +84,7 @@ const ServicesSection = () => {
     }),
     dropdownIndicator: (provided) => ({
       ...provided,
-      color: '#fff',
+      color: '#000',
       padding: '0 4px',
       margin: '0 16px 0 0',
     }),
@@ -91,9 +93,9 @@ const ServicesSection = () => {
     }),
     menu: (provided) => ({
       ...provided,
-      borderRadius: '10px',
+      borderRadius: '4px',
       overflow: 'hidden',
-      marginTop: '4px',
+      marginTop: '0px',
       zIndex: 9999,
     }),
     menuPortal: (provided) => ({
@@ -176,7 +178,7 @@ const ServicesSection = () => {
 
               <div className="flex flex-col md:flex-row gap-6 items-center justify-between">
                 <div>
-                  <button className="btn-yellow hover:scale-101">
+                  <button className="btn-yellow hover:scale-101" onClick={() => router.push('/services')}>
                     Learn More
                   </button>
                 </div>

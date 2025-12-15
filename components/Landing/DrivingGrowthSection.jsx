@@ -4,14 +4,14 @@ import Slider from 'react-slick';
 import { ReactIcons } from '@/utils/ReactIcons';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
+import { useRouter } from 'next/navigation';
 
 const slides = [
   {
     id: 1,
     number: '01',
     title: 'SI Partnerships (System Integrators)',
-    desc:
-      'Designing, deploying, and delivering next-gen Cybersecurity, Cloud & AI solutions with OEM partners.',
+    desc: 'Designing, deploying, and delivering next-gen Cybersecurity, Cloud & AI solutions with OEM partners.',
     desc1:
       'SI Partnerships focus on building long-term strategic alliances with leading system integrators and OEM partners. These collaborations enable enterprises to co-create innovative solutions, accelerate go-to-market strategies, and deliver scalable, secure, and future-ready technology offerings. By combining complementary strengths, SI partnerships drive mutual growth, operational efficiency, and sustained business value.',
     img: '/images/landing/si-partnership.jpg',
@@ -20,8 +20,7 @@ const slides = [
     id: 2,
     number: '02',
     title: 'Professional Services (PS)',
-    desc:
-      'Accelerating digital transformation through expert consulting and seamless implementations.',
+    desc: 'Accelerating digital transformation through expert consulting and seamless implementations.',
     desc1:
       'Our Professional Services are designed to help organizations navigate complex technology transformations with confidence. From strategic advisory and solution design to implementation and optimization, our experts ensure smooth execution aligned with business goals. This enables faster adoption, reduced risk, and measurable outcomes across digital initiatives.',
     img: '/images/landing/professional-services.jpg',
@@ -30,8 +29,7 @@ const slides = [
     id: 3,
     number: '03',
     title: 'Cloud Solutions & Platforms',
-    desc:
-      'Optimizing IT infrastructure with scalable, secure, and cost-effective cloud solutions.',
+    desc: 'Optimizing IT infrastructure with scalable, secure, and cost-effective cloud solutions.',
     desc1:
       'Cloud Solutions empower enterprises to build flexible, resilient, and high-performance IT environments. We help organizations design, migrate, and manage cloud platforms that enhance agility, improve security posture, and optimize operational costs. Our approach ensures cloud strategies are aligned with long-term business and scalability needs.',
     img: '/images/landing/managed-ser2.jpg',
@@ -40,8 +38,7 @@ const slides = [
     id: 4,
     number: '04',
     title: 'Managed Services',
-    desc:
-      'Ensuring business continuity with 24/7 proactive monitoring and management.',
+    desc: 'Ensuring business continuity with 24/7 proactive monitoring and management.',
     desc1:
       'Managed Services provide continuous oversight, monitoring, and optimization of critical IT systems. With round-the-clock support, proactive issue resolution, and performance optimization, businesses can focus on innovation while we ensure stability, security, and operational excellence across their technology landscape.',
     img: '/images/landing/manage-service.jpg',
@@ -51,8 +48,7 @@ const slides = [
     number: '05',
     number: '05',
     title: 'Cloud Modernization',
-    desc:
-      'Modernizing workloads and enabling cloud-native scalability for enterprises.',
+    desc: 'Modernizing workloads and enabling cloud-native scalability for enterprises.',
     desc1:
       'Cloud Modernization helps organizations transform legacy systems into agile, cloud-native architectures. By modernizing applications, data, and infrastructure, enterprises gain improved performance, enhanced security, and faster innovation cycles. This enables future-ready operations and long-term digital competitiveness.',
     img: '/images/landing/cloud-solution.jpg',
@@ -62,6 +58,7 @@ const slides = [
 const DrivingGrowthSection = () => {
   const [active, setActive] = useState(0);
   const sliderRef = useRef(null);
+  const router = useRouter();
 
   const getDotSize = (dotIndex) => {
     const distance = Math.abs(active - dotIndex);
@@ -152,13 +149,14 @@ const DrivingGrowthSection = () => {
           </div>
 
           <span className="fl-slash hidden lg:block">/Service Segment</span>
-          <h3 className="fl1">
-            {slides[active].title}
-          </h3>
+          <h3 className="fl1">{slides[active].title}</h3>
           <p className="fl3 lg:block md:w-[90%] w-full md:text-justify text-left">
             {slides[active].desc1}
           </p>
-          <button className="btn-blue mt-4 lg:mt-20 hidden lg:block">
+          <button
+            className="btn-blue mt-4 lg:mt-20 hidden lg:block"
+            onClick={() => router.push('/services')}
+          >
             Learn More
           </button>
         </div>
@@ -218,7 +216,7 @@ const DrivingGrowthSection = () => {
                         backgroundPosition: 'center',
                       }}
                     >
-                      <div className="bg-black/65 h-full w-full p-3 relative z-10">
+                      <div className="bg-black/80 h-full w-full p-3 relative z-10">
                         <div
                           style={{ opacity: textOpacity }}
                           className="transition-opacity duration-700 h-full flex flex-col gap-8 text-center px-2 md:px-10 py-4 "
@@ -226,9 +224,7 @@ const DrivingGrowthSection = () => {
                           <h5 className="text-14 xl:text-24 font-notos-sans font-medium text-white mb-0 md:mb-2">
                             {item.title}
                           </h5>
-                          <p className="fl3 !text-white mb-auto">
-                            {item.desc}
-                          </p>
+                          <p className="fl3 !text-white mb-auto">{item.desc}</p>
                         </div>
                       </div>
                     </div>

@@ -1,9 +1,10 @@
 'use client';
 import { useState } from 'react';
 import { ReactIcons } from '@/utils/ReactIcons';
+import { useRouter } from 'next/navigation';
+import { IoConstructSharp } from 'react-icons/io5';
 
 const HeroSectionV5 = () => {
-
   const slides = [
     'Architecting and Optimizing perfect Cloud Solutions.',
     'Empowering Security with Next-Gen Cyber Intelligence.',
@@ -11,16 +12,14 @@ const HeroSectionV5 = () => {
   ];
 
   const [index, setIndex] = useState(0);
+  const router = useRouter();
 
   const nextSlide = () => setIndex((prev) => (prev + 1) % slides.length);
   const prevSlide = () =>
     setIndex((prev) => (prev - 1 + slides.length) % slides.length);
 
   const handleContactus = () => {
-    const contactSection = document.getElementById('contactus');
-    if (contactSection) {
-      contactSection.scrollIntoView({ behavior: 'smooth' });
-    }
+    router.push('/contact-us');
   };
   return (
     <section className="h-screen flex flex-col md:bg-primary-blue relative">
@@ -28,17 +27,13 @@ const HeroSectionV5 = () => {
         <div className="h-full w-full flex flex-col md:flex-row">
           <div className="w-full h-[60%] md:h-full md:w-[40%] pl-[var(--container-small-padding)] flex flex-col justify-end md:justify-center ">
             <h1 className="fl-main italic tracking-wider leading-[1.2] mt-5">
-              We Are <br/> Digital <br className=" md:block" />{' '}
-              Mavericks.
+              We Are <br /> Digital <br className=" md:block" /> Mavericks.
             </h1>
             <p className="mt-8 fl3 !text-[#ffffff] !text-[12px] md:!text-[20px] md:mb-20 mb-8 ">
-              Engineering Quantum-Driven Digital Synapses at <br /> the intersection of
-              Cybersecurity, Cloud & AI.
+              Engineering Quantum-Driven Digital Synapses at <br /> the
+              intersection of Cybersecurity, Cloud & AI.
             </p>
-            <button
-              onClick={handleContactus}
-              className="btn-yellow w-fit"
-            >
+            <button onClick={handleContactus} className="btn-yellow w-fit">
               Contact Us
             </button>
           </div>
@@ -47,27 +42,27 @@ const HeroSectionV5 = () => {
           </div>
         </div>
 
-      <div className="absolute left-1/2 hidden md:flex -translate-x-1/2 -bottom-[20px] w-[90%] md:w-2/3  items-center bg-[#D4D4D41A] backdrop-blur-2xl rounded-[40px] px-2 py-2 shadow-lg z-50">
-        <button
-          onClick={prevSlide}
-          className="size-11 bg-white rounded-full text-black text-2xl flex items-center justify-center hover:bg-gray-200 transition"
-          aria-label="Previous slide"
-        >
-          {ReactIcons.leftChev}
-        </button>
-        <div className="flex-1 flex items-center justify-center w-full min-h-[30px]">
-          <span className="fl4 text-center transition-all duration-500">
-            {slides[index]}
-          </span>
+        <div className="absolute left-1/2 hidden md:flex -translate-x-1/2 -bottom-[20px] w-[90%] md:w-2/3  items-center bg-[#D4D4D41A] backdrop-blur-2xl rounded-[40px] px-2 py-2 shadow-lg z-50">
+          <button
+            onClick={prevSlide}
+            className="size-11 bg-white rounded-full text-black text-2xl flex items-center justify-center hover:bg-gray-200 transition"
+            aria-label="Previous slide"
+          >
+            {ReactIcons.leftChev}
+          </button>
+          <div className="flex-1 flex items-center justify-center w-full min-h-[30px]">
+            <span className="fl4 text-center transition-all duration-500">
+              {slides[index]}
+            </span>
+          </div>
+          <button
+            onClick={nextSlide}
+            className="size-11 bg-white rounded-full text-black text-2xl flex items-center justify-center hover:bg-gray-200 transition"
+            aria-label="Next slide"
+          >
+            {ReactIcons.rightChev}
+          </button>
         </div>
-        <button
-          onClick={nextSlide}
-          className="size-11 bg-white rounded-full text-black text-2xl flex items-center justify-center hover:bg-gray-200 transition"
-          aria-label="Next slide"
-        >
-          {ReactIcons.rightChev}
-        </button>
-      </div>
         {/* slider for mobile */}
         <div className="absolute z-30 w-full h-[60px] overflow-hidden bottom-1 md:bottom-2 left-1 md:-left-[30px] flex md:hidden items-center gap-2 px-1 sm:px-2 md:px-0 ">
           <button
@@ -113,7 +108,6 @@ const HeroSectionV5 = () => {
           backgroundSize: 'contain',
           backgroundPosition: 'bottom',
           backgroundRepeat: 'no-repeat',
-          
         }}
       ></div>
     </section>

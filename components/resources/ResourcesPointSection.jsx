@@ -3,7 +3,7 @@ const points = [
     id: 1,
     icon: "/icons/resources/exepertise.svg",
     title: "Expertise",
-    desc: "At U-Element, our expertise lies in designing and delivering next-generation solutions across AI, Cloud, and Cybersecurity. We combine deep technical proficiency with strategic insight to help organizations innovate securely, scale efficiently, and stay ahead in an ever-evolving digital landscape. ",
+    desc: "At UElement, our expertise lies in designing and delivering next-generation solutions across AI, Cloud, and Cybersecurity. We combine deep technical proficiency with strategic insight to help organizations innovate securely, scale efficiently, and stay ahead in an ever-evolving digital landscape. ",
   },
   {
     id: 2,

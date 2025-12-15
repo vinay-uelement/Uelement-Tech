@@ -43,7 +43,7 @@ const EmpoweringInnovation = () => {
             Empowering Innovation at the Intersection of Technology and Strategy
           </h3>
           <p className="fl3 !text-white md:w-[80%] w-full">
-            At U-Element, we're dedicated to empowering organizations with
+            At UElement, we're dedicated to empowering organizations with
             intelligent, secure, and scalable digital solutions. Since our
             founding, we've combined expertise in AI, cybersecurity, cloud
             computing, and digital transformation to help businesses thrive in

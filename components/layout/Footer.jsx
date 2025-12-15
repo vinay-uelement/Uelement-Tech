@@ -19,31 +19,31 @@ const Footer = () => {
       <div className="border-t border-white/10 pt-6 sm:pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 bg-primary-blue container-padding py-8 lg:py-12">
         <div className="flex flex-wrap gap-3 sm:gap-5 lg:gap-8 justify-center sm:justify-start text-center">
           <Link
-            href="/about"
+            href="/company"
             className="font-reddit-sans text-[#808080] text-13 sm:text-16 hover:text-white transition-colors"
           >
             About us
           </Link>
           <Link
-            href="/contact"
+            href="/contact-us"
             className="font-reddit-sans text-[#808080] text-13 sm:text-16 hover:text-white transition-colors"
           >
             Contact
           </Link>
           <Link
-            href="/privacy"
+            href="/"
             className="font-reddit-sans text-[#808080] text-13 sm:text-16 hover:text-white transition-colors"
           >
             Privacy policy
           </Link>
           <Link
-            href="/sitemap"
+            href="/"
             className="font-reddit-sans text-[#808080] text-13 sm:text-16 hover:text-white transition-colors"
           >
             Sitemap
           </Link>
           <Link
-            href="/terms"
+            href="/"
             className="font-reddit-sans text-[#808080] text-13 sm:text-16 hover:text-white transition-colors"
           >
             Terms of Use
@@ -362,36 +362,36 @@ const FooterContent = () => {
               >
                 <Icon name="linkedin" size={35} />
               </Link>
-              <Link
+              {/* <Link
                 href="#"
                 className="  hover:translate-y-[-3px] duration-300 ease-in-out transition-all hover:text-white/70"
               >
                 <Icon name="facebook" size={35} />
-              </Link>
+              </Link> */}
               <Link
                 href="#"
                 className="  hover:translate-y-[-3px] duration-300 ease-in-out transition-all hover:text-white/70"
               >
                 <Icon name="instagram" size={35} />
               </Link>
-              <Link
+              {/* <Link
                 href="#"
                 className="  hover:translate-y-[-3px] duration-300 ease-in-out transition-all hover:text-white/70"
               >
                 <Icon name="twitter" size={35} />
-              </Link>
-              <Link
+              </Link> */}
+              {/* <Link
                 href="#"
                 className="  hover:translate-y-[-3px] duration-300 ease-in-out transition-all hover:text-white/70"
               >
                 <Icon name="youtube" size={35} />
-              </Link>
-              <Link
+              </Link> */}
+              {/* <Link
                 href="#"
                 className="  hover:translate-y-[-3px] duration-300 ease-in-out transition-all hover:text-white/70"
               >
                 <Icon name="github" size={35} />
-              </Link>
+              </Link> */}
             </div>
           </div>
 
@@ -414,12 +414,12 @@ const FooterContent = () => {
                 >
                   Services
                 </Link>
-                <Link
+                {/* <Link
                   href="/our-partners"
                   className="fl3 !text-[#e2e2e2] text-13 sm:text-16 hover:text-white transition-colors"
                 >
                   Partners
-                </Link>
+                </Link> */}
               </div>
             </div>
 
