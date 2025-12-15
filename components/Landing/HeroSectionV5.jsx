@@ -1,8 +1,7 @@
 'use client';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { ReactIcons } from '@/utils/ReactIcons';
 import { useRouter } from 'next/navigation';
-import { IoConstructSharp } from 'react-icons/io5';
 
 const HeroSectionV5 = () => {
   const slides = [
@@ -14,6 +13,15 @@ const HeroSectionV5 = () => {
   const [index, setIndex] = useState(0);
   const router = useRouter();
 
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIndex((prev) => (prev + 1) % slides.length);
+    }, 4000);
+
+    // Cleanup
+    return () => clearInterval(interval);
+  }, [slides.length]);
+
   const nextSlide = () => setIndex((prev) => (prev + 1) % slides.length);
   const prevSlide = () =>
     setIndex((prev) => (prev - 1 + slides.length) % slides.length);
@@ -21,6 +29,7 @@ const HeroSectionV5 = () => {
   const handleContactus = () => {
     router.push('/contact-us');
   };
+
   return (
     <section className="h-screen flex flex-col md:bg-primary-blue relative">
       <div className="h-[calc(100%-80px)] w-full relative text-white rounded-[4px] rounded-bl-[50px] rounded-br-none">
@@ -63,16 +72,9 @@ const HeroSectionV5 = () => {
             {ReactIcons.rightChev}
           </button>
         </div>
-        {/* slider for mobile */}
-        <div className="absolute z-30 w-full h-[50px] overflow-hidden bottom-0 md:bottom-2 left-1 md:-left-[30px] flex md:hidden items-center gap-2 px-1 sm:px-2 md:px-0 ">
-          <button
-            disabled={index === 0}
-            onClick={prevSlide}
-            className="size-9  md:hidden bg-white rounded-full text-black text-20 flex items-center justify-center hover:bg-gray-200 disabled:bg-white/50 transition"
-          >
-            {ReactIcons.leftChev}
-          </button>{' '}
-          <div className="bg-[#D4D4D41A] backdrop-blur-2xl rounded-4xl flex items-center justify-between ps-6 pe-3 h-full w-[calc(100%-115px)]">
+
+        <div className="absolute z-30 w-full h-[50px] overflow-hidden bottom-0 flex md:hidden items-center px-2">
+          <div className="bg-[#D4D4D41A] backdrop-blur-2xl rounded-4xl flex items-center justify-center px-6 h-full w-full">
             <div className="relative flex-1 overflow-hidden">
               <div
                 className="flex transition-transform duration-500 ease-in-out"
@@ -81,7 +83,7 @@ const HeroSectionV5 = () => {
                 {slides.map((text, i) => (
                   <div
                     key={i}
-                    className="min-w-full flex items-center fl4 text-center text-white"
+                    className="min-w-full flex items-center justify-center fl4 text-center text-white px-2"
                   >
                     {text}
                   </div>
@@ -89,17 +91,13 @@ const HeroSectionV5 = () => {
               </div>
             </div>
           </div>
-          <button
-            disabled={index === slides.length - 1}
-            onClick={nextSlide}
-            className="size-9 md:hidden bg-white rounded-full text-black text-20 flex items-center justify-center hover:bg-gray-200 disabled:bg-white/50 transition"
-          >
-            {ReactIcons.rightChev}
-          </button>
         </div>
       </div>
+
+      {/* Desktop background */}
       <div className="hidden md:block h-full w-full md:w-[55%] absolute right-0 bottom-0 bg-[url(/images/landing/Mudra.svg)] rounded-tr-4xl rounded-br-[50px] h-[700px] bg-no-repeat bg-contain bg-right-bottom "></div>
-      {/* mobile bg */}
+
+      {/* Mobile background */}
       <div
         className="block md:hidden absolute inset-0 w-full h-full -z-10 overflow-hidden"
         style={{
