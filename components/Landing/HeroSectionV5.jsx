@@ -42,10 +42,10 @@ const HeroSectionV5 = () => {
           </div>
         </div>
 
-        <div className="absolute left-1/2 hidden md:flex -translate-x-1/2 2xl:-bottom-[25px] md:-bottom-[20px] w-[90%] md:w-2/3 items-center bg-[#D4D4D41A] backdrop-blur-2xl rounded-[40px] px-2 py-2 shadow-lg z-50">
+        <div className="absolute left-1/2 hidden md:flex -translate-x-1/2 2xl:-bottom-[25px] md:-bottom-[20px] w-[90%] md:w-2/3 items-center bg-[#D4D4D41A] backdrop-blur-2xl rounded-[40px] px-1 py-1 shadow-lg z-50">
           <button
             onClick={prevSlide}
-            className="size-9 bg-white rounded-full text-black text-2xl flex items-center justify-center hover:bg-gray-200 transition"
+            className="size-10 bg-white rounded-full text-black text-2xl flex items-center justify-center hover:bg-gray-200 transition"
             aria-label="Previous slide"
           >
             {ReactIcons.leftChev}
@@ -57,18 +57,18 @@ const HeroSectionV5 = () => {
           </div>
           <button
             onClick={nextSlide}
-            className="size-9 bg-white rounded-full text-black text-2xl flex items-center justify-center hover:bg-gray-200 transition"
+            className="size-10 bg-white rounded-full text-black text-2xl flex items-center justify-center hover:bg-gray-200 transition"
             aria-label="Next slide"
           >
             {ReactIcons.rightChev}
           </button>
         </div>
         {/* slider for mobile */}
-        <div className="absolute z-30 w-full h-[60px] overflow-hidden bottom-1 md:bottom-2 left-1 md:-left-[30px] flex md:hidden items-center gap-2 px-1 sm:px-2 md:px-0 ">
+        <div className="absolute z-30 w-full h-[50px] overflow-hidden bottom-0 md:bottom-2 left-1 md:-left-[30px] flex md:hidden items-center gap-2 px-1 sm:px-2 md:px-0 ">
           <button
             disabled={index === 0}
             onClick={prevSlide}
-            className="size-11  md:hidden bg-white rounded-full text-black text-20 flex items-center justify-center hover:bg-gray-200 disabled:bg-white/50 transition"
+            className="size-9  md:hidden bg-white rounded-full text-black text-20 flex items-center justify-center hover:bg-gray-200 disabled:bg-white/50 transition"
           >
             {ReactIcons.leftChev}
           </button>{' '}
@@ -81,7 +81,7 @@ const HeroSectionV5 = () => {
                 {slides.map((text, i) => (
                   <div
                     key={i}
-                    className="min-w-full flex items-center fl4 md:!text-20 text-white"
+                    className="min-w-full flex items-center fl4 text-center text-white"
                   >
                     {text}
                   </div>
@@ -92,7 +92,7 @@ const HeroSectionV5 = () => {
           <button
             disabled={index === slides.length - 1}
             onClick={nextSlide}
-            className="size-11  md:hidden bg-white rounded-full text-black text-20 flex items-center justify-center hover:bg-gray-200 disabled:bg-white/50 transition"
+            className="size-9 md:hidden bg-white rounded-full text-black text-20 flex items-center justify-center hover:bg-gray-200 disabled:bg-white/50 transition"
           >
             {ReactIcons.rightChev}
           </button>
@@ -101,12 +101,12 @@ const HeroSectionV5 = () => {
       <div className="hidden md:block h-full w-full md:w-[55%] absolute right-0 bottom-0 bg-[url(/images/landing/Mudra.svg)] rounded-tr-4xl rounded-br-[50px] h-[700px] bg-no-repeat bg-contain bg-right-bottom "></div>
       {/* mobile bg */}
       <div
-        className="block md:hidden absolute inset-0 w-full h-full -z-10"
+        className="block md:hidden absolute inset-0 w-full h-full -z-10 overflow-hidden"
         style={{
           backgroundColor: '#0C142D',
           backgroundImage: "url('/images/landing/UElement-Mudra.png')",
           backgroundSize: 'contain',
-          backgroundPosition: 'bottom',
+          backgroundPosition: 'calc(100% + 50px) bottom',
           backgroundRepeat: 'no-repeat',
         }}
       ></div>

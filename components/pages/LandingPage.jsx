@@ -12,7 +12,7 @@ const LandingPage = () => {
   return (
     <div>
       <HeroSection />
-      <div className="py-[75px]">
+      <div className="py-[60px]">
         <DrivingGrowthSection />
       </div>
       <div>

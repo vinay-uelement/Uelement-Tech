@@ -1,10 +1,14 @@
+"use client"
+import { useRouter } from 'next/navigation';
+
 const UelementRoot = () => {
+  const router = useRouter();
   return (
-    <div className="container-small py-12 xl:py-16">
+    <div className="container-small py-10 xl:py-16">
       <img
         src="/icons/global/dark-logo.svg"
         alt="logo"
-        className="w-[200px] md:w-[300px] 2xl:w-[450px] mb-5 md:mb-10 mx-auto"
+        className="h-[75px] md:w-[300px] 2xl:w-[450px] mb-5 md:mb-10 mx-auto"
       />
       <div className="flex flex-col md:flex-row gap-10 md:gap-[50px] 2xl:gap-[65px]">
         <div className="flex-1">
@@ -41,7 +45,10 @@ const UelementRoot = () => {
             className="w-full rounded-[4px]"
           />
 
-          <button className="btn-blue mx-auto md:ml-auto block mt-6">
+          <button
+            className="btn-blue mx-auto md:ml-auto block mt-6"
+            onClick={() => router.push('/contact-us')}
+          >
             Contact us
           </button>
         </div>

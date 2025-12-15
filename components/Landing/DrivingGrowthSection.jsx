@@ -124,9 +124,7 @@ const DrivingGrowthSection = () => {
       <div className="flex lg:items-center flex-col lg:flex-row gap-20 lg:pb-8 xl:pb-10 2xl:pb-12">
         {/* Left Side Numbers */}
         <div className="flex-1 lg:mr-[30px] md:w-[60%] w-full">
-          <span className="fl-slash block lg:hidden ">/Service Segment</span>
-
-          <div className="mb-7 xl:mb-10 flex items-center">
+          <div className="mb-7 xl:mb-10 flex items-center lg:hidden">
             <div className="circle size-[50px] min-w-[50px] xl:size-[70px] rounded-full bg-white grid place-content-center shadow-down font-bold italic text-20 xl:text-24 transition-all duration-500">
               {slides[active].number}
             </div>
@@ -141,7 +139,23 @@ const DrivingGrowthSection = () => {
               ))}
             </div>
           </div>
+          <span className="fl-slash block lg:hidden">/Service Segment</span>
 
+          <div className="mb-7 xl:mb-10 lg:flex items-center hidden">
+            <div className="circle size-[50px] min-w-[50px] xl:size-[70px] rounded-full bg-white grid place-content-center shadow-down font-bold italic text-20 xl:text-24 transition-all duration-500">
+              {slides[active].number}
+            </div>
+            <img
+              src="/icons/landing/horizontal-line.svg"
+              alt="icon"
+              className="w-[120px] sm:w-[250px] md:w-[auto]"
+            />
+            <div className="font-bold italic text-18 xl:text-24 text-[#1C1C1C80] flex items-center gap-2 md:gap-4 transition-all">
+              {orderedNumbers.slice(1).map((s) => (
+                <span key={s.id}>{s.number}</span>
+              ))}
+            </div>
+          </div>
           <span className="fl-slash hidden lg:block">/Service Segment</span>
           <h3 className="fl1">{slides[active].headline}</h3>
           <p className="fl3 lg:block md:w-[90%] w-full text-left">
