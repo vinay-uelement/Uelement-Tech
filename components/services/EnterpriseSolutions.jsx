@@ -32,7 +32,7 @@ const solutions = [
   },
   {
     id: 4,
-    image: '/images/global/security.png',
+    image: '/images/global/pioneer.png',
     icon: '/icons/global/enterprise-icon.svg',
     label: 'Future Tech',
     title: 'Pioneering Transformation with Quantum Readiness.',

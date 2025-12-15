@@ -10,47 +10,41 @@ const slides = [
   {
     id: 1,
     number: '01',
-    title: 'SI Partnerships (System Integrators)',
-    desc: 'Designing, deploying, and delivering next-gen Cybersecurity, Cloud & AI solutions with OEM partners.',
+    title: 'SI Partnerships (SI)',
+    headline: 'Driving growth through strategic collaborations',
+    desc: 'Strategic integration and managed services leveraging 15+ global technology partners.',
     desc1:
-      'SI Partnerships focus on building long-term strategic alliances with leading system integrators and OEM partners. These collaborations enable enterprises to co-create innovative solutions, accelerate go-to-market strategies, and deliver scalable, secure, and future-ready technology offerings. By combining complementary strengths, SI partnerships drive mutual growth, operational efficiency, and sustained business value.',
+      'We act as your strategic partner across the cloud ecosystem, delivering seamless platform integration, managed services, and cybersecurity advisory with compliant implementation. Leveraging global technology partnerships, we drive measurable business outcomes through co-created solutions and accelerated go-to-market strategies.',
     img: '/images/landing/si-partnership.jpg',
   },
   {
     id: 2,
     number: '02',
-    title: 'Professional Services (PS)',
-    desc: 'Accelerating digital transformation through expert consulting and seamless implementations.',
+    title: 'Professional Services',
+    headline: 'Accelerating digital transformation through expert consulting',
+    desc: 'End-to-end professional services across cloud, cybersecurity, and AI.',
     desc1:
-      'Our Professional Services are designed to help organizations navigate complex technology transformations with confidence. From strategic advisory and solution design to implementation and optimization, our experts ensure smooth execution aligned with business goals. This enables faster adoption, reduced risk, and measurable outcomes across digital initiatives.',
+      'We deliver end-to-end professional services from strategy and architecture to implementation and optimization. Our expert teams drive measurable outcomes through technology roadmaps, change management, and seamless integration of emerging capabilities.',
     img: '/images/landing/professional-services.jpg',
   },
   {
     id: 3,
     number: '03',
-    title: 'Cloud Solutions & Platforms',
-    desc: 'Optimizing IT infrastructure with scalable, secure, and cost-effective cloud solutions.',
+    title: 'Product Engineering',
+    headline: 'Building scalable digital products from concept to market',
+    desc: 'Design and build full-stack, multi-tenant SaaS and AI-native platforms.',
     desc1:
-      'Cloud Solutions empower enterprises to build flexible, resilient, and high-performance IT environments. We help organizations design, migrate, and manage cloud platforms that enhance agility, improve security posture, and optimize operational costs. Our approach ensures cloud strategies are aligned with long-term business and scalability needs.',
+      'We engineer scalable, cloud-native digital products with full-stack capabilities, AI/ML integration, and robust backend infrastructure. From MVPs and microservices to analytics dashboards and LLM integrations, we deliver enterprise-grade platforms built to scale.',
     img: '/images/landing/managed-ser2.jpg',
   },
   {
     id: 4,
     number: '04',
-    title: 'Managed Services',
-    desc: 'Ensuring business continuity with 24/7 proactive monitoring and management.',
+    title: 'Digital Transformation',
+    headline: 'Reimagining enterprises through technology-led change',
+    desc: 'Comprehensive strategy-to-execution digital transformation programs.',
     desc1:
-      'Managed Services provide continuous oversight, monitoring, and optimization of critical IT systems. With round-the-clock support, proactive issue resolution, and performance optimization, businesses can focus on innovation while we ensure stability, security, and operational excellence across their technology landscape.',
-    img: '/images/landing/manage-service.jpg',
-  },
-  {
-    id: 5,
-    number: '05',
-    number: '05',
-    title: 'Cloud Modernization',
-    desc: 'Modernizing workloads and enabling cloud-native scalability for enterprises.',
-    desc1:
-      'Cloud Modernization helps organizations transform legacy systems into agile, cloud-native architectures. By modernizing applications, data, and infrastructure, enterprises gain improved performance, enhanced security, and faster innovation cycles. This enables future-ready operations and long-term digital competitiveness.',
+      'We orchestrate digital transformation initiatives spanning modernization, cloud migration, agile delivery, and emerging technology adoption. From legacy system refactoring to AI integration and customer experience enhancement, we deliver measurable business value.',
     img: '/images/landing/cloud-solution.jpg',
   },
 ];
@@ -149,7 +143,7 @@ const DrivingGrowthSection = () => {
           </div>
 
           <span className="fl-slash hidden lg:block">/Service Segment</span>
-          <h3 className="fl1">{slides[active].title}</h3>
+          <h3 className="fl1">{slides[active].headline}</h3>
           <p className="fl3 lg:block md:w-[90%] w-full md:text-justify text-left">
             {slides[active].desc1}
           </p>

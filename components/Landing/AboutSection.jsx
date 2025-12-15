@@ -58,23 +58,23 @@ export default function AboutSection() {
       <div className="p-10 bg-primary-blue rounded-[4px]">
         <div className="flex flex-col-reverse xl:flex-row">
           {/* LEFT WHITE BOX */}
-          <div className="xl:w-1/2 bg-[#FFF8F0] rounded-[4px] py-5 xl:py-15 px-6 xl:px-12 relative">
-            {/* vertical dotted line */}
-            <div className="absolute bottom-12 top-12 left-1/2 border-r-2 border-dashed border-[#00000019] xl:border-[#C5C5C5]"></div>
-
-            {/* horizontal dotted line */}
-            <div className="absolute left-12 right-12 top-1/2 border-t-2 border-dashed border-[#00000019] xl:border-[#C5C5C5]"></div>
-
-            <div className="grid grid-cols-2 gap-y-15 xl:gap-y-30 gap-x-10 place-items-center">
-              {bullet.map((point) => (
+          <div className="xl:w-1/2 bg-[#FFF8F0] rounded-[4px] overflow-hidden py-5 xl:py-10 px-6 xl:px-10 ">
+            <div className="grid grid-cols-2 grid-rows-2">
+              {bullet.map((point, index) => (
                 <div
                   key={point.id}
-                  className="text-center flex flex-col items-center"
+                  className={`
+          flex flex-col items-center justify-center
+          text-center px-6 py-10 xl:py-16
+          ${index < 2 ? 'border-b-2 border-dashed border-[#C5C5C5]' : ''}
+          ${index % 2 === 0 ? 'border-r-2 border-dashed border-[#C5C5C5]' : ''}
+        `}
                 >
-                  <p className="text-20 xl:text-[42px] font-extrabold font-reddit-sans text-[#A67620] leading-none">
+                  <p className="text-20 xl:text-[42px] font-extrabold text-[#A67620] leading-none">
                     {point.number}
                   </p>
-                  <p className="!text-12 xl:!text-[18px] fl3 mt-3 text-[#4A4A4A] font-light max-w-[160px]">
+
+                  <p className="mt-3 text-12 xl:text-[18px] text-[#4A4A4A] max-w-[160px]">
                     {point.desc}
                   </p>
                 </div>

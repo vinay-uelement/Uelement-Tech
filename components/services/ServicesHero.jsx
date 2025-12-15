@@ -5,9 +5,9 @@ import { useState } from 'react';
 
 const ServicesHero = () => {
   const slides = [
-    'Architecting and Optimizing perfect Cloud Solutions.',
-    'Empowering Security with Next-Gen Cyber Intelligence.',
-    'Scaling AI-driven Innovation for Smarter Enterprises.',
+    'Architecting Enterprise AI/ML Excellence.',
+    'Securing Hybrid Clouds with Zero Trust.',
+    'Modernizing Platforms for Digital Agility.',
   ];
 
   const [index, setIndex] = useState(0);
@@ -50,7 +50,7 @@ const ServicesHero = () => {
         <div className="flex-1">
           <div className=" overflow-hidden w-full">
             <img
-              src="/images/service/hero-one.svg"
+              src="/images/service/services-hero2.png"
               alt="Team meeting"
               className="w-full h-auto rounded-[4px] object-cover"
             />

@@ -403,7 +403,7 @@ const FooterContent = () => {
 
             <div className="flex items-center justify-start gap-6">
               <Link
-                href="#"
+                href="https://www.linkedin.com/company/uelement-technologies/posts/?feedView=all"
                 className=" hover:translate-y-[-3px] duration-300 ease-in-out transition-all hover:text-white/70"
               >
                 <Icon name="linkedin" size={35} />

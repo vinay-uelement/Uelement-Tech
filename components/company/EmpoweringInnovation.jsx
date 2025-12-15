@@ -65,9 +65,9 @@ const EmpoweringInnovation = () => {
         <div className="flex-1">
           <div className="rounded-[4px]shadow-lg w-full">
             <img
-              src="/images/service/service-hero.svg"
+              src="/images/service/company-hero2.png"
               alt="Team meeting"
-              className="w-full h-auto object-cover"
+              className="w-full h-auto object-cover rounded-[4px]"
             />
           </div>
         </div>

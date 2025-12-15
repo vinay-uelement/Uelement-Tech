@@ -20,28 +20,44 @@ const ServicesSection = () => {
     {
       id: 1,
       title: 'Cloud Security',
-      desc: 'At UElement, we specialize in delivering scalable and secure cloud solutions tailored to meet the unique needs of startups. Our offerings enable businesses to reduce infrastructure costs, enhance operational efficiency, and scale seamlessly as they grow. By leveraging cutting-edge technologies and industry best practices, we empower startups to innovate and compete effectively in the digital landscape.',
+      desc: 'Expertise in Multi/Hybrid-cloud, Private Cloud and Government Cloud (GCC) environments. We ensure peak efficiency via DevOps, FinOps, IaaC (Infrastructure as Code) and robust orchestration.',
+      slides: [
+        'Expert Multi/Hybrid-cloud management, migration, and modernization. We ensure peak efficiency via DevOps, FinOps, and Infrastructure as Code (IaaC).',
+        'Secure multi/hybrid-cloud environments with Zero Trust architecture, continuous threat detection, and automated compliance across private, public, and GCC clouds.',
+        'Embed security into DevOps pipelines with IaaC, FinOps governance, and orchestration to ensure efficiency without compromising protection.',
+      ],
     },
     {
       id: 2,
       title: 'AI & ML',
-      desc: 'At UElement, we deliver cutting-edge Cybersecurity, AI Integration, Enterprise Cloud, Custom Product Development and Quantum Computing Solutions tailored to our clients needs. By leveraging advanced technologies, strategic partnerships and a commitment to excellence, we enable businesses to solve complex challenges, achieve sustainable growth and thrive in a secure digital future.',
+      desc: 'Expertise in enterprise-grade AI/ML solutions across cloud, edge and hybrid environments. We deliver intelligent automation, predictive analytics, and scalable MLOps with robust security and governance.',
+      slides: [
+        'Comprehensive AI/ML services from model development to production deployment, including EdgeAI applications, LLM integration, and real-time decision intelligence.',
+        'Specialize in industry-specific models, multimodal AI, and MLOps frameworks that drive operational efficiency, hyper-personalization, and predictive insights at enterprise scale.',
+        'Accelerate AI adoption with custom model training, federated learning, and ethical AI frameworks that ensure compliance, bias mitigation, and measurable business impact.',
+      ],
     },
     {
       id: 3,
       title: 'Cyber Security',
-      desc: 'At UElement, we deliver cutting-edge Cybersecurity, AI Integration, Enterprise Cloud, Custom Product Development and Quantum Computing Solutions tailored to our clients needs. By leveraging advanced technologies, strategic partnerships and a commitment to excellence, we enable businesses to solve complex challenges, achieve sustainable growth and thrive in a secure digital future.',
+      desc: 'Expertise in enterprise-grade cybersecurity across multi/hybrid-cloud, private cloud, and government cloud (GCC) environments. Deliver Zero Trust protection, threat intelligence, and automated SecOps with continuous compliance and resilience.',
+      slides: [
+        'Expert multi/hybrid-cloud security management, migration, and modernization ensure peak efficiency via DevOps, FinOps, and Infrastructure as Code (IaaC).',
+        'Implement advanced threat detection, AI-powered anomaly monitoring, and post-quantum cryptography readiness to protect against evolving attack surfaces.',
+        'Embed security governance through identity threat detection, micro-segmentation, and continuous vulnerability management across the enterprise stack.',
+      ],
     },
   ];
 
   const [selectedTab, setSelectedTab] = useState(tabs[0]);
-
-  const slides = [
-    'At UElement, we offer scalable and secure cloud solutions tailored for startups. Our services enable businesses to reduce infrastructure costs, enhance operational efficiency, and scale seamlessly as they grow.',
-    'Empowering Security with Next-Gen Cyber Intelligence to proactively detect threats, safeguard critical data, and ensure uncompromised business continuity',
-    'Scaling AI-Driven Innovation for Smarter Enterprises by integrating intelligent automation, predictive analytics, and real-time decision-making capabilities.',
-  ];
   const [index, setIndex] = useState(0);
+
+  // Reset slide index when tab changes
+  useEffect(() => {
+    setIndex(0);
+  }, [selectedTab.id]);
+
+  const slides = selectedTab.slides;
 
   const nextSlide = () => setIndex((prev) => (prev + 1) % slides.length);
   const prevSlide = () =>
@@ -172,7 +188,7 @@ const ServicesSection = () => {
               <h3 className="fl1 mb-4 sm:mb-6">
                 {selectedTab.title}
               </h3>
-              <p className="fl3 leading-relaxed mb-8 sm:mb-16 lg:mb-20">
+              <p className="fl3 leading-relaxed mb-8 sm:mb-16 lg:mb-20 md:w-[90%] w-full">
                 {selectedTab.desc}
               </p>
 
@@ -187,7 +203,7 @@ const ServicesSection = () => {
                   <button
                     disabled={index === 0}
                     onClick={prevSlide}
-                    className="size-8 sm:size-9 md:size-10 bg-white rounded-full text-primary-blue flex items-center justify-center hover:bg-white/90 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300 flex-shrink-0"
+                    className="size-8 sm:size-9 md:size-10 bg-primary-blue rounded-full text-white flex items-center justify-center disabled:opacity-0 disabled:cursor-not-allowed transition-all duration-300 flex-shrink-0"
                   >
                     <span className="text-14 sm:text-16 md:text-18">
                       {ReactIcons.leftChev}
@@ -215,7 +231,7 @@ const ServicesSection = () => {
                   <button
                     disabled={index === slides.length - 1}
                     onClick={nextSlide}
-                    className="size-8 sm:size-9 md:size-10 bg-white rounded-full text-primary-blue flex items-center justify-center hover:bg-white/90 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300 flex-shrink-0"
+                    className="size-8 sm:size-9 md:size-10 bg-primary-blue rounded-full text-white flex items-center justify-center disabled:opacity-0 disabled:cursor-not-allowed transition-all duration-300 flex-shrink-0"
                   >
                     <span className="text-14 sm:text-16 md:text-18">
                       {ReactIcons.rightChev}
