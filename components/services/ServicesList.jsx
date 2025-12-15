@@ -50,7 +50,7 @@ const ServicesList = () => {
                 isReversed
                   ? 'flex-col md:flex-row-reverse'
                   : 'flex-col md:flex-row'
-              } gap-10 md:gap-20 ${service.bg} p-6 md:p-12  ${
+              } gap-6 md:gap-20 ${service.bg} p-6 md:p-12 last:mt-6  ${
                 isFirst
                   ? 'rounded-t-[4px]'
                   : isLast
@@ -60,14 +60,14 @@ const ServicesList = () => {
             >
               <div className="md:hidden flex items-center">
                 <div
-                  className={`size-[60px] ${service.badgeBg} flex md:hidden items-center justify-center italic font-reddit-sans font-bold text-20 rounded-full`}
+                  className={`size-[40px] md:size-[60px] ${service.badgeBg} flex-shrink-0 flex md:hidden items-center justify-center italic font-reddit-sans font-bold text-16 md:text-20 rounded-full`}
                 >
                   {service.id}
                 </div>
                 <div
                   className={`w-[60px] md:w-[120px] h-[4px] ${service.lineBg}`}
                 ></div>
-                <div className="font-reddit-sans font-semibold text-20 text-[#020202] ml-3">
+                <div className="font-reddit-sans font-semibold text-16 md:text-20 text-[#020202] ml-3">
                   {service.title}
                 </div>
               </div>

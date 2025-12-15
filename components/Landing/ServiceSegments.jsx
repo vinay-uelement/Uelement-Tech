@@ -112,7 +112,7 @@ const ServiceSegments = () => {
                     {service.title}
                   </h6>
                   <p className="fl3 !text-white mt-6">{service.desc}</p>
-                  <div className="w-[60px] h-[60px] bg-secondary shadow-left-down absolute -top-3 -right-3 flex items-center justify-center text-30">
+                  <div className="w-[50px] h-[50px] bg-secondary shadow-left-down absolute -top-3 -right-3 flex items-center justify-center text-30">
                     <div className="absolute top-0 right-0 text-34">
                       {ReactIcons.arrowOutWard}
                     </div>

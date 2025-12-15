@@ -33,20 +33,20 @@ const transformBullet = [
   },
   {
     id: 2,
-    title: 'Implement & Integrate',
+    title: 'Architect & Design ',
     icon: '/icons/landing/settings.svg',
-    desc: 'Re-architect cloud environments, design secure infrastructure (Iaac), and develop product MVPs with clear roadmaps',
+    desc: 'Re-architect cloud environments, design secure infrastructure (Iaac), and develop product MVPs with clear roadmaps.',
   },
   {
     id: 3,
-    title: 'Optimize & Solution',
-    icon: '/icons/landing/ticked-light.svg',
+    title: 'Implement & Integrate',
+    icon: '/icons/landing/manage.png',
     desc: 'Execute full-stack development, platform integration, cloud migration, and deploy Zero Trust/Quantum Security solutions.',
   },
   {
     id: 4,
-    title: 'Implement & Integrate',
-    icon: '/icons/landing/manage.png',
+    title: 'Manage & Optimize',
+    icon: '/icons/landing/ticked-light.svg',
     desc: 'Provide ongoing Managed Cloud Infra, SecOps, FinOps, and continuous performance optimization.',
   },
 ];
@@ -66,8 +66,8 @@ export default function AboutSection() {
                   className={`
           flex flex-col items-center justify-center
           text-center px-6 py-6 xl:py-12
-          ${index < 2 ? 'border-b-2 border-dashed border-[#C5C5C5]' : ''}
-          ${index % 2 === 0 ? 'border-r-2 border-dashed border-[#C5C5C5]' : ''}
+          ${index < 2 ? 'border-b-2 border-dashed border-[#00000019]' : ''}
+          ${index % 2 === 0 ? 'border-r-2 border-dashed border-[#00000019]' : ''}
         `}
                 >
                   <p className="text-20 xl:text-[42px] font-extrabold text-[#A67620] leading-none">

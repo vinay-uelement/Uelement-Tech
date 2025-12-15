@@ -1,17 +1,24 @@
 const TrustedPartnerShip = () => {
   const row1 = [
-    "/icons/global/hashicorp.svg",
-    "/icons/global/redhat.svg",
+    // "/icons/global/hashicorp.svg",
+    // "/icons/global/redhat.svg",
     "/icons/global/paloalto.svg",
     "/icons/global/wiz.svg",
-    "/icons/global/hashicorp.svg",
+    // "/icons/global/hashicorp.svg",
   ];
   const row2 = [
     "/icons/global/hashicorp.svg",
     "/icons/global/redhat.svg",
+    // "/icons/global/paloalto.svg",
+    // "/icons/global/wiz.svg",
+  ];
+
+  const row3 = [
+    "/icons/global/hashicorp.svg",
+    "/icons/global/redhat.svg",
     "/icons/global/paloalto.svg",
     "/icons/global/wiz.svg",
-  ];
+  ]
 
   return (
     <div className="bg-primary-blue py-[var(--section-block-padding)]">
@@ -26,13 +33,25 @@ const TrustedPartnerShip = () => {
               A network of $15+$ strategic alliances ensuring seamless technology synergy across Cloud, AI, and Security.
             </p>
           </div>
-          <div className="partners">
+          <div className="partners hidden md:block">
             <div className="flex items-center justify-center flex-wrap gap-10 xl:gap-14 mb-10">
+              {row3?.map((item, ind) => (
+                <img key={ind} src={item} />
+              ))}
+            </div>
+            {/* <div className="flex items-center justify-center flex-wrap gap-10 xl:gap-14">
+              {row2?.map((item, ind) => (
+                <img key={ind} src={item} />
+              ))}
+            </div> */}
+          </div>
+          <div className="partners md:hidden flex gap-8 justify-center items-center mx-auto ml-8">
+            <div className="flex items-center md:justify-center flex-wrap gap-10 xl:gap-14">
               {row1?.map((item, ind) => (
                 <img key={ind} src={item} />
               ))}
             </div>
-            <div className="flex items-center justify-center flex-wrap gap-10 xl:gap-14">
+            <div className="flex items-center md:justify-center flex-wrap gap-10 xl:gap-14">
               {row2?.map((item, ind) => (
                 <img key={ind} src={item} />
               ))}

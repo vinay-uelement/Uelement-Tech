@@ -67,7 +67,7 @@ const ServicesHero = () => {
         >
           {ReactIcons.leftChev}
         </button>
-        <div className="flex-1 flex items-center justify-center min-h-[30px]">
+        <div className="flex-1 flex items-center justify-center min-h-[30px] px-2">
           <span className="fl4 text-center transition-all duration-500">
             {slides[index]}
           </span>
