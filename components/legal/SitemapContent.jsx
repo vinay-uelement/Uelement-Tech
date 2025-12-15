@@ -5,11 +5,12 @@ export default function SitemapContent() {
     <div className="space-y-10">
       {/* Main Navigation Pages */}
       <div className="space-y-6">
-        <h2 className="fl1-sep !text-white">Main Navigation Pages</h2>
+        <h2 className="fl1-sep !text-white">Home</h2>
         <div className="space-y-3 pl-2">
-          <SitemapLink href="/solutions">Solutions</SitemapLink>
-          <SitemapLink href="/resources">Resources</SitemapLink>
-          <SitemapLink href="/partnership">Partnership</SitemapLink>
+          <SitemapLink href="/">Landing Page</SitemapLink>
+          <SitemapLink href="/services">Services</SitemapLink>
+          <SitemapLink href="/">Resources</SitemapLink>
+          <SitemapLink href="/our-partners">Partnership</SitemapLink>
           <SitemapLink href="/company">Company</SitemapLink>
         </div>
       </div>
@@ -20,11 +21,11 @@ export default function SitemapContent() {
       <div className="space-y-6">
         <h2 className="fl1-sep !text-white">Solutions</h2>
         <div className="space-y-3 pl-2">
-          <SitemapLink href="/solutions/ai-ml">AI / ML</SitemapLink>
-          <SitemapLink href="/solutions/cybersecurity">
+          <SitemapLink href="/services">AI / ML</SitemapLink>
+          <SitemapLink href="/services">
             Cybersecurity
           </SitemapLink>
-          <SitemapLink href="/solutions/cloud-computing">
+          <SitemapLink href="/services">
             Cloud Computing
           </SitemapLink>
         </div>
@@ -36,9 +37,9 @@ export default function SitemapContent() {
       <div className="space-y-6">
         <h2 className="fl1-sep !text-white">Supports & Legal</h2>
         <div className="space-y-3 pl-2">
-          <SitemapLink href="/legal/privacy">Privacy Policy</SitemapLink>
-          <SitemapLink href="/legal/terms">Terms of Use</SitemapLink>
-          <SitemapLink href="/legal/legal">Legal</SitemapLink>
+          <SitemapLink href="/legal?page=privacy">Privacy Policy</SitemapLink>
+          <SitemapLink href="/legal?page=terms">Terms of Use</SitemapLink>
+          {/* <SitemapLink href="/legal/">Legal</SitemapLink> */}
         </div>
       </div>
     </div>
