@@ -5,39 +5,39 @@ import GlobalSlider from '@/components/Slider/GlobalSlider';
 const solutions = [
   {
     id: 1,
-    image: '/images/global/security.png',
+    image: '/images/service/cybersec.png',
     icon: '/icons/global/enterprise-icon.svg',
     label: 'Cyber Security',
-    title: 'Complete Enterprise \n Security.',
+    title: 'Digital Safety: Next-Gen Security from App to Cloud',
     description:
-      'We deliver comprehensive Enterprise Security Solutions & Services that safeguard critical assets, ensure compliance, and mitigate risks.',
+      'Comprehensive digital safety including Zero Trust, SASE, and Cloud/App Security. We prepare you for the future with Quantum-Resistant Security (QKD).',
   },
   {
     id: 2,
-    image: '/images/global/ai.jpg',
+    image: '/images/service/ai.png',
     icon: '/icons/global/machinelearning-icon.svg',
     label: 'Ai & Machine Learning',
-    title: 'Integrated Smart Enterprise Ai Modular Solutions.',
+    title: 'Enterprise Cloud: Migration, Modernization, and Optimization.',
     description:
-      'Our AI-Powered Innovations deliver Intelligent, Data-driven Solutions to Global Enterprises, enhancing operational efficiency and decision-making.',
+      'Expert Multi/Hybrid-cloud management, migration, and modernization. We ensure peak efficiency via DevOps, FinOps, and Infrastructure as Code (IaaC).',
   },
   {
     id: 3,
-    image: '/images/global/cloud.jpg',
+    image: '/images/service/enterprise.png',
     icon: '/icons/global/cloud-icon.svg',
     label: 'Cloud Solution',
-    title: 'Architecting and Optimizing perfect Cloud Solutions.',
+    title: 'Accelerated Intelligence: Responsible AI from Edge to Enterprise.',
     description:
-      'Our Enterprise Cloud Solutions provide Global Businesses with optimized, scalable, secure, and efficient cloud infrastructure tailored to their needs.',
+      'Powering outcomes with Edge AI, Generative AI (LLMs), and Conversational AI. Solutions are built and scaled efficiently using AIOps/MLOps frameworks',
   },
   {
     id: 4,
     image: '/images/global/security.png',
     icon: '/icons/global/enterprise-icon.svg',
     label: 'Cyber Security',
-    title: 'Complete Enterprise \n Security.',
+    title: 'Pioneering Transformation with Quantum Readiness.',
     description:
-      'We deliver comprehensive Enterprise Security Solutions & Services that safeguard critical assets, ensure compliance, and mitigate risks.',
+      'Driving next-wave technology in Quantum Computing (QKD) and Web3. We execute critical App Modernization, Sassification, and Mainframe-to-Cloud migration.',
   },
 ];
 
