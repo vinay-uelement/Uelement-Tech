@@ -144,7 +144,7 @@ const DrivingGrowthSection = () => {
 
           <span className="fl-slash hidden lg:block">/Service Segment</span>
           <h3 className="fl1">{slides[active].headline}</h3>
-          <p className="fl3 lg:block md:w-[90%] w-full md:text-justify text-left">
+          <p className="fl3 lg:block md:w-[90%] w-full text-left">
             {slides[active].desc1}
           </p>
           <button

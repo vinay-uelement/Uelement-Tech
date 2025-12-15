@@ -4,10 +4,14 @@ import Link from 'next/link';
 import Checkbox from '../formElements/Checkbox/Checkbox';
 import InputField from '../formElements/InputField/InputField';
 import Icon from '../resources/Icon';
+import { usePathname } from 'next/navigation';
 import { useState } from 'react';
 import useWeb3Forms from '@web3forms/react';
 
-const Contact = () => {
+const FooterV2 = () => {
+  const pathname = usePathname();
+  if (pathname === '/contact-us') return null;
+
   return (
     <div>
       <ContactUs />
@@ -15,31 +19,31 @@ const Contact = () => {
       <div className="border-t border-white/10 pt-6 sm:pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 bg-primary-blue container-padding py-8 lg:py-12">
         <div className="flex flex-wrap gap-3 sm:gap-5 lg:gap-8 justify-center sm:justify-start text-center">
           <Link
-            href="/about"
+            href="/company"
             className="font-reddit-sans text-[#808080] text-13 sm:text-16 hover:text-white transition-colors"
           >
             About us
           </Link>
           <Link
-            href="/contact"
+            href="/contact-us"
             className="font-reddit-sans text-[#808080] text-13 sm:text-16 hover:text-white transition-colors"
           >
             Contact
           </Link>
           <Link
-            href="/privacy"
+            href="/"
             className="font-reddit-sans text-[#808080] text-13 sm:text-16 hover:text-white transition-colors"
           >
             Privacy policy
           </Link>
           <Link
-            href="/sitemap"
+            href="/"
             className="font-reddit-sans text-[#808080] text-13 sm:text-16 hover:text-white transition-colors"
           >
             Sitemap
           </Link>
           <Link
-            href="/terms"
+            href="/"
             className="font-reddit-sans text-[#808080] text-13 sm:text-16 hover:text-white transition-colors"
           >
             Terms of Use
@@ -76,7 +80,7 @@ const ContactUs = () => {
     access_key: '5f0b55f8-1ed0-46cd-a518-c13ca9686c6f',
     settings: {
       from_name: 'UElement Contact Form',
-      subject: 'New Contact Form Submission from Contact Page',
+      subject: 'New Contact Form Submission from Website',
     },
     onSuccess: (message) => {
       console.log('Success:', message);
@@ -86,7 +90,7 @@ const ContactUs = () => {
       });
       setIsSubmitting(false);
 
-      // Reset form after 3 seconds
+      // Reset form after 3 second
       setTimeout(() => {
         resetForm();
         setSubmitStatus({ type: '', message: '' });
@@ -168,9 +172,9 @@ const ContactUs = () => {
         <div className="h-[40%] bg-primary-blue"></div>
       </div>
 
-      <div className="container-padding py-14 sm:py-20 lg:py-26">
+      <div className="container-padding py-10 sm:py-12 lg:py-16">
         <div className="title-div text-primary-blue text-center mb-8 sm:mb-10 lg:mb-12">
-          <p className="fl-slash">/Contact Us</p>
+          <p className="fl-slash">/ Contact Us</p>
           <h4 className="fl1 leading-tight mb-10 md:mb-14">
             Ready to Transform Your Enterprise Security?
           </h4>
@@ -387,7 +391,7 @@ const FooterContent = () => {
     await submitNewsletter(data);
   };
   return (
-     <>
+    <>
     <footer className="hidden md:block bg-primary-blue pt-2 lg:pt-4 pb-6 container-padding">
       <div className="max-w-[1400px] mx-auto">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-10 lg:gap-12 xl:gap-16 pb-8 sm:pb-10 lg:pb-12">
@@ -560,7 +564,7 @@ const FooterContent = () => {
             <img
               src="/icons/global/UElement_Logo_White 3.svg"
               alt="UElement logo"
-              className="h-[35px] sm:h-[48px] w-auto mb-6 md:mb-20"
+              className="h-[30px] sm:h-[48px] w-auto mb-2 md:mb-20"
             />
           </div>
 
@@ -723,4 +727,4 @@ const FooterContent = () => {
   );
 };
 
-export default Contact;
+export default FooterV2;

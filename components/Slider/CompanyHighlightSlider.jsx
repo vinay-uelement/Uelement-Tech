@@ -90,13 +90,13 @@ const CompanyHighlightSlider = ({ data }) => {
                   {item.desc}
                 </p>
 
-                <div className="w-full flex justify-center items-center mt-4 md:mt-10">
+                {/* <div className="w-full flex justify-center items-center mt-4 md:mt-10">
                   <Link href={item.link}>
                     <button className="btn-blue">
                       Learn More
                     </button>
                   </Link>
-                </div>
+                </div> */}
               </div>
             </div>
           </div>

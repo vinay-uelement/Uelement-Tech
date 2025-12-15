@@ -44,7 +44,7 @@ const ServicesList = () => {
         const isLast = index === servicesData.length - 1;
 
         return (
-          <div key={service.id} className="container-padding">
+          <div key={service.id} id={service.id} className="container-padding scroll-mt-[100px]">
             <div
               className={`flex ${
                 isReversed

@@ -14,8 +14,8 @@ const bullet = [
   },
   {
     id: 3,
-    desc: 'Enterprise Client Worldwide',
-    number: '24/7',
+    desc: 'Accelerated Product Launch',
+    number: '30%',
   },
   {
     id: 4,
@@ -46,7 +46,7 @@ const transformBullet = [
   {
     id: 4,
     title: 'Implement & Integrate',
-    icon: '/icons/landing/ticked-light.svg',
+    icon: '/icons/landing/manage.png',
     desc: 'Provide ongoing Managed Cloud Infra, SecOps, FinOps, and continuous performance optimization.',
   },
 ];
@@ -58,14 +58,14 @@ export default function AboutSection() {
       <div className="p-10 bg-primary-blue rounded-[4px]">
         <div className="flex flex-col-reverse xl:flex-row">
           {/* LEFT WHITE BOX */}
-          <div className="xl:w-1/2 bg-[#FFF8F0] rounded-[4px] overflow-hidden py-5 xl:py-10 px-6 xl:px-10 ">
+          <div className="xl:w-1/2 bg-[#FFF8F0] rounded-[4px] overflow-hidden py-5 xl:py-10 px-6 xl:px-10">
             <div className="grid grid-cols-2 grid-rows-2">
               {bullet.map((point, index) => (
                 <div
                   key={point.id}
                   className={`
           flex flex-col items-center justify-center
-          text-center px-6 py-10 xl:py-16
+          text-center px-6 py-6 xl:py-12
           ${index < 2 ? 'border-b-2 border-dashed border-[#C5C5C5]' : ''}
           ${index % 2 === 0 ? 'border-r-2 border-dashed border-[#C5C5C5]' : ''}
         `}
@@ -74,7 +74,7 @@ export default function AboutSection() {
                     {point.number}
                   </p>
 
-                  <p className="mt-3 text-12 xl:text-[18px] text-[#4A4A4A] max-w-[160px]">
+                  <p className="mt-3 text-12 xl:text-[18px] text-[#4A4A4A] max-w-[180px]">
                     {point.desc}
                   </p>
                 </div>
@@ -91,7 +91,7 @@ export default function AboutSection() {
                 <br className="hidden xl:block" />
                 Partner for Secure Future
               </h2>
-              <p className="mt-4 xl:max-w-[80%] fl3 !text-[16px] !text-[#FFF9FF] text-center xl:text-left mb-8 xl:mb-0">
+              <p className="mt-4 xl:max-w-[80%] w-full fl3 md:!text-[16px] !text-[#FFF9FF] text-center xl:text-left mb-8 xl:mb-0">
                 Established by innovators in 2024, UElement Technologies is
                 dedicated to solving complex challenges across Cybersecurity,
                 Cloud, and AI with unparalleled expertise. We eliminate the

@@ -1,6 +1,6 @@
 'use client';
 import { useEffect, useRef, useState } from 'react';
-import { usePathname } from 'next/navigation';
+import { usePathname, useRouter } from 'next/navigation';
 import { ReactIcons } from '../../utils/ReactIcons';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
@@ -17,16 +17,19 @@ const navbarList = [
         id: 1,
         label: 'AI & ML',
         desc: 'AI-powered solutions that boost efficiency and drive smarter decisions for global enterprises.',
+        link: '/services/#03',
       },
       {
         id: 2,
         label: 'Cybersecurity',
         desc: 'We provide enterprise security solutions that protect assets, ensure compliance, and reduce risks',
+        link: '/services/#01',
       },
       {
         id: 3,
         label: 'Cloud Solutions',
         desc: 'We deliver scalable, secure, and efficient cloud solutions tailored for global businesses.',
+        link: '/services/#02',
       },
     ],
     images: [
@@ -116,6 +119,7 @@ const navbarList = [
 const NON_CLICKABLE_MENUS = [2, 3]; // Resources (id: 2) and Partnership (id: 3)
 
 const Navbar = () => {
+  const router = useRouter();
   const [isScrolled, setIsScrolled] = useState(false);
   const [showMobileNav, setShowMobileNav] = useState(false);
   const [hoveredMenu, setHoveredMenu] = useState(null);
@@ -192,16 +196,16 @@ const Navbar = () => {
   return (
     <>
       <nav
-        className={`w-[90vw] md:w-full container-outer shadow-down md:shadow-none bg-primary-blue rounded-[12px] md:rounded-none pe-4 md:pe-0 md:bg-transparent h-15 flex justify-between fixed z-[80] left-1/2 -translate-x-1/2 
+        className={`w-[90vw] md:w-full md:px-[10px] md:max-w-[1920px] md:mx-auto shadow-down md:shadow-none bg-primary-blue rounded-[12px] md:rounded-none pe-2 md:pe-0 md:bg-transparent h-15 flex justify-between fixed z-[80] left-1/2 -translate-x-1/2 
       ${
         isScrolled ? 'top-2' : 'top-6'
       } transition-all duration-700 ease-in-out`}
       >
-        <div className="w-full container-padding">
+        <div className="w-full px-2 sm:px-10 md:px-20">
           <div className="flex justify-between h-full w-full relative">
             <Link
               href={'/'}
-              className="bg-primary-blue rounded-l-[22px] rounded-tl-[4px] md:w-[290px] h-full ps-4 flex items-center"
+              className="bg-primary-blue rounded-l-[22px] rounded-tl-[4px] md:w-[290px] w-[150px] h-full ps-4 flex items-center"
             >
               <img
                 src="/icons/global/UElement_Logo_White 3.svg"
@@ -225,7 +229,9 @@ const Navbar = () => {
             <div className="flex-1 relative hidden md:block">
               <div className="w-[calc(100%+40px)] h-full bg-[#32323259] backdrop-blur-lg rounded-[40px] -ml-10 px-3 hidden md:flex items-center relative z-50">
                 <div className="size-10 bg-[#9B7025] rounded-full flex-shrink-0 relative">
-                  <span className='absolute -top-[3px] right-[3px] font-bold text-22 font-reddit-sans text-white'>92</span>
+                  <span className="absolute -translate-x-1/2 left-1/2 -translate-y-1/2 top-1/2 font-bold text-22 font-reddit-sans text-[#ffffff90]">
+                    92
+                  </span>
                 </div>
                 <div
                   ref={navRef}
@@ -240,9 +246,7 @@ const Navbar = () => {
                       }}
                     >
                       {NON_CLICKABLE_MENUS.includes(navItem.id) ? (
-                        <div
-                          className="flex items-center font-reddit-sans font-semibold md:text-16 xl:text-18 text-[#fff] px-3 uppercase relative h-full cursor-not-allowed opacity-100"
-                        >
+                        <div className="flex items-center font-reddit-sans font-semibold md:text-16 xl:text-18 text-[#fff] px-3 uppercase relative h-full cursor-not-allowed opacity-100">
                           {navItem.children && (
                             <span
                               className={`transition-all duration-500 ${
@@ -299,13 +303,15 @@ const Navbar = () => {
                     <div className="md:text-18 xl:text-22 text-white font-reddit-sans font-semibold border-b-[0.5px] border-[#ebebeb] pb-2">
                       {hoveredMenu?.label}
                     </div>
-                    {hoveredMenu?.children?.map((child) => (
+                    {hoveredMenu?.children?.map((child) =>
                       NON_CLICKABLE_MENUS.includes(hoveredMenu.id) ? (
                         <div
                           key={child.id}
                           className="block py-4 last:border-none border-primary-blue max-w-[100%] pointer-events-none opacity-100"
                         >
-                          <div className="font-semibold md:text-16 xl:text-18 text-[#fff] font-reddit-sans capitalize">
+                          <div
+                            className="font-semibold md:text-16 xl:text-18 text-[#fff] font-reddit-sans capitalize"
+                          >
                             {child.label}
                           </div>
                           <div className="md:text-14 xl:text-16 font-light text-[#fff] font-reddit-sans">
@@ -315,10 +321,12 @@ const Navbar = () => {
                       ) : (
                         <Link
                           key={child.id}
-                          href={'#'}
+                          href={`${child.link}`}
                           className="block py-4 last:border-none border-primary-blue hover:text-primary-blue max-w-[100%]"
                         >
-                          <div className="font-semibold text-18 text-[#fff] font-reddit-sans captalize">
+                          <div className="font-semibold text-18 text-[#fff] font-reddit-sans captalize"
+                          // onClick={() => router.push(`${child.link}`)}
+                          >
                             {child.label}
                           </div>
                           <div className="text-16 font-light text-[#fff] font-reddit-sans">
@@ -326,7 +334,7 @@ const Navbar = () => {
                           </div>
                         </Link>
                       )
-                    ))}
+                    )}
                   </div>
                 </div>
               </div>
@@ -362,9 +370,7 @@ const Navbar = () => {
                 }`}
               >
                 {NON_CLICKABLE_MENUS.includes(navItem.id) ? (
-                  <span className="h-10 flex items-end">
-                    {navItem.label}
-                  </span>
+                  <span className="h-10 flex items-end">{navItem.label}</span>
                 ) : (
                   <Link
                     href={navItem.link}
@@ -381,12 +387,10 @@ const Navbar = () => {
 
               <div
                 className={`overflow-hidden transition-all duration-300 ${
-                  expandedMobileMenu === navItem.id
-                    ? 'h-[220px]'
-                    : 'h-0'
+                  expandedMobileMenu === navItem.id ? 'h-[220px]' : 'h-0'
                 }`}
               >
-                {navItem.children?.map((child) => (
+                {navItem.children?.map((child) =>
                   NON_CLICKABLE_MENUS.includes(navItem.id) ? (
                     <div
                       key={child.id}
@@ -413,7 +417,7 @@ const Navbar = () => {
                       </div>
                     </Link>
                   )
-                ))}
+                )}
               </div>
             </div>
           ))}
