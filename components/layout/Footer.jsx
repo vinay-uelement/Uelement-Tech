@@ -419,7 +419,7 @@ const FooterContent = () => {
                 <Icon name="facebook" size={35} />
               </Link> */}
               <Link
-                href="#"
+                href="https://www.instagram.com/u_element_india?igsh=MTZtejZ4djB4MHdqbw=="
                 className="  hover:translate-y-[-3px] duration-300 ease-in-out transition-all hover:text-white/70"
               >
                 <Icon name="instagram" size={35} />
@@ -526,7 +526,7 @@ const FooterContent = () => {
             )}
 
             <form
-              className="max-w-[300px] space-y-3"
+              className="w-[350px] space-y-3"
               onSubmit={handleNewsletterSubmit}
             >
               <div className="relative bg-white rounded-[4px] px-4 py-3 flex items-center gap-2">

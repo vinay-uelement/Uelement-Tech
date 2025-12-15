@@ -408,19 +408,19 @@ const FooterContent = () => {
               >
                 <Icon name="linkedin" size={35} />
               </Link>
-              <Link
+              {/* <Link
                 href="#"
                 className="  hover:translate-y-[-3px] duration-300 ease-in-out transition-all hover:text-white/70"
               >
                 <Icon name="facebook" size={35} />
-              </Link>
+              </Link> */}
               <Link
-                href="#"
+                href="https://www.instagram.com/u_element_india?igsh=MTZtejZ4djB4MHdqbw=="
                 className="  hover:translate-y-[-3px] duration-300 ease-in-out transition-all hover:text-white/70"
               >
                 <Icon name="instagram" size={35} />
               </Link>
-              <Link
+              {/* <Link
                 href="#"
                 className="  hover:translate-y-[-3px] duration-300 ease-in-out transition-all hover:text-white/70"
               >
@@ -437,7 +437,7 @@ const FooterContent = () => {
                 className="  hover:translate-y-[-3px] duration-300 ease-in-out transition-all hover:text-white/70"
               >
                 <Icon name="github" size={35} />
-              </Link>
+              </Link> */}
             </div>
           </div>
 
@@ -449,7 +449,7 @@ const FooterContent = () => {
               </h6>
               <div className="flex flex-col gap-3 sm:gap-4 font-reddit-sans font-light">
                 <Link
-                  href="/about"
+                  href="/company"
                   className="fl3 !text-[#e2e2e2] text-13 sm:text-16 hover:text-white transition-colors"
                 >
                   About
@@ -460,7 +460,7 @@ const FooterContent = () => {
                 >
                   Services
                 </Link>
-                <Link
+                {/* <Link
                   href="/partners"
                   className="fl3 !text-[#e2e2e2] text-13 sm:text-16 hover:text-white transition-colors"
                 >
@@ -471,12 +471,12 @@ const FooterContent = () => {
                   className="fl3 !text-[#e2e2e2] text-13 sm:text-16 hover:text-white transition-colors"
                 >
                   Career
-                </Link>
+                </Link> */}
               </div>
             </div>
 
             {/* Resources Links */}
-            <div className="resources-links">
+            {/* <div className="resources-links">
               <h6 className=" font-semibold text-14 sm:text-22 font-reddit-sans text-white uppercase mb-4 sm:mb-5">
                 RESOURCES
               </h6>
@@ -506,11 +506,11 @@ const FooterContent = () => {
                   Youtube Playlist
                 </Link>
               </div>
-            </div>
+            </div> */}
           </div>
 
           {/* Newsletter */}
-          <div className="newsletter ml-10">
+          <div className="newsletter ml-auto">
             <h6 className=" font-semibold text-14 sm:text-22 font-reddit-sans text-white uppercase mb-4 sm:mb-5">
               NEWSLETTER
             </h6>
@@ -528,7 +528,7 @@ const FooterContent = () => {
             )}
 
             <form
-              className="max-w-[300px] space-y-3"
+              className="w-[350px] space-y-3"
               onSubmit={handleNewsletterSubmit}
             >
               <div className="relative bg-white rounded-[4px] px-4 py-3 flex items-center gap-2">
