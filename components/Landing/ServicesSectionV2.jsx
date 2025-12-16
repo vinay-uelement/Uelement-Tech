@@ -1,6 +1,7 @@
 'use client';
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
+import { ReactIcons } from '@/utils/ReactIcons';
 
 const ServicesSection = () => {
   const [isMounted, setIsMounted] = useState(false);
@@ -90,7 +91,7 @@ const ServicesSection = () => {
               <button
                 key={tab.id}
                 onClick={() => setSelectedTab(tab)}
-                className={`relative px-6 py-3 text-sm sm:text-base font-semibold uppercase transition-all duration-250 flex-shrink-0 ${
+                className={`relative px-6 py-3 min-w-[200px] text-sm sm:text-base font-semibold uppercase transition-all duration-250 flex-shrink-0 ${
                   tab.id === selectedTab.id
                     ? 'text-[#232223]'
                     : 'text-gray-400 hover:text-gray-300'
@@ -142,14 +143,14 @@ const ServicesSection = () => {
                 />
 
                 {/* Tab Text */}
-                <span className="relative z-30">{tab.title}</span>
+                <span className="relative z-30 text-16 md:text-20 font-noto-sans ">{tab.title}</span>
               </button>
             ))}
           </div>
 
           {/* Mobile Dropdown */}
           <div className="md:hidden mb-0 relative">
-            <div className="relative inline-block w-full max-w-[280px]">
+            <div className="relative inline-block w-full max-w-[220px]">
               <div
                 className="absolute inset-0 bg-[#FFF4E4] text-[#232223] pointer-events-none"
                 style={{
@@ -161,7 +162,7 @@ const ServicesSection = () => {
                 onClick={() => setIsDropdownOpen(!isDropdownOpen)}
                 className="relative w-full text-left px-6 py-4 text-[#232223] font-medium text-base z-10 flex items-center justify-between"
               >
-                <span>{selectedTab.title}</span>
+                <span className='text-16 md:text-20 font-noto-sans '>{selectedTab.title}</span>
                 <svg
                   className={`w-5 h-5 transition-transform ${
                     isDropdownOpen ? 'rotate-180' : ''
@@ -206,10 +207,10 @@ const ServicesSection = () => {
           {/* Tab Content */}
           <div className="bg-[#FFF4E4] text-gray-800 p-6 sm:p-8 lg:p-10 xl:p-12 transition-all duration-300 ease-in-out rounded-[4px] -mt-1">
             <div className="animate-fade-in">
-              <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4 sm:mb-6">
+              <h3 className="fl1 mb-4 sm:mb-6">
                 {selectedTab.title}
               </h3>
-              <p className="text-base sm:text-lg leading-relaxed mb-8 sm:mb-16 lg:mb-20 md:w-[90%] w-full">
+              <p className="fl3 leading-relaxed mb-8 sm:mb-16 lg:mb-20 md:w-[90%] w-full">
                 {selectedTab.desc}
               </p>
 
@@ -227,7 +228,9 @@ const ServicesSection = () => {
                     onClick={prevSlide}
                     className="w-8 h-8 sm:w-9 sm:h-9 md:w-10 md:h-10 bg-[#0c142d] rounded-full text-white flex items-center justify-center disabled:opacity-0 disabled:cursor-not-allowed transition-all duration-300 flex-shrink-0"
                   >
-                    <span className="text-sm sm:text-base md:text-lg">←</span>
+                    <span className="text-14 sm:text-16 md:text-18">
+                      {ReactIcons.leftChev}
+                    </span>
                   </button>
 
                   <div className="bg-[#0c142d] rounded p-4 sm:p-5 md:p-6 flex-1 md:max-w-[500px] min-w-0">
@@ -239,7 +242,7 @@ const ServicesSection = () => {
                         {slides.map((text, i) => (
                           <div
                             key={i}
-                            className="min-w-full text-white text-xs sm:text-sm font-light"
+                            className="min-w-full text-white font-reddit-sans text-12 sm:text-14 font-light"
                           >
                             {text}
                           </div>
@@ -253,7 +256,9 @@ const ServicesSection = () => {
                     onClick={nextSlide}
                     className="w-8 h-8 sm:w-9 sm:h-9 md:w-10 md:h-10 bg-[#0c142d] rounded-full text-white flex items-center justify-center disabled:opacity-0 disabled:cursor-not-allowed transition-all duration-300 flex-shrink-0"
                   >
-                    <span className="text-sm sm:text-base md:text-lg">→</span>
+                    <span className="text-14 sm:text-16 md:text-18">
+                      {ReactIcons.rightChev}
+                    </span>
                   </button>
                 </div>
               </div>
