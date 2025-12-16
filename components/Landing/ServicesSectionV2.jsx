@@ -162,7 +162,7 @@ const ServicesSection = () => {
                 onClick={() => setIsDropdownOpen(!isDropdownOpen)}
                 className="relative w-full text-left px-6 py-4 text-[#232223] font-medium text-base z-10 flex items-center justify-between"
               >
-                <span className='text-16 md:text-20 font-noto-sans '>{selectedTab.title}</span>
+                <span className='text-16 md:text-20 font-noto-sans'>{selectedTab.title}</span>
                 <svg
                   className={`w-5 h-5 transition-transform ${
                     isDropdownOpen ? 'rotate-180' : ''

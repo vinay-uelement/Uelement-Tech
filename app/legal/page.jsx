@@ -7,7 +7,7 @@ export const metadata = {
   openGraph: {
     title: 'Legal | UElement Technologies',
     description: 'Delivering precision and efficiency in solving complex challenges across Cybersecurity, Cloud and AI.',
-    url: 'https://uelement.in/legal',
+    url: 'https://uelement.vercel.app/legal',
     siteName: 'UElement',
     images: [
       {

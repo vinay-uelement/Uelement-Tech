@@ -7,7 +7,7 @@ export const metadata = {
   openGraph: {
     title: 'Our Partners | UElement Technologies',
     description: 'Discover the strategic partners we collaborate with to deliver exceptional value to our clients.',
-    url: 'https://uelement.in/our-partners',
+    url: 'https://uelement.vercel.app/our-partners',
     siteName: 'UElement',
     images: [
       {

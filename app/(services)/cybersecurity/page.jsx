@@ -7,7 +7,7 @@ export const metadata = {
   openGraph: {
     title: 'Cyber Security | UElement Technologies',
     description: 'Explore our wide range of services in Cyber Security.',
-    url: 'https://uelement.in/cybersecurity',
+    url: 'https://uelement.vercel.app/cybersecurity',
     siteName: 'UElement',
     images: [
       {

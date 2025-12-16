@@ -7,7 +7,7 @@ export const metadata = {
   openGraph: {
     title: 'Resources | UElement',
     description: 'Explore our resources, case studies, and insights on the latest trends in digital transformation.',
-    url: 'https://uelement.in/resources',
+    url: 'https://uelement.vercel.app/resources',
     siteName: 'UElement',
     images: [
       {
