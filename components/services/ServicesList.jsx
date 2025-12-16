@@ -50,7 +50,7 @@ const ServicesList = () => {
                 isReversed
                   ? 'flex-col md:flex-row-reverse'
                   : 'flex-col md:flex-row'
-              } gap-6 md:gap-20 ${service.bg} p-6 md:p-12 last:mt-6  ${
+              } gap-6 md:gap-20 ${service.bg} p-6 md:p-12 ${
                 isFirst
                   ? 'rounded-t-[4px]'
                   : isLast
