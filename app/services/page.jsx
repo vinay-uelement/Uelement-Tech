@@ -3,10 +3,10 @@ import React from 'react'
 
 
 export const metadata = {
-  title: 'Services | UElement',
+  title: 'Services | UElement Technologies',
   description: 'Explore our wide range of services including web development, consulting, and digital strategy.',
   openGraph: {
-    title: 'Services | UElement',
+    title: 'Services | UElement Technologies',
     description: 'Explore our wide range of services including web development, consulting, and digital strategy.',
     url: 'https://uelement.in/services',
     siteName: 'UElement',
@@ -23,7 +23,7 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Services | UElement',
+    title: 'Services | UElement Technologies',
     description: 'Explore our wide range of services including web development, consulting, and digital strategy.',
     images: ['/images/service/service-one.jpg'],
   },

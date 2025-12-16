@@ -2,10 +2,10 @@ import Company from '@/components/pages/Company';
 import React from 'react';
 
 export const metadata = {
-  title: 'Company | UElement',
+  title: 'Company | UElement Technologies',
   description: 'Learn more about UElement, our mission, vision, and the team driving digital innovation.',
   openGraph: {
-    title: 'Company | UElement',
+    title: 'Company | UElement Technologies',
     description: 'Learn more about UElement, our mission, vision, and the team driving digital innovation.',
     url: 'https://uelement.in/company',
     siteName: 'UElement',
@@ -22,7 +22,7 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Company | UElement',
+    title: 'Company | UElement Technologies',
     description: 'Learn more about UElement, our mission, vision, and the team driving digital innovation.',
     images: ['/images/company/behind-idea.jpg'],
   },

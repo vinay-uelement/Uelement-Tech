@@ -3,10 +3,10 @@ import React from 'react'
 
 
 export const metadata = {
-  title: 'Our Partners | UElement',
+  title: 'Our Partners | UElement Technologies',
   description: 'Discover the strategic partners we collaborate with to deliver exceptional value to our clients.',
   openGraph: {
-    title: 'Our Partners | UElement',
+    title: 'Our Partners | UElement Technologies',
     description: 'Discover the strategic partners we collaborate with to deliver exceptional value to our clients.',
     url: 'https://uelement.in/our-partners',
     siteName: 'UElement',
@@ -23,7 +23,7 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Our Partners | UElement',
+    title: 'Our Partners | UElement Technologies',
     description: 'Discover the strategic partners we collaborate with to deliver exceptional value to our clients.',
     images: ['/images/landing/si-partnership.jpg'],
   },
