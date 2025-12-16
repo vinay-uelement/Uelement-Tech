@@ -21,9 +21,9 @@ const TrustedPartnerShip = () => {
   ]
 
   return (
-    <div className="bg-primary-blue py-[var(--section-block-padding)]">
+    <div className="bg-primary-blue py-[var(--section-block-padding)] mb-8 md:mb-16">
       <div className="container-small md:py-[var(--section-block-padding)]">
-        <div className="w-full sm:w-[80%] mx-auto bg-white p-8 pb-12 ribbon-border rounded-[10px]">
+        <div className="w-full sm:w-[80%] mx-auto bg-white p-8 pb-12 ribbon-mobile md:white-ribbon-border rounded-[10px]">
           <div className="title-div text-center mb-10 text-primary-blue">
             <p className="fl-slash">/Expertise</p>
             <h4 className="fl2 mt-3 mb-2">

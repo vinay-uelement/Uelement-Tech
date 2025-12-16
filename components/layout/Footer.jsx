@@ -462,7 +462,7 @@ const FooterContent = () => {
                   href="/services"
                   className="fl3 !text-[#e2e2e2] text-13 sm:text-16 hover:text-white transition-colors"
                 >
-                  Services
+                  Partnerships
                 </Link>
                 {/* <Link
                   href="/our-partners"
@@ -474,7 +474,7 @@ const FooterContent = () => {
             </div>
 
             {/* Resources Links */}
-            {/* <div className="resources-links">
+            <div className="resources-links">
               <h6 className=" font-semibold text-14 sm:text-22 font-reddit-sans text-white uppercase mb-4 sm:mb-5">
                 RESOURCES
               </h6>
@@ -504,7 +504,7 @@ const FooterContent = () => {
                   Youtube Playlist
                 </Link>
               </div>
-            </div> */}
+            </div>
           </div>
 
           {/* Newsletter */}

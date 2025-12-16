@@ -446,13 +446,13 @@ const FooterContent = () => {
               </div>
             </div>
 
-            <div className="flex flex-row md-flex-col justify-center gap-32 md:gap-20 my-6 md:my-0">
+            <div className="flex flex-row md-flex-col justify-start gap-32 md:gap-20 my-6 md:my-0">
               {/* Company Links */}
               <div className="company-links">
                 <h6 className=" font-semibold text-14 sm:text-22 font-reddit-sans text-white uppercase mb-4 sm:mb-5">
                   COMPANY
                 </h6>
-                <div className="flex flex-col gap-3 sm:gap-4 font-reddit-sans font-light">
+                <div className="flex flex-col justify-center items-center gap-3 sm:gap-4 font-reddit-sans font-light">
                   <Link
                     href="/company"
                     className="fl3 !text-[#e2e2e2] text-13 sm:text-16 hover:text-white transition-colors"
@@ -460,10 +460,10 @@ const FooterContent = () => {
                     About
                   </Link>
                   <Link
-                    href="/services"
+                    href="/our-partners"
                     className="fl3 !text-[#e2e2e2] text-13 sm:text-16 hover:text-white transition-colors"
                   >
-                    Services
+                    Partnerships
                   </Link>
                   {/* <Link
                   href="/our-partners"
@@ -475,37 +475,37 @@ const FooterContent = () => {
               </div>
 
               {/* Resources Links */}
-              {/* <div className="resources-links">
+              <div className="resources-links">
               <h6 className=" font-semibold text-14 sm:text-22 font-reddit-sans text-white uppercase mb-4 sm:mb-5">
-                RESOURCES
+                Services
               </h6>
-              <div className="flex flex-col gap-3 sm:gap-4 font-reddit-sans font-light">
+              <div className="flex flex-col justify-center items-center gap-3 sm:gap-4 font-reddit-sans font-light">
                 <Link
-                  href="/resources"
+                  href="/ai-ml"
                   className="fl3 !text-[#e2e2e2] text-13 sm:text-16 hover:text-white transition-colors"
                 >
-                  Free eBooks
+                  AI-ML
                 </Link>
                 <Link
-                  href="/resources"
+                  href="/cybersecurity"
                   className="fl3 !text-[#e2e2e2] text-13 sm:text-16 hover:text-white transition-colors"
                 >
-                  Development Tutorial
+                  CyberSecurity
                 </Link>
                 <Link
-                  href="/resources"
+                  href="/cloud-solutions"
                   className="fl3 !text-[#e2e2e2] text-13 sm:text-16 hover:text-white transition-colors"
                 >
-                  How to - Blog
+                  Cloud Solutions
                 </Link>
                 <Link
-                  href="/resources"
+                  href="/future-tech"
                   className="fl3 !text-[#e2e2e2] text-13 sm:text-16 hover:text-white transition-colors"
                 >
-                  Youtube Playlist
+                  Future Tech
                 </Link>
               </div>
-            </div> */}
+            </div>
             </div>
 
             {/* Newsletter */}
@@ -582,10 +582,10 @@ const FooterContent = () => {
                     About
                   </Link>
                   <Link
-                    href="/services"
+                    href="/our-partners"
                     className="fl3 !text-[#e2e2e2] text-13 sm:text-16 hover:text-white transition-colors"
                   >
-                    Services
+                    Partnerships
                   </Link>
                   {/* <Link
                   href="/our-partners"
@@ -596,8 +596,46 @@ const FooterContent = () => {
                 </div>
               </div>
 
-              <div>
-                <p className="text-[#808080] font-reddit-sans text-[14px] mb-6 sm:mb-8 ">
+             
+
+              {/* Resources Links */}
+              <div className="resources-links">
+              <h6 className=" font-semibold text-14 sm:text-22 font-reddit-sans text-white uppercase mb-4 sm:mb-5">
+                RESOURCES
+              </h6>
+              <div className="flex flex-col gap-3 sm:gap-4 font-reddit-sans font-light">
+                <Link
+                  href="/ai-ml"
+                  className="fl3 !text-[#e2e2e2] text-13 sm:text-16 hover:text-white transition-colors"
+                >
+                  AI-ML
+                </Link>
+                <Link
+                  href="/cybersecurity"
+                  className="fl3 !text-[#e2e2e2] text-13 sm:text-16 hover:text-white transition-colors"
+                >
+                  CyberSecurity
+                </Link>
+                <Link
+                  href="/cloud-solutions"
+                  className="fl3 !text-[#e2e2e2] text-13 sm:text-16 hover:text-white transition-colors"
+                >
+                  Cloud Solutions
+                </Link>
+                <Link
+                  href="/future-tech"
+                  className="fl3 !text-[#e2e2e2] text-13 sm:text-16 hover:text-white transition-colors"
+                >
+                  Future Tech
+                </Link>
+              </div>
+            </div>
+            </div>
+
+            {/* Newsletter */}
+            <div className="newsletter mx-auto">
+               <div className='flex items-center gap-8 mb-12 sm:mb-14'>
+                <p className="text-[#808080] font-reddit-sans text-[14px]">
                   Empowering Secure <br /> Digital Transformation
                 </p>
 
@@ -608,75 +646,16 @@ const FooterContent = () => {
                   >
                     <Icon name="linkedin" size={35} />
                   </Link>
-                  {/* <Link
-                href="#"
-                className="  hover:translate-y-[-3px] duration-300 ease-in-out transition-all hover:text-white/70"
-              >
-                <Icon name="facebook" size={35} />
-              </Link> */}
+
                   <Link
                     href="https://www.instagram.com/u_element_india?igsh=MTZtejZ4djB4MHdqbw=="
                     className="  hover:translate-y-[-3px] duration-300 ease-in-out transition-all hover:text-white/70"
                   >
                     <Icon name="instagram" size={35} />
                   </Link>
-                  {/* <Link
-                href="#"
-                className="  hover:translate-y-[-3px] duration-300 ease-in-out transition-all hover:text-white/70"
-              >
-                <Icon name="twitter" size={35} />
-              </Link> */}
-                  {/* <Link
-                href="#"
-                className="  hover:translate-y-[-3px] duration-300 ease-in-out transition-all hover:text-white/70"
-              >
-                <Icon name="youtube" size={35} />
-              </Link> */}
-                  {/* <Link
-                href="#"
-                className="  hover:translate-y-[-3px] duration-300 ease-in-out transition-all hover:text-white/70"
-              >
-                <Icon name="github" size={35} />
-              </Link> */}
+
                 </div>
               </div>
-
-              {/* Resources Links */}
-              {/* <div className="resources-links">
-              <h6 className=" font-semibold text-14 sm:text-22 font-reddit-sans text-white uppercase mb-4 sm:mb-5">
-                RESOURCES
-              </h6>
-              <div className="flex flex-col gap-3 sm:gap-4 font-reddit-sans font-light">
-                <Link
-                  href="/resources"
-                  className="fl3 !text-[#e2e2e2] text-13 sm:text-16 hover:text-white transition-colors"
-                >
-                  Free eBooks
-                </Link>
-                <Link
-                  href="/resources"
-                  className="fl3 !text-[#e2e2e2] text-13 sm:text-16 hover:text-white transition-colors"
-                >
-                  Development Tutorial
-                </Link>
-                <Link
-                  href="/resources"
-                  className="fl3 !text-[#e2e2e2] text-13 sm:text-16 hover:text-white transition-colors"
-                >
-                  How to - Blog
-                </Link>
-                <Link
-                  href="/resources"
-                  className="fl3 !text-[#e2e2e2] text-13 sm:text-16 hover:text-white transition-colors"
-                >
-                  Youtube Playlist
-                </Link>
-              </div>
-            </div> */}
-            </div>
-
-            {/* Newsletter */}
-            <div className="newsletter mx-auto">
               <h6 className="font-semibold text-14 sm:text-22 font-reddit-sans text-white uppercase mb-4 sm:mb-5">
                 NEWSLETTER
               </h6>
