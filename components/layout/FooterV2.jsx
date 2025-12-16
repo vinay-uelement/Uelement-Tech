@@ -400,9 +400,9 @@ const FooterContent = () => {
               <img
                 src="/icons/global/UElement_Logo_White 3.svg"
                 alt="UElement logo"
-                className="h-[35px] sm:h-[48px] w-auto mb-6 md:mb-20"
+                className=" w-auto md:mb-3"
               />
-              <p className="text-[#808080] font-reddit-sans text-[14px] mb-6 sm:mb-8 ">
+              <p className="text-[#808080] font-reddit-sans text-[14px] sm:mb-5">
                 Empowering Secure Digital Transformation
               </p>
 
@@ -411,7 +411,7 @@ const FooterContent = () => {
                   href="https://www.linkedin.com/company/uelement-technologies/posts/?feedView=all"
                   className=" hover:translate-y-[-3px] duration-300 ease-in-out transition-all hover:text-white/70"
                 >
-                  <Icon name="linkedin" size={35} />
+                  <Icon name="linkedin2" size={35} />
                 </Link>
                 {/* <Link
                 href="#"
@@ -423,7 +423,7 @@ const FooterContent = () => {
                   href="https://www.instagram.com/u_element_india?igsh=MTZtejZ4djB4MHdqbw=="
                   className="  hover:translate-y-[-3px] duration-300 ease-in-out transition-all hover:text-white/70"
                 >
-                  <Icon name="instagram" size={35} />
+                  <Icon name="instagram2" size={35} />
                 </Link>
                 {/* <Link
                 href="#"
@@ -452,7 +452,7 @@ const FooterContent = () => {
                 <h6 className=" font-semibold text-14 sm:text-22 font-reddit-sans text-white uppercase mb-4 sm:mb-5">
                   COMPANY
                 </h6>
-                <div className="flex flex-col justify-center items-center gap-3 sm:gap-4 font-reddit-sans font-light">
+                <div className="flex flex-col gap-3 sm:gap-4 font-reddit-sans font-light">
                   <Link
                     href="/company"
                     className="fl3 !text-[#e2e2e2] text-13 sm:text-16 hover:text-white transition-colors"
@@ -476,10 +476,10 @@ const FooterContent = () => {
 
               {/* Resources Links */}
               <div className="resources-links">
-              <h6 className=" font-semibold text-center text-14 sm:text-22 font-reddit-sans text-white uppercase mb-4 sm:mb-5">
+              <h6 className=" font-semibold text-14 sm:text-22 font-reddit-sans text-white uppercase mb-4 sm:mb-5">
                 Services
               </h6>
-              <div className="flex flex-col justify-center items-center gap-3 sm:gap-4 font-reddit-sans font-light">
+              <div className="flex flex-col gap-3 sm:gap-4 font-reddit-sans font-light">
                 <Link
                   href="/ai-ml"
                   className="fl3 !text-[#e2e2e2] text-13 sm:text-16 hover:text-white transition-colors"
@@ -560,15 +560,37 @@ const FooterContent = () => {
         <div className="max-w-[1400px] mx-auto">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-10 lg:gap-12 xl:gap-16 pb-8 sm:pb-10 lg:pb-12">
             {/* Company Details */}
-            <div className="company-details flex flex-col justify-center items-center">
+            <div className="company-details flex flex-col container-padding justify-center items-center">
               <img
                 src="/icons/global/UElement_Logo_White 3.svg"
                 alt="UElement logo"
-                className="h-[30px] sm:h-[48px] w-auto mb-2 md:mb-20"
+                className="h-[30px] sm:h-[48px] w-auto mb-4 !mx-auto"
               />
+              <div className='flex items-center flex-col gap-3'>
+                <p className="text-[#808080] font-reddit-sans text-[12px]">
+                  Empowering Secure Digital Transformation
+                </p>
+
+                <div className="flex items-center justify-start gap-3">
+                  <Link
+                    href="https://www.linkedin.com/company/uelement-technologies/posts/?feedView=all"
+                    className="hover:translate-y-[-3px] duration-300 ease-in-out transition-all hover:text-white/70"
+                  >
+                    <Icon name="linkedin2" size={35} />
+                  </Link>
+
+                  <Link
+                    href="https://www.instagram.com/u_element_india?igsh=MTZtejZ4djB4MHdqbw=="
+                    className="hover:translate-y-[-3px] duration-300 ease-in-out transition-all hover:text-white/70"
+                  >
+                    <Icon name="instagram2" size={35} />
+                  </Link>
+
+                </div>
+              </div>
             </div>
 
-            <div className="flex flex-row md-flex-col justify-center gap-32 md:gap-20 my-6 md:my-0">
+            <div className="flex flex-row md-flex-col justify-center gap-32 md:gap-20 my-6 md:my-0 container-padding">
               {/* Company Links */}
               <div className="company-links">
                 <h6 className=" font-semibold text-14 sm:text-22 font-reddit-sans text-white uppercase mb-4 sm:mb-5">
@@ -634,28 +656,7 @@ const FooterContent = () => {
 
             {/* Newsletter */}
             <div className="newsletter mx-auto">
-               <div className='flex items-center gap-8 mb-12 sm:mb-14'>
-                <p className="text-[#808080] font-reddit-sans text-[14px]">
-                  Empowering Secure <br /> Digital Transformation
-                </p>
-
-                <div className="flex items-center justify-start gap-6">
-                  <Link
-                    href="https://www.linkedin.com/company/uelement-technologies/posts/?feedView=all"
-                    className=" hover:translate-y-[-3px] duration-300 ease-in-out transition-all hover:text-white/70"
-                  >
-                    <Icon name="linkedin" size={35} />
-                  </Link>
-
-                  <Link
-                    href="https://www.instagram.com/u_element_india?igsh=MTZtejZ4djB4MHdqbw=="
-                    className="  hover:translate-y-[-3px] duration-300 ease-in-out transition-all hover:text-white/70"
-                  >
-                    <Icon name="instagram" size={35} />
-                  </Link>
-
-                </div>
-              </div>
+              
               <h6 className="font-semibold text-14 sm:text-22 font-reddit-sans text-white uppercase mb-4 sm:mb-5">
                 NEWSLETTER
               </h6>
