@@ -175,7 +175,7 @@ const NavbarV4 = () => {
             {/* Logo - Extended width on mobile with padding */}
             <Link
               href={'/'}
-              className="bg-primary-blue rounded-l-[22px] rounded-tl-[4px] md:w-[290px] w-[240px] h-full ps-4 pe-20 md:pe-0 flex items-center relative z-40"
+              className="bg-primary-blue rounded-l-[22px] rounded-tl-[4px] md:w-[290px] w-[180px] h-full ps-4 pe-12 md:pe-0 flex items-center relative z-40"
             >
               <img
                 src="/icons/global/UElement_Logo_White 3.svg"
@@ -186,7 +186,7 @@ const NavbarV4 = () => {
 
             {/* Unified Navigation Container - Mobile & Desktop */}
             <div className="flex-1 relative ">
-              <div className="w-[calc(100%+70px)] md:w-[calc(100%+40px)] h-full bg-[#32323259] backdrop-blur-lg rounded-[40px] -ml-17 md:-ml-10 px-3 flex items-center relative z-50">
+              <div className="w-[calc(100%+30px)] md:w-[calc(100%+40px)] h-full bg-[#32323259] backdrop-blur-lg rounded-[40px] -ml-[30px] md:-ml-10 px-3 flex items-center relative z-50">
                 {/* 92 Badge - Always visible */}
                 <div className="size-8 md:size-10 bg-[#9B7025] rounded-full flex-shrink-0 relative">
                   <span className="absolute -translate-x-1/2 left-1/2 -translate-y-1/2 top-1/2 font-bold text-18 md:text-22 font-reddit-sans text-[#ffffff90]">
