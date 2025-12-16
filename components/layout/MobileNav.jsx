@@ -21,7 +21,7 @@ const MobileNav = ({
       className={`md:hidden bg-[#D4D4D344] w-[90vw] rounded-b-[20px]
         backdrop-blur-2xl fixed left-1/2 -translate-x-1/2 z-[900]
         overflow-hidden transition-all duration-300 ease-in-out
-        ${isScrolled ? 'top-[65px]' : 'top-[90px]'}
+        ${isScrolled ? 'top-[55px]' : 'top-[90px]'}
         ${
           showMobileNav
             ? expandedMobileMenu
