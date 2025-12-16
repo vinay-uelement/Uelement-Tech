@@ -60,7 +60,7 @@ const CyberSecurity = () => {
     {
       id: 3,
       image: '/images/global/pioneer.png',
-      icon: '/icons/global/enterprise-icon.svg',
+      icon: '/icons/global/futuretech-icon.svg',
       label: 'Future Tech',
       title: 'Pioneering Transformation with Quantum Readiness.',
       description:
