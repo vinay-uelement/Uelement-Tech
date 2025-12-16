@@ -43,6 +43,7 @@ const CyberSecurity = () => {
       image: '/images/service/ai.png',
       icon: '/icons/global/machinelearning-icon.svg',
       label: 'Ai & Machine Learning',
+      link: '/ai-ml',
       title: 'Enterprise Cloud: Migration, Modernization, and Optimization.',
       description:
         'Expert Multi/Hybrid-cloud management, migration, and modernization. We ensure peak efficiency via DevOps, FinOps, and Infrastructure as Code (IaaC).',
@@ -52,6 +53,7 @@ const CyberSecurity = () => {
       image: '/images/service/enterprise.png',
       icon: '/icons/global/cloud-icon.svg',
       label: 'Cloud Solution',
+      link: '/cloud-solutions',
       title:
         'Accelerated Intelligence: Responsible AI from Edge to Enterprise.',
       description:
@@ -62,6 +64,7 @@ const CyberSecurity = () => {
       image: '/images/global/pioneer.png',
       icon: '/icons/global/futuretech-icon.svg',
       label: 'Future Tech',
+      link: '/future-tech',
       title: 'Pioneering Transformation with Quantum Readiness.',
       description:
         'Driving next-wave technology in Quantum Computing (QKD) and Web3. We execute critical App Modernization, Sassification, and Mainframe-to-Cloud migration.',
@@ -185,9 +188,9 @@ const CyberSecurity = () => {
       </section>
 
       {/* Quantum-Resistant Security Section */}
-      <section className="bg-primary-blue py-[var(--section-block-padding)]">
+      <section className="bg-[#fcfcfc] py-[var(--section-block-padding)]">
         <div className="container-padding">
-          <div className="bg-[#F5F5F5] rounded-[4px] shadow-lg p-6 sm:p-8 md:p-10 lg:p-12">
+          <div className="bg-[#F3F3F3] rounded-[4px] shadow-lg p-6 sm:p-8 md:p-10 lg:p-12">
             {/* Image */}
             <div className="w-full h-[250px] sm:h-[300px] md:h-[350px] lg:h-[400px] mb-6 sm:mb-8">
               <img
@@ -217,7 +220,7 @@ const CyberSecurity = () => {
       </section>
 
       {/* Key Features Section */}
-      <section className="bg-primary-blue py-[var(--section-block-padding)]">
+      <section className="bg-[#fcfcfc] py-[var(--section-block-padding)]">
         <div className="container-padding">
           <h2 className="fl1 !text-white text-left mb-8 md:mb-12">
             Key Features
@@ -228,7 +231,7 @@ const CyberSecurity = () => {
             {keyFeatures.map((feature) => (
               <div
                 key={feature.id}
-                className="bg-[#D9D9D9] p-6 hover:shadow-xl transition-shadow duration-300"
+                className="bg-[#F3F3F3] p-6 transition-shadow duration-300"
               >
                 <h3 className="font-noto-sans font-semibold text-16 lg:text-18 text-black mb-3">
                   {feature.title}
@@ -265,7 +268,7 @@ const CyberSecurity = () => {
       </section>
 
       {/* Other Services Section */}
-      <section className="bg-primary-blue py-[var(--section-block-padding)]">
+      <section className="bg-[#fcfcfc] py-[var(--section-block-padding)]">
         <div className="container-padding">
           <h2 className="fl1 !text-white text-left mb-8 md:mb-12">
             Other Services

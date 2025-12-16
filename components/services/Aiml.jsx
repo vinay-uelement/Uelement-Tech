@@ -43,6 +43,7 @@ const Aiml = () => {
       image: '/images/service/ai.png',
       icon: '/icons/global/cloud-icon.svg',
       label: 'Cloud Solution',
+      link: '/cloud-solutions',
       title:
         'Accelerated Intelligence: Responsible AI from Edge to Enterprise.',
       description:
@@ -53,6 +54,7 @@ const Aiml = () => {
       image: '/images/service/cybersec.png',
       icon: '/icons/global/enterprise-icon.svg',
       label: 'Cyber Security',
+      link: '/cybersecurity',
       title: 'Digital Safety: Next-Gen Security from App to Cloud',
       description:
         'Comprehensive digital safety including Zero Trust, SASE, and Cloud/App Security. Prepare your organization for the future with Quantum-Resistant Security (QKD).',
@@ -62,6 +64,7 @@ const Aiml = () => {
       image: '/images/global/pioneer.png',
       icon: '/icons/global/futuretech-icon.svg',
       label: 'Future Tech',
+      link: '/future-tech',
       title: 'Pioneering Transformation with Quantum Readiness.',
       description:
         'Driving next-wave innovation in Quantum Computing (QKD) and Web3. Executing critical App Modernization, Sassification, and Mainframe-to-Cloud migration.',
@@ -188,9 +191,9 @@ const Aiml = () => {
       </section>
 
       {/* Quantum-Resistant Security Section */}
-      <section className="bg-primary-blue py-[var(--section-block-padding)]">
+      <section className="bg-[#fcfcfc] py-[var(--section-block-padding)]">
         <div className="container-padding">
-          <div className="bg-[#F5F5F5] rounded-[4px] shadow-lg p-6 sm:p-8 md:p-10 lg:p-12">
+          <div className="bg-[#f3f3f3] rounded-[4px] shadow-lg p-6 sm:p-8 md:p-10 lg:p-12">
             {/* Image */}
             <div className="w-full h-[250px] sm:h-[300px] md:h-[350px] lg:h-[400px] mb-6 sm:mb-8">
               <img
@@ -222,7 +225,7 @@ const Aiml = () => {
       </section>
 
       {/* Key Features Section */}
-      <section className="bg-primary-blue py-[var(--section-block-padding)]">
+      <section className="bg-[#fcfcfc] py-[var(--section-block-padding)]">
         <div className="container-padding">
           <h2 className="fl1 !text-white text-left mb-8 md:mb-12">
             Key Features
@@ -233,7 +236,7 @@ const Aiml = () => {
             {keyFeatures.map((feature) => (
               <div
                 key={feature.id}
-                className="bg-[#D9D9D9] p-6 hover:shadow-xl transition-shadow duration-300"
+                className="bg-[#f3f3f3] p-6 transition-shadow duration-300"
               >
                 <h3 className="font-noto-sans font-semibold text-16 lg:text-18 text-black mb-3">
                   {feature.title}
@@ -270,7 +273,7 @@ const Aiml = () => {
       </section>
 
       {/* Other Services Section */}
-      <section className="bg-primary-blue py-[var(--section-block-padding)]">
+      <section className="bg-[#fcfcfc] py-[var(--section-block-padding)]">
         <div className="container-padding">
           <h2 className="fl1 !text-white text-left mb-8 md:mb-12">
             Other Services

@@ -43,6 +43,7 @@ const FutureTech = () => {
       image: '/images/service/enterprise.png',
       icon: '/icons/global/cloud-icon.svg',
       label: 'Cloud Solution',
+      link: '/cloud-solutions',
       title:
         'Accelerated Intelligence: Responsible AI from Edge to Enterprise.',
       description:
@@ -53,6 +54,7 @@ const FutureTech = () => {
       image: '/images/service/cybersec.png',
       icon: '/icons/global/enterprise-icon.svg',
       label: 'Cyber Security',
+      link: '/cybersecurity',
       title: 'Digital Safety: Next-Gen Security from App to Cloud',
       description:
         'Comprehensive digital safety including Zero Trust, SASE, and Cloud/App Security. We prepare you for the future with Quantum-Resistant Security (QKD).',
@@ -62,6 +64,7 @@ const FutureTech = () => {
       image: '/images/service/ai.png',
       icon: '/icons/global/machinelearning-icon.svg',
       label: 'Ai & Machine Learning',
+      link: '/ai-ml',
       title: 'Enterprise Cloud: Migration, Modernization, and Optimization.',
       description:
         'Expert Multi/Hybrid-cloud management, migration, and modernization. We ensure peak efficiency via DevOps, FinOps, and Infrastructure as Code (IaaC).',
@@ -135,7 +138,7 @@ const FutureTech = () => {
   };
 
   return (
-    <div className='mb-8 md:mb-16'>
+    <div className="mb-8 md:mb-16">
       {/* Hero Section */}
       <section className="h-auto relative flex lg:flex-row flex-col items-center bg-primary-blue section-block-padding 3xl:!pt-[175px] md:!pt-[125px]">
         <div className="container-padding w-full flex flex-col lg:flex-row gap-8 lg:gap-12 justify-between mt-[var(--mobile-navbar-gap)] lg:my-0 py-10 lg:py-0">
@@ -187,9 +190,9 @@ const FutureTech = () => {
       </section>
 
       {/* SI Partnerships Section */}
-      <section className="bg-primary-blue py-[var(--section-block-padding)]">
+      <section className="bg-[#fcfcfc] py-[var(--section-block-padding)]">
         <div className="container-padding">
-          <div className="bg-[#F5F5F5] rounded-[4px] p-6 sm:p-8 md:p-10 lg:p-12">
+          <div className="bg-[#f3f3f3] rounded-[4px] p-6 sm:p-8 md:p-10 lg:p-12">
             {/* Image */}
             <div className="w-full h-[250px] sm:h-[300px] md:h-[350px] lg:h-[400px] mb-6 sm:mb-8">
               <img
@@ -221,7 +224,7 @@ const FutureTech = () => {
       </section>
 
       {/* Key Features Section */}
-      <section className="bg-primary-blue py-[var(--section-block-padding)]">
+      <section className="bg-[#fcfcfc] py-[var(--section-block-padding)]">
         <div className="container-padding">
           <h2 className="fl1 !text-white text-left mb-8 md:mb-12">
             Key Features
@@ -232,7 +235,7 @@ const FutureTech = () => {
             {keyFeatures.map((feature) => (
               <div
                 key={feature.id}
-                className="bg-[#D9D9D9] p-6 hover:shadow-xl transition-shadow duration-300"
+                className="bg-[#f3f3f3] p-6 transition-shadow duration-300"
               >
                 <h3 className="font-noto-sans font-semibold text-16 lg:text-18 text-black mb-3">
                   {feature.title}
@@ -269,7 +272,7 @@ const FutureTech = () => {
       </section>
 
       {/* Other Services Section */}
-      <section className="bg-primary-blue py-[var(--section-block-padding)]">
+      <section className="bg-[#fcfcfc] py-[var(--section-block-padding)]">
         <div className="container-padding">
           <h2 className="fl1 !text-white text-left mb-8 md:mb-12">
             Other Services
