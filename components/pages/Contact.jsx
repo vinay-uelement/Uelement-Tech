@@ -206,7 +206,7 @@ const ContactUs = () => {
                 <Icon name="location" />
                 <span className="text-left leading-relaxed">
                   UElement Technologies Pvt. Ltd. 9th Floor, Pride Gateway, Sr.
-                  No. 112, Baner, Pune,
+                  No. 112, Baner, Pune.
                 </span>
               </div>
             </div>

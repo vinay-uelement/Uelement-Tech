@@ -117,7 +117,7 @@ const GlobalSlider = ({ data }) => {
 
   return (
     <div
-      className="relative px-4 sm:px-6 md:px-8 lg:px-12"
+      className="relative"
       onMouseEnter={handlePause}
       onMouseLeave={handlePlay}
       onTouchStart={handleTouchStart}

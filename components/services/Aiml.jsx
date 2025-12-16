@@ -51,7 +51,7 @@ const Aiml = () => {
     {
       id: 2,
       image: '/images/service/cybersec.png',
-      icon: '/icons/global/shield-icon.svg',
+      icon: '/icons/global/enterprise-icon.svg',
       label: 'Cyber Security',
       title: 'Digital Safety: Next-Gen Security from App to Cloud',
       description:

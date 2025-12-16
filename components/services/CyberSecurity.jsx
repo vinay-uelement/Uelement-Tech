@@ -135,21 +135,22 @@ const CyberSecurity = () => {
   };
 
   return (
-    <div>
+    <div className="mb-8 md:mb-8">
       {/* Hero Section */}
-      <section className="h-auto relative flex lg:flex-row flex-col items-center bg-primary-blue section-block-padding pt-[75px]">
+      <section className="h-auto relative flex lg:flex-row flex-col items-center bg-primary-blue section-block-padding 3xl:!pt-[175px] md:!pt-[125px]">
         <div className="container-padding w-full flex flex-col lg:flex-row gap-8 lg:gap-12 justify-between mt-[var(--mobile-navbar-gap)] lg:my-0 py-10 lg:py-0">
           {/* Left: Content - 40% */}
           <div className="text-white w-full lg:w-[40%] flex flex-col justify-center order-1">
             {/* Icon + Label */}
             <div className="flex items-center gap-4 mb-6">
-              <div className="bg-white/10 backdrop-blur-md size-12 sm:size-14 rounded-full flex items-center justify-center">
+              <div className="size-[40px] md:size-[60px] bg-[#D7D7D7] flex-shrink-0 rounded-full flex items-center justify-center">
                 <img
-                  src="/icons/global/shield-icon.svg"
+                  src="/icons/global/enterprise-icon.svg"
                   alt="cybersecurity"
                   className="size-6 sm:size-8"
                 />
               </div>
+              <div className="w-[60px] md:w-[120px] h-[4px] bg-[#D2D2D2]"></div>
               <span className="text-white font-noto-sans text-16 sm:text-20 md:text-24 font-semibold">
                 Cybersecurity
               </span>
