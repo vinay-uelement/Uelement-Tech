@@ -17,19 +17,25 @@ const navbarList = [
         id: 1,
         label: 'AI & ML',
         desc: 'AI-powered solutions that boost efficiency and drive smarter decisions for global enterprises.',
-        link: '/services/#03',
+        link: '/ai-ml',
       },
       {
         id: 2,
         label: 'Cybersecurity',
         desc: 'We provide enterprise security solutions that protect assets, ensure compliance, and reduce risks',
-        link: '/services/#01',
+        link: '/cybersecurity',
       },
       {
         id: 3,
         label: 'Cloud Solutions',
         desc: 'We deliver scalable, secure, and efficient cloud solutions tailored for global businesses.',
-        link: '/services/#02',
+        link: '/cloud-solutions',
+      },
+      {
+        id: 4,
+        label: 'Future Tech',
+        desc: 'Quantum-ready and next-generation technologies designed to future-proof enterprise infrastructure.',
+        link: '/future-tech',
       },
     ],
     images: [
@@ -117,6 +123,17 @@ const navbarList = [
 ];
 
 const NON_CLICKABLE_MENUS = [2]; // Resources (id: 2)
+
+const MOBILE_DROPDOWN_HEIGHT = {
+  1: 'h-[300px]', // Services
+  3: 'h-[160px]', // Partnership
+};
+
+const DESKTOP_DROPDOWN_HEIGHT = {
+  1: 'h-[425px]', // Services
+  2: 'h-[350px]', // Resources
+  3: 'h-[350px]', // Partnership
+};
 
 const Navbar = () => {
   const router = useRouter();
@@ -295,7 +312,7 @@ const Navbar = () => {
                 ref={dropdownRef}
                 className={`w-[calc(100%+40px)] absolute -left-10 bg-[#00000050] backdrop-blur-2xl backdrop-saturate-150
     shadow-xl text-[#fff] z-[30] top-9 flex rounded-b-[22px] overflow-hidden transition-all duration-300 ease-in-out ${
-      hoveredMenu && hoveredMenu?.children ? 'h-[350px]' : 'h-0'
+      hoveredMenu && hoveredMenu?.children ? (DESKTOP_DROPDOWN_HEIGHT[hoveredMenu.id] ?? "h-[400px]") : 'h-0'
     }`}
               >
                 <div className="pt-9 pb-3 px-4 flex w-full">
@@ -309,9 +326,7 @@ const Navbar = () => {
                           key={child.id}
                           className="block py-4 last:border-none border-primary-blue max-w-[100%] pointer-events-none opacity-100"
                         >
-                          <div
-                            className="font-semibold md:text-16 xl:text-18 text-[#fff] font-reddit-sans capitalize"
-                          >
+                          <div className="font-semibold md:text-16 xl:text-18 text-[#fff] font-reddit-sans capitalize">
                             {child.label}
                           </div>
                           <div className="md:text-14 xl:text-16 font-light text-[#fff] font-reddit-sans">
@@ -324,8 +339,9 @@ const Navbar = () => {
                           href={`${child.link}`}
                           className="block py-4 last:border-none border-primary-blue hover:text-primary-blue max-w-[100%]"
                         >
-                          <div className="font-semibold text-18 text-[#fff] font-reddit-sans captalize"
-                          // onClick={() => router.push(`${child.link}`)}
+                          <div
+                            className="font-semibold text-18 text-[#fff] font-reddit-sans captalize"
+                            // onClick={() => router.push(`${child.link}`)}
                           >
                             {child.label}
                           </div>
@@ -386,8 +402,10 @@ const Navbar = () => {
               </div>
 
               <div
-                className={`overflow-hidden transition-all duration-300 ${
-                  expandedMobileMenu === navItem.id ? 'h-[220px]' : 'h-0'
+                className={`overflow-hidden transition-all duration-300 ease-in-out ${
+                  expandedMobileMenu === navItem.id
+                    ? (MOBILE_DROPDOWN_HEIGHT[navItem.id] ?? 'h-0')
+                    : 'h-0'
                 }`}
               >
                 {navItem.children?.map((child) =>
