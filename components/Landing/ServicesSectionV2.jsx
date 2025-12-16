@@ -1,5 +1,6 @@
 'use client';
 import { useState, useEffect } from 'react';
+import { useRouter } from 'next/navigation';
 
 const ServicesSection = () => {
   const [isMounted, setIsMounted] = useState(false);
@@ -7,6 +8,8 @@ const ServicesSection = () => {
   useEffect(() => {
     setIsMounted(true);
   }, []);
+
+  const router = useRouter();
 
   const tabs = [
     {
@@ -55,6 +58,15 @@ const ServicesSection = () => {
   const prevSlide = () =>
     setIndex((prev) => (prev - 1 + slides.length) % slides.length);
 
+  // Get proper z-index value
+  const getZIndex = (tabId, idx) => {
+    if (tabId === selectedTab.id) {
+      return 40; // Active tab always on top
+    }
+    // reverse order
+    return 30 - idx * 10;
+  };
+
   return (
     <section className="bg-[#0c142d] py-10 sm:py-12 lg:py-16 px-4 sm:px-6 lg:px-8 rounded mb-10 container-padding">
       <div className="mx-auto">
@@ -80,11 +92,12 @@ const ServicesSection = () => {
                 onClick={() => setSelectedTab(tab)}
                 className={`relative px-6 py-3 text-sm sm:text-base font-semibold uppercase transition-all duration-250 flex-shrink-0 ${
                   tab.id === selectedTab.id
-                    ? 'text-[#232223] z-30'
-                    : 'text-gray-400 z-20 hover:text-gray-300'
+                    ? 'text-[#232223]'
+                    : 'text-gray-400 hover:text-gray-300'
                 }`}
                 style={{
                   marginRight: idx < tabs.length - 1 ? '46px' : '0',
+                  zIndex: getZIndex(tab.id, idx),
                 }}
               >
                 {/* Tab Background - Base */}
@@ -100,23 +113,9 @@ const ServicesSection = () => {
                   }}
                 />
 
-                {/* Right Skew */}
+                {/* Left Skew  */}
                 <span
-                  className={`absolute top-0 h-full w-11 transition-all duration-250 ${
-                    tab.id === selectedTab.id ? 'bg-[#FFF4E4]' : 'bg-[#FCFCFC] '
-                  }`}
-                  style={{
-                    right: '-24px',
-                    transform: 'skew(30deg, 0deg)',
-                    boxShadow:
-                      'rgba(0,0,0,0.1) 3px 2px 5px, inset rgba(255,255,255,0.09) -1px 0',
-                    borderTopRightRadius: '6px',
-                  }}
-                />
-
-                {/* Left Skew */}
-                <span
-                  className={`absolute top-0 h-full w-11 transition-all duration-250 ${
+                  className={`absolute top-0 h-full w-11 transition-all duration-250 z-10 ${
                     tab.id === selectedTab.id ? 'bg-[#FFF4E4]' : 'bg-[#FCFCFC]'
                   }`}
                   style={{
@@ -128,8 +127,22 @@ const ServicesSection = () => {
                   }}
                 />
 
+                {/* Right Skew */}
+                <span
+                  className={`absolute top-0 h-full w-11 transition-all duration-250 z-20 ${
+                    tab.id === selectedTab.id ? 'bg-[#FFF4E4]' : 'bg-[#FCFCFC] '
+                  }`}
+                  style={{
+                    right: '-24px',
+                    transform: 'skew(30deg, 0deg)',
+                    boxShadow:
+                      'rgba(0,0,0,0.1) 3px 2px 5px, inset rgba(255,255,255,0.09) -1px 0',
+                    borderTopRightRadius: '6px',
+                  }}
+                />
+
                 {/* Tab Text */}
-                <span className="relative z-10">{tab.title}</span>
+                <span className="relative z-30">{tab.title}</span>
               </button>
             ))}
           </div>
