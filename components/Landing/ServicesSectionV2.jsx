@@ -2,6 +2,12 @@
 import { useState, useEffect } from 'react';
 
 const ServicesSection = () => {
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
   const tabs = [
     {
       id: 1,
@@ -37,6 +43,7 @@ const ServicesSection = () => {
 
   const [selectedTab, setSelectedTab] = useState(tabs[0]);
   const [index, setIndex] = useState(0);
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
   useEffect(() => {
     setIndex(0);
@@ -65,8 +72,8 @@ const ServicesSection = () => {
 
         {/* Tabs Container */}
         <div className="relative">
-          {/* Tabs */}
-          <div className="flex justify-start gap-0 mb-0 pl-[37px] overflow-x-auto">
+          {/* Desktop Tabs */}
+          <div className="hidden md:flex justify-start gap-0 mb-0 pl-[37px] overflow-x-auto">
             {tabs.map((tab, idx) => (
               <button
                 key={tab.id}
@@ -127,8 +134,61 @@ const ServicesSection = () => {
             ))}
           </div>
 
-          {/* Bottom Border */}
-          {/* <div className="w-full h-1 bg-[#FFF4E4]" /> */}
+          {/* Mobile Dropdown */}
+          <div className="md:hidden mb-0 relative">
+            <div className="relative inline-block w-full max-w-[280px]">
+              <div
+                className="absolute inset-0 bg-[#FFF4E4] text-[#232223] pointer-events-none"
+                style={{
+                  clipPath:
+                    'polygon(0 0, calc(100% - 30px) 0, 100% 100%, 0 100%)',
+                }}
+              />
+              <button
+                onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+                className="relative w-full text-left px-6 py-4 text-[#232223] font-medium text-base z-10 flex items-center justify-between"
+              >
+                <span>{selectedTab.title}</span>
+                <svg
+                  className={`w-5 h-5 transition-transform ${
+                    isDropdownOpen ? 'rotate-180' : ''
+                  }`}
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M19 9l-7 7-7-7"
+                  />
+                </svg>
+              </button>
+
+              {/* Dropdown Menu */}
+              {isDropdownOpen && (
+                <div className="absolute top-full left-0 w-full bg-white rounded shadow-lg overflow-hidden z-50 mt-1">
+                  {tabs.map((tab) => (
+                    <button
+                      key={tab.id}
+                      onClick={() => {
+                        setSelectedTab(tab);
+                        setIsDropdownOpen(false);
+                      }}
+                      className={`w-full text-left px-6 py-3 text-base transition-colors ${
+                        tab.id === selectedTab.id
+                          ? 'bg-[#0c142d] text-white'
+                          : 'bg-white text-black hover:bg-gray-100'
+                      }`}
+                    >
+                      {tab.title}
+                    </button>
+                  ))}
+                </div>
+              )}
+            </div>
+          </div>
 
           {/* Tab Content */}
           <div className="bg-[#FFF4E4] text-gray-800 p-6 sm:p-8 lg:p-10 xl:p-12 transition-all duration-300 ease-in-out rounded-[4px] -mt-1">
@@ -141,14 +201,12 @@ const ServicesSection = () => {
               </p>
 
               <div className="flex flex-col md:flex-row gap-6 items-center justify-between">
-                <div>
-                  <button
-                    className="btn-yellow hover:scale-101"
-                    onClick={() => router.push('/services')}
-                  >
-                    Learn More
-                  </button>
-                </div>
+                <button
+                  className="btn-yellow hover:scale-101"
+                  onClick={() => router.push('/services')}
+                >
+                  Learn More
+                </button>
 
                 <div className="w-full md:w-auto relative flex items-center gap-2 sm:gap-4 md:ml-auto">
                   <button
