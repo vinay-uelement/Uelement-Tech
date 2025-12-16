@@ -66,7 +66,7 @@ const ServicesSection = () => {
         {/* Tabs Container */}
         <div className="relative">
           {/* Tabs */}
-          <div className="flex justify-start gap-0 mb-0 pl-12 overflow-x-auto">
+          <div className="flex justify-start gap-0 mb-0 pl-[37px] overflow-x-auto">
             {tabs.map((tab, idx) => (
               <button
                 key={tab.id}
@@ -103,6 +103,7 @@ const ServicesSection = () => {
                     transform: 'skew(30deg, 0deg)',
                     boxShadow:
                       'rgba(0,0,0,0.1) 3px 2px 5px, inset rgba(255,255,255,0.09) -1px 0',
+                    borderTopRightRadius: '6px',
                   }}
                 />
 
@@ -116,6 +117,7 @@ const ServicesSection = () => {
                     transform: 'skew(-30deg, 0deg)',
                     boxShadow:
                       'rgba(0,0,0,0.1) -3px 2px 5px, inset rgba(255,255,255,0.09) 1px 0',
+                    borderTopLeftRadius: '6px',
                   }}
                 />
 
@@ -126,10 +128,10 @@ const ServicesSection = () => {
           </div>
 
           {/* Bottom Border */}
-          <div className="w-full h-1 bg-[#FFF4E4]" />
+          {/* <div className="w-full h-1 bg-[#FFF4E4]" /> */}
 
           {/* Tab Content */}
-          <div className="bg-[#FFF4E4] text-gray-800 p-6 sm:p-8 lg:p-10 xl:p-12 transition-all duration-300 ease-in-out">
+          <div className="bg-[#FFF4E4] text-gray-800 p-6 sm:p-8 lg:p-10 xl:p-12 transition-all duration-300 ease-in-out rounded-[4px] -mt-1">
             <div className="animate-fade-in">
               <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4 sm:mb-6">
                 {selectedTab.title}
