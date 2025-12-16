@@ -160,7 +160,7 @@ const CyberSecurity = () => {
             </div>
 
             {/* Main Heading */}
-            <h1 className="fl1 !text-white md:!text-[36px] xl:!text-[42px] mb-6">
+            <h1 className="fl1-sep !text-white mb-6">
               Secure Your Digital Perimeter and Supply Chain.
             </h1>
 
@@ -222,9 +222,7 @@ const CyberSecurity = () => {
       {/* Key Features Section */}
       <section className="bg-[#fcfcfc] py-[var(--section-block-padding)]">
         <div className="container-padding">
-          <h2 className="fl1 !text-white text-left mb-8 md:mb-12">
-            Key Features
-          </h2>
+          <h2 className="fl1 text-left mb-8 md:mb-12">Key Features</h2>
 
           {/* Desktop Grid - 4 columns */}
           <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -270,9 +268,7 @@ const CyberSecurity = () => {
       {/* Other Services Section */}
       <section className="bg-[#fcfcfc] py-[var(--section-block-padding)]">
         <div className="container-padding">
-          <h2 className="fl1 !text-white text-left mb-8 md:mb-12">
-            Other Services
-          </h2>
+          <h2 className="fl1 text-left mb-8 md:mb-12">Other Services</h2>
 
           <GlobalSlider data={otherServices} />
         </div>

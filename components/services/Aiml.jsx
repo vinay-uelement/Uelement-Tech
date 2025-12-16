@@ -227,7 +227,7 @@ const Aiml = () => {
       {/* Key Features Section */}
       <section className="bg-[#fcfcfc] py-[var(--section-block-padding)]">
         <div className="container-padding">
-          <h2 className="fl1 !text-white text-left mb-8 md:mb-12">
+          <h2 className="fl1 text-left mb-8 md:mb-12">
             Key Features
           </h2>
 
@@ -275,7 +275,7 @@ const Aiml = () => {
       {/* Other Services Section */}
       <section className="bg-[#fcfcfc] py-[var(--section-block-padding)]">
         <div className="container-padding">
-          <h2 className="fl1 !text-white text-left mb-8 md:mb-12">
+          <h2 className="fl1 text-left mb-8 md:mb-12">
             Other Services
           </h2>
 
