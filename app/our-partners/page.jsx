@@ -11,7 +11,7 @@ export const metadata = {
     siteName: 'UElement',
     images: [
       {
-        url: '/images/landing/si-partnership.jpg',
+        url: 'https://uelement.in/images/landing/si-partnership.jpg',
         width: 1200,
         height: 630,
         alt: 'UElement Partners',
@@ -24,7 +24,7 @@ export const metadata = {
     card: 'summary_large_image',
     title: 'Our Partners | UElement Technologies',
     description: 'Discover the strategic partners we collaborate with to deliver exceptional value to our clients.',
-    images: ['/images/landing/si-partnership.jpg'],
+    images: ['https://uelement.in/images/landing/si-partnership.jpg'],
   },
 };
 

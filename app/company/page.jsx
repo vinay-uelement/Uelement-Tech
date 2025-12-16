@@ -11,7 +11,7 @@ export const metadata = {
     siteName: 'UElement',
     images: [
       {
-        url: '/images/company/behind-idea.jpg',
+        url: 'https://uelement.in/images/company/behind-idea.jpg',
         width: 1200,
         height: 630,
         alt: 'UElement Company',
@@ -24,7 +24,7 @@ export const metadata = {
     card: 'summary_large_image',
     title: 'Company | UElement Technologies',
     description: 'Learn more about UElement, our mission, vision, and the team driving digital innovation.',
-    images: ['/images/company/behind-idea.jpg'],
+    images: ['https://uelement.in/images/company/behind-idea.jpg'],
   },
 };
 

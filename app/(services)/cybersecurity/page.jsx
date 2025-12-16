@@ -11,7 +11,7 @@ export const metadata = {
     siteName: 'UElement',
     images: [
       {
-        url: '/images/service/cybersecurity/cybersecurityHero.png',
+        url: 'https://uelement.in/images/service/cybersecurity/cybersecurityHero.png',
         width: 1200,
         height: 630,
         alt: 'UElement Cyber Security',
@@ -24,7 +24,7 @@ export const metadata = {
     card: 'summary_large_image',
     title: 'Cyber Security | UElement Technologies',
     description: 'Explore our wide range of services in Cyber Security.',
-    images: ['/images/service/cybersecurity/cybersecurityHero.png'],
+    images: ['https://uelement.in/images/service/cybersecurity/cybersecurityHero.png'],
   },
 };
 

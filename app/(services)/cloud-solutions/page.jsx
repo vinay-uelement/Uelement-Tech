@@ -11,7 +11,7 @@ export const metadata = {
     siteName: 'UElement',
     images: [
       {
-        url: '/images/service/cloud/cloudhero.png',
+        url: 'https://uelement.in/images/service/cloud/cloudhero.png',
         width: 1200,
         height: 630,
         alt: 'UElement Cloud Solutions',
@@ -24,7 +24,7 @@ export const metadata = {
     card: 'summary_large_image',
     title: 'Cloud Solutions | UElement Technologies',
     description: 'Explore our wide range of services in Cloud Solutions.',
-    images: ['/images/service/cloud/cloudhero.png'],
+    images: ['https://uelement.in/images/service/cloud/cloudhero.png'],
   },
 };
 

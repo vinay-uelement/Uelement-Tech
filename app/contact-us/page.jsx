@@ -12,7 +12,7 @@ export const metadata = {
     siteName: 'UElement',
     images: [
       {
-        url: '/UElement_Profile.png',
+        url: 'https://uelement.in/UElement_Profile.png',
         width: 1200,
         height: 630,
         alt: 'Contact UElement',
@@ -25,7 +25,7 @@ export const metadata = {
     card: 'summary_large_image',
     title: 'Contact Us | UElement Technologies',
     description: 'Get in touch with UElement for your digital transformation needs. We are here to help.',
-    images: ['/UElement_Profile.png'],
+    images: ['https://uelement.in/UElement_Profile.png'],
   },
 };
 

@@ -11,7 +11,7 @@ export const metadata = {
     siteName: 'UElement',
     images: [
       {
-        url: '/images/service/future-tech/futureTechHero.png',
+        url: 'https://uelement.in/images/service/future-tech/futureTechHero.png',
         width: 1200,
         height: 630,
         alt: 'UElement Future Tech',
@@ -24,7 +24,7 @@ export const metadata = {
     card: 'summary_large_image',
     title: 'Future Tech | UElement Technologies',
     description: 'Explore our wide range of services in Future Tech.',
-    images: ['/images/service/future-tech/futureTechHero.png'],
+    images: ['https://uelement.in/images/service/future-tech/futureTechHero.png'],
   },
 };
 

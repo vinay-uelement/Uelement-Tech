@@ -11,7 +11,7 @@ export const metadata = {
     siteName: 'UElement',
     images: [
       {
-        url: '/images/landing/ue92-banner.jpg',
+        url: 'https://uelement.in/images/landing/ue92-banner.jpg',
         width: 1200,
         height: 630,
         alt: 'UElement Home',
@@ -24,7 +24,7 @@ export const metadata = {
     card: 'summary_large_image',
     title: 'UElement Technologies',
     description: 'Delivering precision and efficiency in solving complex challenges across Cybersecurity, Cloud and AI.',
-    images: ['/images/landing/ue92-banner.jpg'],
+    images: ['https://uelement.in/images/landing/ue92-banner.jpg'],
   },
 };
 
