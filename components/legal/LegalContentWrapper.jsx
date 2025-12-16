@@ -5,6 +5,7 @@ import { useState, useEffect } from 'react';
 import { MdKeyboardArrowDown } from 'react-icons/md';
 import { legalData } from '@/utils/LegalData';
 import LegalContent from '@/components/legal/LegalContent';
+import TermsContent from '@/components/legal/TermsContent';
 import SitemapContent from '@/components/legal/SitemapContent';
 import LegalSidebar from '@/components/legal/LegalSidebar';
 
@@ -33,7 +34,7 @@ export default function LegalContentWrapper() {
       </div>
 
       {/* Mobile Menu */}
-      <div className="md:hidden my-6">
+      <div className="md:hidden mb-6">
         <button
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           className="flex items-center justify-between w-full px-4 py-3 bg-white/10 rounded border border-[#D9B24C]/30 hover:bg-white/20 transition"
@@ -62,7 +63,13 @@ export default function LegalContentWrapper() {
         <main className="col-span-12 md:col-span-9 relative">
           <div className="absolute left-0 top-0 bottom-0 w-[2px] bg-[#D9B24C] hidden md:block" />
           <div className="md:pl-10">
-            {active === 'sitemap' ? <SitemapContent /> : <LegalContent type={active} />}
+            {active === 'sitemap' ? (
+              <SitemapContent />
+            ) : active === 'terms' ? (
+              <TermsContent />
+            ) : (
+              <LegalContent type={active} />
+            )}
           </div>
         </main>
       </div>

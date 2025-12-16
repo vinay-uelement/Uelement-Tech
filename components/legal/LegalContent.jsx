@@ -8,7 +8,7 @@ export default function LegalContent({ type }) {
       {data.sections.map((section, index) => (
         <div key={index} className="space-y-10">
 
-          <h2 className="fl1-sep !text-white">
+          <h2 className="fl2 !text-white">
             {section.heading}
           </h2>
 
@@ -17,7 +17,7 @@ export default function LegalContent({ type }) {
           </p>
 
           {index !== data.sections.length - 1 && (
-                  <div className="h-px bg-gradient-to-r from-[#D9B24C] to-transparent" />
+                  <div className="h-px bg-white/50" />
 
           )}
         </div>

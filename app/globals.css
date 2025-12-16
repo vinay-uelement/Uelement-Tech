@@ -74,7 +74,7 @@
 
   :root {
     --outer-padding: 10px;
-    --container-small-padding: 80px;
+    --container-small-padding: 100px;
     --section-block-padding: 60px;
     --mobile-navbar-gap: 100px;
   }
@@ -161,7 +161,7 @@
     @apply max-w-[1600px] mx-auto w-[90%];
   }
   .container-padding {
-    @apply px-5 sm:px-10 md:px-20;
+    @apply px-5 sm:px-12 md:px-22;
   }
   .section-block-padding {
     @apply py-10 md:py-16 3xl:py-22;
