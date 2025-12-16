@@ -46,21 +46,21 @@ const PartnerSolution = () => {
       slug: 'ai-ml',
       boxes: [
         {
-          logo: '/icons/global/ion.png',
+          logo: '/icons/global/ionq.png',
           tagline: 'Managed Quantum Computing Partner',
           boxTitle: 'Solution',
           desc: 'We leverage IonQ’s unified Quantum OS and hybrid services to accelerate quantum algorithm development, optimization, and deployment across cloud, edge, and on-prem environments.',
           tags: ['Hybrid Quantum Computing', 'Enterprise Quantum Workloads'],
         },
         {
-          logo: '/icons/global/nvidia.png',
+          logo: '/icons/global/nvidia1.png',
           tagline: 'Managed AI/ML Acceleration Partner',
           boxTitle: 'Solution',
           desc: 'We leverage NVIDIA’s AI Enterprise platform for accelerated model training, inference, and deployment across edge, cloud, and data center environments with GPU-optimized pipelines.',
           tags: ['AI Enterprise', 'GPU Acceleration', 'Edge AI'],
         },
         {
-          logo: '/icons/global/tsecond.png',
+          logo: '/icons/global/tsecond1.png',
           tagline: 'Managed Data & Edge AI Partner',
           boxTitle: 'Solution',
           desc: 'We leverage TSecond’s hyperscale data and edge AI platforms to ingest, process, and analyze massive datasets securely across field, core, and cloud environments.',
@@ -74,21 +74,21 @@ const PartnerSolution = () => {
       title: 'Cloud Solution',
       boxes: [
         {
-          logo: '/icons/global/oracle.png',
+          logo: '/icons/global/oracle2.png',
           tagline: 'Managed Enterprise Cloud Partner',
           boxTitle: 'Solution',
           desc: 'We leverage Oracle Cloud Infrastructure (OCI) for high-performance databases, autonomous operations, and hybrid cloud deployments with built-in security and cost governance.',
           tags: ['OCI', 'Managed Databases', 'Hybrid Cloud'],
         },
         {
-          logo: '/icons/global/aws.svg',
+          logo: '/icons/global/aws2.png',
           tagline: 'Managed Cloud Infrastructure Partner',
           boxTitle: 'Solution',
           desc: 'We leverage AWS’s unified cloud platform for scalable infrastructure, serverless computing, and hybrid cloud orchestration across global regions.',
           tags: ['Multi-Cloud', 'Hybrid Cloud', 'Managed AWS'],
         },
         {
-          logo: '/icons/global/gc.png',
+          logo: '/icons/global/gcs.png',
           tagline: 'Managed Cloud Native Partner',
           boxTitle: 'Solution',
           desc: 'We leverage Google Cloud’s cloud-native platform for Kubernetes-based applications, AI/ML acceleration, and hybrid management with zero-trust security.',
@@ -260,7 +260,7 @@ const PartnerSolution = () => {
                     className="flex-1 min-w-[280px] max-w-[450px] white-ribbon-border bg-secondary-200 py-10 pl-14 pr-6 rounded-[10px] shadow-[3px_0px_3px_1px_rgba(0,0,0,0.25)]"
                   >
                     <img src={item.logo} className="mb-3 sm:h-6 2xl:h-8" alt="logo" />
-                    <p className="fl3 my-4">{item.tagline}</p>
+                    <p className="fl3 my-4 sm:min-h-[35px] 3xl:min-h-[20px]">{item.tagline}</p>
                     <h6 className="fl1 md:!text-[18px] text-[#1C1C1C] mb-1">
                       {item.boxTitle}
                     </h6>

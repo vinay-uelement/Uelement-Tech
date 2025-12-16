@@ -1,24 +1,31 @@
 const TrustedPartnerShip = () => {
   const row1 = [
-    // "/icons/global/hashicorp.svg",
-    // "/icons/global/redhat.svg",
-    "/icons/global/paloalto.svg",
-    "/icons/global/wiz.svg",
-    // "/icons/global/hashicorp.svg",
+    '/icons/global/microsoft.png',
+    '/icons/global/redhat.svg',
+    '/icons/global/paloalto.svg',
+    '/icons/global/wiz.svg',
+    '/icons/global/cyberark.png',
   ];
   const row2 = [
-    "/icons/global/hashicorp.svg",
-    "/icons/global/redhat.svg",
-    // "/icons/global/paloalto.svg",
-    // "/icons/global/wiz.svg",
+    '/icons/global/hashicorp.svg',
+    '/icons/global/oracle2.png',
+    '/icons/global/digital.png',
+    '/icons/global/aws2.png',
+    '/icons/global/gcs.png',
   ];
 
   const row3 = [
-    "/icons/global/hashicorp.svg",
-    "/icons/global/redhat.svg",
-    "/icons/global/paloalto.svg",
-    "/icons/global/wiz.svg",
-  ]
+    '/icons/global/hashicorp.svg',
+    '/icons/global/redhat.svg',
+    '/icons/global/paloalto.svg',
+    '/icons/global/wiz.svg',
+    '/icons/global/digital.png',
+    '/icons/global/aws2.png',
+    '/icons/global/gcs.png',
+    '/icons/global/cyberark.png',
+    '/icons/global/microsoft.png',
+    '/icons/global/oracle.png',
+  ];
 
   return (
     <div className="bg-primary-blue py-[var(--section-block-padding)] mb-8 md:mb-16">
@@ -30,7 +37,8 @@ const TrustedPartnerShip = () => {
               Focus on Integration and Expertise
             </h4>
             <p className="mx-auto fl3 text-14">
-              A network of $15+$ strategic alliances ensuring seamless technology synergy across Cloud, AI, and Security.
+              A network of $15+$ strategic alliances ensuring seamless
+              technology synergy across Cloud, AI, and Security.
             </p>
           </div>
           <div className="partners hidden md:block">
