@@ -6,16 +6,16 @@ export const metadata = {
   title: 'Services | UElement',
   description: 'Explore our wide range of services including web development, consulting, and digital strategy.',
   openGraph: {
-    title: 'Services | U-Element',
+    title: 'Services | UElement',
     description: 'Explore our wide range of services including web development, consulting, and digital strategy.',
     url: 'https://uelement.in/services',
-    siteName: 'U-Element',
+    siteName: 'UElement',
     images: [
       {
         url: '/images/service/service-one.jpg',
         width: 1200,
         height: 630,
-        alt: 'U-Element Services',
+        alt: 'UElement Services',
       },
     ],
     locale: 'en_US',
@@ -23,7 +23,7 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Services | U-Element',
+    title: 'Services | UElement',
     description: 'Explore our wide range of services including web development, consulting, and digital strategy.',
     images: ['/images/service/service-one.jpg'],
   },

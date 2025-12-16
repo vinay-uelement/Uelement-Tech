@@ -4,7 +4,7 @@ import PartnerSolution from '../OurPartners/PartnerSolution';
 
 const OurPartners = () => {
   return (
-    <div className="container-outer">
+    <div>
       <PartnersHero />
       <div className="container-outer">
         <PartnerSolution />

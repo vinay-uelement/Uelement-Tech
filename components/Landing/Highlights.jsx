@@ -1,6 +1,6 @@
 'use client';
 
-import CompanyHighlightSlider from "../slider/CompanyHighlightSlider";
+import CompanyHighlightSlider from "../Slider/CompanyHighlightSlider";
 
 export default function Highlight() {
 
@@ -58,7 +58,7 @@ export default function Highlight() {
         <h3 className=" flex items-baseline gap-1 mb-6 px-2">
           <span className="text-[34px] font-reddit-sans font-bold">U</span>
           <sup className="text-[19px] font-reddit-sans font-bold">92</sup>
-          <span className="fl1-sep">Highlights</span>
+          <span className="fl-main">Highlights</span>
         </h3>
 
         <CompanyHighlightSlider data={sliderData} />

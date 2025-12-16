@@ -6,26 +6,26 @@ import { useState } from 'react';
 const bullet = [
   {
     id: 1,
-    desc: "Uptime for cloud infrastructure",
-    number: "99.9%",
+    desc: 'Uptime for cloud infrastructure',
+    number: '99.9%',
   },
   {
     id: 2,
-    desc: "Reduction in security incidents",
-    number: "85%",
+    desc: 'Reduction in security incidents',
+    number: '85%',
   },
   {
     id: 3,
-    desc: "Enterprise Client Worldwide",
-    number: "24/7",
+    desc: 'Enterprise Client Worldwide',
+    number: '24/7',
   },
 ];
 
 const EmpoweringInnovation = () => {
   const slides = [
-    'Architecting and Optimizing perfect Cloud Solutions.',
-    'Empowering Security with Next-Gen Cyber Intelligence.',
-    'Scaling AI-driven Innovation for Smarter Enterprises.',
+    'Engineering Quantum-Driven Digital Synapses.',
+    'Digital Mavericks at Cloud, Cyber, and AI Intersections.',
+    `Building Resilient Enterprises for Tomorrow's Challenges.`,
   ];
 
   const [index, setIndex] = useState(0);
@@ -35,46 +35,56 @@ const EmpoweringInnovation = () => {
     setIndex((prev) => (prev - 1 + slides.length) % slides.length);
 
   return (
-    <div className="mt-[var(--outer-padding)] rounded-[8px]  mt-[100px] lg:h-screen h-auto relative flex flex-col lg:flex-row items-center bg-primary-blue">
-      <div className="container-padding w-full flex flex-col lg:flex-row gap-10 justify-between  mt-[var(--mobile-navbar-gap)] lg:my-0">
+    <div className="lg:h-screen h-auto relative flex flex-col lg:flex-row items-center bg-primary-blue">
+      <div className="container-padding w-full flex flex-col lg:flex-row gap-10 justify-between mt-[var(--mobile-navbar-gap)] lg:my-0">
         {/* Left: Text Content */}
-        <div className="text-white flex-1">
-          <h3 className="title text-white leading-[1.4] !font-medium md:w-[80%] w-full">
+        <div className="text-white flex-1 flex flex-col justify-between">
+          <div>
+            <div className="fl3 !text-[#ffffff] md:!text-[24px]">
+              <span className="text-[#9B7025] pr-2 font-bold">/</span>About Us
+            </div>
+            <div className="mb-12 fl3 !text-[#9E9E9E] ">
+              Protecting what matters across every cloud.
+            </div>
+          </div>
+          <h3 className="text-20 md:text-22 xl:text-[35px]  mb-4 md:mb-6 3xl:mb-8 text-[#232223] tracking-[0.03em] !text-white leading-[1.2] !font-medium xl:w-[80%] w-full">
             Empowering Innovation at the Intersection of Technology and Strategy
           </h3>
-          <p className="font-light text-white md:w-[80%] w-full">
-            At U-Element, we're dedicated to empowering organizations with
-            intelligent, secure, and scalable digital solutions. Since our
-            founding, we've combined expertise in AI, cybersecurity, cloud
-            computing, and digital transformation to help businesses thrive in
-            an ever-evolving technological landscape.
+          <p className="fl3 !text-white xl:w-[80%] w-full">
+            Founded in 2024, UElement is a trusted full-stack partner in
+            Cybersecurity, Cloud, and AI. We deliver integrated solutions that
+            simplify complexity and shape the future of Quantum Computing.
           </p>
-          <div className="flex justify-center md:justify-start flex-wrap gap-4 xl:gap-8 mt-12">
-              {bullet.map((point) => (
-                <div
-                  key={point.id}
-                  className="w-[120px] xl:w-[140px] md:max-w-[160px] text-center border-[0.03px] border-[#d4d4d420] rounded-[4px] bg-[#D4D4D41A] backdrop-blur-2xl px-1 py-6 text-white"
-                >
-                  <p className="font-bold text-20 xl:text-30">{point.number}</p>
-                  <p className="font-light text-12 xl:text-16">{point.desc}</p>
-                </div>
-              ))}
-            </div>
+          <div className="flex justify-start flex-wrap gap-2 xl:gap-8 mt-12">
+            {bullet.map((point) => (
+              <div
+                key={point.id}
+                className="w-[120px] xl:w-[140px] md:max-w-[160px] text-center border-[0.03px] border-[#d4d4d420] rounded-[4px] bg-[#D4D4D41A] backdrop-blur-2xl px-1 py-6 text-white"
+              >
+                <p className="font-reddit-sans font-bold text-16 xl:text-22">
+                  {point.number}
+                </p>
+                <p className="font-light font-reddit-sans text-12 xl:text-16">
+                  {point.desc}
+                </p>
+              </div>
+            ))}
+          </div>
         </div>
         {/* Right: Image */}
-        <div className="flex-1">
-          <div className="rounded-xl overflow-hidden shadow-lg w-full">
+        <div className="flex-1 my-auto">
+          <div className="rounded-[4px] shadow-lg w-full">
             <img
-              src="/images/service/service-hero.svg"
+              src="/images/service/company-hero2.png"
               alt="Team meeting"
-              className="w-full h-auto object-cover"
+              className="w-full h-auto object-cover rounded-[4px]"
             />
           </div>
         </div>
       </div>
 
       {/* Carousel/Slider Bar - bottom absolute */}
-      <div className="mt-10 lg:mt-0 mb-[var(--mobile-navbar-gap)] lg:mb-0 flex items-center lg:absolute lg:left-1/2 lg:-translate-x-1/2 lg:bottom-12 w-full lg:w-2/3  bg-[#D4D4D41A] backdrop-blur-2xl rounded-[40px] px-1 py-1 shadow-lg z-50">
+      <div className="my-10 lg:mt-0 lg:mb-0 flex items-center lg:absolute lg:left-1/2 lg:-translate-x-1/2 md:bottom-6 xl:bottom-12 w-[90%] md:w-2/3 bg-[#D4D4D41A] backdrop-blur-2xl px-1 rounded-[40px] py-1 shadow-lg z-50">
         <button
           onClick={prevSlide}
           className="size-11 bg-white rounded-full text-black text-2xl flex items-center justify-center hover:bg-gray-200 transition"
@@ -82,8 +92,8 @@ const EmpoweringInnovation = () => {
         >
           {ReactIcons.leftChev}
         </button>
-        <div className="flex-1 flex items-center justify-center min-h-[30px]">
-          <span className="font-noto-sans italic text-14 md:text-lg text-white text-center transition-all duration-500">
+        <div className="flex-1 flex items-center justify-center min-h-[30px] px-2">
+          <span className="fl4 text-white text-center transition-all duration-500">
             {slides[index]}
           </span>
         </div>

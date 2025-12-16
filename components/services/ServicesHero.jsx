@@ -5,9 +5,9 @@ import { useState } from 'react';
 
 const ServicesHero = () => {
   const slides = [
-    'Architecting and Optimizing perfect Cloud Solutions.',
-    'Empowering Security with Next-Gen Cyber Intelligence.',
-    'Scaling AI-driven Innovation for Smarter Enterprises.',
+    'Architecting Enterprise AI/ML Excellence.',
+    'Securing Hybrid Clouds with Zero Trust.',
+    'Modernizing Platforms for Digital Agility.',
   ];
 
   const [index, setIndex] = useState(0);
@@ -17,12 +17,12 @@ const ServicesHero = () => {
     setIndex((prev) => (prev - 1 + slides.length) % slides.length);
 
   return (
-    <div className="mt-[var(--outer-padding)] rounded-[8px] lg:h-screen h-auto relative flex lg:flex-row flex-col items-center bg-[#0C142D]">
+    <div className="lg:h-screen h-auto relative flex lg:flex-row flex-col items-center bg-[#0C142D]">
       <div className="container-padding w-full flex flex-col lg:flex-row items-stretch gap-10 justify-between mt-[var(--mobile-navbar-gap)] lg:my-0">
         {/* Left: Text Content */}
-        <div className="text-white flex-1 flex flex-col justify-between">
+        <div className="text-white flex-1 flex flex-col">
           <div>
-            <div className="fl3 !text-[#ffffff] md:!text-[20px]">
+            <div className="fl3 !text-[#ffffff] md:!text-[24px]">
               <span className="text-[#9B7025] pr-2 font-bold">/</span>Our Services
             </div>
             <div className="mb-12 fl3 !text-[#9E9E9E] ">
@@ -48,11 +48,11 @@ const ServicesHero = () => {
         </div>
         {/* Right: Image */}
         <div className="flex-1">
-          <div className="rounded-[8px] overflow-hidden w-full">
+          <div className=" overflow-hidden w-full">
             <img
-              src="/images/service/service-hero.svg"
+              src="/images/service/services-hero2.png"
               alt="Team meeting"
-              className="w-full h-auto object-cover"
+              className="w-full h-auto rounded-[4px] object-cover"
             />
           </div>
         </div>
@@ -67,7 +67,7 @@ const ServicesHero = () => {
         >
           {ReactIcons.leftChev}
         </button>
-        <div className="flex-1 flex items-start justify-start min-h-[30px] md:ml-15 mx-5 md:mx-0">
+        <div className="flex-1 flex items-center justify-center min-h-[30px] px-2">
           <span className="fl4 text-center transition-all duration-500">
             {slides[index]}
           </span>

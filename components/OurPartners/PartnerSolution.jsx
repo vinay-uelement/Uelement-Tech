@@ -22,79 +22,81 @@ const PartnerSolution = () => {
       title: 'Cybersecurity',
       boxes: [
         {
-          logo: '/icons/global/paloalto.svg',
-          tagline: 'Value Added Reseller',
+          logo: '/icons/global/sentinel.png',
+          tagline: 'Managed Endpoint Security Partner',
           boxTitle: 'Solution',
-          desc: "We help businesses integrate Palo Alto's advanced firewalls into their infrastructure to enable intelligent traffic control, threat prevention, and deep packet inspection for robust network security.",
-          tags: ['Red Hat AI', 'Red Hat enterprice linux'],
-        },
-        {
-          logo: '/icons/global/aws.svg',
-          tagline: 'Value Added Reseller',
-          boxTitle: 'Solution',
-          desc: "We help businesses integrate Palo Alto's advanced firewalls into their infrastructure to enable intelligent traffic control, threat prevention, and deep packet inspection for robust network security.",
-          tags: ['Red Hat AI', 'Red Hat enterprice linux'],
+          desc: 'We leverage SentinelOne’s unified Singularity XDR platform for integrated prevention, detection, and response across endpoint, cloud, and identity. Our managed services ensure robust, AI-powered protection against advanced threats.',
+          tags: ['Managed Endpoint Security', 'Cloud Security Services'],
         },
         {
           logo: '/icons/global/paloalto.svg',
-          tagline: 'Value Added Reseller',
+          tagline: 'Certified Cloud Security Integrator',
           boxTitle: 'Solution',
-          desc: "We help businesses integrate Palo Alto's advanced firewalls into their infrastructure to enable intelligent traffic control, threat prevention, and deep packet inspection for robust network security.",
-          tags: ['Red Hat AI', 'Red Hat enterprice linux'],
+          desc: 'As a certified partner, we implement and manage Palo Alto Networks solutions including Prisma Cloud, Network Security, and Cortex XDR/XSOAR to ensure unified threat management and enterprise-wide compliance.',
+          tags: ['Prisma Cloud', 'Network Security', 'Cortex XDR/XSOAR'],
+        },
+        {
+          logo: '/icons/global/wiz.svg',
+          tagline: 'Cloud Risk Visibility & Remediation Partner',
+          boxTitle: 'Solution',
+          desc: 'We integrate and manage Wiz’s agentless platform to provide deep visibility into cloud-native environments, ensuring continuous security and compliance across VMs, containers, and serverless architectures.',
+          tags: ['CNAPP', 'Cloud Risk Management'],
         },
       ],
     },
+
     {
       id: 2,
       title: 'AI & ML',
       boxes: [
         {
-          logo: '/icons/global/paloalto.svg',
-          tagline: 'Value Added Reseller',
+          logo: '/icons/global/ion.png',
+          tagline: 'Managed Quantum Computing Partner',
           boxTitle: 'Solution',
-          desc: "We help businesses integrate Palo Alto's advanced firewalls into their infrastructure to enable intelligent traffic control, threat prevention, and deep packet inspection for robust network security.",
-          tags: ['Red Hat AI', 'Red Hat enterprice linux'],
+          desc: 'We leverage IonQ’s unified Quantum OS and hybrid services to accelerate quantum algorithm development, optimization, and deployment across cloud, edge, and on-prem environments.',
+          tags: ['Hybrid Quantum Computing', 'Enterprise Quantum Workloads'],
         },
         {
-          logo: '/icons/global/aws.svg',
-          tagline: 'Value Added Reseller',
+          logo: '/icons/global/nvidia.png',
+          tagline: 'Managed AI/ML Acceleration Partner',
           boxTitle: 'Solution',
-          desc: "We help businesses integrate Palo Alto's advanced firewalls into their infrastructure to enable intelligent traffic control, threat prevention, and deep packet inspection for robust network security.",
-          tags: ['Red Hat AI', 'Red Hat enterprice linux'],
+          desc: 'We leverage NVIDIA’s AI Enterprise platform for accelerated model training, inference, and deployment across edge, cloud, and data center environments with GPU-optimized pipelines.',
+          tags: ['AI Enterprise', 'GPU Acceleration', 'Edge AI'],
         },
         {
-          logo: '/icons/global/paloalto.svg',
-          tagline: 'Value Added Reseller',
+          logo: '/icons/global/tsecond.png',
+          tagline: 'Managed Data & Edge AI Partner',
           boxTitle: 'Solution',
-          desc: "We help businesses integrate Palo Alto's advanced firewalls into their infrastructure to enable intelligent traffic control, threat prevention, and deep packet inspection for robust network security.",
-          tags: ['Red Hat AI', 'Red Hat enterprice linux'],
+          desc: 'We leverage TSecond’s hyperscale data and edge AI platforms to ingest, process, and analyze massive datasets securely across field, core, and cloud environments.',
+          tags: ['Edge AI', 'High-Performance Data Platforms'],
         },
       ],
     },
+
     {
       id: 3,
       title: 'Cloud Solution',
       boxes: [
         {
-          logo: '/icons/global/paloalto.svg',
-          tagline: 'Value Added Reseller',
+          logo: '/icons/global/oracle.png',
+          tagline: 'Managed Enterprise Cloud Partner',
           boxTitle: 'Solution',
-          desc: "We help businesses integrate Palo Alto's advanced firewalls into their infrastructure to enable intelligent traffic control, threat prevention, and deep packet inspection for robust network security.",
-          tags: ['Red Hat AI', 'Red Hat enterprice linux'],
+          desc: 'We leverage Oracle Cloud Infrastructure (OCI) for high-performance databases, autonomous operations, and hybrid cloud deployments with built-in security and cost governance.',
+          tags: ['OCI', 'Managed Databases', 'Hybrid Cloud'],
         },
         {
           logo: '/icons/global/aws.svg',
-          tagline: 'Value Added Reseller',
+          tagline: 'Managed Cloud Infrastructure Partner',
           boxTitle: 'Solution',
-          desc: "We help businesses integrate Palo Alto's advanced firewalls into their infrastructure to enable intelligent traffic control, threat prevention, and deep packet inspection for robust network security.",
-          tags: ['Red Hat AI', 'Red Hat enterprice linux'],
+          desc: 'We leverage AWS’s unified cloud platform for scalable infrastructure, serverless computing, and hybrid cloud orchestration across global regions.',
+          tags: ['Multi-Cloud', 'Hybrid Cloud', 'Managed AWS'],
         },
         {
-          logo: '/icons/global/paloalto.svg',
-          tagline: 'Value Added Reseller',
+          logo: '/icons/global/gc.png',
+          tagline: 'Managed Cloud Native Partner',
           boxTitle: 'Solution',
-          desc: "We help businesses integrate Palo Alto's advanced firewalls into their infrastructure to enable intelligent traffic control, threat prevention, and deep packet inspection for robust network security.",
-          tags: ['Red Hat AI', 'Red Hat enterprice linux'],
+          desc: 'We leverage Google Cloud’s cloud-native platform for Kubernetes-based applications, AI/ML acceleration, and hybrid management with zero-trust security.',
+          tags: ['Cloud Native', 'GKE', 'Hybrid Services'],
         },
       ],
     },
@@ -172,30 +174,29 @@ const PartnerSolution = () => {
   return (
     <div className="bg-white py-[var(--section-block-padding)]">
       <div className="title-div text-black text-center mb-8 sm:mb-10 lg:mb-14 ">
-        <h4 className="fl1 mt-3 mb-2">
-           Focus on Ecosystem and Trust
-        </h4>
+        <h4 className="fl1 mt-3 mb-2">Focus on Ecosystem and Trust</h4>
         <p className="fl3 max-w-[750px] mx-auto">
-          Leveraging 15+ strategic alliances to deliver best-in-class, fully certified solutions.
+          Leveraging 15+ strategic alliances to deliver best-in-class, fully
+          certified solutions.
         </p>
       </div>
 
       {/* Tabs & Content */}
-      <div className="bg-white w-full overflow-hidden ">
+      <div className="bg-white w-full overflow-hidden md:px-10 px-5">
         {/* Desktop Tabs */}
-        <div className="hidden md:flex gap-0 mb-0 ">
+        <div className="hidden md:flex gap-0 mb-0">
           {tabs.map((tab) => (
             <button
               key={tab.id}
               onClick={() => setSelectedTab(tab)}
-              className={`relative px-20 py-3 md:text-26 text-14 font-noto-sans text-[#9E9E9E] rounded-tl-[10px] transition-all duration-300 ease-in-out overflow-hidden ${
+              className={`relative px-20 py-2 md:text-24 text-18 text-[#9E9E9E] rounded-tl-[10px] transition-all duration-300 ease-in-out overflow-hidden ${
                 tab.id === selectedTab.id
-                  ? 'bg-primary-blue font-noto-sans font-semibold text-white shadow-[0px_4px_5px_0px_rgba(0,0,0,0.20)]'
-                  : 'bg-[#FCFCFC] hover:bg-gray-100 border border-[#E0E0E0]'
+                  ? 'bg-primary-blue font-noto-sans font-semibold text-white shadow-[0px_4px_5px_0px_rgba(0,0,0,0.0)] font-noto-sans font-semibold'
+                  : 'bg-[#FCFCFC] hover:bg-gray-100 border border-[#E0E0E0] font-noto-sans'
               }`}
               style={{
                 clipPath:
-                  'polygon(0 0, calc(100% - 30px) 0, 100% 100%, 0 100%)',
+                  'polygon(0 0, calc(100% - 30px) 0, 100% 101%, 0 101%)',
               }}
             >
               {tab.title}
@@ -207,7 +208,7 @@ const PartnerSolution = () => {
         <div className="md:hidden mb-0 relative z-50">
           <div className="relative inline-block w-full max-w-[200px]">
             <div
-              className="absolute inset-0 bg-primary-blue pointer-events-none rounded-tl-[10px]"
+              className="absolute inset-0 bg-primary-blue pointer-events-none rounded-tl-[4px]"
               style={{
                 clipPath:
                   'polygon(0 0, calc(100% - 30px) 0, 100% 100%, 0 100%)',
@@ -228,7 +229,7 @@ const PartnerSolution = () => {
         </div>
 
         {/* Tab Content */}
-        <div className="bg-primary-blue rounded-[10px] rounded-tl-none py-10 sm:py-10 lg:py-[var(--section-block-padding)] ">
+        <div className="bg-primary-blue rounded-[4px] rounded-tl-none py-10 sm:py-10 lg:py-[var(--section-block-padding)] ">
           <div className="animate-fade-in ">
             {/* Title with underline */}
             <div className="flex justify-center mb-6 sm:mb-8 lg:mb-10">
@@ -238,22 +239,18 @@ const PartnerSolution = () => {
             </div>
 
             {/* Desktop: Flex wrap layout */}
-            <div className="hidden md:flex flex-wrap justify-center gap-6 xl:gap-10 px-4 sm:px-8">
+            <div className="hidden md:flex flex-wrap justify-center gap-6 xl:gap-10 px-4 sm:px-10">
               {selectedTab.boxes?.map((item, ind) => (
                 <div
                   key={ind}
-                  className="flex-1 min-w-[280px] max-w-[400px] white-ribbon-border bg-secondary-200 py-8 pl-14 pr-6 rounded-[18px] shadow-[3px_0px_3px_1px_rgba(0,0,0,0.25)]"
+                  className="flex-1 min-w-[280px] max-w-[450px] white-ribbon-border bg-secondary-200 py-10 pl-14 pr-6 rounded-[10px] shadow-[3px_0px_3px_1px_rgba(0,0,0,0.25)]"
                 >
                   <img src={item.logo} className="mb-1 h-10" alt="logo" />
-                  <p className="fl3 my-4">
-                    {item.tagline}
-                  </p>
+                  <p className="fl3 my-4">{item.tagline}</p>
                   <h6 className="fl1 md:!text-[18px] text-[#1C1C1C] mb-1">
                     {item.boxTitle}
                   </h6>
-                  <p className="fl3 md:!text-12 text-[#1C1C1C]">
-                    {item.desc}
-                  </p>
+                  <p className="fl3 md:!text-12 text-[#1C1C1C]">{item.desc}</p>
                   <div className="flex flex-wrap text-13 2xl:text-14 leading-[1.1] mt-6">
                     {item?.tags?.map((innerItem, innerInd) => (
                       <h6
@@ -273,7 +270,7 @@ const PartnerSolution = () => {
               <Slider {...sliderSettings}>
                 {selectedTab.boxes?.map((item, ind) => (
                   <div key={ind} className="px-2">
-                    <div className="white-ribbon-border bg-secondary-200 py-8 pl-14 pr-6 rounded-[18px] shadow-[3px_0px_3px_1px_rgba(0,0,0,0.25)]">
+                    <div className="ribbon-mobile md:white-ribbon-border bg-secondary-200 py-8 pl-14 pr-6 rounded-[4px] shadow-[3px_0px_3px_1px_rgba(0,0,0,0.25)]">
                       <img src={item.logo} className="mb-1 h-10" alt="logo" />
                       <p className="font-light text-[#1C1C1C] mb-3 text-14">
                         {item.tagline}

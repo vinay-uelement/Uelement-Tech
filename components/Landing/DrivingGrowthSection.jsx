@@ -4,41 +4,47 @@ import Slider from 'react-slick';
 import { ReactIcons } from '@/utils/ReactIcons';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
+import { useRouter } from 'next/navigation';
 
 const slides = [
   {
     id: 1,
     number: '01',
     title: 'SI Partnerships (SI)',
-    desc: 'Designing, Deploying & Delivering Next-Gen Cybersecurity, Cloud & AI Solutions together with OEM partners',
+    headline: 'Driving growth through strategic collaborations',
+    desc: 'Strategic integration and managed services leveraging 15+ global technology partners.',
+    desc1:
+      'We act as your strategic partner across the cloud ecosystem, delivering seamless platform integration, managed services, and cybersecurity advisory with compliant implementation. Leveraging global technology partnerships, we drive measurable business outcomes through co-created solutions and accelerated go-to-market strategies.',
     img: '/images/landing/si-partnership.jpg',
   },
   {
     id: 2,
     number: '02',
-    title: 'Professional Services (PS)',
-    desc: 'Accelerating digital transformation with expert consulting and seamless implementations.',
+    title: 'Professional Services',
+    headline: 'Accelerating digital transformation through expert consulting',
+    desc: 'End-to-end professional services across cloud, cybersecurity, and AI.',
+    desc1:
+      'We deliver end-to-end professional services from strategy and architecture to implementation and optimization. Our expert teams drive measurable outcomes through technology roadmaps, change management, and seamless integration of emerging capabilities.',
     img: '/images/landing/professional-services.jpg',
   },
   {
     id: 3,
     number: '03',
-    title: 'Cloud Solutions',
-    desc: 'Optimizing IT infrastructure with scalable, secure and cost-effective cloud solutions.',
+    title: 'Product Engineering',
+    headline: 'Building scalable digital products from concept to market',
+    desc: 'Design and build full-stack, multi-tenant SaaS and AI-native platforms.',
+    desc1:
+      'We engineer scalable, cloud-native digital products with full-stack capabilities, AI/ML integration, and robust backend infrastructure. From MVPs and microservices to analytics dashboards and LLM integrations, we deliver enterprise-grade platforms built to scale.',
     img: '/images/landing/managed-ser2.jpg',
   },
   {
     id: 4,
     number: '04',
-    title: 'Managed Services',
-    desc: 'Ensuring business continuity with 24/7 proactive monitoring and management.',
-    img: '/images/landing/manage-service.jpg',
-  },
-  {
-    id: 5,
-    number: '05',
-    title: 'Cloud Modernization',
-    desc: 'Modernizing workloads and enabling cloud-native scalability for enterprises.',
+    title: 'Digital Transformation',
+    headline: 'Reimagining enterprises through technology-led change',
+    desc: 'Comprehensive strategy-to-execution digital transformation programs.',
+    desc1:
+      'We orchestrate digital transformation initiatives spanning modernization, cloud migration, agile delivery, and emerging technology adoption. From legacy system refactoring to AI integration and customer experience enhancement, we deliver measurable business value.',
     img: '/images/landing/cloud-solution.jpg',
   },
 ];
@@ -46,6 +52,7 @@ const slides = [
 const DrivingGrowthSection = () => {
   const [active, setActive] = useState(0);
   const sliderRef = useRef(null);
+  const router = useRouter();
 
   const getDotSize = (dotIndex) => {
     const distance = Math.abs(active - dotIndex);
@@ -113,12 +120,10 @@ const DrivingGrowthSection = () => {
 
   return (
     <section className="container-small">
-      <div className="flex lg:items-center flex-col lg:flex-row gap-18 lg:pb-8 xl:pb-10 2xl:pb-12">
+      <div className="flex lg:items-center flex-col lg:flex-row gap-20 lg:pb-8 xl:pb-10 2xl:pb-12">
         {/* Left Side Numbers */}
         <div className="flex-1 lg:mr-[30px] md:w-[60%] w-full">
-          <span className="fl-slash block lg:hidden ">/Service Segment</span>
-
-          <div className="mb-7 xl:mb-10 flex items-center">
+          <div className="mb-7 xl:mb-10 flex items-center lg:hidden">
             <div className="circle size-[50px] min-w-[50px] xl:size-[70px] rounded-full bg-white grid place-content-center shadow-down font-bold italic text-20 xl:text-24 transition-all duration-500">
               {slides[active].number}
             </div>
@@ -133,29 +138,41 @@ const DrivingGrowthSection = () => {
               ))}
             </div>
           </div>
+          <span className="fl-slash block lg:hidden">/Service Segment</span>
 
+          <div className="mb-7 xl:mb-10 lg:flex items-center hidden">
+            <div className="circle size-[50px] min-w-[50px] xl:size-[70px] rounded-full bg-white grid place-content-center shadow-down font-bold italic text-20 xl:text-24 transition-all duration-500">
+              {slides[active].number}
+            </div>
+            <img
+              src="/icons/landing/horizontal-line.svg"
+              alt="icon"
+              className="w-[120px] sm:w-[250px] md:w-[auto]"
+            />
+            <div className="font-bold italic text-18 xl:text-24 text-[#1C1C1C80] flex items-center gap-2 md:gap-4 transition-all">
+              {orderedNumbers.slice(1).map((s) => (
+                <span key={s.id}>{s.number}</span>
+              ))}
+            </div>
+          </div>
           <span className="fl-slash hidden lg:block">/Service Segment</span>
-          <h3 className="fl1">
-            Driving growth through strategic collaborations
-          </h3>
-          <p className="fl3 lg:block">
-            SI Partnerships (SI) represents strategic alliances that help
-            organizations grow, innovate, and expand their reach. It focuses on
-            collaboration with trusted partners to drive mutual value and
-            long-term success. Through these partnerships, businesses can unlock
-            new opportunities, strengthen capabilities, and achieve shared
-            goals.
+          <h3 className="fl1">{slides[active].headline}</h3>
+          <p className="fl3 lg:block md:w-[90%] w-full text-left">
+            {slides[active].desc1}
           </p>
-          <button className="btn-blue mt-4 xl:mt-20 hidden lg:block">
+          <button
+            className="btn-blue mt-4 lg:mt-20 hidden lg:block"
+            onClick={() => router.push('/services')}
+          >
             Learn More
           </button>
         </div>
 
-        <div className="relative overflow-visible lg:w-[250px] xl:w-[450px] 2xl:w-[600px] driving-slider">
-          <div className="absolute inset-y-0 -left-4 md:-left-18 flex items-center z-20">
+        <div className="relative overflow-visible md:!w-[40%] w-full driving-slider">
+          <div className="absolute inset-y-0 -left-4 md:-left-15 flex items-center z-20">
             <div
               onClick={prevSlide}
-              className="size-[34px] text-20 lg:text-24 xl:size-[60px] rounded-full bg-[#DEDEDE] shadow-down grid place-content-center cursor-pointer transition text-white lg:text-primary-blue"
+              className="size-[26px] xl:size-[40px] text-20 lg:text-26 rounded-full bg-[#DEDEDE] shadow-down grid place-content-center cursor-pointer transition text-black lg:text-primary-blue"
             >
               <span>{ReactIcons.leftChev}</span>
             </div>
@@ -199,24 +216,22 @@ const DrivingGrowthSection = () => {
                     style={{ zIndex, position: 'relative' }}
                   >
                     <div
-                      className="relative w-[200px] h-[280px] md:w-[320px] md:h-[320px] xl:w-[360px] xl:h-[370px] 2xl:w-[360px] 2xl:h-[450px] rounded-[0px] overflow-hidden"
+                      className="relative w-[200px] h-[280px] md:w-[320px] md:h-[320px] xl:w-[360px] xl:h-[370px] 2xl:w-[360px] 2xl:h-[450px] rounded-[4px] overflow-hidden"
                       style={{
                         backgroundImage: `url(${item.img})`,
                         backgroundSize: 'cover',
                         backgroundPosition: 'center',
                       }}
                     >
-                      <div className="bg-black/65 h-full w-full p-3 relative z-10">
+                      <div className="bg-black/80 h-full w-full p-3 relative z-10">
                         <div
                           style={{ opacity: textOpacity }}
                           className="transition-opacity duration-700 h-full flex flex-col gap-8 text-center px-2 md:px-10 py-4 "
                         >
-                          <h5 className="text-20 xl:text-30 text-white mb-0 md:mb-2 font-dm-serif">
+                          <h5 className="text-14 xl:text-24 font-notos-sans font-medium text-white mb-0 md:mb-2">
                             {item.title}
                           </h5>
-                          <p className="text-12 2xl:text-20 text-white font-light mb-auto">
-                            {item.desc}
-                          </p>
+                          <p className="fl3 !text-white mb-auto">{item.desc}</p>
                         </div>
                       </div>
                     </div>
@@ -226,10 +241,10 @@ const DrivingGrowthSection = () => {
             })}
           </Slider>
 
-          <div className="absolute inset-y-0 -right-4 md:-right-18 flex items-center z-20">
+          <div className="absolute inset-y-0 -right-4 md:-right-18 xl:-right-14 flex items-center z-20">
             <div
               onClick={nextSlide}
-              className="size-[34px] text-20 lg:text-24 xl:size-[60px] rounded-full bg-[#DEDEDE] shadow-down grid place-content-center cursor-pointer transition text-white lg:text-primary-blue"
+              className="size-[26px] xl:size-[40px] text-20 lg:text-26  rounded-full bg-[#DEDEDE] shadow-down grid place-content-center cursor-pointer transition text-black lg:text-primary-blue"
             >
               <span>{ReactIcons.rightChev}</span>
             </div>

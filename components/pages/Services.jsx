@@ -6,7 +6,7 @@ import ServicesList from '../services/ServicesList';
 const Services = () => {
   return (
     <div>
-      <div className="container-outer">
+      <div>
         <ServicesHero />
       </div>
       <EnterpriseSolutions />

@@ -2,12 +2,14 @@
 import { useState, useEffect } from 'react';
 import { ReactIcons } from '@/utils/ReactIcons';
 import dynamic from 'next/dynamic';
+import { useRouter } from 'next/navigation';
 
 const Select = dynamic(() => import('react-select'), {
   ssr: false,
 });
 
 const ServicesSection = () => {
+  const router = useRouter();
   const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {
@@ -18,28 +20,44 @@ const ServicesSection = () => {
     {
       id: 1,
       title: 'Cloud Security',
-      desc: 'At U-Element, we specialize in delivering scalable and secure cloud solutions tailored to meet the unique needs of startups. Our offerings enable businesses to reduce infrastructure costs, enhance operational efficiency, and scale seamlessly as they grow. By leveraging cutting-edge technologies and industry best practices, we empower startups to innovate and compete effectively in the digital landscape.',
+      desc: 'Expertise in Multi/Hybrid-cloud, Private Cloud and Government Cloud (GCC) environments. We ensure peak efficiency via DevOps, FinOps, IaaC (Infrastructure as Code) and robust orchestration.',
+      slides: [
+        'Expert Multi/Hybrid-cloud management, migration, and modernization. We ensure peak efficiency via DevOps, FinOps, and Infrastructure as Code (IaaC).',
+        'Secure multi/hybrid-cloud environments with Zero Trust architecture, continuous threat detection, and automated compliance across private, public, and GCC clouds.',
+        'Embed security into DevOps pipelines with IaaC, FinOps governance, and orchestration to ensure efficiency without compromising protection.',
+      ],
     },
     {
       id: 2,
       title: 'AI & ML',
-      desc: 'At U-Element, we deliver cutting-edge Cybersecurity, AI Integration, Enterprise Cloud, Custom Product Development and Quantum Computing Solutions tailored to our clients needs. By leveraging advanced technologies, strategic partnerships and a commitment to excellence, we enable businesses to solve complex challenges, achieve sustainable growth and thrive in a secure digital future.',
+      desc: 'Expertise in enterprise-grade AI/ML solutions across cloud, edge and hybrid environments. We deliver intelligent automation, predictive analytics, and scalable MLOps with robust security and governance.',
+      slides: [
+        'Comprehensive AI/ML services from model development to production deployment, including EdgeAI applications, LLM integration, and real-time decision intelligence.',
+        'Specialize in industry-specific models, multimodal AI, and MLOps frameworks that drive operational efficiency, hyper-personalization, and predictive insights at enterprise scale.',
+        'Accelerate AI adoption with custom model training, federated learning, and ethical AI frameworks that ensure compliance, bias mitigation, and measurable business impact.',
+      ],
     },
     {
       id: 3,
       title: 'Cyber Security',
-      desc: 'At U-Element, we deliver cutting-edge Cybersecurity, AI Integration, Enterprise Cloud, Custom Product Development and Quantum Computing Solutions tailored to our clients needs. By leveraging advanced technologies, strategic partnerships and a commitment to excellence, we enable businesses to solve complex challenges, achieve sustainable growth and thrive in a secure digital future.',
+      desc: 'Expertise in enterprise-grade cybersecurity across multi/hybrid-cloud, private cloud, and government cloud (GCC) environments. Deliver Zero Trust protection, threat intelligence, and automated SecOps with continuous compliance and resilience.',
+      slides: [
+        'Expert multi/hybrid-cloud security management, migration, and modernization ensure peak efficiency via DevOps, FinOps, and Infrastructure as Code (IaaC).',
+        'Implement advanced threat detection, AI-powered anomaly monitoring, and post-quantum cryptography readiness to protect against evolving attack surfaces.',
+        'Embed security governance through identity threat detection, micro-segmentation, and continuous vulnerability management across the enterprise stack.',
+      ],
     },
   ];
 
   const [selectedTab, setSelectedTab] = useState(tabs[0]);
-
-  const slides = [
-    'At U-Element, we offer scalable and secure cloud solutions tailored for startups. Our services enable businesses to reduce infrastructure costs, enhance operational efficiency, and scale seamlessly as they grow.',
-    'Empowering Security with Next-Gen Cyber Intelligence to proactively detect threats, safeguard critical data, and ensure uncompromised business continuity',
-    'Scaling AI-Driven Innovation for Smarter Enterprises by integrating intelligent automation, predictive analytics, and real-time decision-making capabilities.',
-  ];
   const [index, setIndex] = useState(0);
+
+  // Reset slide index when tab changes
+  useEffect(() => {
+    setIndex(0);
+  }, [selectedTab.id]);
+
+  const slides = selectedTab.slides;
 
   const nextSlide = () => setIndex((prev) => (prev + 1) % slides.length);
   const prevSlide = () =>
@@ -71,7 +89,7 @@ const ServicesSection = () => {
     }),
     singleValue: (provided) => ({
       ...provided,
-      color: '#fff',
+      color: '#000',
       fontWeight: '500',
     }),
     option: (provided, state) => ({
@@ -82,7 +100,7 @@ const ServicesSection = () => {
     }),
     dropdownIndicator: (provided) => ({
       ...provided,
-      color: '#fff',
+      color: '#000',
       padding: '0 4px',
       margin: '0 16px 0 0',
     }),
@@ -91,9 +109,9 @@ const ServicesSection = () => {
     }),
     menu: (provided) => ({
       ...provided,
-      borderRadius: '10px',
+      borderRadius: '4px',
       overflow: 'hidden',
-      marginTop: '4px',
+      marginTop: '0px',
       zIndex: 9999,
     }),
     menuPortal: (provided) => ({
@@ -103,15 +121,15 @@ const ServicesSection = () => {
   };
 
   return (
-    <section className="bg-secondary-muted py-10 sm:py-12 lg:py-16 container-padding rounded-t-[10px] mb-10">
+    <section className="bg-primary-blue py-10 sm:py-12 lg:py-16 container-padding rounded-[4px] mb-10">
       <div className=" mx-auto">
         {/* Header */}
         <div className="mb-8 sm:mb-10 lg:mb-12">
-          <p className="text-12 sm:text-14 text-gray-600 mb-3">/Services</p>
-          <h2 className="fl1 !text-primary-blue mb-3 sm:mb-4">
+          <p className="text-12 sm:text-14 !text-white mb-3">/Services</p>
+          <h2 className="fl1 !text-white mb-3 sm:mb-4">
             Our Enterprise Solutions
           </h2>
-          <p className="font-reddit-sans text-14 sm:text-16 lg:text-18 text-gray-700 max-w-[600px]">
+          <p className="font-reddit-sans text-14 sm:text-16 lg:text-18 text-white max-w-[600px]">
             Comprehensive services designed to protect, optimize, and transform
             your business operations.
           </p>
@@ -125,14 +143,14 @@ const ServicesSection = () => {
               <button
                 key={tab.id}
                 onClick={() => setSelectedTab(tab)}
-                className={`relative px-20 py-3 font-montserrat font-medium text-14 lg:text-16 rounded-tl-[10px] transition-all duration-300 ease-in-out overflow-hidden ${
+                className={`relative px-20 w-[330px] py-2 text-18 md:text-24 rounded-tl-[4px] transition-all duration-300 ease-in-out overflow-hidden ${
                   tab.id === selectedTab.id
-                    ? 'bg-primary-blue text-white shadow-[0px_4px_5px_0px_rgba(0,0,0,0.20)]'
-                    : 'bg-[#FCFCFC] text-[#9E9E9E] hover:bg-gray-100 border border-[#E0E0E0]'
+                    ? 'bg-secondary-muted text-black shadow-[0px_4px_5px_0px_rgba(0,0,0,0.0)] font-noto-sans font-semibold '
+                    : 'bg-[#FCFCFC] text-[#505050] hover:bg-gray-100 border border-[#E0E0E0] font-noto-sans '
                 }`}
                 style={{
                   clipPath:
-                    'polygon(0 0, calc(100% - 30px) 0, 100% 100%, 0 100%)',
+                    'polygon(0 0, calc(100% - 30px) 0, 100% 101%, 0 101%)',
                 }}
               >
                 {tab.title}
@@ -144,7 +162,7 @@ const ServicesSection = () => {
           <div className="md:hidden mb-0 relative z-50">
             <div className="relative inline-block w-full max-w-[200px]">
               <div
-                className="absolute inset-0 bg-primary-blue pointer-events-none rounded-tl-[10px]"
+                className="absolute inset-0 bg-secondary-muted pointer-events-none rounded-tl-[10px]"
                 style={{
                   clipPath:
                     'polygon(0 0, calc(100% - 30px) 0, 100% 100%, 0 100%)',
@@ -165,18 +183,18 @@ const ServicesSection = () => {
           </div>
 
           {/* Tab Content */}
-          <div className="bg-primary-blue text-white p-6 sm:p-8 lg:p-10 xl:p-12 rounded-[10px] rounded-tl-none transition-all duration-300 ease-in-out shadow-[3.71px_0px_3.71px_0px_rgba(0,0,0,0.25)]">
+          <div className="bg-secondary-muted text-white p-6 sm:p-8 lg:p-10 xl:p-12 rounded-[4px] rounded-tl-none transition-all duration-300 ease-in-out shadow-[3.71px_0px_3.71px_0px_rgba(0,0,0,0.25)]">
             <div className="animate-fade-in">
-              <h3 className="font-montserrat font-semibold text-24 sm:text-28 lg:text-32 mb-4 sm:mb-6">
+              <h3 className="fl1 mb-4 sm:mb-6">
                 {selectedTab.title}
               </h3>
-              <p className="font-reddit-sans font-light text-14 sm:text-16 lg:text-18 leading-relaxed mb-8 sm:mb-10 lg:mb-12 max-w-[900px]">
+              <p className="fl3 leading-relaxed mb-8 sm:mb-16 lg:mb-20 md:w-[90%] w-full">
                 {selectedTab.desc}
               </p>
 
               <div className="flex flex-col md:flex-row gap-6 items-center justify-between">
                 <div>
-                  <button className="btn-yellow hover:scale-101">
+                  <button className="btn-yellow hover:scale-101" onClick={() => router.push('/services')}>
                     Learn More
                   </button>
                 </div>
@@ -185,14 +203,14 @@ const ServicesSection = () => {
                   <button
                     disabled={index === 0}
                     onClick={prevSlide}
-                    className="size-8 sm:size-9 md:size-10 bg-white rounded-full text-primary-blue flex items-center justify-center hover:bg-white/90 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300 flex-shrink-0"
+                    className="size-8 sm:size-9 md:size-10 bg-primary-blue rounded-full text-white flex items-center justify-center disabled:opacity-0 disabled:cursor-not-allowed transition-all duration-300 flex-shrink-0"
                   >
                     <span className="text-14 sm:text-16 md:text-18">
                       {ReactIcons.leftChev}
                     </span>
                   </button>
 
-                  <div className="bg-white rounded-[10px] p-4 sm:p-5 md:p-6 flex-1 md:max-w-[500px] min-w-0">
+                  <div className="bg-primary-blue rounded-[4px] p-4 sm:p-5 md:p-6 flex-1 md:max-w-[500px] min-w-0">
                     <div className="relative overflow-hidden">
                       <div
                         className="flex transition-transform duration-500 ease-in-out"
@@ -201,7 +219,7 @@ const ServicesSection = () => {
                         {slides.map((text, i) => (
                           <div
                             key={i}
-                            className="min-w-full text-primary-blue font-reddit-sans text-12 sm:text-13 font-medium"
+                            className="min-w-full text-white font-reddit-sans text-12 sm:text-14 font-light"
                           >
                             {text}
                           </div>
@@ -213,7 +231,7 @@ const ServicesSection = () => {
                   <button
                     disabled={index === slides.length - 1}
                     onClick={nextSlide}
-                    className="size-8 sm:size-9 md:size-10 bg-white rounded-full text-primary-blue flex items-center justify-center hover:bg-white/90 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300 flex-shrink-0"
+                    className="size-8 sm:size-9 md:size-10 bg-primary-blue rounded-full text-white flex items-center justify-center disabled:opacity-0 disabled:cursor-not-allowed transition-all duration-300 flex-shrink-0"
                   >
                     <span className="text-14 sm:text-16 md:text-18">
                       {ReactIcons.rightChev}

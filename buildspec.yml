@@ -1,0 +1,43 @@
+# Build Next.js static export and prepare artifacts for CodeDeploy to EC2 (Nginx static hosting)
+version: 0.2
+
+env:
+  variables:
+    NODE_ENV: "production"
+    APP_NAME: "uelement"                   # used for target folder names on EC2
+    DIST_DIR: "out"                        # Next.js static export output
+
+phases:
+  install:
+    runtime-versions:
+      nodejs: 20
+    commands:
+      - node -v
+      - node -e 'const v = process.versions.node.split(".").map(Number); if (v[0] < 20) { console.error(`Node ${process.versions.node} < 20; update CodeBuild image to aws/codebuild/standard:7.0 or newer/AL2023 so runtime-versions can install Node 20+. Currently running on an image that only supports Node 18.`); process.exit(1); }'
+      # Install both prod + dev deps (Tailwind/PostCSS lives in devDependencies)
+      - npm ci --include=dev
+
+
+  build:
+    commands:
+      - echo "Building static Next.js export to ${DIST_DIR}/"
+      - npm run build
+      # Verify build output
+      - ls -la "$DIST_DIR" || (echo "$DIST_DIR/ was not created"; exit 2)
+  post_build:
+    commands:
+      - echo "Build complete, preparing artifacts for CodeDeploy..."
+      # Optionally validate the build output
+      - ls -la "$DIST_DIR"
+
+artifacts:
+  files:
+    # CodeDeploy manifest & scripts
+    - appspec.yaml
+    - appspec.yml
+    - scripts/**/*
+    # Nginx site config (optional but recommended)
+    - nginx/nginx.conf
+    # Built site
+    - out/**/*      # <- ensure this matches DIST_DIR above
+  discard-paths: no

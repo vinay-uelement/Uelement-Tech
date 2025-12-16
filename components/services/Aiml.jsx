@@ -1,0 +1,286 @@
+'use client';
+import React, { useEffect, useRef, useState } from 'react';
+import Slider from 'react-slick';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
+import GlobalSlider from '@/components/Slider/GlobalSlider';
+
+const Aiml = () => {
+  const sliderRef = useRef(null);
+  const [activeIndex, setActiveIndex] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
+
+  const keyFeatures = [
+    {
+      id: 1,
+      title: 'Predictive Threat Analytics',
+      description:
+        'Infrastructure as Code automates secure cloud architecture design, enabling rapid re-architecture and MVP development with 99.9% uptime.',
+    },
+    {
+      id: 2,
+      title: 'Automated Workflow Optimization',
+      description:
+        'Streamlining cloud migrations and resource allocation reduces operational costs by 350+ through intelligent automation.',
+    },
+    {
+      id: 3,
+      title: 'Anomaly Detection Engine',
+      description:
+        'Machine learning identifies unusual behaviors in networks and user activity, cutting security incidents by 85%.',
+    },
+    {
+      id: 4,
+      title: 'Quantum-Ready AI Models',
+      description:
+        'Secure training and inference pipelines resilient to post-quantum attacks for AI-driven infrastructure.',
+    },
+  ];
+
+  const otherServices = [
+    {
+      id: 1,
+      image: '/images/service/ai.png',
+      icon: '/icons/global/cloud-icon.svg',
+      label: 'Cloud Solution',
+      title:
+        'Accelerated Intelligence: Responsible AI from Edge to Enterprise.',
+      description:
+        'Powering outcomes with Edge AI, Generative AI (LLMs), and Conversational AI. Solutions are built and scaled efficiently using AIOps and MLOps frameworks.',
+    },
+    {
+      id: 2,
+      image: '/images/service/cybersec.png',
+      icon: '/icons/global/enterprise-icon.svg',
+      label: 'Cyber Security',
+      title: 'Digital Safety: Next-Gen Security from App to Cloud',
+      description:
+        'Comprehensive digital safety including Zero Trust, SASE, and Cloud/App Security. Prepare your organization for the future with Quantum-Resistant Security (QKD).',
+    },
+    {
+      id: 3,
+      image: '/images/global/pioneer.png',
+      icon: '/icons/global/futuretech-icon.svg',
+      label: 'Future Tech',
+      title: 'Pioneering Transformation with Quantum Readiness.',
+      description:
+        'Driving next-wave innovation in Quantum Computing (QKD) and Web3. Executing critical App Modernization, Sassification, and Mainframe-to-Cloud migration.',
+    },
+  ];
+
+  const getDotSize = (dotIndex) => {
+    const distance = Math.abs(activeIndex - dotIndex);
+    if (distance === 0) return 16;
+    if (distance === 1) return 12;
+    if (distance === 2) return 8;
+    return 5;
+  };
+
+  const handlePause = () => {
+    if (sliderRef.current) {
+      sliderRef.current.slickPause();
+      setIsPaused(true);
+    }
+  };
+
+  const handlePlay = () => {
+    if (sliderRef.current) {
+      sliderRef.current.slickPlay();
+      setIsPaused(false);
+    }
+  };
+
+  const handleTouchStart = () => {
+    handlePause();
+  };
+
+  const handleTouchEnd = () => {
+    setTimeout(() => {
+      handlePlay();
+    }, 300);
+  };
+
+  const keyFeaturesSettings = {
+    dots: true,
+    infinite: true,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 4000,
+    pauseOnHover: false,
+    pauseOnFocus: false,
+    arrows: false,
+    beforeChange: (_, next) => setActiveIndex(next),
+    appendDots: (dots) => (
+      <div className="mt-8">
+        <ul className="flex justify-center items-center gap-1">{dots}</ul>
+      </div>
+    ),
+    customPaging: (i) => {
+      const size = getDotSize(i);
+      return (
+        <div className="flex items-center justify-center w-5 h-5">
+          <div
+            style={{
+              width: size,
+              height: size,
+              borderRadius: '50%',
+              background: i === activeIndex ? '#0C142D' : '#D9D9D9',
+              transition: 'all 0.3s ease',
+            }}
+          />
+        </div>
+      );
+    },
+  };
+
+  return (
+    <div className="mb-8 md:mb-16">
+      {/* Hero Section */}
+      <section className="h-auto relative flex lg:flex-row flex-col items-center bg-primary-blue section-block-padding 3xl:!pt-[175px] md:!pt-[125px]">
+        <div className="container-padding w-full flex flex-col lg:flex-row gap-8 lg:gap-12 justify-between mt-[var(--mobile-navbar-gap)] lg:my-0 py-10 lg:py-0">
+          {/* Left: Content - 40% */}
+          <div className="text-white w-full lg:w-[40%] flex flex-col justify-center order-1">
+            {/* Icon + Label */}
+            <div className="flex items-center mb-6">
+              <div className="size-[40px] md:size-[60px] bg-[#D7D7D7] flex-shrink-0 rounded-full flex items-center justify-center">
+                <img
+                  src="/icons/global/machinelearning-icon.svg"
+                  alt="AI & Machine Learning"
+                  className="size-6 sm:size-8"
+                />
+              </div>
+              <div
+                  className={`w-[60px] md:w-[120px] h-[4px] bg-[#D2D2D2]`}
+                ></div>
+              <span className="text-white font-reddit-sans text-14 sm:text-16 md:text-20 font-semibold ml-3">
+                AI & Machine Learning
+              </span>
+            </div>
+
+            {/* Main Heading */}
+            <h1 className="fl1-sep !text-white mb-6 !text-white">
+              Operationalize AI for Real-Time Business Intelligence
+            </h1>
+
+            {/* Description */}
+            <p className="fl3 !text-white leading-relaxed !text-white">
+              Deploy specialized AI models including Edge AI, Computer Vision,
+              and Conversational AI to drive customer engagement and advanced
+              predictive analytics. We leverage AIOps and MLOps frameworks to
+              seamlessly build, train, deploy, and scale reliable
+              production-grade AI systems using modern LLMs and NLP
+              technologies.
+            </p>
+          </div>
+
+          {/* Right: Image - 60% */}
+          <div className="w-full lg:w-[60%] order-2">
+            <div className="relative w-full h-[300px] sm:h-[400px] lg:h-[500px] xl:h-[600px]">
+              <img
+                src="/images/service/ai-ml/ai-ml-hero.png"
+                alt="Digital Security Lock"
+                className="w-full h-full object-contain rounded-[4px]"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Quantum-Resistant Security Section */}
+      <section className="bg-primary-blue py-[var(--section-block-padding)]">
+        <div className="container-padding">
+          <div className="bg-[#F5F5F5] rounded-[4px] shadow-lg p-6 sm:p-8 md:p-10 lg:p-12">
+            {/* Image */}
+            <div className="w-full h-[250px] sm:h-[300px] md:h-[350px] lg:h-[400px] mb-6 sm:mb-8">
+              <img
+                src="/images/service/ai-ml/ai-ml2.png"
+                alt="VPN Security"
+                className="w-full h-full object-cover rounded-[4px]"
+              />
+            </div>
+
+            {/* Content */}
+            <div>
+              <h2 className="fl1 mb-4 sm:mb-6">AI-Powered Solutions</h2>
+
+              <p className="fl3 leading-relaxed">
+                UElement Technologies harnesses AI to drive intelligent
+                automation across cybersecurity, cloud, and quantum-ready
+                infrastructure. Our solutions enable predictive analytics,
+                real-time threat detection, and optimized resource allocation
+                for enterprises. By automating SecOps workflows and enhancing
+                decision-making with data-driven insights, we help organizations
+                scale seamlessly with cloud environments delivering 99.9%
+                uptime. Tailored for startups and global enterprises, our AI
+                integrations reduce operational costs by 350+ on average while
+                pioneering quantum-driven synapses for future-ready innovation.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Key Features Section */}
+      <section className="bg-primary-blue py-[var(--section-block-padding)]">
+        <div className="container-padding">
+          <h2 className="fl1 !text-white text-left mb-8 md:mb-12">
+            Key Features
+          </h2>
+
+          {/* Desktop Grid - 4 columns */}
+          <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {keyFeatures.map((feature) => (
+              <div
+                key={feature.id}
+                className="bg-[#D9D9D9] p-6 hover:shadow-xl transition-shadow duration-300"
+              >
+                <h3 className="font-noto-sans font-semibold text-16 lg:text-18 text-black mb-3">
+                  {feature.title}
+                </h3>
+                <p className="fl3 !text-[#232223] leading-relaxed">
+                  {feature.description}
+                </p>
+              </div>
+            ))}
+          </div>
+
+          {/* Mobile Slider */}
+          <div
+            className="md:hidden"
+            onTouchStart={handleTouchStart}
+            onTouchEnd={handleTouchEnd}
+          >
+            <Slider ref={sliderRef} {...keyFeaturesSettings}>
+              {keyFeatures.map((feature) => (
+                <div key={feature.id} className="px-2">
+                  <div className="bg-[#E8E8E8] rounded-[4px] p-6 min-h-[200px]">
+                    <h3 className="font-noto-sans font-semibold text-16 text-black mb-3">
+                      {feature.title}
+                    </h3>
+                    <p className="fl3 !text-[#5F6D7E] leading-relaxed">
+                      {feature.description}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </Slider>
+          </div>
+        </div>
+      </section>
+
+      {/* Other Services Section */}
+      <section className="bg-primary-blue py-[var(--section-block-padding)]">
+        <div className="container-padding">
+          <h2 className="fl1 !text-white text-left mb-8 md:mb-12">
+            Other Services
+          </h2>
+
+          <GlobalSlider data={otherServices} />
+        </div>
+      </section>
+    </div>
+  );
+};
+
+export default Aiml;

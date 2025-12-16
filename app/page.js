@@ -2,19 +2,19 @@ import LandingPage from '@/components/pages/LandingPage';
 import Image from 'next/image'; 
 
 export const metadata = {
-  title: 'Home | UElement',
-  description: 'Welcome to U-Element. We provide digital transformation solutions to help your business grow.',
+  title: 'UElement Technologies',
+  description: 'Delivering precision and efficiency in solving complex challenges across Cybersecurity, Cloud and AI.',
   openGraph: {
-    title: 'Home | U-Element',
-    description: 'Welcome to U-Element. We provide digital transformation solutions to help your business grow.',
+    title: 'UElement Technologies',
+    description: 'Delivering precision and efficiency in solving complex challenges across Cybersecurity, Cloud and AI.',
     url: 'https://uelement.in',
-    siteName: 'U-Element',
+    siteName: 'UElement',
     images: [
       {
         url: '/images/landing/ue92-banner.jpg',
         width: 1200,
         height: 630,
-        alt: 'U-Element Home',
+        alt: 'UElement Home',
       },
     ],
     locale: 'en_US',
@@ -22,8 +22,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Home | U-Element',
-    description: 'Welcome to U-Element. We provide digital transformation solutions to help your business grow.',
+    title: 'UElement Technologies',
+    description: 'Delivering precision and efficiency in solving complex challenges across Cybersecurity, Cloud and AI.',
     images: ['/images/landing/ue92-banner.jpg'],
   },
 };
