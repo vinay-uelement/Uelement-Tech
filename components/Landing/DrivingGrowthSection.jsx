@@ -11,20 +11,20 @@ const slides = [
     id: 1,
     number: '01',
     title: 'SI Partnerships (SI)',
-    headline: 'Driving growth through strategic collaborations',
+    headline: 'Accelerating growth through strategic partnerships',
     desc: 'Strategic integration and managed services leveraging 15+ global technology partners.',
     desc1:
-      'We act as your strategic partner across the cloud ecosystem, delivering seamless platform integration, managed services, and cybersecurity advisory with compliant implementation. Leveraging global technology partnerships, we drive measurable business outcomes through co-created solutions and accelerated go-to-market strategies.',
+      'We partner across the cloud ecosystem to deliver seamless integrations, managed services, and compliant cybersecurity advisory, driving measurable outcomes through global alliances and faster go-to-market solutions.Together, we turn innovation into scalable, real-world business value.',
     img: '/images/landing/si-partnership.jpg',
   },
   {
     id: 2,
     number: '02',
     title: 'Professional Services',
-    headline: 'Accelerating digital transformation through expert consulting',
+    headline: 'Driving digital transformation with expert consulting',
     desc: 'End-to-end professional services across cloud, cybersecurity, and AI.',
     desc1:
-      'We deliver end-to-end professional services from strategy and architecture to implementation and optimization. Our expert teams drive measurable outcomes through technology roadmaps, change management, and seamless integration of emerging capabilities.',
+      'We deliver comprehensive professional services spanning strategy and architecture through implementation and optimization. Our specialist teams enable measurable results via technology roadmaps, change management, and seamless integration of new capabilities.',
     img: '/images/landing/professional-services.jpg',
   },
   {
@@ -33,8 +33,8 @@ const slides = [
     title: 'Product Engineering',
     headline: 'Building scalable digital products from concept to market',
     desc: 'Design and build full-stack, multi-tenant SaaS and AI-native platforms.',
-    desc1:
-      'We engineer scalable, cloud-native digital products with full-stack capabilities, AI/ML integration, and robust backend infrastructure. From MVPs and microservices to analytics dashboards and LLM integrations, we deliver enterprise-grade platforms built to scale.',
+    desc1: `We engineer full-stack, multi-tenant SaaS/PaaS solutions with cloud-native architectures, AI/ML integration, and robust backend infrastructure.
+From MVP development and microservices to analytics dashboards and LLM integration, we deliver extensible platforms optimized for enterprise scale`,
     img: '/images/landing/managed-ser2.jpg',
   },
   {
@@ -44,7 +44,7 @@ const slides = [
     headline: 'Reimagining enterprises through technology-led change',
     desc: 'Comprehensive strategy-to-execution digital transformation programs.',
     desc1:
-      'We orchestrate digital transformation initiatives spanning modernization, cloud migration, agile delivery, and emerging technology adoption. From legacy system refactoring to AI integration and customer experience enhancement, we deliver measurable business value.',
+      'We orchestrate digital transformation initiatives spanning modernization, cloud migration, agile delivery, and emerging technology adoption. From legacy system refactoring to AI integration and customer experience enhancement, we create measurable and lasting business impact.',
     img: '/images/landing/cloud-solution.jpg',
   },
 ];

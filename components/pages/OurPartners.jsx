@@ -1,4 +1,4 @@
-import ContactUs from '../Landing/ContactUs';
+"use client";
 import PartnersHero from '../OurPartners/PartnersHero';
 import PartnerSolution from '../OurPartners/PartnerSolution';
 

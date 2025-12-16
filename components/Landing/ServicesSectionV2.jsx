@@ -49,11 +49,11 @@ const ServicesSection = () => {
     setIndex((prev) => (prev - 1 + slides.length) % slides.length);
 
   return (
-    <section className="bg-[#0c142d] py-10 sm:py-12 lg:py-16 px-4 sm:px-6 lg:px-8 rounded mb-10">
-      <div className="max-w-7xl mx-auto">
+    <section className="bg-[#0c142d] py-10 sm:py-12 lg:py-16 px-4 sm:px-6 lg:px-8 rounded mb-10 container-padding">
+      <div className="mx-auto">
         {/* Header */}
         <div className="mb-8 sm:mb-10 lg:mb-12">
-          <p className="text-xs sm:text-sm text-white mb-3">/Services</p>
+          <p className="fl-slash !text-white">/Services</p>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-3 sm:mb-4">
             Our Enterprise Solutions
           </h2>

@@ -1,6 +1,5 @@
 import OurPartners from '@/components/pages/OurPartners'
-import React from 'react'
-
+import React, { Suspense } from 'react'
 
 export const metadata = {
   title: 'Our Partners | UElement Technologies',
@@ -32,7 +31,9 @@ export const metadata = {
 const page = () => {
   return (
     <div>
-      <OurPartners />
+      <Suspense fallback={null}>
+        <OurPartners />
+      </Suspense>
     </div>
   )
 }
