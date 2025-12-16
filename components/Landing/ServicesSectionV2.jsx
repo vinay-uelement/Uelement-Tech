@@ -217,7 +217,7 @@ const ServicesSection = () => {
               <div className="flex flex-col md:flex-row gap-6 items-center justify-between">
                 <button
                   className="btn-yellow hover:scale-101"
-                  onClick={() => router.push('/services')}
+                  onClick={() => router.push('/ai-ml')}
                 >
                   Learn More
                 </button>

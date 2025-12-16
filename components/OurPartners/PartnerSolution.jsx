@@ -116,7 +116,6 @@ const PartnerSolution = () => {
     setIsMounted(true);
   }, []);
 
-
   // React Select options
   const options = tabs.map((tab) => ({
     value: tab.id,
@@ -190,8 +189,8 @@ const PartnerSolution = () => {
         <div className="title-div text-black text-center mb-8 sm:mb-10 lg:mb-14 ">
           <h4 className="fl1 mt-3 mb-2">Focus on Ecosystem and Trust</h4>
           <p className="fl3 max-w-[750px] mx-auto">
-            Leveraging 15+ strategic alliances to deliver best-in-class,  <br />fully
-            certified solutions.
+            Leveraging 15+ strategic alliances to deliver best-in-class, <br />
+            fully certified solutions.
           </p>
         </div>
 
@@ -259,22 +258,28 @@ const PartnerSolution = () => {
                     key={ind}
                     className="flex-1 min-w-[280px] max-w-[450px] white-ribbon-border bg-secondary-200 py-10 pl-14 pr-6 rounded-[10px] shadow-[3px_0px_3px_1px_rgba(0,0,0,0.25)]"
                   >
-                    <img src={item.logo} className="mb-3 sm:h-6 2xl:h-8" alt="logo" />
-                    <p className="fl3 my-4 sm:min-h-[35px] 3xl:min-h-[20px]">{item.tagline}</p>
+                    <img
+                      src={item.logo}
+                      className="mb-3 sm:h-6 2xl:h-8"
+                      alt="logo"
+                    />
+                    <p className="fl3 my-4 sm:min-h-[35px] 3xl:min-h-[20px]">
+                      {item.tagline}
+                    </p>
                     <h6 className="fl1 md:!text-[18px] text-[#1C1C1C] mb-1">
                       {item.boxTitle}
                     </h6>
                     <p className="fl3 md:!text-12 text-[#1C1C1C]">
                       {item.desc}
                     </p>
-                    <div className="flex flex-wrap text-13 2xl:text-14 leading-[1.1] mt-6">
+                    <div className="flex items-center divide-x divide-[#1C1C1C30] mt-6">
                       {item?.tags?.map((innerItem, innerInd) => (
-                        <h6
+                        <span
                           key={innerInd}
-                          className="font-bold font-reddit-sans md:text-[14px] text-[12px] text-secondary first:ml-0 last:border-r-0 border-r-2 border-r-[#1C1C1C30] pr-2 ml-2"
+                          className="px-3 font-bold font-reddit-sans text-[12px] md:text-[14px] text-center text-secondary"
                         >
                           {innerItem}
-                        </h6>
+                        </span>
                       ))}
                     </div>
                   </div>
@@ -297,14 +302,26 @@ const PartnerSolution = () => {
                         <p className="font-reddit-sans font-light text-14 text-[#1C1C1C]">
                           {item.desc}
                         </p>
-                        <div className="flex gap-2 items-center text-13 leading-[1.1] mt-4">
+                        <div className="flex items-center mt-4 text-13">
                           {item?.tags?.map((innerItem, innerInd) => (
-                            <h6
+                            <span
                               key={innerInd}
-                              className="font-medium text-secondary first:ml-0 last:border-r-0 border-r-2 border-r-[#1C1C1C30] pr-2 ml-2"
+                              className="
+        relative px-4 text-secondary font-medium text-center leading-tight
+        max-w-[110px]
+        flex items-center justify-center
+        [&:not(:last-child)]:after:content-['']
+        [&:not(:last-child)]:after:absolute
+        [&:not(:last-child)]:after:right-0
+        [&:not(:last-child)]:after:top-1/2
+        [&:not(:last-child)]:after:-translate-y-1/2
+        [&:not(:last-child)]:after:h-[18px]
+        [&:not(:last-child)]:after:w-px
+        [&:not(:last-child)]:after:bg-[#1C1C1C30]
+      "
                             >
                               {innerItem}
-                            </h6>
+                            </span>
                           ))}
                         </div>
                       </div>

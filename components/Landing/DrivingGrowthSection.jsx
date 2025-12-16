@@ -164,8 +164,8 @@ const DrivingGrowthSection = () => {
             </p>
           </div>
           <button
-            className="btn-blue mt-4 lg:mt-20 hidden lg:block"
-            onClick={() => router.push('/services')}
+            className="btn-blue mt-4 hidden lg:block"
+            onClick={() => router.push('/ai-ml')}
           >
             Learn More
           </button>
