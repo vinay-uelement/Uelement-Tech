@@ -246,7 +246,7 @@ const Navbar = () => {
                       }}
                     >
                       {NON_CLICKABLE_MENUS.includes(navItem.id) ? (
-                        <div className="flex items-center font-reddit-sans font-semibold md:text-16 xl:text-18 text-[#fff] px-3 uppercase relative h-full cursor-not-allowed opacity-100">
+                        <div className="flex items-center font-reddit-sans font-semibold md:text-16 xl:text-18 text-[#fff] px-3 uppercase relative h-full opacity-100">
                           {navItem.children && (
                             <span
                               className={`transition-all duration-500 ${

@@ -55,7 +55,7 @@ export default function AboutSection() {
   const router = useRouter();
   return (
     <div>
-      <div className="p-10 bg-primary-blue rounded-[4px]">
+      <div className="p-10 bg-primary-blue rounded-[4px] mx-4 md:mx-8">
         <div className="flex flex-col-reverse xl:flex-row">
           {/* LEFT WHITE BOX */}
           <div className="xl:w-1/2 bg-[#FFF8F0] rounded-[4px] overflow-hidden py-5 xl:py-10 px-6 xl:px-10">
