@@ -3,10 +3,10 @@ import React from 'react'
 
 
 export const metadata = {
-  title: 'Contact Us | UElement',
+  title: 'Contact Us | UElement Technologies',
   description: 'Get in touch with UElement for your digital transformation needs. We are here to help.',
   openGraph: {
-    title: 'Contact Us | UElement',
+    title: 'Contact Us | UElement Technologies',
     description: 'Get in touch with UElement for your digital transformation needs. We are here to help.',
     url: 'https://uelement.in/contact-us',
     siteName: 'UElement',
@@ -23,7 +23,7 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Contact Us | UElement',
+    title: 'Contact Us | UElement Technologies',
     description: 'Get in touch with UElement for your digital transformation needs. We are here to help.',
     images: ['/UElement_Profile.png'],
   },
