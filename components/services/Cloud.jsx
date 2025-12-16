@@ -140,7 +140,7 @@ const Cloud = () => {
     <div className="mb-8 md:mb-16">
       {/* Hero Section */}
       <section className="h-auto relative flex lg:flex-row flex-col items-center bg-primary-blue section-block-padding 3xl:!pt-[175px] md:!pt-[125px]">
-        <div className="container-padding w-full flex flex-col lg:flex-row gap-8 lg:gap-12 justify-between mt-[var(--mobile-navbar-gap)] lg:my-0 py-10 lg:py-0">
+        <div className="container-padding w-full flex flex-col lg:flex-row gap-8 lg:gap-12 justify-between mt-[var(--mobile-navbar-gap)] lg:my-0 lg:py-0">
           {/* Left: Content - 40% */}
           <div className="text-white w-full lg:w-[40%] flex flex-col justify-center order-1">
             {/* Icon + Label */}
@@ -192,7 +192,7 @@ const Cloud = () => {
         <div className="container-padding">
           <div className="bg-[#f3f3f3] rounded-[4px] shadow-lg p-6 sm:p-8 md:p-10 lg:p-12">
             {/* Image */}
-            <div className="w-full h-[250px] sm:h-[300px] md:h-[350px] lg:h-[400px] mb-6 sm:mb-8">
+            <div className="w-full h-[150px] sm:h-[300px] md:h-[350px] lg:h-[400px] mb-6 sm:mb-8">
               <img
                 src="/images/service/cloud/cloud2.png"
                 alt="VPN Security"
@@ -221,9 +221,9 @@ const Cloud = () => {
       </section>
 
       {/* Key Features Section */}
-      <section className="bg-[#fcfcfc] py-[var(--section-block-padding)]">
+      <section className="bg-[#fcfcfc] pb-[var(--section-block-padding)]">
         <div className="container-padding">
-          <h2 className="fl1 text-left mb-8 md:mb-12">
+          <h2 className="fl1 text-left !mb-8 md:!mb-12">
             Key Features
           </h2>
 
@@ -252,8 +252,8 @@ const Cloud = () => {
           >
             <Slider ref={sliderRef} {...keyFeaturesSettings}>
               {keyFeatures.map((feature) => (
-                <div key={feature.id} className="px-2">
-                  <div className="bg-[#E8E8E8] rounded-[4px] p-6 min-h-[200px]">
+                <div key={feature.id} className="">
+                  <div className="rounded-[4px] light-glass p-6 min-h-[200px]">
                     <h3 className="font-noto-sans font-semibold text-16 text-black mb-3">
                       {feature.title}
                     </h3>
@@ -271,7 +271,7 @@ const Cloud = () => {
       {/* Other Services Section */}
       <section className="bg-[#fcfcfc] py-[var(--section-block-padding)]">
         <div className="container-padding">
-          <h2 className="fl1 text-left mb-8 md:mb-12">
+          <h2 className="fl1 text-left !mb-8 md:!mb-12">
             Other Services
           </h2>
 

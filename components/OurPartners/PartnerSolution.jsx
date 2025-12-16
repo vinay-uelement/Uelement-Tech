@@ -4,22 +4,18 @@ import dynamic from 'next/dynamic';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
+import { useSearchParams } from 'next/navigation';
 
 const Select = dynamic(() => import('react-select'), {
   ssr: false,
 });
 
 const PartnerSolution = () => {
-  const [isMounted, setIsMounted] = useState(false);
-
-  useEffect(() => {
-    setIsMounted(true);
-  }, []);
-
   const tabs = [
     {
       id: 1,
       title: 'Cybersecurity',
+      slug: 'cybersecurity',
       boxes: [
         {
           logo: '/icons/global/sentinel.png',
@@ -44,10 +40,10 @@ const PartnerSolution = () => {
         },
       ],
     },
-
     {
       id: 2,
       title: 'AI & ML',
+      slug: 'ai-ml',
       boxes: [
         {
           logo: '/icons/global/ion.png',
@@ -72,9 +68,9 @@ const PartnerSolution = () => {
         },
       ],
     },
-
     {
       id: 3,
+      slug: 'cloud',
       title: 'Cloud Solution',
       boxes: [
         {
@@ -101,8 +97,25 @@ const PartnerSolution = () => {
       ],
     },
   ];
+  const [isMounted, setIsMounted] = useState(false);
+  const searchParams = useSearchParams();
+  const tabParam = searchParams.get('tab');
 
   const [selectedTab, setSelectedTab] = useState(tabs[0]);
+
+  useEffect(() => {
+    if (!tabParam) return;
+
+    const matchedTab = tabs.find((tab) => tab.slug === tabParam);
+    if (matchedTab) {
+      setSelectedTab(matchedTab);
+    }
+  }, [tabParam]);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
 
   // React Select options
   const options = tabs.map((tab) => ({
@@ -172,134 +185,138 @@ const PartnerSolution = () => {
   };
 
   return (
-    <div className="bg-white py-[var(--section-block-padding)]">
-      <div className="title-div text-black text-center mb-8 sm:mb-10 lg:mb-14 ">
-        <h4 className="fl1 mt-3 mb-2">Focus on Ecosystem and Trust</h4>
-        <p className="fl3 max-w-[750px] mx-auto">
-          Leveraging 15+ strategic alliances to deliver best-in-class, fully
-          certified solutions.
-        </p>
-      </div>
-
-      {/* Tabs & Content */}
-      <div className="bg-white w-full overflow-hidden md:px-10 px-5">
-        {/* Desktop Tabs */}
-        <div className="hidden md:flex gap-0 mb-0">
-          {tabs.map((tab) => (
-            <button
-              key={tab.id}
-              onClick={() => setSelectedTab(tab)}
-              className={`relative px-20 py-2 md:text-24 text-18 text-[#9E9E9E] rounded-tl-[10px] transition-all duration-300 ease-in-out overflow-hidden ${
-                tab.id === selectedTab.id
-                  ? 'bg-primary-blue font-noto-sans font-semibold text-white shadow-[0px_4px_5px_0px_rgba(0,0,0,0.0)] font-noto-sans font-semibold'
-                  : 'bg-[#FCFCFC] hover:bg-gray-100 border border-[#E0E0E0] font-noto-sans'
-              }`}
-              style={{
-                clipPath:
-                  'polygon(0 0, calc(100% - 30px) 0, 100% 101%, 0 101%)',
-              }}
-            >
-              {tab.title}
-            </button>
-          ))}
+    <section id="partners">
+      <div className="bg-white py-[var(--section-block-padding)]">
+        <div className="title-div text-black text-center mb-8 sm:mb-10 lg:mb-14 ">
+          <h4 className="fl1 mt-3 mb-2">Focus on Ecosystem and Trust</h4>
+          <p className="fl3 max-w-[750px] mx-auto">
+            Leveraging 15+ strategic alliances to deliver best-in-class, fully
+            certified solutions.
+          </p>
         </div>
 
-        {/* Mobile Dropdown */}
-        <div className="md:hidden mb-0 relative z-50">
-          <div className="relative inline-block w-full max-w-[200px]">
-            <div
-              className="absolute inset-0 bg-primary-blue pointer-events-none rounded-tl-[4px]"
-              style={{
-                clipPath:
-                  'polygon(0 0, calc(100% - 30px) 0, 100% 100%, 0 100%)',
-              }}
-            />
-            <Select
-              value={{ value: selectedTab.id, label: selectedTab.title }}
-              onChange={(option) =>
-                setSelectedTab(tabs.find((tab) => tab.id === option.value))
-              }
-              options={options}
-              styles={customStyles}
-              isSearchable={false}
-              menuPortalTarget={isMounted ? document.body : null}
-              menuPosition="fixed"
-            />
+        {/* Tabs & Content */}
+        <div className="bg-white w-full overflow-hidden md:px-10 px-5">
+          {/* Desktop Tabs */}
+          <div className="hidden md:flex gap-0 mb-0">
+            {tabs.map((tab) => (
+              <button
+                key={tab.id}
+                onClick={() => setSelectedTab(tab)}
+                className={`relative px-20 py-2 md:text-24 text-18 text-[#9E9E9E] rounded-tl-[10px] transition-all duration-300 ease-in-out overflow-hidden ${
+                  tab.id === selectedTab.id
+                    ? 'bg-primary-blue font-noto-sans font-semibold text-white shadow-[0px_4px_5px_0px_rgba(0,0,0,0.0)] font-noto-sans font-semibold'
+                    : 'bg-[#FCFCFC] hover:bg-gray-100 border border-[#E0E0E0] font-noto-sans'
+                }`}
+                style={{
+                  clipPath:
+                    'polygon(0 0, calc(100% - 30px) 0, 100% 101%, 0 101%)',
+                }}
+              >
+                {tab.title}
+              </button>
+            ))}
           </div>
-        </div>
 
-        {/* Tab Content */}
-        <div className="bg-primary-blue rounded-[4px] rounded-tl-none py-10 sm:py-10 lg:py-[var(--section-block-padding)] ">
-          <div className="animate-fade-in ">
-            {/* Title with underline */}
-            <div className="flex justify-center mb-6 sm:mb-8 lg:mb-10">
-              <h6 className="fl1 border-b-3 border-b-[#D3AF37] !text-white w-fit px-6 sm:px-10 pb-2">
-                {selectedTab.title}
-              </h6>
+          {/* Mobile Dropdown */}
+          <div className="md:hidden mb-0 relative z-50">
+            <div className="relative inline-block w-full max-w-[200px]">
+              <div
+                className="absolute inset-0 bg-primary-blue pointer-events-none rounded-tl-[4px]"
+                style={{
+                  clipPath:
+                    'polygon(0 0, calc(100% - 30px) 0, 100% 100%, 0 100%)',
+                }}
+              />
+              <Select
+                value={{ value: selectedTab.id, label: selectedTab.title }}
+                onChange={(option) =>
+                  setSelectedTab(tabs.find((tab) => tab.id === option.value))
+                }
+                options={options}
+                styles={customStyles}
+                isSearchable={false}
+                menuPortalTarget={isMounted ? document.body : null}
+                menuPosition="fixed"
+              />
             </div>
+          </div>
 
-            {/* Desktop: Flex wrap layout */}
-            <div className="hidden md:flex flex-wrap justify-center gap-6 xl:gap-10 px-4 sm:px-10">
-              {selectedTab.boxes?.map((item, ind) => (
-                <div
-                  key={ind}
-                  className="flex-1 min-w-[280px] max-w-[450px] white-ribbon-border bg-secondary-200 py-10 pl-14 pr-6 rounded-[10px] shadow-[3px_0px_3px_1px_rgba(0,0,0,0.25)]"
-                >
-                  <img src={item.logo} className="mb-1 h-10" alt="logo" />
-                  <p className="fl3 my-4">{item.tagline}</p>
-                  <h6 className="fl1 md:!text-[18px] text-[#1C1C1C] mb-1">
-                    {item.boxTitle}
-                  </h6>
-                  <p className="fl3 md:!text-12 text-[#1C1C1C]">{item.desc}</p>
-                  <div className="flex flex-wrap text-13 2xl:text-14 leading-[1.1] mt-6">
-                    {item?.tags?.map((innerItem, innerInd) => (
-                      <h6
-                        key={innerInd}
-                        className="font-bold font-reddit-sans md:text-[14px] text-[12px] text-secondary first:ml-0 last:border-r-0 border-r-2 border-r-[#1C1C1C] pr-2 ml-2"
-                      >
-                        {innerItem}
-                      </h6>
-                    ))}
-                  </div>
-                </div>
-              ))}
-            </div>
+          {/* Tab Content */}
+          <div className="bg-primary-blue rounded-[4px] rounded-tl-none py-10 sm:py-10 lg:py-[var(--section-block-padding)] ">
+            <div className="animate-fade-in ">
+              {/* Title with underline */}
+              <div className="flex justify-center mb-6 sm:mb-8 lg:mb-10">
+                <h6 className="fl1 border-b-3 border-b-[#D3AF37] !text-white w-fit px-6 sm:px-10 pb-2">
+                  {selectedTab.title}
+                </h6>
+              </div>
 
-            {/* Mobile: Slider */}
-            <div className="md:hidden px-4 partner-boxes-slider">
-              <Slider {...sliderSettings}>
+              {/* Desktop: Flex wrap layout */}
+              <div className="hidden md:flex flex-wrap justify-center gap-6 xl:gap-10 px-4 sm:px-10">
                 {selectedTab.boxes?.map((item, ind) => (
-                  <div key={ind} className="px-2">
-                    <div className="ribbon-mobile md:white-ribbon-border bg-secondary-200 py-8 pl-14 pr-6 rounded-[4px] shadow-[3px_0px_3px_1px_rgba(0,0,0,0.25)]">
-                      <img src={item.logo} className="mb-1 h-10" alt="logo" />
-                      <p className="font-light text-[#1C1C1C] mb-3 text-14">
-                        {item.tagline}
-                      </p>
-                      <h6 className="font-bold text-[#1C1C1C] mb-1 text-16">
-                        {item.boxTitle}
-                      </h6>
-                      <p className="font-reddit-sans font-light text-14 text-[#1C1C1C]">
-                        {item.desc}
-                      </p>
-                      <div className="flex flex-wrap text-13 leading-[1.1] mt-4">
-                        {item?.tags?.map((innerItem, innerInd) => (
-                          <h6
-                            key={innerInd}
-                            className="font-medium text-secondary first:ml-0 last:border-r-0 border-r-2 border-r-[#1C1C1C] pr-2 ml-2"
-                          >
-                            {innerItem}
-                          </h6>
-                        ))}
-                      </div>
+                  <div
+                    key={ind}
+                    className="flex-1 min-w-[280px] max-w-[450px] white-ribbon-border bg-secondary-200 py-10 pl-14 pr-6 rounded-[10px] shadow-[3px_0px_3px_1px_rgba(0,0,0,0.25)]"
+                  >
+                    <img src={item.logo} className="mb-1 h-10" alt="logo" />
+                    <p className="fl3 my-4">{item.tagline}</p>
+                    <h6 className="fl1 md:!text-[18px] text-[#1C1C1C] mb-1">
+                      {item.boxTitle}
+                    </h6>
+                    <p className="fl3 md:!text-12 text-[#1C1C1C]">
+                      {item.desc}
+                    </p>
+                    <div className="flex flex-wrap text-13 2xl:text-14 leading-[1.1] mt-6">
+                      {item?.tags?.map((innerItem, innerInd) => (
+                        <h6
+                          key={innerInd}
+                          className="font-bold font-reddit-sans md:text-[14px] text-[12px] text-secondary first:ml-0 last:border-r-0 border-r-2 border-r-[#1C1C1C] pr-2 ml-2"
+                        >
+                          {innerItem}
+                        </h6>
+                      ))}
                     </div>
                   </div>
                 ))}
-              </Slider>
+              </div>
+
+              {/* Mobile: Slider */}
+              <div className="md:hidden px-4 partner-boxes-slider">
+                <Slider {...sliderSettings}>
+                  {selectedTab.boxes?.map((item, ind) => (
+                    <div key={ind} className="px-2">
+                      <div className="ribbon-mobile md:white-ribbon-border bg-secondary-200 py-8 pl-14 pr-6 rounded-[4px] shadow-[3px_0px_3px_1px_rgba(0,0,0,0.25)]">
+                        <img src={item.logo} className="mb-1 h-10" alt="logo" />
+                        <p className="font-light text-[#1C1C1C] mb-3 text-14">
+                          {item.tagline}
+                        </p>
+                        <h6 className="font-bold text-[#1C1C1C] mb-1 text-16">
+                          {item.boxTitle}
+                        </h6>
+                        <p className="font-reddit-sans font-light text-14 text-[#1C1C1C]">
+                          {item.desc}
+                        </p>
+                        <div className="flex flex-wrap text-13 leading-[1.1] mt-4">
+                          {item?.tags?.map((innerItem, innerInd) => (
+                            <h6
+                              key={innerInd}
+                              className="font-medium text-secondary first:ml-0 last:border-r-0 border-r-2 border-r-[#1C1C1C] pr-2 ml-2"
+                            >
+                              {innerItem}
+                            </h6>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </Slider>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

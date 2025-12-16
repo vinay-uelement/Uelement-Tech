@@ -94,16 +94,19 @@ const navbarList = [
         id: 1,
         label: 'AI & ML',
         desc: 'Intelligent Automation',
+        link: '/our-partners?tab=ai-ml#partners',
       },
       {
         id: 2,
         label: 'Cybersecurity',
         desc: 'Zero-Trust Protection',
+        link: '/our-partners?tab=cybersecurity#partners',
       },
       {
         id: 3,
         label: 'Cloud Solutions',
         desc: 'Cloud-Native Platforms',
+        link: '/our-partners?tab=cloud#partners',
       },
     ],
     images: [
@@ -122,7 +125,8 @@ const navbarList = [
   { id: 4, label: 'Company', link: '/company' },
 ];
 
-const NON_CLICKABLE_MENUS = [2]; // Resources (id: 2)
+const NO_TOP_LEVEL_NAV = [1, 2]; // Services, Resources
+const NO_DROPDOWN_LINKS = [2]; // Resources only
 
 const MOBILE_DROPDOWN_HEIGHT = {
   1: 'h-[300px]', // Services
@@ -141,6 +145,11 @@ const Navbar = () => {
   const [showMobileNav, setShowMobileNav] = useState(false);
   const [hoveredMenu, setHoveredMenu] = useState(null);
   const [expandedMobileMenu, setExpandedMobileMenu] = useState(null);
+
+  const closeMobileNav = () => {
+    setShowMobileNav(false);
+    setExpandedMobileMenu(null);
+  };
 
   const location = usePathname();
   const navRef = useRef(null);
@@ -262,7 +271,7 @@ const Navbar = () => {
                         setHoveredMenu(navItem);
                       }}
                     >
-                      {NON_CLICKABLE_MENUS.includes(navItem.id) ? (
+                      {NO_TOP_LEVEL_NAV.includes(navItem.id) ? (
                         <div className="flex items-center font-reddit-sans font-semibold md:text-16 xl:text-18 text-[#fff] px-3 uppercase relative h-full opacity-100">
                           {navItem.children && (
                             <span
@@ -312,7 +321,9 @@ const Navbar = () => {
                 ref={dropdownRef}
                 className={`w-[calc(100%+40px)] absolute -left-10 bg-[#00000050] backdrop-blur-2xl backdrop-saturate-150
     shadow-xl text-[#fff] z-[30] top-9 flex rounded-b-[22px] overflow-hidden transition-all duration-300 ease-in-out ${
-      hoveredMenu && hoveredMenu?.children ? (DESKTOP_DROPDOWN_HEIGHT[hoveredMenu.id] ?? "h-[400px]") : 'h-0'
+      hoveredMenu && hoveredMenu?.children
+        ? (DESKTOP_DROPDOWN_HEIGHT[hoveredMenu.id] ?? 'h-[400px]')
+        : 'h-0'
     }`}
               >
                 <div className="pt-9 pb-3 px-4 flex w-full">
@@ -321,7 +332,7 @@ const Navbar = () => {
                       {hoveredMenu?.label}
                     </div>
                     {hoveredMenu?.children?.map((child) =>
-                      NON_CLICKABLE_MENUS.includes(hoveredMenu.id) ? (
+                      NO_DROPDOWN_LINKS.includes(hoveredMenu.id) ? (
                         <div
                           key={child.id}
                           className="block py-4 last:border-none border-primary-blue max-w-[100%] pointer-events-none opacity-100"
@@ -362,87 +373,109 @@ const Navbar = () => {
       {/* mobile dropdown */}
       <div
         ref={mobileNavRef}
-        className={`md:hidden bg-[#D4D4D344] w-[90vw] rounded-b-[20px] backdrop-blur-2xl fixed left-1/2 -translate-x-1/2 z-[900] overflow-hidden transition-all duration-300 ease-in-out ${
-          showMobileNav ? 'h-[300px]' : 'h-0'
-        } ${isScrolled ? 'top-[65px]' : 'top-[90px]'} ${
-          expandedMobileMenu && 'h-auto'
-        }`}
+        className={`md:hidden bg-[#D4D4D344] w-[90vw] rounded-b-[20px]
+    backdrop-blur-2xl fixed left-1/2 -translate-x-1/2 z-[900]
+    overflow-hidden transition-all duration-300 ease-in-out
+    ${isScrolled ? 'top-[65px]' : 'top-[90px]'}
+    ${
+      showMobileNav
+        ? expandedMobileMenu
+          ? 'max-h-[600px]'
+          : 'max-h-[300px]'
+        : 'max-h-0'
+    }`}
       >
-        <div className="flex flex-col gap-3 px-3 py-6 h-full">
-          {navbarList.map((navItem) => (
-            <div key={navItem.id} className="">
-              <div
-                onClick={() => {
-                  if (!NON_CLICKABLE_MENUS.includes(navItem.id)) {
+        <div className="flex flex-col gap-3 px-3 py-6">
+          {navbarList.map((navItem) => {
+            const canExpand =
+              navItem.children?.length &&
+              !NO_DROPDOWN_LINKS.includes(navItem.id);
+
+            return (
+              <div key={navItem.id}>
+                {/* TOP LEVEL */}
+                <div
+                  onClick={() => {
+                    if (!canExpand) return;
+
                     setExpandedMobileMenu((prev) =>
                       prev === navItem.id ? null : navItem.id
                     );
-                  }
-                }}
-                className={`flex justify-between items-center border-b-[0.5px] border-primary-blue text-white font-semibold pb-1 ${
-                  NON_CLICKABLE_MENUS.includes(navItem.id)
-                    ? 'cursor-not-allowed opacity-75'
-                    : 'cursor-pointer'
-                }`}
-              >
-                {NON_CLICKABLE_MENUS.includes(navItem.id) ? (
-                  <span className="h-10 flex items-end">{navItem.label}</span>
-                ) : (
-                  <Link
-                    href={navItem.link}
-                    onClick={(e) => {
-                      setShowMobileNav(false);
-                    }}
-                    className="h-10 flex items-end"
-                  >
-                    {navItem.label}
-                  </Link>
-                )}
-                {navItem.children && ReactIcons.chevDown}
-              </div>
-
-              <div
-                className={`overflow-hidden transition-all duration-300 ease-in-out ${
-                  expandedMobileMenu === navItem.id
-                    ? (MOBILE_DROPDOWN_HEIGHT[navItem.id] ?? 'h-0')
-                    : 'h-0'
-                }`}
-              >
-                {navItem.children?.map((child) =>
-                  NON_CLICKABLE_MENUS.includes(navItem.id) ? (
-                    <div
-                      key={child.id}
-                      className="block py-2 border-b-[0.5px] last:border-none border-primary-blue max-w-[90%] pointer-events-none opacity-75"
-                    >
-                      <div className="font-semibold text-14 text-[#E8E8E8]">
-                        {child.label}
-                      </div>
-                      <div className="text-12 font-light text-[#E8E8E8]">
-                        {child.desc}
-                      </div>
-                    </div>
+                  }}
+                  className={`flex justify-between items-center border-b-[0.5px]
+              border-primary-blue text-white font-semibold pb-1
+              ${canExpand ? 'cursor-pointer' : 'cursor-default'}`}
+                >
+                  {/* LABEL */}
+                  {NO_TOP_LEVEL_NAV.includes(navItem.id) ? (
+                    <span className="h-10 flex items-end">{navItem.label}</span>
                   ) : (
                     <Link
-                      key={child.id}
-                      href={'#'}
-                      className="block py-2 border-b-[0.5px] last:border-none border-primary-blue hover:text-primary-blue max-w-[90%]"
+                      href={navItem.link}
+                      onClick={closeMobileNav}
+                      className="h-10 flex items-end"
                     >
-                      <div className="font-semibold text-14 text-[#E8E8E8]">
-                        {child.label}
-                      </div>
-                      <div className="text-12 font-light text-[#E8E8E8]">
-                        {child.desc}
-                      </div>
+                      {navItem.label}
                     </Link>
-                  )
-                )}
+                  )}
+
+                  {canExpand && ReactIcons.chevDown}
+                </div>
+
+                {/* DROPDOWN */}
+                <div
+                  className={`overflow-hidden transition-all duration-300 ease-in-out
+              ${
+                expandedMobileMenu === navItem.id
+                  ? (MOBILE_DROPDOWN_HEIGHT[navItem.id] ?? 'h-0')
+                  : 'h-0'
+              }`}
+                >
+                  {navItem.children?.map((child) =>
+                    NO_DROPDOWN_LINKS.includes(navItem.id) ? (
+                      <div
+                        key={child.id}
+                        className="block py-2 border-b-[0.5px]
+                    last:border-none border-primary-blue
+                    max-w-[90%] pointer-events-none opacity-75"
+                      >
+                        <div className="font-semibold text-14 text-[#E8E8E8]">
+                          {child.label}
+                        </div>
+                        <div className="text-12 font-light text-[#E8E8E8]">
+                          {child.desc}
+                        </div>
+                      </div>
+                    ) : (
+                      <Link
+                        key={child.id}
+                        href={child.link}
+                        onClick={closeMobileNav}
+                        className="block py-2 border-b-[0.5px]
+                    last:border-none border-primary-blue
+                    hover:text-primary-blue max-w-[90%]"
+                      >
+                        <div className="font-semibold text-14 text-[#E8E8E8]">
+                          {child.label}
+                        </div>
+                        <div className="text-12 font-light text-[#E8E8E8]">
+                          {child.desc}
+                        </div>
+                      </Link>
+                    )
+                  )}
+                </div>
               </div>
-            </div>
-          ))}
-          <div className="flex-1 flex items-center justify-end">
+            );
+          })}
+
+          {/* CTA */}
+          <div className="flex items-center justify-end pt-2">
             <Link
-              href={'/contact-us'}
-              className="bg-primary-blue text-white rounded-[40px] font-reddit-sans text-16 xl:text-18 px-8 py-2 h-fit hover:shadow-hover"
+              href="/contact-us"
+              onClick={closeMobileNav}
+              className="bg-primary-blue text-white rounded-[40px]
+          font-reddit-sans text-16 px-8 py-2 h-fit hover:shadow-hover"
             >
               Contact us
             </Link>
