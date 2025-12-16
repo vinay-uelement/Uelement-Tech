@@ -39,7 +39,7 @@ export default function TermsContent() {
       </div>
 
       {/* Acceptance Section */}
-      <div className="border-t border-[#D9B24C]/20 pt-8 space-y-6">
+      <div className="border-t border-[#ffffff10] pt-8 space-y-6">
         {/* <div className="flex items-start gap-4">
           <input
             type="checkbox"

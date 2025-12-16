@@ -29,8 +29,8 @@ export default function LegalContentWrapper() {
   return (
     <>
       <div className="my-16 sm:my-20 text-center mx-auto">
-        <h1 className="fl-main mb-3 sm:mb-4">{current.title}</h1>
-        <p className="fl3 !text-white text-sm sm:text-base">{current.subtitle}</p>
+        <h1 className="fl1 !text-white md:!mb-4 !mb-2">{current.title}</h1>
+        <p className="fl3 !text-white">{current.subtitle}</p>
       </div>
 
       {/* Mobile Menu */}

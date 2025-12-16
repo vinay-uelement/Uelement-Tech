@@ -5,7 +5,7 @@ export default function SitemapContent() {
     <div className="space-y-10">
       {/* Main Navigation Pages */}
       <div className="space-y-6">
-        <h2 className="fl2 !text-white">Home</h2>
+        <h2 className="font-montserrat font-semibold text-14 md:text-18 xl:text-[22px] mb-2 md:mb-4 3xl:mb-6 !text-white">Home</h2>
         <div className="space-y-3 pl-2">
           <SitemapLink href="/">Landing Page</SitemapLink>
           <SitemapLink href="/services">Services</SitemapLink>
@@ -16,11 +16,11 @@ export default function SitemapContent() {
       </div>
 
       {/* <div className="h-px bg-gradient-to-r from-[#D9B24C] to-transparent" /> */}
-       <div className="h-px bg-white/50" />
+       <div className="h-px bg-white/10" />
 
       {/* Solutions */}
       <div className="space-y-6">
-        <h2 className="fl2 !text-white">Solutions</h2>
+        <h2 className="font-montserrat font-semibold text-14 md:text-18 xl:text-[22px] mb-2 md:mb-4 3xl:mb-6 !text-white">Solutions</h2>
         <div className="space-y-3 pl-2">
           <SitemapLink href="/services">AI / ML</SitemapLink>
           <SitemapLink href="/services">
@@ -33,11 +33,11 @@ export default function SitemapContent() {
       </div>
 
       {/* <div className="h-px bg-gradient-to-r from-[#D9B24C] to-transparent" /> */}
-       <div className="h-px bg-white/50" />
+       <div className="h-px bg-white/10" />
 
       {/* Supports & Legal */}
       <div className="space-y-6">
-        <h2 className="fl2 !text-white">Supports & Legal</h2>
+        <h2 className="font-montserrat font-semibold text-14 md:text-18 xl:text-[22px] mb-2 md:mb-4 3xl:mb-6 !text-white">Supports & Legal</h2>
         <div className="space-y-3 pl-2">
           <SitemapLink href="/legal?page=privacy">Privacy Policy</SitemapLink>
           <SitemapLink href="/legal?page=terms">Terms of Use</SitemapLink>
