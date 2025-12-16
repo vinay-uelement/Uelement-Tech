@@ -392,7 +392,7 @@ const FooterContent = () => {
   };
   return (
     <>
-      <footer className="hidden md:block bg-primary-blue pt-2 lg:pt-4 pb-6 container-padding">
+      <footer className="hidden md:block bg-primary-blue pt-2 lg:pt-4 pb-6 container-padding -mt-px">
         <div className="max-w-[1400px] mx-auto">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-10 lg:gap-12 xl:gap-16 pb-8 sm:pb-10 lg:pb-12">
             {/* Company Details */}
@@ -556,7 +556,7 @@ const FooterContent = () => {
           </div>
         </div>
       </footer>
-      <footer className="block md:hidden bg-primary-blue pt-2 lg:pt-4 pb-6 container-padding">
+      <footer className="block md:hidden bg-primary-blue pt-2 lg:pt-4 pb-6 container-padding -mt-px">
         <div className="max-w-[1400px] mx-auto">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-10 lg:gap-12 xl:gap-16 pb-8 sm:pb-10 lg:pb-12">
             {/* Company Details */}
