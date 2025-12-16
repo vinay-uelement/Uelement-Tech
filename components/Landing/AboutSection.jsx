@@ -83,15 +83,15 @@ export default function AboutSection() {
           </div>
 
           {/* RIGHT BLUE BOX */}
-          <div className="flex-1 bg-primary-blue xl:pe-[var(--container-small-padding)] xl:pe-0 xl:ps-[var(--container-small-padding)] text-white xl:py-[var(--section-block-padding)]">
+          <div className="flex-1 bg-primary-blue xl:px-15 text-white xl:py-[var(--section-block-padding)]">
             <div className="w-full">
               <p className="fl-slash text-center xl:text-left">/About us</p>
               <h2 className="fl1 !text-[#FFF9FF] text-center xl:text-left">
                 Precision, Trust. Your Full-Stack{' '}
-                <br className="hidden xl:block" />
+                
                 Partner for Secure Future
               </h2>
-              <p className="mt-4 xl:max-w-[80%] w-full fl3 md:!text-[16px] !text-[#FFF9FF] text-center xl:text-left mb-8 xl:mb-0">
+              <p className="mt-4 2xl:max-w-[95%] w-full fl3 md:!text-[16px] !text-[#FFF9FF] text-center xl:text-left mb-8 xl:mb-0">
                 Founded by innovators and architects in 2024, UElement
                 Technologies helps organizations solve complex challenges across
                 Cybersecurity, Cloud, and AI with precision and confidence. By

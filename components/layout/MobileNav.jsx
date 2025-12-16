@@ -121,7 +121,7 @@ const MobileNav = ({
           <Link
             href="/contact-us"
             onClick={closeMobileNav}
-            className="bg-primary-blue text-white rounded-[40px]
+            className="bg-white text-primary-blue rounded-[40px]
               font-reddit-sans text-16 px-8 py-2 h-fit hover:shadow-hover"
           >
             Contact us
