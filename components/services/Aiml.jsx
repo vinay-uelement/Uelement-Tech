@@ -5,7 +5,7 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import GlobalSlider from '@/components/Slider/GlobalSlider';
 
-const CyberSecurity = () => {
+const Aiml = () => {
   const sliderRef = useRef(null);
   const [activeIndex, setActiveIndex] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
@@ -13,27 +13,27 @@ const CyberSecurity = () => {
   const keyFeatures = [
     {
       id: 1,
-      title: 'Zero Trust Implementation',
+      title: 'Predictive Threat Analytics',
       description:
-        'Continuous verification of users, devices, and data flows eliminates implicit trust, preventing lateral movement in breaches.',
+        'Infrastructure as Code automates secure cloud architecture design, enabling rapid re-architecture and MVP development with 99.9% uptime.',
     },
     {
       id: 2,
-      title: 'Quantum-Resistant Security',
+      title: 'Automated Workflow Optimization',
       description:
-        'Post-quantum cryptography protects against future harvest-now-decrypt-later attacks on sensitive cloud and AI workloads.',
+        'Streamlining cloud migrations and resource allocation reduces operational costs by 350+ through intelligent automation.',
     },
     {
       id: 3,
-      title: 'AI-Driven Threat Detection',
+      title: 'Anomaly Detection Engine',
       description:
-        'Real-time anomaly detection and automated response for cloud environments, minimizing mean time to detect (MTTD) and respond (MTTR).',
+        'Machine learning identifies unusual behaviors in networks and user activity, cutting security incidents by 85%.',
     },
     {
       id: 4,
-      title: 'Continuous Verification:',
+      title: 'Quantum-Ready AI Models',
       description:
-        'Every user, device, and access request receives real-time MFA and risk-based verification, eliminating implicit trust in cloud and hybrid environments.',
+        'Secure training and inference pipelines resilient to post-quantum attacks for AI-driven infrastructure.',
     },
   ];
 
@@ -41,21 +41,21 @@ const CyberSecurity = () => {
     {
       id: 1,
       image: '/images/service/ai.png',
-      icon: '/icons/global/machinelearning-icon.svg',
-      label: 'Ai & Machine Learning',
-      title: 'Enterprise Cloud: Migration, Modernization, and Optimization.',
-      description:
-        'Expert Multi/Hybrid-cloud management, migration, and modernization. We ensure peak efficiency via DevOps, FinOps, and Infrastructure as Code (IaaC).',
-    },
-    {
-      id: 2,
-      image: '/images/service/enterprise.png',
       icon: '/icons/global/cloud-icon.svg',
       label: 'Cloud Solution',
       title:
         'Accelerated Intelligence: Responsible AI from Edge to Enterprise.',
       description:
-        'Powering outcomes with Edge AI, Generative AI (LLMs), and Conversational AI. Solutions are built and scaled efficiently using AIOps/MLOps frameworks',
+        'Powering outcomes with Edge AI, Generative AI (LLMs), and Conversational AI. Solutions are built and scaled efficiently using AIOps and MLOps frameworks.',
+    },
+    {
+      id: 2,
+      image: '/images/service/cybersec.png',
+      icon: '/icons/global/shield-icon.svg',
+      label: 'Cyber Security',
+      title: 'Digital Safety: Next-Gen Security from App to Cloud',
+      description:
+        'Comprehensive digital safety including Zero Trust, SASE, and Cloud/App Security. Prepare your organization for the future with Quantum-Resistant Security (QKD).',
     },
     {
       id: 3,
@@ -64,7 +64,7 @@ const CyberSecurity = () => {
       label: 'Future Tech',
       title: 'Pioneering Transformation with Quantum Readiness.',
       description:
-        'Driving next-wave technology in Quantum Computing (QKD) and Web3. We execute critical App Modernization, Sassification, and Mainframe-to-Cloud migration.',
+        'Driving next-wave innovation in Quantum Computing (QKD) and Web3. Executing critical App Modernization, Sassification, and Mainframe-to-Cloud migration.',
     },
   ];
 
@@ -135,38 +135,42 @@ const CyberSecurity = () => {
   };
 
   return (
-    <div>
+    <div className="mb-8 md:mb-16">
       {/* Hero Section */}
-      <section className="h-auto relative flex lg:flex-row flex-col items-center bg-primary-blue section-block-padding pt-[75px]">
+      <section className="h-auto relative flex lg:flex-row flex-col items-center bg-primary-blue section-block-padding 3xl:!pt-[175px] md:!pt-[125px]">
         <div className="container-padding w-full flex flex-col lg:flex-row gap-8 lg:gap-12 justify-between mt-[var(--mobile-navbar-gap)] lg:my-0 py-10 lg:py-0">
           {/* Left: Content - 40% */}
           <div className="text-white w-full lg:w-[40%] flex flex-col justify-center order-1">
             {/* Icon + Label */}
-            <div className="flex items-center gap-4 mb-6">
-              <div className="bg-white/10 backdrop-blur-md size-12 sm:size-14 rounded-full flex items-center justify-center">
+            <div className="flex items-center mb-6">
+              <div className="size-[40px] md:size-[60px] bg-[#D7D7D7] flex-shrink-0 rounded-full flex items-center justify-center">
                 <img
-                  src="/icons/global/shield-icon.svg"
-                  alt="cybersecurity"
+                  src="/icons/global/machinelearning-icon.svg"
+                  alt="AI & Machine Learning"
                   className="size-6 sm:size-8"
                 />
               </div>
-              <span className="text-white font-noto-sans text-16 sm:text-20 md:text-24 font-semibold">
-                Cybersecurity
+              <div
+                  className={`w-[60px] md:w-[120px] h-[4px] bg-[#D2D2D2]`}
+                ></div>
+              <span className="text-white font-reddit-sans text-14 sm:text-16 md:text-20 font-semibold ml-3">
+                AI & Machine Learning
               </span>
             </div>
 
             {/* Main Heading */}
-            <h1 className="fl1 !text-white md:!text-[36px] xl:!text-[42px] mb-6">
-              Secure Your Digital Perimeter and Supply Chain.
+            <h1 className="fl1-sep !text-white mb-6 !text-white">
+              Operationalize AI for Real-Time Business Intelligence
             </h1>
 
             {/* Description */}
-            <p className="fl3 !text-white leading-relaxed">
-              Establish an end-to-end defense across your enterprise, covering
-              Application security, Network Security, and Cloud Security. We
-              enforce Zero Trust principles, provide SASE and CNAPP solutions,
-              and guarantee data protection against threats, including future
-              Quantum-Resistant Security (QKD)
+            <p className="fl3 !text-white leading-relaxed !text-white">
+              Deploy specialized AI models including Edge AI, Computer Vision,
+              and Conversational AI to drive customer engagement and advanced
+              predictive analytics. We leverage AIOps and MLOps frameworks to
+              seamlessly build, train, deploy, and scale reliable
+              production-grade AI systems using modern LLMs and NLP
+              technologies.
             </p>
           </div>
 
@@ -174,7 +178,7 @@ const CyberSecurity = () => {
           <div className="w-full lg:w-[60%] order-2">
             <div className="relative w-full h-[300px] sm:h-[400px] lg:h-[500px] xl:h-[600px]">
               <img
-                src="/images/service/cybersecurity/cybersecurityHero.png"
+                src="/images/service/ai-ml/ai-ml-hero.png"
                 alt="Digital Security Lock"
                 className="w-full h-full object-contain rounded-[4px]"
               />
@@ -190,7 +194,7 @@ const CyberSecurity = () => {
             {/* Image */}
             <div className="w-full h-[250px] sm:h-[300px] md:h-[350px] lg:h-[400px] mb-6 sm:mb-8">
               <img
-                src="/images/service/cybersecurity/cybersecurityContent.png"
+                src="/images/service/ai-ml/ai-ml2.png"
                 alt="VPN Security"
                 className="w-full h-full object-cover rounded-[4px]"
               />
@@ -198,17 +202,19 @@ const CyberSecurity = () => {
 
             {/* Content */}
             <div>
-              <h2 className="fl1 mb-4 sm:mb-6">Quantum-Resistant Security</h2>
+              <h2 className="fl1 mb-4 sm:mb-6">AI-Powered Solutions</h2>
 
               <p className="fl3 leading-relaxed">
-                UElement Technologies deploys quantum-resistant cryptography to
-                protect against future "harvest now, decrypt later" attacks
-                targeting sensitive data in cloud and AI systems. Our solutions
-                integrate post-quantum algorithms with Zero Trust principles,
-                securing full-stack deployments from assessment to ongoing
-                SecOps management. Enterprises gain future-proof defenses that
-                maintain compliance and achieve 350+ average cost savings
-                through optimized, scalable infrastructure.
+                UElement Technologies harnesses AI to drive intelligent
+                automation across cybersecurity, cloud, and quantum-ready
+                infrastructure. Our solutions enable predictive analytics,
+                real-time threat detection, and optimized resource allocation
+                for enterprises. By automating SecOps workflows and enhancing
+                decision-making with data-driven insights, we help organizations
+                scale seamlessly with cloud environments delivering 99.9%
+                uptime. Tailored for startups and global enterprises, our AI
+                integrations reduce operational costs by 350+ on average while
+                pioneering quantum-driven synapses for future-ready innovation.
               </p>
             </div>
           </div>
@@ -277,4 +283,4 @@ const CyberSecurity = () => {
   );
 };
 
-export default CyberSecurity;
+export default Aiml;

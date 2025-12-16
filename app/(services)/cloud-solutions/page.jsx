@@ -1,9 +1,12 @@
-import React from 'react'
+import Cloud from '@/components/services/Cloud';
+import React from 'react';
 
 const page = () => {
   return (
-    <div>page</div>
-  )
-}
+    <div>
+      <Cloud />
+    </div>
+  );
+};
 
-export default page
+export default page;
