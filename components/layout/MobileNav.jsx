@@ -18,10 +18,10 @@ const MobileNav = ({
   return (
     <div
       ref={mobileNavRef}
-      className={`md:hidden bg-[#D4D4D344] w-[90vw] rounded-b-[20px]
-        backdrop-blur-2xl fixed left-1/2 -translate-x-1/2 z-[900]
+      className={`md:hidden bg-[#0c142d]/35 w-[90vw] rounded-b-[20px]
+        backdrop-blur-2xl fixed left-1/2 -translate-x-1/2 z-[70]
         overflow-hidden transition-all duration-300 ease-in-out
-        ${isScrolled ? 'top-[65px]' : 'top-[90px]'}
+        ${isScrolled ? 'top-[43px]' : 'top-[60px]'}
         ${
           showMobileNav
             ? expandedMobileMenu
@@ -117,7 +117,7 @@ const MobileNav = ({
         })}
 
         {/* CTA */}
-        <div className="flex items-center justify-end pt-2">
+        <div className="flex items-center justify-end">
           <Link
             href="/contact-us"
             onClick={closeMobileNav}

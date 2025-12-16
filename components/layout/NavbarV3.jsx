@@ -140,7 +140,7 @@ const DESKTOP_DROPDOWN_HEIGHT = {
   3: 'h-[350px]', // Partnership
 };
 
-const Navbar = () => {
+const NavbarV3 = () => {
   const router = useRouter();
   const [isScrolled, setIsScrolled] = useState(false);
   const [showMobileNav, setShowMobileNav] = useState(false);
@@ -388,4 +388,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
+export default NavbarV3;

@@ -111,7 +111,7 @@ const navbarList = [
   { id: 4, label: "Company", link: "/company" },
 ];
 
-const Navbar = () => {
+const NavbarV2 = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [showMobileNav, setShowMobileNav] = useState(false);
   const [hoveredMenu, setHoveredMenu] = useState(null);
@@ -403,4 +403,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
+export default NavbarV2;
