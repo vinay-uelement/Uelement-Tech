@@ -157,10 +157,12 @@ const DrivingGrowthSection = () => {
             </div>
           </div>
           <span className="fl-slash hidden lg:block">/Service Segment</span>
-          <h3 className="fl1">{slides[active].headline}</h3>
-          <p className="fl3 lg:block md:w-[90%] w-full text-left">
-            {slides[active].desc1}
-          </p>
+          <div className="min-h-[200px] lg:min-h-[250px]">
+            <h3 className="fl1">{slides[active].headline}</h3>
+            <p className="fl3 lg:block md:w-[90%] w-full text-left">
+              {slides[active].desc1}
+            </p>
+          </div>
           <button
             className="btn-blue mt-4 lg:mt-20 hidden lg:block"
             onClick={() => router.push('/services')}
