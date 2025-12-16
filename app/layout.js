@@ -23,10 +23,10 @@ export default function RootLayout({ children }) {
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "Organization",
-              "@id": "https://uelement.vercel.app/#organization",
+              "@id": "https://uelement.in/#organization",
               name: "UElement",
-              url: "https://uelement.vercel.app",
-              logo: "https://uelement.vercel.app/icons/global/UElement_Logo_White 3.svg",
+              url: "https://uelement.in",
+              logo: "https://uelement.in/icons/global/UElement_Logo_White 3.svg",
               description:
                 "Delivering precision and efficiency in solving complex challenges across Cybersecurity, Cloud and AI.",
               sameAs: [
@@ -43,11 +43,11 @@ export default function RootLayout({ children }) {
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "WebSite",
-              "@id": "https://uelement.vercel.app/#website",
-              url: "https://uelement.vercel.app",
+              "@id": "https://uelement.in/#website",
+              url: "https://uelement.in",
               name: "UElement",
               publisher: {
-                "@id": "https://uelement.vercel.app/#organization"
+                "@id": "https://uelement.in/#organization"
               }
             }),
           }}

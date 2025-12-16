@@ -95,6 +95,12 @@ const MOBILE_DROPDOWN_HEIGHT = {
   3: 'h-[160px]', // Partnership
 };
 
+const DESKTOP_DROPDOWN_HEIGHT = {
+  1: 'h-[425px]', // Services
+  2: 'h-[350px]', // Resources
+  3: 'h-[350px]', // Partnership
+};
+
 const NavbarV4 = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [showMobileNav, setShowMobileNav] = useState(false);
@@ -271,7 +277,9 @@ const NavbarV4 = () => {
                 ref={dropdownRef}
                 className={`w-[calc(100%+40px)] absolute -left-10 bg-[#00000050] backdrop-blur-2xl backdrop-saturate-150
     shadow-xl text-[#fff] z-[30] top-9 hidden md:flex rounded-b-[22px] overflow-hidden transition-all duration-300 ease-in-out ${
-      hoveredMenu && hoveredMenu?.children ? 'h-[350px]' : 'h-0'
+      hoveredMenu && hoveredMenu?.children
+        ? (DESKTOP_DROPDOWN_HEIGHT[hoveredMenu.id] ?? 'h-[400px]')
+        : 'h-0'
     }`}
               >
                 <div className="pt-9 pb-3 px-4 flex w-full">

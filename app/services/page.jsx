@@ -8,7 +8,7 @@ export const metadata = {
   openGraph: {
     title: 'Services | UElement Technologies',
     description: 'Explore our wide range of services including web development, consulting, and digital strategy.',
-    url: 'https://uelement.vercel.app/services',
+    url: 'https://uelement.in/services',
     siteName: 'UElement',
     images: [
       {

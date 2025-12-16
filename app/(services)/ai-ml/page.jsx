@@ -7,7 +7,7 @@ export const metadata = {
   openGraph: {
     title: 'AI & ML | UElement Technologies',
     description: 'Explore our wide range of services in AI and Machine Learning.',
-    url: 'https://uelement.vercel.app/ai-ml',
+    url: 'https://uelement.in/ai-ml',
     siteName: 'UElement',
     images: [
       {
