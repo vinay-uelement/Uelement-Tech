@@ -53,7 +53,7 @@ const PartnersHero = () => {
         <div className="flex-1">
           <div className="overflow-hidden shadow-lg w-full">
             <img
-              src="/images/our-partners/hero-one.svg"
+              src="/images/our-partners/partner-hero3.png"
               alt="Team meeting"
               className="w-full rounded-[4px] h-auto object-cover"
             />

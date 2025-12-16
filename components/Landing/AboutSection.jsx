@@ -83,7 +83,7 @@ export default function AboutSection() {
           </div>
 
           {/* RIGHT BLUE BOX */}
-          <div className="flex-1 bg-primary-blue pe-[var(--container-small-padding)] xl:pe-0 ps-[var(--container-small-padding)] text-white xl:py-[var(--section-block-padding)]">
+          <div className="flex-1 bg-primary-blue xl:pe-[var(--container-small-padding)] xl:pe-0 xl:ps-[var(--container-small-padding)] text-white xl:py-[var(--section-block-padding)]">
             <div className="w-full">
               <p className="fl-slash text-center xl:text-left">/About us</p>
               <h2 className="fl1 !text-[#FFF9FF] text-center xl:text-left">

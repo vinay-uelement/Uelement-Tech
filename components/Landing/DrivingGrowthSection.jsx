@@ -121,7 +121,7 @@ const DrivingGrowthSection = () => {
 
   return (
     <section className="container-small">
-      <div className="flex lg:items-center flex-col lg:flex-row gap-20 lg:pb-8 xl:pb-10 2xl:pb-12">
+      <div className="flex lg:items-center flex-col lg:flex-row gap-10 mgap-20 lg:pb-8 xl:pb-10 2xl:pb-12">
         {/* Left Side Numbers */}
         <div className="flex-1 lg:mr-[30px] md:w-[60%] w-full">
           <div className="mb-7 xl:mb-10 flex items-center lg:hidden">
@@ -172,7 +172,7 @@ const DrivingGrowthSection = () => {
         </div>
 
         <div className="relative overflow-visible md:!w-[40%] w-full driving-slider">
-          <div className="absolute inset-y-0 -left-4 md:-left-15 flex items-center z-20">
+          <div className="absolute inset-y-0 -left-2 md:-left-15 flex items-center z-20">
             <div
               onClick={prevSlide}
               className="size-[26px] xl:size-[40px] text-20 lg:text-26 rounded-full bg-[#DEDEDE] shadow-down grid place-content-center cursor-pointer transition text-black lg:text-primary-blue"
@@ -201,7 +201,7 @@ const DrivingGrowthSection = () => {
               } else if (index === centerIndex) {
                 posClass = 'dg-center-medium';
                 zIndex = 20;
-                textOpacity = 0.6;
+                textOpacity = 0.4;
               } else if (index === rightIndex) {
                 posClass = 'dg-right-small';
                 zIndex = 10;
@@ -244,7 +244,7 @@ const DrivingGrowthSection = () => {
             })}
           </Slider>
 
-          <div className="absolute inset-y-0 -right-4 md:-right-18 xl:-right-14 flex items-center z-20">
+          <div className="absolute inset-y-0 -right-1 md:-right-18 xl:-right-14 flex items-center z-20">
             <div
               onClick={nextSlide}
               className="size-[26px] xl:size-[40px] text-20 lg:text-26  rounded-full bg-[#DEDEDE] shadow-down grid place-content-center cursor-pointer transition text-black lg:text-primary-blue"
@@ -254,7 +254,7 @@ const DrivingGrowthSection = () => {
           </div>
         </div>
         <div className="flex justify-center">
-          <button className="btn-blue mt-4 lg:hidden w-fit  ">
+          <button className="btn-blue mt-10 lg:hidden w-fit ">
             Learn More
           </button>
         </div>
