@@ -4,6 +4,9 @@ import React from 'react';
 export const metadata = {
   title: 'Company | UElement Technologies',
   description: 'Learn more about UElement, our mission, vision, and the team driving digital innovation.',
+  alternates: {
+    canonical: '/company',
+  },
   openGraph: {
     title: 'Company | UElement Technologies',
     description: 'Learn more about UElement, our mission, vision, and the team driving digital innovation.',

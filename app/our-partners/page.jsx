@@ -4,6 +4,9 @@ import React, { Suspense } from 'react'
 export const metadata = {
   title: 'Our Partners | UElement Technologies',
   description: 'Discover the strategic partners we collaborate with to deliver exceptional value to our clients.',
+  alternates: {
+    canonical: '/our-partners',
+  },
   openGraph: {
     title: 'Our Partners | UElement Technologies',
     description: 'Discover the strategic partners we collaborate with to deliver exceptional value to our clients.',

@@ -5,6 +5,9 @@ import React from 'react'
 export const metadata = {
   title: 'Contact Us | UElement Technologies',
   description: 'Get in touch with UElement for your digital transformation needs. We are here to help.',
+  alternates: {
+    canonical: '/contact-us',
+  },
   openGraph: {
     title: 'Contact Us | UElement Technologies',
     description: 'Get in touch with UElement for your digital transformation needs. We are here to help.',

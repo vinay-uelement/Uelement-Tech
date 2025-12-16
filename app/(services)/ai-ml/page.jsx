@@ -4,6 +4,9 @@ import React from 'react';
 export const metadata = {
   title: 'AI & ML | UElement Technologies',
   description: 'Explore our wide range of services in AI and Machine Learning.',
+  alternates: {
+    canonical: '/ai-ml',
+  },
   openGraph: {
     title: 'AI & ML | UElement Technologies',
     description: 'Explore our wide range of services in AI and Machine Learning.',

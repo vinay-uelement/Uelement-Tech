@@ -4,6 +4,9 @@ import React from 'react';
 export const metadata = {
   title: 'Cyber Security | UElement Technologies',
   description: 'Explore our wide range of services in Cyber Security.',
+  alternates: {
+    canonical: '/cybersecurity',
+  },
   openGraph: {
     title: 'Cyber Security | UElement Technologies',
     description: 'Explore our wide range of services in Cyber Security.',

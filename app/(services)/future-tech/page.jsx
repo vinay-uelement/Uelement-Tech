@@ -4,6 +4,9 @@ import React from 'react';
 export const metadata = {
   title: 'Future Tech | UElement Technologies',
   description: 'Explore our wide range of services in Future Tech.',
+  alternates: {
+    canonical: '/future-tech',
+  },
   openGraph: {
     title: 'Future Tech | UElement Technologies',
     description: 'Explore our wide range of services in Future Tech.',
