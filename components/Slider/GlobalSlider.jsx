@@ -1,12 +1,14 @@
 'use client';
 
 import React, { useEffect, useRef, useState } from 'react';
+import { useRouter } from 'next/navigation';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import './GlobalSlider.css';
 
 const GlobalSlider = ({ data }) => {
+  const router = useRouter();
   const sliderRef = useRef(null);
   const [activeIndex, setActiveIndex] = useState(0);
   const [slidesToShow, setSlidesToShow] = useState(3);
@@ -37,7 +39,6 @@ const GlobalSlider = ({ data }) => {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
-  // Pause autoplay
   const handlePause = () => {
     if (sliderRef.current) {
       sliderRef.current.slickPause();
@@ -45,7 +46,6 @@ const GlobalSlider = ({ data }) => {
     }
   };
 
-  // Resume autoplay
   const handlePlay = () => {
     if (sliderRef.current) {
       sliderRef.current.slickPlay();
@@ -53,17 +53,20 @@ const GlobalSlider = ({ data }) => {
     }
   };
 
-  // Handle touch start 
   const handleTouchStart = () => {
     handlePause();
   };
 
-  // Handle touch enda
   const handleTouchEnd = () => {
-    // Resume after a short delay to allow swipe to complete
     setTimeout(() => {
       handlePlay();
     }, 300);
+  };
+
+  const handleCardClick = (link) => {
+    if (link) {
+      router.push(link);
+    }
   };
 
   const settings = {
@@ -74,8 +77,8 @@ const GlobalSlider = ({ data }) => {
     adaptiveHeight: true,
     autoplay: true,
     autoplaySpeed: 5000,
-    pauseOnHover: false, // We'll handle this manually
-    pauseOnFocus: false, // We'll handle this manually
+    pauseOnHover: false,
+    pauseOnFocus: false,
     arrows: false,
 
     beforeChange: (_, next) => setActiveIndex(next),
@@ -126,7 +129,12 @@ const GlobalSlider = ({ data }) => {
       <Slider ref={sliderRef} {...settings}>
         {data.map((item) => (
           <div key={item.id} className="p-2 sm:p-3 md:p-4">
-            <div className="p-4 sm:p-6 bg-white rounded-[4px] min-h-[425px] sm:min-h-[500px] md:min-h-[550px] flex flex-col shadow-lg">
+            <div
+              onClick={() => handleCardClick(item.link)}
+              className={`p-4 sm:p-6 bg-[#F6F6F6] rounded-[4px] min-h-[425px] sm:min-h-[500px] md:min-h-[550px] flex flex-col transition-all duration-300 ease-in-out hover:scale-101 hover:shadow-[3px_4px_4px_0px_rgba(0,0,0,0.25)] ${
+                item.link ? 'cursor-pointer' : ''
+              }`}
+            >
               {/* IMAGE */}
               <div className="h-[150px] sm:h-[180px] md:h-[220px] 2xl:h-[280px] relative">
                 <img
@@ -145,7 +153,7 @@ const GlobalSlider = ({ data }) => {
 
               {/* CONTENT */}
               <div className="pt-5 sm:pt-6 flex flex-col flex-1">
-                <div className="bg-[#E1E1E1] px-2 sm:px-3 py-1 w-fit font-semibold text-xs sm:text-sm">
+                <div className="bg-[#E1E1E1] px-2 sm:px-3 py-1 w-fit font-semibold text-xs sm:text-sm rounded-[5px]">
                   {item.label}
                 </div>
 
