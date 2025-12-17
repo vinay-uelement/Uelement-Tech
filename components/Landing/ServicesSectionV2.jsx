@@ -149,25 +149,56 @@ const ServicesSection = () => {
             ))}
           </div>
 
-          {/* Mobile Dropdown */}
-          <div className="lg:hidden mb-0 relative">
-            <div className="relative inline-block w-full max-w-[250px]">
-              <div
-                className="absolute inset-0 bg-[#FFF4E4] text-[#232223] pointer-events-none"
-                style={{
-                  clipPath:
-                    'polygon(0 0, calc(100% - 30px) 0, 100% 100%, 0 100%)',
-                }}
-              />
+          {/* Mobile Dropdown  */}
+          <div className="lg:hidden mb-0 relative pl-[24px]">
+            <div className="relative inline-block">
               <button
                 onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-                className="relative w-full text-left px-6 py-4 text-[#232223] font-medium text-base z-10 flex items-center justify-between"
+                className="relative px-6 py-3 text-[#232223] font-semibold uppercase transition-all duration-250 flex items-center gap-3 w-[220px] sm:w-[220px]"
+                style={{ zIndex: 40 }}
               >
-                <span className="text-16 md:text-20 font-noto-sans">
+                {/* Tab Background - Base */}
+                <span
+                  className="absolute inset-0 bg-[#FFF4E4]"
+                  style={
+                    {
+                      // boxShadow: 'rgba(0,0,0,0.1) 0 2px 5px',
+                    }
+                  }
+                />
+
+                {/* Left Skew */}
+                <span
+                  className="absolute top-0 h-full w-7 bg-[#FFF4E4] z-10"
+                  style={{
+                    left: '-24px',
+
+                    // boxShadow:
+                    //   'rgba(0,0,0,0.1) -3px 2px 5px, inset rgba(255,255,255,0.09) 1px 0',
+                    borderTopLeftRadius: '6px',
+                  }}
+                />
+
+                {/* Right Skew */}
+                <span
+                  className="absolute top-0 h-full w-7 bg-[#FFF4E4] z-20"
+                  style={{
+                    right: '-18px',
+                    transform: 'skew(30deg, 0deg)',
+                    // boxShadow:
+                    //   'rgba(0,0,0,0.1) 3px 2px 5px, inset rgba(255,255,255,0.09) -1px 0',
+                    borderTopRightRadius: '6px',
+                  }}
+                />
+
+                {/* Tab Text */}
+                <span className="relative z-30 text-14 sm:text-16 font-noto-sans flex-1 text-center">
                   {selectedTab.title}
                 </span>
+
+                {/* Dropdown Icon */}
                 <svg
-                  className={`w-5 h-5 transition-transform ${
+                  className={`relative z-30 w-4 h-4 sm:w-5 sm:h-5 transition-transform flex-shrink-0 ${
                     isDropdownOpen ? 'rotate-180' : ''
                   }`}
                   fill="none"
@@ -185,7 +216,7 @@ const ServicesSection = () => {
 
               {/* Dropdown Menu */}
               {isDropdownOpen && (
-                <div className="absolute top-full left-0 w-full bg-white rounded shadow-lg overflow-hidden z-50 mt-1">
+                <div className="absolute top-full left-0 mt-2 w-[280px] sm:w-[320px] bg-white rounded shadow-lg overflow-hidden z-50">
                   {tabs.map((tab) => (
                     <button
                       key={tab.id}
@@ -193,7 +224,7 @@ const ServicesSection = () => {
                         setSelectedTab(tab);
                         setIsDropdownOpen(false);
                       }}
-                      className={`w-full text-left px-6 py-3 text-base transition-colors ${
+                      className={`w-full text-left px-6 py-3 text-14 sm:text-16 transition-colors ${
                         tab.id === selectedTab.id
                           ? 'bg-[#0c142d] text-white'
                           : 'bg-white text-black hover:bg-gray-100'
