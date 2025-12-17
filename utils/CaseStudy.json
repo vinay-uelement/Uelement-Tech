@@ -1,0 +1,83 @@
+[
+  {
+    "id": 1,
+    "title": "Defense-Grade Cloud Transformation",
+    "desc": "Secure Cloud Transformation for Aerospace & Defense Modernizing infrastructure with Zero Trust and CMMC-compliant architecture.",
+    "label": "services",
+    "industry": "Aerospace & Defense",
+    "companySize": "Small-Mid Enterprise (Defense Contractor | DIB)",
+    "servicesProvided": [
+      "Enterprise Cloud Migration",
+      "Cybersecurity Architecture",
+      "Compliance & Governance",
+      "Zero Trust Security"
+    ],
+    "headerImage": "/images/resources/case-study/case-study-1main.png",
+    "challenge": "A growing aerospace and defense contractor supporting government programs needed to modernize its on-premise infrastructure while meeting strict regulatory and security requirements. The organization faced challenges including fragmented legacy systems, limited visibility into security posture, and manual compliance processes that slowed audits and increased risk exposure.",
+    "keyRequirements": [
+      {
+        "id": 1,
+        "title": "Migration to a secure government-compliant cloud environment"
+      },
+      {
+        "id": 2,
+        "title": "Alignment with CMMC Level 2, NIST 800-171, and DFARS requirements"
+      },
+      {
+        "id": 3,
+        "title": "Secure handling of Controlled Unclassified Information (CUI)"
+      },
+      {
+        "id": 4,
+        "title": "Minimal disruption to mission-critical operations"
+      },
+      {
+        "id": 5,
+        "title": "Improved threat detection, monitoring, and access governance"
+      }
+    ],
+    "solution": {
+      "intro": "UElement Technologies designed and executed a compliance-first cloud transformation strategy, ensuring security, resilience, and long-term scalability. Our Cloud, Cybersecurity and Governance teams collaborated with the client's IT, security and compliance stakeholders to",
+      "items": [
+        "Conduct a comprehensive security and compliance gap assessment against CMMC and NIST 800-171 controls",
+        "Design a secure cloud architecture aligned with defense-grade requirements",
+        "Implement a dedicated secure enclave for Controlled Unclassified Information (CUI)",
+        "Migrate critical workloads and collaboration platforms to Microsoft Government Cloud (GCC / GCC High)",
+        "Deploy Zero Trust architecture with identity-centric access, least-privilege enforcement, and network segmentation",
+        "Enable continuous security monitoring, logging, and alerting for proactive threat detection",
+        "Establish audit-ready policies, governance frameworks, and automated compliance reporting"
+      ],
+      "conclusion": "The solution ensured operational continuity while significantly strengthening the organization's overall security posture."
+    },
+    "results": [
+      "Aligned with CMMC & NIST 800-171 controls, supporting audit readiness",
+      "Successful migration to a secure government cloud environment",
+      "40% reduction in audit preparation effort through automated compliance reporting",
+      "Improved security posture with Zero Trust enforcement and centralized monitoring",
+      "Enhanced protection of CUI, meeting defense and regulatory expectations"
+    ],
+    "resultConclusion": "The client now operates in a secure, compliant, and scalable cloud environment, prepared for future defense contracts and evolving regulatory demands.",
+    "whyUElement": [
+      {
+        "id": 1,
+        "title": "Defense-Grade Cloud & Security Expertise for Aerospace and Government Contractors"
+      },
+      {
+        "id": 2,
+        "title": "Deep Compliance Knowledge across CMMC, DFARS, NIST 800-171, and governance frameworks"
+      },
+      {
+        "id": 3,
+        "title": "Zero Trust & Cloud-Native Security Architectures designed for modern threat landscapes"
+      },
+      {
+        "id": 4,
+        "title": "End-to-End Delivery spanning Cybersecurity, Enterprise Cloud, Compliance, and Managed Services"
+      },
+      {
+        "id": 5,
+        "title": "Future-Ready Approach, integrating cloud, AI-driven monitoring, and quantum-safe security"
+      }
+    ]
+  }
+]

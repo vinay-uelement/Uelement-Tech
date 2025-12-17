@@ -32,6 +32,40 @@ const blogs = [
   },
 ];
 
+const casestudy = [
+  {
+    id: 1,
+    title: 'Defense-Grade Cloud Transformation',
+    desc: 'Secure Cloud Transformation for Aerospace & Defense Modernizing infrastructure with Zero Trust and CMMC-compliant architecture.',
+    label: 'services',
+    image: '/images/resources/case-study/case-study1hero.png',
+  },
+];
+
+const research = [
+  {
+    id: 1,
+    title: 'Cybersecurity Trends 2025',
+    desc: 'In-depth research on emerging cybersecurity threats and best practices for enterprise protection.',
+    label: 'research',
+    image: 'images/resources/blog-1.jpg',
+  },
+  {
+    id: 2,
+    title: 'Cloud Security Framework',
+    desc: 'Comprehensive study on building secure cloud infrastructure with compliance standards.',
+    label: 'research',
+    image: 'images/resources/blog-2.jpg',
+  },
+  {
+    id: 3,
+    title: 'AI in Security Operations',
+    desc: 'Exploring the role of artificial intelligence in modern security operations centers.',
+    label: 'research',
+    image: 'images/resources/blog-3.jpg',
+  },
+];
+
 const categories = [
   {
     id: 1,
@@ -109,6 +143,36 @@ const KnowledgeHub = () => {
     nextArrow: <CustomNextArrow />,
   };
 
+  // Function to get content based on selected category
+  const getContentByCategory = () => {
+    switch (currentSection) {
+      case 1:
+        return blogs;
+      case 2:
+        return casestudy;
+      case 3:
+        return research;
+      default:
+        return blogs;
+    }
+  };
+
+  // Function to get route path based on category
+  const getRoutePath = (id) => {
+    switch (currentSection) {
+      case 1:
+        return `/blog/${id}`;
+      case 2:
+        return `/case-study/${id}`;
+      case 3:
+        return `/research/${id}`;
+      default:
+        return `/blog/${id}`;
+    }
+  };
+
+  const contentData = getContentByCategory();
+
   return (
     <div className="container-padding bg-white py-[var(--section-block-padding)]">
       <div className="flex flex-col items-center">
@@ -160,35 +224,35 @@ const KnowledgeHub = () => {
       {/* Slider Section */}
       <div className="knowledge-slider-container relative px-8 md:px-12">
         <Slider ref={sliderRef} {...settings}>
-          {blogs.map((blog) => (
+          {contentData.map((item) => (
             <Link
-              href={`/case-study/${blog.id}`}
-              key={blog.id}
+              href={getRoutePath(item.id)}
+              key={item.id}
               className="p-3 md:p-4"
             >
               <div className="p-6 bg-white rounded-[4px] h-[540px] 2xl:h-[590px] flex flex-col blog-card w-full shadow-lg">
                 <div className="h-[200px] md:h-[220px] 2xl:h-[280px] relative">
                   <img
-                    src={blog.image}
-                    alt={blog.title}
+                    src={item.image}
+                    alt={item.title}
                     className="h-full w-full object-cover rounded-[4px]"
                   />
                   <div className="bg-[#ffffff] shadow-md size-12 rounded-full absolute right-3 -bottom-6 flex items-center justify-center">
                     <img
                       src={'/icons/global/enterprise-icon.svg'}
-                      alt={blog.label}
+                      alt={item.label}
                     />
                   </div>
                 </div>
                 <div className="pt-6 flex flex-col flex-1">
                   <div className="bg-[#E1E1E1] rounded-[4px] capitalize text-[#232223] px-3 py-1 w-fit text-16">
-                    {blog.label}
+                    {item.label}
                   </div>
                   <h6 className="text-22 font-semibold mt-4 whitespace-pre-line">
-                    {blog.title}
+                    {item.title}
                   </h6>
                   <p className="font-light text-[#5F6D7E] mt-3 flex-1 text-14">
-                    {blog.desc}
+                    {item.desc}
                   </p>
                   <span className="font-semibold text-primary-blue mt-3 flex items-center gap-1 text-14 hover:gap-2 transition-all duration-300">
                     Learn more
