@@ -176,7 +176,7 @@ const NavbarV4 = () => {
         isScrolled ? 'top-2' : 'top-6'
       } transition-all duration-700 ease-in-out`}
       >
-        <div className="w-full md:px-20 rounded-[40px] ">
+        <div className="w-full md:px-8 xl:px-10 rounded-[40px] ">
           <div className="flex justify-between h-full w-full relative rounded-[40px]">
             {/* Logo - Extended width on mobile with padding */}
             <Link
@@ -203,7 +203,7 @@ const NavbarV4 = () => {
                 {/* Desktop: Menu Items */}
                 <div
                   ref={navRef}
-                  className="flex-1 hidden md:flex justify-center gap-3 min-h-full"
+                  className="flex-1 hidden xl:flex justify-center gap-3 min-h-full"
                 >
                   {navbarList.map((navItem) => (
                     <div
@@ -258,7 +258,7 @@ const NavbarV4 = () => {
                     setExpandedMobileMenu(null);
                     setShowMobileNav((prev) => !prev);
                   }}
-                  className="md:hidden ml-auto text-white !bg-transparent text-20"
+                  className="xl:hidden ml-auto text-white !bg-transparent text-20"
                 >
                   {ReactIcons.hamburgerMenu}
                 </button>
@@ -266,7 +266,7 @@ const NavbarV4 = () => {
                 {/* Desktop: Contact Button */}
                 <Link
                   href={'/contact-us'}
-                  className="hidden md:block bg-white rounded-[40px] font-reddit-sans text-16 xl:text-18 px-8 py-2 h-fit hover:shadow-hover"
+                  className="hidden xl:block bg-white rounded-[40px] font-reddit-sans text-16 xl:text-18 px-8 py-2 h-fit hover:shadow-hover"
                 >
                   Contact us
                 </Link>
@@ -276,7 +276,7 @@ const NavbarV4 = () => {
               <div
                 ref={dropdownRef}
                 className={`w-[calc(100%+40px)] absolute -left-10 bg-[#00000050] backdrop-blur-2xl backdrop-saturate-150
-    shadow-xl text-[#fff] z-[30] top-9 hidden md:flex rounded-b-[22px] overflow-hidden transition-all duration-300 ease-in-out ${
+    shadow-xl text-[#fff] z-[30] top-9 hidden xl:flex rounded-b-[22px] overflow-hidden transition-all duration-300 ease-in-out ${
       hoveredMenu && hoveredMenu?.children
         ? (DESKTOP_DROPDOWN_HEIGHT[hoveredMenu.id] ?? 'h-[400px]')
         : 'h-0'
