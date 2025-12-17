@@ -186,7 +186,7 @@ const NavbarV4 = () => {
               <img
                 src="/icons/global/UElement_Logo_White 3.svg"
                 alt="uelement"
-                className="w-auto md:w-[140px] h-auto"
+                className="xl:w-auto md:w-[140px] h-auto"
               />
             </Link>
 

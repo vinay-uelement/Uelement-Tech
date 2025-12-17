@@ -257,7 +257,7 @@ const ContactUs = () => {
     if (!isValid) {
       setSubmitStatus({
         type: 'error',
-        message: 'Please fix the errors in the form before submitting.',
+        message: 'Please fill all required fields before submitting.',
       });
       return;
     }

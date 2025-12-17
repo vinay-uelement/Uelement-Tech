@@ -1,14 +1,9 @@
 'use client';
 import { useState, useEffect } from 'react';
-import dynamic from 'next/dynamic';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import { useSearchParams } from 'next/navigation';
-
-const Select = dynamic(() => import('react-select'), {
-  ssr: false,
-});
 
 const PartnerSolution = () => {
   const tabs = [
@@ -97,7 +92,9 @@ const PartnerSolution = () => {
       ],
     },
   ];
+
   const [isMounted, setIsMounted] = useState(false);
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const searchParams = useSearchParams();
   const tabParam = searchParams.get('tab');
 
@@ -116,61 +113,13 @@ const PartnerSolution = () => {
     setIsMounted(true);
   }, []);
 
-  // React Select options
-  const options = tabs.map((tab) => ({
-    value: tab.id,
-    label: tab.title,
-  }));
-
-  // Custom styles for react-select
-  const customStyles = {
-    control: (provided) => ({
-      ...provided,
-      backgroundColor: 'transparent',
-      border: 'none',
-      padding: '0.5rem 0.75rem',
-      fontWeight: '500',
-      borderRadius: '10px 10px 0 0',
-      outline: 'none',
-      boxShadow: 'none',
-      cursor: 'pointer',
-      position: 'relative',
-      zIndex: 10,
-      '&:hover': {
-        border: 'none',
-      },
-    }),
-    singleValue: (provided) => ({
-      ...provided,
-      color: '#fff',
-      fontWeight: '500',
-    }),
-    option: (provided, state) => ({
-      ...provided,
-      backgroundColor: state.isSelected ? '#0c142d' : '#fff',
-      color: state.isSelected ? '#fff' : '#000',
-      cursor: 'pointer',
-    }),
-    dropdownIndicator: (provided) => ({
-      ...provided,
-      color: '#fff',
-      padding: '0 4px',
-      margin: '0 16px 0 0',
-    }),
-    indicatorSeparator: () => ({
-      display: 'none',
-    }),
-    menu: (provided) => ({
-      ...provided,
-      borderRadius: '10px',
-      overflow: 'hidden',
-      marginTop: '4px',
-      zIndex: 9999,
-    }),
-    menuPortal: (provided) => ({
-      ...provided,
-      zIndex: 9999,
-    }),
+  // Get proper z-index value
+  const getZIndex = (tabId, idx) => {
+    if (tabId === selectedTab.id) {
+      return 40; // Active tab always on top
+    }
+    // reverse order
+    return 30 - idx * 10;
   };
 
   // Slider settings for mobile
@@ -197,52 +146,154 @@ const PartnerSolution = () => {
         {/* Tabs & Content */}
         <div className="bg-white w-full overflow-hidden md:px-10 px-5">
           {/* Desktop Tabs */}
-          <div className="hidden md:flex gap-0 mb-0">
-            {tabs.map((tab) => (
+          <div className="hidden lg:flex justify-start gap-0 mb-0 pl-[24px] overflow-x-auto ">
+            {tabs.map((tab, idx) => (
               <button
                 key={tab.id}
                 onClick={() => setSelectedTab(tab)}
-                className={`relative px-20 py-2 md:text-24 text-18 text-[#9E9E9E] rounded-tl-[10px] transition-all duration-300 ease-in-out overflow-hidden ${
+                className={`relative px-6 py-3 min-w-[200px] text-sm sm:text-base font-semibold uppercase transition-all duration-250 mb-1 flex-shrink-0 ${
                   tab.id === selectedTab.id
-                    ? 'bg-primary-blue font-noto-sans font-semibold text-white shadow-[0px_4px_5px_0px_rgba(0,0,0,0.0)] font-noto-sans font-semibold'
-                    : 'bg-[#FCFCFC] hover:bg-gray-100 border border-[#E0E0E0] font-noto-sans'
+                    ? 'text-white'
+                    : 'text-[#9E9E9E] hover:text-[#6b6b6b]'
                 }`}
                 style={{
-                  clipPath:
-                    'polygon(0 0, calc(100% - 30px) 0, 100% 101%, 0 101%)',
+                  marginRight: idx < tabs.length - 1 ? '56px' : '0',
+                  zIndex: getZIndex(tab.id, idx),
                 }}
               >
-                {tab.title}
+                {/* Tab Background - Base */}
+                <span
+                  className={`absolute inset-0 transition-all duration-250 border-[#000000]/22 border-t ${
+                    tab.id === selectedTab.id
+                      ? 'bg-primary-blue'
+                      : 'bg-[#FCFCFC]'
+                  }`}
+                  style={{
+                    boxShadow:
+                      tab.id === selectedTab.id
+                        ? 'rgba(0,0,0,0.1) 0 2px 5px'
+                        : 'rgba(0,0,0,0.1) 0 2px 5px',
+                  }}
+                />
+
+                {/* Left Skew  */}
+                <span
+                  className={`absolute top-0 h-full w-11 transition-all duration-250 z-10 border-[#000000]/22 border-t border-l ${
+                    tab.id === selectedTab.id
+                      ? 'bg-primary-blue'
+                      : 'bg-[#FCFCFC]'
+                  }`}
+                  style={{
+                    left: '-24px',
+                    boxShadow:
+                      'rgba(0,0,0,0.1) -3px 2px 5px, inset rgba(255,255,255,0.09) 1px 0',
+                    borderTopLeftRadius: '6px',
+                  }}
+                />
+
+                {/* Right Skew */}
+                <span
+                  className={`absolute top-0 h-full w-11 transition-all duration-250 z-20 border-[#000000]/22 border-t border-r ${
+                    tab.id === selectedTab.id
+                      ? 'bg-primary-blue'
+                      : 'bg-[#FCFCFC]'
+                  }`}
+                  style={{
+                    right: '-24px',
+                    transform: 'skew(30deg, 0deg)',
+                    boxShadow:
+                      'rgba(0,0,0,0.1) 3px 2px 5px, inset rgba(255,255,255,0.09) -1px 0',
+                    borderTopRightRadius: '6px',
+                  }}
+                />
+
+                {/* Tab Text */}
+                <span className="relative z-30 text-16 md:text-20 font-noto-sans ">
+                  {tab.title}
+                </span>
               </button>
             ))}
           </div>
 
           {/* Mobile Dropdown */}
-          <div className="md:hidden mb-0 relative z-50">
-            <div className="relative inline-block w-full max-w-[200px]">
-              <div
-                className="absolute inset-0 bg-primary-blue pointer-events-none rounded-tl-[4px]"
-                style={{
-                  clipPath:
-                    'polygon(0 0, calc(100% - 30px) 0, 100% 100%, 0 100%)',
-                }}
-              />
-              <Select
-                value={{ value: selectedTab.id, label: selectedTab.title }}
-                onChange={(option) =>
-                  setSelectedTab(tabs.find((tab) => tab.id === option.value))
-                }
-                options={options}
-                styles={customStyles}
-                isSearchable={false}
-                menuPortalTarget={isMounted ? document.body : null}
-                menuPosition="fixed"
-              />
+          <div className="lg:hidden mb-0 relative pl-[24px]">
+            <div className="relative inline-block">
+              <button
+                onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+                className="relative px-6 py-3 text-white font-semibold uppercase transition-all duration-250 flex items-center gap-3 w-[220px] sm:w-[220px]"
+                style={{ zIndex: 40 }}
+              >
+                {/* Tab Background - Base */}
+                <span className="absolute inset-0 bg-primary-blue border-[#000000]/22 border-t" />
+
+                {/* Left Skew */}
+                <span
+                  className="absolute top-0 h-full w-7 bg-primary-blue z-10 border-[#000000]/22 border-t border-l"
+                  style={{
+                    left: '-24px',
+                    borderTopLeftRadius: '6px',
+                  }}
+                />
+
+                {/* Right Skew */}
+                <span
+                  className="absolute top-0 h-full w-8 bg-primary-blue z-20 border-[#000000]/22 border-t border-r"
+                  style={{
+                    right: '-18px',
+                    transform: 'skew(30deg, 0deg)',
+                    borderTopRightRadius: '6px',
+                  }}
+                />
+
+                {/* Tab Text */}
+                <span className="relative z-30 text-14 sm:text-16 font-noto-sans flex-1 text-center">
+                  {selectedTab.title}
+                </span>
+
+                {/* Dropdown Icon */}
+                <svg
+                  className={`relative z-30 w-4 h-4 sm:w-5 sm:h-5 transition-transform flex-shrink-0 ${
+                    isDropdownOpen ? 'rotate-180' : ''
+                  }`}
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M19 9l-7 7-7-7"
+                  />
+                </svg>
+              </button>
+
+              {/* Dropdown Menu */}
+              {isDropdownOpen && (
+                <div className="absolute top-full left-0 mt-2 w-[280px] sm:w-[320px] bg-white rounded shadow-lg overflow-hidden z-50">
+                  {tabs.map((tab) => (
+                    <button
+                      key={tab.id}
+                      onClick={() => {
+                        setSelectedTab(tab);
+                        setIsDropdownOpen(false);
+                      }}
+                      className={`w-full text-left px-6 py-3 text-14 sm:text-16 transition-colors ${
+                        tab.id === selectedTab.id
+                          ? 'bg-primary-blue text-white'
+                          : 'bg-white text-black hover:bg-gray-100'
+                      }`}
+                    >
+                      {tab.title}
+                    </button>
+                  ))}
+                </div>
+              )}
             </div>
           </div>
 
           {/* Tab Content */}
-          <div className="bg-primary-blue rounded-[4px] rounded-tl-none py-10 sm:py-10 lg:py-[var(--section-block-padding)] ">
+          <div className="bg-primary-blue rounded-[4px] rounded-tl-none py-10 sm:py-10 lg:py-[var(--section-block-padding)] -mt-1">
             <div className="animate-fade-in ">
               {/* Title with underline */}
               <div className="flex justify-center mb-6 sm:mb-8 lg:mb-10">
