@@ -72,8 +72,95 @@ const ContactUs = () => {
     },
   });
 
+  const [errors, setErrors] = useState({
+    firstName: '',
+    lastName: '',
+    email: '',
+    phone: '',
+    message: '',
+  });
+
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState({ type: '', message: '' });
+
+  // Validation functions
+  const validateEmail = (email) => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+  };
+
+  const validatePhone = (phone) => {
+    // Accepts: +1234567890, 1234567890, (123) 456-7890, 123-456-7890
+    const phoneRegex =
+      /^[\+]?[(]?[0-9]{1,4}[)]?[-\s\.]?[(]?[0-9]{1,4}[)]?[-\s\.]?[0-9]{1,9}$/;
+    return phoneRegex.test(phone.replace(/\s/g, ''));
+  };
+
+  const validateField = (name, value) => {
+    let error = '';
+
+    switch (name) {
+      case 'firstName':
+        if (!value.trim()) {
+          error = 'First name is required';
+        } else if (value.trim().length < 2) {
+          error = 'First name must be at least 2 characters';
+        }
+        break;
+
+      case 'lastName':
+        if (!value.trim()) {
+          error = 'Last name is required';
+        } else if (value.trim().length < 2) {
+          error = 'Last name must be at least 2 characters';
+        }
+        break;
+
+      case 'email':
+        if (!value.trim()) {
+          error = 'Email is required';
+        } else if (!validateEmail(value)) {
+          error = 'Please enter a valid email address';
+        }
+        break;
+
+      case 'phone':
+        if (!value.trim()) {
+          error = 'Phone number is required';
+        } else if (!validatePhone(value)) {
+          error = 'Please enter a valid phone number';
+        }
+        break;
+
+      case 'message':
+        if (!value.trim()) {
+          error = 'Message is required';
+        } else if (value.trim().length < 4) {
+          error = 'Message must be at least 4 characters';
+        }
+        break;
+
+      default:
+        break;
+    }
+
+    return error;
+  };
+
+  const validateForm = () => {
+    const newErrors = {
+      firstName: validateField('firstName', formData.firstName),
+      lastName: validateField('lastName', formData.lastName),
+      email: validateField('email', formData.email),
+      phone: validateField('phone', formData.phone),
+      message: validateField('message', formData.message),
+    };
+
+    setErrors(newErrors);
+
+    // Return true if no errors
+    return !Object.values(newErrors).some((error) => error !== '');
+  };
 
   // Web3Forms Integration
   const { submit } = useWeb3Forms({
@@ -90,7 +177,7 @@ const ContactUs = () => {
       });
       setIsSubmitting(false);
 
-      // Reset form after 3 second
+      // Reset form after 3 seconds
       setTimeout(() => {
         resetForm();
         setSubmitStatus({ type: '', message: '' });
@@ -111,6 +198,23 @@ const ContactUs = () => {
     setFormData((prev) => ({
       ...prev,
       [name]: value,
+    }));
+
+    // Clear error when user starts typing
+    if (errors[name]) {
+      setErrors((prev) => ({
+        ...prev,
+        [name]: '',
+      }));
+    }
+  };
+
+  const handleBlur = (e) => {
+    const { name, value } = e.target;
+    const error = validateField(name, value);
+    setErrors((prev) => ({
+      ...prev,
+      [name]: error,
     }));
   };
 
@@ -139,10 +243,29 @@ const ContactUs = () => {
         digitalTransformation: false,
       },
     });
+    setErrors({
+      firstName: '',
+      lastName: '',
+      email: '',
+      phone: '',
+      message: '',
+    });
   };
 
   const contactFormHandler = async (e) => {
     e.preventDefault();
+
+    // Validate form
+    const isValid = validateForm();
+
+    if (!isValid) {
+      setSubmitStatus({
+        type: 'error',
+        message: 'Please fix the errors in the form before submitting.',
+      });
+      return;
+    }
+
     setIsSubmitting(true);
     setSubmitStatus({ type: '', message: '' });
 
@@ -244,7 +367,13 @@ const ContactUs = () => {
                     name="firstName"
                     value={formData.firstName}
                     onChangeHandler={handleInputChange}
+                    onBlur={handleBlur}
                   />
+                  {errors.firstName && (
+                    <p className="text-red-600 text-12 mt-1 font-reddit-sans">
+                      {errors.firstName}
+                    </p>
+                  )}
                 </div>
                 <div>
                   <InputField
@@ -253,7 +382,13 @@ const ContactUs = () => {
                     name="lastName"
                     value={formData.lastName}
                     onChangeHandler={handleInputChange}
+                    onBlur={handleBlur}
                   />
+                  {errors.lastName && (
+                    <p className="text-red-600 text-12 mt-1 font-reddit-sans">
+                      {errors.lastName}
+                    </p>
+                  )}
                 </div>
                 <div>
                   <InputField
@@ -263,22 +398,36 @@ const ContactUs = () => {
                     type="email"
                     value={formData.email}
                     onChangeHandler={handleInputChange}
+                    onBlur={handleBlur}
                   />
+                  {errors.email && (
+                    <p className="text-red-600 text-12 mt-1 font-reddit-sans">
+                      {errors.email}
+                    </p>
+                  )}
                 </div>
                 <div>
                   <InputField
                     label="Phone Number"
                     placeholder="+1 012 3456 789"
                     name="phone"
+                    type="number"
                     value={formData.phone}
                     onChangeHandler={handleInputChange}
+                    onBlur={handleBlur}
                   />
+                  {errors.phone && (
+                    <p className="text-red-600 text-12 mt-1 font-reddit-sans">
+                      {errors.phone}
+                    </p>
+                  )}
                 </div>
               </div>
 
               <div>
                 <h6 className="font-reddit-sans font-semibold text-13 sm:text-14 text-black mb-3">
-                  Select Subject?
+                  Select Subject?{' '}
+                  <span className="text-gray-400 font-normal">(Optional)</span>
                 </h6>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                   <Checkbox
@@ -316,10 +465,18 @@ const ContactUs = () => {
                   name="message"
                   value={formData.message}
                   onChange={handleInputChange}
+                  onBlur={handleBlur}
                   placeholder="Write your message.."
                   rows="1"
-                  className="w-full placeholder:text-gray-8080 border-b border-b-[#D7D7D7] font-reddit-sans text-14 py-2 resize-none focus:border-primary-blue transition-colors"
+                  className={`w-full placeholder:text-gray-8080 border-b ${
+                    errors.message ? 'border-b-red-600' : 'border-b-[#D7D7D7]'
+                  } font-reddit-sans text-14 py-2 resize-none focus:border-primary-blue transition-colors`}
                 ></textarea>
+                {errors.message && (
+                  <p className="text-red-600 text-12 mt-1 font-reddit-sans">
+                    {errors.message}
+                  </p>
+                )}
               </div>
 
               <div className="flex justify-center sm:justify-end">
@@ -476,36 +633,36 @@ const FooterContent = () => {
 
               {/* Resources Links */}
               <div className="resources-links">
-              <h6 className=" font-semibold text-14 sm:text-22 font-reddit-sans text-white uppercase mb-4 sm:mb-5">
-                Services
-              </h6>
-              <div className="flex flex-col gap-3 sm:gap-4 font-reddit-sans font-light">
-                <Link
-                  href="/ai-ml"
-                  className="fl3 !text-[#e2e2e2] text-13 sm:text-16 hover:text-white transition-colors"
-                >
-                  AI-ML
-                </Link>
-                <Link
-                  href="/cybersecurity"
-                  className="fl3 !text-[#e2e2e2] text-13 sm:text-16 hover:text-white transition-colors"
-                >
-                  CyberSecurity
-                </Link>
-                <Link
-                  href="/cloud-solutions"
-                  className="fl3 !text-[#e2e2e2] text-13 sm:text-16 hover:text-white transition-colors"
-                >
-                  Cloud Solutions
-                </Link>
-                <Link
-                  href="/future-tech"
-                  className="fl3 !text-[#e2e2e2] text-13 sm:text-16 hover:text-white transition-colors"
-                >
-                  Future Tech
-                </Link>
+                <h6 className=" font-semibold text-14 sm:text-22 font-reddit-sans text-white uppercase mb-4 sm:mb-5">
+                  Services
+                </h6>
+                <div className="flex flex-col gap-3 sm:gap-4 font-reddit-sans font-light">
+                  <Link
+                    href="/ai-ml"
+                    className="fl3 !text-[#e2e2e2] text-13 sm:text-16 hover:text-white transition-colors"
+                  >
+                    AI-ML
+                  </Link>
+                  <Link
+                    href="/cybersecurity"
+                    className="fl3 !text-[#e2e2e2] text-13 sm:text-16 hover:text-white transition-colors"
+                  >
+                    CyberSecurity
+                  </Link>
+                  <Link
+                    href="/cloud-solutions"
+                    className="fl3 !text-[#e2e2e2] text-13 sm:text-16 hover:text-white transition-colors"
+                  >
+                    Cloud Solutions
+                  </Link>
+                  <Link
+                    href="/future-tech"
+                    className="fl3 !text-[#e2e2e2] text-13 sm:text-16 hover:text-white transition-colors"
+                  >
+                    Future Tech
+                  </Link>
+                </div>
               </div>
-            </div>
             </div>
 
             {/* Newsletter */}
@@ -566,7 +723,7 @@ const FooterContent = () => {
                 alt="UElement logo"
                 className="h-[30px] sm:h-[48px] w-auto mb-4 !mx-auto"
               />
-              <div className='flex items-center flex-col gap-3'>
+              <div className="flex items-center flex-col gap-3">
                 <p className="text-[#808080] font-reddit-sans text-[12px]">
                   Empowering Secure Digital Transformation
                 </p>
@@ -585,7 +742,6 @@ const FooterContent = () => {
                   >
                     <Icon name="instagram2" size={35} />
                   </Link>
-
                 </div>
               </div>
             </div>
@@ -618,45 +774,42 @@ const FooterContent = () => {
                 </div>
               </div>
 
-             
-
               {/* Resources Links */}
               <div className="resources-links">
-              <h6 className=" font-semibold text-14 sm:text-22 font-reddit-sans text-white uppercase mb-4 sm:mb-5">
-                SERVICES
-              </h6>
-              <div className="flex flex-col gap-3 sm:gap-4 font-reddit-sans font-light">
-                <Link
-                  href="/ai-ml"
-                  className="fl3 !text-[#e2e2e2] text-13 sm:text-16 hover:text-white transition-colors"
-                >
-                  AI-ML
-                </Link>
-                <Link
-                  href="/cybersecurity"
-                  className="fl3 !text-[#e2e2e2] text-13 sm:text-16 hover:text-white transition-colors"
-                >
-                  CyberSecurity
-                </Link>
-                <Link
-                  href="/cloud-solutions"
-                  className="fl3 !text-[#e2e2e2] text-13 sm:text-16 hover:text-white transition-colors"
-                >
-                  Cloud Solutions
-                </Link>
-                <Link
-                  href="/future-tech"
-                  className="fl3 !text-[#e2e2e2] text-13 sm:text-16 hover:text-white transition-colors"
-                >
-                  Future Tech
-                </Link>
+                <h6 className=" font-semibold text-14 sm:text-22 font-reddit-sans text-white uppercase mb-4 sm:mb-5">
+                  SERVICES
+                </h6>
+                <div className="flex flex-col gap-3 sm:gap-4 font-reddit-sans font-light">
+                  <Link
+                    href="/ai-ml"
+                    className="fl3 !text-[#e2e2e2] text-13 sm:text-16 hover:text-white transition-colors"
+                  >
+                    AI-ML
+                  </Link>
+                  <Link
+                    href="/cybersecurity"
+                    className="fl3 !text-[#e2e2e2] text-13 sm:text-16 hover:text-white transition-colors"
+                  >
+                    CyberSecurity
+                  </Link>
+                  <Link
+                    href="/cloud-solutions"
+                    className="fl3 !text-[#e2e2e2] text-13 sm:text-16 hover:text-white transition-colors"
+                  >
+                    Cloud Solutions
+                  </Link>
+                  <Link
+                    href="/future-tech"
+                    className="fl3 !text-[#e2e2e2] text-13 sm:text-16 hover:text-white transition-colors"
+                  >
+                    Future Tech
+                  </Link>
+                </div>
               </div>
-            </div>
             </div>
 
             {/* Newsletter */}
             <div className="newsletter mx-auto">
-              
               <h6 className="font-semibold text-14 sm:text-22 font-reddit-sans text-white uppercase mb-4 sm:mb-5">
                 NEWSLETTER
               </h6>
