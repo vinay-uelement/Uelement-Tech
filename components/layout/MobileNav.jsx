@@ -18,7 +18,7 @@ const MobileNav = ({
   return (
     <div
       ref={mobileNavRef}
-      className={`xl:hidden bg-[#0c142d]/35 w-[90vw] md:max-w-[1920px] rounded-b-[12px]
+      className={`xl:hidden bg-[#0c142d]/35 w-[90vw] xl:w-full xl:px-[10px] xl:max-w-[1920px] rounded-b-[12px]
         backdrop-blur-2xl fixed left-1/2 -translate-x-1/2 z-[70]
         overflow-hidden transition-all duration-300 ease-in-out
         ${isScrolled ? 'top-[38px]' : 'top-[60px]'}
@@ -30,11 +30,10 @@ const MobileNav = ({
             : 'max-h-0'
         }`}
     >
-      <div className="flex flex-col gap-3 px-3 py-6">
+      <div className="flex flex-col gap-3 px-3 py-6 xl:mx-auto xl:max-w-[calc(100%-20px)]">
         {navbarList.map((navItem) => {
           const canExpand =
-            navItem.children?.length &&
-            !NO_DROPDOWN_LINKS.includes(navItem.id);
+            navItem.children?.length && !NO_DROPDOWN_LINKS.includes(navItem.id);
 
           return (
             <div key={navItem.id}>
@@ -53,9 +52,7 @@ const MobileNav = ({
               >
                 {/* LABEL */}
                 {NO_TOP_LEVEL_NAV.includes(navItem.id) ? (
-                  <span className="h-10 flex items-end">
-                    {navItem.label}
-                  </span>
+                  <span className="h-10 flex items-end">{navItem.label}</span>
                 ) : (
                   <Link
                     href={navItem.link}
@@ -74,7 +71,7 @@ const MobileNav = ({
                 className={`overflow-hidden transition-all duration-300 ease-in-out
                   ${
                     expandedMobileMenu === navItem.id
-                      ? MOBILE_DROPDOWN_HEIGHT[navItem.id] ?? 'h-0'
+                      ? (MOBILE_DROPDOWN_HEIGHT[navItem.id] ?? 'h-0')
                       : 'h-0'
                   }`}
               >

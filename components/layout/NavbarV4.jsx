@@ -181,12 +181,12 @@ const NavbarV4 = () => {
             {/* Logo - Extended width on mobile with padding */}
             <Link
               href={'/'}
-              className="bg-primary-blue rounded-l-[22px] rounded-tl-[4px] md:w-[290px] w-[180px] h-full ps-4 pe-12 md:pe-0 flex items-center relative z-40"
+              className="bg-primary-blue rounded-l-[22px] rounded-tl-[4px] md:w-[220px] 2xl:w-[290px] w-[180px] h-full ps-4 pe-12 md:pe-0 flex items-center relative z-40"
             >
               <img
                 src="/icons/global/UElement_Logo_White 3.svg"
                 alt="uelement"
-                className="w-auto h-auto"
+                className="w-auto md:w-[140px] h-auto"
               />
             </Link>
 
@@ -203,7 +203,7 @@ const NavbarV4 = () => {
                 {/* Desktop: Menu Items */}
                 <div
                   ref={navRef}
-                  className="flex-1 hidden xl:flex justify-center gap-3 min-h-full"
+                  className="flex-1 hidden lg:flex justify-center gap-3 min-h-full"
                 >
                   {navbarList.map((navItem) => (
                     <div
@@ -214,7 +214,7 @@ const NavbarV4 = () => {
                       }}
                     >
                       {NO_TOP_LEVEL_NAV.includes(navItem.id) ? (
-                        <div className="flex items-center font-reddit-sans font-semibold md:text-16 xl:text-18 text-[#fff] px-3 uppercase relative h-full opacity-100">
+                        <div className="flex items-center font-reddit-sans font-semibold md:text-14 xl:text-18 text-[#fff] px-3 uppercase relative h-full opacity-100">
                           {navItem.children && (
                             <span
                               className={`transition-all duration-500 ${
@@ -231,7 +231,7 @@ const NavbarV4 = () => {
                       ) : (
                         <Link
                           href={navItem.link}
-                          className="flex items-center font-reddit-sans font-semibold md:text-16 xl:text-18 text-[#fff] px-3 uppercase relative h-full cursor-pointer"
+                          className="flex items-center font-reddit-sans font-semibold md:text-14 xl:text-18 text-[#fff] px-3 uppercase relative h-full cursor-pointer"
                         >
                           {navItem.children && (
                             <span
@@ -258,7 +258,7 @@ const NavbarV4 = () => {
                     setExpandedMobileMenu(null);
                     setShowMobileNav((prev) => !prev);
                   }}
-                  className="xl:hidden ml-auto text-white !bg-transparent text-20"
+                  className="lg:hidden ml-auto text-white !bg-transparent text-20"
                 >
                   {ReactIcons.hamburgerMenu}
                 </button>
@@ -266,7 +266,7 @@ const NavbarV4 = () => {
                 {/* Desktop: Contact Button */}
                 <Link
                   href={'/contact-us'}
-                  className="hidden xl:block bg-white rounded-[40px] font-reddit-sans text-16 xl:text-18 px-8 py-2 h-fit hover:shadow-hover"
+                  className="hidden lg:block bg-white rounded-[40px] font-reddit-sans text-14 xl:text-18 px-8 md:px-4 xl:px-8 py-2 h-fit hover:shadow-hover"
                 >
                   Contact us
                 </Link>
@@ -276,7 +276,7 @@ const NavbarV4 = () => {
               <div
                 ref={dropdownRef}
                 className={`w-[calc(100%+40px)] absolute -left-10 bg-[#00000050] backdrop-blur-2xl backdrop-saturate-150
-    shadow-xl text-[#fff] z-[30] top-9 hidden xl:flex rounded-b-[22px] overflow-hidden transition-all duration-300 ease-in-out ${
+    shadow-xl text-[#fff] z-[30] top-9 hidden lg:flex rounded-b-[22px] overflow-hidden transition-all duration-300 ease-in-out ${
       hoveredMenu && hoveredMenu?.children
         ? (DESKTOP_DROPDOWN_HEIGHT[hoveredMenu.id] ?? 'h-[400px]')
         : 'h-0'

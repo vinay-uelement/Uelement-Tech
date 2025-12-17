@@ -86,7 +86,7 @@ const ServicesSection = () => {
         {/* Tabs Container */}
         <div className="relative">
           {/* Desktop Tabs */}
-          <div className="hidden md:flex justify-start gap-0 mb-0 pl-[37px] overflow-x-auto">
+          <div className="hidden md:flex justify-start gap-0 mb-0 pl-[24px] overflow-x-auto">
             {tabs.map((tab, idx) => (
               <button
                 key={tab.id}
@@ -97,7 +97,7 @@ const ServicesSection = () => {
                     : 'text-gray-400 hover:text-gray-300'
                 }`}
                 style={{
-                  marginRight: idx < tabs.length - 1 ? '46px' : '0',
+                  marginRight: idx < tabs.length - 1 ? '56px' : '0',
                   zIndex: getZIndex(tab.id, idx),
                 }}
               >
@@ -121,7 +121,6 @@ const ServicesSection = () => {
                   }`}
                   style={{
                     left: '-24px',
-                    transform: 'skew(-30deg, 0deg)',
                     boxShadow:
                       'rgba(0,0,0,0.1) -3px 2px 5px, inset rgba(255,255,255,0.09) 1px 0',
                     borderTopLeftRadius: '6px',
@@ -143,7 +142,9 @@ const ServicesSection = () => {
                 />
 
                 {/* Tab Text */}
-                <span className="relative z-30 text-16 md:text-20 font-noto-sans ">{tab.title}</span>
+                <span className="relative z-30 text-16 md:text-20 font-noto-sans ">
+                  {tab.title}
+                </span>
               </button>
             ))}
           </div>
@@ -162,7 +163,9 @@ const ServicesSection = () => {
                 onClick={() => setIsDropdownOpen(!isDropdownOpen)}
                 className="relative w-full text-left px-6 py-4 text-[#232223] font-medium text-base z-10 flex items-center justify-between"
               >
-                <span className='text-16 md:text-20 font-noto-sans'>{selectedTab.title}</span>
+                <span className="text-16 md:text-20 font-noto-sans">
+                  {selectedTab.title}
+                </span>
                 <svg
                   className={`w-5 h-5 transition-transform ${
                     isDropdownOpen ? 'rotate-180' : ''
@@ -207,9 +210,7 @@ const ServicesSection = () => {
           {/* Tab Content */}
           <div className="bg-[#FFF4E4] text-gray-800 p-6 sm:p-8 lg:p-10 xl:p-12 transition-all duration-300 ease-in-out rounded-[4px] -mt-1">
             <div className="animate-fade-in">
-              <h3 className="fl1 mb-4 sm:mb-6">
-                {selectedTab.title}
-              </h3>
+              <h3 className="fl1 mb-4 sm:mb-6">{selectedTab.title}</h3>
               <p className="fl3 leading-relaxed mb-8 sm:mb-16 lg:mb-20 md:w-[90%] w-full">
                 {selectedTab.desc}
               </p>
