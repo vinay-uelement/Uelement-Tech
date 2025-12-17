@@ -291,7 +291,7 @@ const ContactUs = () => {
         <div className="h-[40%] bg-primary-blue"></div>
       </div>
 
-      <div className="container-padding py-10 sm:py-12 lg:py-16">
+      <div className="container-padding pt-25 pb-10 sm:pt-26 sm:pb-10 lg:pt-30 lg:pb-10">
         <div className="title-div text-primary-blue text-center mb-8 sm:mb-10 lg:mb-12">
           <p className="fl-slash">/ Contact Us</p>
           <h4 className="fl1 leading-tight mb-10 md:mb-14">
