@@ -167,7 +167,9 @@ const KnowledgeHub = () => {
               key={cat.id}
               className="w-[110px] flex flex-col items-center"
             >
-              <div className={`size-20 ${currentSection === cat.id ? "bg-primary-blue" : "bg-[#DEDEDE]"} rounded-full flex items-center justify-center`}>
+              <div
+                className={`size-20 ${currentSection === cat.id ? 'bg-primary-blue' : 'bg-[#DEDEDE]'} rounded-full flex items-center justify-center`}
+              >
                 <img src={cat.icon} alt={cat.name} />
               </div>
               <div className="mt-1">{cat.name}</div>
@@ -180,7 +182,11 @@ const KnowledgeHub = () => {
       <div className="knowledge-slider-container relative px-8 md:px-12">
         <Slider ref={sliderRef} {...settings}>
           {blogs.map((blog) => (
-            <div key={blog.id} className="p-3 md:p-4">
+            <Link
+              href={`/case-study/${blog.id}`}
+              key={blog.id}
+              className="p-3 md:p-4"
+            >
               <div className="p-6 bg-white rounded-[4px] h-[540px] 2xl:h-[590px] flex flex-col blog-card w-full shadow-lg">
                 <div className="h-[200px] md:h-[220px] 2xl:h-[280px] relative">
                   <img
@@ -214,7 +220,7 @@ const KnowledgeHub = () => {
                   </Link>
                 </div>
               </div>
-            </div>
+            </Link>
           ))}
         </Slider>
       </div>
