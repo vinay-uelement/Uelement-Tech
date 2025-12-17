@@ -619,7 +619,7 @@ const FooterContent = () => {
               {/* Resources Links */}
               <div className="resources-links">
               <h6 className=" font-semibold text-14 sm:text-22 font-reddit-sans text-white uppercase mb-4 sm:mb-5">
-                RESOURCES
+                SERVICES
               </h6>
               <div className="flex flex-col gap-3 sm:gap-4 font-reddit-sans font-light">
                 <Link
