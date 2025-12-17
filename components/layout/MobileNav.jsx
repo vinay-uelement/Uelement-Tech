@@ -18,19 +18,19 @@ const MobileNav = ({
   return (
     <div
       ref={mobileNavRef}
-      className={`xl:hidden bg-[#0c142d]/35 w-[90vw] xl:w-full xl:px-[10px] xl:max-w-[1920px] rounded-b-[12px]
+      className={`lg:hidden bg-[#0c142d]/35 w-[90vw] lg:w-full lg:px-[10px] lg:max-w-[1920px] rounded-b-[12px]
         backdrop-blur-2xl fixed left-1/2 -translate-x-1/2 z-[70]
         overflow-hidden transition-all duration-300 ease-in-out
         ${isScrolled ? 'top-[38px]' : 'top-[60px]'}
         ${
           showMobileNav
             ? expandedMobileMenu
-              ? 'max-h-[600px]'
-              : 'max-h-[300px]'
+              ? 'max-h-[700px]'
+              : 'max-h-[400px]'
             : 'max-h-0'
         }`}
     >
-      <div className="flex flex-col gap-3 px-3 py-6 xl:mx-auto xl:max-w-[calc(100%-20px)]">
+      <div className="flex flex-col gap-3 px-3 md:pt-12 py-6 md:pb-8 lg:mx-auto lg:max-w-[calc(100%-20px)]">
         {navbarList.map((navItem) => {
           const canExpand =
             navItem.children?.length && !NO_DROPDOWN_LINKS.includes(navItem.id);
@@ -80,7 +80,7 @@ const MobileNav = ({
                     <div
                       key={child.id}
                       className="block py-2 border-b-[0.5px]
-                        last:border-none border-primary-blue
+                        last:border-none border-primary-blue/20
                         max-w-[90%] pointer-events-none opacity-75"
                     >
                       <div className="font-semibold text-14 text-[#E8E8E8]">
@@ -96,7 +96,7 @@ const MobileNav = ({
                       href={child.link}
                       onClick={closeMobileNav}
                       className="block py-2 border-b-[0.5px]
-                        last:border-none border-primary-blue
+                        last:border-none border-primary-blue/20
                         hover:text-primary-blue max-w-[90%]"
                     >
                       <div className="font-semibold text-14 text-[#E8E8E8]">

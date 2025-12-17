@@ -86,7 +86,7 @@ const ServicesSection = () => {
         {/* Tabs Container */}
         <div className="relative">
           {/* Desktop Tabs */}
-          <div className="hidden md:flex justify-start gap-0 mb-0 pl-[24px] overflow-x-auto">
+          <div className="hidden lg:flex justify-start gap-0 mb-0 pl-[24px] overflow-x-auto">
             {tabs.map((tab, idx) => (
               <button
                 key={tab.id}
@@ -150,8 +150,8 @@ const ServicesSection = () => {
           </div>
 
           {/* Mobile Dropdown */}
-          <div className="md:hidden mb-0 relative">
-            <div className="relative inline-block w-full max-w-[220px]">
+          <div className="lg:hidden mb-0 relative">
+            <div className="relative inline-block w-full max-w-[250px]">
               <div
                 className="absolute inset-0 bg-[#FFF4E4] text-[#232223] pointer-events-none"
                 style={{
@@ -211,7 +211,7 @@ const ServicesSection = () => {
           <div className="bg-[#FFF4E4] text-gray-800 p-6 sm:p-8 lg:p-10 xl:p-12 transition-all duration-300 ease-in-out rounded-[4px] -mt-1">
             <div className="animate-fade-in">
               <h3 className="fl1 mb-4 sm:mb-6">{selectedTab.title}</h3>
-              <p className="fl3 leading-relaxed mb-8 sm:mb-16 lg:mb-20 md:w-[90%] w-full">
+              <p className="fl3 leading-relaxed mb-8 sm:mb-16 lg:mb-20 md:w-[90%] w-full min-h-[220px] md:min-h-[100px]">
                 {selectedTab.desc}
               </p>
 
