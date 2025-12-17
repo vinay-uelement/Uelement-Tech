@@ -37,7 +37,7 @@ export default function LegalContentWrapper() {
       <div className="md:hidden mt-8 container-padding">
         <button
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          className="flex items-center justify-between w-full px-4 py-3 bg-[#232223] rounded border border-[#D9B24C]/30 transition"
+          className="flex items-center justify-between w-full px-4 py-3 bg-primary-blue rounded border border-[#D9B24C]/30 transition"
         >
           <span className="text-white font-semibold capitalize">{active}</span>
           <MdKeyboardArrowDown

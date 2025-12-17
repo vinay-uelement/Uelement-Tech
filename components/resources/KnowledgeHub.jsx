@@ -30,27 +30,6 @@ const blogs = [
     label: 'personality',
     image: 'images/resources/blog-3.jpg',
   },
-  {
-    id: 4,
-    title: 'High- Quality Content Writing',
-    desc: 'We deliver comprehensive Enterprise Security Solutions & Services that safeguard critical assets, ensure compliance, and mitigate risks.',
-    label: 'services',
-    image: 'images/resources/blog-1.jpg',
-  },
-  {
-    id: 5,
-    title: 'High- Quality Content Writing',
-    desc: 'We deliver comprehensive Enterprise Security Solutions & Services that safeguard critical assets, ensure compliance, and mitigate risks.',
-    label: 'training',
-    image: 'images/resources/blog-2.jpg',
-  },
-  {
-    id: 6,
-    title: 'Personality Development.',
-    desc: 'We deliver comprehensive Enterprise Security Solutions & Services that safeguard critical assets, ensure compliance, and mitigate risks.',
-    label: 'personality',
-    image: 'images/resources/blog-3.jpg',
-  },
 ];
 
 const categories = [
@@ -211,13 +190,10 @@ const KnowledgeHub = () => {
                   <p className="font-light text-[#5F6D7E] mt-3 flex-1 text-14">
                     {blog.desc}
                   </p>
-                  <Link
-                    href="/"
-                    className="font-semibold text-primary-blue mt-3 flex items-center gap-1 text-14 hover:gap-2 transition-all duration-300"
-                  >
+                  <span className="font-semibold text-primary-blue mt-3 flex items-center gap-1 text-14 hover:gap-2 transition-all duration-300">
                     Learn more
                     {ReactIcons.arrowRight}
-                  </Link>
+                  </span>
                 </div>
               </div>
             </Link>
