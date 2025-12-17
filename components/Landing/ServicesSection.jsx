@@ -138,12 +138,12 @@ const ServicesSection = () => {
         {/* Tabs & Content */}
         <div className="relative">
           {/* Desktop Tabs */}
-          <div className="hidden md:flex gap-0 mb-0">
+          <div className="hidden lg:flex gap-0 mb-0">
             {tabs.map((tab) => (
               <button
                 key={tab.id}
                 onClick={() => setSelectedTab(tab)}
-                className={`relative px-20 w-[400px] py-2 text-18 md:text-24 rounded-tl-[4px] transition-all duration-300 ease-in-out overflow-hidden ${
+                className={`relative px-20 w-[350px] py-2 text-16 md:text-20 rounded-tl-[4px] transition-all duration-300 ease-in-out overflow-hidden ${
                   tab.id === selectedTab.id
                     ? 'bg-secondary-muted text-black shadow-[0px_4px_5px_0px_rgba(0,0,0,0.0)] font-noto-sans font-semibold '
                     : 'bg-[#FCFCFC] text-[#505050] hover:bg-gray-100 border border-[#E0E0E0] font-noto-sans '
@@ -159,7 +159,7 @@ const ServicesSection = () => {
           </div>
 
           {/* Mobile Dropdown */}
-          <div className="md:hidden mb-0 relative z-50">
+          <div className="lg:hidden mb-0 relative z-50">
             <div className="relative inline-block w-full max-w-[200px]">
               <div
                 className="absolute inset-0 bg-secondary-muted pointer-events-none rounded-tl-[10px]"

@@ -75,7 +75,7 @@
 
   :root {
     --outer-padding: 10px;
-    --container-small-padding: 60px;
+    --container-small-padding: 100px;
     --section-block-padding: 60px;
     --mobile-navbar-gap: 100px;
   }
