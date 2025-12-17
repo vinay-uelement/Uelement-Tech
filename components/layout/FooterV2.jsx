@@ -509,7 +509,7 @@ const FooterContent = () => {
             </div>
 
             {/* Newsletter */}
-            <div className="newsletter ml-auto">
+            <div className="newsletter ml-auto w-[25vw]">
               <h6 className="font-semibold text-14 sm:text-22 font-reddit-sans text-white uppercase mb-4 sm:mb-5">
                 NEWSLETTER
               </h6>
@@ -527,7 +527,7 @@ const FooterContent = () => {
               )}
 
               <form
-                className="w-[200px] md:w-[350px] space-y-3"
+                className="w-[200px] md:w-full space-y-3 "
                 onSubmit={handleNewsletterSubmit}
               >
                 <div className="relative bg-white rounded-[4px] px-4 py-3 flex items-center gap-2">
