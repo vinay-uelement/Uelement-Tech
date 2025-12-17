@@ -34,8 +34,8 @@ export const metadata = {
 
 export default function LegalPage() {
   return (
-    <section className="min-h-screen bg-primary-blue">
-      <div className="container-small section-block-padding">
+    <section className="min-h-screen bg-white">
+      <div className="">
         <Suspense fallback={<div>Loading...</div>}>
           <LegalContentWrapper />
         </Suspense>

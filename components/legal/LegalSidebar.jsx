@@ -2,8 +2,8 @@ import Link from "next/link";
 
 export default function LegalSidebar({ active, setActive }) {
   const base = "cursor-pointer text-16 md:text-18 transition";
-  const activeCls = "text-white font-semibold";
-  const inactiveCls = "text-white/50 hover:text-white";
+  const activeCls = "!text-[#232223] font-semibold font-noto-sans";
+  const inactiveCls = "!text-[#23222350] hover:text-white font-noto-sans";
 
   return (
     <div className="relative">
