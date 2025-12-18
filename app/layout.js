@@ -14,33 +14,39 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  metadataBase: new URL('https://uelement.in'),
+  title: 'UElement Technologies',
+  description: 'Delivering precision and efficiency in solving complex challenges across Cybersecurity, Cloud and AI.',
+   alternates: {
+    canonical: 'https://uelement.in/company',
+  },
+  openGraph: {
+    title: 'UElement Technologies',
+    description: 'Delivering precision and efficiency in solving complex challenges across Cybersecurity, Cloud and AI.',
+    url: 'https://uelement.in/',
+    siteName: 'UElement',
+    images: [
+      {
+        url: 'https://uelement.in/images/landing/ue92-banner.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'UElement Home',
+      },
+    ],
+    locale: 'en_US',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'UElement Technologies',
+    description: 'Delivering precision and efficiency in solving complex challenges across Cybersecurity, Cloud and AI.',
+    images: ['https://uelement.in/images/landing/ue92-banner.jpg'],
+  },
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              '@context': 'https://schema.org',
-              '@type': 'Organization',
-              '@id': 'https://uelement.in/#organization',
-              name: 'UElement',
-              url: 'https://uelement.in',
-              logo: 'https://uelement.in/icons/global/UElement_Logo_White 3.svg',
-              description:
-                'Delivering precision and efficiency in solving complex challenges across Cybersecurity, Cloud and AI.',
-              sameAs: [
-                'https://www.linkedin.com/company/uelement',
-                'https://www.instagram.com/uelement',
-              ],
-            }),
-          }}
-        />
-
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{

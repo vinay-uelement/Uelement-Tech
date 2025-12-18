@@ -5,7 +5,7 @@ export const metadata = {
   title: 'Legal | UElement Technologies',
   description: 'Delivering precision and efficiency in solving complex challenges across Cybersecurity, Cloud and AI.',
   alternates: {
-    canonical: '/legal',
+    canonical: 'https://uelement.in/legal',
   },
   openGraph: {
     title: 'Legal | UElement Technologies',

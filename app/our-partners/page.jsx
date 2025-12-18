@@ -5,7 +5,7 @@ export const metadata = {
   title: 'Our Partners | UElement Technologies',
   description: 'Discover the strategic partners we collaborate with to deliver exceptional value to our clients.',
   alternates: {
-    canonical: '/our-partners',
+    canonical: 'https://uelement.in/our-partners',
   },
   openGraph: {
     title: 'Our Partners | UElement Technologies',

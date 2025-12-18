@@ -5,7 +5,7 @@ export const metadata = {
   title: 'Cyber Security | UElement Technologies',
   description: 'Explore our wide range of services in Cyber Security.',
   alternates: {
-    canonical: '/cybersecurity',
+    canonical: 'https://uelement.in/cybersecurity',
   },
   openGraph: {
     title: 'Cyber Security | UElement Technologies',

@@ -5,7 +5,7 @@ export const metadata = {
   title: 'Future Tech | UElement Technologies',
   description: 'Explore our wide range of services in Future Tech.',
   alternates: {
-    canonical: '/future-tech',
+    canonical: 'https://uelement.in/future-tech',
   },
   openGraph: {
     title: 'Future Tech | UElement Technologies',

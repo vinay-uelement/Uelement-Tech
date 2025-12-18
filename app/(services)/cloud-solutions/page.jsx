@@ -5,7 +5,7 @@ export const metadata = {
   title: 'Cloud Solutions | UElement Technologies',
   description: 'Explore our wide range of services in Cloud Solutions.',
   alternates: {
-    canonical: '/cloud-solutions',
+    canonical: 'https://uelement.in/cloud-solutions',
   },
   openGraph: {
     title: 'Cloud Solutions | UElement Technologies',
