@@ -145,8 +145,8 @@ const CyberSecurity = () => {
           {/* Left: Content - 40% */}
           <div className="text-white w-full lg:w-[40%] flex flex-col justify-center order-1">
             {/* Icon + Label */}
-            <div className="flex items-center gap-4 mb-6">
-              <div className="size-[40px] md:size-[60px] bg-[#D7D7D7] flex-shrink-0 rounded-full flex items-center justify-center">
+            <div className="flex items-center mb-10 md:mb-16">
+              <div className="size-[40px] md:size-[60px] bg-[#60606059] backdrop-blur-lg flex-shrink-0 rounded-full flex items-center justify-center">
                 <img
                   src="/icons/global/enterprise-icon.svg"
                   alt="cybersecurity"
