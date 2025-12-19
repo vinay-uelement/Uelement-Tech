@@ -44,16 +44,19 @@ const navbarList = [
     children: [
       {
         id: 1,
+        link: '/resources',
         label: 'Blogs',
         desc: 'Thoughts, insights, and reflections from my creative journey.',
       },
       {
         id: 2,
+        link: '/resources',
         label: 'Case Study',
         desc: 'A deep dive into my projects, process, and problem-solving approach.',
       },
       {
         id: 3,
+        link: '/resources',
         label: 'Research',
         desc: 'Exploring data, user behavior, and design trends to uncover insights.',
       },
@@ -87,7 +90,7 @@ const navbarList = [
   { id: 4, label: 'Company', link: '/company' },
 ];
 
-const NO_TOP_LEVEL_NAV = [1, 2]; // Services, Resources
+const NO_TOP_LEVEL_NAV = [1]; // Services, Resources
 const NO_DROPDOWN_LINKS = [2]; // Resources only
 
 const MOBILE_DROPDOWN_HEIGHT = {
@@ -287,34 +290,20 @@ const NavbarV4 = () => {
                     <div className="md:text-18 xl:text-22 text-white font-reddit-sans font-semibold border-b-[0.5px] border-[#ebebeb] pb-2">
                       {hoveredMenu?.label}
                     </div>
-                    {hoveredMenu?.children?.map((child) =>
-                      NO_DROPDOWN_LINKS.includes(hoveredMenu.id) ? (
-                        <div
-                          key={child.id}
-                          className="block py-4 last:border-none border-primary-blue max-w-[100%] pointer-events-none opacity-100"
-                        >
-                          <div className="font-semibold md:text-16 xl:text-18 text-[#fff] font-reddit-sans capitalize">
-                            {child.label}
-                          </div>
-                          <div className="md:text-14 xl:text-16 font-light text-[#fff] font-reddit-sans">
-                            {child.desc}
-                          </div>
+                    {hoveredMenu?.children?.map((child) => (
+                      <Link
+                        key={child.id}
+                        href={`${child.link}`}
+                        className="block py-4 last:border-none border-primary-blue hover:text-primary-blue max-w-[100%]"
+                      >
+                        <div className="font-semibold text-18 text-[#fff] font-reddit-sans capitalize">
+                          {child.label}
                         </div>
-                      ) : (
-                        <Link
-                          key={child.id}
-                          href={`${child.link}`}
-                          className="block py-4 last:border-none border-primary-blue hover:text-primary-blue max-w-[100%]"
-                        >
-                          <div className="font-semibold text-18 text-[#fff] font-reddit-sans capitalize">
-                            {child.label}
-                          </div>
-                          <div className="text-16 font-light text-[#fff] font-reddit-sans">
-                            {child.desc}
-                          </div>
-                        </Link>
-                      )
-                    )}
+                        <div className="text-16 font-light text-[#fff] font-reddit-sans">
+                          {child.desc}
+                        </div>
+                      </Link>
+                    ))}
                   </div>
                 </div>
               </div>
