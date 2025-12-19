@@ -1,10 +1,10 @@
 [
   {
     "id": 1,
-    "title": "Defense-Grade Cloud Transformation",
+    "title": "Aerospace-Grade Cloud Transformation",
     "desc": "Secure Cloud Transformation for Aerospace & Defense Modernizing infrastructure with Zero Trust and CMMC-compliant architecture.",
     "label": "services",
-    "industry": "Aerospace & Defense",
+    "industry": "Aerospace",
     "companySize": "Small-Mid Enterprise (Defense Contractor | DIB)",
     "servicesProvided": [
       "Enterprise Cloud Migration",
@@ -79,5 +79,105 @@
         "title": "Future-Ready Approach, integrating cloud, AI-driven monitoring, and quantum-safe security"
       }
     ]
-  }
+  },
+  {
+  "id": 2,
+  "title": "Identity Security & Governance Transformation for a Mid-Sized Telecom Provider",
+  "desc": "Identity Security & Governance Transformation for a Mid-Sized Telecom Provider",
+  "label": "services",
+  "industry": "Telecommunications",
+  "companySize": "Mid-Sized Enterprise (Telecom Services Provider)",
+  "servicesProvided": [
+    "Identity Governance & Administration (IGA)",
+    "Privileged Access Management (PAM)",
+    "Zero Trust Identity Security",
+    "Automation & Compliance Enablement"
+  ],
+  "headerImage": "/images/resources/case-study/case-study-1main.png",
+  "challenge": "A mid-sized telecom services provider with thousands of employees and millions of users was struggling with fragmented identity systems, manual access governance, and increasing audit pressure. Rapid growth and legacy IAM processes had resulted in identity sprawl, unmanaged privileged access, and high operational overhead during security audits. The organization lacked centralized visibility into user and privileged access, creating security gaps, compliance risks, and inefficiencies across IT and business teams.",
+  "keyRequirements": [
+    {
+      "id": 1,
+      "title": "Centralized Identity Governance & Administration (IGA)"
+    },
+    {
+      "id": 2,
+      "title": "Secure management of Privileged Access across critical systems"
+    },
+    {
+      "id": 3,
+      "title": "Automation of Joiner–Mover–Leaver (JML) processes"
+    },
+    {
+      "id": 4,
+      "title": "Elimination of manual approvals, spreadsheets, and paper-based workflows"
+    },
+    {
+      "id": 5,
+      "title": "Audit-ready identity controls with real-time visibility and reporting"
+    },
+    {
+      "id": 6,
+      "title": "Alignment with Zero Trust and least-privilege security principles"
+    },
+    {
+      "id": 7,
+      "title": "Scalable identity architecture to support cloud and future growth"
+    }
+  ],
+  "solution": {
+    "intro": "UElement Technologies, a CyberArk Partner, delivered an identity-first security transformation leveraging the CyberArk Identity Security Platform. Working closely with the client’s IT, security, and compliance teams, UElement implemented:",
+    "items": [
+      "Identity Governance & Administration (IGA) using CyberArk",
+      "Role-based and policy-driven access governance",
+      "Automated access requests, approvals, and certifications",
+      "Centralized visibility and immutable audit trails",
+      "Privileged Access Management (PAM) with CyberArk",
+      "Vaulting and rotation of privileged credentials",
+      "Just-in-Time (JIT) privileged access",
+      "Session monitoring and recording for administrators and service accounts",
+      "Zero Trust Identity Controls",
+      "Least-privilege enforcement across users, applications, and infrastructure",
+      "Identity-based access decisions for sensitive workloads",
+      "Removal of manual signatures and print-based documentation",
+      "Real-time compliance dashboards and continuous monitoring"
+    ],
+    "conclusion": "The solution was designed to be secure, scalable, and fully audit-ready without disrupting ongoing operations."
+  },
+  "results": [
+    "Audit posture improved from high-risk to fully compliant",
+    "60%+ reduction in audit preparation effort through automation",
+    "70% reduction in privileged access risk by eliminating standing admin access",
+    "Millions in annualized operational cost savings",
+    "Zero manual approvals or paper-based workflows",
+    "Faster user access lifecycle – provisioning reduced from days to hours",
+    "Improved user experience",
+    "93% employee satisfaction",
+    "90% manager satisfaction"
+  ],
+  "resultConclusion": "",
+  "whyUElement": [
+    {
+      "id": 1,
+      "title": "Certified CyberArk Partner with proven IAM, IGA, and PAM delivery expertise"
+    },
+    {
+      "id": 2,
+      "title": "Deep specialization in Identity Security & Zero Trust architectures"
+    },
+    {
+      "id": 3,
+      "title": "Strong experience supporting telecom-scale, hybrid environments"
+    },
+    {
+      "id": 4,
+      "title": "Automation-first approach reducing risk, cost, and complexity"
+    },
+    {
+      "id": 5,
+      "title": "Future-ready identity foundation aligned with cloud, AI-driven security, and compliance"
+    }
+  ]
+}
+
 ]

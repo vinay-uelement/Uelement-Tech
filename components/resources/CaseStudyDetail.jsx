@@ -1,7 +1,9 @@
-"use client"
+'use client';
 import Link from 'next/link';
 import React, { useEffect, useRef, useState } from 'react';
 import Slider from 'react-slick';
+import KeyRequirements from './CaseStudy/KeyRequirements';
+import WhyUelement from './CaseStudy/WhyUelement';
 
 const CustomPrevArrow = (props) => {
   const { onClick } = props;
@@ -31,24 +33,24 @@ const CustomNextArrow = (props) => {
 };
 
 const CaseStudyDetail = ({ caseStudy, otherCaseStudies }) => {
-    const [slidesToShow, setSlidesToShow] = useState(3);
-    const sliderRef = useRef();
-    
-      useEffect(() => {
-        const handleResize = () => {
-          if (window.innerWidth <= 768) {
-            setSlidesToShow(1);
-          } else {
-            setSlidesToShow(3);
-          }
-        };
-    
-        window.addEventListener('resize', handleResize);
-        handleResize();
-    
-        return () => window.removeEventListener('resize', handleResize);
-      }, []);
-      const settings = {
+  const [slidesToShow, setSlidesToShow] = useState(3);
+  const sliderRef = useRef();
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth <= 768) {
+        setSlidesToShow(1);
+      } else {
+        setSlidesToShow(3);
+      }
+    };
+
+    window.addEventListener('resize', handleResize);
+    handleResize();
+
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+  const settings = {
     slidesToShow: slidesToShow,
     dots: true,
     infinite: true,
@@ -78,18 +80,24 @@ const CaseStudyDetail = ({ caseStudy, otherCaseStudies }) => {
             {/* Left Content */}
             <div className="flex flex-col justify-center">
               <h1 className="fl1 !text-white">{caseStudy.title}</h1>
-              
+
               <div className="mt-8 space-y-4">
                 <p className="text-14 md:text-20 text-[#9E9E9E] leading-relaxed">
-                  <span className="mr-1 font-reddit-sans text-white font-medium text-18 md:text-24">Industry:</span> {caseStudy.industry}
+                  <span className="mr-1 font-reddit-sans text-white font-medium text-18 md:text-24">
+                    Industry:
+                  </span>{' '}
+                  {caseStudy.industry}
                 </p>
-                
+
                 {/* <p className="text-14 md:text-20 text-[#9E9E9E] leading-relaxed">
                   <span className="mr-1 font-reddit-sans text-white font-medium text-18 md:text-24">Company Size:</span> {caseStudy.companySize}
                 </p> */}
-                
+
                 <p className="text-14 md:text-20 text-[#9E9E9E] leading-relaxed">
-                  <span className="mr-1 font-reddit-sans text-white font-medium text-18 md:text-24">Services Provided:</span> {caseStudy.servicesProvided.join(', ')}
+                  <span className="mr-1 font-reddit-sans text-white font-medium text-18 md:text-24">
+                    Services Provided:
+                  </span>{' '}
+                  {caseStudy.servicesProvided.join(', ')}
                 </p>
               </div>
             </div>
@@ -108,39 +116,20 @@ const CaseStudyDetail = ({ caseStudy, otherCaseStudies }) => {
 
       {/* Challenge Section */}
       <section className="container-padding-small mt-4 md:mt-8">
-        <div className="p-4 md:p-10 bg-[#F5F5F5]">
+        <div className="p-6 md:p-10 bg-[#F5F5F5]">
           <h2 className="fl2">Challenge</h2>
-          <p className="fl3 leading-[1.8]">
-            {caseStudy.challenge}
-          </p>
+          <p className="fl3 leading-[1.8]">{caseStudy.challenge}</p>
         </div>
       </section>
 
       {/* Key Requirements Section */}
-      <section className="bg-white">
-        <div className="container-padding section-block-padding">
-          <h2 className="fl2">Key requirements included</h2>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4 md:gap-5">
-            {caseStudy.keyRequirements.map((req) => (
-              <div
-                key={req.id}
-                className="bg-[#F0F0F0] rounded-[4px] p-5 md:p-6 text-center flex items-center justify-center min-h-[140px] md:min-h-[160px]"
-              >
-                <p className="fl3">
-                  {req.title}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <KeyRequirements caseStudy={caseStudy} />
 
       {/* Solution Section */}
       <section className="bg-[#F5F5F5]">
         <div className="container-padding section-block-padding">
           <h2 className="fl2 uppercase tracking-wider">Solution</h2>
-          
+
           <p className="fl3 text-[#5F6D7E] leading-[1.8] mb-6">
             {caseStudy.solution.intro}
           </p>
@@ -148,7 +137,9 @@ const CaseStudyDetail = ({ caseStudy, otherCaseStudies }) => {
           <ul className="space-y-4">
             {caseStudy.solution.items.map((item, idx) => (
               <li key={idx} className="flex gap-4">
-                <span className="text-primary-blue font-bold text-18 flex-shrink-0">•</span>
+                <span className="text-primary-blue font-bold text-18 flex-shrink-0">
+                  •
+                </span>
                 <span className="fl3  leading-[1.8]">{item}</span>
               </li>
             ))}
@@ -164,11 +155,13 @@ const CaseStudyDetail = ({ caseStudy, otherCaseStudies }) => {
       <section className="bg-white">
         <div className="container-padding section-block-padding">
           <h2 className="fl2 uppercase">Results</h2>
-          
+
           <ul className="space-y-4 mb-8">
             {caseStudy.results.map((result, idx) => (
               <li key={idx} className="flex gap-4">
-                <span className="text-primary-blue font-bold text-18 flex-shrink-0">•</span>
+                <span className="text-primary-blue font-bold text-18 flex-shrink-0">
+                  •
+                </span>
                 <span className="fl3 leading-[1.8]">{result}</span>
               </li>
             ))}
@@ -181,30 +174,13 @@ const CaseStudyDetail = ({ caseStudy, otherCaseStudies }) => {
       </section>
 
       {/* Why UElement Section */}
-      <section className="container-padding-small">
-        <div className="p-4 md:p-10 bg-[#F5F5F5]">
-          <h2 className="fl2">Why UElement?</h2>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4 md:gap-5">
-            {caseStudy.whyUElement.map((item) => (
-              <div
-                key={item.id}
-                className="bg-white rounded-[4px] p-3 md:p-4 border border-[#E0E0E0] flex items-center justify-center min-h-[140px] md:min-h-[160px]"
-              >
-                <p className="fl3 text-center">
-                  {item.title}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <WhyUelement caseStudy={caseStudy} />
 
       {otherCaseStudies && otherCaseStudies.length > 0 && (
         <section className="bg-white">
           <div className="container-padding section-block-padding">
             <h2 className="fl2 text-center">Other Case Studies</h2>
-            
+
             <div className="knowledge-slider-container relative px-8 md:px-12">
               <Slider ref={sliderRef} {...settings}>
                 {otherCaseStudies.map((item) => (

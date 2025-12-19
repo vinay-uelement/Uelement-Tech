@@ -5,9 +5,11 @@ import ResourcesPointSection from '../resources/ResourcesPointSection';
 
 const Resources = () => {
   return (
-    <div className="bg-primary-blue">
-      <ResourcesHero />
-      <ResourcesPointSection />
+    <div>
+      <div className="bg-primary-blue">
+        <ResourcesHero />
+        <ResourcesPointSection />
+      </div>
       <KnowledgeHub />
     </div>
   );
