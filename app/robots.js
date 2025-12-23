@@ -1,3 +1,6 @@
+export const dynamic = "force-static";
+export const revalidate = 86400; // regenerate daily when running in ISR environments
+
 export default function robots() {
   return {
     rules: [
