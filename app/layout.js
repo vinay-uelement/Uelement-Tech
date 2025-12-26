@@ -15,13 +15,15 @@ const geistMono = Geist_Mono({
 
 export const metadata = {
   title: 'UElement Technologies',
-  description: 'Delivering precision and efficiency in solving complex challenges across Cybersecurity, Cloud and AI.',
-   alternates: {
+  description:
+    'Delivering precision and efficiency in solving complex challenges across Cybersecurity, Cloud and AI.',
+  alternates: {
     canonical: 'https://uelement.in/company',
   },
   openGraph: {
     title: 'UElement Technologies',
-    description: 'Delivering precision and efficiency in solving complex challenges across Cybersecurity, Cloud and AI.',
+    description:
+      'Delivering precision and efficiency in solving complex challenges across Cybersecurity, Cloud and AI.',
     url: 'https://uelement.in/',
     siteName: 'UElement',
     images: [
@@ -38,7 +40,8 @@ export const metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'UElement Technologies',
-    description: 'Delivering precision and efficiency in solving complex challenges across Cybersecurity, Cloud and AI.',
+    description:
+      'Delivering precision and efficiency in solving complex challenges across Cybersecurity, Cloud and AI.',
     images: ['https://uelement.in/images/landing/ue92-banner.jpg'],
   },
 };
@@ -47,6 +50,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
+        <link rel="icon" href="/favicon.ico" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
