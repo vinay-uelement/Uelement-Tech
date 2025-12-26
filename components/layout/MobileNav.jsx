@@ -38,22 +38,29 @@ const MobileNav = ({
 
           return (
             <div key={navItem.id}>
-              {/* TOP LEVEL (only toggles, never navigates if it has children) */}
-              <div
-                onClick={() => {
-                  if (!canExpand) return;
-                  setExpandedMobileMenu((prev) =>
-                    prev === navItem.id ? null : navItem.id
-                  );
-                }}
-                className={`flex justify-between items-center border-b-[0.5px]
-                  border-primary-blue/20 text-white font-semibold pb-1
-                  ${canExpand ? 'cursor-pointer' : 'cursor-default'}`}
-              >
-                <span className="h-10 flex items-end">{navItem.label}</span>
-
-                {canExpand && ReactIcons.chevDown}
-              </div>
+              {hasChildren ? (
+                <div
+                  onClick={() =>
+                    setExpandedMobileMenu((prev) =>
+                      prev === navItem.id ? null : navItem.id
+                    )
+                  }
+                  className="flex justify-between items-center border-b-[0.5px]
+      border-primary-blue/20 text-white font-semibold pb-1 cursor-pointer"
+                >
+                  <span className="h-10 flex items-end">{navItem.label}</span>
+                  {ReactIcons.chevDown}
+                </div>
+              ) : (
+                <Link
+                  href={navItem.link}
+                  onClick={closeMobileNav}
+                  className="flex justify-between items-center border-b-[0.5px]
+      border-primary-blue/20 text-white font-semibold pb-1 cursor-pointer"
+                >
+                  <span className="h-10 flex items-end">{navItem.label}</span>
+                </Link>
+              )}
 
               {/* DROPDOWN */}
               <div

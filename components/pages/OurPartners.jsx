@@ -6,7 +6,7 @@ const OurPartners = () => {
   return (
     <div>
       <PartnersHero />
-      <div className="container-outer">
+      <div className="">
         <PartnerSolution />
       </div>
     </div>

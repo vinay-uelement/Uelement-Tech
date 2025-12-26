@@ -562,21 +562,35 @@ const FooterContent = () => {
               <div className="flex items-center justify-start gap-6">
                 <Link
                   href="https://www.linkedin.com/company/uelement-technologies/posts/?feedView=all"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className=" hover:translate-y-[-3px] duration-300 ease-in-out transition-all hover:text-white/70"
                 >
                   <Icon name="linkedin2" size={35} />
                 </Link>
-                {/* <Link
-                href="#"
-                className="  hover:translate-y-[-3px] duration-300 ease-in-out transition-all hover:text-white/70"
-              >
-                <Icon name="facebook" size={35} />
-              </Link> */}
                 <Link
-                  href="https://www.instagram.com/u_element_india?igsh=MTZtejZ4djB4MHdqbw=="
-                  className="  hover:translate-y-[-3px] duration-300 ease-in-out transition-all hover:text-white/70"
+                  href="https://facebook.com/uelement.technologies"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className=" hover:translate-y-[-3px] duration-300 ease-in-out transition-all hover:text-white/70"
+                >
+                  <Icon name="facebook3" size={35} />
+                </Link>
+                <Link
+                  href="https://www.instagram.com/uelement_technologies/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:translate-y-[-3px] duration-300 ease-in-out transition-all hover:text-white/70"
                 >
                   <Icon name="instagram2" size={35} />
+                </Link>
+                <Link
+                  href="https://x.com/uelement_tech"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:translate-y-[-3px] duration-300 ease-in-out transition-all hover:text-white/70"
+                >
+                  <Icon name="facebook2" size={35} />
                 </Link>
                 {/* <Link
                 href="#"
@@ -727,16 +741,35 @@ const FooterContent = () => {
                 <div className="flex items-center justify-start gap-3">
                   <Link
                     href="https://www.linkedin.com/company/uelement-technologies/posts/?feedView=all"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="hover:translate-y-[-3px] duration-300 ease-in-out transition-all hover:text-white/70"
                   >
                     <Icon name="linkedin2" size={35} />
                   </Link>
-
                   <Link
-                    href="https://www.instagram.com/u_element_india?igsh=MTZtejZ4djB4MHdqbw=="
+                    href="https://facebook.com/uelement.technologies"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="  hover:translate-y-[-3px] duration-300 ease-in-out transition-all hover:text-white/70"
+                  >
+                    <Icon name="facebook3" size={35} />
+                  </Link>
+                  <Link
+                    href="https://www.instagram.com/uelement_technologies/"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="hover:translate-y-[-3px] duration-300 ease-in-out transition-all hover:text-white/70"
                   >
                     <Icon name="instagram2" size={35} />
+                  </Link>
+                  <Link
+                    href="https://x.com/uelement_tech"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="  hover:translate-y-[-3px] duration-300 ease-in-out transition-all hover:text-white/70"
+                  >
+                    <Icon name="facebook2" size={35} />
                   </Link>
                 </div>
               </div>

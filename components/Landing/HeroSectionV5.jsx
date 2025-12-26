@@ -86,7 +86,7 @@ const HeroSectionV5 = () => {
               We Are <br /> Digital <br className=" md:block" /> Mavericks.
             </h1>
             <p className="mt-8 fl3 !text-[#ffffff] !text-[12px] md:!text-[20px] md:mb-20 mb-8 ">
-              Engineering Quantum-Driven Digital Synapses at <br /> the
+              Engineering Quantum-Driven Digital Synapses at the
               intersection of Cybersecurity, Cloud & AI.
             </p>
             <button onClick={handleContactus} className="btn-yellow w-fit">

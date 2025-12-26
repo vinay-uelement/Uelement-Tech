@@ -190,7 +190,7 @@ const NavbarV3 = () => {
               <div className="w-[calc(100%+30px)] md:w-[calc(100%+40px)] h-full bg-[#32323259] backdrop-blur-lg rounded-[40px] -ml-[30px] md:-ml-10 px-3 flex items-center relative z-50">
                 {/* 92 badge */}
                 <div className="size-8 md:size-10 bg-[#9B7025] rounded-full flex-shrink-0 relative">
-                  <span className="absolute -translate-x-1/2 left-[18px] -translate-y-1/2 top-3 font-bold text-18 md:text-22 font-reddit-sans text-[#ffffff50]">
+                  <span className="absolute -translate-x-1/2 left-3 md:left-[18px] -translate-y-1/2 top-3 font-bold text-18 md:text-22 font-reddit-sans text-[#ffffff50]">
                     92
                   </span>
                 </div>

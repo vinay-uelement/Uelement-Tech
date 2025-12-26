@@ -199,7 +199,7 @@
     @apply bg-[#0C142D] text-white font-reddit-sans font-semibold shadow-[1px_4px_2px_0px_rgba(0,0,0,0.15)] rounded-[4px] text-12 md:text-16 xl:text-18 py-2 px-[40px] hover:shadow-inset-white transition-all duration-300;
   }
   .fl-main {
-    @apply font-cal-sans text-white text-26 md:text-[50px] xl:text-[60px];
+    @apply font-cal-sans text-white text-26 md:text-[46px] xl:text-[60px];
   }
   .fl-slash {
     @apply text-12 md:text-16 xl:text-20 font-reddit-sans font-medium mb-6 md:mb-8 3xl:mb-10 text-[#23223] tracking-[0.03em];

@@ -16,22 +16,22 @@ const PartnerSolution = () => {
           logo: '/icons/global/sentinel.png',
           tagline: 'Managed Endpoint Security Partner',
           boxTitle: 'Solution',
-          desc: 'We leverage SentinelOne’s unified Singularity XDR platform for integrated prevention, detection, and response across endpoint, cloud, and identity. Our managed services ensure robust, AI-powered protection against advanced threats.',
-          tags: ['Managed Endpoint Security', 'Cloud Security Services'],
+          desc: `We leverage SentinelOne's unified Singularity XDR platform for integrated prevention, detection, and response across endpoint, cloud, and identity. Our managed services ensure robust, AI-powered protection against advanced threats`,
+          tags: ['Managed Endpoint Security & Cloud Security Services'],
         },
         {
           logo: '/icons/global/paloalto.svg',
           tagline: 'Certified Cloud Security Integrator',
           boxTitle: 'Solution',
-          desc: 'As a certified partner, we implement and manage Palo Alto Networks solutions including Prisma Cloud, Network Security, and Cortex XDR/XSOAR to ensure unified threat management and enterprise-wide compliance.',
-          tags: ['Prisma Cloud', 'Network Security', 'Cortex XDR/XSOAR'],
+          desc: 'As a certified partner, we implement and manage the full suite of Palo Alto Networks solutions, including Cloud Security (Prisma), Network Security, and Cortex XDR/XSOAR. We ensure unified threat management and compliance across your entire enterprise.',
+          tags: ['Prisma Cloud Security Expert'],
         },
         {
           logo: '/icons/global/wiz.svg',
           tagline: 'Cloud Risk Visibility & Remediation Partner',
           boxTitle: 'Solution',
-          desc: 'We integrate and manage Wiz’s agentless platform to provide deep visibility into cloud-native environments, ensuring continuous security and compliance across VMs, containers, and serverless architectures.',
-          tags: ['CNAPP', 'Cloud Risk Management'],
+          desc: `We integrate and manage Wiz's agentless platform to provide deep visibility into your entire cloud-native environment. We ensure continuous security and compliance by identifying and remediating risks across VMs, containers, and serverless architectures.`,
+          tags: ['Cloud-Native Security (CNAPP) Expert'],
         },
       ],
     },
@@ -44,22 +44,22 @@ const PartnerSolution = () => {
           logo: '/icons/global/ionq.png',
           tagline: 'Managed Quantum Computing Partner',
           boxTitle: 'Solution',
-          desc: 'We leverage IonQ’s unified Quantum OS and hybrid services to accelerate quantum algorithm development, optimization, and deployment across cloud, edge, and on-prem environments.',
-          tags: ['Hybrid Quantum Computing', 'Enterprise Quantum Workloads'],
+          desc: `We leverage IonQ's unified Quantum OS and Hybrid Services suite for accelerated quantum algorithm development, optimization, and deployment across cloud, edge, and on-prem environments. Our managed services ensure scalable, enterprise-grade quantum workloads with robust error mitigation and classical-quantum integration.`,
+          tags: ['Managed  Hybrid Computing Services'],
         },
         {
           logo: '/icons/global/nvidia1.png',
           tagline: 'Managed AI/ML Acceleration Partner',
           boxTitle: 'Solution',
-          desc: 'We leverage NVIDIA’s AI Enterprise platform for accelerated model training, inference, and deployment across edge, cloud, and data center environments with GPU-optimized pipelines.',
-          tags: ['AI Enterprise', 'GPU Acceleration', 'Edge AI'],
+          desc: `We leverage NVIDIA's unified AI Enterprise platform for accelerated model training, inference, and deployment across edge, cloud, and data center. Our managed services ensure scalable, GPU-optimized AI/ML pipelines with robust performance and security.`,
+          tags: ['Managed AI/ML & Edge Computing Services'],
         },
         {
           logo: '/icons/global/tsecond1.png',
           tagline: 'Managed Data & Edge AI Partner',
           boxTitle: 'Solution',
-          desc: 'We leverage TSecond’s hyperscale data and edge AI platforms to ingest, process, and analyze massive datasets securely across field, core, and cloud environments.',
-          tags: ['Edge AI', 'High-Performance Data Platforms'],
+          desc: 'We leverage Tsecond’s hyper-scale data appliances and edge AI platforms to ingest, move, and process massive datasets securely across field, core, and cloud environments. Our managed services enable high-performance AI/ML pipelines at the edge and in the data center, ensuring fast access, governance, and analytics for mission-critical workloads.',
+          tags: ['Managed Data & Edge AI Partner'],
         },
       ],
     },
@@ -72,22 +72,22 @@ const PartnerSolution = () => {
           logo: '/icons/global/oracle2.png',
           tagline: 'Managed Enterprise Cloud Partner',
           boxTitle: 'Solution',
-          desc: 'We leverage Oracle Cloud Infrastructure (OCI) for high-performance databases, autonomous operations, and hybrid cloud deployments with built-in security and cost governance.',
-          tags: ['OCI', 'Managed Databases', 'Hybrid Cloud'],
+          desc: `We leverage Oracle Cloud Infrastructure (OCI)'s unified platform for high-performance databases, autonomous operations, and hybrid cloud deployments across multitenant environments. Our managed services ensure mission-critical workloads with built-in security, extreme performance, and cost governance.`,
+          tags: ['Managed Database & Hybrid Cloud Services'],
         },
         {
           logo: '/icons/global/aws2.png',
           tagline: 'Managed Cloud Infrastructure Partner',
           boxTitle: 'Solution',
-          desc: 'We leverage AWS’s unified cloud platform for scalable infrastructure, serverless computing, and hybrid cloud orchestration across global regions.',
-          tags: ['Multi-Cloud', 'Hybrid Cloud', 'Managed AWS'],
+          desc: `We leverage AWS's unified cloud platform for scalable infrastructure, serverless computing, and hybrid cloud orchestration across global regions. Our managed services ensure resilient, cost-optimized cloud environments with automated scaling and security.`,
+          tags: ['Managed Multi/Hybrid Cloud Services'],
         },
         {
           logo: '/icons/global/gcs.png',
           tagline: 'Managed Cloud Native Partner',
           boxTitle: 'Solution',
-          desc: 'We leverage Google Cloud’s cloud-native platform for Kubernetes-based applications, AI/ML acceleration, and hybrid management with zero-trust security.',
-          tags: ['Cloud Native', 'GKE', 'Hybrid Services'],
+          desc: `We leverage Google Cloud's unified platform for Kubernetes-native applications, Anthos hybrid management, and AI/ML acceleration across edge-to-cloud. Our managed services ensure developer velocity with FinOps, IaaC, and zero-trust security.`,
+          tags: ['Managed Cloud Native & Hybrid Services'],
         },
       ],
     },
@@ -338,38 +338,26 @@ const PartnerSolution = () => {
               </div>
 
               {/* Mobile: Slider */}
-              <div className="md:hidden px-4 partner-boxes-slider">
+              <div className="md:hidden px-2 partner-boxes-slider">
                 <Slider {...sliderSettings}>
                   {selectedTab.boxes?.map((item, ind) => (
                     <div key={ind} className="px-2">
-                      <div className="ribbon-mobile md:white-ribbon-border bg-secondary-200 py-8 pl-14 pr-6 rounded-[4px] shadow-[3px_0px_3px_1px_rgba(0,0,0,0.25)]">
+                      <div className="ribbon-mobile md:white-ribbon-border  min-h-[435px] bg-secondary-200 py-8 pl-12 pr-6 rounded-[4px] shadow-[3px_0px_3px_1px_rgba(0,0,0,0.25)]">
                         <img src={item.logo} className="mb-3 h-10" alt="logo" />
-                        <p className="font-light text-[#1C1C1C] mb-3 text-14">
+                        <p className="font-light text-[#1C1C1C] mb-8 text-14">
                           {item.tagline}
                         </p>
                         <h6 className="font-bold text-[#1C1C1C] mb-1 text-16">
                           {item.boxTitle}
                         </h6>
-                        <p className="font-reddit-sans font-light text-14 text-[#1C1C1C]">
+                        <p className="font-reddit-sans font-light mb-10 text-14 text-[#1C1C1C] min-h-[175px]">
                           {item.desc}
                         </p>
-                        <div className="flex items-center mt-4 text-13">
+                        <div className="flex items-start justify-start mt-4 text-13">
                           {item?.tags?.map((innerItem, innerInd) => (
                             <span
                               key={innerInd}
-                              className="
-        relative px-4 text-secondary font-medium text-center leading-tight
-        max-w-[110px]
-        flex items-center justify-center
-        [&:not(:last-child)]:after:content-['']
-        [&:not(:last-child)]:after:absolute
-        [&:not(:last-child)]:after:right-0
-        [&:not(:last-child)]:after:top-1/2
-        [&:not(:last-child)]:after:-translate-y-1/2
-        [&:not(:last-child)]:after:h-[18px]
-        [&:not(:last-child)]:after:w-px
-        [&:not(:last-child)]:after:bg-[#1C1C1C30]
-      "
+                              className={`relative px-3 first:pl-0 text-secondary font-medium text-left w-fit leading-tight`}
                             >
                               {innerItem}
                             </span>
