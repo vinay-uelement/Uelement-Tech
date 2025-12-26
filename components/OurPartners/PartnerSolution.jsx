@@ -320,14 +320,14 @@ const PartnerSolution = () => {
                     <h6 className="fl1 md:!text-[18px] text-[#1C1C1C] mb-1">
                       {item.boxTitle}
                     </h6>
-                    <p className="fl3 md:!text-12 text-[#1C1C1C]">
+                    <p className="fl3 md:!text-12 text-[#1C1C1C] min-h-[125px] 2xl:min-h-[100px]">
                       {item.desc}
                     </p>
                     <div className="flex items-center divide-x divide-[#1C1C1C30] mt-6">
                       {item?.tags?.map((innerItem, innerInd) => (
                         <span
                           key={innerInd}
-                          className="px-3 font-bold font-reddit-sans text-[12px] md:text-[14px] text-center text-secondary"
+                          className="px-3 font-bold font-reddit-sans text-[12px] md:text-[14px] text-left text-secondary"
                         >
                           {innerItem}
                         </span>
