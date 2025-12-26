@@ -104,7 +104,7 @@ const DESKTOP_DROPDOWN_HEIGHT = {
   3: 'h-[350px]', // Partnership
 };
 
-const NavbarV4 = () => {
+const NavbarV1 = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [showMobileNav, setShowMobileNav] = useState(false);
   const [hoveredMenu, setHoveredMenu] = useState(null);
@@ -198,7 +198,7 @@ const NavbarV4 = () => {
               <div className="w-[calc(100%+30px)] md:w-[calc(100%+40px)] h-full bg-[#32323259] backdrop-blur-lg rounded-[40px] -ml-[30px] md:-ml-10 px-3 flex items-center relative z-50">
                 {/* 92 Badge - Always visible */}
                 <div className="size-8 md:size-10 bg-[#9B7025] rounded-full flex-shrink-0 relative">
-                  <span className="absolute -translate-x-1/2 left-1/2 -translate-y-1/2 top-1/2 font-bold text-18 md:text-22 font-reddit-sans text-[#ffffff]">
+                  <span className="absolute -translate-x-1/2 left-[18px] -translate-y-1/2 top-3 font-bold text-18 md:text-22 font-reddit-sans text-[#ffffff50]">
                     92
                   </span>
                 </div>
@@ -329,4 +329,4 @@ const NavbarV4 = () => {
   );
 };
 
-export default NavbarV4;
+export default NavbarV1;

@@ -38,13 +38,13 @@ export default function HighlightV2() {
   ];
 
   return (
-    <div className="relative w-full flex flex-col items-center ">
-      <p className="absolute font-cal-sans font-semibold text-[#36363633] text-[60px] sm:text-[70px] md:text-[100px] lg:text-[150px] leading-none ">
+    <div className="relative w-full flex flex-col items-center overflow-hidden">
+      <p className="absolute top-[20px] sm:top-[30px] md:top-[40px] lg:top-[60px] font-cal-sans font-semibold text-[#3636361f] text-[60px] sm:text-[80px] md:text-[120px] lg:text-[160px] leading-none z-0 select-none">
         HIGHLIGHTS
       </p>
 
-      <div className=" w-full container-padding  pt-[50] sm:pt-[60px]  md:pt-[90px] lg:pt-[120px] px-4 z-10">
-        <div className="light-glass rounded-[4px] p-4 md:p-8 lg:p-10 lg:pb-4 mb-20 ">
+      <div className="relative w-full container-padding px-4 z-10 mt-[60px] sm:mt-[80px] md:mt-[120px] lg:mt-[160px]">
+        <div className="light-glass rounded-[4px] p-4 md:p-8 lg:p-10 lg:pb-4 mb-20">
           <CompanyHighlightSlider data={sliderData} />
         </div>
       </div>
