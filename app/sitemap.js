@@ -1,3 +1,6 @@
+export const dynamic = "force-static";
+export const revalidate = 86400; // regenerate daily when ISR is available
+
 import { glob } from "glob";
 
 const BASE_URL = "https://uelement.in";
