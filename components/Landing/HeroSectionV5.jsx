@@ -111,7 +111,7 @@ const HeroSectionV5 = () => {
           >
             {ReactIcons.leftChev}
           </button>
-          <div className="flex-1 overflow-hidden w-full min-h-[30px]">
+          <div className="flex-1 overflow-hidden w-full min-h-[30px] flex items-center ">
             <div
               className="flex transition-transform duration-500 ease-in-out"
               style={{ transform: `translateX(-${index * 100}%)` }}
