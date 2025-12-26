@@ -314,7 +314,7 @@ const PartnerSolution = () => {
                       className="mb-3 sm:h-6 2xl:h-8"
                       alt="logo"
                     />
-                    <p className="fl3 my-4 sm:min-h-[35px] 3xl:min-h-[20px]">
+                    <p className="fl3 my-4 sm:min-h-[45px] 3xl:min-h-[20px]">
                       {item.tagline}
                     </p>
                     <h6 className="fl1 md:!text-[18px] text-[#1C1C1C] mb-1">

@@ -1,6 +1,6 @@
 export const legalData = {
   privacy: {
-    title: "Privacy policy",
+    title: "Privacy Policy",
     subtitle:
       "We are committed to protecting your privacy and ensuring the security of your personal information.",
     sections: [

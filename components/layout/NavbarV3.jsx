@@ -90,11 +90,12 @@ const navbarList = [
   { id: 4, label: 'Company', link: '/company' },
 ];
 
-const NO_DROPDOWN_LINKS = [2]; // keep for MobileNav if you use it as-is
+const NO_DROPDOWN_LINKS = [];
 
 const MOBILE_DROPDOWN_HEIGHT = {
   1: 'h-[300px]', // Services
-  3: 'h-[160px]', // Partnership
+  2: 'h-[260px]', // Resources
+  3: 'h-[200px]', // Partnership
 };
 
 const DESKTOP_DROPDOWN_HEIGHT = {
@@ -181,7 +182,7 @@ const NavbarV3 = () => {
               <img
                 src="/icons/global/UElement_Logo_White 3.svg"
                 alt="uelement"
-                className="xl:w-auto md:w-[140px] h-auto"
+                className="2xl:w-auto md:w-[140px] h-auto"
               />
             </Link>
 
@@ -271,7 +272,7 @@ const NavbarV3 = () => {
                   <div className="pt-9 pb-3 px-4 flex w-full">
                     <div className="flex-[2]">
                       <div className="flex items-center gap-4 border-b-[0.5px] border-[#ebebeb] pb-2">
-                        <div className="md:text-18 xl:text-22 text-white font-reddit-sans font-semibold border-r border-white pr-4">
+                        <div className="md:text-18 xl:text-22 text-white font-reddit-sans font-semibold">
                           {openMenu.label}
                         </div>
 
@@ -279,17 +280,17 @@ const NavbarV3 = () => {
                         {openMenu.id === 2 && (
                           <Link
                             href="/resources"
-                            className="md:text-16 xl:text-20 text-white font-reddit-sans font-semibold"
+                            className="md:text-16 xl:text-20 text-white font-reddit-sans font-semibold flex items-center gap-2 border-l border-[#ffffff70] pl-4"
                           >
-                            View Resources
+                            View Resources {ReactIcons.arrowright}
                           </Link>
                         )}
                         {openMenu.id === 3 && (
                           <Link
                             href="/our-partners"
-                            className="md:text-16 xl:text-20 text-white font-reddit-sans font-semibold"
+                            className="md:text-16 xl:text-20 text-white font-reddit-sans font-semibold flex items-center gap-2 border-l border-[#ffffff70] pl-4"
                           >
-                            View Partner Ecosystem
+                            View Partner Ecosystem {ReactIcons.arrowright}
                           </Link>
                         )}
                       </div>
@@ -326,7 +327,7 @@ const NavbarV3 = () => {
         closeMobileNav={closeMobileNav}
         isScrolled={isScrolled}
         mobileNavRef={mobileNavRef}
-        NO_TOP_LEVEL_NAV={[]} // no special top-level behaviour anymore
+        NO_TOP_LEVEL_NAV={[]}
         NO_DROPDOWN_LINKS={NO_DROPDOWN_LINKS}
         MOBILE_DROPDOWN_HEIGHT={MOBILE_DROPDOWN_HEIGHT}
       />

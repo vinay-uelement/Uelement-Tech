@@ -24,9 +24,12 @@ import { LuChevronDown } from "react-icons/lu";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { TbBackslash } from "react-icons/tb";
 import { IoMdSearch } from "react-icons/io";
+import {
+  FiArrowRight } from "react-icons/fi";
 
 export const ReactIcons = {
   instagram: <RiInstagramFill />,
+  arrowright: <FiArrowRight />,
   instagram2: <FaInstagram />,
   email: <IoMail />,
   linkedin: <IoLogoLinkedin />,

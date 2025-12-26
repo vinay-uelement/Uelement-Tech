@@ -45,8 +45,7 @@ export default function LegalSidebar({ active, setActive }) {
           )}
           Sitemap
         </div>
-
-        <Link
+        {/* <Link
           href="/company"
           className={`relative ${base} ${inactiveCls} block`}
         >
@@ -58,7 +57,7 @@ export default function LegalSidebar({ active, setActive }) {
           className={`relative ${base} ${inactiveCls} block`}
         >
           Contact
-        </Link>
+        </Link> */}
       </div>
     </div>
   );

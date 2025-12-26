@@ -32,16 +32,16 @@ const MobileNav = ({
     >
       <div className="flex flex-col gap-3 px-3 md:pt-12 py-6 md:pb-8 lg:mx-auto lg:max-w-[calc(100%-20px)]">
         {navbarList.map((navItem) => {
+          const hasChildren = !!navItem.children?.length;
           const canExpand =
-            navItem.children?.length && !NO_DROPDOWN_LINKS.includes(navItem.id);
+            hasChildren && !NO_DROPDOWN_LINKS.includes(navItem.id);
 
           return (
             <div key={navItem.id}>
-              {/* TOP LEVEL */}
+              {/* TOP LEVEL (only toggles, never navigates if it has children) */}
               <div
                 onClick={() => {
                   if (!canExpand) return;
-
                   setExpandedMobileMenu((prev) =>
                     prev === navItem.id ? null : navItem.id
                   );
@@ -50,18 +50,7 @@ const MobileNav = ({
                   border-primary-blue/20 text-white font-semibold pb-1
                   ${canExpand ? 'cursor-pointer' : 'cursor-default'}`}
               >
-                {/* LABEL */}
-                {NO_TOP_LEVEL_NAV.includes(navItem.id) ? (
-                  <span className="h-10 flex items-end">{navItem.label}</span>
-                ) : (
-                  <Link
-                    href={navItem.link}
-                    onClick={closeMobileNav}
-                    className="h-10 flex items-end"
-                  >
-                    {navItem.label}
-                  </Link>
-                )}
+                <span className="h-10 flex items-end">{navItem.label}</span>
 
                 {canExpand && ReactIcons.chevDown}
               </div>
@@ -69,14 +58,43 @@ const MobileNav = ({
               {/* DROPDOWN */}
               <div
                 className={`overflow-hidden transition-all duration-300 ease-in-out
-                  ${
-                    expandedMobileMenu === navItem.id
-                      ? (MOBILE_DROPDOWN_HEIGHT[navItem.id] ?? 'h-0')
-                      : 'h-0'
-                  }`}
+  ${
+    expandedMobileMenu === navItem.id
+      ? (MOBILE_DROPDOWN_HEIGHT[navItem.id] ?? 'h-auto')
+      : 'h-0'
+  }`}
               >
+                {/* Extra "view" item for Resources */}
+                {navItem.id === 2 && (
+                  <Link
+                    href="/resources"
+                    onClick={closeMobileNav}
+                    className="block py-2 border-b-[0.5px]
+                      border-primary-blue/20 hover:text-primary-blue max-w-[90%]"
+                  >
+                    <div className="font-semibold text-14 text-[#E8E8E8] flex gap-2 items-center">
+                      View Resources {ReactIcons?.arrowright}
+                    </div>
+                  </Link>
+                )}
+
+                {/* Extra "view" item for Partnership */}
+                {navItem.id === 3 && (
+                  <Link
+                    href="/our-partners"
+                    onClick={closeMobileNav}
+                    className="block py-2 border-b-[0.5px]
+                      border-primary-blue/20 hover:text-primary-blue max-w-[90%]"
+                  >
+                    <div className="font-semibold text-14 text-[#E8E8E8] flex gap-2 items-center">
+                      View Partner Ecosystem {ReactIcons?.arrowright}
+                    </div>
+                  </Link>
+                )}
+
                 {navItem.children?.map((child) =>
                   NO_DROPDOWN_LINKS.includes(navItem.id) ? (
+                    // Resources descriptive items (non-clickable)
                     <div
                       key={child.id}
                       className="block py-2 border-b-[0.5px]
@@ -91,6 +109,7 @@ const MobileNav = ({
                       </div>
                     </div>
                   ) : (
+                    // Normal clickable items
                     <Link
                       key={child.id}
                       href={child.link}

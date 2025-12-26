@@ -614,7 +614,7 @@ const FooterContent = () => {
                     href="/company"
                     className="fl3 !text-[#e2e2e2] text-13 sm:text-16 hover:text-white transition-colors"
                   >
-                    About
+                    About us
                   </Link>
                   <Link
                     href="/our-partners"
@@ -757,7 +757,7 @@ const FooterContent = () => {
                     href="/company"
                     className="fl3 !text-[#e2e2e2] text-13 sm:text-16 hover:text-white transition-colors"
                   >
-                    About
+                    About us
                   </Link>
                   <Link
                     href="/our-partners"
