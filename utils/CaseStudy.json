@@ -2,7 +2,7 @@
   {
     "id": 1,
     "title": "Aerospace-Grade Cloud Transformation",
-    "desc": "Secure Cloud Transformation for Aerospace & Defense Modernizing infrastructure with Zero Trust and CMMC-compliant architecture.",
+    "desc": "Defense-grade cloud solutions built to secure, modernize, and scale mission-critical infrastructure without compromising control or compliance.",
     "label": "services",
     "industry": "Aerospace",
     "companySize": "Small-Mid Enterprise (Defense Contractor | DIB)",
@@ -12,7 +12,7 @@
       "Compliance & Governance",
       "Zero Trust Security"
     ],
-    "headerImage": "/images/resources/case-study/case-study-1main.png",
+    "headerImage": "/images/resources/case-study/aerospacehero.png",
     "challenge": "A growing aerospace and defense contractor supporting government programs needed to modernize its on-premise infrastructure while meeting strict regulatory and security requirements. The organization faced challenges including fragmented legacy systems, limited visibility into security posture, and manual compliance processes that slowed audits and increased risk exposure.",
     "keyRequirements": [
       {
@@ -30,13 +30,10 @@
       {
         "id": 4,
         "title": "Minimal disruption to mission-critical operations"
-      },
-      {
-        "id": 5,
-        "title": "Improved threat detection, monitoring, and access governance"
       }
     ],
     "solution": {
+      "img" : "/images/resources/case-study/aerospace.png",
       "intro": "UElement Technologies designed and executed a compliance-first cloud transformation strategy, ensuring security, resilience, and long-term scalability. Our Cloud, Cybersecurity and Governance teams collaborated with the client's IT, security and compliance stakeholders to",
       "items": [
         "Conduct a comprehensive security and compliance gap assessment against CMMC and NIST 800-171 controls",
@@ -83,7 +80,7 @@
   {
   "id": 2,
   "title": "Identity Security & Governance Transformation for a Mid-Sized Telecom Provider",
-  "desc": "Identity Security & Governance Transformation for a Mid-Sized Telecom Provider",
+  "desc": "Implemented a robust identity security and governance framework to enhance access control, regulatory compliance, and operational security.",
   "label": "services",
   "industry": "Telecommunications",
   "companySize": "Mid-Sized Enterprise (Telecom Services Provider)",
@@ -93,7 +90,7 @@
     "Zero Trust Identity Security",
     "Automation & Compliance Enablement"
   ],
-  "headerImage": "/images/resources/case-study/case-study-1main.png",
+  "headerImage": "/images/resources/case-study/telecomhero.png",
   "challenge": "A mid-sized telecom services provider with thousands of employees and millions of users was struggling with fragmented identity systems, manual access governance, and increasing audit pressure. Rapid growth and legacy IAM processes had resulted in identity sprawl, unmanaged privileged access, and high operational overhead during security audits. The organization lacked centralized visibility into user and privileged access, creating security gaps, compliance risks, and inefficiencies across IT and business teams.",
   "keyRequirements": [
     {
@@ -111,21 +108,10 @@
     {
       "id": 4,
       "title": "Elimination of manual approvals, spreadsheets, and paper-based workflows"
-    },
-    {
-      "id": 5,
-      "title": "Audit-ready identity controls with real-time visibility and reporting"
-    },
-    {
-      "id": 6,
-      "title": "Alignment with Zero Trust and least-privilege security principles"
-    },
-    {
-      "id": 7,
-      "title": "Scalable identity architecture to support cloud and future growth"
     }
   ],
   "solution": {
+    "img" : "/images/resources/case-study/telecom.png",
     "intro": "UElement Technologies, a CyberArk Partner, delivered an identity-first security transformation leveraging the CyberArk Identity Security Platform. Working closely with the client’s IT, security, and compliance teams, UElement implemented:",
     "items": [
       "Identity Governance & Administration (IGA) using CyberArk",

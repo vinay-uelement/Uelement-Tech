@@ -5,7 +5,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-export default function KeyRequirements({ caseStudy }) {
+function KeyRequirements({ caseStudy }) {
   const sliderRef = useRef(null);
   const [active, setActive] = useState(0);
 
@@ -61,12 +61,29 @@ export default function KeyRequirements({ caseStudy }) {
   };
 
   return (
-    <section className="bg-white">
-      <div className="container-padding section-block-padding">
-        <h2 className="fl2 !mb-6">Key requirements included</h2>
+    <div className="md:bg-[#F2F2F2] md:p-8 mb-6 md:mb-0">
+      <h2 className="fl2 !mb-4 md:!mb-8">Key requirements included</h2>
 
-        {/* MOBILE – React Slick */}
-        <div className="block md:hidden">
+      <div className="relative md:grid grid-cols-1 sm:grid-cols-2 hidden">
+        {/* Vertical Divider (Desktop only) */}
+        <div className="block absolute top-0 bottom-0 left-1/2 border-l border-dotted border-black/30" />
+
+        {/* Horizontal Divider (Desktop only) */}
+        <div className="hidden sm:block absolute left-0 right-0 top-1/2 border-t border-dotted border-black/30" />
+
+        {caseStudy.keyRequirements.map((req) => (
+          <div
+            key={req.id}
+            className="p-4 md:p-6 flex items-center justify-center text-center min-h-[120px]"
+          >
+            <p className="fl3 leading-[1.6] max-w-[260px]">
+              {req.title}
+            </p>
+          </div>
+        ))}
+      </div>
+
+       <div className="block md:hidden">
           <Slider ref={sliderRef} {...settings}>
             {caseStudy.keyRequirements.map((req) => (
               <div key={req.id} className="px-2">
@@ -77,19 +94,8 @@ export default function KeyRequirements({ caseStudy }) {
             ))}
           </Slider>
         </div>
-
-        {/* TABLET & DESKTOP – Grid */}
-        <div className="hidden md:grid grid-cols-2 lg:grid-cols-5 gap-4 md:gap-5">
-          {caseStudy.keyRequirements.map((req) => (
-            <div
-              key={req.id}
-              className="bg-[#F0F0F0] rounded-[4px] p-5 md:p-6 text-center flex items-center justify-center min-h-[140px] md:min-h-[160px]"
-            >
-              <p className="fl3">{req.title}</p>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
+    </div>
   );
 }
+
+export default KeyRequirements;

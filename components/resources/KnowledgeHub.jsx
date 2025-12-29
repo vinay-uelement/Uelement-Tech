@@ -35,17 +35,17 @@ const blogs = [
 const casestudy = [
   {
     id: 1,
-    title: 'Defense-Grade Cloud Transformation',
+    title: 'Aerospace-Grade Cloud Transformation',
     desc: 'Secure Cloud Transformation for Aerospace & Defense Modernizing infrastructure with Zero Trust and CMMC-compliant architecture.',
     label: 'services',
-    image: '/images/resources/case-study/case-study1hero.png',
+    image: '/images/resources/case-study/aerospacecard.png',
   },
   {
   id: 2,
   title: 'Identity Security & Governance Transformation',
   desc: 'Identity Security & Governance Transformation for a Mid-Sized Telecom Provider.',
   label: 'services',
-  image: '/images/resources/case-study/case-study1hero.png',
+  image: '/images/resources/case-study/telecomcard.png',
 }
 
 ];

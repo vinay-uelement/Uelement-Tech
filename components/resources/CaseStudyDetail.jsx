@@ -4,6 +4,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import Slider from 'react-slick';
 import KeyRequirements from './CaseStudy/KeyRequirements';
 import WhyUelement from './CaseStudy/WhyUelement';
+import ChallengeBlock from './CaseStudy/ChallengeBlock';
 
 const CustomPrevArrow = (props) => {
   const { onClick } = props;
@@ -76,13 +77,14 @@ const CaseStudyDetail = ({ caseStudy, otherCaseStudies }) => {
       {/* Header Section */}
       <section className="bg-[#0F1B2E] text-white pt-[75px]">
         <div className="container-padding section-block-padding">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
             {/* Left Content */}
             <div className="flex flex-col justify-center">
               <h1 className="fl1 !text-white">{caseStudy.title}</h1>
+              <h1 className="fl3 !text-white !text-16 xl:!text-20">{caseStudy.desc}</h1>
 
               <div className="mt-8 space-y-4">
-                <p className="text-14 md:text-20 text-[#9E9E9E] leading-relaxed">
+                <p className="text-14 md:text-18 text-[#9E9E9E] leading-relaxed">
                   <span className="mr-1 font-reddit-sans text-white font-medium text-18 md:text-24">
                     Industry:
                   </span>{' '}
@@ -93,7 +95,7 @@ const CaseStudyDetail = ({ caseStudy, otherCaseStudies }) => {
                   <span className="mr-1 font-reddit-sans text-white font-medium text-18 md:text-24">Company Size:</span> {caseStudy.companySize}
                 </p> */}
 
-                <p className="text-14 md:text-20 text-[#9E9E9E] leading-relaxed">
+                <p className="text-14 md:text-18 text-[#9E9E9E] leading-relaxed">
                   <span className="mr-1 font-reddit-sans text-white font-medium text-18 md:text-24">
                     Services Provided:
                   </span>{' '}
@@ -115,20 +117,23 @@ const CaseStudyDetail = ({ caseStudy, otherCaseStudies }) => {
       </section>
 
       {/* Challenge Section */}
-      <section className="container-padding-small mt-4 md:mt-8">
-        <div className="p-6 md:p-10 bg-[#F5F5F5]">
-          <h2 className="fl2">Challenge</h2>
-          <p className="fl3 leading-[1.8]">{caseStudy.challenge}</p>
+      <section className="container-padding-small">
+        <div className="p-6 md:p-10">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-10">
+            {/* Challenge */}
+            <ChallengeBlock caseStudy={caseStudy} />
+
+            {/* Key Requirements */}
+            <KeyRequirements caseStudy={caseStudy} />
+          </div>
         </div>
       </section>
-
-      {/* Key Requirements Section */}
-      <KeyRequirements caseStudy={caseStudy} />
 
       {/* Solution Section */}
       <section className="bg-[#F5F5F5]">
         <div className="container-padding section-block-padding">
-          <h2 className="fl2 uppercase tracking-wider">Solution</h2>
+          <h2 className="fl2 uppercase tracking-wider !mb-4 md:!mb-6 3xl:!mb-8 ">Solution</h2>
+          <img src={caseStudy.solution.img} alt="" className='w-full mb-6 md:mb-10 md:h-[700px] h-[300px]' />
 
           <p className="fl3 text-[#5F6D7E] leading-[1.8] mb-6">
             {caseStudy.solution.intro}
