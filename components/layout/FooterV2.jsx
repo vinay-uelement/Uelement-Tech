@@ -10,7 +10,7 @@ import useWeb3Forms from '@web3forms/react';
 
 const FooterV2 = () => {
   const pathname = usePathname();
-  if (pathname === '/contact-us') return null;
+  if (pathname === '/contact-us/') return null;
 
   return (
     <div>
