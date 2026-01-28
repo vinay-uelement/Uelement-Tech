@@ -64,7 +64,7 @@ const DrivingGrowthSection = () => {
   };
 
   const settings = {
-    dots: false,
+    dots: true,
     infinite: true,
     speed: 700,
     slidesToShow: 3,
@@ -112,6 +112,7 @@ const DrivingGrowthSection = () => {
     sliderRef.current.slickPrev();
   };
 
+  // Left side numbers ordered rotation
   const orderedNumbers = [
     ...slides.slice(active, active + 1),
     ...slides.slice(active + 1),
@@ -251,14 +252,6 @@ const DrivingGrowthSection = () => {
               <span>{ReactIcons.rightChev}</span>
             </div>
           </div>
-
-          <Dots
-            slides={slides}
-            active={active}
-            onGoTo={(i) => sliderRef.current && sliderRef.current.slickGoTo(i)}
-            className='mt-5'
-          />
-
         </div>
         <div className="flex justify-center">
           <button className="btn-blue mt-10 lg:hidden w-fit ">
