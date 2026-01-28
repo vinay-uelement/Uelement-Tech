@@ -30,16 +30,16 @@ export default function TermsContent() {
   return (
     <div className="space-y-8">
       {/* Terms Content */}
-      <div className="space-y-6 max-h-[600px] overflow-y-auto pr-4">
+      <div className="space-y-6 overflow-y-auto pr-4">
         {termsData.map((item, index) => (
           <div key={index} className="space-y-3">
-            <p className="fl3 !text-white/70 leading-relaxed">{item.content}</p>
+            <p className="fl3 !text-[#232223] leading-relaxed">{item.content}</p>
           </div>
         ))}
       </div>
 
       {/* Acceptance Section */}
-      <div className="border-t border-[#ffffff10] pt-8 space-y-6">
+      <div className="border-t border-[#DFDFDF] pt-8 space-y-6">
         {/* <div className="flex items-start gap-4">
           <input
             type="checkbox"
@@ -56,13 +56,13 @@ export default function TermsContent() {
           </label>
         </div> */}
 
-        <div className="flex gap-4 justify-end">
-          <button className="px-8 py-2 border border-white/30 text-white rounded-[4px] hover:bg-white/10 transition text-14 font-semibold">
+        <div className="flex gap-4 justify-start">
+          <button className="px-10 py-2 border border-[#DFDFDF] !text-[#232223] rounded-[4px]  transition text-14 font-semibold">
             Decline
           </button>
           <button
             disabled={!accepted}
-            className="px-8 py-2 rounded-[4px] transition text-14 font-semibold bg-white text-black hover:bg-white/90"
+            className="px-10 py-2 rounded-[4px] transition text-14 font-semibold bg-primary-blue text-white "
           >
             Accept
           </button>

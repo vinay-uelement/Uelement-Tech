@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import React from 'react';
 
 const ResourcesHero = () => {
@@ -7,15 +8,16 @@ const ResourcesHero = () => {
         <div className="flex-1 flex flex-col justify-between pl-[var(--container-small-padding)]">
           <div>
             <h1 className="fl2 text-primary-blue md:w-[90%] w-full">
-              Insights and expertise across Cybersecurity, Cloud, AI,and Quantum
-              Computing.
+              Discover Tools, Insights, and Success Stories
             </h1>
             <p className="text-16 md:text-24 text-primary-blue mt-4 md:mt-8 md:w-[80%] w-full">
               Access whitepapers, case studies, and expert insights designed to
               help your business innovate and scale.
             </p>
           </div>
-          <button className="btn-blue mt-6 w-fit">Contact Us</button>
+          <Link href="/contact-us" className="btn-blue mt-6 w-fit inline-block">
+            Contact Us
+          </Link>
         </div>
         <div className="flex-1">
           <img

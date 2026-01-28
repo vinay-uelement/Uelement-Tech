@@ -82,11 +82,11 @@ const HeroSectionV5 = () => {
       <div className="h-[calc(100%-80px)] w-full relative text-white rounded-[4px] rounded-bl-[50px] rounded-br-none">
         <div className="h-full w-full flex flex-col md:flex-row">
           <div className="w-full h-[60%] md:h-full md:w-[40%] pl-[var(--container-small-padding)] flex flex-col justify-end md:justify-center ">
-            <h1 className="fl-main italic tracking-wider leading-[1.2] mt-5">
+            <h1 className="fl-main italic tracking-wider leading-[1.2] mt-5 xl:mt-5 md:mt-15">
               We Are <br /> Digital <br className=" md:block" /> Mavericks.
             </h1>
-            <p className="mt-8 fl3 !text-[#ffffff] !text-[12px] md:!text-[20px] md:mb-20 mb-8 ">
-              Engineering Quantum-Driven Digital Synapses at <br /> the
+            <p className="mt-8 fl3 !text-[#ffffff] !text-[12px] md:!text-[20px] md:mb-10 xl:mb-20 mb-8 ">
+              Engineering Quantum-Driven Digital Synapses at the
               intersection of Cybersecurity, Cloud & AI.
             </p>
             <button onClick={handleContactus} className="btn-yellow w-fit">
@@ -111,7 +111,7 @@ const HeroSectionV5 = () => {
           >
             {ReactIcons.leftChev}
           </button>
-          <div className="flex-1 overflow-hidden w-full min-h-[30px]">
+          <div className="flex-1 overflow-hidden w-full min-h-[30px] flex items-center ">
             <div
               className="flex transition-transform duration-500 ease-in-out"
               style={{ transform: `translateX(-${index * 100}%)` }}

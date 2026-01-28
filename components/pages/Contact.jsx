@@ -68,15 +68,102 @@ const ContactUs = () => {
     },
   });
 
+  const [errors, setErrors] = useState({
+    firstName: '',
+    lastName: '',
+    email: '',
+    phone: '',
+    message: '',
+  });
+
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState({ type: '', message: '' });
+
+  // Validation functions
+  const validateEmail = (email) => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+  };
+
+  const validatePhone = (phone) => {
+    // Accepts: +1234567890, 1234567890, (123) 456-7890, 123-456-7890
+    const phoneRegex =
+      /^[\+]?[(]?[0-9]{1,4}[)]?[-\s\.]?[(]?[0-9]{1,4}[)]?[-\s\.]?[0-9]{1,9}$/;
+    return phoneRegex.test(phone.replace(/\s/g, ''));
+  };
+
+  const validateField = (name, value) => {
+    let error = '';
+
+    switch (name) {
+      case 'firstName':
+        if (!value.trim()) {
+          error = 'First name is required';
+        } else if (value.trim().length < 2) {
+          error = 'First name must be at least 2 characters';
+        }
+        break;
+
+      case 'lastName':
+        if (!value.trim()) {
+          error = 'Last name is required';
+        } else if (value.trim().length < 2) {
+          error = 'Last name must be at least 2 characters';
+        }
+        break;
+
+      case 'email':
+        if (!value.trim()) {
+          error = 'Email is required';
+        } else if (!validateEmail(value)) {
+          error = 'Please enter a valid email address';
+        }
+        break;
+
+      case 'phone':
+        if (!value.trim()) {
+          error = 'Phone number is required';
+        } else if (!validatePhone(value)) {
+          error = 'Please enter a valid phone number';
+        }
+        break;
+
+      case 'message':
+        if (!value.trim()) {
+          error = 'Message is required';
+        } else if (value.trim().length < 4) {
+          error = 'Message must be at least 4 characters';
+        }
+        break;
+
+      default:
+        break;
+    }
+
+    return error;
+  };
+
+  const validateForm = () => {
+    const newErrors = {
+      firstName: validateField('firstName', formData.firstName),
+      lastName: validateField('lastName', formData.lastName),
+      email: validateField('email', formData.email),
+      phone: validateField('phone', formData.phone),
+      message: validateField('message', formData.message),
+    };
+
+    setErrors(newErrors);
+
+    // Return true if no errors
+    return !Object.values(newErrors).some((error) => error !== '');
+  };
 
   // Web3Forms Integration
   const { submit } = useWeb3Forms({
     access_key: '5f0b55f8-1ed0-46cd-a518-c13ca9686c6f',
     settings: {
       from_name: 'UElement Contact Form',
-      subject: 'New Contact Form Submission from Contact Page',
+      subject: 'New Contact Form Submission from Website',
     },
     onSuccess: (message) => {
       console.log('Success:', message);
@@ -108,6 +195,23 @@ const ContactUs = () => {
       ...prev,
       [name]: value,
     }));
+
+    // Clear error when user starts typing
+    if (errors[name]) {
+      setErrors((prev) => ({
+        ...prev,
+        [name]: '',
+      }));
+    }
+  };
+
+  const handleBlur = (e) => {
+    const { name, value } = e.target;
+    const error = validateField(name, value);
+    setErrors((prev) => ({
+      ...prev,
+      [name]: error,
+    }));
   };
 
   const handleCheckboxChange = (e) => {
@@ -135,10 +239,29 @@ const ContactUs = () => {
         digitalTransformation: false,
       },
     });
+    setErrors({
+      firstName: '',
+      lastName: '',
+      email: '',
+      phone: '',
+      message: '',
+    });
   };
 
   const contactFormHandler = async (e) => {
     e.preventDefault();
+
+    // Validate form
+    const isValid = validateForm();
+
+    if (!isValid) {
+      setSubmitStatus({
+        type: 'error',
+        message: 'Please fill all required fields before submitting.',
+      });
+      return;
+    }
+
     setIsSubmitting(true);
     setSubmitStatus({ type: '', message: '' });
 
@@ -168,9 +291,9 @@ const ContactUs = () => {
         <div className="h-[40%] bg-primary-blue"></div>
       </div>
 
-      <div className="container-padding py-14 sm:py-20 lg:py-26">
+      <div className="container-padding pt-25 pb-10 sm:pt-26 sm:pb-10 lg:pt-30 lg:pb-10">
         <div className="title-div text-primary-blue text-center mb-8 sm:mb-10 lg:mb-12">
-          <p className="fl-slash">/Contact Us</p>
+          <p className="fl-slash">/ Contact Us</p>
           <h4 className="fl1 leading-tight mb-10 md:mb-14">
             Ready to Transform Your Enterprise Security?
           </h4>
@@ -240,7 +363,13 @@ const ContactUs = () => {
                     name="firstName"
                     value={formData.firstName}
                     onChangeHandler={handleInputChange}
+                    onBlur={handleBlur}
                   />
+                  {errors.firstName && (
+                    <p className="text-red-600 text-12 mt-1 font-reddit-sans">
+                      {errors.firstName}
+                    </p>
+                  )}
                 </div>
                 <div>
                   <InputField
@@ -249,7 +378,13 @@ const ContactUs = () => {
                     name="lastName"
                     value={formData.lastName}
                     onChangeHandler={handleInputChange}
+                    onBlur={handleBlur}
                   />
+                  {errors.lastName && (
+                    <p className="text-red-600 text-12 mt-1 font-reddit-sans">
+                      {errors.lastName}
+                    </p>
+                  )}
                 </div>
                 <div>
                   <InputField
@@ -259,22 +394,36 @@ const ContactUs = () => {
                     type="email"
                     value={formData.email}
                     onChangeHandler={handleInputChange}
+                    onBlur={handleBlur}
                   />
+                  {errors.email && (
+                    <p className="text-red-600 text-12 mt-1 font-reddit-sans">
+                      {errors.email}
+                    </p>
+                  )}
                 </div>
                 <div>
                   <InputField
                     label="Phone Number"
                     placeholder="+1 012 3456 789"
                     name="phone"
+                    type="number"
                     value={formData.phone}
                     onChangeHandler={handleInputChange}
+                    onBlur={handleBlur}
                   />
+                  {errors.phone && (
+                    <p className="text-red-600 text-12 mt-1 font-reddit-sans">
+                      {errors.phone}
+                    </p>
+                  )}
                 </div>
               </div>
 
               <div>
                 <h6 className="font-reddit-sans font-semibold text-13 sm:text-14 text-black mb-3">
-                  Select Subject?
+                  Select Subject?{' '}
+                  <span className="text-gray-400 font-normal">(Optional)</span>
                 </h6>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                   <Checkbox
@@ -312,10 +461,18 @@ const ContactUs = () => {
                   name="message"
                   value={formData.message}
                   onChange={handleInputChange}
+                  onBlur={handleBlur}
                   placeholder="Write your message.."
                   rows="1"
-                  className="w-full placeholder:text-gray-8080 border-b border-b-[#D7D7D7] font-reddit-sans text-14 py-2 resize-none focus:border-primary-blue transition-colors"
+                  className={`w-full placeholder:text-gray-8080 border-b ${
+                    errors.message ? 'border-b-red-600' : 'border-b-[#D7D7D7]'
+                  } font-reddit-sans text-14 py-2 resize-none focus:border-primary-blue transition-colors`}
                 ></textarea>
+                {errors.message && (
+                  <p className="text-red-600 text-12 mt-1 font-reddit-sans">
+                    {errors.message}
+                  </p>
+                )}
               </div>
 
               <div className="flex justify-center sm:justify-end">
@@ -388,7 +545,7 @@ const FooterContent = () => {
   };
   return (
     <>
-      <footer className="hidden md:block bg-primary-blue pt-2 lg:pt-4 pb-6 container-padding">
+      <footer className="hidden md:block bg-primary-blue pt-2 lg:pt-4 pb-6 container-padding -mt-px">
         <div className="max-w-[1400px] mx-auto">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-10 lg:gap-12 xl:gap-16 pb-8 sm:pb-10 lg:pb-12">
             {/* Company Details */}
@@ -396,30 +553,44 @@ const FooterContent = () => {
               <img
                 src="/icons/global/UElement_Logo_White 3.svg"
                 alt="UElement logo"
-                className="h-[35px] sm:h-[48px] w-auto mb-6 md:mb-20"
+                className=" w-auto md:mb-3"
               />
-              <p className="text-[#808080] font-reddit-sans text-[14px] mb-6 sm:mb-8 ">
+              <p className="text-[#808080] font-reddit-sans text-[14px] sm:mb-5">
                 Empowering Secure Digital Transformation
               </p>
 
               <div className="flex items-center justify-start gap-6">
                 <Link
                   href="https://www.linkedin.com/company/uelement-technologies/posts/?feedView=all"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className=" hover:translate-y-[-3px] duration-300 ease-in-out transition-all hover:text-white/70"
                 >
-                  <Icon name="linkedin" size={35} />
+                  <Icon name="linkedin2" size={35} />
                 </Link>
-                {/* <Link
-                href="#"
-                className="  hover:translate-y-[-3px] duration-300 ease-in-out transition-all hover:text-white/70"
-              >
-                <Icon name="facebook" size={35} />
-              </Link> */}
                 <Link
-                  href="https://www.instagram.com/u_element_india?igsh=MTZtejZ4djB4MHdqbw=="
-                  className="  hover:translate-y-[-3px] duration-300 ease-in-out transition-all hover:text-white/70"
+                  href="https://facebook.com/uelement.technologies"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className=" hover:translate-y-[-3px] duration-300 ease-in-out transition-all hover:text-white/70"
                 >
-                  <Icon name="instagram" size={35} />
+                  <Icon name="facebook3" size={35} />
+                </Link>
+                <Link
+                  href="https://www.instagram.com/uelement_technologies/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:translate-y-[-3px] duration-300 ease-in-out transition-all hover:text-white/70"
+                >
+                  <Icon name="instagram2" size={35} />
+                </Link>
+                <Link
+                  href="https://x.com/uelement_tech"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:translate-y-[-3px] duration-300 ease-in-out transition-all hover:text-white/70"
+                >
+                  <Icon name="facebook2" size={35} />
                 </Link>
                 {/* <Link
                 href="#"
@@ -442,7 +613,7 @@ const FooterContent = () => {
               </div>
             </div>
 
-            <div className="flex flex-row md-flex-col justify-center gap-32 md:gap-20 my-6 md:my-0">
+            <div className="flex flex-row md-flex-col justify-start gap-32 md:gap-20 my-6 md:my-0">
               {/* Company Links */}
               <div className="company-links">
                 <h6 className=" font-semibold text-14 sm:text-22 font-reddit-sans text-white uppercase mb-4 sm:mb-5">
@@ -453,13 +624,13 @@ const FooterContent = () => {
                     href="/company"
                     className="fl3 !text-[#e2e2e2] text-13 sm:text-16 hover:text-white transition-colors"
                   >
-                    About
+                    About us
                   </Link>
                   <Link
-                    href="/services"
+                    href="/our-partners"
                     className="fl3 !text-[#e2e2e2] text-13 sm:text-16 hover:text-white transition-colors"
                   >
-                    Services
+                    Partnerships
                   </Link>
                   {/* <Link
                   href="/our-partners"
@@ -471,37 +642,37 @@ const FooterContent = () => {
               </div>
 
               {/* Resources Links */}
-              {/* <div className="resources-links">
-              <h6 className=" font-semibold text-14 sm:text-22 font-reddit-sans text-white uppercase mb-4 sm:mb-5">
-                RESOURCES
-              </h6>
-              <div className="flex flex-col gap-3 sm:gap-4 font-reddit-sans font-light">
-                <Link
-                  href="/resources"
-                  className="fl3 !text-[#e2e2e2] text-13 sm:text-16 hover:text-white transition-colors"
-                >
-                  Free eBooks
-                </Link>
-                <Link
-                  href="/resources"
-                  className="fl3 !text-[#e2e2e2] text-13 sm:text-16 hover:text-white transition-colors"
-                >
-                  Development Tutorial
-                </Link>
-                <Link
-                  href="/resources"
-                  className="fl3 !text-[#e2e2e2] text-13 sm:text-16 hover:text-white transition-colors"
-                >
-                  How to - Blog
-                </Link>
-                <Link
-                  href="/resources"
-                  className="fl3 !text-[#e2e2e2] text-13 sm:text-16 hover:text-white transition-colors"
-                >
-                  Youtube Playlist
-                </Link>
+              <div className="resources-links">
+                <h6 className=" font-semibold text-14 sm:text-22 font-reddit-sans text-white uppercase mb-4 sm:mb-5">
+                  Services
+                </h6>
+                <div className="flex flex-col gap-3 sm:gap-4 font-reddit-sans font-light">
+                  <Link
+                    href="/ai-ml"
+                    className="fl3 !text-[#e2e2e2] text-13 sm:text-16 hover:text-white transition-colors"
+                  >
+                    AI-ML
+                  </Link>
+                  <Link
+                    href="/cybersecurity"
+                    className="fl3 !text-[#e2e2e2] text-13 sm:text-16 hover:text-white transition-colors"
+                  >
+                    CyberSecurity
+                  </Link>
+                  <Link
+                    href="/cloud-solutions"
+                    className="fl3 !text-[#e2e2e2] text-13 sm:text-16 hover:text-white transition-colors"
+                  >
+                    Cloud Solutions
+                  </Link>
+                  <Link
+                    href="/future-tech"
+                    className="fl3 !text-[#e2e2e2] text-13 sm:text-16 hover:text-white transition-colors"
+                  >
+                    Future Tech
+                  </Link>
+                </div>
               </div>
-            </div> */}
             </div>
 
             {/* Newsletter */}
@@ -552,19 +723,59 @@ const FooterContent = () => {
           </div>
         </div>
       </footer>
-      <footer className="block md:hidden bg-primary-blue pt-2 lg:pt-4 pb-6 container-padding">
+      <footer className="block md:hidden bg-primary-blue pt-2 lg:pt-4 pb-6 container-padding -mt-px">
         <div className="max-w-[1400px] mx-auto">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-10 lg:gap-12 xl:gap-16 pb-8 sm:pb-10 lg:pb-12">
             {/* Company Details */}
-            <div className="company-details flex flex-col justify-center items-center">
+            <div className="company-details flex flex-col container-padding justify-center items-center">
               <img
                 src="/icons/global/UElement_Logo_White 3.svg"
                 alt="UElement logo"
-                className="h-[35px] sm:h-[48px] w-auto mb-6 md:mb-20"
+                className="h-[30px] sm:h-[48px] w-auto mb-4 !mx-auto"
               />
+              <div className="flex items-center flex-col gap-3">
+                <p className="text-[#808080] font-reddit-sans text-[12px]">
+                  Empowering Secure Digital Transformation
+                </p>
+
+                <div className="flex items-center justify-start gap-3">
+                  <Link
+                    href="https://www.linkedin.com/company/uelement-technologies/posts/?feedView=all"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:translate-y-[-3px] duration-300 ease-in-out transition-all hover:text-white/70"
+                  >
+                    <Icon name="linkedin2" size={35} />
+                  </Link>
+                  <Link
+                    href="https://facebook.com/uelement.technologies"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="  hover:translate-y-[-3px] duration-300 ease-in-out transition-all hover:text-white/70"
+                  >
+                    <Icon name="facebook3" size={35} />
+                  </Link>
+                  <Link
+                    href="https://www.instagram.com/uelement_technologies/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:translate-y-[-3px] duration-300 ease-in-out transition-all hover:text-white/70"
+                  >
+                    <Icon name="instagram2" size={35} />
+                  </Link>
+                  <Link
+                    href="https://x.com/uelement_tech"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="  hover:translate-y-[-3px] duration-300 ease-in-out transition-all hover:text-white/70"
+                  >
+                    <Icon name="facebook2" size={35} />
+                  </Link>
+                </div>
+              </div>
             </div>
 
-            <div className="flex flex-row md-flex-col justify-center gap-32 md:gap-20 my-6 md:my-0">
+            <div className="flex flex-row md-flex-col justify-center gap-32 md:gap-20 my-6 md:my-0 container-padding">
               {/* Company Links */}
               <div className="company-links">
                 <h6 className=" font-semibold text-14 sm:text-22 font-reddit-sans text-white uppercase mb-4 sm:mb-5">
@@ -575,13 +786,13 @@ const FooterContent = () => {
                     href="/company"
                     className="fl3 !text-[#e2e2e2] text-13 sm:text-16 hover:text-white transition-colors"
                   >
-                    About
+                    About us
                   </Link>
                   <Link
-                    href="/services"
+                    href="/our-partners"
                     className="fl3 !text-[#e2e2e2] text-13 sm:text-16 hover:text-white transition-colors"
                   >
-                    Services
+                    Partnerships
                   </Link>
                   {/* <Link
                   href="/our-partners"
@@ -592,83 +803,38 @@ const FooterContent = () => {
                 </div>
               </div>
 
-              <div>
-                <p className="text-[#808080] font-reddit-sans text-[14px] mb-6 sm:mb-8 ">
-                  Empowering Secure <br /> Digital Transformation
-                </p>
-
-                <div className="flex items-center justify-start gap-6">
+              {/* Resources Links */}
+              <div className="resources-links">
+                <h6 className=" font-semibold text-14 sm:text-22 font-reddit-sans text-white uppercase mb-4 sm:mb-5">
+                  SERVICES
+                </h6>
+                <div className="flex flex-col gap-3 sm:gap-4 font-reddit-sans font-light">
                   <Link
-                    href="https://www.linkedin.com/company/uelement-technologies/posts/?feedView=all"
-                    className=" hover:translate-y-[-3px] duration-300 ease-in-out transition-all hover:text-white/70"
+                    href="/ai-ml"
+                    className="fl3 !text-[#e2e2e2] text-13 sm:text-16 hover:text-white transition-colors"
                   >
-                    <Icon name="linkedin" size={35} />
+                    AI-ML
                   </Link>
-                  {/* <Link
-                href="#"
-                className="  hover:translate-y-[-3px] duration-300 ease-in-out transition-all hover:text-white/70"
-              >
-                <Icon name="facebook" size={35} />
-              </Link> */}
                   <Link
-                    href="https://www.instagram.com/u_element_india?igsh=MTZtejZ4djB4MHdqbw=="
-                    className="  hover:translate-y-[-3px] duration-300 ease-in-out transition-all hover:text-white/70"
+                    href="/cybersecurity"
+                    className="fl3 !text-[#e2e2e2] text-13 sm:text-16 hover:text-white transition-colors"
                   >
-                    <Icon name="instagram" size={35} />
+                    CyberSecurity
                   </Link>
-                  {/* <Link
-                href="#"
-                className="  hover:translate-y-[-3px] duration-300 ease-in-out transition-all hover:text-white/70"
-              >
-                <Icon name="twitter" size={35} />
-              </Link> */}
-                  {/* <Link
-                href="#"
-                className="  hover:translate-y-[-3px] duration-300 ease-in-out transition-all hover:text-white/70"
-              >
-                <Icon name="youtube" size={35} />
-              </Link> */}
-                  {/* <Link
-                href="#"
-                className="  hover:translate-y-[-3px] duration-300 ease-in-out transition-all hover:text-white/70"
-              >
-                <Icon name="github" size={35} />
-              </Link> */}
+                  <Link
+                    href="/cloud-solutions"
+                    className="fl3 !text-[#e2e2e2] text-13 sm:text-16 hover:text-white transition-colors"
+                  >
+                    Cloud Solutions
+                  </Link>
+                  <Link
+                    href="/future-tech"
+                    className="fl3 !text-[#e2e2e2] text-13 sm:text-16 hover:text-white transition-colors"
+                  >
+                    Future Tech
+                  </Link>
                 </div>
               </div>
-
-              {/* Resources Links */}
-              {/* <div className="resources-links">
-              <h6 className=" font-semibold text-14 sm:text-22 font-reddit-sans text-white uppercase mb-4 sm:mb-5">
-                RESOURCES
-              </h6>
-              <div className="flex flex-col gap-3 sm:gap-4 font-reddit-sans font-light">
-                <Link
-                  href="/resources"
-                  className="fl3 !text-[#e2e2e2] text-13 sm:text-16 hover:text-white transition-colors"
-                >
-                  Free eBooks
-                </Link>
-                <Link
-                  href="/resources"
-                  className="fl3 !text-[#e2e2e2] text-13 sm:text-16 hover:text-white transition-colors"
-                >
-                  Development Tutorial
-                </Link>
-                <Link
-                  href="/resources"
-                  className="fl3 !text-[#e2e2e2] text-13 sm:text-16 hover:text-white transition-colors"
-                >
-                  How to - Blog
-                </Link>
-                <Link
-                  href="/resources"
-                  className="fl3 !text-[#e2e2e2] text-13 sm:text-16 hover:text-white transition-colors"
-                >
-                  Youtube Playlist
-                </Link>
-              </div>
-            </div> */}
             </div>
 
             {/* Newsletter */}

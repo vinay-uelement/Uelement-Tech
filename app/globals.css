@@ -68,7 +68,8 @@
   /* Reddit Sans */
   @font-face {
     font-family: 'Reddit Sans';
-    src: url('/fonts/Reddit_Sans/RedditSans-VariableFont_wght.ttf') format('truetype');
+    src: url('/fonts/Reddit_Sans/RedditSans-VariableFont_wght.ttf')
+      format('truetype');
     font-display: swap;
     font-weight: 100 900;
   }
@@ -82,10 +83,8 @@
     --mobile-navbar-gap: 100px;
   }
 
-  @media (width <=48rem
 
-    /* 768px */
-  ) {
+  @media (width <= 48rem /* 768px */) {
     :root {
       --container-small-padding: 40px;
     }
@@ -179,6 +178,9 @@
   .container-padding {
     @apply px-5 sm:px-12 md:px-22;
   }
+  .container-padding-small {
+    @apply px-3 sm:px-6 md:px-8;
+  }
   .section-block-padding {
     @apply py-10 md:py-16 3xl:py-22;
   }
@@ -213,25 +215,25 @@
   .btn-blue {
     @apply bg-[#0C142D] text-white font-reddit-sans font-semibold shadow-[1px_4px_2px_0px_rgba(0,0,0,0.15)] rounded-[4px] text-12 md:text-16 xl:text-18 py-2 px-[40px] hover:shadow-inset-white transition-all duration-300;
   }
-  .fl-main{
-    @apply font-cal-sans text-white text-26 md:text-[50px] xl:text-[60px];
+  .fl-main {
+    @apply font-cal-sans text-white text-26 md:text-[46px] xl:text-[60px];
   }
-  .fl-slash{
+  .fl-slash {
     @apply text-12 md:text-16 xl:text-20 font-reddit-sans font-medium mb-6 md:mb-8 3xl:mb-10 text-[#23223] tracking-[0.03em];
   }
-  .fl1{
+  .fl1 {
     @apply font-noto-sans font-bold text-18 md:text-24 xl:text-30 mb-4 md:mb-6 3xl:mb-8 text-[#232223] tracking-[0.03em];
   }
-  .fl1-sep{
+  .fl1-sep {
     @apply font-noto-sans font-semibold text-20 md:text-26 xl:text-[35px] mb-4 md:mb-6 3xl:mb-8 text-[#232223] tracking-[0.03em];
   }
-  .fl2{
+  .fl2 {
     @apply font-montserrat font-semibold text-16 md:text-22 xl:text-[26px] text-[#232223] mb-2 md:mb-4 3xl:mb-6 tracking-[0.03em];
   }
-  .fl3{
+  .fl3 {
     @apply font-reddit-sans font-light text-14 xl:text-16 text-[#232223] tracking-[0.03em];
   }
-  .fl4{
+  .fl4 {
     @apply font-noto-sans italic text-12 md:text-14 xl:text-18 font-medium text-white tracking-[0.03em];
   }
 }
@@ -258,10 +260,7 @@
   --color-about-white: #cdd5db;
   --color-secondary-muted: #fff4e4;
   --color-honey-gold-300: #fff4e4;
-  --color-black-1: #232223
-
-  /* FONT SIZE */
-  --text-10: 10px;
+  --color-black-1: #232223 /* FONT SIZE */ --text-10: 10px;
   --text-11: 11px;
   --text-12: 12px;
   --text-13: 13px;
@@ -290,10 +289,10 @@
   --shadow-hover: inset 0px 0px 12px 0px #00000029;
   --shadow-inset-white: inset 0px 0px 12px 0px #ffffff70;
 
-   --breakpoint-sm: 600px;
+  --breakpoint-sm: 600px;
   --breakpoint-md: 768px;
-  --breakpoint-lg: 992px;
-  --breakpoint-xl: 1200px;
+  --breakpoint-lg: 1000px;
+  --breakpoint-xl: 1215px;
   --breakpoint-2xl: 1400px;
   --breakpoint-3xl: 1600px;
   --breakpoint-4xl: 1920px;
@@ -526,7 +525,7 @@
   transition: all ease-in-out 0.7s;
 }
 
-.driving-slider .slick-slide>div {
+.driving-slider .slick-slide > div {
   display: flex;
   justify-content: center;
 }
@@ -543,12 +542,12 @@
 
 .dg-center-medium {
   transform: scale(0.85) translateX(-60px);
-  opacity: 0.90;
+  opacity: 0.7;
 }
 
 .dg-right-small {
-  transform: scale(0.7) translateX(-120px);
-  opacity: 0.75;
+  transform: scale(0.7) translateX(-140px);
+  opacity: 0.5;
 }
 
 .dg-hidden-small {
@@ -649,12 +648,12 @@
   opacity: 1;
 }
 
-.light-glass{
+.light-glass {
   backdrop-filter: blur(10px);
   background-color: #32323210;
 }
 
-.dark-glass{
+.dark-glass {
   backdrop-filter: blur(10px);
   background-color: #32323260;
 }

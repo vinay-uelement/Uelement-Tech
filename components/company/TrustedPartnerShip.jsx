@@ -1,36 +1,44 @@
 const TrustedPartnerShip = () => {
   const row1 = [
-    // "/icons/global/hashicorp.svg",
-    // "/icons/global/redhat.svg",
-    "/icons/global/paloalto.svg",
-    "/icons/global/wiz.svg",
-    // "/icons/global/hashicorp.svg",
+    '/icons/global/microsoft.png',
+    '/icons/global/redhat.svg',
+    '/icons/global/paloalto.svg',
+    '/icons/global/wiz.svg',
+    '/icons/global/cyberark.png',
   ];
   const row2 = [
-    "/icons/global/hashicorp.svg",
-    "/icons/global/redhat.svg",
-    // "/icons/global/paloalto.svg",
-    // "/icons/global/wiz.svg",
+    '/icons/global/hashicorp.svg',
+    '/icons/global/oracle2.png',
+    '/icons/global/digital.png',
+    '/icons/global/aws2.png',
+    '/icons/global/gcs.png',
   ];
 
   const row3 = [
-    "/icons/global/hashicorp.svg",
-    "/icons/global/redhat.svg",
-    "/icons/global/paloalto.svg",
-    "/icons/global/wiz.svg",
-  ]
+    '/icons/global/hashicorp.svg',
+    '/icons/global/redhat.svg',
+    '/icons/global/paloalto.svg',
+    '/icons/global/wiz.svg',
+    '/icons/global/digital.png',
+    '/icons/global/aws2.png',
+    '/icons/global/gcs.png',
+    '/icons/global/cyberark.png',
+    '/icons/global/microsoft.png',
+    '/icons/global/oracle.png',
+  ];
 
   return (
-    <div className="bg-primary-blue py-[var(--section-block-padding)]">
+    <div className="bg-primary-blue py-[var(--section-block-padding)] mb-8 md:mb-16">
       <div className="container-small md:py-[var(--section-block-padding)]">
-        <div className="w-full sm:w-[80%] mx-auto bg-white p-8 pb-12 ribbon-border rounded-[10px]">
+        <div className="w-full sm:w-[80%] mx-auto bg-white p-8 pb-12 ribbon-mobile md:white-ribbon-border rounded-[10px]">
           <div className="title-div text-center mb-10 text-primary-blue">
             <p className="fl-slash">/Expertise</p>
             <h4 className="fl2 mt-3 mb-2">
               Focus on Integration and Expertise
             </h4>
             <p className="mx-auto fl3 text-14">
-              A network of $15+$ strategic alliances ensuring seamless technology synergy across Cloud, AI, and Security.
+              A network of $15+$ strategic alliances ensuring seamless
+              technology synergy across Cloud, AI, and Security.
             </p>
           </div>
           <div className="partners hidden md:block">

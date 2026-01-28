@@ -8,24 +8,29 @@ const services = [
   {
     id: 1,
     title: 'Digital Safety',
-    desc: 'Securing the Future with Quantum-Resistant and Zero Trust Architecture.',
+    desc:
+      "Securing the future with quantum-resistant and zero-trust architecture. Resilient defenses against today's threats and quantum attacks.",
   },
   {
     id: 2,
     title: 'Cloud Mastery',
-    desc: 'Architecting, Optimizing, and Managing Seamless Multi-Cloud Environments.',
+    desc:
+      'Architecting, Optimizing and Managing Seamless Multi-Cloud Environments. Scalable, secure infra with Zero Trust and FinOps.',
   },
   {
     id: 3,
     title: 'Accelerated AI',
-    desc: 'Accelerating Intelligence with Responsible AI and Advanced Analytics.',
+    desc:
+      'Accelerating Intelligence with Responsible AI and Advanced Analytics. Ethical AI for precise insights and analytics.',
   },
   {
     id: 4,
     title: 'Future Tech',
-    desc: 'Pioneering Transformation with Quantum, Web3, and Digital Modernization.',
+    desc:
+      'Pioneering Transformation with Quantum, Web3 and Digital Modernization. Quantum-ready, decentralized innovation.',
   },
 ];
+
 
 const ServiceSegments = () => {
   const settings = {
@@ -51,7 +56,7 @@ const ServiceSegments = () => {
               Digital <br /> Safety
             </h6>
             <p className="fl3 !text-[#ffffff] mt-6">
-              Securing the Future with Quantum-Resistant and Zero Trust Architecture.
+              Securing the Future with Quantum-Resistant and Zero Trust Architecture. Resilient defenses vs. today's threats and quantum attacks
             </p>
 
             <div className="size-[60px] bg-secondary absolute -top-3 -right-3 flex items-center justify-center text-30">
@@ -65,7 +70,7 @@ const ServiceSegments = () => {
               Cloud <br /> Mastery
             </h6>
             <p className="fl3 !text-[#ffffff] mt-6">
-              Architecting, Optimizing, and Managing Seamless Multi-Cloud Environments.
+              Architecting, Optimizing and Managing Seamless Multi-Cloud Environments. Scalable, secure infra with Zero Trust and FinOps.
             </p>
 
             <div className="size-[60px] bg-secondary absolute -top-3 -right-3 flex items-center justify-center text-30">
@@ -79,7 +84,7 @@ const ServiceSegments = () => {
               Accelerated <br /> AI
             </h6>
             <p className="fl3 !text-[#ffffff] mt-6">
-             Accelerating Intelligence with Responsible AI and Advanced Analytics.
+             Accelerating Intelligence with Responsible AI and Advanced Analytics. Ethical AI for precise insights and analytics.
             </p>
 
             <div className="size-[60px] bg-secondary absolute -top-3 -right-3 flex items-center justify-center text-30">
@@ -93,7 +98,7 @@ const ServiceSegments = () => {
               Future <br /> Tech
             </h6>
             <p className="fl3 !text-[#ffffff] mt-6">
-              Pioneering Transformation with Quantum, Web3, and Digital Modernization.
+             Pioneering Transformation with Quantum, Web3 and Digital Modernization. Quantum-ready, decentralized innovation.
             </p>
 
             <div className="size-[60px] bg-secondary absolute -top-3 -right-3 flex items-center justify-center text-30">

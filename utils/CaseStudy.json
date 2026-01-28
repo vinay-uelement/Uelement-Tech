@@ -1,0 +1,169 @@
+[
+  {
+    "id": 1,
+    "title": "Aerospace-Grade Cloud Transformation",
+    "desc": "Defense-grade cloud solutions built to secure, modernize, and scale mission-critical infrastructure without compromising control or compliance.",
+    "label": "services",
+    "industry": "Aerospace",
+    "companySize": "Small-Mid Enterprise (Defense Contractor | DIB)",
+    "servicesProvided": [
+      "Enterprise Cloud Migration",
+      "Cybersecurity Architecture",
+      "Compliance & Governance",
+      "Zero Trust Security"
+    ],
+    "headerImage": "/images/resources/case-study/aerospacehero.png",
+    "challenge": "A growing aerospace and defense contractor supporting government programs needed to modernize its on-premise infrastructure while meeting strict regulatory and security requirements. The organization faced challenges including fragmented legacy systems, limited visibility into security posture, and manual compliance processes that slowed audits and increased risk exposure.",
+    "keyRequirements": [
+      {
+        "id": 1,
+        "title": "Migration to a secure government-compliant cloud environment"
+      },
+      {
+        "id": 2,
+        "title": "Alignment with CMMC Level 2, NIST 800-171, and DFARS requirements"
+      },
+      {
+        "id": 3,
+        "title": "Secure handling of Controlled Unclassified Information (CUI)"
+      },
+      {
+        "id": 4,
+        "title": "Minimal disruption to mission-critical operations"
+      }
+    ],
+    "solution": {
+      "img" : "/images/resources/case-study/aerospace.png",
+      "intro": "UElement Technologies designed and executed a compliance-first cloud transformation strategy, ensuring security, resilience, and long-term scalability. Our Cloud, Cybersecurity and Governance teams collaborated with the client's IT, security and compliance stakeholders to",
+      "items": [
+        "Conduct a comprehensive security and compliance gap assessment against CMMC and NIST 800-171 controls",
+        "Design a secure cloud architecture aligned with defense-grade requirements",
+        "Implement a dedicated secure enclave for Controlled Unclassified Information (CUI)",
+        "Migrate critical workloads and collaboration platforms to Microsoft Government Cloud (GCC / GCC High)",
+        "Deploy Zero Trust architecture with identity-centric access, least-privilege enforcement, and network segmentation",
+        "Enable continuous security monitoring, logging, and alerting for proactive threat detection",
+        "Establish audit-ready policies, governance frameworks, and automated compliance reporting"
+      ],
+      "conclusion": "The solution ensured operational continuity while significantly strengthening the organization's overall security posture."
+    },
+    "results": [
+      "Aligned with CMMC & NIST 800-171 controls, supporting audit readiness",
+      "Successful migration to a secure government cloud environment",
+      "40% reduction in audit preparation effort through automated compliance reporting",
+      "Improved security posture with Zero Trust enforcement and centralized monitoring",
+      "Enhanced protection of CUI, meeting defense and regulatory expectations"
+    ],
+    "resultConclusion": "The client now operates in a secure, compliant, and scalable cloud environment, prepared for future defense contracts and evolving regulatory demands.",
+    "whyUElement": [
+      {
+        "id": 1,
+        "title": "Defense-Grade Cloud & Security Expertise for Aerospace and Government Contractors"
+      },
+      {
+        "id": 2,
+        "title": "Deep Compliance Knowledge across CMMC, DFARS, NIST 800-171, and governance frameworks"
+      },
+      {
+        "id": 3,
+        "title": "Zero Trust & Cloud-Native Security Architectures designed for modern threat landscapes"
+      },
+      {
+        "id": 4,
+        "title": "End-to-End Delivery spanning Cybersecurity, Enterprise Cloud, Compliance, and Managed Services"
+      },
+      {
+        "id": 5,
+        "title": "Future-Ready Approach, integrating cloud, AI-driven monitoring, and quantum-safe security"
+      }
+    ]
+  },
+  {
+  "id": 2,
+  "title": "Identity Security & Governance Transformation for a Mid-Sized Telecom Provider",
+  "desc": "Implemented a robust identity security and governance framework to enhance access control, regulatory compliance, and operational security.",
+  "label": "services",
+  "industry": "Telecommunications",
+  "companySize": "Mid-Sized Enterprise (Telecom Services Provider)",
+  "servicesProvided": [
+    "Identity Governance & Administration (IGA)",
+    "Privileged Access Management (PAM)",
+    "Zero Trust Identity Security",
+    "Automation & Compliance Enablement"
+  ],
+  "headerImage": "/images/resources/case-study/telecomhero.png",
+  "challenge": "A mid-sized telecom services provider with thousands of employees and millions of users was struggling with fragmented identity systems, manual access governance, and increasing audit pressure. Rapid growth and legacy IAM processes had resulted in identity sprawl, unmanaged privileged access, and high operational overhead during security audits. The organization lacked centralized visibility into user and privileged access, creating security gaps, compliance risks, and inefficiencies across IT and business teams.",
+  "keyRequirements": [
+    {
+      "id": 1,
+      "title": "Centralized Identity Governance & Administration (IGA)"
+    },
+    {
+      "id": 2,
+      "title": "Secure management of Privileged Access across critical systems"
+    },
+    {
+      "id": 3,
+      "title": "Automation of Joiner–Mover–Leaver (JML) processes"
+    },
+    {
+      "id": 4,
+      "title": "Elimination of manual approvals, spreadsheets, and paper-based workflows"
+    }
+  ],
+  "solution": {
+    "img" : "/images/resources/case-study/telecom.png",
+    "intro": "UElement Technologies, a CyberArk Partner, delivered an identity-first security transformation leveraging the CyberArk Identity Security Platform. Working closely with the client’s IT, security, and compliance teams, UElement implemented:",
+    "items": [
+      "Identity Governance & Administration (IGA) using CyberArk",
+      "Role-based and policy-driven access governance",
+      "Automated access requests, approvals, and certifications",
+      "Centralized visibility and immutable audit trails",
+      "Privileged Access Management (PAM) with CyberArk",
+      "Vaulting and rotation of privileged credentials",
+      "Just-in-Time (JIT) privileged access",
+      "Session monitoring and recording for administrators and service accounts",
+      "Zero Trust Identity Controls",
+      "Least-privilege enforcement across users, applications, and infrastructure",
+      "Identity-based access decisions for sensitive workloads",
+      "Removal of manual signatures and print-based documentation",
+      "Real-time compliance dashboards and continuous monitoring"
+    ],
+    "conclusion": "The solution was designed to be secure, scalable, and fully audit-ready without disrupting ongoing operations."
+  },
+  "results": [
+    "Audit posture improved from high-risk to fully compliant",
+    "60%+ reduction in audit preparation effort through automation",
+    "70% reduction in privileged access risk by eliminating standing admin access",
+    "Millions in annualized operational cost savings",
+    "Zero manual approvals or paper-based workflows",
+    "Faster user access lifecycle – provisioning reduced from days to hours",
+    "Improved user experience",
+    "93% employee satisfaction",
+    "90% manager satisfaction"
+  ],
+  "resultConclusion": "",
+  "whyUElement": [
+    {
+      "id": 1,
+      "title": "Certified CyberArk Partner with proven IAM, IGA, and PAM delivery expertise"
+    },
+    {
+      "id": 2,
+      "title": "Deep specialization in Identity Security & Zero Trust architectures"
+    },
+    {
+      "id": 3,
+      "title": "Strong experience supporting telecom-scale, hybrid environments"
+    },
+    {
+      "id": 4,
+      "title": "Automation-first approach reducing risk, cost, and complexity"
+    },
+    {
+      "id": 5,
+      "title": "Future-ready identity foundation aligned with cloud, AI-driven security, and compliance"
+    }
+  ]
+}
+
+]

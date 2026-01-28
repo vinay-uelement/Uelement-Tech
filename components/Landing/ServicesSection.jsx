@@ -19,8 +19,8 @@ const ServicesSection = () => {
   const tabs = [
     {
       id: 1,
-      title: 'Cloud Security',
-      desc: 'Expertise in Multi/Hybrid-cloud, Private Cloud and Government Cloud (GCC) environments. We ensure peak efficiency via DevOps, FinOps, IaaC (Infrastructure as Code) and robust orchestration.',
+      title: 'Cloud Computing',
+      desc: 'Built to secure and scale multi cloud hybrid private and Government Cloud environments. We drive operational efficiency through DevOps FinOps Infrastructure as Code and intelligent orchestration. From automated workload migrations to continuous cost optimization and unified cloud governance our approach maximizes performance control and ROI across complex cloud landscapes.',
       slides: [
         'Expert Multi/Hybrid-cloud management, migration, and modernization. We ensure peak efficiency via DevOps, FinOps, and Infrastructure as Code (IaaC).',
         'Secure multi/hybrid-cloud environments with Zero Trust architecture, continuous threat detection, and automated compliance across private, public, and GCC clouds.',
@@ -30,7 +30,7 @@ const ServicesSection = () => {
     {
       id: 2,
       title: 'AI & ML',
-      desc: 'Expertise in enterprise-grade AI/ML solutions across cloud, edge and hybrid environments. We deliver intelligent automation, predictive analytics, and scalable MLOps with robust security and governance.',
+      desc: 'Designed to power enterprise AI across cloud edge and hybrid ecosystems. We enable intelligent automation predictive insights and scalable MLOps backed by strong security and governance. Our end to end capabilities cover model building fine tuning deployment and monitoring including EdgeAI optimization and LLM integration for real time decision making.',
       slides: [
         'Comprehensive AI/ML services from model development to production deployment, including EdgeAI applications, LLM integration, and real-time decision intelligence.',
         'Specialize in industry-specific models, multimodal AI, and MLOps frameworks that drive operational efficiency, hyper-personalization, and predictive insights at enterprise scale.',
@@ -40,7 +40,7 @@ const ServicesSection = () => {
     {
       id: 3,
       title: 'Cyber Security',
-      desc: 'Expertise in enterprise-grade cybersecurity across multi/hybrid-cloud, private cloud, and government cloud (GCC) environments. Deliver Zero Trust protection, threat intelligence, and automated SecOps with continuous compliance and resilience.',
+      desc: 'Expertise in enterprise-grade cybersecurity across multi-cloud, hybrid, private, and Government Cloud (GCC) environments. We deliver Zero Trust protection, advanced threat intelligence, and automated SecOps to reduce risk and response time. Our solutions ensure continuous compliance, high availability, and resilience against evolving cyber threats while safeguarding mission-critical systems.',
       slides: [
         'Expert multi/hybrid-cloud security management, migration, and modernization ensure peak efficiency via DevOps, FinOps, and Infrastructure as Code (IaaC).',
         'Implement advanced threat detection, AI-powered anomaly monitoring, and post-quantum cryptography readiness to protect against evolving attack surfaces.',
@@ -138,12 +138,12 @@ const ServicesSection = () => {
         {/* Tabs & Content */}
         <div className="relative">
           {/* Desktop Tabs */}
-          <div className="hidden md:flex gap-0 mb-0">
+          <div className="hidden lg:flex gap-0 mb-0">
             {tabs.map((tab) => (
               <button
                 key={tab.id}
                 onClick={() => setSelectedTab(tab)}
-                className={`relative px-20 w-[330px] py-2 text-18 md:text-24 rounded-tl-[4px] transition-all duration-300 ease-in-out overflow-hidden ${
+                className={`relative px-20 w-[350px] py-2 text-16 md:text-20 rounded-tl-[4px] transition-all duration-300 ease-in-out overflow-hidden ${
                   tab.id === selectedTab.id
                     ? 'bg-secondary-muted text-black shadow-[0px_4px_5px_0px_rgba(0,0,0,0.0)] font-noto-sans font-semibold '
                     : 'bg-[#FCFCFC] text-[#505050] hover:bg-gray-100 border border-[#E0E0E0] font-noto-sans '
@@ -159,7 +159,7 @@ const ServicesSection = () => {
           </div>
 
           {/* Mobile Dropdown */}
-          <div className="md:hidden mb-0 relative z-50">
+          <div className="lg:hidden mb-0 relative z-50">
             <div className="relative inline-block w-full max-w-[200px]">
               <div
                 className="absolute inset-0 bg-secondary-muted pointer-events-none rounded-tl-[10px]"
@@ -185,16 +185,17 @@ const ServicesSection = () => {
           {/* Tab Content */}
           <div className="bg-secondary-muted text-white p-6 sm:p-8 lg:p-10 xl:p-12 rounded-[4px] rounded-tl-none transition-all duration-300 ease-in-out shadow-[3.71px_0px_3.71px_0px_rgba(0,0,0,0.25)]">
             <div className="animate-fade-in">
-              <h3 className="fl1 mb-4 sm:mb-6">
-                {selectedTab.title}
-              </h3>
+              <h3 className="fl1 mb-4 sm:mb-6">{selectedTab.title}</h3>
               <p className="fl3 leading-relaxed mb-8 sm:mb-16 lg:mb-20 md:w-[90%] w-full">
                 {selectedTab.desc}
               </p>
 
               <div className="flex flex-col md:flex-row gap-6 items-center justify-between">
                 <div>
-                  <button className="btn-yellow hover:scale-101" onClick={() => router.push('/services')}>
+                  <button
+                    className="btn-yellow hover:scale-101"
+                    onClick={() => router.push('/services')}
+                  >
                     Learn More
                   </button>
                 </div>

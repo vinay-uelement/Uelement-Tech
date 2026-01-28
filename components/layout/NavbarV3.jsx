@@ -1,11 +1,9 @@
 'use client';
 import { useEffect, useRef, useState } from 'react';
-import { usePathname, useRouter } from 'next/navigation';
+import { usePathname } from 'next/navigation';
 import { ReactIcons } from '../../utils/ReactIcons';
-import Slider from 'react-slick';
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
 import Link from 'next/link';
+import MobileNav from './MobileNav';
 
 const navbarList = [
   {
@@ -38,18 +36,6 @@ const navbarList = [
         link: '/future-tech',
       },
     ],
-    images: [
-      {
-        id: 1,
-        title: 'Complete Enterprise Security.',
-        image: '/images/global/security.png',
-      },
-      {
-        id: 2,
-        title: 'Complete Enterprise Security.',
-        image: '/images/global/ai.jpg',
-      },
-    ],
   },
   {
     id: 2,
@@ -58,30 +44,21 @@ const navbarList = [
     children: [
       {
         id: 1,
+        link: '/resources',
         label: 'Blogs',
         desc: 'Thoughts, insights, and reflections from my creative journey.',
       },
       {
         id: 2,
+        link: '/resources',
         label: 'Case Study',
         desc: 'A deep dive into my projects, process, and problem-solving approach.',
       },
       {
         id: 3,
+        link: '/resources',
         label: 'Research',
         desc: 'Exploring data, user behavior, and design trends to uncover insights.',
-      },
-    ],
-    images: [
-      {
-        id: 1,
-        title: 'High-Quality Content Writing.',
-        image: '/images/resources/blog-1.jpg',
-      },
-      {
-        id: 2,
-        title: 'Complete Enterprise Security.',
-        image: '/images/global/security.png',
       },
     ],
   },
@@ -109,28 +86,16 @@ const navbarList = [
         link: '/our-partners?tab=cloud#partners',
       },
     ],
-    images: [
-      {
-        id: 1,
-        title: 'Complete Enterprise Security.',
-        image: '/images/global/security.png',
-      },
-      {
-        id: 2,
-        title: 'Complete Enterprise Security.',
-        image: '/images/global/ai.jpg',
-      },
-    ],
   },
   { id: 4, label: 'Company', link: '/company' },
 ];
 
-const NO_TOP_LEVEL_NAV = [1, 2]; // Services, Resources
-const NO_DROPDOWN_LINKS = [2]; // Resources only
+const NO_DROPDOWN_LINKS = [];
 
 const MOBILE_DROPDOWN_HEIGHT = {
   1: 'h-[300px]', // Services
-  3: 'h-[160px]', // Partnership
+  2: 'h-[260px]', // Resources
+  3: 'h-[200px]', // Partnership
 };
 
 const DESKTOP_DROPDOWN_HEIGHT = {
@@ -139,35 +104,17 @@ const DESKTOP_DROPDOWN_HEIGHT = {
   3: 'h-[350px]', // Partnership
 };
 
-const Navbar = () => {
-  const router = useRouter();
+const NavbarV3 = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [showMobileNav, setShowMobileNav] = useState(false);
-  const [hoveredMenu, setHoveredMenu] = useState(null);
+  const [openMenu, setOpenMenu] = useState(null); // click-open for desktop
   const [expandedMobileMenu, setExpandedMobileMenu] = useState(null);
-
-  const closeMobileNav = () => {
-    setShowMobileNav(false);
-    setExpandedMobileMenu(null);
-  };
 
   const location = usePathname();
   const navRef = useRef(null);
   const dropdownRef = useRef(null);
   const mobileNavRef = useRef(null);
   const buttonRef = useRef(null);
-
-  const settings = {
-    dots: true,
-    arrows: false,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    autoplay: true,
-    pauseOnHover: true,
-    adaptiveHeight: true,
-  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -177,8 +124,18 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // click outside: close desktop dropdown + mobile panel
   useEffect(() => {
     const handleClickOutside = (event) => {
+      if (
+        navRef.current &&
+        dropdownRef.current &&
+        !navRef.current.contains(event.target) &&
+        !dropdownRef.current.contains(event.target)
+      ) {
+        setOpenMenu(null);
+      }
+
       if (
         mobileNavRef.current &&
         !mobileNavRef.current.contains(event.target) &&
@@ -189,301 +146,193 @@ const Navbar = () => {
       }
     };
 
-    if (showMobileNav) {
-      document.addEventListener('mousedown', handleClickOutside);
-    } else {
-      document.removeEventListener('mousedown', handleClickOutside);
-    }
-
-    return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
-    };
-  }, [showMobileNav]);
-
-  useEffect(() => {
-    const handleMouseMove = (e) => {
-      const insideNav = navRef.current?.contains(e.target);
-      const insideDropdown = dropdownRef.current?.contains(e.target);
-      if (!insideNav && !insideDropdown) {
-        setHoveredMenu(null);
-      }
-    };
-
-    document.addEventListener('mousemove', handleMouseMove);
-    return () => document.removeEventListener('mousemove', handleMouseMove);
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
 
+  // reset on route change
   useEffect(() => {
     setShowMobileNav(false);
-    setHoveredMenu(null);
+    setOpenMenu(null);
     setExpandedMobileMenu(null);
-  }, [location.pathname]);
+  }, [location]);
+
+  const closeMobileNav = () => {
+    setShowMobileNav(false);
+    setExpandedMobileMenu(null);
+  };
+
+  const toggleDesktopMenu = (navItem) => {
+    setOpenMenu((prev) => (prev?.id === navItem.id ? null : navItem));
+  };
 
   return (
     <>
       <nav
-        className={`w-[90vw] md:w-full md:px-[10px] md:max-w-[1920px] md:mx-auto shadow-down md:shadow-none bg-primary-blue rounded-[12px] md:rounded-none pe-2 md:pe-0 md:bg-transparent h-15 flex justify-between fixed z-[80] left-1/2 -translate-x-1/2 
-      ${
-        isScrolled ? 'top-2' : 'top-6'
-      } transition-all duration-700 ease-in-out`}
+        className={`w-[90vw] md:w-full md:px-[10px] md:max-w-[1920px] md:mx-auto shadow-none md:bg-transparent rounded-[40px] md:rounded-none h-13 md:h-15 flex justify-between fixed z-[80] left-1/2 -translate-x-1/2
+      ${isScrolled ? 'top-2' : 'top-6'} transition-all duration-700 ease-in-out`}
       >
-        <div className="w-full px-2 sm:px-10 md:px-20">
-          <div className="flex justify-between h-full w-full relative">
+        <div className="w-full md:px-[30px] lg:px-20 rounded-[40px] ">
+          <div className="flex justify-between h-full w-full relative rounded-[40px]">
+            {/* Logo */}
             <Link
-              href={'/'}
-              className="bg-primary-blue rounded-l-[22px] rounded-tl-[4px] md:w-[290px] w-[150px] h-full ps-4 flex items-center"
+              href="/"
+              className="bg-primary-blue rounded-l-[22px] rounded-tl-[4px] md:w-[220px] 2xl:w-[290px] w-[180px] h-full ps-4 pe-12 md:pe-0 flex items-center relative z-40"
             >
               <img
                 src="/icons/global/UElement_Logo_White 3.svg"
                 alt="uelement"
+                className="2xl:w-auto md:w-[140px] h-auto"
               />
             </Link>
 
-            {/* hamburger */}
-            <button
-              ref={buttonRef}
-              onClick={() => {
-                setExpandedMobileMenu(null);
-                setShowMobileNav((prev) => !prev);
-              }}
-              className="block md:hidden text-white !bg-transparent text-20"
-            >
-              {ReactIcons.hamburgerMenu}
-            </button>
-
-            {/* desktop */}
-            <div className="flex-1 relative hidden md:block">
-              <div className="w-[calc(100%+40px)] h-full bg-[#32323259] backdrop-blur-lg rounded-[40px] -ml-10 px-3 hidden md:flex items-center relative z-50">
-                <div className="size-10 bg-[#9B7025] rounded-full flex-shrink-0 relative">
-                  <span className="absolute -translate-x-1/2 left-1/2 -translate-y-1/2 top-1/2 font-bold text-22 font-reddit-sans text-[#ffffff90]">
+            <div className="flex-1 relative ">
+              <div className="w-[calc(100%+30px)] md:w-[calc(100%+40px)] h-full bg-[#32323259] backdrop-blur-lg rounded-[40px] -ml-[30px] md:-ml-10 px-3 flex items-center relative z-50">
+                {/* 92 badge */}
+                <div className="size-8 md:size-10 bg-[#9B7025] rounded-full flex-shrink-0 relative">
+                  <span className="absolute -translate-x-1/2 left-3 md:left-[18px] -translate-y-1/2 top-3 font-bold text-18 md:text-22 font-reddit-sans text-[#ffffff50]">
                     92
                   </span>
                 </div>
+
+                {/* Desktop menu (all click-based) */}
                 <div
                   ref={navRef}
-                  className="flex-1 flex justify-center gap-3 min-h-full"
+                  className="flex-1 hidden lg:flex justify-center gap-3 min-h-full"
                 >
-                  {navbarList.map((navItem) => (
-                    <div
-                      key={navItem.id}
-                      className="group min-h-full"
-                      onMouseEnter={() => {
-                        setHoveredMenu(navItem);
-                      }}
-                    >
-                      {NO_TOP_LEVEL_NAV.includes(navItem.id) ? (
-                        <div className="flex items-center font-reddit-sans font-semibold md:text-16 xl:text-18 text-[#fff] px-3 uppercase relative h-full opacity-100">
-                          {navItem.children && (
+                  {navbarList.map((navItem) => {
+                    const isOpen = openMenu?.id === navItem.id;
+                    const hasDropdown = !!navItem.children?.length;
+
+                    return (
+                      <div
+                        key={navItem.id}
+                        className="group min-h-full flex items-stretch"
+                      >
+                        {hasDropdown ? (
+                          <button
+                            type="button"
+                            onClick={() => toggleDesktopMenu(navItem)}
+                            className="flex items-center font-reddit-sans font-semibold md:text-14 xl:text-18 text-[#fff] px-3 uppercase relative h-full cursor-pointer"
+                          >
                             <span
                               className={`transition-all duration-500 ${
-                                hoveredMenu?.id === navItem?.id
-                                  ? 'rotate-0'
-                                  : 'rotate-45'
+                                isOpen ? 'rotate-0' : 'rotate-45'
                               }`}
                             >
                               {ReactIcons.slash}
                             </span>
-                          )}
-                          {navItem.label}
-                        </div>
-                      ) : (
-                        <Link
-                          href={navItem.link}
-                          className="flex items-center font-reddit-sans font-semibold md:text-16 xl:text-18 text-[#fff] px-3 uppercase relative h-full cursor-pointer"
-                        >
-                          {navItem.children && (
-                            <span
-                              className={`transition-all duration-500 ${
-                                hoveredMenu?.id === navItem?.id
-                                  ? 'rotate-0'
-                                  : 'rotate-45'
-                              }`}
-                            >
-                              {ReactIcons.slash}
-                            </span>
-                          )}
-                          {navItem.label}
-                        </Link>
-                      )}
-                    </div>
-                  ))}
+                            {navItem.label}
+                          </button>
+                        ) : (
+                          <Link
+                            href={navItem.link}
+                            className="flex items-center font-reddit-sans font-semibold md:text-14 xl:text-18 text-[#fff] px-3 uppercase relative h-full cursor-pointer"
+                          >
+                            {navItem.label}
+                          </Link>
+                        )}
+                      </div>
+                    );
+                  })}
                 </div>
+
+                {/* Mobile hamburger */}
+                <button
+                  ref={buttonRef}
+                  onClick={() => {
+                    setExpandedMobileMenu(null);
+                    setShowMobileNav((prev) => !prev);
+                  }}
+                  className="lg:hidden ml-auto text-white !bg-transparent text-20"
+                >
+                  {ReactIcons.hamburgerMenu}
+                </button>
+
+                {/* Desktop contact button */}
                 <Link
-                  href={'/contact-us'}
-                  className="bg-white rounded-[40px] font-reddit-sans text-16 xl:text-18 px-8 py-2 h-fit hover:shadow-hover"
+                  href="/contact-us"
+                  className="hidden lg:block bg-white rounded-[40px] font-reddit-sans text-14 xl:text-18 px-8 md:px-4 xl:px-8 py-2 h-fit hover:shadow-hover"
                 >
                   Contact us
                 </Link>
               </div>
 
-              {/* desktop dropdown */}
+              {/* Desktop dropdown */}
               <div
                 ref={dropdownRef}
                 className={`w-[calc(100%+40px)] absolute -left-10 bg-[#00000050] backdrop-blur-2xl backdrop-saturate-150
-    shadow-xl text-[#fff] z-[30] top-9 flex rounded-b-[22px] overflow-hidden transition-all duration-300 ease-in-out ${
-      hoveredMenu && hoveredMenu?.children
-        ? (DESKTOP_DROPDOWN_HEIGHT[hoveredMenu.id] ?? 'h-[400px]')
+    shadow-xl text-[#fff] z-[30] top-9 hidden lg:flex rounded-b-[22px] overflow-hidden transition-all duration-300 ease-in-out ${
+      openMenu && openMenu.children
+        ? DESKTOP_DROPDOWN_HEIGHT[openMenu.id] ?? 'h-[400px]'
         : 'h-0'
     }`}
               >
-                <div className="pt-9 pb-3 px-4 flex w-full">
-                  <div className="flex-[2]">
-                    <div className="md:text-18 xl:text-22 text-white font-reddit-sans font-semibold border-b-[0.5px] border-[#ebebeb] pb-2">
-                      {hoveredMenu?.label}
-                    </div>
-                    {hoveredMenu?.children?.map((child) =>
-                      NO_DROPDOWN_LINKS.includes(hoveredMenu.id) ? (
-                        <div
-                          key={child.id}
-                          className="block py-4 last:border-none border-primary-blue max-w-[100%] pointer-events-none opacity-100"
-                        >
-                          <div className="font-semibold md:text-16 xl:text-18 text-[#fff] font-reddit-sans capitalize">
-                            {child.label}
-                          </div>
-                          <div className="md:text-14 xl:text-16 font-light text-[#fff] font-reddit-sans">
-                            {child.desc}
-                          </div>
+                {openMenu && openMenu.children && (
+                  <div className="pt-9 pb-3 px-4 flex w-full">
+                    <div className="flex-[2]">
+                      <div className="flex items-center gap-4 border-b-[0.5px] border-[#ebebeb] pb-2">
+                        <div className="md:text-18 xl:text-22 text-white font-reddit-sans font-semibold">
+                          {openMenu.label}
                         </div>
-                      ) : (
+
+                        {/* right view links */}
+                        {openMenu.id === 2 && (
+                          <Link
+                            href="/resources"
+                            className="md:text-16 xl:text-20 text-white font-reddit-sans font-semibold flex items-center gap-2 border-l border-[#ffffff70] pl-4"
+                          >
+                            View Resources {ReactIcons.arrowright}
+                          </Link>
+                        )}
+                        {openMenu.id === 3 && (
+                          <Link
+                            href="/our-partners"
+                            className="md:text-16 xl:text-20 text-white font-reddit-sans font-semibold flex items-center gap-2 border-l border-[#ffffff70] pl-4"
+                          >
+                            View Partner Ecosystem {ReactIcons.arrowright}
+                          </Link>
+                        )}
+                      </div>
+
+                      {openMenu.children.map((child) => (
                         <Link
                           key={child.id}
-                          href={`${child.link}`}
+                          href={child.link}
                           className="block py-4 last:border-none border-primary-blue hover:text-primary-blue max-w-[100%]"
                         >
-                          <div
-                            className="font-semibold text-18 text-[#fff] font-reddit-sans captalize"
-                            // onClick={() => router.push(`${child.link}`)}
-                          >
+                          <div className="font-semibold text-18 text-[#fff] font-reddit-sans capitalize">
                             {child.label}
                           </div>
                           <div className="text-16 font-light text-[#fff] font-reddit-sans">
                             {child.desc}
                           </div>
                         </Link>
-                      )
-                    )}
+                      ))}
+                    </div>
                   </div>
-                </div>
+                )}
               </div>
             </div>
           </div>
         </div>
       </nav>
 
-      {/* mobile dropdown */}
-      <div
-        ref={mobileNavRef}
-        className={`md:hidden bg-[#D4D4D344] w-[90vw] rounded-b-[20px]
-    backdrop-blur-2xl fixed left-1/2 -translate-x-1/2 z-[900]
-    overflow-hidden transition-all duration-300 ease-in-out
-    ${isScrolled ? 'top-[65px]' : 'top-[90px]'}
-    ${
-      showMobileNav
-        ? expandedMobileMenu
-          ? 'max-h-[600px]'
-          : 'max-h-[300px]'
-        : 'max-h-0'
-    }`}
-      >
-        <div className="flex flex-col gap-3 px-3 py-6">
-          {navbarList.map((navItem) => {
-            const canExpand =
-              navItem.children?.length &&
-              !NO_DROPDOWN_LINKS.includes(navItem.id);
-
-            return (
-              <div key={navItem.id}>
-                {/* TOP LEVEL */}
-                <div
-                  onClick={() => {
-                    if (!canExpand) return;
-
-                    setExpandedMobileMenu((prev) =>
-                      prev === navItem.id ? null : navItem.id
-                    );
-                  }}
-                  className={`flex justify-between items-center border-b-[0.5px]
-              border-primary-blue text-white font-semibold pb-1
-              ${canExpand ? 'cursor-pointer' : 'cursor-default'}`}
-                >
-                  {/* LABEL */}
-                  {NO_TOP_LEVEL_NAV.includes(navItem.id) ? (
-                    <span className="h-10 flex items-end">{navItem.label}</span>
-                  ) : (
-                    <Link
-                      href={navItem.link}
-                      onClick={closeMobileNav}
-                      className="h-10 flex items-end"
-                    >
-                      {navItem.label}
-                    </Link>
-                  )}
-
-                  {canExpand && ReactIcons.chevDown}
-                </div>
-
-                {/* DROPDOWN */}
-                <div
-                  className={`overflow-hidden transition-all duration-300 ease-in-out
-              ${
-                expandedMobileMenu === navItem.id
-                  ? (MOBILE_DROPDOWN_HEIGHT[navItem.id] ?? 'h-0')
-                  : 'h-0'
-              }`}
-                >
-                  {navItem.children?.map((child) =>
-                    NO_DROPDOWN_LINKS.includes(navItem.id) ? (
-                      <div
-                        key={child.id}
-                        className="block py-2 border-b-[0.5px]
-                    last:border-none border-primary-blue
-                    max-w-[90%] pointer-events-none opacity-75"
-                      >
-                        <div className="font-semibold text-14 text-[#E8E8E8]">
-                          {child.label}
-                        </div>
-                        <div className="text-12 font-light text-[#E8E8E8]">
-                          {child.desc}
-                        </div>
-                      </div>
-                    ) : (
-                      <Link
-                        key={child.id}
-                        href={child.link}
-                        onClick={closeMobileNav}
-                        className="block py-2 border-b-[0.5px]
-                    last:border-none border-primary-blue
-                    hover:text-primary-blue max-w-[90%]"
-                      >
-                        <div className="font-semibold text-14 text-[#E8E8E8]">
-                          {child.label}
-                        </div>
-                        <div className="text-12 font-light text-[#E8E8E8]">
-                          {child.desc}
-                        </div>
-                      </Link>
-                    )
-                  )}
-                </div>
-              </div>
-            );
-          })}
-
-          {/* CTA */}
-          <div className="flex items-center justify-end pt-2">
-            <Link
-              href="/contact-us"
-              onClick={closeMobileNav}
-              className="bg-primary-blue text-white rounded-[40px]
-          font-reddit-sans text-16 px-8 py-2 h-fit hover:shadow-hover"
-            >
-              Contact us
-            </Link>
-          </div>
-        </div>
-      </div>
+      {/* Mobile dropdown menu (unchanged behaviour) */}
+      <MobileNav
+        navbarList={navbarList}
+        showMobileNav={showMobileNav}
+        expandedMobileMenu={expandedMobileMenu}
+        setExpandedMobileMenu={setExpandedMobileMenu}
+        closeMobileNav={closeMobileNav}
+        isScrolled={isScrolled}
+        mobileNavRef={mobileNavRef}
+        NO_TOP_LEVEL_NAV={[]}
+        NO_DROPDOWN_LINKS={NO_DROPDOWN_LINKS}
+        MOBILE_DROPDOWN_HEIGHT={MOBILE_DROPDOWN_HEIGHT}
+      />
     </>
   );
 };
 
-export default Navbar;
+export default NavbarV3;

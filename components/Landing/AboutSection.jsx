@@ -83,24 +83,24 @@ export default function AboutSection() {
           </div>
 
           {/* RIGHT BLUE BOX */}
-          <div className="flex-1 bg-primary-blue pe-[var(--container-small-padding)] xl:pe-0 ps-[var(--container-small-padding)] text-white xl:py-[var(--section-block-padding)]">
+          <div className="flex-1 bg-primary-blue xl:px-15 text-white xl:py-[var(--section-block-padding)]">
             <div className="w-full">
               <p className="fl-slash text-center xl:text-left">/About us</p>
               <h2 className="fl1 !text-[#FFF9FF] text-center xl:text-left">
                 Precision, Trust. Your Full-Stack{' '}
-                <br className="hidden xl:block" />
+                
                 Partner for Secure Future
               </h2>
-              <p className="mt-4 xl:max-w-[80%] w-full fl3 md:!text-[16px] !text-[#FFF9FF] text-center xl:text-left mb-8 xl:mb-0">
-                Established by innovators in 2024, UElement Technologies is
-                dedicated to solving complex challenges across Cybersecurity,
-                Cloud, and AI with unparalleled expertise. We eliminate the
-                complexity of managing multiple vendors by delivering an
-                integrated, seamless service portfolio. Our relentless
-                commitment to excellence and future-forward vision, including
-                pioneering work in Quantum Computing, is designed to ensure your
-                organization achieves sustainable growth and thrives in a secure
-                digital future.
+              <p className="mt-4 2xl:max-w-[95%] w-full fl3 md:!text-[16px] !text-[#FFF9FF] text-center xl:text-left mb-8 xl:mb-0">
+                Founded by innovators and architects in 2024, UElement
+                Technologies helps organizations solve complex challenges across
+                Cybersecurity, Cloud, and AI with precision and confidence. By
+                unifying strategy, technology, and execution into a seamless
+                service portfolio, we eliminate the need for multiple vendors
+                and simplify digital transformation. Driven by a future-forward
+                mindset, including pioneering work in Quantum Computing, we
+                enable sustainable growth and help enterprises thrive in a
+                secure digital world.
               </p>
             </div>
           </div>
@@ -116,13 +116,12 @@ export default function AboutSection() {
                 Landscape.
               </h2>
               <p className="fl3 mt-4 text-black w-full xl:w-[80%]">
-                UElement Technologies was founded in 2024 by innovators
-                committed to excellence and trust. Our foundation is built on
-                unwavering honesty and ethical accountability. We strategically
-                focus on Cybersecurity, AI, and Cloud to strengthen the digital
-                landscape. We embrace curiosity and drive transformative
-                solutions, channeling our ambition into the future of Quantum
-                Computing.
+                Our strategic focus on Cybersecurity, AI, and Enterprise Cloud
+                empowers organizations to navigate complex digital environments
+                confidently and resiliently. We blend deep technical expertise
+                with curiosity and collaboration to deliver transformative,
+                future-ready solutions, while advancing Quantum Computing to
+                redefine industry standards and fortify the digital landscape.​'
               </p>
 
               <button

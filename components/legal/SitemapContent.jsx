@@ -2,13 +2,12 @@ import Link from 'next/link';
 
 export default function SitemapContent() {
   return (
-    <div className="space-y-10">
+    <div className="space-y-10 !text-[#232223]">
       {/* Main Navigation Pages */}
       <div className="space-y-6">
-        <h2 className="font-montserrat font-semibold text-14 md:text-18 xl:text-[22px] mb-2 md:mb-4 3xl:mb-6 !text-white">Home</h2>
+        <h2 className="font-montserrat font-semibold text-14 md:text-18 xl:text-[22px] mb-2 md:mb-4 3xl:mb-6 ">Home</h2>
         <div className="space-y-3 pl-2">
           <SitemapLink href="/">Landing Page</SitemapLink>
-          <SitemapLink href="/services">Services</SitemapLink>
           <SitemapLink href="/">Resources</SitemapLink>
           <SitemapLink href="/our-partners">Partnership</SitemapLink>
           <SitemapLink href="/company">Company</SitemapLink>
@@ -20,14 +19,17 @@ export default function SitemapContent() {
 
       {/* Solutions */}
       <div className="space-y-6">
-        <h2 className="font-montserrat font-semibold text-14 md:text-18 xl:text-[22px] mb-2 md:mb-4 3xl:mb-6 !text-white">Solutions</h2>
+        <h2 className="font-montserrat font-semibold text-14 md:text-18 xl:text-[22px] mb-2 md:mb-4 3xl:mb-6 ">Solutions</h2>
         <div className="space-y-3 pl-2">
-          <SitemapLink href="/services">AI / ML</SitemapLink>
-          <SitemapLink href="/services">
+          <SitemapLink href="/ai-ml">AI / ML</SitemapLink>
+          <SitemapLink href="/cybersecurity">
             Cybersecurity
           </SitemapLink>
-          <SitemapLink href="/services">
+          <SitemapLink href="/cloud-solutions">
             Cloud Computing
+          </SitemapLink>
+          <SitemapLink href="/future-tech">
+            Future Tech
           </SitemapLink>
         </div>
       </div>
@@ -37,7 +39,7 @@ export default function SitemapContent() {
 
       {/* Supports & Legal */}
       <div className="space-y-6">
-        <h2 className="font-montserrat font-semibold text-14 md:text-18 xl:text-[22px] mb-2 md:mb-4 3xl:mb-6 !text-white">Supports & Legal</h2>
+        <h2 className="font-montserrat font-semibold text-14 md:text-18 xl:text-[22px] mb-2 md:mb-4 3xl:mb-6 ">Supports & Legal</h2>
         <div className="space-y-3 pl-2">
           <SitemapLink href="/legal?page=privacy">Privacy Policy</SitemapLink>
           <SitemapLink href="/legal?page=terms">Terms of Use</SitemapLink>
@@ -52,9 +54,9 @@ function SitemapLink({ href, children }) {
   return (
     <Link
       href={href}
-      className="flex items-center text-white/70 hover:text-white transition group"
+      className="flex items-center !text-[#232223] hover:text-white transition group"
     >
-      <span className="inline-block w-2 h-2 rounded-full bg-[#D9B24C] mr-3 group-hover:scale-125 transition-transform" />
+      <span className="inline-block w-2 h-2 rounded-full bg-[#000000] mr-3 group-hover:scale-125 transition-transform" />
       {children}
     </Link>
   );

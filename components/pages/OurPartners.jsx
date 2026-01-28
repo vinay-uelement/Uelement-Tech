@@ -1,4 +1,4 @@
-import ContactUs from '../Landing/ContactUs';
+"use client";
 import PartnersHero from '../OurPartners/PartnersHero';
 import PartnerSolution from '../OurPartners/PartnerSolution';
 
@@ -6,7 +6,7 @@ const OurPartners = () => {
   return (
     <div>
       <PartnersHero />
-      <div className="container-outer">
+      <div className="">
         <PartnerSolution />
       </div>
     </div>

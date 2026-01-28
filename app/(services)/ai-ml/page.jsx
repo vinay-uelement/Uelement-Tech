@@ -4,6 +4,9 @@ import React from 'react';
 export const metadata = {
   title: 'AI & ML | UElement Technologies',
   description: 'Explore our wide range of services in AI and Machine Learning.',
+  alternates: {
+    canonical: 'https://uelement.in/ai-ml',
+  },
   openGraph: {
     title: 'AI & ML | UElement Technologies',
     description: 'Explore our wide range of services in AI and Machine Learning.',
@@ -11,7 +14,7 @@ export const metadata = {
     siteName: 'UElement',
     images: [
       {
-        url: '/images/service/ai-ml/ai-ml-hero.png',
+        url: 'https://uelement.in/images/service/ai-ml/ai-ml-hero.png',
         width: 1200,
         height: 630,
         alt: 'UElement AI & ML',
@@ -24,7 +27,7 @@ export const metadata = {
     card: 'summary_large_image',
     title: 'AI & ML | UElement Technologies',
     description: 'Explore our wide range of services in AI and Machine Learning.',
-    images: ['/images/service/ai-ml/ai-ml-hero.png'],
+    images: ['https://uelement.in/images/service/ai-ml/ai-ml-hero.png'],
   },
 };
 

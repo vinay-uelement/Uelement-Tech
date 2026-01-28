@@ -1,10 +1,12 @@
 import OurPartners from '@/components/pages/OurPartners'
-import React from 'react'
-
+import React, { Suspense } from 'react'
 
 export const metadata = {
   title: 'Our Partners | UElement Technologies',
   description: 'Discover the strategic partners we collaborate with to deliver exceptional value to our clients.',
+  alternates: {
+    canonical: 'https://uelement.in/our-partners',
+  },
   openGraph: {
     title: 'Our Partners | UElement Technologies',
     description: 'Discover the strategic partners we collaborate with to deliver exceptional value to our clients.',
@@ -12,7 +14,7 @@ export const metadata = {
     siteName: 'UElement',
     images: [
       {
-        url: '/images/landing/si-partnership.jpg',
+        url: 'https://uelement.in/images/landing/si-partnership.jpg',
         width: 1200,
         height: 630,
         alt: 'UElement Partners',
@@ -25,14 +27,16 @@ export const metadata = {
     card: 'summary_large_image',
     title: 'Our Partners | UElement Technologies',
     description: 'Discover the strategic partners we collaborate with to deliver exceptional value to our clients.',
-    images: ['/images/landing/si-partnership.jpg'],
+    images: ['https://uelement.in/images/landing/si-partnership.jpg'],
   },
 };
 
 const page = () => {
   return (
     <div>
-      <OurPartners />
+      <Suspense fallback={null}>
+        <OurPartners />
+      </Suspense>
     </div>
   )
 }

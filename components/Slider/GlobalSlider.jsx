@@ -128,10 +128,10 @@ const GlobalSlider = ({ data }) => {
     >
       <Slider ref={sliderRef} {...settings}>
         {data.map((item) => (
-          <div key={item.id} className="p-2 sm:p-3 md:p-4">
+          <div key={item.id} className="p-2 sm:p-3 md:p-4 !py-0 !pl-0 mb-4">
             <div
               onClick={() => handleCardClick(item.link)}
-              className={`p-4 sm:p-6 bg-[#F6F6F6] rounded-[4px] min-h-[425px] sm:min-h-[500px] md:min-h-[550px] flex flex-col transition-all duration-300 ease-in-out hover:scale-101 hover:shadow-[3px_4px_4px_0px_rgba(0,0,0,0.25)] ${
+              className={`p-4 sm:p-6 bg-[#F6F6F6] rounded-[4px] min-h-[400px] sm:min-h-[500px] md:min-h-[550px] flex flex-col transition-all duration-300 ease-in-out hover:scale-101 hover:shadow-[3px_4px_4px_0px_rgba(0,0,0,0.25)] ${
                 item.link ? 'cursor-pointer' : ''
               }`}
             >
@@ -169,7 +169,7 @@ const GlobalSlider = ({ data }) => {
                   ))}
                 </h6>
 
-                <p className="mt-2 sm:mt-3 text-[#5F6D7E] flex-1 font-reddit-sans font-light md:text-14 text-12">
+                <p className="mt-2 sm:mt-3 !text-[#5F6D7E] flex-1 fl3">
                   {item.desc || item.description}
                 </p>
               </div>
