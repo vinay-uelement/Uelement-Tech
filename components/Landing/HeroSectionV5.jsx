@@ -2,6 +2,7 @@
 import { useState, useEffect } from 'react';
 import { ReactIcons } from '@/utils/ReactIcons';
 import { useRouter } from 'next/navigation';
+import Image from 'next/image';
 
 const HeroSectionV5 = () => {
   const slides = [
@@ -78,7 +79,8 @@ const HeroSectionV5 = () => {
   };
 
   return (
-    <section className="h-screen flex flex-col md:bg-primary-blue relative">
+    <section className="h-screen flex flex-col relative">
+      <Image src='/images/landing/hero_bg.webp' className='absolute -z-10 object-fill h-full w-full hidden md:block' height={1000} width={1000}/>
       <div className="h-[calc(100%-80px)] w-full relative text-white rounded-[4px] rounded-bl-[50px] rounded-br-none">
         <div className="h-full w-full flex flex-col md:flex-row">
           <div className="w-full h-[60%] md:h-full md:w-[40%] pl-[var(--container-small-padding)] flex flex-col justify-end md:justify-center ">
@@ -89,18 +91,24 @@ const HeroSectionV5 = () => {
               Engineering Quantum-Driven Digital Synapses at the
               intersection of Cybersecurity, Cloud & AI.
             </p>
-            <button onClick={handleContactus} className="btn-yellow w-fit">
+            <button onClick={handleContactus} className="btn-yellow w-fit md:hidden">
               Contact Us
-            </button>
+        </button>
           </div>
           <div className="flex-1 h-[40%] md:h-full flex items-end justify-end ">
             {/* <div className="h-[85%] w-[80%]  md:w-full bg-[url(/images/landing/UElement-Mudra.png)] rounded-tr-4xl rounded-br-4xl bg-no-repeat bg-contain bg-right-bottom"></div> */}
           </div>
         </div>
 
+
+        <div className='absolute right-8 top-[78vh] w-full flex justify-between '>
+        <button onClick={handleContactus} className="btn-yellow w-fit translate-x-4/5 hidden md:block">
+              Contact Us
+        </button>
         {/* Desktop slider with hover pause */}
+
         <div
-          className="absolute left-1/2 hidden md:flex -translate-x-1/2 2xl:-bottom-[25px] md:-bottom-[20px] w-[90%] md:w-2/3 items-center bg-[#D4D4D41A] backdrop-blur-2xl rounded-[40px] px-1 py-1 shadow-lg z-50"
+          className=" w-[65vw] hidden md:flex items-center bg-[#D4D4D41A] backdrop-blur-2xl rounded-[40px] px-1 py-1 shadow-lg z-50"
           onMouseEnter={handlePauseStart}
           onMouseLeave={handlePauseEnd}
         >
@@ -111,7 +119,7 @@ const HeroSectionV5 = () => {
           >
             {ReactIcons.leftChev}
           </button>
-          <div className="flex-1 overflow-hidden w-full min-h-[30px] flex items-center ">
+          <div className="flex-1 overflow-hidden w-full min-h-10 flex items-center justify-center ">
             <div
               className="flex transition-transform duration-500 ease-in-out"
               style={{ transform: `translateX(-${index * 100}%)` }}
@@ -134,6 +142,8 @@ const HeroSectionV5 = () => {
             {ReactIcons.rightChev}
           </button>
         </div>
+        </div>
+
 
         {/* Mobile slider with swipe support */}
         <div
@@ -163,7 +173,7 @@ const HeroSectionV5 = () => {
       </div>
 
       {/* Desktop background */}
-      <div className="hidden md:block h-full w-full md:w-[55%] absolute right-0 bottom-0 bg-[url(/images/landing/Mudra.svg)] rounded-tr-4xl rounded-br-[50px] h-[700px] bg-no-repeat bg-contain bg-right-bottom "></div>
+      
 
       {/* Mobile background */}
       <div
