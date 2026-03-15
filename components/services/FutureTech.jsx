@@ -140,7 +140,7 @@ const FutureTech = () => {
   return (
     <div className="mb-0 md:mb-0">
       {/* Hero Section */}
-      <section className="h-auto relative flex lg:flex-row flex-col items-center bg-primary-blue section-block-padding !pb-[20px] pb:!md-16 3xl:!pb-22 3xl:!pt-[175px] md:!pt-[125px]">
+      <section className="h-auto relative flex lg:flex-row flex-col items-center bg-hero-gradient section-block-padding !pb-[20px] pb:!md-16 3xl:!pb-22 3xl:!pt-[175px] md:!pt-[125px]">
         <div className="container-padding w-full flex flex-col lg:flex-row gap-2 lg:gap-12 justify-between mt-[var(--mobile-navbar-gap)] lg:my-0 lg:py-0">
           {/* Left: Content - 40% */}
           <div className="text-white w-full lg:w-[40%] flex flex-col justify-center order-1">

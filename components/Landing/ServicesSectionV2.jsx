@@ -69,15 +69,15 @@ const ServicesSection = () => {
   };
 
   return (
-    <section className="bg-[#0c142d] py-10 sm:py-12 lg:py-16 px-4 sm:px-6 lg:px-8 rounded mb-10 container-padding">
+    <section className="py-10 sm:py-12 lg:py-16 px-4 sm:px-6 lg:px-8 rounded mb-10 container-padding">
       <div className="mx-auto">
         {/* Header */}
         <div className="mb-8 sm:mb-10 lg:mb-12">
-          <p className="fl-slash !text-white">/Services</p>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-3 sm:mb-4">
+          <p className="fl-slash">/Services</p>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-3 sm:mb-4">
             Our Enterprise Solutions
           </h2>
-          <p className="text-sm sm:text-base lg:text-lg text-white max-w-[600px]">
+          <p className="text-sm sm:text-base lg:text-lg max-w-[600px]">
             Comprehensive services designed to protect, optimize, and transform
             your business operations.
           </p>
@@ -93,7 +93,7 @@ const ServicesSection = () => {
                 onClick={() => setSelectedTab(tab)}
                 className={`relative px-6 py-3 min-w-[200px] text-sm sm:text-base font-semibold uppercase transition-all duration-250 flex-shrink-0 ${
                   tab.id === selectedTab.id
-                    ? 'text-[#232223]'
+                    ? 'text-white'
                     : 'text-gray-400 hover:text-gray-300'
                 }`}
                 style={{
@@ -103,8 +103,8 @@ const ServicesSection = () => {
               >
                 {/* Tab Background - Base */}
                 <span
-                  className={`absolute inset-0 transition-all duration-250 ${
-                    tab.id === selectedTab.id ? 'bg-[#FFF4E4]' : 'bg-[#FCFCFC]'
+                  className={`absolute inset-0 transition-all duration-250  ${
+                    tab.id === selectedTab.id ? 'bg-primary-blue' : 'bg-[#FCFCFC] border-t border-gray-300'
                   }`}
                   style={{
                     boxShadow:
@@ -117,7 +117,7 @@ const ServicesSection = () => {
                 {/* Left Skew  */}
                 <span
                   className={`absolute top-0 h-full w-11 transition-all duration-250 z-10 ${
-                    tab.id === selectedTab.id ? 'bg-[#FFF4E4]' : 'bg-[#FCFCFC]'
+                    tab.id === selectedTab.id ? 'bg-primary-blue' : 'bg-[#FCFCFC] border-t border-l border-gray-300'
                   }`}
                   style={{
                     left: '-24px',
@@ -130,7 +130,7 @@ const ServicesSection = () => {
                 {/* Right Skew */}
                 <span
                   className={`absolute top-0 h-full w-11 transition-all duration-250 z-20 ${
-                    tab.id === selectedTab.id ? 'bg-[#FFF4E4]' : 'bg-[#FCFCFC] '
+                    tab.id === selectedTab.id ? 'bg-primary-blue' : 'bg-[#FCFCFC] border-t border-r border-gray-300'
                   }`}
                   style={{
                     right: '-24px',
@@ -154,12 +154,12 @@ const ServicesSection = () => {
             <div className="relative inline-block">
               <button
                 onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-                className="relative px-6 py-3 text-[#232223] font-semibold uppercase transition-all duration-250 flex items-center gap-3 w-[220px] sm:w-[220px]"
+                className="relative px-6 py-3 text-white font-semibold uppercase transition-all duration-250 flex items-center gap-3 w-[220px] sm:w-[220px]"
                 style={{ zIndex: 40 }}
               >
                 {/* Tab Background - Base */}
                 <span
-                  className="absolute inset-0 bg-[#FFF4E4]"
+                  className="absolute inset-0 bg-primary-blue"
                   style={
                     {
                       // boxShadow: 'rgba(0,0,0,0.1) 0 2px 5px',
@@ -169,7 +169,7 @@ const ServicesSection = () => {
 
                 {/* Left Skew */}
                 <span
-                  className="absolute top-0 h-full w-7 bg-[#FFF4E4] z-10"
+                  className="absolute top-0 h-full w-7 bg-primary-blue z-10"
                   style={{
                     left: '-24px',
 
@@ -181,7 +181,7 @@ const ServicesSection = () => {
 
                 {/* Right Skew */}
                 <span
-                  className="absolute top-0 h-full w-8 bg-[#FFF4E4] z-20"
+                  className="absolute top-0 h-full w-8 bg-primary-blue z-20"
                   style={{
                     right: '-18px',
                     transform: 'skew(30deg, 0deg)',
@@ -239,10 +239,10 @@ const ServicesSection = () => {
           </div>
 
           {/* Tab Content */}
-          <div className="bg-[#FFF4E4] text-gray-800 p-6 sm:p-8 lg:p-10 xl:p-12 transition-all duration-300 ease-in-out rounded-[4px] -mt-1">
+          <div className="bg-hero-gradient text-white! p-6 sm:p-8 lg:p-10 xl:p-12 transition-all duration-300 ease-in-out rounded-[4px] -mt-1">
             <div className="animate-fade-in">
-              <h3 className="fl1 mb-4 sm:mb-6">{selectedTab.title}</h3>
-              <p className="fl3 leading-relaxed mb-8 sm:mb-16 lg:mb-20 md:w-[90%] w-full min-h-[220px] md:min-h-[100px]">
+              <h3 className="fl1 text-white! mb-4 sm:mb-6">{selectedTab.title}</h3>
+              <p className="fl3 text-white! leading-relaxed mb-8 sm:mb-16 lg:mb-20 md:w-[90%] w-full min-h-[220px] md:min-h-[100px]">
                 {selectedTab.desc}
               </p>
 
@@ -258,14 +258,14 @@ const ServicesSection = () => {
                   <button
                     disabled={index === 0}
                     onClick={prevSlide}
-                    className="w-8 h-8 sm:w-9 sm:h-9 md:w-10 md:h-10 bg-[#0c142d] rounded-full text-white flex items-center justify-center disabled:opacity-0 disabled:cursor-not-allowed transition-all duration-300 flex-shrink-0"
+                    className="w-8 h-8 sm:w-9 sm:h-9 md:w-10 md:h-10 dark-glass shadow-down rounded-full text-white flex items-center justify-center disabled:opacity-0 disabled:cursor-not-allowed transition-all duration-300 flex-shrink-0"
                   >
                     <span className="text-14 sm:text-16 md:text-18">
                       {ReactIcons.leftChev}
                     </span>
                   </button>
 
-                  <div className="bg-[#0c142d] rounded p-4 sm:p-5 md:p-6 flex-1 md:max-w-[500px] min-w-0">
+                  <div className="dark-glass shadow-down rounded p-4 sm:p-5 md:p-6 flex-1 md:max-w-[500px] min-w-0">
                     <div className="relative overflow-hidden">
                       <div
                         className="flex transition-transform duration-500 ease-in-out"
@@ -286,7 +286,7 @@ const ServicesSection = () => {
                   <button
                     disabled={index === slides.length - 1}
                     onClick={nextSlide}
-                    className="w-8 h-8 sm:w-9 sm:h-9 md:w-10 md:h-10 bg-[#0c142d] rounded-full text-white flex items-center justify-center disabled:opacity-0 disabled:cursor-not-allowed transition-all duration-300 flex-shrink-0"
+                    className="w-8 h-8 sm:w-9 sm:h-9 md:w-10 md:h-10 dark-glass shadow-down rounded-full text-white flex items-center justify-center disabled:opacity-0 disabled:cursor-not-allowed transition-all duration-300 flex-shrink-0"
                   >
                     <span className="text-14 sm:text-16 md:text-18">
                       {ReactIcons.rightChev}

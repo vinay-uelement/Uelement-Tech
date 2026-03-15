@@ -121,7 +121,7 @@ const DrivingGrowthSection = () => {
 
   return (
     <section className="container-small">
-      <div className="flex md:items-center flex-col lg:flex-row gap-10 md:gap-20 lg:pb-8 xl:pb-10 2xl:pb-12">
+      <div className="flex flex-col lg:flex-row gap-10 md:gap-20 lg:pb-8 xl:pb-10 2xl:pb-12 relative">
         {/* Left Side Numbers */}
         <div className="flex-1 lg:mr-[30px] md:w-[60%] w-full">
           <div className="mb-7 xl:mb-10 flex items-center lg:hidden">
@@ -141,7 +141,7 @@ const DrivingGrowthSection = () => {
           </div>
           <span className="fl-slash block lg:hidden">/Service Segment</span>
 
-          <div className="mb-7 xl:mb-10 lg:flex items-center hidden">
+          <div className=" absolute right-0 -top-20 -translate-y-full mb-7 xl:mb-10 lg:flex items-center hidden">
             <div className="circle size-[50px] min-w-[50px] xl:size-[70px] rounded-full bg-white grid place-content-center shadow-down font-bold italic text-20 xl:text-24 transition-all duration-500">
               {slides[active].number}
             </div>

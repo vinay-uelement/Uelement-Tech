@@ -3,6 +3,7 @@ import { ReactIcons } from '@/utils/ReactIcons';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import Slider from 'react-slick';
+import Image from 'next/image';
 
 const services = [
   {
@@ -51,7 +52,8 @@ const ServiceSegments = () => {
           Trust to Quantum Readiness.
         </p>
         <div className="hidden xl:grid xl:grid-cols-4 gap-6 text-left">
-          <div className="p-6 pb-10 pt-10 bg-primary-blue rounded-[4px] text-white relative">
+          <div className="p-6 pb-10 pt-14 rounded-[4px] text-white relative">
+          <Image src='/images/landing/card_bg.webp' width={1000} height={1000} className='absolute -z-10 top-0 right-0 object-fill h-full'/>
             <h6 className="font-noto-sans font-medium text-18 md:text-24  mb-8 md:mb-12 max-w-[80%] ">
               Digital <br /> Safety
             </h6>
@@ -59,53 +61,33 @@ const ServiceSegments = () => {
               Securing the Future with Quantum-Resistant and Zero Trust Architecture. Resilient defenses vs. today's threats and quantum attacks
             </p>
 
-            <div className="size-[60px] bg-secondary absolute -top-3 -right-3 flex items-center justify-center text-30">
-              <span className="absolute top-0 right-0 text-40">
-                {ReactIcons.arrowOutWard}
-              </span>
-            </div>
           </div>
-          <div className="p-6 pb-10 pt-10 bg-primary-blue rounded-[4px] text-white relative">
+          <div className="p-6 pb-10 pt-14 rounded-[4px] text-white relative">
+          <Image src='/images/landing/card_bg.webp' width={1000} height={1000} className='absolute -z-10 top-0 right-0 object-fill h-full'/>
             <h6 className="font-noto-sans font-medium text-18 md:text-24  mb-8 md:mb-12 max-w-[80%] ">
               Cloud <br /> Mastery
             </h6>
             <p className="fl3 !text-[#ffffff] mt-6">
               Architecting, Optimizing and Managing Seamless Multi-Cloud Environments. Scalable, secure infra with Zero Trust and FinOps.
             </p>
-
-            <div className="size-[60px] bg-secondary absolute -top-3 -right-3 flex items-center justify-center text-30">
-              <span className="absolute top-0 right-0 text-40 ">
-                {ReactIcons.arrowOutWard}
-              </span>
-            </div>
           </div>
-          <div className="p-6 pb-10 pt-10 bg-primary-blue rounded-[4px] text-white relative">
+          <div className="p-6 pb-10 pt-14 rounded-[4px] text-white relative">
+          <Image src='/images/landing/card_bg.webp' width={1000} height={1000} className='absolute -z-10 top-0 right-0 object-fill h-full'/>
             <h6 className="font-noto-sans font-medium text-18 md:text-24  mb-8 md:mb-12 max-w-[80%] ">
               Accelerated <br /> AI
             </h6>
             <p className="fl3 !text-[#ffffff] mt-6">
              Accelerating Intelligence with Responsible AI and Advanced Analytics. Ethical AI for precise insights and analytics.
             </p>
-
-            <div className="size-[60px] bg-secondary absolute -top-3 -right-3 flex items-center justify-center text-30">
-              <span className="absolute top-0 right-0 text-40">
-                {ReactIcons.arrowOutWard}
-              </span>
-            </div>
           </div>
-          <div className="p-6 pb-10 pt-10 bg-primary-blue rounded-[4px] text-white relative">
+          <div className="p-6 pb-10 pt-14 rounded-[4px] text-white relative">
+          <Image src='/images/landing/card_bg.webp' width={1000} height={1000} className='absolute -z-10 top-0 right-0 object-fill h-full'/>
             <h6 className="font-noto-sans font-medium text-18 md:text-24  mb-8 md:mb-12 max-w-[80%] ">
               Future <br /> Tech
             </h6>
             <p className="fl3 !text-[#ffffff] mt-6">
              Pioneering Transformation with Quantum, Web3 and Digital Modernization. Quantum-ready, decentralized innovation.
             </p>
-
-            <div className="size-[60px] bg-secondary absolute -top-3 -right-3 flex items-center justify-center text-30">
-              <span className="absolute top-0 right-0 text-40">
-                {ReactIcons.arrowOutWard}
-              </span>
-            </div>
           </div>
         </div>
         <div className="mt-6 xl:hidden text-left testimonial-slick pb-[var(--section-block-padding)]">

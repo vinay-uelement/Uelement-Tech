@@ -196,7 +196,7 @@
     @apply bg-[#9B7025] rounded-[4px] text-white font-reddit-sans font-semibold shadow-[1px_4px_2px_0px_rgba(0,0,0,0.15)] text-12 md:text-16 xl:text-18 py-2 px-[40px] hover:shadow-inset-white transition-all duration-300;
   }
   .btn-blue {
-    @apply bg-[#0C142D] text-white font-reddit-sans font-semibold shadow-[1px_4px_2px_0px_rgba(0,0,0,0.15)] rounded-[4px] text-12 md:text-16 xl:text-18 py-2 px-[40px] hover:shadow-inset-white transition-all duration-300;
+    @apply bg-hero-gradient text-white font-reddit-sans font-semibold shadow-[1px_4px_2px_0px_rgba(0,0,0,0.15)] rounded-[4px] text-12 md:text-16 xl:text-18 py-2 px-[40px] hover:shadow-inset-white transition-all duration-300;
   }
   .fl-main {
     @apply font-cal-sans text-white text-26 md:text-[46px] xl:text-[60px];
@@ -279,6 +279,14 @@
   --breakpoint-2xl: 1400px;
   --breakpoint-3xl: 1600px;
   --breakpoint-4xl: 1920px;
+
+  --background-image-hero-gradient: linear-gradient(
+    97.27deg,
+    #0C142D 5.62%,
+    #15224A 34.57%,
+    #22397E 62.65%,
+    #0F1939 96.86%
+  );
 }
 
 /* hero */

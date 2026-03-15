@@ -55,7 +55,7 @@ export default function AboutSection() {
   const router = useRouter();
   return (
     <div>
-      <div className="p-10 bg-primary-blue rounded-[4px] mx-4 md:mx-8">
+      <div className="p-10 bg-hero-gradient rounded-[4px] mx-4 md:mx-8">
         <div className="flex flex-col-reverse xl:flex-row">
           {/* LEFT WHITE BOX */}
           <div className="xl:w-1/2 bg-[#FFF8F0] rounded-[4px] overflow-hidden py-5 xl:py-10 px-6 xl:px-10">
@@ -83,7 +83,7 @@ export default function AboutSection() {
           </div>
 
           {/* RIGHT BLUE BOX */}
-          <div className="flex-1 bg-primary-blue xl:px-15 text-white xl:py-[var(--section-block-padding)]">
+          <div className="flex-1 bg-transparent xl:px-15 text-white xl:py-[var(--section-block-padding)]">
             <div className="w-full">
               <p className="fl-slash text-center xl:text-left">/About us</p>
               <h2 className="fl1 !text-[#FFF9FF] text-center xl:text-left">

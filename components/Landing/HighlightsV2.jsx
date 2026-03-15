@@ -39,7 +39,7 @@ export default function HighlightV2() {
 
   return (
     <div className="relative w-full flex flex-col items-center overflow-hidden">
-      <p className="absolute top-[20px] sm:top-[30px] md:top-[40px] lg:top-[60px] font-cal-sans font-semibold text-[#3636361f] text-[60px] sm:text-[80px] md:text-[120px] lg:text-[160px] leading-none z-0 select-none">
+      <p className="absolute top-2 md:top-[22px] font-semibold font-noto-sans text-[#3636361f] text-[60px] sm:text-[80px] md:text-[120px] lg:text-[160px] leading-none z-0 select-none">
         HIGHLIGHTS
       </p>
 
