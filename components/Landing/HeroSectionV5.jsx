@@ -80,7 +80,7 @@ const HeroSectionV5 = () => {
 
   return (
     <section className="h-screen flex flex-col relative">
-      <Image src='/images/landing/hero_bg.webp' className='absolute -z-10 object-fill h-full w-full hidden md:block' height={1000} width={1000}/>
+      <Image src='/images/landing/hero_bg.webp' alt='hero_bg' className='absolute -z-10 object-fill h-full w-full hidden md:block' height={1000} width={1000} />
       <div className="h-[calc(100%-80px)] w-full relative text-white rounded-[4px] rounded-bl-[50px] rounded-br-none">
         <div className="h-full w-full flex flex-col md:flex-row">
           <div className="w-full h-[60%] md:h-full md:w-[40%] pl-[var(--container-small-padding)] flex flex-col justify-end md:justify-center ">
@@ -93,7 +93,7 @@ const HeroSectionV5 = () => {
             </p>
             <button onClick={handleContactus} className="btn-yellow w-fit md:hidden">
               Contact Us
-        </button>
+            </button>
           </div>
           <div className="flex-1 h-[40%] md:h-full flex items-end justify-end ">
             {/* <div className="h-[85%] w-[80%]  md:w-full bg-[url(/images/landing/UElement-Mudra.png)] rounded-tr-4xl rounded-br-4xl bg-no-repeat bg-contain bg-right-bottom"></div> */}
@@ -102,46 +102,46 @@ const HeroSectionV5 = () => {
 
 
         <div className='absolute right-8 top-[78vh] w-full flex justify-between '>
-        <button onClick={handleContactus} className="btn-yellow w-fit translate-x-4/5 hidden md:block">
-              Contact Us
-        </button>
-        {/* Desktop slider with hover pause */}
+          <button onClick={handleContactus} className="btn-yellow w-fit translate-x-4/5 hidden md:block">
+            Contact Us
+          </button>
+          {/* Desktop slider with hover pause */}
 
-        <div
-          className=" w-[65vw] hidden md:flex items-center bg-[#D4D4D41A] backdrop-blur-2xl rounded-[40px] px-1 py-1 shadow-lg z-50"
-          onMouseEnter={handlePauseStart}
-          onMouseLeave={handlePauseEnd}
-        >
-          <button
-            onClick={prevSlide}
-            className="size-10 bg-white rounded-full text-black text-2xl flex items-center justify-center hover:bg-gray-200 transition"
-            aria-label="Previous slide"
+          <div
+            className=" w-[65vw] hidden md:flex items-center bg-[#D4D4D41A] backdrop-blur-2xl rounded-[40px] px-1 py-1 shadow-lg z-50"
+            onMouseEnter={handlePauseStart}
+            onMouseLeave={handlePauseEnd}
           >
-            {ReactIcons.leftChev}
-          </button>
-          <div className="flex-1 overflow-hidden w-full min-h-10 flex items-center justify-center ">
-            <div
-              className="flex transition-transform duration-500 ease-in-out"
-              style={{ transform: `translateX(-${index * 100}%)` }}
+            <button
+              onClick={prevSlide}
+              className="size-10 bg-white rounded-full text-black text-2xl flex items-center justify-center hover:bg-gray-200 transition"
+              aria-label="Previous slide"
             >
-              {slides.map((text, i) => (
-                <div
-                  key={i}
-                  className="min-w-full flex items-center justify-center"
-                >
-                  <span className="fl4 text-center text-white">{text}</span>
-                </div>
-              ))}
+              {ReactIcons.leftChev}
+            </button>
+            <div className="flex-1 overflow-hidden w-full min-h-10 flex items-center justify-center ">
+              <div
+                className="flex transition-transform duration-500 ease-in-out"
+                style={{ transform: `translateX(-${index * 100}%)` }}
+              >
+                {slides.map((text, i) => (
+                  <div
+                    key={i}
+                    className="min-w-full flex items-center justify-center"
+                  >
+                    <span className="fl4 text-center text-white">{text}</span>
+                  </div>
+                ))}
+              </div>
             </div>
+            <button
+              onClick={nextSlide}
+              className="size-10 bg-white rounded-full text-black text-2xl flex items-center justify-center hover:bg-gray-200 transition"
+              aria-label="Next slide"
+            >
+              {ReactIcons.rightChev}
+            </button>
           </div>
-          <button
-            onClick={nextSlide}
-            className="size-10 bg-white rounded-full text-black text-2xl flex items-center justify-center hover:bg-gray-200 transition"
-            aria-label="Next slide"
-          >
-            {ReactIcons.rightChev}
-          </button>
-        </div>
         </div>
 
 
@@ -173,7 +173,7 @@ const HeroSectionV5 = () => {
       </div>
 
       {/* Desktop background */}
-      
+
 
       {/* Mobile background */}
       <div

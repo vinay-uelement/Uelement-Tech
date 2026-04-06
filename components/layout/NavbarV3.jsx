@@ -106,6 +106,7 @@ const DESKTOP_DROPDOWN_HEIGHT = {
 
 const NavbarV3 = () => {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isScrolled100vh, setIsScrolled100vh] = useState(false);
   const [showMobileNav, setShowMobileNav] = useState(false);
   const [openMenu, setOpenMenu] = useState(null); // click-open for desktop
   const [expandedMobileMenu, setExpandedMobileMenu] = useState(null);
@@ -118,7 +119,8 @@ const NavbarV3 = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 0);
+      setIsScrolled(window.scrollY > 100);
+      setIsScrolled100vh(window.scrollY > (window.innerHeight - 30));
     };
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
@@ -177,7 +179,7 @@ const NavbarV3 = () => {
             {/* Logo */}
             <Link
               href="/"
-              className="bg-primary-blue rounded-l-[22px] rounded-tl-[4px] md:w-[220px] 2xl:w-[290px] w-[180px] h-full ps-4 pe-12 md:pe-0 flex items-center relative z-40"
+              className={`${isScrolled100vh ? 'bg-primary-blue' : ' backdrop-blur-lg'} rounded-l-[22px] rounded-tl-[4px] md:w-[220px] 2xl:w-[290px] w-[180px] h-full ps-4 pe-12 md:pe-0 flex items-center relative z-40 transition-all duration-300`}
             >
               <img
                 src="/icons/global/UElement_Logo_White 3.svg"
@@ -216,9 +218,8 @@ const NavbarV3 = () => {
                             className="flex items-center font-reddit-sans font-semibold md:text-14 xl:text-18 text-[#fff] px-3 uppercase relative h-full cursor-pointer"
                           >
                             <span
-                              className={`transition-all duration-500 ${
-                                isOpen ? 'rotate-0' : 'rotate-45'
-                              }`}
+                              className={`transition-all duration-500 ${isOpen ? 'rotate-0' : 'rotate-45'
+                                }`}
                             >
                               {ReactIcons.slash}
                             </span>
@@ -262,11 +263,10 @@ const NavbarV3 = () => {
               <div
                 ref={dropdownRef}
                 className={`w-[calc(100%+40px)] absolute -left-10 bg-[#00000050] backdrop-blur-2xl backdrop-saturate-150
-    shadow-xl text-[#fff] z-[30] top-9 hidden lg:flex rounded-b-[22px] overflow-hidden transition-all duration-300 ease-in-out ${
-      openMenu && openMenu.children
-        ? DESKTOP_DROPDOWN_HEIGHT[openMenu.id] ?? 'h-[400px]'
-        : 'h-0'
-    }`}
+    shadow-xl text-[#fff] z-[30] top-9 hidden lg:flex rounded-b-[22px] overflow-hidden transition-all duration-300 ease-in-out ${openMenu && openMenu.children
+                    ? DESKTOP_DROPDOWN_HEIGHT[openMenu.id] ?? 'h-[400px]'
+                    : 'h-0'
+                  }`}
               >
                 {openMenu && openMenu.children && (
                   <div className="pt-9 pb-3 px-4 flex w-full">

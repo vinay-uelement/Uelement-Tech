@@ -72,7 +72,7 @@ const DrivingGrowthSection = () => {
     arrows: false,
     fade: false,
     autoplay: true,
-    autoplaySpeed: 5000,
+    autoplaySpeed: 3000,
 
     beforeChange: (_, next) => setActive(next),
 
