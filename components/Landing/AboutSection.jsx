@@ -40,7 +40,7 @@ const transformBullet = [
   {
     id: 3,
     title: 'Implement & Integrate',
-    icon: '/icons/landing/manage.png',
+    icon: '/icons/landing/manage.svg',
     desc: 'Execute full-stack development, platform integration, cloud migration, and deploy Zero Trust/Quantum Security solutions.',
   },
   {
@@ -82,10 +82,10 @@ export default function AboutSection() {
             </div>
             <div className="relative  flex-1">
               {/* Vertical center line */}
-              <div className="absolute left-1/2 xl:block hidden top-0 bottom-0 border-l-2 border-dotted border-gray-300 transform -translate-x-1/2"></div>
+              <div className="absolute left-1/2 xl:block hidden top-0 bottom-0 border-l-1 border-dashed border-[#C0BFBFFF] transform -translate-x-1/2"></div>
 
               {/* Horizontal center line */}
-              <div className="absolute top-1/2 xl:block hidden left-0 right-0 border-t-2 border-dotted border-gray-300 transform -translate-y-1/2"></div>
+              <div className="absolute top-1/2 xl:block hidden left-0 right-0 border-t-1 border-dashed border-[#C0BFBFFF] transform -translate-y-1/2"></div>
 
               {/* 2x2 Grid Mobile */}
               <div className="grid grid-cols-1 gap-10 max-w-5xl mx-auto relative z-10 xl:hidden">

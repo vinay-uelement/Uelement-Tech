@@ -276,7 +276,7 @@
   --text-45: 45px;
 
   /* Shadow */
-  --shadow-down: 0 4px 4px 1px rgba(0, 0, 0, 0.2);
+  --shadow-down: 0 3px 4px 0 rgba(0, 0, 0, 0.25);
   --shadow-left-down: -4px 4px 4px 0px #00000040;
   --shadow-circle: 0px 0px 12px 0px #00000029;
   --shadow-hover: inset 0px 0px 12px 0px #00000029;

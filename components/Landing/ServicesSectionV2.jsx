@@ -91,10 +91,11 @@ const ServicesSection = () => {
               <button
                 key={tab.id}
                 onClick={() => setSelectedTab(tab)}
-                className={`relative px-6 py-3 min-w-[200px] text-sm sm:text-base font-semibold uppercase transition-all duration-250 flex-shrink-0 ${tab.id === selectedTab.id
-                  ? 'text-white'
-                  : 'text-gray-400 hover:text-gray-300'
-                  }`}
+                className={`relative px-6 py-3 min-w-[200px] text-sm sm:text-base font-semibold uppercase transition-all duration-250 flex-shrink-0 ${
+                  tab.id === selectedTab.id
+                    ? 'text-white'
+                    : 'text-gray-400 hover:text-gray-300'
+                }`}
                 style={{
                   marginRight: idx < tabs.length - 1 ? '56px' : '0',
                   zIndex: getZIndex(tab.id, idx),
@@ -102,8 +103,11 @@ const ServicesSection = () => {
               >
                 {/* Tab Background - Base */}
                 <span
-                  className={`absolute inset-0 transition-all duration-250  ${tab.id === selectedTab.id ? 'bg-primary-blue' : 'bg-[#FCFCFC] border-t border-gray-300 -z-10'
-                    }`}
+                  className={`absolute inset-0 transition-all duration-250  ${
+                    tab.id === selectedTab.id
+                      ? 'bg-primary-blue'
+                      : 'bg-[#FCFCFC] border-t border-gray-300 -z-10'
+                  }`}
                   style={{
                     boxShadow:
                       tab.id === selectedTab.id
@@ -114,26 +118,32 @@ const ServicesSection = () => {
 
                 {/* Left Skew  */}
                 <span
-                  className={`absolute top-0 h-full w-11 transition-all duration-250 z-10 ${tab.id === selectedTab.id ? 'bg-primary-blue' : 'bg-[#FCFCFC] border-t border-l border-gray-300'
-                    }`}
+                  className={`absolute top-0 h-full w-11 transition-all duration-250 z-10 ${
+                    tab.id === selectedTab.id
+                      ? 'bg-primary-blue'
+                      : 'bg-[#FCFCFC] border-t border-l border-gray-300'
+                  }`}
                   style={{
                     left: '-24px',
                     boxShadow:
                       'rgba(0,0,0,0.1) -3px 2px 5px, inset rgba(255,255,255,0.09) 1px 0',
-                    borderTopLeftRadius: '6px',
+                    borderTopLeftRadius: '30px',
                   }}
                 />
 
                 {/* Right Skew */}
                 <span
-                  className={`absolute top-0 h-full w-11 transition-all duration-250 z-20 ${tab.id === selectedTab.id ? 'bg-primary-blue' : 'bg-[#FCFCFC] border-t border-r border-gray-300'
-                    }`}
+                  className={`absolute top-0 h-full w-16 transition-all duration-250 z-20 ${
+                    tab.id === selectedTab.id
+                      ? 'bg-primary-blue'
+                      : 'bg-[#FCFCFC] border-t border-r border-gray-300'
+                  }`}
                   style={{
-                    right: '-24px',
+                    right: '-40px',
                     transform: 'skew(30deg, 0deg)',
                     boxShadow:
                       'rgba(0,0,0,0.1) 3px 2px 5px, inset rgba(255,255,255,0.09) -1px 0',
-                    borderTopRightRadius: '6px',
+                    borderTopRightRadius: '30px',
                   }}
                 />
 
@@ -194,8 +204,9 @@ const ServicesSection = () => {
 
                 {/* Dropdown Icon */}
                 <svg
-                  className={`relative z-30 w-4 h-4 sm:w-5 sm:h-5 transition-transform flex-shrink-0 ${isDropdownOpen ? 'rotate-180' : ''
-                    }`}
+                  className={`relative z-30 w-4 h-4 sm:w-5 sm:h-5 transition-transform flex-shrink-0 ${
+                    isDropdownOpen ? 'rotate-180' : ''
+                  }`}
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -219,10 +230,11 @@ const ServicesSection = () => {
                         setSelectedTab(tab);
                         setIsDropdownOpen(false);
                       }}
-                      className={`w-full text-left px-6 py-3 text-14 sm:text-16 transition-colors ${tab.id === selectedTab.id
-                        ? 'bg-[#0c142d] text-white'
-                        : 'bg-white text-black hover:bg-gray-100'
-                        }`}
+                      className={`w-full text-left px-6 py-3 text-14 sm:text-16 transition-colors ${
+                        tab.id === selectedTab.id
+                          ? 'bg-[#0c142d] text-white'
+                          : 'bg-white text-black hover:bg-gray-100'
+                      }`}
                     >
                       {tab.title}
                     </button>
@@ -233,9 +245,11 @@ const ServicesSection = () => {
           </div>
 
           {/* Tab Content */}
-          <div className="bg-hero-gradient text-white! p-6 sm:p-8 lg:p-10 xl:p-12 transition-all duration-300 ease-in-out rounded-tr-[4px] rounded-b-[4px] shadow-[0_-2px_4px_rgba(0,0,0,0.1)]">
+          <div className="bg-hero-gradient text-white! p-6 sm:p-8 lg:p-10 xl:p-12 transition-all duration-300 ease-in-out rounded-tr-[40px] rounded-b-[40px] shadow-[0_-2px_4px_rgba(0,0,0,0.1)]">
             <div className="animate-fade-in">
-              <h3 className="fl1 text-white! mb-4 sm:mb-6">{selectedTab.title}</h3>
+              <h3 className="fl1 text-white! mb-4 sm:mb-6">
+                {selectedTab.title}
+              </h3>
               <p className="fl3 text-white! leading-relaxed mb-8 sm:mb-16 lg:mb-20 md:w-[90%] w-full min-h-[220px] md:min-h-[100px]">
                 {selectedTab.desc}
               </p>
@@ -252,14 +266,14 @@ const ServicesSection = () => {
                   <button
                     disabled={index === 0}
                     onClick={prevSlide}
-                    className="w-8 h-8 sm:w-9 sm:h-9 md:w-10 md:h-10 dark-glass shadow-down rounded-full text-white flex items-center justify-center disabled:opacity-0 disabled:cursor-not-allowed transition-all duration-300 flex-shrink-0"
+                    className="w-8 h-8 sm:w-9 sm:h-9 md:w-10 md:h-10 bg-[#D4D4D41A] shadow-down rounded-full text-white flex items-center justify-center disabled:opacity-0 disabled:cursor-not-allowed transition-all duration-300 flex-shrink-0"
                   >
                     <span className="text-14 sm:text-16 md:text-18">
                       {ReactIcons.leftChev}
                     </span>
                   </button>
 
-                  <div className="dark-glass shadow-down rounded p-4 sm:p-5 md:p-6 flex-1 md:max-w-[500px] min-w-0">
+                  <div className="bg-[#D4D4D41A] shadow-down rounded-[30px] p-4 sm:p-5 md:p-6 flex-1 md:max-w-[500px] min-w-0">
                     <div className="relative overflow-hidden">
                       <div
                         className="flex transition-transform duration-500 ease-in-out"
@@ -280,7 +294,7 @@ const ServicesSection = () => {
                   <button
                     disabled={index === slides.length - 1}
                     onClick={nextSlide}
-                    className="w-8 h-8 sm:w-9 sm:h-9 md:w-10 md:h-10 dark-glass shadow-down rounded-full text-white flex items-center justify-center disabled:opacity-0 disabled:cursor-not-allowed transition-all duration-300 flex-shrink-0"
+                    className="w-8 h-8 sm:w-9 sm:h-9 md:w-10 md:h-10 bg-[#D4D4D41A] shadow-down rounded-full text-white flex items-center justify-center disabled:opacity-0 disabled:cursor-not-allowed transition-all duration-300 flex-shrink-0"
                   >
                     <span className="text-14 sm:text-16 md:text-18">
                       {ReactIcons.rightChev}
