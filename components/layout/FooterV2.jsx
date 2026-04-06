@@ -303,13 +303,13 @@ const ContactUs = () => {
           </h4>
           <p className="fl3 md:max-w-1/2 mx-auto leading-relaxed">
             Empower your enterprise with smarter, scalable security that adapts
-            to new threats—keeping your business safe, agile, and resilient.
+            to new threats keeping your business safe, agile, and resilient.
           </p>
         </div>
 
-        <div className="max-w-[1400px] mx-auto bg-white rounded-[4px] p-[8px] sm:p-[10px] grid grid-cols-1 lg:grid-cols-[40%_60%] shadow-[0px_4px_72.2px_0px_rgba(0,0,0,0.25)]">
-          <div className="bg-[linear-gradient(154.11deg,#0C142D_20.11%,#274193_124.27%)] rounded-[4px] p-6 sm:p-8 lg:p-10 xl:p-12 text-white flex flex-col justify-start gap-8 lg:gap-16 relative overflow-hidden min-h-[350px]">
-            <div className="absolute -bottom-8 -right-3 text-[160px] sm:text-[180px] lg:text-[200px] xl:text-[250px] font-bold text-[#111f3f] select-none pointer-events-none leading-none">
+        <div className="max-w-[1400px] mx-auto bg-white rounded-[30px] p-[8px] sm:p-[10px] grid grid-cols-1 lg:grid-cols-[40%_60%] shadow-[0px_4px_72.2px_0px_rgba(0,0,0,0.25)]">
+          <div className="bg-[linear-gradient(154.11deg,#0C142D_20%,#274193_100%)] rounded-[30px] p-6 sm:p-8 lg:p-10 xl:p-12 text-white flex flex-col justify-start gap-8 lg:gap-16 relative overflow-hidden min-h-[350px]">
+            <div className="absolute -bottom-8 -right-3 text-[160px] sm:text-[180px] lg:text-[200px] xl:text-[250px] font-bold text-[#488bf0]/8 select-none pointer-events-none leading-none">
               92
             </div>
 
@@ -344,10 +344,11 @@ const ContactUs = () => {
             {/* Success/Error Message */}
             {submitStatus.message && (
               <div
-                className={`mb-6 p-4 rounded-[4px] ${submitStatus.type === 'success'
-                  ? 'bg-green-100 text-green-700 border border-green-300'
-                  : 'bg-red-100 text-red-700 border border-red-300'
-                  }`}
+                className={`mb-6 p-4 rounded-[4px] ${
+                  submitStatus.type === 'success'
+                    ? 'bg-green-100 text-green-700 border border-green-300'
+                    : 'bg-red-100 text-red-700 border border-red-300'
+                }`}
               >
                 {submitStatus.message}
               </div>
@@ -467,8 +468,9 @@ const ContactUs = () => {
                   onBlur={handleBlur}
                   placeholder="Write your message.."
                   rows="1"
-                  className={`w-full placeholder:text-gray-8080 border-b ${errors.message ? 'border-b-red-600' : 'border-b-[#D7D7D7]'
-                    } font-reddit-sans text-14 py-2 resize-none focus:border-primary-blue transition-colors`}
+                  className={`w-full placeholder:text-gray-8080 border-b ${
+                    errors.message ? 'border-b-red-600' : 'border-b-[#D7D7D7]'
+                  } font-reddit-sans text-14 py-2 resize-none focus:border-primary-blue transition-colors`}
                 ></textarea>
                 {errors.message && (
                   <p className="text-red-600 text-12 mt-1 font-reddit-sans">
@@ -679,10 +681,11 @@ const FooterContent = () => {
 
               {newsletterStatus.message && (
                 <div
-                  className={`mb-3 rounded-[4px] px-3 py-2 text-13 sm:text-14 ${newsletterStatus.type === 'success'
-                    ? 'bg-green-100 text-green-700 border border-green-300'
-                    : 'bg-red-100 text-red-700 border border-red-300'
-                    }`}
+                  className={`mb-3 rounded-full px-3 py-2 text-13 sm:text-14 ${
+                    newsletterStatus.type === 'success'
+                      ? 'bg-green-100 text-green-700 border border-green-300'
+                      : 'bg-red-100 text-red-700 border border-red-300'
+                  }`}
                 >
                   {newsletterStatus.message}
                 </div>
@@ -692,7 +695,7 @@ const FooterContent = () => {
                 className="w-[200px] md:w-full space-y-3 "
                 onSubmit={handleNewsletterSubmit}
               >
-                <div className="relative bg-white rounded-[4px] px-4 py-3 flex items-center gap-2">
+                <div className="relative bg-white rounded-full px-4 py-3 flex items-center gap-2">
                   <span className="text-gray-400 text-16">
                     {ReactIcons.email}
                   </span>
@@ -840,10 +843,11 @@ const FooterContent = () => {
 
               {newsletterStatus.message && (
                 <div
-                  className={`mb-3 rounded-[4px] px-3 py-2 text-13 sm:text-14 ${newsletterStatus.type === 'success'
-                    ? 'bg-green-100 text-green-700 border border-green-300'
-                    : 'bg-red-100 text-red-700 border border-red-300'
-                    }`}
+                  className={`mb-3 rounded-full px-3 py-2 text-13 sm:text-14 ${
+                    newsletterStatus.type === 'success'
+                      ? 'bg-green-100 text-green-700 border border-green-300'
+                      : 'bg-red-100 text-red-700 border border-red-300'
+                  }`}
                 >
                   {newsletterStatus.message}
                 </div>
@@ -853,7 +857,7 @@ const FooterContent = () => {
                 className="w-[300px] md:w-[350px] space-y-3"
                 onSubmit={handleNewsletterSubmit}
               >
-                <div className="relative bg-white rounded-[4px] px-4 py-3 flex items-center gap-2">
+                <div className="relative bg-white rounded-full px-4 py-2 flex items-center gap-2">
                   <span className="text-gray-400 text-16">
                     {ReactIcons.email}
                   </span>

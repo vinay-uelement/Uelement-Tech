@@ -9,29 +9,24 @@ const services = [
   {
     id: 1,
     title: 'Digital Safety',
-    desc:
-      "Securing the future with quantum-resistant and zero-trust architecture. Resilient defenses against today's threats and quantum attacks.",
+    desc: "Securing the future with quantum-resistant and zero-trust architecture. Resilient defenses against today's threats and quantum attacks.",
   },
   {
     id: 2,
     title: 'Cloud Mastery',
-    desc:
-      'Architecting, Optimizing and Managing Seamless Multi-Cloud Environments. Scalable, secure infra with Zero Trust and FinOps.',
+    desc: 'Architecting, Optimizing and Managing Seamless Multi-Cloud Environments. Scalable, secure infra with Zero Trust and FinOps.',
   },
   {
     id: 3,
     title: 'Accelerated AI',
-    desc:
-      'Accelerating Intelligence with Responsible AI and Advanced Analytics. Ethical AI for precise insights and analytics.',
+    desc: 'Accelerating Intelligence with Responsible AI and Advanced Analytics. Ethical AI for precise insights and analytics.',
   },
   {
     id: 4,
     title: 'Future Tech',
-    desc:
-      'Pioneering Transformation with Quantum, Web3 and Digital Modernization. Quantum-ready, decentralized innovation.',
+    desc: 'Pioneering Transformation with Quantum, Web3 and Digital Modernization. Quantum-ready, decentralized innovation.',
   },
 ];
-
 
 const ServiceSegments = () => {
   const settings = {
@@ -46,47 +41,77 @@ const ServiceSegments = () => {
   return (
     <div className="pb-[var(--section-block-padding)] pt-[20px] container-padding">
       <div className="text-center">
-        <h1 className="font-noto-sans font-semibold text-20 md:text-26 xl:text-[35px] mb-2 md:mb-3 3xl:mb-4">Our Domains</h1>
+        <h1 className="font-noto-sans font-semibold text-20 md:text-26 xl:text-[35px] mb-2 md:mb-3 3xl:mb-4">
+          Our Domains
+        </h1>
         <p className="fl3 mb-0 md:mb-14">
           Deep expertise across four critical technology domains, from Zero
           Trust to Quantum Readiness.
         </p>
         <div className="hidden xl:grid xl:grid-cols-4 gap-6 text-left">
           <div className="p-6 pb-10 pt-14 rounded-[4px] text-white relative">
-          <Image src='/images/landing/card_bg.webp' width={1000} height={1000} className='absolute -z-10 top-0 right-0 object-fill h-full'/>
+            <Image
+              src="/images/landing/card_bg.webp"
+              alt="cardbg"
+              width={1000}
+              height={1000}
+              className="absolute -z-10 top-0 right-0 object-fill h-full"
+            />
             <h6 className="font-noto-sans font-medium text-18 md:text-24  mb-8 md:mb-12 max-w-[80%] ">
               Digital <br /> Safety
             </h6>
             <p className="fl3 !text-[#ffffff] mt-6">
-              Securing the Future with Quantum-Resistant and Zero Trust Architecture. Resilient defenses vs. today's threats and quantum attacks
+              Securing the Future with Quantum-Resistant and Zero Trust
+              Architecture. Resilient defenses vs. today's threats and quantum
+              attacks
             </p>
-
           </div>
           <div className="p-6 pb-10 pt-14 rounded-[4px] text-white relative">
-          <Image src='/images/landing/card_bg.webp' width={1000} height={1000} className='absolute -z-10 top-0 right-0 object-fill h-full'/>
+            <Image
+              src="/images/landing/card_bg.webp"
+              alt="cardbg"
+              width={1000}
+              height={1000}
+              className="absolute -z-10 top-0 right-0 object-fill h-full"
+            />
             <h6 className="font-noto-sans font-medium text-18 md:text-24  mb-8 md:mb-12 max-w-[80%] ">
               Cloud <br /> Mastery
             </h6>
             <p className="fl3 !text-[#ffffff] mt-6">
-              Architecting, Optimizing and Managing Seamless Multi-Cloud Environments. Scalable, secure infra with Zero Trust and FinOps.
+              Architecting, Optimizing and Managing Seamless Multi-Cloud
+              Environments. Scalable, secure infra with Zero Trust and FinOps.
             </p>
           </div>
           <div className="p-6 pb-10 pt-14 rounded-[4px] text-white relative">
-          <Image src='/images/landing/card_bg.webp' width={1000} height={1000} className='absolute -z-10 top-0 right-0 object-fill h-full'/>
+            <Image
+              src="/images/landing/card_bg.webp"
+              alt="cardbg"
+              width={1000}
+              height={1000}
+              className="absolute -z-10 top-0 right-0 object-fill h-full"
+            />
             <h6 className="font-noto-sans font-medium text-18 md:text-24  mb-8 md:mb-12 max-w-[80%] ">
               Accelerated <br /> AI
             </h6>
             <p className="fl3 !text-[#ffffff] mt-6">
-             Accelerating Intelligence with Responsible AI and Advanced Analytics. Ethical AI for precise insights and analytics.
+              Accelerating Intelligence with Responsible AI and Advanced
+              Analytics. Ethical AI for precise insights and analytics.
             </p>
           </div>
           <div className="p-6 pb-10 pt-14 rounded-[4px] text-white relative">
-          <Image src='/images/landing/card_bg.webp' width={1000} height={1000} className='absolute -z-10 top-0 right-0 object-fill h-full'/>
+            <Image
+              src="/images/landing/card_bg.webp"
+              alt="cardbg"
+              width={1000}
+              height={1000}
+              className="absolute -z-10 top-0 right-0 object-fill h-full"
+            />
             <h6 className="font-noto-sans font-medium text-18 md:text-24  mb-8 md:mb-12 max-w-[80%] ">
               Future <br /> Tech
             </h6>
             <p className="fl3 !text-[#ffffff] mt-6">
-             Pioneering Transformation with Quantum, Web3 and Digital Modernization. Quantum-ready, decentralized innovation.
+              Pioneering Transformation with Quantum, Web3 and Digital
+              Modernization. Quantum-ready, decentralized innovation.
             </p>
           </div>
         </div>
