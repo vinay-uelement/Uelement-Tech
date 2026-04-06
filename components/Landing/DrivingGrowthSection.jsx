@@ -67,13 +67,12 @@ const DrivingGrowthSection = () => {
     dots: true,
     infinite: true,
     speed: 700,
-    slidesToShow: 3,
+    slidesToShow: 1, // ← was 3
     slidesToScroll: 1,
     arrows: false,
-    fade: false,
+    fade: true, // ← smooth fade between single cards
     autoplay: true,
     autoplaySpeed: 3000,
-
     beforeChange: (_, next) => setActive(next),
 
     appendDots: (dots) => (
@@ -84,7 +83,6 @@ const DrivingGrowthSection = () => {
 
     customPaging: (i) => {
       const size = getDotSize(i);
-
       return (
         <div
           className="flex items-center justify-center mt-5"
@@ -98,7 +96,7 @@ const DrivingGrowthSection = () => {
               background: i === active ? '#0C142D' : '#D9D9D9',
               transition: 'all 0.3s ease',
             }}
-          ></div>
+          />
         </div>
       );
     },
@@ -181,73 +179,75 @@ const DrivingGrowthSection = () => {
             </div>
           </div>
 
-          {/* Right Side Slider (React Slick) */}
-          <Slider ref={sliderRef} {...settings}>
-            {slides.map((item, index) => {
-              const total = slides.length;
+          {/* Stack wrapper — ghost cards + real slider */}
+          <div className="relative mr-4">
+            {/* Ghost card 3 — furthest back */}
+            <div
+              className="absolute inset-1 rounded-[40px] bg-[#F7F7F7FF]"
+              style={{
+                transform: 'translate(18px, -26px)',
+                zIndex: 0,
+                boxShadow: '0 4px 16px rgba(0,0,0,0.10)',
+              }}
+            />
 
-              const leftIndex = active % total;
-              const centerIndex = (active + 1) % total;
-              const rightIndex = (active + 2) % total;
+            {/* Ghost card 2 — middle */}
+            <div
+              className="absolute inset-1 rounded-[40px] bg-[#EAEAEAFF]"
+              style={{
+                transform: 'translate(12px, -20px)',
+                zIndex: 1,
+                boxShadow: '0 4px 16px rgba(0,0,0,0.08)',
+              }}
+            />
 
-              let posClass = '';
-              let zIndex = 1;
-              let textOpacity = 0;
+            {/* Ghost card 1 — closest */}
+            <div
+              className="absolute inset-1 rounded-[40px] bg-[#D9D9D9FF]"
+              style={{
+                transform: 'translate(6px, -12px)',
+                zIndex: 2,
+                boxShadow: '0 4px 16px rgba(0,0,0,0.06)',
+              }}
+            />
 
-              if (index === leftIndex) {
-                posClass = 'dg-left-big';
-                zIndex = 30;
-                textOpacity = 1;
-              } else if (index === centerIndex) {
-                posClass = 'dg-center-medium';
-                zIndex = 20;
-                textOpacity = 0.4;
-              } else if (index === rightIndex) {
-                posClass = 'dg-right-small';
-                zIndex = 10;
-                textOpacity = 0.3;
-              } else {
-                posClass = 'dg-hidden-small';
-                zIndex = 0;
-                textOpacity = 0;
-              }
-
-              return (
-                <div key={item.id}>
-                  <div
-                    className={`dg-card-wrapper ml-6 md:ml-0 ${posClass}`}
-                    style={{ zIndex, position: 'relative' }}
-                  >
+            {/* Real slider on top */}
+            <div className="relative" style={{ zIndex: 2 }}>
+              <Slider ref={sliderRef} {...settings}>
+                {slides.map((item) => (
+                  <div key={item.id} className="px-2">
                     <div
-                      className="relative w-[200px] h-[280px] md:w-[320px] md:h-[320px] xl:w-[360px] xl:h-[370px] 2xl:w-[360px] 2xl:h-[450px] rounded-[4px] overflow-hidden"
+                      className="relative w-full rounded-[40px] overflow-hidden"
                       style={{
+                        height: 'clamp(240px, 28vw, 360px)', // ← slightly taller
                         backgroundImage: `url(${item.img})`,
                         backgroundSize: 'cover',
                         backgroundPosition: 'center',
                       }}
                     >
-                      <div className="bg-black/80 h-full w-full p-3 relative z-10">
-                        <div
-                          style={{ opacity: textOpacity }}
-                          className="transition-opacity duration-700 h-full flex flex-col gap-8 text-center px-2 md:px-10 py-4 "
-                        >
-                          <h5 className="text-14 xl:text-24 font-notos-sans font-medium text-white mb-0 md:mb-2">
-                            {item.title}
-                          </h5>
-                          <p className="fl3 !text-white mb-auto">{item.desc}</p>
-                        </div>
+                      {/* Gradient overlay */}
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent z-10" />
+
+                      {/* Text pinned bottom-left */}
+                      <div className="relative z-20 h-full flex flex-col justify-end px-6 py-5 md:px-8 md:py-6">
+                        <h5 className="text-16 md:text-20 xl:text-24 font-noto-sans font-semibold text-white mb-1 leading-tight">
+                          {item.title}
+                        </h5>
+                        <p className="fl3 !text-white/80 text-12 md:text-14 line-clamp-2">
+                          {item.desc}
+                        </p>
                       </div>
                     </div>
                   </div>
-                </div>
-              );
-            })}
-          </Slider>
+                ))}
+              </Slider>
+            </div>
+          </div>
 
           <div className="absolute inset-y-0 -right-1 md:-right-18 xl:-right-14 flex items-center z-20">
             <div
               onClick={nextSlide}
-              className="size-[26px] xl:size-[40px] text-20 lg:text-26  rounded-full bg-[#DEDEDE73] shadow-down grid place-content-center cursor-pointer transition text-black lg:text-primary-blue"
+              className="size-[26px] xl:size-[40px] text-20 lg:text-26 rounded-full bg-[#DEDEDE73] shadow-down grid place-content-center cursor-pointer transition text-black lg:text-primary-blue"
             >
               <span>{ReactIcons.rightChev}</span>
             </div>
