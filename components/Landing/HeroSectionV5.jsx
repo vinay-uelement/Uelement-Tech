@@ -80,7 +80,13 @@ const HeroSectionV5 = () => {
 
   return (
     <section className="h-screen flex flex-col relative">
-      <Image src='/images/landing/hero_bg1.webp' alt='hero_bg' className='absolute -z-10 object-fill h-full w-full hidden md:block' height={1000} width={1000} />
+      <Image
+        src="/images/landing/hero_bg1.webp"
+        alt="hero_bg"
+        className="absolute -z-10 object-fill h-full w-full hidden md:block p-2"
+        height={1000}
+        width={1000}
+      />
       <div className="h-[calc(100%-80px)] w-full relative text-white rounded-[4px] rounded-bl-[50px] rounded-br-none">
         <div className="h-full w-full flex flex-col md:flex-row">
           <div className="w-full h-[60%] md:h-full md:w-[40%] pl-[var(--container-small-padding)] flex flex-col justify-end md:justify-center ">
@@ -88,10 +94,13 @@ const HeroSectionV5 = () => {
               We Are <br /> Digital <br className=" md:block" /> Mavericks.
             </h1>
             <p className="mt-8 fl3 !text-[#ffffff] !text-[12px] md:!text-[20px] md:mb-10 xl:mb-20 mb-8 ">
-              Engineering Quantum-Driven Digital Synapses at the
-              intersection of Cybersecurity, Cloud & AI.
+              Engineering Quantum-Driven Digital Synapses at the intersection of
+              Cybersecurity, Cloud & AI.
             </p>
-            <button onClick={handleContactus} className="btn-yellow w-fit md:hidden">
+            <button
+              onClick={handleContactus}
+              className="btn-yellow w-fit md:hidden"
+            >
               Contact Us
             </button>
           </div>
@@ -100,9 +109,11 @@ const HeroSectionV5 = () => {
           </div>
         </div>
 
-
-        <div className='absolute right-8 top-[78vh] w-full flex justify-between '>
-          <button onClick={handleContactus} className="btn-yellow w-fit translate-x-4/5 hidden md:block">
+        <div className="absolute right-8 top-[78vh] w-full flex justify-between ">
+          <button
+            onClick={handleContactus}
+            className="btn-yellow w-fit translate-x-4/5 hidden md:block"
+          >
             Contact Us
           </button>
           {/* Desktop slider with hover pause */}
@@ -144,7 +155,6 @@ const HeroSectionV5 = () => {
           </div>
         </div>
 
-
         {/* Mobile slider with swipe support */}
         <div
           className="absolute z-30 w-full h-[50px] overflow-hidden bottom-0 flex md:hidden items-center px-2"
@@ -173,7 +183,6 @@ const HeroSectionV5 = () => {
       </div>
 
       {/* Desktop background */}
-
 
       {/* Mobile background */}
       <div
