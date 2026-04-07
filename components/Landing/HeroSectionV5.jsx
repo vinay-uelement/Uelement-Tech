@@ -80,7 +80,7 @@ const HeroSectionV5 = () => {
 
   return (
     <section className="h-screen flex flex-col relative">
-      <Image src='/images/landing/hero_bg.webp' alt='hero_bg' className='absolute -z-10 object-fill h-full w-full hidden md:block' height={1000} width={1000} />
+      <Image src='/images/landing/hero_bg1.webp' alt='hero_bg' className='absolute -z-10 object-fill h-full w-full hidden md:block' height={1000} width={1000} />
       <div className="h-[calc(100%-80px)] w-full relative text-white rounded-[4px] rounded-bl-[50px] rounded-br-none">
         <div className="h-full w-full flex flex-col md:flex-row">
           <div className="w-full h-[60%] md:h-full md:w-[40%] pl-[var(--container-small-padding)] flex flex-col justify-end md:justify-center ">
