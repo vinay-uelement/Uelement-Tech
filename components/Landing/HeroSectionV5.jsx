@@ -87,7 +87,7 @@ const HeroSectionV5 = () => {
       <div className="h-[calc(100%-80px)] w-full relative text-white rounded-[4px] rounded-bl-none md:rounded-bl-[50px] rounded-br-none">
         <div className="h-full w-full flex flex-col md:flex-row">
           <div className="w-full h-[60%] md:h-full md:w-[40%] pl-[var(--container-small-padding)] flex flex-col justify-end md:justify-center">
-            <h1 className="fl-main tracking-wider leading-[1.2] mt-5 xl:mt-5 md:mt-15">
+            <h1 className="fl-main tracking-wider leading-[1.2] mt-0 md:mt-10 xl:mt-0 ">
               We Are <br /> Digital <br className="md:block" /> Mavericks.
             </h1>
             <p className="mt-8 fl3 !text-[#ffffff] !text-[12px] md:!text-[20px] md:mb-10 xl:mb-20 mb-8">
@@ -192,14 +192,14 @@ const HeroSectionV5 = () => {
       <svg
         className="md:hidden absolute pointer-events-none z-10"
         style={{ bottom: '8px', right: '8px' }}
-        width="400"
+        width="310"
         height="60"
-        viewBox="0 0 312 60"
+        viewBox="0 0 302 59"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
-          d="M49.73 0.5H400.5V59.5H0.34C7.72 58.02 12.68 54.97 16.12 50.95C21.03 45.21 22.75 37.58 24.11 30.09C25.47 22.54 26.47 15.16 29.84 9.64C31.51 6.89 33.76 4.62 36.94 3.03C40.12 1.43 44.26 0.5 49.73 0.5Z"
+          d="M49.73 0.5H310.5V59.5H0.34C7.72 58.02 12.68 54.97 16.12 50.95C21.03 45.21 22.75 37.58 24.11 30.09C25.47 22.54 26.47 15.16 29.84 9.64C31.51 6.89 33.76 4.62 36.94 3.03C40.12 1.43 44.26 0.5 49.73 0.5Z"
           fill="white"
           stroke="white"
         />
