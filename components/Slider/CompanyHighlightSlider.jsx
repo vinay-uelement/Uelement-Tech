@@ -35,7 +35,15 @@ const CompanyHighlightSlider = ({ data }) => {
   if (!data || data.length === 0) return null;
 
   return (
-    <div className="px-0 md:px-2 pb-2 pt-1">
+    <div className="relative px-0 md:px-2 pb-2 pt-1">
+      {data[activeIndex]?.date && (
+        <p className="absolute top-0 right-2 font-reddit-sans text-13 md:text-14 text-primary-blue font-bold z-10">
+          Date:{' '}
+          <span className="text-primary-blue font-bold">
+            {data[activeIndex].date}
+          </span>
+        </p>
+      )}
       <Slider ref={sliderRef} {...settings}>
         {data.map((item) => (
           <div key={item.id}>
@@ -59,15 +67,7 @@ const CompanyHighlightSlider = ({ data }) => {
               </div>
 
               {/* Right — Content */}
-              <div className="flex flex-col gap-4 md:gap-6 py-2 md:py-4">
-                {item.date && (
-                  <p className="font-reddit-sans text-13 md:text-14 text-gray-500 text-right font-medium">
-                    Date:{' '}
-                    <span className="text-primary-blue font-semibold">
-                      {item.date}
-                    </span>
-                  </p>
-                )}
+              <div className="flex flex-col gap-4 md:gap-6 py-2 md:py-4 bg-red-600">
                 <h2 className="fl1 !text-[#232223] leading-snug">
                   {item.title}
                 </h2>
@@ -76,9 +76,7 @@ const CompanyHighlightSlider = ({ data }) => {
                 </p>
                 <div className="mt-2">
                   <Link href={item.link}>
-                    <button className="btn-blue ">
-                      Schedule a Demo
-                    </button>
+                    <button className="btn-blue ">Schedule a Demo</button>
                   </Link>
                 </div>
               </div>
