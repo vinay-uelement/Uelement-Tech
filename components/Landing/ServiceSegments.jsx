@@ -1,9 +1,7 @@
 'use client';
-import { ReactIcons } from '@/utils/ReactIcons';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import Slider from 'react-slick';
-import Image from 'next/image';
 
 const services = [
   {
@@ -14,126 +12,115 @@ const services = [
   {
     id: 2,
     title: 'Cloud Mastery',
-    desc: 'Architecting, Optimizing and Managing Seamless Multi-Cloud Environments. Scalable, secure infra with Zero Trust and FinOps.',
+    desc: 'Architecting, optimizing and managing seamless multi-cloud environments. Scalable, secure infra with Zero Trust and FinOps.',
   },
   {
     id: 3,
     title: 'Accelerated AI',
-    desc: 'Accelerating Intelligence with Responsible AI and Advanced Analytics. Ethical AI for precise insights and analytics.',
+    desc: 'Accelerating intelligence with responsible AI and advanced analytics. Ethical AI for precise insights and analytics.',
   },
   {
     id: 4,
     title: 'Future Tech',
-    desc: 'Pioneering Transformation with Quantum, Web3 and Digital Modernization. Quantum-ready, decentralized innovation.',
+    desc: 'Pioneering transformation with Quantum, Web3 and digital modernization. Quantum-ready, decentralized innovation.',
   },
 ];
 
+const OUTER_MARGIN = '16rem'; // matches your pl-42 / pr-42
+const CARD_GAP = '1rem'; // gap between the two text cards per row
+
+const TextCard = ({ title, desc }) => (
+  <div className="bg-[#F0F0F0] rounded-[38px] p-6 xl:p-8 flex flex-col items-center text-center gap-4 h-full">
+    <div className="w-[48px] h-[48px] rounded-full bg-[#D4D4D4] flex-shrink-0" />
+    <h6 className="font-noto-sans font-bold text-16 xl:text-18 text-[#232223]">
+      {title}
+    </h6>
+    <div className="w-full border-t border-dashed border-[#C0C0C0]" />
+    <p className="fl3 !text-[#1c1c1c] leading-relaxed">{desc}</p>
+  </div>
+);
+
 const ServiceSegments = () => {
-  const settings = {
+  const sliderSettings = {
     dots: true,
     infinite: true,
     slidesToShow: 1,
     slidesToScroll: 1,
-    centerMode: false,
     speed: 500,
+    arrows: false,
   };
 
   return (
-    <div className="pb-[var(--section-block-padding)] pt-[20px] container-padding">
-      <div className="text-center">
-        <h1 className="font-noto-sans font-semibold text-20 md:text-26 xl:text-[35px] mb-2 md:mb-3 3xl:mb-4">
-          Our Domains
-        </h1>
-        <p className="fl3 mb-0 md:mb-14">
+    <div className="pb-[var(--section-block-padding)] pt-[20px]">
+      {/* Header */}
+      <div className="text-center mb-10 md:mb-14 container-padding">
+        <h1 className="fl1-sep mb-2 md:mb-3">Our Domains</h1>
+        <p className="fl3 text-[#808080]">
           Deep expertise across four critical technology domains, from Zero
           Trust to Quantum Readiness.
         </p>
-        <div className="hidden xl:grid xl:grid-cols-4 gap-6 text-left">
-          <div className="p-6 pb-10 pt-14 rounded-[4px] text-white relative">
-            <Image
-              src="/images/landing/card_bg.webp"
-              alt="cardbg"
-              width={1000}
-              height={1000}
-              className="absolute -z-10 top-0 right-0 object-fill h-full"
-            />
-            <h6 className="font-noto-sans font-medium text-18 md:text-24  mb-8 md:mb-12 max-w-[80%] ">
-              Digital <br /> Safety
-            </h6>
-            <p className="fl3 !text-[#ffffff] mt-6">
-              Securing the Future with Quantum-Resistant and Zero Trust
-              Architecture. Resilient defenses vs. today's threats and quantum
-              attacks
-            </p>
+      </div>
+
+      {/* Desktop — 2 flex rows
+          Row 1: [←margin] Card1 [gap] Card2 [flush] Image→
+          Row 2: ←Image [flush] Card3 [gap] Card4 [margin→]
+          All 4 cards = (viewport - margin - gap) / 3  →  equal width ✓
+          Images also = same 1/3 share, bleed to viewport edge ✓          */}
+      <div className="hidden xl:flex flex-col gap-8">
+        {/* Row 1 */}
+        <div className="flex items-stretch h-[300px]">
+          <div
+            style={{ flex: 0.95, marginLeft: OUTER_MARGIN, marginRight: CARD_GAP }}
+          >
+            <TextCard title={services[0].title} desc={services[0].desc} />
           </div>
-          <div className="p-6 pb-10 pt-14 rounded-[4px] text-white relative">
-            <Image
-              src="/images/landing/card_bg.webp"
-              alt="cardbg"
-              width={1000}
-              height={1000}
-              className="absolute -z-10 top-0 right-0 object-fill h-full"
-            />
-            <h6 className="font-noto-sans font-medium text-18 md:text-24  mb-8 md:mb-12 max-w-[80%] ">
-              Cloud <br /> Mastery
-            </h6>
-            <p className="fl3 !text-[#ffffff] mt-6">
-              Architecting, Optimizing and Managing Seamless Multi-Cloud
-              Environments. Scalable, secure infra with Zero Trust and FinOps.
-            </p>
+          {/* marginRight: 0 → flush against image */}
+          <div style={{ flex: 0.95 }}>
+            <TextCard title={services[1].title} desc={services[1].desc} />
           </div>
-          <div className="p-6 pb-10 pt-14 rounded-[4px] text-white relative">
-            <Image
-              src="/images/landing/card_bg.webp"
-              alt="cardbg"
-              width={1000}
-              height={1000}
-              className="absolute -z-10 top-0 right-0 object-fill h-full"
+          <div
+            style={{ flex: 1.5 }}
+            className="overflow-hidden rounded-l-[38px] ml-[1rem]"
+          >
+            <img
+              src="/images/landing/domain-1.webp"
+              alt="Domain visual 1"
+              className="w-full h-full object-cover"
             />
-            <h6 className="font-noto-sans font-medium text-18 md:text-24  mb-8 md:mb-12 max-w-[80%] ">
-              Accelerated <br /> AI
-            </h6>
-            <p className="fl3 !text-[#ffffff] mt-6">
-              Accelerating Intelligence with Responsible AI and Advanced
-              Analytics. Ethical AI for precise insights and analytics.
-            </p>
-          </div>
-          <div className="p-6 pb-10 pt-14 rounded-[4px] text-white relative">
-            <Image
-              src="/images/landing/card_bg.webp"
-              alt="cardbg"
-              width={1000}
-              height={1000}
-              className="absolute -z-10 top-0 right-0 object-fill h-full"
-            />
-            <h6 className="font-noto-sans font-medium text-18 md:text-24  mb-8 md:mb-12 max-w-[80%] ">
-              Future <br /> Tech
-            </h6>
-            <p className="fl3 !text-[#ffffff] mt-6">
-              Pioneering Transformation with Quantum, Web3 and Digital
-              Modernization. Quantum-ready, decentralized innovation.
-            </p>
           </div>
         </div>
-        <div className="mt-6 xl:hidden text-left testimonial-slick pb-[var(--section-block-padding)]">
-          <Slider {...settings}>
-            {services.map((service) => (
-              <div key={service.id} className="p-4">
-                <div className="w-full p-6 bg-primary-blue text-white relative h-[220px] shadow-left-down">
-                  <h6 className="font-noto-sans font-medium !text-white text-18 max-w-[80%]">
-                    {service.title}
-                  </h6>
-                  <p className="fl3 !text-white mt-6">{service.desc}</p>
-                  <div className="w-[50px] h-[50px] bg-secondary shadow-left-down absolute -top-3 -right-3 flex items-center justify-center text-30">
-                    <div className="absolute top-0 right-0 text-34">
-                      {ReactIcons.arrowOutWard}
-                    </div>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </Slider>
+
+        {/* Row 2 */}
+        <div className="flex items-stretch h-[300px]">
+          <div
+            style={{ flex: 1.5 }}
+            className="overflow-hidden rounded-r-[38px] mr-[1rem]"
+          >
+            <img
+              src="/images/landing/domain-2.webp"
+              alt="Domain visual 2"
+              className="w-full h-full object-cover"
+            />
+          </div>
+          {/* marginLeft: 0 → flush against image */}
+          <div style={{ flex: 0.95, marginRight: CARD_GAP }}>
+            <TextCard title={services[2].title} desc={services[2].desc} />
+          </div>
+          <div style={{ flex: 0.95, marginRight: OUTER_MARGIN }}>
+            <TextCard title={services[3].title} desc={services[3].desc} />
+          </div>
         </div>
+      </div>
+
+      {/* Mobile Slider */}
+      <div className="xl:hidden container-padding testimonial-slick pb-[var(--section-block-padding)]">
+        <Slider {...sliderSettings}>
+          {services.map((s) => (
+            <div key={s.id} className="px-2">
+              <TextCard title={s.title} desc={s.desc} />
+            </div>
+          ))}
+        </Slider>
       </div>
     </div>
   );
