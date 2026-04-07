@@ -155,7 +155,7 @@ const FutureTech = () => {
               </div>
               <div className="w-[60px] md:w-[120px] h-[4px] bg-[#D2D2D2]"></div>
               <span className="text-white font-noto-sans text-16 sm:text-20 md:text-24 font-semibold">
-                Future Tech
+                Quantum & Web3
               </span>
             </div>
 

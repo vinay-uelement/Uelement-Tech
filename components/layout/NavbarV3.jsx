@@ -31,37 +31,37 @@ const navbarList = [
       },
       {
         id: 4,
-        label: 'Future Tech',
+        label: 'Quantum & Web3',
         desc: 'Quantum-ready and next-generation technologies designed to future-proof enterprise infrastructure.',
         link: '/future-tech',
       },
     ],
   },
-  {
-    id: 2,
-    label: 'Resources',
-    link: '/resources',
-    children: [
-      {
-        id: 1,
-        link: '/resources',
-        label: 'Blogs',
-        desc: 'Thoughts, insights, and reflections from my creative journey.',
-      },
-      {
-        id: 2,
-        link: '/resources',
-        label: 'Case Study',
-        desc: 'A deep dive into my projects, process, and problem-solving approach.',
-      },
-      {
-        id: 3,
-        link: '/resources',
-        label: 'Research',
-        desc: 'Exploring data, user behavior, and design trends to uncover insights.',
-      },
-    ],
-  },
+  // {
+  //   id: 2,
+  //   label: 'Resources',
+  //   link: '/resources',
+  //   children: [
+  //     {
+  //       id: 1,
+  //       link: '/resources',
+  //       label: 'Blogs',
+  //       desc: 'Thoughts, insights, and reflections from my creative journey.',
+  //     },
+  //     {
+  //       id: 2,
+  //       link: '/resources',
+  //       label: 'Case Study',
+  //       desc: 'A deep dive into my projects, process, and problem-solving approach.',
+  //     },
+  //     {
+  //       id: 3,
+  //       link: '/resources',
+  //       label: 'Research',
+  //       desc: 'Exploring data, user behavior, and design trends to uncover insights.',
+  //     },
+  //   ],
+  // },
   {
     id: 3,
     label: 'Partnership',
@@ -88,6 +88,7 @@ const navbarList = [
     ],
   },
   { id: 4, label: 'Company', link: '/company' },
+  { id: 5, label: 'Blogs', link: '/resources' },
 ];
 
 const NO_DROPDOWN_LINKS = [];

@@ -14,10 +14,10 @@ const LandingPage = () => {
         <DrivingGrowthSection />
       </div>
       <div>
-        <HighlightV2 />
+        <AboutSection />
       </div>
       <div>
-        <AboutSection />
+        <HighlightV2 />
       </div>
       <div>
         <ServiceSegments />

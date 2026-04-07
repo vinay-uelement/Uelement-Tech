@@ -63,7 +63,7 @@ const Aiml = () => {
       id: 3,
       image: '/images/global/pioneer.png',
       icon: '/icons/global/futuretech-icon.svg',
-      label: 'Future Tech',
+      label: 'Quantum & Web3',
       link: '/future-tech',
       title: 'Pioneering Transformation with Quantum Readiness.',
       description:
