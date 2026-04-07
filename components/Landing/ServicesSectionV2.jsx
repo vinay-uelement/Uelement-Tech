@@ -127,7 +127,7 @@ const ServicesSection = () => {
                     left: '-24px',
                     boxShadow:
                       'rgba(0,0,0,0.1) -3px 2px 5px, inset rgba(255,255,255,0.09) 1px 0',
-                    borderTopLeftRadius: '30px',
+                    borderTopLeftRadius: '20px',
                   }}
                 />
 
@@ -143,7 +143,7 @@ const ServicesSection = () => {
                     transform: 'skew(30deg, 0deg)',
                     boxShadow:
                       'rgba(0,0,0,0.1) 3px 2px 5px, inset rgba(255,255,255,0.09) -1px 0',
-                    borderTopRightRadius: '30px',
+                    borderTopRightRadius: '20px',
                   }}
                 />
 
@@ -181,7 +181,7 @@ const ServicesSection = () => {
 
                     // boxShadow:
                     //   'rgba(0,0,0,0.1) -3px 2px 5px, inset rgba(255,255,255,0.09) 1px 0',
-                    borderTopLeftRadius: '6px',
+                    borderTopLeftRadius: '28px',
                   }}
                 />
 
@@ -222,7 +222,7 @@ const ServicesSection = () => {
 
               {/* Dropdown Menu */}
               {isDropdownOpen && (
-                <div className="absolute top-full left-0 mt-2 w-[280px] sm:w-[320px] bg-white rounded shadow-lg overflow-hidden z-50">
+                <div className="absolute top-full left-0 mt-2 w-[280px] sm:w-[320px] bg-white rounded-[18px] shadow-lg overflow-hidden z-50">
                   {tabs.map((tab) => (
                     <button
                       key={tab.id}
@@ -245,7 +245,7 @@ const ServicesSection = () => {
           </div>
 
           {/* Tab Content */}
-          <div className="bg-hero-gradient text-white! p-6 sm:p-8 lg:p-10 xl:p-12 transition-all duration-300 ease-in-out rounded-tr-[40px] rounded-b-[40px] shadow-[0_-2px_4px_rgba(0,0,0,0.1)]">
+          <div className="bg-hero-gradient text-white! p-6 sm:p-8 lg:p-10 xl:p-12 transition-all duration-300 ease-in-out rounded-tr-[38px] rounded-b-[38px] shadow-[0_-2px_4px_rgba(0,0,0,0.1)]">
             <div className="animate-fade-in">
               <h3 className="fl1 text-white! mb-4 sm:mb-6">
                 {selectedTab.title}
@@ -273,7 +273,7 @@ const ServicesSection = () => {
                     </span>
                   </button>
 
-                  <div className="bg-[#D4D4D41A] shadow-down rounded-[30px] p-4 sm:p-5 md:p-6 flex-1 md:max-w-[500px] min-w-0">
+                  <div className="bg-[#D4D4D41A] shadow-down rounded-[28px] p-4 sm:p-5 md:p-6 flex-1 md:max-w-[500px] min-w-0">
                     <div className="relative overflow-hidden">
                       <div
                         className="flex transition-transform duration-500 ease-in-out"
