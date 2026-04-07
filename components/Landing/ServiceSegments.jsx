@@ -70,7 +70,11 @@ const ServiceSegments = () => {
         {/* Row 1 */}
         <div className="flex items-stretch h-[300px]">
           <div
-            style={{ flex: 0.95, marginLeft: OUTER_MARGIN, marginRight: CARD_GAP }}
+            style={{
+              flex: 0.95,
+              marginLeft: OUTER_MARGIN,
+              marginRight: CARD_GAP,
+            }}
           >
             <TextCard title={services[0].title} desc={services[0].desc} />
           </div>
@@ -113,14 +117,33 @@ const ServiceSegments = () => {
       </div>
 
       {/* Mobile Slider */}
-      <div className="xl:hidden container-padding testimonial-slick pb-[var(--section-block-padding)]">
-        <Slider {...sliderSettings}>
-          {services.map((s) => (
-            <div key={s.id} className="px-2">
-              <TextCard title={s.title} desc={s.desc} />
-            </div>
-          ))}
-        </Slider>
+      {/* Mobile Grid — replaces Slider entirely */}
+      <div className="xl:hidden container-padding pb-[var(--section-block-padding)]">
+        <div className="grid grid-cols-2 gap-3">
+          {/* Row 1: Image top-left | Card 1 top-right */}
+          <div className="rounded-[28px] overflow-hidden min-h-[200px]">
+            <img
+              src="/images/landing/domain-1.webp"
+              alt="Domain visual 1"
+              className="w-full h-full object-cover"
+            />
+          </div>
+          <TextCard title={services[0].title} desc={services[0].desc} />
+
+          {/* Row 2: Card 2 | Card 3 */}
+          <TextCard title={services[1].title} desc={services[1].desc} />
+          <TextCard title={services[2].title} desc={services[2].desc} />
+
+          {/* Row 3: Card 4 bottom-left | Image bottom-right */}
+          <TextCard title={services[3].title} desc={services[3].desc} />
+          <div className="rounded-[28px] overflow-hidden min-h-[200px]">
+            <img
+              src="/images/landing/domain-2.webp"
+              alt="Domain visual 2"
+              className="w-full h-full object-cover"
+            />
+          </div>
+        </div>
       </div>
     </div>
   );
