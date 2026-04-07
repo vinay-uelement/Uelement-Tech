@@ -37,7 +37,7 @@ const CompanyHighlightSlider = ({ data }) => {
   return (
     <div className="relative px-0 md:px-2 pb-2 pt-1">
       {data[activeIndex]?.date && (
-        <p className="absolute top-0 right-2 font-reddit-sans text-13 md:text-14 text-primary-blue font-bold z-10">
+        <p className="absolute top-0 right-4 md:right-0 font-reddit-sans text-13 md:text-14 text-primary-blue font-bold z-10">
           Date:{' '}
           <span className="text-primary-blue font-bold">
             {data[activeIndex].date}
@@ -67,16 +67,18 @@ const CompanyHighlightSlider = ({ data }) => {
               </div>
 
               {/* Right — Content */}
-              <div className="flex flex-col gap-4 md:gap-6 py-2 md:py-4 bg-red-600">
-                <h2 className="fl1 !text-[#232223] leading-snug">
-                  {item.title}
-                </h2>
-                <p className="fl3 text-[#555555] leading-relaxed">
-                  {item.desc}
-                </p>
-                <div className="mt-2">
+              <div className="flex flex-col justify-between items-center md:items-start h-[220px] sm:h-[280px] md:h-[340px] lg:h-[360px] mt-6 sm:mt-8 md:mt-[62px]">
+                <div className="flex flex-col gap-4 md:gap-6">
+                  <h2 className="fl1 !text-[#232223] text-center md:text-start leading-snug">
+                    {item.title}
+                  </h2>
+                  <p className="fl3 text-[#555555] text-center md:text-start leading-relaxed">
+                    {item.desc}
+                  </p>
+                </div>
+                <div>
                   <Link href={item.link}>
-                    <button className="btn-blue ">Schedule a Demo</button>
+                    <button className="btn-blue">Schedule a Demo</button>
                   </Link>
                 </div>
               </div>
