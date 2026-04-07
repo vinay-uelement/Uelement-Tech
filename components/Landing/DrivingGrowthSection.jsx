@@ -169,7 +169,7 @@ const DrivingGrowthSection = () => {
           </button>
         </div>
 
-        <div className="relative overflow-visible md:!w-[40%] w-full driving-slider">
+        <div className="relative overflow-visible md:!w-[45%] w-full driving-slider">
           <div className="absolute inset-y-0 -left-2 md:-left-15 flex items-center z-20">
             <div
               onClick={prevSlide}
@@ -183,7 +183,7 @@ const DrivingGrowthSection = () => {
           <div className="relative mr-4">
             {/* Ghost card 3 — furthest back */}
             <div
-              className="absolute inset-1 rounded-[40px] bg-[#F7F7F7FF]"
+              className="absolute inset-1 rounded-[38px] bg-[#F7F7F7FF]"
               style={{
                 transform: 'translate(18px, -26px)',
                 zIndex: 0,
@@ -193,7 +193,7 @@ const DrivingGrowthSection = () => {
 
             {/* Ghost card 2 — middle */}
             <div
-              className="absolute inset-1 rounded-[40px] bg-[#EAEAEAFF]"
+              className="absolute inset-1 rounded-[38px] bg-[#EAEAEAFF]"
               style={{
                 transform: 'translate(12px, -20px)',
                 zIndex: 1,
@@ -203,7 +203,7 @@ const DrivingGrowthSection = () => {
 
             {/* Ghost card 1 — closest */}
             <div
-              className="absolute inset-1 rounded-[40px] bg-[#D9D9D9FF]"
+              className="absolute inset-1 rounded-[38px] bg-[#D9D9D9FF]"
               style={{
                 transform: 'translate(6px, -12px)',
                 zIndex: 2,
@@ -217,7 +217,7 @@ const DrivingGrowthSection = () => {
                 {slides.map((item) => (
                   <div key={item.id} className="px-2">
                     <div
-                      className="relative w-full rounded-[40px] overflow-hidden"
+                      className="relative w-full rounded-[38px] overflow-hidden"
                       style={{
                         height: 'clamp(240px, 28vw, 360px)', // ← slightly taller
                         backgroundImage: `url(${item.img})`,
@@ -253,7 +253,7 @@ const DrivingGrowthSection = () => {
             </div>
           </div>
         </div>
-        <div className="flex justify-center">
+        <div className="flex justify-center lg:hidden">
           <button className="btn-blue mt-10 lg:hidden w-fit ">
             Learn More
           </button>

@@ -54,7 +54,7 @@ const CompanyHighlightSlider = ({ data }) => {
                 style={{ marginTop: '62px' }}
               >
                 <p
-                  className="absolute left-0 right-0 z-10 text-center select-none pointer-events-none font-semibold font-noto-sans text-[#36363622] text-[44px] sm:text-[52px] md:text-[76px] leading-none"
+                  className="absolute left-0 right-0 z-10 text-center select-none pointer-events-none font-semibold font-noto-sans text-[#36363622] text-[44px] sm:text-[28px] md:text-[38px] lg:text-[56px] xl:text-[68px] leading-none tracking-wider"
                   style={{ bottom: '100%', transform: 'translateY(12%)' }}
                 >
                   HIGHLIGHTS

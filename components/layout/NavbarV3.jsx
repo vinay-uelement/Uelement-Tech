@@ -175,7 +175,7 @@ const NavbarV3 = () => {
         className={`w-[90vw] md:w-full md:px-[10px] md:max-w-[1920px] md:mx-auto shadow-none md:bg-transparent rounded-[40px] md:rounded-none h-13 md:h-15 flex justify-between fixed z-[80] left-1/2 -translate-x-1/2
       ${isScrolled ? 'top-2' : 'top-6'} transition-all duration-700 ease-in-out`}
       >
-        <div className="w-full md:px-[30px] lg:px-20 rounded-[40px] ">
+        <div className="w-full md:px-[30px] lg:px-10 rounded-[40px] ">
           <div className="flex justify-between h-full w-full relative rounded-[40px]">
             {/* Logo */}
             <Link
