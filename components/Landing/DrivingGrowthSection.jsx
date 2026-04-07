@@ -122,7 +122,6 @@ const DrivingGrowthSection = () => {
       <div className="flex flex-col lg:flex-row gap-10 md:gap-20 lg:pb-8 xl:pb-10 2xl:pb-12 relative">
         {/* Left Side Numbers */}
         <div className="flex-1 lg:mr-[30px] md:w-[60%] w-full">
-        
           <span className="fl-slash block lg:hidden">/Service Segment</span>
 
           <div className=" absolute right-0 -top-26 md:-top-24 -translate-y-full mb-7 xl:mb-10 flex items-center z-20">
@@ -169,7 +168,7 @@ const DrivingGrowthSection = () => {
           <div className="relative mr-4">
             {/* Ghost card 3 — furthest back */}
             <div
-              className="absolute inset-1 rounded-[38px] bg-[#F7F7F7FF]"
+              className="absolute inset-1 rounded-[38px] bg-[#ededede7]"
               style={{
                 transform: 'translate(18px, -26px)',
                 zIndex: 0,
@@ -179,7 +178,7 @@ const DrivingGrowthSection = () => {
 
             {/* Ghost card 2 — middle */}
             <div
-              className="absolute inset-1 rounded-[38px] bg-[#EAEAEAFF]"
+              className="absolute inset-1 rounded-[38px] bg-[#dcdcdcf5]"
               style={{
                 transform: 'translate(12px, -20px)',
                 zIndex: 1,
@@ -189,7 +188,7 @@ const DrivingGrowthSection = () => {
 
             {/* Ghost card 1 — closest */}
             <div
-              className="absolute inset-1 rounded-[38px] bg-[#D9D9D9FF]"
+              className="absolute inset-1 rounded-[38px] bg-[#C9C9C9]"
               style={{
                 transform: 'translate(6px, -12px)',
                 zIndex: 2,
