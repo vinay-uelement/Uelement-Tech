@@ -57,14 +57,14 @@ export default function AboutSection() {
     <div>
       <div className="w-full bg-white text-black py-[var(--section-block-padding)]">
         <div className="container-padding">
-          <div className="flex flex-col xl:flex-row gap-16">
+          <div className="flex flex-col md:flex-row gap-16">
             <div className="flex-1">
               <p className="fl-slash">/About us</p>
-              <h2 className="fl1 xl:w-[80%] w-full">
+              <h2 className="fl1 md:w-[80%] w-full">
                 Established by Innovators to Define Tomorrow's Digital
                 Landscape.
               </h2>
-              <p className="fl3 mt-4 text-black w-full xl:w-[80%]">
+              <p className="fl3 mt-4 text-black w-full md:w-[80%]">
                 Our strategic focus on Cybersecurity, AI, and Enterprise Cloud
                 empowers organizations to navigate complex digital environments
                 confidently and resiliently. We blend deep technical expertise
@@ -74,7 +74,7 @@ export default function AboutSection() {
               </p>
 
               <button
-                className="btn-blue mt-14 hidden xl:block"
+                className="btn-blue mt-14 hidden md:block"
                 onClick={() => router.push('/company')}
               >
                 Learn More
@@ -82,13 +82,13 @@ export default function AboutSection() {
             </div>
             <div className="relative  flex-1">
               {/* Vertical center line */}
-              <div className="absolute left-1/2 xl:block hidden top-0 bottom-0 border-l-1 border-dashed border-[#C0BFBFFF] transform -translate-x-1/2"></div>
+              <div className="absolute left-1/2 md:block hidden top-0 bottom-0 border-l-1 border-dashed border-[#C0BFBFFF] transform -translate-x-1/2"></div>
 
               {/* Horizontal center line */}
-              <div className="absolute top-1/2 xl:block hidden left-0 right-0 border-t-1 border-dashed border-[#C0BFBFFF] transform -translate-y-1/2"></div>
+              <div className="absolute top-1/2 md:block hidden left-0 right-0 border-t-1 border-dashed border-[#C0BFBFFF] transform -translate-y-1/2"></div>
 
               {/* 2x2 Grid Mobile */}
-              <div className="grid grid-cols-1 gap-10 max-w-5xl mx-auto relative z-10 xl:hidden">
+              <div className="grid grid-cols-1 gap-10 max-w-5xl mx-auto relative z-10 md:hidden">
                 {transformBullet.map((data) => (
                   <div
                     key={data.id}
@@ -104,7 +104,7 @@ export default function AboutSection() {
                     <h3 className="text-20 mt-4 font-reddit-sans tracking-wider font-semibold">
                       {data.title}
                     </h3>
-                    <p className="mt-2 fl3 font-medium xl:w-full">
+                    <p className="mt-2 fl3 font-medium md:w-full">
                       {data.desc}
                     </p>
                   </div>
@@ -112,7 +112,7 @@ export default function AboutSection() {
               </div>
 
               {/* Desktop  */}
-              <div className="grid grid-cols-2 gap-20 max-w-5xl mx-auto relative z-10 hidden xl:grid">
+              <div className="grid grid-cols-2 gap-20 max-w-5xl mx-auto relative z-10 hidden md:grid">
                 {transformBullet.map((data) => (
                   <div key={data.id} className="flex flex-col items-start">
                     <div className="size-[50px] flex items-center justify-center bg-[#F3F3F3] rounded-full ">
@@ -125,14 +125,14 @@ export default function AboutSection() {
                     <h3 className="text-20 mt-4 font-reddit-sans tracking-wider font-semibold">
                       {data.title}
                     </h3>
-                    <p className="mt-2 fl3 xl:w-full">{data.desc}</p>
+                    <p className="mt-2 fl3 md:w-full">{data.desc}</p>
                   </div>
                 ))}
               </div>
             </div>
 
             <button
-              className="btn-blue w-fit mx-auto xl:hidden"
+              className="btn-blue w-fit mx-auto md:hidden"
               onClick={() => router.push('/company')}
             >
               Learn More

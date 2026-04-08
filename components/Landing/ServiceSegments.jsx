@@ -76,7 +76,7 @@ const ServiceSegments = () => {
           Row 2: ←Image [flush] Card3 [gap] Card4 [margin→]
           All 4 cards = (viewport - margin - gap) / 3  →  equal width ✓
           Images also = same 1/3 share, bleed to viewport edge ✓          */}
-      <div className="hidden xl:flex flex-col gap-8">
+      <div className="hidden md:flex flex-col gap-8">
         {/* Row 1 */}
         <div className="flex items-stretch h-[300px]">
           <div
@@ -144,7 +144,7 @@ const ServiceSegments = () => {
 
       {/* Mobile Slider */}
       {/* Mobile Grid — replaces Slider entirely */}
-      <div className="xl:hidden container-padding pb-[var(--section-block-padding)]">
+      <div className="md:hidden container-padding pb-[var(--section-block-padding)]">
         <div className="grid grid-cols-1 gap-3">
           {/* Row 1: Image top-left | Card 1 top-right */}
           <div className="rounded-[28px] overflow-hidden min-h-[200px] hidden md:block">
