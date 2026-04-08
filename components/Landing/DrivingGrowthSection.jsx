@@ -67,12 +67,13 @@ const DrivingGrowthSection = () => {
     dots: true,
     infinite: true,
     speed: 700,
-    slidesToShow: 1, // ← was 3
+    slidesToShow: 3,
     slidesToScroll: 1,
     arrows: false,
-    fade: true, // ← smooth fade between single cards
+    fade: false,
     autoplay: true,
-    autoplaySpeed: 3000,
+    autoplaySpeed: 5000,
+
     beforeChange: (_, next) => setActive(next),
 
     appendDots: (dots) => (
@@ -83,6 +84,7 @@ const DrivingGrowthSection = () => {
 
     customPaging: (i) => {
       const size = getDotSize(i);
+
       return (
         <div
           className="flex items-center justify-center mt-5"
@@ -96,7 +98,7 @@ const DrivingGrowthSection = () => {
               background: i === active ? '#0C142D' : '#D9D9D9',
               transition: 'all 0.3s ease',
             }}
-          />
+          ></div>
         </div>
       );
     },
@@ -122,9 +124,24 @@ const DrivingGrowthSection = () => {
       <div className="flex flex-col lg:flex-row gap-10 md:gap-20 lg:pb-8 xl:pb-10 2xl:pb-12 relative">
         {/* Left Side Numbers */}
         <div className="flex-1 lg:mr-[30px] md:w-[60%] w-full">
+          <div className="mb-7 xl:mb-10 flex items-center lg:hidden">
+            <div className="circle size-[50px] min-w-[50px] xl:size-[70px] rounded-full bg-white grid place-content-center shadow-down font-bold italic text-20 xl:text-24 transition-all duration-500">
+              {slides[active].number}
+            </div>
+            <img
+              src="/icons/landing/horizontal-line.svg"
+              alt="icon"
+              className="w-[120px] sm:w-[250px] md:w-[auto]"
+            />
+            <div className="font-bold italic text-18 xl:text-24 text-[#1C1C1C80] flex items-center gap-2 md:gap-4 transition-all">
+              {orderedNumbers.slice(1).map((s) => (
+                <span key={s.id}>{s.number}</span>
+              ))}
+            </div>
+          </div>
           <span className="fl-slash block lg:hidden">/Service Segment</span>
 
-          <div className=" absolute right-0 -top-26 md:-top-24 -translate-y-full mb-7 xl:mb-10 flex items-center z-20">
+          <div className=" absolute right-0 -top-20 -translate-y-full mb-7 xl:mb-10 lg:flex items-center hidden">
             <div className="circle size-[50px] min-w-[50px] xl:size-[70px] rounded-full bg-white grid place-content-center shadow-down font-bold italic text-20 xl:text-24 transition-all duration-500">
               {slides[active].number}
             </div>
@@ -154,91 +171,93 @@ const DrivingGrowthSection = () => {
           </button>
         </div>
 
-        <div className="relative overflow-visible md:!w-[45%] w-full driving-slider">
+        <div className="relative overflow-visible md:!w-[40%] w-full driving-slider">
           <div className="absolute inset-y-0 -left-2 md:-left-15 flex items-center z-20">
             <div
               onClick={prevSlide}
-              className="size-[26px] xl:size-[40px] text-20 lg:text-26 rounded-full bg-[#DEDEDE73] shadow-down grid place-content-center cursor-pointer transition text-black lg:text-primary-blue"
+              className="size-[26px] xl:size-[40px] text-20 lg:text-26 rounded-full bg-[#DEDEDE] shadow-down grid place-content-center cursor-pointer transition text-black lg:text-primary-blue"
             >
               <span>{ReactIcons.leftChev}</span>
             </div>
           </div>
 
-          {/* Stack wrapper — ghost cards + real slider */}
-          <div className="relative mr-4">
-            {/* Ghost card 3 — furthest back */}
-            <div
-              className="absolute inset-1 rounded-[38px] bg-[#ededede7]"
-              style={{
-                transform: 'translate(18px, -26px)',
-                zIndex: 0,
-                boxShadow: '0 4px 16px rgba(0,0,0,0.10)',
-              }}
-            />
+          {/* Right Side Slider (React Slick) */}
+          <Slider ref={sliderRef} {...settings}>
+            {slides.map((item, index) => {
+              const total = slides.length;
 
-            {/* Ghost card 2 — middle */}
-            <div
-              className="absolute inset-1 rounded-[38px] bg-[#dcdcdcf5]"
-              style={{
-                transform: 'translate(12px, -20px)',
-                zIndex: 1,
-                boxShadow: '0 4px 16px rgba(0,0,0,0.08)',
-              }}
-            />
+              const leftIndex = active % total;
+              const centerIndex = (active + 1) % total;
+              const rightIndex = (active + 2) % total;
 
-            {/* Ghost card 1 — closest */}
-            <div
-              className="absolute inset-1 rounded-[38px] bg-[#C9C9C9]"
-              style={{
-                transform: 'translate(6px, -12px)',
-                zIndex: 2,
-                boxShadow: '0 4px 16px rgba(0,0,0,0.06)',
-              }}
-            />
+              let posClass = '';
+              let zIndex = 1;
+              let textOpacity = 0;
 
-            {/* Real slider on top */}
-            <div className="relative" style={{ zIndex: 2 }}>
-              <Slider ref={sliderRef} {...settings}>
-                {slides.map((item) => (
-                  <div key={item.id} className="px-2">
+              if (index === leftIndex) {
+                posClass = 'dg-left-big';
+                zIndex = 30;
+                textOpacity = 1;
+              } else if (index === centerIndex) {
+                posClass = 'dg-center-medium';
+                zIndex = 20;
+                textOpacity = 0.4;
+              } else if (index === rightIndex) {
+                posClass = 'dg-right-small';
+                zIndex = 10;
+                textOpacity = 0.3;
+              } else {
+                posClass = 'dg-hidden-small';
+                zIndex = 0;
+                textOpacity = 0;
+              }
+
+              return (
+                <div key={item.id}>
+                  <div
+                    className={`dg-card-wrapper ml-6 md:ml-0 ${posClass}`}
+                    style={{ zIndex, position: 'relative' }}
+                  >
                     <div
-                      className="relative w-full rounded-[38px] overflow-hidden"
+                      className="relative w-[240px] h-[160px] md:w-[340px] md:h-[210px] xl:w-[380px] xl:h-[240px] 2xl:w-[400px] 2xl:h-[260px] rounded-[4px] overflow-hidden"
                       style={{
-                        height: 'clamp(240px, 28vw, 360px)', // ← slightly taller
                         backgroundImage: `url(${item.img})`,
                         backgroundSize: 'cover',
                         backgroundPosition: 'center',
                       }}
                     >
-                      {/* Gradient overlay */}
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent z-10" />
+                      {/* Gradient overlay: transparent top → dark bottom */}
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent z-10" />
 
-                      {/* Text pinned bottom-left */}
-                      <div className="relative z-20 h-full flex flex-col justify-end px-6 py-5 md:px-8 md:py-6">
-                        <h5 className="text-16 md:text-20 xl:text-24 font-noto-sans font-semibold text-white mb-1 leading-tight">
+                      {/* Text pinned to bottom-left */}
+                      <div
+                        style={{ opacity: textOpacity }}
+                        className="absolute inset-0 z-20 transition-opacity duration-700 flex flex-col justify-end text-left px-4 py-4 md:px-5 md:py-5"
+                      >
+                        <h5 className="text-14 xl:text-20 font-noto-sans font-semibold text-white mb-1 leading-tight">
                           {item.title}
                         </h5>
-                        <p className="fl3 !text-white/80 text-12 md:text-14 line-clamp-2">
+                        <p className="fl3 !text-white/80 text-12 md:text-13 line-clamp-2">
                           {item.desc}
                         </p>
                       </div>
                     </div>
                   </div>
-                ))}
-              </Slider>
-            </div>
-          </div>
+                </div>
+              );
+            })}
+          </Slider>
 
           <div className="absolute inset-y-0 -right-1 md:-right-18 xl:-right-14 flex items-center z-20">
             <div
               onClick={nextSlide}
-              className="size-[26px] xl:size-[40px] text-20 lg:text-26 rounded-full bg-[#DEDEDE73] shadow-down grid place-content-center cursor-pointer transition text-black lg:text-primary-blue"
+              className="size-[26px] xl:size-[40px] text-20 lg:text-26  rounded-full bg-[#DEDEDE] shadow-down grid place-content-center cursor-pointer transition text-black lg:text-primary-blue"
             >
               <span>{ReactIcons.rightChev}</span>
             </div>
           </div>
         </div>
-        <div className="flex justify-center lg:hidden">
+        <div className="flex justify-center">
           <button className="btn-blue mt-10 lg:hidden w-fit ">
             Learn More
           </button>

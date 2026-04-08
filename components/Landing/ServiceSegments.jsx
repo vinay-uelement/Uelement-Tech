@@ -7,21 +7,25 @@ const services = [
   {
     id: 1,
     title: 'Digital Safety',
+    logo: '/images/landing/digital_safety.svg',
     desc: "Securing the future with quantum-resistant and zero-trust architecture. Resilient defenses against today's threats and quantum attacks.",
   },
   {
     id: 2,
     title: 'Cloud Mastery',
+    logo: '/images/landing/cloud_mastery.svg',
     desc: 'Architecting, optimizing and managing seamless multi-cloud environments. Scalable, secure infra with Zero Trust and FinOps.',
   },
   {
     id: 3,
     title: 'Accelerated AI',
+    logo: '/images/landing/accelarated_ai.svg',
     desc: 'Accelerating intelligence with responsible AI and advanced analytics. Ethical AI for precise insights and analytics.',
   },
   {
     id: 4,
-    title: 'Future Tech',
+    title: 'Quantum & Web3',
+    logo: '/images/landing/future_tech.svg',
     desc: 'Pioneering transformation with Quantum, Web3 and digital modernization. Quantum-ready, decentralized innovation.',
   },
 ];
@@ -29,9 +33,15 @@ const services = [
 const OUTER_MARGIN = '16rem'; // matches your pl-42 / pr-42
 const CARD_GAP = '1rem'; // gap between the two text cards per row
 
-const TextCard = ({ title, desc }) => (
+const TextCard = ({ title, desc, logo }) => (
   <div className="bg-[#F0F0F0] rounded-[38px] p-6 xl:p-8 flex flex-col items-center text-center gap-4 h-full">
-    <div className="w-[48px] h-[48px] rounded-full bg-[#D4D4D4] flex-shrink-0" />
+    <div className="w-[48px] h-[48px] rounded-full bg-[#D4D4D4] flex items-center justify-center flex-shrink-0">
+      <img
+        src={logo}
+        alt={title}
+        className="w-[24px] h-[24px] object-contain"
+      />
+    </div>
     <h6 className="font-noto-sans font-bold text-16 xl:text-18 text-[#232223]">
       {title}
     </h6>
@@ -76,11 +86,19 @@ const ServiceSegments = () => {
               marginRight: CARD_GAP,
             }}
           >
-            <TextCard title={services[0].title} desc={services[0].desc} />
+            <TextCard
+              title={services[0].title}
+              desc={services[0].desc}
+              logo={services[0].logo}
+            />
           </div>
           {/* marginRight: 0 → flush against image */}
           <div style={{ flex: 0.95 }}>
-            <TextCard title={services[1].title} desc={services[1].desc} />
+            <TextCard
+              title={services[1].title}
+              desc={services[1].desc}
+              logo={services[1].logo}
+            />
           </div>
           <div
             style={{ flex: 1.5 }}
@@ -108,10 +126,18 @@ const ServiceSegments = () => {
           </div>
           {/* marginLeft: 0 → flush against image */}
           <div style={{ flex: 0.95, marginRight: CARD_GAP }}>
-            <TextCard title={services[2].title} desc={services[2].desc} />
+            <TextCard
+              title={services[2].title}
+              desc={services[2].desc}
+              logo={services[2].logo}
+            />
           </div>
           <div style={{ flex: 0.95, marginRight: OUTER_MARGIN }}>
-            <TextCard title={services[3].title} desc={services[3].desc} />
+            <TextCard
+              title={services[3].title}
+              desc={services[3].desc}
+              logo={services[3].logo}
+            />
           </div>
         </div>
       </div>
@@ -128,14 +154,30 @@ const ServiceSegments = () => {
               className="w-full h-full object-cover"
             />
           </div>
-          <TextCard title={services[0].title} desc={services[0].desc} />
+          <TextCard
+            title={services[0].title}
+            desc={services[0].desc}
+            logo={services[0].logo}
+          />
 
           {/* Row 2: Card 2 | Card 3 */}
-          <TextCard title={services[1].title} desc={services[1].desc} />
-          <TextCard title={services[2].title} desc={services[2].desc} />
+          <TextCard
+            title={services[1].title}
+            desc={services[1].desc}
+            logo={services[1].logo}
+          />
+          <TextCard
+            title={services[2].title}
+            desc={services[2].desc}
+            logo={services[2].logo}
+          />
 
           {/* Row 3: Card 4 bottom-left | Image bottom-right */}
-          <TextCard title={services[3].title} desc={services[3].desc} />
+          <TextCard
+            title={services[3].title}
+            desc={services[3].desc}
+            logo={services[3].logo}
+          />
           <div className="rounded-[28px] overflow-hidden min-h-[200px]">
             <img
               src="/images/landing/domain-2.webp"
