@@ -121,27 +121,14 @@ const DrivingGrowthSection = () => {
 
   return (
     <section className="container-padding">
-      <div className="flex md:items-center flex-col lg:flex-row gap-10 md:gap-20 lg:pb-8 xl:pb-10 2xl:pb-12">
+      {/* ↓ added `relative` to support the absolutely positioned number block */}
+      <div className="flex md:items-center flex-col lg:flex-row gap-10 md:gap-20 lg:pb-8 xl:pb-10 2xl:pb-12 relative">
         {/* Left Side Numbers */}
         <div className="flex-1 lg:mr-[30px] md:w-[60%] w-full">
-          <div className="mb-7 xl:mb-10 flex items-center lg:hidden">
-            <div className="circle size-[50px] min-w-[50px] xl:size-[70px] rounded-full bg-white grid place-content-center shadow-down font-bold italic text-20 xl:text-24 transition-all duration-500">
-              {slides[active].number}
-            </div>
-            <img
-              src="/icons/landing/horizontal-line.svg"
-              alt="icon"
-              className="w-[120px] sm:w-[250px] md:w-[auto]"
-            />
-            <div className="font-bold italic text-18 xl:text-24 text-[#1C1C1C80] flex items-center gap-2 md:gap-4 transition-all">
-              {orderedNumbers.slice(1).map((s) => (
-                <span key={s.id}>{s.number}</span>
-              ))}
-            </div>
-          </div>
           <span className="fl-slash block lg:hidden">/Service Segment</span>
 
-          <div className="mb-7 xl:mb-10 lg:flex items-center hidden">
+          {/* ↓ Single absolutely positioned number block from second code */}
+          <div className="absolute right-0 -top-20 md:-top-24 -translate-y-full mb-7 xl:mb-10 flex items-center z-20">
             <div className="circle size-[50px] min-w-[50px] xl:size-[70px] rounded-full bg-white grid place-content-center shadow-down font-bold italic text-20 xl:text-24 transition-all duration-500">
               {slides[active].number}
             </div>
@@ -156,6 +143,7 @@ const DrivingGrowthSection = () => {
               ))}
             </div>
           </div>
+
           <span className="fl-slash hidden lg:block">/Service Segment</span>
           <div className="min-h-[200px] lg:min-h-[250px]">
             <h3 className="fl1">{slides[active].headline}</h3>
@@ -218,7 +206,6 @@ const DrivingGrowthSection = () => {
                     className={`dg-card-wrapper ml-6 md:ml-0 ${posClass}`}
                     style={{ zIndex, position: 'relative' }}
                   >
-                    {/* ── Landscape + rounded-[32px] ── */}
                     <div
                       className="relative w-[240px] h-[180px] md:w-[320px] md:h-[230px] xl:w-[360px] xl:h-[260px] 2xl:w-[400px] 2xl:h-[320px] rounded-[32px] overflow-hidden"
                       style={{
@@ -227,10 +214,8 @@ const DrivingGrowthSection = () => {
                         backgroundPosition: 'center',
                       }}
                     >
-                      {/* ── Gradient: transparent top → dark bottom ── */}
                       <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent z-10" />
 
-                      {/* ── Text: left-aligned, pinned to bottom ── */}
                       <div
                         style={{ opacity: textOpacity }}
                         className="absolute inset-0 z-20 transition-opacity duration-700 flex flex-col justify-end text-left px-4 py-4 md:px-5 md:py-5"
@@ -252,7 +237,7 @@ const DrivingGrowthSection = () => {
           <div className="absolute inset-y-0 -right-1 md:-right-18 xl:-right-14 flex items-center z-20">
             <div
               onClick={nextSlide}
-              className="size-[26px] xl:size-[40px] text-20 lg:text-26  rounded-full bg-[#DEDEDE] shadow-down grid place-content-center cursor-pointer transition text-black lg:text-primary-blue"
+              className="size-[26px] xl:size-[40px] text-20 lg:text-26 rounded-full bg-[#DEDEDE] shadow-down grid place-content-center cursor-pointer transition text-black lg:text-primary-blue"
             >
               <span>{ReactIcons.rightChev}</span>
             </div>
