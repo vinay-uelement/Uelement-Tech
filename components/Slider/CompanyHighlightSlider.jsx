@@ -87,9 +87,8 @@ const CompanyHighlightSlider = ({ data }) => {
         ))}
       </Slider>
 
-      {/* ✅ Dots OUTSIDE Slider — mirrored grid keeps them under image column */}
       {/* Dots OUTSIDE Slider */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10 mt-4">
+      {/* <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10 mt-4">
         <div className="flex justify-center items-center gap-2">
           {data.map((_, i) => {
             const size = getDotSize(i);
@@ -115,7 +114,7 @@ const CompanyHighlightSlider = ({ data }) => {
           })}
         </div>
         <div></div>
-      </div>
+      </div> */}
     </div>
   );
 };
