@@ -12,7 +12,7 @@ const Contact = () => {
     <div>
       <ContactUs />
       <FooterContent />
-      <div className="border-t border-white/10 pt-6 sm:pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 bg-primary-blue container-padding py-8 lg:py-12">
+      <div className="border-t border-white/10 pt-6 sm:pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 bg-hero-gradient container-padding py-8 lg:py-12">
         <div className="flex flex-wrap gap-3 sm:gap-5 lg:gap-8 justify-center sm:justify-start text-center">
           <Link
             href="/about"
@@ -288,7 +288,7 @@ const ContactUs = () => {
     <section className="relative">
       <div className="absolute inset-0 -z-10">
         <div className="h-[60%] bg-[#F3F3F3] mx-2"></div>
-        <div className="h-[40%] bg-primary-blue"></div>
+        <div className="h-[40%] bg-hero-gradient"></div>
       </div>
 
       <div className="container-padding pt-25 pb-10 sm:pt-26 sm:pb-10 lg:pt-30 lg:pb-10">
@@ -303,9 +303,9 @@ const ContactUs = () => {
           </p>
         </div>
 
-        <div className="max-w-[1400px] mx-auto bg-white rounded-[4px] p-[8px] sm:p-[10px] grid grid-cols-1 lg:grid-cols-[40%_60%] shadow-[0px_4px_72.2px_0px_rgba(0,0,0,0.25)]">
-          <div className="bg-primary-blue rounded-[4px] p-6 sm:p-8 lg:p-10 xl:p-12 text-white flex flex-col justify-start gap-8 lg:gap-16 relative overflow-hidden min-h-[350px]">
-            <div className="absolute -bottom-8 -right-3 text-[160px] sm:text-[180px] lg:text-[200px] xl:text-[250px] font-bold text-[#111f3f] select-none pointer-events-none leading-none">
+        <div className="max-w-[1100px] mx-auto bg-white rounded-[30px] p-[8px] sm:p-[10px] grid grid-cols-1 lg:grid-cols-[40%_60%] shadow-[0px_4px_72.2px_0px_rgba(0,0,0,0.25)]">
+          <div className="bg-[linear-gradient(154.11deg,#0C142D_20%,#274193_100%)] rounded-[30px] p-6 sm:p-8 lg:p-10 xl:p-12 text-white flex flex-col justify-start gap-8 lg:gap-16 relative overflow-hidden min-h-[350px]">
+            <div className="absolute -bottom-8 -right-3 text-[160px] sm:text-[180px] lg:text-[200px] xl:text-[250px] font-bold text-[#488bf0]/8 select-none pointer-events-none leading-none">
               92
             </div>
 
@@ -336,7 +336,7 @@ const ContactUs = () => {
           </div>
 
           {/* Right Side - Contact Form */}
-          <div className="p-4 sm:p-6 lg:p-8 xl:p-10">
+          <div className="p-4 sm:p-6 lg:p-8 xl:p-10 md:!pb-36">
             {/* Success/Error Message */}
             {submitStatus.message && (
               <div
@@ -545,8 +545,8 @@ const FooterContent = () => {
   };
   return (
     <>
-      <footer className="hidden md:block bg-primary-blue pt-2 lg:pt-4 pb-6 container-padding -mt-px">
-        <div className="max-w-[1400px] mx-auto">
+      <footer className="hidden md:block bg-hero-gradient pt-2 lg:pt-4 pb-6 container-padding -mt-px">
+        <div className="max-w-[1100px] mx-auto">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-10 lg:gap-12 xl:gap-16 pb-8 sm:pb-10 lg:pb-12">
             {/* Company Details */}
             <div className="company-details">
@@ -723,8 +723,8 @@ const FooterContent = () => {
           </div>
         </div>
       </footer>
-      <footer className="block md:hidden bg-primary-blue pt-2 lg:pt-4 pb-6 container-padding -mt-px">
-        <div className="max-w-[1400px] mx-auto">
+      <footer className="block md:hidden bg-hero-gradient pt-2 lg:pt-4 pb-6 container-padding -mt-px">
+        <div className="max-w-[1100px] mx-auto">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-10 lg:gap-12 xl:gap-16 pb-8 sm:pb-10 lg:pb-12">
             {/* Company Details */}
             <div className="company-details flex flex-col container-padding justify-center items-center">
