@@ -121,7 +121,7 @@ const DrivingGrowthSection = () => {
 
   return (
     <section className="container-small">
-      <div className="flex flex-col lg:flex-row gap-10 md:gap-20 lg:pb-8 xl:pb-10 2xl:pb-12 relative">
+      <div className="flex md:items-center flex-col lg:flex-row gap-10 md:gap-20 lg:pb-8 xl:pb-10 2xl:pb-12">
         {/* Left Side Numbers */}
         <div className="flex-1 lg:mr-[30px] md:w-[60%] w-full">
           <div className="mb-7 xl:mb-10 flex items-center lg:hidden">
@@ -141,7 +141,7 @@ const DrivingGrowthSection = () => {
           </div>
           <span className="fl-slash block lg:hidden">/Service Segment</span>
 
-          <div className=" absolute right-0 -top-20 -translate-y-full mb-7 xl:mb-10 lg:flex items-center hidden">
+          <div className="mb-7 xl:mb-10 lg:flex items-center hidden">
             <div className="circle size-[50px] min-w-[50px] xl:size-[70px] rounded-full bg-white grid place-content-center shadow-down font-bold italic text-20 xl:text-24 transition-all duration-500">
               {slides[active].number}
             </div>
@@ -182,59 +182,55 @@ const DrivingGrowthSection = () => {
           </div>
 
           {/* Right Side Slider (React Slick) */}
-          <Slider ref={sliderRef} {...settings} className="">
+          <Slider ref={sliderRef} {...settings}>
             {slides.map((item, index) => {
               const total = slides.length;
+
               const leftIndex = active % total;
               const centerIndex = (active + 1) % total;
               const rightIndex = (active + 2) % total;
 
-              const transforms = {
-                front: 'scale(1) translateX(0px) translateY(0px)',
-                center:
-                  'scale(1) translateX(clamp(-60px, -10vw, -140px)) translateY(clamp(-10px, -1.5vw, -20px))',
-                back: 'scale(1) translateX(clamp(-120px, -20vw, -280px)) translateY(clamp(-20px, -3vw, -40px))',
-                hidden:
-                  'scale(0.6) translateX(clamp(-120px, -20vw, -280px)) translateY(clamp(-20px, -3vw, -40px))',
-              };
-
-              let transform = transforms.hidden;
-              let zIndex = 0;
-              let opacity = 0;
+              let posClass = '';
+              let zIndex = 1;
               let textOpacity = 0;
 
               if (index === leftIndex) {
-                transform = transforms.front;
+                posClass = 'dg-left-big';
                 zIndex = 30;
-                opacity = 1;
                 textOpacity = 1;
               } else if (index === centerIndex) {
-                transform = transforms.center;
+                posClass = 'dg-center-medium';
                 zIndex = 20;
-                opacity = 0.7;
                 textOpacity = 0.4;
               } else if (index === rightIndex) {
-                transform = transforms.back;
+                posClass = 'dg-right-small';
                 zIndex = 10;
-                opacity = 0.5;
                 textOpacity = 0.3;
+              } else {
+                posClass = 'dg-hidden-small';
+                zIndex = 0;
+                textOpacity = 0;
               }
 
               return (
-                <div key={item.id} className="pt-20">
+                <div key={item.id}>
                   <div
-                    className="dg-card-wrapper ml-6 md:ml-0"
-                    style={{ zIndex, position: 'relative', transform, opacity }}
+                    className={`dg-card-wrapper ml-6 md:ml-0 ${posClass}`}
+                    style={{ zIndex, position: 'relative' }}
                   >
+                    {/* ── Landscape + rounded-[32px] ── */}
                     <div
-                      className="relative w-[240px] h-[160px] md:w-[340px] md:h-[210px] xl:w-[380px] xl:h-[240px] 2xl:w-[400px] 2xl:h-[260px] rounded-[32px] overflow-hidden"
+                      className="relative w-[240px] h-[180px] md:w-[320px] md:h-[230px] xl:w-[360px] xl:h-[260px] 2xl:w-[400px] 2xl:h-[320px] rounded-[32px] overflow-hidden"
                       style={{
                         backgroundImage: `url(${item.img})`,
                         backgroundSize: 'cover',
                         backgroundPosition: 'center',
                       }}
                     >
+                      {/* ── Gradient: transparent top → dark bottom ── */}
                       <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent z-10" />
+
+                      {/* ── Text: left-aligned, pinned to bottom ── */}
                       <div
                         style={{ opacity: textOpacity }}
                         className="absolute inset-0 z-20 transition-opacity duration-700 flex flex-col justify-end text-left px-4 py-4 md:px-5 md:py-5"

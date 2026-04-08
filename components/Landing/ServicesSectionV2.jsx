@@ -69,7 +69,7 @@ const ServicesSection = () => {
   };
 
   return (
-    <section className="py-10 sm:py-12 lg:py-16 px-4 sm:px-6 lg:px-8 rounded mb-10 container-padding">
+    <section className="py-0 sm:py-12 lg:py-16 px-4 sm:px-6 lg:px-8 rounded mb-10 container-padding">
       <div className="mx-auto">
         {/* Header */}
         <div className="mb-8 sm:mb-10 lg:mb-12">

@@ -10,7 +10,7 @@ const LandingPage = () => {
   return (
     <div>
       <HeroSection />
-      <div className="py-25">
+      <div className="py-18 md:py-25">
         <DrivingGrowthSection />
       </div>
       <div>
