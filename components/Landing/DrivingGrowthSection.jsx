@@ -218,24 +218,29 @@ const DrivingGrowthSection = () => {
                     className={`dg-card-wrapper ml-6 md:ml-0 ${posClass}`}
                     style={{ zIndex, position: 'relative' }}
                   >
+                    {/* ── Landscape + rounded-[32px] ── */}
                     <div
-                      className="relative w-[200px] h-[280px] md:w-[320px] md:h-[320px] xl:w-[360px] xl:h-[370px] 2xl:w-[360px] 2xl:h-[450px] rounded-[4px] overflow-hidden"
+                      className="relative w-[240px] h-[180px] md:w-[320px] md:h-[230px] xl:w-[360px] xl:h-[260px] 2xl:w-[400px] 2xl:h-[320px] rounded-[32px] overflow-hidden"
                       style={{
                         backgroundImage: `url(${item.img})`,
                         backgroundSize: 'cover',
                         backgroundPosition: 'center',
                       }}
                     >
-                      <div className="bg-black/80 h-full w-full p-3 relative z-10">
-                        <div
-                          style={{ opacity: textOpacity }}
-                          className="transition-opacity duration-700 h-full flex flex-col gap-8 text-center px-2 md:px-10 py-4 "
-                        >
-                          <h5 className="text-14 xl:text-24 font-notos-sans font-medium text-white mb-0 md:mb-2">
-                            {item.title}
-                          </h5>
-                          <p className="fl3 !text-white mb-auto">{item.desc}</p>
-                        </div>
+                      {/* ── Gradient: transparent top → dark bottom ── */}
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent z-10" />
+
+                      {/* ── Text: left-aligned, pinned to bottom ── */}
+                      <div
+                        style={{ opacity: textOpacity }}
+                        className="absolute inset-0 z-20 transition-opacity duration-700 flex flex-col justify-end text-left px-4 py-4 md:px-5 md:py-5"
+                      >
+                        <h5 className="text-14 xl:text-20 font-noto-sans font-semibold text-white mb-1 leading-tight">
+                          {item.title}
+                        </h5>
+                        <p className="fl3 !text-white/80 text-12 md:text-13 line-clamp-2">
+                          {item.desc}
+                        </p>
                       </div>
                     </div>
                   </div>

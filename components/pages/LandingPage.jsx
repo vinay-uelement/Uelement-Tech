@@ -10,14 +10,14 @@ const LandingPage = () => {
   return (
     <div>
       <HeroSection />
-      <div className="py-[60px]">
+      <div className="py-18 md:py-25">
         <DrivingGrowthSection />
       </div>
       <div>
-        <HighlightV2 />
+        <AboutSection />
       </div>
       <div>
-        <AboutSection />
+        <HighlightV2 />
       </div>
       <div>
         <ServiceSegments />

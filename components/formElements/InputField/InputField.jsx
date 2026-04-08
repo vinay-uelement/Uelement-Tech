@@ -19,7 +19,7 @@ const InputField = ({
         value={value}
         onChange={onChangeHandler}
         placeholder={placeholder}
-        className={`${inputClassName} placeholder:text-gray-8080 border-b border-b-gray-8080 font-medium text-12 font-reddit-sans p-2`}
+        className={`${inputClassName} placeholder:text-gray-8080 border-b border-b-[#D7D7D7] font-medium text-12 font-reddit-sans p-2`}
       />
       {errMsg && <p className="text-12 text-red-400">{errMsg}</p>}
     </div>

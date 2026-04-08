@@ -34,7 +34,7 @@ const solutions = [
     id: 4,
     image: '/images/global/pioneer.png',
     icon: '/icons/global/futuretech-icon.svg',
-    label: 'Future Tech',
+    label: 'Quantum & Web3',
     title: 'Pioneering Transformation with Quantum Readiness.',
     description:
       'Driving next-wave technology in Quantum Computing (QKD) and Web3. We execute critical App Modernization, Sassification, and Mainframe-to-Cloud migration.',
