@@ -219,7 +219,7 @@ const DrivingGrowthSection = () => {
                     style={{ zIndex, position: 'relative' }}
                   >
                     <div
-                      className="relative w-[240px] h-[160px] md:w-[340px] md:h-[210px] xl:w-[380px] xl:h-[240px] 2xl:w-[400px] 2xl:h-[260px] rounded-[4px] overflow-hidden"
+                      className="relative w-[240px] h-[160px] md:w-[340px] md:h-[210px] xl:w-[380px] xl:h-[240px] 2xl:w-[400px] 2xl:h-[260px] rounded-[32px] overflow-hidden"
                       style={{
                         backgroundImage: `url(${item.img})`,
                         backgroundSize: 'cover',

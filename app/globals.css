@@ -519,18 +519,18 @@
 }
 
 .dg-center-medium {
-  transform: scale(0.85) translateX(-60px);
+  transform: scale(1) translateX(-140px) translateY(-20px);
   opacity: 0.7;
 }
 
 .dg-right-small {
-  transform: scale(0.7) translateX(-140px);
+  transform: scale(1) translateX(-280px) translateY(-40px);
   opacity: 0.5;
 }
 
 
 .dg-hidden-small {
-  transform: scale(0.6) translateX(-180px);
+  transform: scale(0.6) translateX(-140px);
   opacity: 0;
   pointer-events: none;
 }

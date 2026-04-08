@@ -35,7 +35,7 @@ const CompanyHighlightSlider = ({ data }) => {
   if (!data || data.length === 0) return null;
 
   return (
-    <div className="relative px-0 md:px-2 pb-2 pt-1">
+    <div className="relative px-0 md:px-2 pb-2 pt-1 ">
       {data[activeIndex]?.date && (
         <p className="absolute top-0 right-4 md:right-0 font-reddit-sans text-13 md:text-14 text-primary-blue font-bold z-10">
           Date:{' '}
