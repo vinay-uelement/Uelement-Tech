@@ -162,7 +162,7 @@
     @apply max-w-[1600px] mx-auto w-[90%];
   }
   .container-padding {
-    @apply px-5 sm:px-12 md:px-22;
+    @apply px-5 sm:px-12 md:px-16;
   }
   .container-padding-small {
     @apply px-3 sm:px-6 md:px-8;

@@ -120,7 +120,7 @@ const DrivingGrowthSection = () => {
   ];
 
   return (
-    <section className="container-small">
+    <section className="container-padding">
       <div className="flex md:items-center flex-col lg:flex-row gap-10 md:gap-20 lg:pb-8 xl:pb-10 2xl:pb-12">
         {/* Left Side Numbers */}
         <div className="flex-1 lg:mr-[30px] md:w-[60%] w-full">
