@@ -34,7 +34,7 @@ const OUTER_MARGIN = '16rem'; // matches your pl-42 / pr-42
 const CARD_GAP = '1rem'; // gap between the two text cards per row
 
 const TextCard = ({ title, desc, logo }) => (
-  <div className="bg-[#F0F0F0] rounded-[38px] p-6 xl:p-8 flex flex-col items-center text-center gap-4 h-full">
+  <div className="bg-[#F0F0F0] rounded-[32px] p-6 xl:p-8 flex flex-col items-center text-center gap-4 h-full">
     <div className="w-[48px] h-[48px] rounded-full bg-[#D4D4D4] flex items-center justify-center flex-shrink-0">
       <img
         src={logo}
@@ -102,7 +102,7 @@ const ServiceSegments = () => {
           </div>
           <div
             style={{ flex: 1.5 }}
-            className="overflow-hidden rounded-l-[38px] ml-[1rem]"
+            className="overflow-hidden rounded-l-[28px] ml-[1rem]"
           >
             <img
               src="/images/landing/domain-1.webp"
@@ -116,7 +116,7 @@ const ServiceSegments = () => {
         <div className="flex items-stretch h-[300px]">
           <div
             style={{ flex: 1.5 }}
-            className="overflow-hidden rounded-r-[38px] mr-[1rem]"
+            className="overflow-hidden rounded-r-[28px] mr-[1rem]"
           >
             <img
               src="/images/landing/domain-2.webp"
