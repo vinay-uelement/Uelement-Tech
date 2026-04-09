@@ -187,13 +187,13 @@ const ServicesSection = () => {
 
                 {/* Right Skew */}
                 <span
-                  className="absolute top-0 h-full w-8 bg-primary-blue z-20"
+                  className="absolute top-0 h-full w-15 bg-primary-blue z-20"
                   style={{
-                    right: '-18px',
+                    right: '-36px',
                     transform: 'skew(30deg, 0deg)',
                     // boxShadow:
                     //   'rgba(0,0,0,0.1) 3px 2px 5px, inset rgba(255,255,255,0.09) -1px 0',
-                    borderTopRightRadius: '6px',
+                    borderTopRightRadius: '18px',
                   }}
                 />
 

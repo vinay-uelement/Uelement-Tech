@@ -86,10 +86,10 @@ const HeroSectionV5 = () => {
 
       <div className="flex-1 min-h-0 w-full relative text-white pt-[72px] md:pt-[90px]">
         <div className="h-full w-full flex flex-col md:flex-row">
-         <div
-  className="w-[80%] h-[60%] md:h-full md:w-[39%] pl-[40px] md:pl-[70px] flex flex-col justify-center md:justify-start"
-  style={{ paddingTop: 'clamp(24px, 5vh, 100px)' }}
->
+          <div
+            className="w-[80%] h-[60%] md:h-full md:w-[39%] pl-[40px] md:pl-[70px] flex flex-col justify-center md:justify-start"
+            style={{ paddingTop: 'clamp(24px, 5vh, 100px)' }}
+          >
             <h1 className="fl-main italic tracking-wider leading-[1.2]">
               We are <br /> Digital <br className="md:block" /> Mavericks.
             </h1>
