@@ -180,7 +180,7 @@ const NavbarV3 = () => {
             {/* Logo */}
             <Link
               href="/"
-              className={`${isScrolled100vh ? 'bg-primary-blue' : ' backdrop-blur-lg'} rounded-l-[22px] rounded-tl-[4px] md:w-[220px] 2xl:w-[290px] w-[180px] h-full ps-4 pe-12 md:pe-0 flex items-center relative z-40 transition-all duration-300`}
+              className={`${isScrolled100vh || location === '/contact-us' ? 'bg-primary-blue' : ' backdrop-blur-lg'} rounded-l-[22px] rounded-tl-[4px] md:w-[220px] 2xl:w-[290px] w-[180px] h-full ps-4 pe-12 md:pe-0 flex items-center relative z-40 transition-all duration-300`}
             >
               <img
                 src="/icons/global/UElement_Logo_White 3.svg"

@@ -129,7 +129,7 @@ const DrivingGrowthSection = () => {
 
           {/* ↓ Single absolutely positioned number block from second code */}
           <div className="absolute right-0 -top-20 md:-top-24 -translate-y-full mb-7 xl:mb-10 flex items-center z-20">
-            <div className="circle size-[50px] min-w-[50px] xl:size-[70px] rounded-full bg-white grid place-content-center shadow-down font-bold italic text-20 xl:text-24 transition-all duration-500">
+            <div className="circle size-[50px] min-w-[50px] xl:size-[60px] rounded-full bg-white grid place-content-center shadow-down font-bold italic text-20 xl:text-24 transition-all duration-500">
               {slides[active].number}
             </div>
             <img

@@ -61,7 +61,7 @@ const HeroSectionV5 = () => {
   };
 
   return (
-    <section className="h-screen flex flex-col relative">
+    <section className="min-h-screen h-screen flex flex-col relative">
       {/* Desktop background */}
       <Image
         src="/images/landing/hero_bg1.webp"
@@ -84,15 +84,18 @@ const HeroSectionV5 = () => {
         </div>
       </div>
 
-      <div className="h-[calc(100%-80px)] w-full relative text-white rounded-[4px] rounded-bl-none md:rounded-bl-[50px] rounded-br-none">
+      <div className="flex-1 min-h-0 w-full relative text-white pt-[72px] md:pt-[90px]">
         <div className="h-full w-full flex flex-col md:flex-row">
-          <div className="w-[80%] h-[60%] md:h-[90%] md:w-[39%] pl-[40px] md:pl-[70px] flex flex-col justify-end md:justify-center">
-            <h1 className="fl-main tracking-wider leading-[1.2] mt-0 md:mt-10 xl:mt-0 ">
-              We Are <br /> Digital <br className="md:block" /> Mavericks.
+          <div
+            className="w-[80%] h-[60%] md:h-full md:w-[39%] pl-[40px] md:pl-[70px] flex flex-col justify-center md:justify-start"
+            style={{ paddingTop: 'clamp(24px, 5vh, 100px)' }}
+          >
+            <h1 className="fl-main italic tracking-wider leading-[1.2]">
+              We are <br /> Digital <br className="md:block" /> Mavericks.
             </h1>
             <p className="mt-8 fl3 !text-[#ffffff] !text-[12px] md:!text-[20px] md:mb-10 xl:mb-20 mb-8">
-              Engineering Quantum-Driven Digital Synapses at the
-              intersection of Cybersecurity, Cloud & AI.
+              Engineering Quantum-Driven Digital Synapses at the intersection of
+              Cybersecurity, Cloud & AI.
             </p>
             <button
               onClick={handleContactus}
@@ -149,7 +152,7 @@ const HeroSectionV5 = () => {
         </div>
         {/* Mobile bottom bar */}
         <div
-          className="absolute z-30 bottom-4 left-4 right-4 flex md:hidden items-center bg-[#D4D4D41A] backdrop-blur-2xl rounded-[40px] px-1 py-1 shadow-lg"
+          className="absolute z-30 bottom-20 left-4 right-4 flex md:hidden items-center bg-[#D4D4D41A] backdrop-blur-2xl rounded-[40px] px-1 py-1 shadow-lg"
           onTouchStart={handleTouchStart}
           onTouchMove={handleTouchMove}
           onTouchEnd={handleTouchEnd}
