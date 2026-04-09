@@ -2,23 +2,22 @@ import IoETDigitalTwin from '@/components/solutions/IoET';
 import React from 'react';
 
 export const metadata = {
-  title: 'AI & ML | UElement Technologies',
-  description: 'Explore our wide range of services in AI and Machine Learning.',
-  alternates: {
-    canonical: 'https://uelement.in/ai-ml',
-  },
+  title: 'IoET Enhanced Digital Twin | UElement Technologies',
+  description:
+    "UElement's IoET Digital Twin platform fuses live sensor telemetry, quantum-secured data transport, and AI-driven physics simulation to create persistent, high-fidelity virtual replicas of any physical system.",
+  alternates: { canonical: 'https://uelement.in/solutions/ioet-digital-twin' },
   openGraph: {
-    title: 'AI & ML | UElement Technologies',
+    title: 'IoET Enhanced Digital Twin | UElement Technologies',
     description:
-      'Explore our wide range of services in AI and Machine Learning.',
-    url: 'https://uelement.in/ai-ml',
+      'Your physical world, mirrored in real time. 10× faster scenario iteration. 99.4% physics simulation accuracy.',
+    url: 'https://uelement.in/solutions/ioet-digital-twin',
     siteName: 'UElement',
     images: [
       {
-        url: 'https://uelement.in/images/service/ai-ml/ai-ml-hero.png',
+        url: 'https://uelement.in/images/og/ioet-digital-twin.jpg',
         width: 1200,
         height: 630,
-        alt: 'UElement AI & ML',
+        alt: 'UElement IoET Enhanced Digital Twin',
       },
     ],
     locale: 'en_US',
@@ -26,19 +25,16 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'AI & ML | UElement Technologies',
+    title: 'IoET Enhanced Digital Twin | UElement Technologies',
     description:
-      'Explore our wide range of services in AI and Machine Learning.',
-    images: ['https://uelement.in/images/service/ai-ml/ai-ml-hero.png'],
+      'Your physical world, mirrored in real time. AI-driven physics simulation. Quantum-secured telemetry.',
+    images: ['https://uelement.in/images/og/ioet-digital-twin.jpg'],
   },
 };
 
-const page = () => {
-  return (
-    <div>
-      <IoETDigitalTwin />
-    </div>
-  );
-};
-
+const page = () => (
+  <div>
+    <IoETDigitalTwin />
+  </div>
+);
 export default page;
