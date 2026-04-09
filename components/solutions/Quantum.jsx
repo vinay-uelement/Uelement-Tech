@@ -69,13 +69,13 @@ const QuantumCircuitVisual = () => (
             height="32"
             rx="4"
             fill="rgba(192,132,252,0.15)"
-            stroke="#c084fc"
+            stroke="#C98F28"
             strokeWidth="1.5"
           />
           <text
             x="112"
             y={cy + 5}
-            fill="#c084fc"
+            fill="#C98F28"
             fontSize="11"
             fontFamily="monospace"
             textAnchor="middle"
@@ -92,16 +92,16 @@ const QuantumCircuitVisual = () => (
         y1="130"
         x2="196"
         y2="220"
-        stroke="#c084fc"
+        stroke="#C98F28"
         strokeWidth="1.5"
       />
-      <circle cx="196" cy="130" r="5" fill="#c084fc" />
+      <circle cx="196" cy="130" r="5" fill="#C98F28" />
       <circle
         cx="196"
         cy="220"
         r="12"
         fill="rgba(192,132,252,0.1)"
-        stroke="#c084fc"
+        stroke="#C98F28"
         strokeWidth="1.5"
       />
       <line
@@ -109,7 +109,7 @@ const QuantumCircuitVisual = () => (
         y1="220"
         x2="204"
         y2="220"
-        stroke="#c084fc"
+        stroke="#C98F28"
         strokeWidth="1.5"
       />
       <line
@@ -117,7 +117,7 @@ const QuantumCircuitVisual = () => (
         y1="212"
         x2="196"
         y2="228"
-        stroke="#c084fc"
+        stroke="#C98F28"
         strokeWidth="1.5"
       />
 
@@ -127,16 +127,16 @@ const QuantumCircuitVisual = () => (
         y1="220"
         x2="260"
         y2="310"
-        stroke="#c084fc"
+        stroke="#C98F28"
         strokeWidth="1.5"
       />
-      <circle cx="260" cy="220" r="5" fill="#c084fc" />
+      <circle cx="260" cy="220" r="5" fill="#C98F28" />
       <circle
         cx="260"
         cy="310"
         r="12"
         fill="rgba(192,132,252,0.1)"
-        stroke="#c084fc"
+        stroke="#C98F28"
         strokeWidth="1.5"
       />
       <line
@@ -144,7 +144,7 @@ const QuantumCircuitVisual = () => (
         y1="310"
         x2="268"
         y2="310"
-        stroke="#c084fc"
+        stroke="#C98F28"
         strokeWidth="1.5"
       />
       <line
@@ -152,7 +152,7 @@ const QuantumCircuitVisual = () => (
         y1="302"
         x2="260"
         y2="318"
-        stroke="#c084fc"
+        stroke="#C98F28"
         strokeWidth="1.5"
       />
 
@@ -166,13 +166,13 @@ const QuantumCircuitVisual = () => (
             height="32"
             rx="4"
             fill="rgba(192,132,252,0.12)"
-            stroke="#c084fc"
+            stroke="#C98F28"
             strokeWidth="1.2"
           />
           <text
             x="344"
             y={cy + 5}
-            fill="#c084fc"
+            fill="#C98F28"
             fontSize="9"
             fontFamily="monospace"
             textAnchor="middle"
@@ -204,13 +204,13 @@ const QuantumCircuitVisual = () => (
             height="36"
             rx="4"
             fill="rgba(192,132,252,0.08)"
-            stroke="#c084fc"
+            stroke="#C98F28"
             strokeWidth="1.5"
           />
           {/* Meter arc */}
           <path
             d={`M ${426} ${cy + 10} Q ${438} ${cy - 10} ${450} ${cy + 10}`}
-            stroke="#c084fc"
+            stroke="#C98F28"
             strokeWidth="1.5"
             fill="none"
           />
@@ -219,7 +219,7 @@ const QuantumCircuitVisual = () => (
             y1={cy + 10}
             x2="446"
             y2={cy - 4}
-            stroke="#c084fc"
+            stroke="#C98F28"
             strokeWidth="1.2"
           />
           <text
@@ -289,20 +289,20 @@ const QuantumCircuitVisual = () => (
     </svg>
 
     {/* Floating badges */}
-    <div className="absolute top-3 left-3 bg-[#0C142D]/80 backdrop-blur-sm border border-[#c084fc]/20 rounded-lg px-3 py-2">
-      <p className="text-[#c084fc] font-bold text-sm leading-none">2030</p>
+    <div className="absolute top-3 left-3 bg-[#0C142D]/80 backdrop-blur-sm border border-[#C98F28]/20 rounded-lg px-3 py-2">
+      <p className="text-[#C98F28] font-bold text-sm leading-none">2030</p>
       <p className="text-white/50 text-xs mt-0.5">Quantum threat horizon</p>
     </div>
-    <div className="absolute top-3 right-3 bg-[#0C142D]/80 backdrop-blur-sm border border-[#c084fc]/20 rounded-lg px-3 py-2">
-      <p className="text-[#c084fc] font-bold text-sm leading-none">NIST</p>
+    <div className="absolute top-3 right-3 bg-[#0C142D]/80 backdrop-blur-sm border border-[#C98F28]/20 rounded-lg px-3 py-2">
+      <p className="text-[#C98F28] font-bold text-sm leading-none">NIST</p>
       <p className="text-white/50 text-xs mt-0.5">FIPS 203/204/205</p>
     </div>
-    <div className="absolute bottom-3 left-3 bg-[#0C142D]/80 backdrop-blur-sm border border-[#c084fc]/20 rounded-lg px-3 py-2">
-      <p className="text-[#c084fc] font-bold text-sm leading-none">QKD</p>
+    <div className="absolute bottom-3 left-3 bg-[#0C142D]/80 backdrop-blur-sm border border-[#C98F28]/20 rounded-lg px-3 py-2">
+      <p className="text-[#C98F28] font-bold text-sm leading-none">QKD</p>
       <p className="text-white/50 text-xs mt-0.5">Key distribution</p>
     </div>
-    <div className="absolute bottom-3 right-3 bg-[#0C142D]/80 backdrop-blur-sm border border-[#c084fc]/20 rounded-lg px-3 py-2">
-      <p className="text-[#c084fc] font-bold text-sm leading-none">Now</p>
+    <div className="absolute bottom-3 right-3 bg-[#0C142D]/80 backdrop-blur-sm border border-[#C98F28]/20 rounded-lg px-3 py-2">
+      <p className="text-[#C98F28] font-bold text-sm leading-none">Now</p>
       <p className="text-white/50 text-xs mt-0.5">Migration window</p>
     </div>
   </div>
@@ -318,25 +318,25 @@ const MigrationPathway = () => {
   ];
   return (
     <div className="w-full bg-[#0C142D] rounded-[4px] p-6 sm:p-8 overflow-x-auto">
-      <p className="text-[#c084fc]/50 text-[9px] font-mono font-bold tracking-[0.2em] uppercase mb-5">
+      <p className="text-[#C98F28]/50 text-[9px] font-mono font-bold tracking-[0.2em] uppercase mb-5">
         PQC Migration Pathway — Structured Path to Quantum Resilience
       </p>
       <div className="flex items-center justify-between min-w-[400px] gap-1">
         {phases.map((phase, i) => (
           <React.Fragment key={i}>
             <div className="flex flex-col items-center gap-2 flex-1">
-              <div className="w-12 h-12 rounded-xl bg-[#c084fc]/10 border border-[#c084fc]/25 flex items-center justify-center">
-                <span className="text-[#c084fc] font-mono font-bold text-[9px] tracking-wide">
+              <div className="w-12 h-12 rounded-xl bg-[#C98F28]/10 border border-[#C98F28]/25 flex items-center justify-center">
+                <span className="text-[#C98F28] font-mono font-bold text-[9px] tracking-wide">
                   {phase.abbr}
                 </span>
               </div>
-              <p className="text-[#c084fc]/70 text-[10px] font-mono text-center whitespace-pre-line leading-tight">
+              <p className="text-[#C98F28]/70 text-[10px] font-mono text-center whitespace-pre-line leading-tight">
                 {phase.label}
               </p>
             </div>
             {i < phases.length - 1 && (
               <div className="flex items-center gap-0.5 flex-shrink-0 mb-5">
-                <div className="w-6 sm:w-10 h-px bg-[#c084fc]/30" />
+                <div className="w-6 sm:w-10 h-px bg-[#C98F28]/30" />
                 <svg width="8" height="10" viewBox="0 0 8 10" fill="none">
                   <path d="M0 0L8 5L0 10" fill="rgba(192,132,252,0.4)" />
                 </svg>
@@ -530,14 +530,14 @@ const QuantumSolutions = () => {
                     cx="12"
                     cy="12"
                     r="3"
-                    stroke="#c084fc"
+                    stroke="#C98F28"
                     strokeWidth="1.5"
                   />
                   <circle
                     cx="12"
                     cy="12"
                     r="7"
-                    stroke="#c084fc"
+                    stroke="#C98F28"
                     strokeWidth="1"
                     strokeDasharray="2 2"
                   />
@@ -545,7 +545,7 @@ const QuantumSolutions = () => {
                     cx="12"
                     cy="12"
                     r="10.5"
-                    stroke="#c084fc"
+                    stroke="#C98F28"
                     strokeWidth="0.8"
                     strokeOpacity="0.4"
                   />
@@ -554,7 +554,7 @@ const QuantumSolutions = () => {
                     y1="2"
                     x2="12"
                     y2="5"
-                    stroke="#c084fc"
+                    stroke="#C98F28"
                     strokeWidth="1.5"
                   />
                   <line
@@ -562,7 +562,7 @@ const QuantumSolutions = () => {
                     y1="19"
                     x2="12"
                     y2="22"
-                    stroke="#c084fc"
+                    stroke="#C98F28"
                     strokeWidth="1.5"
                   />
                   <line
@@ -570,7 +570,7 @@ const QuantumSolutions = () => {
                     y1="12"
                     x2="5"
                     y2="12"
-                    stroke="#c084fc"
+                    stroke="#C98F28"
                     strokeWidth="1.5"
                   />
                   <line
@@ -578,7 +578,7 @@ const QuantumSolutions = () => {
                     y1="12"
                     x2="22"
                     y2="12"
-                    stroke="#c084fc"
+                    stroke="#C98F28"
                     strokeWidth="1.5"
                   />
                 </svg>
@@ -596,7 +596,7 @@ const QuantumSolutions = () => {
             <p className="fl3 !text-white leading-relaxed">
               UElement's Quantum practice delivers two converging capabilities:
               bespoke quantum application development that harnesses quantum
-              advantage today, and Post-Quantum Cryptography migration that
+              advantage today, and Post Quantum Cryptography migration that
               shields your organisation against tomorrow's quantum-enabled
               threats.
             </p>
@@ -606,7 +606,7 @@ const QuantumSolutions = () => {
                 (tag) => (
                   <span
                     key={tag}
-                    className="text-[11px] font-mono font-semibold px-3 py-1 rounded-full border border-[#c084fc]/30 bg-[#c084fc]/10 text-[#c084fc]"
+                    className="text-[11px] font-mono font-semibold px-3 py-1 rounded-full border border-[#C98F28]/30 bg-[#C98F28]/10 text-[#C98F28]"
                   >
                     {tag}
                   </span>
@@ -656,7 +656,7 @@ const QuantumSolutions = () => {
                   key={s.val}
                   className="bg-[#0C142D] rounded-[18px] px-4 py-5 flex flex-col gap-1"
                 >
-                  <p className="font-reddit-sans font-bold text-[22px] md:text-[28px] text-[#c084fc] leading-none">
+                  <p className="font-reddit-sans font-bold text-[22px] md:text-[28px] text-[#C98F28] leading-none">
                     {s.val}
                   </p>
                   <p className="font-light font-reddit-sans text-12 md:text-14 text-[#9E9E9E]">

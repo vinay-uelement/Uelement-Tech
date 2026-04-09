@@ -24,12 +24,12 @@ const TwinVisual = () => (
           />
         </pattern>
         <linearGradient id="ltr" x1="0" y1="0" x2="1" y2="0">
-          <stop offset="0%" stopColor="#00e5ff" stopOpacity="0.7" />
-          <stop offset="100%" stopColor="#00e5ff" stopOpacity="0.05" />
+          <stop offset="0%" stopColor="#C98F28" stopOpacity="0.7" />
+          <stop offset="100%" stopColor="#C98F28" stopOpacity="0.05" />
         </linearGradient>
         <linearGradient id="rtl" x1="1" y1="0" x2="0" y2="0">
-          <stop offset="0%" stopColor="#00e5ff" stopOpacity="0.7" />
-          <stop offset="100%" stopColor="#00e5ff" stopOpacity="0.05" />
+          <stop offset="0%" stopColor="#C98F28" stopOpacity="0.7" />
+          <stop offset="100%" stopColor="#C98F28" stopOpacity="0.05" />
         </linearGradient>
       </defs>
 
@@ -89,10 +89,10 @@ const TwinVisual = () => (
             cy={cy}
             r="10"
             fill="rgba(0,229,255,0.15)"
-            stroke="#00e5ff"
+            stroke="#C98F28"
             strokeWidth="1.5"
           />
-          <circle cx="90" cy={cy} r="4" fill="#00e5ff" />
+          <circle cx="90" cy={cy} r="4" fill="#C98F28" />
         </g>
       ))}
 
@@ -132,13 +132,13 @@ const TwinVisual = () => (
         cy="213"
         r="28"
         fill="rgba(0,229,255,0.1)"
-        stroke="#00e5ff"
+        stroke="#C98F28"
         strokeWidth="1.8"
       />
       <text
         x="310"
         y="207"
-        fill="#00e5ff"
+        fill="#C98F28"
         fontSize="8"
         fontFamily="monospace"
         textAnchor="middle"
@@ -150,7 +150,7 @@ const TwinVisual = () => (
       <text
         x="310"
         y="221"
-        fill="#00e5ff"
+        fill="#C98F28"
         fontSize="8"
         fontFamily="monospace"
         textAnchor="middle"
@@ -182,7 +182,7 @@ const TwinVisual = () => (
             height="28"
             rx="5"
             fill="rgba(0,229,255,0.08)"
-            stroke="#00e5ff"
+            stroke="#C98F28"
             strokeWidth="1.5"
           />
           <rect
@@ -250,20 +250,20 @@ const TwinVisual = () => (
     </svg>
 
     {/* Floating stat badges */}
-    <div className="absolute top-3 left-3 bg-[#0C142D]/80 backdrop-blur-sm border border-[#00e5ff]/20 rounded-lg px-3 py-2">
-      <p className="text-[#00e5ff] font-bold text-sm leading-none">10×</p>
+    <div className="absolute top-3 left-3 bg-[#0C142D]/80 backdrop-blur-sm border border-[#C98F28]/20 rounded-lg px-3 py-2">
+      <p className="text-[#C98F28] font-bold text-sm leading-none">10×</p>
       <p className="text-white/50 text-xs mt-0.5">Faster iteration</p>
     </div>
-    <div className="absolute top-3 right-3 bg-[#0C142D]/80 backdrop-blur-sm border border-[#00e5ff]/20 rounded-lg px-3 py-2">
-      <p className="text-[#00e5ff] font-bold text-sm leading-none">99.4%</p>
+    <div className="absolute top-3 right-3 bg-[#0C142D]/80 backdrop-blur-sm border border-[#C98F28]/20 rounded-lg px-3 py-2">
+      <p className="text-[#C98F28] font-bold text-sm leading-none">99.4%</p>
       <p className="text-white/50 text-xs mt-0.5">Sim accuracy</p>
     </div>
-    <div className="absolute bottom-3 left-3 bg-[#0C142D]/80 backdrop-blur-sm border border-[#00e5ff]/20 rounded-lg px-3 py-2">
-      <p className="text-[#00e5ff] font-bold text-sm leading-none">360°</p>
+    <div className="absolute bottom-3 left-3 bg-[#0C142D]/80 backdrop-blur-sm border border-[#C98F28]/20 rounded-lg px-3 py-2">
+      <p className="text-[#C98F28] font-bold text-sm leading-none">360°</p>
       <p className="text-white/50 text-xs mt-0.5">AR/VR ready</p>
     </div>
-    <div className="absolute bottom-3 right-3 bg-[#0C142D]/80 backdrop-blur-sm border border-[#00e5ff]/20 rounded-lg px-3 py-2">
-      <p className="text-[#00e5ff] font-bold text-sm leading-none">0</p>
+    <div className="absolute bottom-3 right-3 bg-[#0C142D]/80 backdrop-blur-sm border border-[#C98F28]/20 rounded-lg px-3 py-2">
+      <p className="text-[#C98F28] font-bold text-sm leading-none">0</p>
       <p className="text-white/50 text-xs mt-0.5">Hardware risk</p>
     </div>
   </div>
@@ -285,18 +285,18 @@ const PipelineVisual = () => {
         {steps.map((step, i) => (
           <React.Fragment key={i}>
             <div className="flex flex-col items-center gap-2 flex-1">
-              <div className="w-12 h-12 rounded-xl bg-[#00e5ff]/10 border border-[#00e5ff]/25 flex items-center justify-center">
-                <span className="text-[#00e5ff] font-mono font-bold text-[10px] tracking-wide">
+              <div className="w-12 h-12 rounded-xl bg-[#C98F28]/10 border border-[#C98F28]/25 flex items-center justify-center">
+                <span className="text-[#C98F28] font-mono font-bold text-[10px] tracking-wide">
                   {step.abbr}
                 </span>
               </div>
-              <p className="text-[#00e5ff]/70 text-[10px] font-mono text-center whitespace-pre-line leading-tight">
+              <p className="text-[#C98F28]/70 text-[10px] font-mono text-center whitespace-pre-line leading-tight">
                 {step.label}
               </p>
             </div>
             {i < steps.length - 1 && (
               <div className="flex items-center gap-0.5 flex-shrink-0 mb-5">
-                <div className="w-4 sm:w-6 h-px bg-[#00e5ff]/30" />
+                <div className="w-4 sm:w-6 h-px bg-[#C98F28]/30" />
                 <svg width="8" height="10" viewBox="0 0 8 10" fill="none">
                   <path d="M0 0L8 5L0 10" fill="rgba(0,229,255,0.4)" />
                 </svg>
@@ -498,21 +498,21 @@ const IoETDigitalTwin = () => {
                     cx="5"
                     cy="12"
                     r="2.5"
-                    stroke="#00e5ff"
+                    stroke="#C98F28"
                     strokeWidth="1.5"
                   />
                   <circle
                     cx="19"
                     cy="7"
                     r="2.5"
-                    stroke="#00e5ff"
+                    stroke="#C98F28"
                     strokeWidth="1.5"
                   />
                   <circle
                     cx="19"
                     cy="17"
                     r="2.5"
-                    stroke="#00e5ff"
+                    stroke="#C98F28"
                     strokeWidth="1.5"
                   />
                   <line
@@ -520,7 +520,7 @@ const IoETDigitalTwin = () => {
                     y1="11"
                     x2="16.5"
                     y2="7.8"
-                    stroke="#00e5ff"
+                    stroke="#C98F28"
                     strokeWidth="1.2"
                     strokeDasharray="2 2"
                   />
@@ -529,7 +529,7 @@ const IoETDigitalTwin = () => {
                     y1="13"
                     x2="16.5"
                     y2="16.2"
-                    stroke="#00e5ff"
+                    stroke="#C98F28"
                     strokeWidth="1.2"
                     strokeDasharray="2 2"
                   />
@@ -537,7 +537,7 @@ const IoETDigitalTwin = () => {
                     cx="12"
                     cy="12"
                     r="1.2"
-                    fill="#00e5ff"
+                    fill="#C98F28"
                     opacity="0.6"
                   />
                 </svg>
@@ -554,9 +554,9 @@ const IoETDigitalTwin = () => {
 
             <p className="fl3 !text-white leading-relaxed">
               UElement's IoET Digital Twin platform fuses live sensor telemetry,
-              quantum-secured data transport, and AI-driven physics simulation
+              quantum-secured data transport, and AI driven physics simulation
               to create persistent, high-fidelity virtual replicas of any
-              physical system — from factory floors to humanoid robots.
+              physical system from factory floors to humanoid robots.
             </p>
 
             {/* Tech stack badge strip */}
@@ -565,7 +565,7 @@ const IoETDigitalTwin = () => {
                 (tag) => (
                   <span
                     key={tag}
-                    className="text-[11px] font-mono font-semibold px-3 py-1 rounded-full border border-[#00e5ff]/30 bg-[#00e5ff]/10 text-[#00e5ff]"
+                    className="text-[11px] font-mono font-semibold px-3 py-1 rounded-full border border-[#C98F28]/30 bg-[#C98F28]/10 text-[#C98F28]"
                   >
                     {tag}
                   </span>
@@ -616,7 +616,7 @@ const IoETDigitalTwin = () => {
                   key={s.val}
                   className="bg-[#0C142D] rounded-[18px] px-4 py-5 flex flex-col gap-1"
                 >
-                  <p className="font-reddit-sans font-bold text-[22px] md:text-[28px] text-[#00e5ff] leading-none">
+                  <p className="font-reddit-sans font-bold text-[22px] md:text-[28px] text-[#C98F28] leading-none">
                     {s.val}
                   </p>
                   <p className="font-light font-reddit-sans text-12 md:text-14 text-[#9E9E9E]">

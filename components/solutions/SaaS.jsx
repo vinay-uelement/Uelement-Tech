@@ -95,13 +95,13 @@ const SaaSHubVisual = () => {
                 cy={pos.y}
                 r="16"
                 fill="rgba(96,165,250,0.12)"
-                stroke="#93c5fd"
+                stroke="#C98F28"
                 strokeWidth="1.5"
               />
               <text
                 x={pos.x}
                 y={pos.y + 3}
-                fill="#93c5fd"
+                fill="#C98F28"
                 fontSize="6.5"
                 fontFamily="monospace"
                 textAnchor="middle"
@@ -118,20 +118,20 @@ const SaaSHubVisual = () => {
         <polygon
           points={`${cx},${cy - 38} ${cx + 33},${cy - 19} ${cx + 33},${cy + 19} ${cx},${cy + 38} ${cx - 33},${cy + 19} ${cx - 33},${cy - 19}`}
           fill="rgba(96,165,250,0.1)"
-          stroke="#93c5fd"
+          stroke="#C98F28"
           strokeWidth="1.8"
         />
         <polygon
           points={`${cx},${cy - 28} ${cx + 24},${cy - 14} ${cx + 24},${cy + 14} ${cx},${cy + 28} ${cx - 24},${cy + 14} ${cx - 24},${cy - 14}`}
           fill="rgba(96,165,250,0.18)"
-          stroke="#93c5fd"
+          stroke="#C98F28"
           strokeWidth="1"
           strokeOpacity="0.4"
         />
         <text
           x={cx}
           y={cy - 5}
-          fill="#93c5fd"
+          fill="#C98F28"
           fontSize="7"
           fontFamily="monospace"
           textAnchor="middle"
@@ -143,7 +143,7 @@ const SaaSHubVisual = () => {
         <text
           x={cx}
           y={cy + 8}
-          fill="#93c5fd"
+          fill="#C98F28"
           fontSize="6.5"
           fontFamily="monospace"
           textAnchor="middle"
@@ -163,7 +163,7 @@ const SaaSHubVisual = () => {
               cx={mx}
               cy={my}
               r="2.5"
-              fill="#93c5fd"
+              fill="#C98F28"
               opacity="0.6"
             />
           );
@@ -205,20 +205,20 @@ const SaaSHubVisual = () => {
       </svg>
 
       {/* Floating badges */}
-      <div className="absolute top-3 left-3 bg-[#0C142D]/80 backdrop-blur-sm border border-[#93c5fd]/20 rounded-lg px-3 py-2">
-        <p className="text-[#93c5fd] font-bold text-sm leading-none">35%</p>
+      <div className="absolute top-3 left-3 bg-[#0C142D]/80 backdrop-blur-sm border border-[#C98F28]/20 rounded-lg px-3 py-2">
+        <p className="text-[#C98F28] font-bold text-sm leading-none">35%</p>
         <p className="text-white/50 text-xs mt-0.5">Cost reduction</p>
       </div>
-      <div className="absolute top-3 right-3 bg-[#0C142D]/80 backdrop-blur-sm border border-[#93c5fd]/20 rounded-lg px-3 py-2">
-        <p className="text-[#93c5fd] font-bold text-sm leading-none">500+</p>
+      <div className="absolute top-3 right-3 bg-[#0C142D]/80 backdrop-blur-sm border border-[#C98F28]/20 rounded-lg px-3 py-2">
+        <p className="text-[#C98F28] font-bold text-sm leading-none">500+</p>
         <p className="text-white/50 text-xs mt-0.5">Integrations</p>
       </div>
-      <div className="absolute bottom-3 left-3 bg-[#0C142D]/80 backdrop-blur-sm border border-[#93c5fd]/20 rounded-lg px-3 py-2">
-        <p className="text-[#93c5fd] font-bold text-sm leading-none">100%</p>
+      <div className="absolute bottom-3 left-3 bg-[#0C142D]/80 backdrop-blur-sm border border-[#C98F28]/20 rounded-lg px-3 py-2">
+        <p className="text-[#C98F28] font-bold text-sm leading-none">100%</p>
         <p className="text-white/50 text-xs mt-0.5">License visibility</p>
       </div>
-      <div className="absolute bottom-3 right-3 bg-[#0C142D]/80 backdrop-blur-sm border border-[#93c5fd]/20 rounded-lg px-3 py-2">
-        <p className="text-[#93c5fd] font-bold text-sm leading-none">
+      <div className="absolute bottom-3 right-3 bg-[#0C142D]/80 backdrop-blur-sm border border-[#C98F28]/20 rounded-lg px-3 py-2">
+        <p className="text-[#C98F28] font-bold text-sm leading-none">
           &lt;5 min
         </p>
         <p className="text-white/50 text-xs mt-0.5">App onboarding</p>
@@ -238,25 +238,25 @@ const LifecycleVisual = () => {
   ];
   return (
     <div className="w-full bg-[#0C142D] rounded-[4px] p-6 sm:p-8 overflow-x-auto">
-      <p className="text-[#93c5fd]/50 text-[9px] font-mono font-bold tracking-[0.2em] uppercase mb-5">
+      <p className="text-[#C98F28]/50 text-[9px] font-mono font-bold tracking-[0.2em] uppercase mb-5">
         Full-Lifecycle Visibility — Discovery to Decommission
       </p>
       <div className="flex items-center justify-between min-w-[400px] gap-1">
         {steps.map((step, i) => (
           <React.Fragment key={i}>
             <div className="flex flex-col items-center gap-2 flex-1">
-              <div className="w-12 h-12 rounded-xl bg-[#93c5fd]/10 border border-[#93c5fd]/25 flex items-center justify-center">
-                <span className="text-[#93c5fd] font-mono font-bold text-[9px] tracking-wide">
+              <div className="w-12 h-12 rounded-xl bg-[#C98F28]/10 border border-[#C98F28]/25 flex items-center justify-center">
+                <span className="text-[#C98F28] font-mono font-bold text-[9px] tracking-wide">
                   {step.abbr}
                 </span>
               </div>
-              <p className="text-[#93c5fd]/70 text-[10px] font-mono text-center leading-tight">
+              <p className="text-[#C98F28]/70 text-[10px] font-mono text-center leading-tight">
                 {step.label}
               </p>
             </div>
             {i < steps.length - 1 && (
               <div className="flex items-center gap-0.5 flex-shrink-0 mb-5">
-                <div className="w-4 sm:w-8 h-px bg-[#93c5fd]/30" />
+                <div className="w-4 sm:w-8 h-px bg-[#C98F28]/30" />
                 <svg width="8" height="10" viewBox="0 0 8 10" fill="none">
                   <path d="M0 0L8 5L0 10" fill="rgba(147,197,253,0.4)" />
                 </svg>
@@ -442,7 +442,7 @@ const SaaSPlatform = () => {
                     width="8"
                     height="8"
                     rx="2"
-                    stroke="#93c5fd"
+                    stroke="#C98F28"
                     strokeWidth="1.5"
                   />
                   <rect
@@ -451,7 +451,7 @@ const SaaSPlatform = () => {
                     width="8"
                     height="8"
                     rx="2"
-                    stroke="#93c5fd"
+                    stroke="#C98F28"
                     strokeWidth="1.5"
                   />
                   <rect
@@ -460,7 +460,7 @@ const SaaSPlatform = () => {
                     width="8"
                     height="8"
                     rx="2"
-                    stroke="#93c5fd"
+                    stroke="#C98F28"
                     strokeWidth="1.5"
                   />
                   <rect
@@ -469,7 +469,7 @@ const SaaSPlatform = () => {
                     width="8"
                     height="8"
                     rx="2"
-                    stroke="#93c5fd"
+                    stroke="#C98F28"
                     strokeWidth="1.5"
                     strokeDasharray="2 1.5"
                   />
@@ -477,7 +477,7 @@ const SaaSPlatform = () => {
                     cx="17"
                     cy="17"
                     r="1.2"
-                    fill="#93c5fd"
+                    fill="#C98F28"
                     opacity="0.7"
                   />
                 </svg>
@@ -504,7 +504,7 @@ const SaaSPlatform = () => {
                 (tag) => (
                   <span
                     key={tag}
-                    className="text-[11px] font-mono font-semibold px-3 py-1 rounded-full border border-[#93c5fd]/30 bg-[#93c5fd]/10 text-[#93c5fd]"
+                    className="text-[11px] font-mono font-semibold px-3 py-1 rounded-full border border-[#C98F28]/30 bg-[#C98F28]/10 text-[#C98F28]"
                   >
                     {tag}
                   </span>
@@ -554,7 +554,7 @@ const SaaSPlatform = () => {
                   key={s.val}
                   className="bg-[#0C142D] rounded-[18px] px-4 py-5 flex flex-col gap-1"
                 >
-                  <p className="font-reddit-sans font-bold text-[22px] md:text-[28px] text-[#93c5fd] leading-none">
+                  <p className="font-reddit-sans font-bold text-[22px] md:text-[28px] text-[#C98F28] leading-none">
                     {s.val}
                   </p>
                   <p className="font-light font-reddit-sans text-12 md:text-14 text-[#9E9E9E]">

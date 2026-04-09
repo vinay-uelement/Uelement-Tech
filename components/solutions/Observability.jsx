@@ -10,10 +10,10 @@ const ObsVisual = () => {
   const cx = 310;
   const cy = 220;
   const domains = [
-    { label: 'SecOps', abbr: 'SEC', angle: -90, color: '#fb923c' },
-    { label: 'CloudOps', abbr: 'CLD', angle: 0, color: '#fb923c' },
-    { label: 'AIOps', abbr: 'AI', angle: 90, color: '#fb923c' },
-    { label: 'FinOps', abbr: 'FIN', angle: 180, color: '#fb923c' },
+    { label: 'SecOps', abbr: 'SEC', angle: -90, color: '#C98F28' },
+    { label: 'CloudOps', abbr: 'CLD', angle: 0, color: '#C98F28' },
+    { label: 'AIOps', abbr: 'AI', angle: 90, color: '#C98F28' },
+    { label: 'FinOps', abbr: 'FIN', angle: 180, color: '#C98F28' },
   ];
   const r = 148;
   const getPos = (angle) => ({
@@ -98,13 +98,13 @@ const ObsVisual = () => {
                 cy={pos.y}
                 r="20"
                 fill="rgba(251,146,60,0.12)"
-                stroke="#fb923c"
+                stroke="#C98F28"
                 strokeWidth="1.5"
               />
               <text
                 x={pos.x}
                 y={pos.y + 4}
-                fill="#fb923c"
+                fill="#C98F28"
                 fontSize="8"
                 fontFamily="monospace"
                 textAnchor="middle"
@@ -143,7 +143,7 @@ const ObsVisual = () => {
               cx={mx}
               cy={my}
               r="3"
-              fill="#fb923c"
+              fill="#C98F28"
               opacity="0.5"
             />
           );
@@ -163,13 +163,13 @@ const ObsVisual = () => {
           cy={cy}
           r="36"
           fill="rgba(251,146,60,0.1)"
-          stroke="#fb923c"
+          stroke="#C98F28"
           strokeWidth="1.8"
         />
         <text
           x={cx}
           y={cy - 6}
-          fill="#fb923c"
+          fill="#C98F28"
           fontSize="7"
           fontFamily="monospace"
           textAnchor="middle"
@@ -181,7 +181,7 @@ const ObsVisual = () => {
         <text
           x={cx}
           y={cy + 6}
-          fill="#fb923c"
+          fill="#C98F28"
           fontSize="7"
           fontFamily="monospace"
           textAnchor="middle"
@@ -227,20 +227,20 @@ const ObsVisual = () => {
       </svg>
 
       {/* Floating badges */}
-      <div className="absolute top-3 left-3 bg-[#0C142D]/80 backdrop-blur-sm border border-[#fb923c]/20 rounded-lg px-3 py-2">
-        <p className="text-[#fb923c] font-bold text-sm leading-none">92%</p>
+      <div className="absolute top-3 left-3 bg-[#0C142D]/80 backdrop-blur-sm border border-[#C98F28]/20 rounded-lg px-3 py-2">
+        <p className="text-[#C98F28] font-bold text-sm leading-none">92%</p>
         <p className="text-white/50 text-xs mt-0.5">MTTD reduction</p>
       </div>
-      <div className="absolute top-3 right-3 bg-[#0C142D]/80 backdrop-blur-sm border border-[#fb923c]/20 rounded-lg px-3 py-2">
-        <p className="text-[#fb923c] font-bold text-sm leading-none">&lt;60s</p>
+      <div className="absolute top-3 right-3 bg-[#0C142D]/80 backdrop-blur-sm border border-[#C98F28]/20 rounded-lg px-3 py-2">
+        <p className="text-[#C98F28] font-bold text-sm leading-none">&lt;60s</p>
         <p className="text-white/50 text-xs mt-0.5">Threat detection</p>
       </div>
-      <div className="absolute bottom-3 left-3 bg-[#0C142D]/80 backdrop-blur-sm border border-[#fb923c]/20 rounded-lg px-3 py-2">
-        <p className="text-[#fb923c] font-bold text-sm leading-none">40%</p>
+      <div className="absolute bottom-3 left-3 bg-[#0C142D]/80 backdrop-blur-sm border border-[#C98F28]/20 rounded-lg px-3 py-2">
+        <p className="text-[#C98F28] font-bold text-sm leading-none">40%</p>
         <p className="text-white/50 text-xs mt-0.5">Cloud cost savings</p>
       </div>
-      <div className="absolute bottom-3 right-3 bg-[#0C142D]/80 backdrop-blur-sm border border-[#fb923c]/20 rounded-lg px-3 py-2">
-        <p className="text-[#fb923c] font-bold text-sm leading-none">4-in-1</p>
+      <div className="absolute bottom-3 right-3 bg-[#0C142D]/80 backdrop-blur-sm border border-[#C98F28]/20 rounded-lg px-3 py-2">
+        <p className="text-[#C98F28] font-bold text-sm leading-none">4-in-1</p>
         <p className="text-white/50 text-xs mt-0.5">Ops domains</p>
       </div>
     </div>
@@ -253,7 +253,7 @@ const TelemetryPipeline = () => {
   const outputs = ['SecOps', 'CloudOps', 'AIOps', 'FinOps'];
   return (
     <div className="w-full bg-[#0C142D] rounded-[4px] p-6 sm:p-8 overflow-x-auto">
-      <p className="text-[#fb923c]/50 text-[9px] font-mono font-bold tracking-[0.2em] uppercase mb-5">
+      <p className="text-[#C98F28]/50 text-[9px] font-mono font-bold tracking-[0.2em] uppercase mb-5">
         Unified Telemetry Pipeline — Single Data Model & Correlation Engine
       </p>
       <div className="flex items-center gap-3 min-w-[520px]">
@@ -262,10 +262,10 @@ const TelemetryPipeline = () => {
           {sources.map((s) => (
             <div
               key={s}
-              className="bg-[#fb923c]/10 border border-[#fb923c]/20 rounded-lg px-3 py-1.5 flex items-center gap-2"
+              className="bg-[#C98F28]/10 border border-[#C98F28]/20 rounded-lg px-3 py-1.5 flex items-center gap-2"
             >
-              <div className="w-1.5 h-1.5 rounded-full bg-[#fb923c] opacity-70" />
-              <span className="text-[#fb923c]/70 font-mono text-[9px] font-bold tracking-wide">
+              <div className="w-1.5 h-1.5 rounded-full bg-[#C98F28] opacity-70" />
+              <span className="text-[#C98F28]/70 font-mono text-[9px] font-bold tracking-wide">
                 {s.toUpperCase()}
               </span>
             </div>
@@ -276,7 +276,7 @@ const TelemetryPipeline = () => {
         <div className="flex flex-col items-center gap-0.5 flex-shrink-0">
           {[...Array(5)].map((_, i) => (
             <div key={i} className="flex items-center gap-0.5">
-              <div className="w-8 sm:w-12 h-px bg-[#fb923c]/25" />
+              <div className="w-8 sm:w-12 h-px bg-[#C98F28]/25" />
               <svg width="6" height="8" viewBox="0 0 6 8" fill="none">
                 <path d="M0 0L6 4L0 8" fill="rgba(251,146,60,0.35)" />
               </svg>
@@ -286,22 +286,22 @@ const TelemetryPipeline = () => {
 
         {/* Core */}
         <div className="flex-shrink-0 flex flex-col items-center gap-1">
-          <div className="w-16 h-16 rounded-xl bg-[#fb923c]/15 border border-[#fb923c]/35 flex flex-col items-center justify-center">
-            <span className="text-[#fb923c] font-mono font-bold text-[9px] tracking-wide">
+          <div className="w-16 h-16 rounded-xl bg-[#C98F28]/15 border border-[#C98F28]/35 flex flex-col items-center justify-center">
+            <span className="text-[#C98F28] font-mono font-bold text-[9px] tracking-wide">
               INTEL
             </span>
-            <span className="text-[#fb923c] font-mono font-bold text-[9px] tracking-wide">
+            <span className="text-[#C98F28] font-mono font-bold text-[9px] tracking-wide">
               CORE
             </span>
           </div>
-          <span className="text-[#fb923c]/40 font-mono text-[8px]">OTEL</span>
+          <span className="text-[#C98F28]/40 font-mono text-[8px]">OTEL</span>
         </div>
 
         {/* Arrow out */}
         <div className="flex flex-col items-center gap-0.5 flex-shrink-0">
           {[...Array(4)].map((_, i) => (
             <div key={i} className="flex items-center gap-0.5">
-              <div className="w-8 sm:w-12 h-px bg-[#fb923c]/25" />
+              <div className="w-8 sm:w-12 h-px bg-[#C98F28]/25" />
               <svg width="6" height="8" viewBox="0 0 6 8" fill="none">
                 <path d="M0 0L6 4L0 8" fill="rgba(251,146,60,0.35)" />
               </svg>
@@ -314,10 +314,10 @@ const TelemetryPipeline = () => {
           {outputs.map((o) => (
             <div
               key={o}
-              className="bg-[#fb923c]/15 border border-[#fb923c]/30 rounded-lg px-3 py-1.5 flex items-center gap-2"
+              className="bg-[#C98F28]/15 border border-[#C98F28]/30 rounded-lg px-3 py-1.5 flex items-center gap-2"
             >
-              <div className="w-1.5 h-1.5 rounded-full bg-[#fb923c]" />
-              <span className="text-[#fb923c] font-mono text-[9px] font-bold tracking-wide">
+              <div className="w-1.5 h-1.5 rounded-full bg-[#C98F28]" />
+              <span className="text-[#C98F28] font-mono text-[9px] font-bold tracking-wide">
                 {o.toUpperCase()}
               </span>
             </div>
@@ -505,24 +505,24 @@ const Observability = () => {
                     cx="12"
                     cy="12"
                     r="9"
-                    stroke="#fb923c"
+                    stroke="#C98F28"
                     strokeWidth="1.5"
                   />
                   <circle
                     cx="12"
                     cy="12"
                     r="5"
-                    stroke="#fb923c"
+                    stroke="#C98F28"
                     strokeWidth="1.2"
                     strokeDasharray="2 2"
                   />
-                  <circle cx="12" cy="12" r="2" fill="#fb923c" />
+                  <circle cx="12" cy="12" r="2" fill="#C98F28" />
                   <line
                     x1="12"
                     y1="3"
                     x2="12"
                     y2="6"
-                    stroke="#fb923c"
+                    stroke="#C98F28"
                     strokeWidth="1.5"
                   />
                   <line
@@ -530,7 +530,7 @@ const Observability = () => {
                     y1="18"
                     x2="12"
                     y2="21"
-                    stroke="#fb923c"
+                    stroke="#C98F28"
                     strokeWidth="1.5"
                   />
                   <line
@@ -538,7 +538,7 @@ const Observability = () => {
                     y1="12"
                     x2="6"
                     y2="12"
-                    stroke="#fb923c"
+                    stroke="#C98F28"
                     strokeWidth="1.5"
                   />
                   <line
@@ -546,7 +546,7 @@ const Observability = () => {
                     y1="12"
                     x2="21"
                     y2="12"
-                    stroke="#fb923c"
+                    stroke="#C98F28"
                     strokeWidth="1.5"
                   />
                 </svg>
@@ -573,7 +573,7 @@ const Observability = () => {
               {['SecOps', 'CloudOps', 'AIOps', 'FinOps'].map((tag) => (
                 <span
                   key={tag}
-                  className="text-[11px] font-mono font-semibold px-3 py-1 rounded-full border border-[#fb923c]/30 bg-[#fb923c]/10 text-[#fb923c]"
+                  className="text-[11px] font-mono font-semibold px-3 py-1 rounded-full border border-[#C98F28]/30 bg-[#C98F28]/10 text-[#C98F28]"
                 >
                   {tag}
                 </span>
@@ -622,7 +622,7 @@ const Observability = () => {
                   key={s.val}
                   className="bg-[#0C142D] rounded-[18px] px-4 py-5 flex flex-col gap-1"
                 >
-                  <p className="font-reddit-sans font-bold text-[22px] md:text-[28px] text-[#fb923c] leading-none">
+                  <p className="font-reddit-sans font-bold text-[22px] md:text-[28px] text-[#C98F28] leading-none">
                     {s.val}
                   </p>
                   <p className="font-light font-reddit-sans text-12 md:text-14 text-[#9E9E9E]">
