@@ -1,9 +1,10 @@
 'use client';
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useRef, useState } from 'react';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import GlobalSlider from '@/components/Slider/GlobalSlider';
+import Image from 'next/image';
 
 const Cloud = () => {
   const sliderRef = useRef(null);
@@ -92,15 +93,8 @@ const Cloud = () => {
     }
   };
 
-  const handleTouchStart = () => {
-    handlePause();
-  };
-
-  const handleTouchEnd = () => {
-    setTimeout(() => {
-      handlePlay();
-    }, 300);
-  };
+  const handleTouchStart = () => handlePause();
+  const handleTouchEnd = () => setTimeout(() => handlePlay(), 300);
 
   const keyFeaturesSettings = {
     dots: true,
@@ -139,11 +133,25 @@ const Cloud = () => {
   return (
     <div className="mb-0 md:mb-0">
       {/* Hero Section */}
-      <section className="h-auto relative flex lg:flex-row flex-col items-center bg-hero-gradient section-block-padding !pb-[20px] pb:!md-16 3xl:!pb-22 3xl:!pt-[175px] md:!pt-[125px]">
+      <section className="min-h-screen relative flex lg:flex-row flex-col items-center overflow-hidden section-block-padding">
+        {/* Desktop background — no p-2 since section has section-block-padding */}
+        <Image
+          src="/images/global/hero-bg.webp"
+          alt="Cloud Solutions background"
+          className="absolute -z-10 object-fill h-full w-full hidden md:block p-2"
+          height={1000}
+          width={1000}
+          priority
+        />
+
+        {/* Mobile background */}
+        <div className="absolute inset-0 -z-10 block md:hidden p-2">
+          <div className="bg-hero-gradient w-full h-full rounded-[28px] relative overflow-hidden"></div>
+        </div>
+
         <div className="container-padding w-full flex flex-col lg:flex-row gap-2 lg:gap-12 justify-between mt-[var(--mobile-navbar-gap)] lg:my-0 lg:py-0">
           {/* Left: Content - 40% */}
           <div className="text-white w-full lg:w-[40%] flex flex-col justify-center order-1">
-            {/* Icon + Label */}
             {/* Icon + Label */}
             <div className="flex items-center mb-10 md:mb-16">
               <div className="size-[40px] md:size-[60px] bg-[#60606059] backdrop-blur-lg flex-shrink-0 rounded-full flex items-center justify-center">
@@ -153,7 +161,7 @@ const Cloud = () => {
                   className="size-6 sm:size-8"
                 />
               </div>
-              <div className="w-[60px] md:w-[120px] h-[4px] bg-[#D2D2D2]"></div>
+              <div className="w-[60px] md:w-[120px] h-[4px] bg-[#D2D2D2]" />
               <span className="text-white font-reddit-sans text-14 sm:text-16 md:text-20 font-semibold ml-3">
                 Cloud Solutions
               </span>
@@ -185,13 +193,29 @@ const Cloud = () => {
             </div>
           </div>
         </div>
+
+        {/* Notch — bottom-right, mobile only */}
+        <svg
+          className="md:hidden absolute pointer-events-none z-10"
+          style={{ bottom: '8px', right: '8px' }}
+          width="310"
+          height="60"
+          viewBox="0 0 302 59"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M49.73 0.5H310.5V59.5H0.34C7.72 58.02 12.68 54.97 16.12 50.95C21.03 45.21 22.75 37.58 24.11 30.09C25.47 22.54 26.47 15.16 29.84 9.64C31.51 6.89 33.76 4.62 36.94 3.03C40.12 1.43 44.26 0.5 49.73 0.5Z"
+            fill="white"
+            stroke="white"
+          />
+        </svg>
       </section>
 
       {/* Quantum-Resistant Security Section */}
       <section className="bg-[#fcfcfc] py-[var(--section-block-padding)]">
         <div className="container-padding">
           <div className="bg-[#f3f3f3] rounded-[4px] shadow-lg p-6 sm:p-8 md:p-10 lg:p-12">
-            {/* Image */}
             <div className="w-full h-[150px] sm:h-[300px] md:h-[350px] lg:h-[400px] mb-6 sm:mb-8">
               <img
                 src="/images/service/cloud/cloud2.png"
@@ -199,11 +223,8 @@ const Cloud = () => {
                 className="w-full h-full object-cover rounded-[4px]"
               />
             </div>
-
-            {/* Content */}
             <div>
               <h2 className="fl1 mb-4 sm:mb-6">Secure Cloud Computing</h2>
-
               <p className="fl3 leading-relaxed">
                 UElement Technologies optimizes cloud infrastructure with
                 scalable, secure solutions tailored for enterprises and
@@ -223,11 +244,9 @@ const Cloud = () => {
       {/* Key Features Section */}
       <section className="bg-[#fcfcfc] pb-[var(--section-block-padding)]">
         <div className="container-padding">
-          <h2 className="fl1 text-left !mb-4 sm:!mb-6">
-            Key Features
-          </h2>
+          <h2 className="fl1 text-left !mb-4 sm:!mb-6">Key Features</h2>
 
-          {/* Desktop Grid - 4 columns */}
+          {/* Desktop Grid */}
           <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {keyFeatures.map((feature) => (
               <div
@@ -252,7 +271,7 @@ const Cloud = () => {
           >
             <Slider ref={sliderRef} {...keyFeaturesSettings}>
               {keyFeatures.map((feature) => (
-                <div key={feature.id} className="">
+                <div key={feature.id}>
                   <div className="rounded-[4px] light-glass p-6 min-h-[200px] mb-4">
                     <h3 className="font-noto-sans font-semibold text-16 text-black mb-3">
                       {feature.title}
@@ -271,10 +290,7 @@ const Cloud = () => {
       {/* Other Services Section */}
       <section className="bg-[#fcfcfc] pb-[var(--section-block-padding)] pt-[20px] md:pt-0">
         <div className="container-padding">
-          <h2 className="fl1 text-left !mb-4 sm:!mb-6">
-            Other Services
-          </h2>
-
+          <h2 className="fl1 text-left !mb-4 sm:!mb-6">Other Services</h2>
           <GlobalSlider data={otherServices} />
         </div>
       </section>

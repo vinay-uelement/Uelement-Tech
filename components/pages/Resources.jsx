@@ -5,8 +5,8 @@ import ResourcesPointSection from '../resources/ResourcesPointSection';
 
 const Resources = () => {
   return (
-    <div>
-      <div className="bg-primary-blue">
+    <div className="p-2 md:p-3">
+      <div className="bg-hero-gradient rounded-[38px]">
         <ResourcesHero />
         <ResourcesPointSection />
       </div>

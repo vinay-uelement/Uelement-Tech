@@ -31,15 +31,7 @@ const PartnersHero = () => {
 
       {/* Mobile background */}
       <div className="absolute inset-0 -z-10 block md:hidden p-2">
-        <div className="bg-hero-gradient w-full h-full rounded-[28px] relative overflow-hidden">
-          <Image
-            src="/images/landing/UElement-Mudra.png"
-            alt="Rudra"
-            width={320}
-            height={320}
-            className="absolute bottom-15 right-0 object-contain opacity-80"
-          />
-        </div>
+        <div className="bg-hero-gradient w-full h-full rounded-[28px] relative overflow-hidden"></div>
       </div>
 
       <div className="container-padding w-full flex flex-col lg:flex-row gap-10 justify-between mt-[var(--mobile-navbar-gap)] lg:my-0">
