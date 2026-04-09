@@ -37,6 +37,37 @@ const navbarList = [
       },
     ],
   },
+  {
+    id: 6,
+    label: 'Solutions',
+    link: '/solutions',
+    children: [
+      {
+        id: 1,
+        label: 'SaaS',
+        desc: 'Web Platform Management',
+        link: '/saas',
+      },
+      {
+        id: 2,
+        label: 'Observability',
+        desc: 'SecOps, CloudOps, AIOps & FinOps',
+        link: '/observability',
+      },
+      {
+        id: 3,
+        label: 'IoET',
+        desc: 'Enhanced Digital Twin',
+        link: '/ioet',
+      },
+      {
+        id: 4,
+        label: 'Quantum',
+        desc: 'Application Devlopment & PQC',
+        link: '/quantum',
+      },
+    ],
+  },
   // {
   //   id: 2,
   //   label: 'Resources',
@@ -97,12 +128,14 @@ const MOBILE_DROPDOWN_HEIGHT = {
   1: 'h-[300px]', // Services
   2: 'h-[260px]', // Resources
   3: 'h-[200px]', // Partnership
+  6: 'h-[300px]', // Partnership
 };
 
 const DESKTOP_DROPDOWN_HEIGHT = {
   1: 'h-[425px]', // Services
   2: 'h-[350px]', // Resources
   3: 'h-[350px]', // Partnership
+  6: 'h-[425px]', // Solutions
 };
 
 const NavbarV3 = () => {
@@ -121,7 +154,7 @@ const NavbarV3 = () => {
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 100);
-      setIsScrolled100vh(window.scrollY > (window.innerHeight - 30));
+      setIsScrolled100vh(window.scrollY > window.innerHeight - 30);
     };
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
@@ -219,8 +252,9 @@ const NavbarV3 = () => {
                             className="flex items-center font-reddit-sans font-semibold md:text-14 xl:text-18 text-[#fff] px-3 uppercase relative h-full cursor-pointer"
                           >
                             <span
-                              className={`transition-all duration-500 ${isOpen ? 'rotate-0' : 'rotate-45'
-                                }`}
+                              className={`transition-all duration-500 ${
+                                isOpen ? 'rotate-0' : 'rotate-45'
+                              }`}
                             >
                               {ReactIcons.slash}
                             </span>
@@ -264,10 +298,12 @@ const NavbarV3 = () => {
               <div
                 ref={dropdownRef}
                 className={`w-[calc(100%+40px)] absolute -left-10 bg-[#00000050] backdrop-blur-2xl backdrop-saturate-150
-    shadow-xl text-[#fff] z-[30] top-9 hidden lg:flex rounded-b-[22px] overflow-hidden transition-all duration-300 ease-in-out ${openMenu && openMenu.children
-                    ? DESKTOP_DROPDOWN_HEIGHT[openMenu.id] ?? 'h-[400px]'
-                    : 'h-0'
-                  }`}
+    shadow-[0_8px_16px_rgba(255,255,255,0.06)] text-[#fff] z-[30] top-9 hidden lg:flex rounded-b-[22px] overflow-hidden transition-all duration-300 ease-in-out border border-t-0 border-[#ffffff20]
+ ${
+   openMenu && openMenu.children
+     ? (DESKTOP_DROPDOWN_HEIGHT[openMenu.id] ?? 'h-[400px]')
+     : 'h-0'
+ }`}
               >
                 {openMenu && openMenu.children && (
                   <div className="pt-9 pb-3 px-4 flex w-full">

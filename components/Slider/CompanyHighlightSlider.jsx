@@ -50,7 +50,7 @@ const CompanyHighlightSlider = ({ data }) => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10 items-center">
               {/* Left — Image */}
               <div
-                className="relative rounded-[42px] overflow-visible"
+                className="relative rounded-[18px] overflow-visible"
                 style={{ marginTop: '62px' }}
               >
                 <p
@@ -62,7 +62,7 @@ const CompanyHighlightSlider = ({ data }) => {
                 <img
                   src={item.image}
                   alt={item.title}
-                  className="relative z-0 w-full h-[220px] sm:h-[280px] md:h-[340px] lg:h-[360px] object-cover rounded-[42px]"
+                  className="relative z-0 w-full h-[220px] sm:h-[280px] md:h-[340px] lg:h-[360px] object-cover rounded-[18px]"
                 />
               </div>
 

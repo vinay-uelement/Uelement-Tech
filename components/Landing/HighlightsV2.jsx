@@ -39,7 +39,7 @@ export default function HighlightV2() {
   return (
     <div className="relative w-full flex flex-col items-center">
       <div className="relative w-full container-padding z-10 py-10 md:py-14">
-        <div className="light-glass rounded-[42px] p-4 md:p-8 lg:p-10  mb-10 shadow-[5px_8px_8.2px_0_rgba(0,0,0,0.1)]">
+        <div className="light-glass rounded-[20px] p-4 md:p-8 lg:p-10  mb-10 shadow-[5px_8px_8.2px_0_rgba(0,0,0,0.1)]">
           <CompanyHighlightSlider data={sliderData} />
         </div>
       </div>
