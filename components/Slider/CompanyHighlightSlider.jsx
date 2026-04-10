@@ -77,9 +77,18 @@ const CompanyHighlightSlider = ({ data }) => {
                   </p>
                 </div>
                 <div>
-                  <Link href={item.link}>
-                    <button className="btn-blue">Schedule a Demo</button>
-                  </Link>
+                  <button
+                    className="btn-arrow mt-4 !hidden lg:!block"
+                    onClick={() => router.push('/contact-us')}
+                  >
+                    <span
+                      className="btn-arrow-circle bg-hero-gradient"
+                      aria-hidden="true"
+                    >
+                      <span className="btn-arrow-icon" />
+                    </span>
+                    <span className="btn-arrow-text">Learn More</span>
+                  </button>
                 </div>
               </div>
             </div>

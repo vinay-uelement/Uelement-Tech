@@ -222,11 +222,7 @@
 
   /* ── Yellow modifier — just override the variables ── */
   .btn-arrow-yellow {
-    --arrow-bg-start: #9b7025;
-    --arrow-bg-mid1: #9b7025;
-    --arrow-bg-mid2: #9b7025;
-    --arrow-bg-end: #9b7025;
-    --arrow-text: #9b7025;
+    --arrow-text: #bf8a2d;
   }
 
   /* ── Circle uses the variables ── */
@@ -244,6 +240,25 @@
       var(--arrow-bg-end) 96.86%
     );
     transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+  }
+
+  .btn-arrow-yellow .btn-arrow-circle {
+    background-image: linear-gradient(97.27deg, #774d05 0%, #9b7025 100%);
+    border: 1px solid #e9d7c266;
+    box-shadow:
+      inset 0px 1px 0px 0px #ffffff59,
+      0px 10px 24px 0px #00000052,
+      0px 0px 18px 0px #b5885e3d;
+  }
+
+  .btn-arrow-yellow:hover .btn-arrow-circle,
+  .btn-arrow-yellow:focus-visible .btn-arrow-circle {
+    width: 100%;
+    border: 1px solid #f2e2cf99;
+    box-shadow:
+      inset 0px 1px 0px 0px #ffffff80,
+      0px 14px 30px 0px #00000066,
+      0px 0px 22px 0px #b5885e66;
   }
 
   /* rest of styles unchanged... */

@@ -108,11 +108,23 @@ const HeroSectionV5 = () => {
         </div>
         {/* Desktop bottom bar */}
         <div className="absolute right-8 top-[78vh] w-full flex justify-between">
-          <button
+          {/* <button
             onClick={handleContactus}
             className="btn-yellow w-fit translate-x-7/12 hidden md:block"
           >
             Contact Us
+          </button> */}
+          <button
+            className="btn-arrow btn-arrow-yellow translate-x-7/12 !hidden md:!block"
+            onClick={handleContactus}
+          >
+            <span
+              className="btn-arrow-circle bg-hero-gradient"
+              aria-hidden="true"
+            >
+              <span className="btn-arrow-icon" />
+            </span>
+            <span className="btn-arrow-text">Learn More</span>
           </button>
           <div
             className="w-[65vw] hidden md:flex items-center bg-[#D4D4D41A] backdrop-blur-2xl rounded-[40px] px-1 py-1 shadow-lg z-50"
