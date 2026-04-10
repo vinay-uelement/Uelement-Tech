@@ -122,9 +122,9 @@ const DrivingGrowthSection = () => {
   return (
     <section className="container-padding">
       {/* ↓ added `relative` to support the absolutely positioned number block */}
-      <div className="flex md:items-center flex-col lg:flex-row gap-10 md:gap-20 lg:pb-8 xl:pb-10 2xl:pb-12 ">
+      <div className="flex md:items-center flex-col lg:flex-row gap-10 md:gap-14 lg:pb-8 xl:pb-10 2xl:pb-12 ">
         {/* Left Side Numbers */}
-        <div className="flex-1 lg:mr-[30px] md:w-[60%] w-full">
+        <div className="flex-1 lg:mr-[30px] md:w-[80%] w-full ">
           <span className="fl-slash block">/Service Segment</span>
 
           {/* ↓ Single absolutely positioned number block from second code */}
@@ -145,7 +145,8 @@ const DrivingGrowthSection = () => {
           </div>
 
           {/* <span className="fl-slash hidden lg:block">/Service Segment</span> */}
-          <div className="min-h-[200px] lg:min-h-[250px]">
+          <div className="min-h-[220px] lg:min-h-[300px] xl:min-h-[320px]">
+            {' '}
             <h3 className="fl1">{slides[active].headline}</h3>
             <p className="fl3 lg:block md:w-[90%] w-full text-left">
               {slides[active].desc1}
@@ -165,7 +166,7 @@ const DrivingGrowthSection = () => {
           </button>
         </div>
 
-        <div className="relative overflow-visible md:!w-[50%] w-full driving-slider">
+        <div className="relative overflow-visible md:!w-[50%] w-full driving-slider ">
           <div className="absolute inset-y-0 -left-2 md:-left-15 flex items-center z-20">
             <div
               onClick={prevSlide}

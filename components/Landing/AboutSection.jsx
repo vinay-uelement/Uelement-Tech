@@ -118,7 +118,7 @@ export default function AboutSection() {
               </div>
 
               {/* Desktop  */}
-              <div className="grid grid-cols-2 gap-20 max-w-5xl m7-auto relative z-10 hidden md:grid mt-18">
+              <div className="grid grid-cols-2 gap-20 max-w-5xl m7-auto relative z-10 hidden md:grid mt-[8vh]">
                 {transformBullet.map((data) => (
                   <div key={data.id} className="flex flex-col items-start">
                     <div className="size-[50px] flex items-center justify-center bg-[#F3F3F3] rounded-full ">

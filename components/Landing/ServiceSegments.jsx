@@ -35,16 +35,18 @@ const CARD_GAP = '1rem'; // gap between the two text cards per row
 
 const TextCard = ({ title, desc, logo }) => (
   <div className="bg-[#F0F0F0] rounded-[18px] p-6 xl:p-8 flex flex-col items-center text-center gap-4 h-full">
-    <div className="w-[48px] h-[48px] rounded-full bg-[#D4D4D4] flex items-center justify-center flex-shrink-0">
-      <img
-        src={logo}
-        alt={title}
-        className="w-[24px] h-[24px] object-contain"
-      />
+    <div className="flex flex-row justify-between items-center gap-4">
+      <div className="w-[48px] h-[48px] rounded-full bg-[#D4D4D4] flex items-center justify-center flex-shrink-0">
+        <img
+          src={logo}
+          alt={title}
+          className="w-[24px] h-[24px] object-contain"
+        />
+      </div>
+      <h6 className="font-noto-sans font-bold text-16 xl:text-18 text-[#232223]">
+        {title}
+      </h6>
     </div>
-    <h6 className="font-noto-sans font-bold text-16 xl:text-18 text-[#232223]">
-      {title}
-    </h6>
     <div className="w-full border-t border-dashed border-[#C0C0C0]" />
     <p className="fl3 !text-[#1c1c1c] leading-relaxed">{desc}</p>
   </div>
