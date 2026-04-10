@@ -99,7 +99,7 @@ const HeroSectionV5 = () => {
             </p>
             <button
               onClick={handleContactus}
-              className="btn-yellow w-fit md:hidden"
+              className="btn-yellow w-fit md:!hidden"
             >
               About Us
             </button>
@@ -110,7 +110,7 @@ const HeroSectionV5 = () => {
         <div className="absolute right-8 top-[74vh] w-full flex justify-between">
           <button
             onClick={handleContactus}
-            className="btn-yellow w-fit translate-x-7/12 hidden md:block !py-0"
+            className="btn-yellow w-fit translate-x-7/12 !hidden md:!block"
           >
             About Us
           </button>

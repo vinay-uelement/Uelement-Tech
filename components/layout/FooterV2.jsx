@@ -479,13 +479,13 @@ const ContactUs = () => {
                 )}
               </div>
 
-              <div className="flex justify-center sm:justify-end">
+              <div className="flex justify-center sm:justify-end items-center">
+                {/* items-center prevents stretch */}
                 <button
-                  className="btn-yellow hover:scale-101 disabled:opacity-50 disabled:cursor-not-allowed"
-                  type="submit"
-                  disabled={isSubmitting}
+                  className="btn-yellow"
+                  onClick={() => router.push('/ai-ml')}
                 >
-                  {isSubmitting ? 'Sending...' : 'Request a meeting'}
+                  Request a meeting
                 </button>
               </div>
             </form>
@@ -695,7 +695,7 @@ const FooterContent = () => {
                 className="w-[200px] md:w-full space-y-3 "
                 onSubmit={handleNewsletterSubmit}
               >
-                <div className="relative bg-white rounded-full px-4 py-[14px] flex items-center gap-2">
+                <div className="relative bg-white rounded-full px-4 py-[10px] flex items-center gap-2">
                   <span className="text-gray-400 text-16">
                     {ReactIcons.email}
                   </span>

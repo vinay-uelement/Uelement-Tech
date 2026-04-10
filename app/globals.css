@@ -192,18 +192,27 @@
     @apply text-16 xl:text-18 bg-[#0C142D] hover:scale-105 text-white rounded-[40px] py-2 px-6 2xl:px-7 2xl:py-2;
   }
   .btn-yellow {
-    /* 9B7025_0 */
-    @apply bg-[linear-gradient(135deg,#774D05_0%,#9B7025_100%)]
-    rounded-full text-white font-reddit-sans font-semibold
-    text-12 md:text-16 xl:text-18 py-[10px] px-[40px]
-    border border-[#E9D7C266]
-    shadow-[inset_0px_1px_0px_0px_#FFFFFF59,0px_10px_24px_0px_#00000052,0px_0px_18px_0px_#B5885E3D]
-    transition-all duration-300
-    /* hover:-translate-y-0.5 */
-    hover:border-[#F2E2CF99]
-    hover:bg-[linear-gradient(135deg,#8A5C10_0%,#A87A2A_100%)]
-    hover:shadow-[inset_0px_1px_0px_0px_#FFFFFF80,0px_14px_30px_0px_#00000066,0px_0px_22px_0px_#B5885E66];
+    @apply appearance-none
+  bg-[linear-gradient(135deg,#774D05_0%,#9B7025_100%)]
+  rounded-full text-white font-reddit-sans font-semibold
+  text-12 md:text-16 xl:text-18
+  py-0 h-[2.25rem] leading-none       /* ← replaces py-[10px] */
+  inline-flex items-center justify-center   /* ← centers text vertically */
+  px-[40px]
+  border border-[#E9D7C266]
+  shadow-[inset_0px_1px_0px_0px_#FFFFFF59,0px_10px_24px_0px_#00000052,0px_0px_18px_0px_#B5885E3D]
+  transition-all duration-300
+  hover:border-[#F2E2CF99]
+  hover:bg-[linear-gradient(135deg,#8A5C10_0%,#A87A2A_100%)]
+  hover:shadow-[inset_0px_1px_0px_0px_#FFFFFF80,0px_14px_30px_0px_#00000066,0px_0px_22px_0px_#B5885E66];
   }
+
+  .btn-yellow {
+    height: 2.45rem !important;
+    min-height: unset !important;
+    max-height: 2.45rem !important;
+  }
+
   .btn-blue {
     @apply bg-hero-gradient text-white font-reddit-sans font-semibold shadow-[1px_4px_2px_0px_rgba(0,0,0,0.15)] !rounded-full text-12 md:text-16 xl:text-18 py-2 px-[40px] hover:shadow-inset-white transition-all duration-300;
   }
