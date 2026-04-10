@@ -122,13 +122,13 @@ const DrivingGrowthSection = () => {
   return (
     <section className="container-padding">
       {/* ↓ added `relative` to support the absolutely positioned number block */}
-      <div className="flex md:items-center flex-col lg:flex-row gap-10 md:gap-20 lg:pb-8 xl:pb-10 2xl:pb-12 relative">
+      <div className="flex md:items-center flex-col lg:flex-row gap-10 md:gap-20 lg:pb-8 xl:pb-10 2xl:pb-12 ">
         {/* Left Side Numbers */}
         <div className="flex-1 lg:mr-[30px] md:w-[60%] w-full">
-          <span className="fl-slash block lg:hidden">/Service Segment</span>
+          <span className="fl-slash block">/Service Segment</span>
 
           {/* ↓ Single absolutely positioned number block from second code */}
-          <div className="absolute right-0 -top-20 md:-top-24 -translate-y-full mb-7 xl:mb-10 flex items-center z-20">
+          <div className="mb-6 md:mb-8 3xl:mb-10 left-0 flex items-center z-20">
             <div className="circle size-[50px] min-w-[50px] xl:size-[60px] rounded-full bg-white grid place-content-center shadow-down font-bold italic text-20 xl:text-24 transition-all duration-500">
               {slides[active].number}
             </div>
@@ -144,7 +144,7 @@ const DrivingGrowthSection = () => {
             </div>
           </div>
 
-          <span className="fl-slash hidden lg:block">/Service Segment</span>
+          {/* <span className="fl-slash hidden lg:block">/Service Segment</span> */}
           <div className="min-h-[200px] lg:min-h-[250px]">
             <h3 className="fl1">{slides[active].headline}</h3>
             <p className="fl3 lg:block md:w-[90%] w-full text-left">
@@ -165,7 +165,7 @@ const DrivingGrowthSection = () => {
           </button>
         </div>
 
-        <div className="relative overflow-visible md:!w-[40%] w-full driving-slider">
+        <div className="relative overflow-visible md:!w-[50%] w-full driving-slider">
           <div className="absolute inset-y-0 -left-2 md:-left-15 flex items-center z-20">
             <div
               onClick={prevSlide}
@@ -209,11 +209,11 @@ const DrivingGrowthSection = () => {
               return (
                 <div key={item.id}>
                   <div
-                    className={`dg-card-wrapper ml-6 md:ml-0 ${posClass}`}
+                    className={`dg-card-wrapper ml-6 md:ml-0 bg ${posClass}`}
                     style={{ zIndex, position: 'relative' }}
                   >
                     <div
-                      className="relative w-[240px] h-[180px] md:w-[320px] md:h-[230px] xl:w-[360px] xl:h-[260px] 2xl:w-[400px] 2xl:h-[320px] rounded-[18px] overflow-hidden"
+                      className="relative w-[240px] h-[180px] md:w-[320px] md:h-[230px] xl:w-[360px] xl:h-[260px] 2xl:w-[520px] 2xl:h-[320px] rounded-[18px] overflow-hidden"
                       style={{
                         backgroundImage: `url(${item.img})`,
                         backgroundSize: 'cover',

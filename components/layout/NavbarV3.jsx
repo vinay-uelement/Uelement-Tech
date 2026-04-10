@@ -249,7 +249,7 @@ const NavbarV3 = () => {
                           <button
                             type="button"
                             onClick={() => toggleDesktopMenu(navItem)}
-                            className="flex items-center font-reddit-sans font-semibold md:text-14 xl:text-18 text-[#fff] px-3 uppercase relative h-full cursor-pointer"
+                            className="flex items-center font-reddit-sans font-semibold md:text-14 xl:text-16 text-[#fff] px-3 relative h-full cursor-pointer"
                           >
                             <span
                               className={`transition-all duration-500 ${
@@ -263,7 +263,7 @@ const NavbarV3 = () => {
                         ) : (
                           <Link
                             href={navItem.link}
-                            className="flex items-center font-reddit-sans font-semibold md:text-14 xl:text-18 text-[#fff] px-3 uppercase relative h-full cursor-pointer"
+                            className="flex items-center font-reddit-sans font-semibold md:text-14 xl:text-16 text-[#fff] px-3 relative h-full cursor-pointer"
                           >
                             {navItem.label}
                           </Link>

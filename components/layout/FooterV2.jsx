@@ -480,28 +480,12 @@ const ContactUs = () => {
               </div>
 
               <div className="flex justify-center sm:justify-end">
-                {/* <button
+                <button
                   className="btn-yellow hover:scale-101 disabled:opacity-50 disabled:cursor-not-allowed"
                   type="submit"
                   disabled={isSubmitting}
                 >
                   {isSubmitting ? 'Sending...' : 'Request a meeting'}
-                </button> */}
-                <button
-                  className="btn-arrow btn-arrow-yellow"
-                  style={{ width: 'clamp(12rem, 16vw, 14rem)' }}
-                  type="submit"
-                  disabled={isSubmitting}
-                >
-                  <span
-                    className="btn-arrow-circle bg-hero-gradient disabled:opacity-50 disabled:cursor-not-allowed "
-                    aria-hidden="true"
-                  >
-                    <span className="btn-arrow-icon" />
-                  </span>
-                  <span className="btn-arrow-text">
-                    {isSubmitting ? 'Sending...' : 'Request a meeting'}
-                  </span>
                 </button>
               </div>
             </form>
@@ -711,7 +695,7 @@ const FooterContent = () => {
                 className="w-[200px] md:w-full space-y-3 "
                 onSubmit={handleNewsletterSubmit}
               >
-                <div className="relative bg-white rounded-full px-4 py-3 flex items-center gap-2">
+                <div className="relative bg-white rounded-full px-4 py-[14px] flex items-center gap-2">
                   <span className="text-gray-400 text-16">
                     {ReactIcons.email}
                   </span>
@@ -726,27 +710,12 @@ const FooterContent = () => {
                   />
                 </div>
                 <button
-                  className="btn-arrow btn-arrow-yellow !w-full disabled:opacity-50 disabled:cursor-not-allowed"
-                  type="submit"
-                  disabled={newsletterSubmitting}
-                >
-                  <span
-                    className="btn-arrow-circle bg-hero-gradient"
-                    aria-hidden="true"
-                  >
-                    <span className="btn-arrow-icon" />
-                  </span>
-                  <span className="btn-arrow-text">
-                    {newsletterSubmitting ? 'Submitting...' : 'Submit Now'}
-                  </span>
-                </button>
-                {/* <button
                   className="btn-yellow w-full hover:scale-101 disabled:opacity-50 disabled:cursor-not-allowed"
                   type="submit"
                   disabled={newsletterSubmitting}
                 >
                   {newsletterSubmitting ? 'Submitting...' : 'Submit Now'}
-                </button> */}
+                </button>
               </form>
             </div>
           </div>
@@ -888,7 +857,7 @@ const FooterContent = () => {
                 className="w-[300px] md:w-[350px] space-y-3"
                 onSubmit={handleNewsletterSubmit}
               >
-                <div className="relative bg-white rounded-full px-4 py-2 flex items-center gap-2">
+                <div className="relative bg-white rounded-full px-4 py-[10px] flex items-center gap-2">
                   <span className="text-gray-400 text-16">
                     {ReactIcons.email}
                   </span>
