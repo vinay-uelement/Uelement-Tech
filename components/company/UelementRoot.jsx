@@ -48,10 +48,16 @@ const UelementRoot = () => {
           />
 
           <button
-            className="btn-blue mx-auto md:ml-auto block mt-6"
+            className="btn-arrow block mt-6 mx-auto "
             onClick={() => router.push('/contact-us')}
           >
-            Contact us
+            <span
+              className="btn-arrow-circle bg-hero-gradient"
+              aria-hidden="true"
+            >
+              <span className="btn-arrow-icon" />
+            </span>
+            <span className="btn-arrow-text">Learn More</span>
           </button>
         </div>
       </div>

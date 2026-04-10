@@ -152,10 +152,16 @@ const DrivingGrowthSection = () => {
             </p>
           </div>
           <button
-            className="btn-blue mt-4 hidden lg:block"
+            className="btn-arrow mt-4 !hidden lg:!block"
             onClick={() => router.push('/ai-ml')}
           >
-            Learn More
+            <span
+              className="btn-arrow-circle bg-hero-gradient"
+              aria-hidden="true"
+            >
+              <span className="btn-arrow-icon" />
+            </span>
+            <span className="btn-arrow-text">Learn More</span>
           </button>
         </div>
 

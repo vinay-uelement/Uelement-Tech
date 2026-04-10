@@ -1,3 +1,4 @@
+'use client'
 import Link from 'next/link';
 import React from 'react';
 
@@ -15,9 +16,18 @@ const ResourcesHero = () => {
               help your business innovate and scale.
             </p>
           </div>
-          <Link href="/contact-us" className="btn-blue mt-6 w-fit inline-block">
-            Contact Us
-          </Link>
+          <button
+            className="btn-arrow block mt-6 mx-auto md:mx-0 "
+            onClick={() => router.push('/contact-us')}
+          >
+            <span
+              className="btn-arrow-circle bg-hero-gradient"
+              aria-hidden="true"
+            >
+              <span className="btn-arrow-icon" />
+            </span>
+            <span className="btn-arrow-text">Learn More</span>
+          </button>
         </div>
         <div className="flex-1">
           <img

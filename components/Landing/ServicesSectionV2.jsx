@@ -256,10 +256,16 @@ const ServicesSection = () => {
 
               <div className="flex flex-col md:flex-row gap-6 items-center justify-between">
                 <button
-                  className="btn-yellow hover:scale-101"
+                  className="btn-arrow btn-arrow-yellow !hidden lg:!block"
                   onClick={() => router.push('/ai-ml')}
                 >
-                  Learn More
+                  <span
+                    className="btn-arrow-circle bg-hero-gradient"
+                    aria-hidden="true"
+                  >
+                    <span className="btn-arrow-icon" />
+                  </span>
+                  <span className="btn-arrow-text">Learn More</span>
                 </button>
 
                 <div className="w-full md:w-auto relative flex items-center gap-2 sm:gap-4 md:ml-auto">
