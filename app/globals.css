@@ -665,26 +665,68 @@
   width: 100% !important;
 }
 
+/* Default (mobile) */
+:root {
+  --dg-center-x: -80px;
+  --dg-right-x: -190px;
+  --dg-hidden-x: -100px;
+  --dg-center-scale: 0.85;
+  --dg-right-scale: 0.7;
+}
+
+/* Tablet */
+@media (min-width: 768px) {
+  :root {
+    --dg-center-x: -120px;
+    --dg-right-x: -240px;
+    --dg-hidden-x: -140px;
+    --dg-center-scale: 0.82;
+    --dg-right-scale: 0.67;
+  }
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+  :root {
+    --dg-center-x: -60px;
+    --dg-right-x: -190px;
+    --dg-hidden-x: -180px;
+    --dg-center-scale: 0.8;
+    --dg-right-scale: 0.65;
+  }
+}
+
+/* xl */
+@media (min-width: 1280px) {
+  :root {
+    --dg-center-x: -120px;
+    --dg-right-x: -320px;
+    --dg-hidden-x: -180px;
+    --dg-center-scale: 0.8;
+    --dg-right-scale: 0.65;
+  }
+}
+
+/* The actual classes — defined only once */
 .dg-left-big {
   transform: scale(1) translateX(0);
 }
 
 .dg-center-medium {
-  transform: scale(0.8) translateX(-120px);
+  transform: scale(var(--dg-center-scale)) translateX(var(--dg-center-x));
   opacity: 0.7;
 }
 
 .dg-right-small {
-  transform: scale(0.65) translateX(-320px);
+  transform: scale(var(--dg-right-scale)) translateX(var(--dg-right-x));
   opacity: 0.5;
 }
 
 .dg-hidden-small {
-  transform: scale(0.6) translateX(-180px);
+  transform: scale(0.6) translateX(var(--dg-hidden-x));
   opacity: 0;
   pointer-events: none;
 }
-
 /*------------------------------------------------------------------------------------------------------------------------------------------------ MEDIA QUERIES -----------------------------------------------------------------------------------------------------------------*/
 
 @media screen and (max-width: 1400px) {
