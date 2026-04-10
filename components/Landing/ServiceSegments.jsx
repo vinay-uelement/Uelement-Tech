@@ -52,6 +52,10 @@ const TextCard = ({ title, desc, logo }) => (
   </div>
 );
 
+const FillerCard = () => (
+  <div className="h-full w-full rounded-[18px] border-[7px] border-[#F0F0F0] bg-transparent" />
+);
+
 const ServiceSegments = () => {
   const sliderSettings = {
     dots: true,
@@ -78,68 +82,76 @@ const ServiceSegments = () => {
           Row 2: ←Image [flush] Card3 [gap] Card4 [margin→]
           All 4 cards = (viewport - margin - gap) / 3  →  equal width ✓
           Images also = same 1/3 share, bleed to viewport edge ✓          */}
-      <div className="hidden md:flex flex-col gap-8">
-        {/* Row 1 */}
-        <div className="flex items-stretch h-[300px]">
-          <div
-            style={{
-              flex: 0.95,
-              marginLeft: OUTER_MARGIN,
-              marginRight: CARD_GAP,
-            }}
-          >
-            <TextCard
-              title={services[0].title}
-              desc={services[0].desc}
-              logo={services[0].logo}
-            />
+      <div className="hidden md:block overflow-hidden">
+        <div className="flex flex-col gap-8">
+          {/* Row 1 */}
+          <div className="flex items-stretch h-[300px] gap-4">
+            <div
+              className="flex-shrink-0"
+              style={{ width: 'calc(16rem + 80px)', marginLeft: '-80px' }}
+            >
+              <FillerCard />
+            </div>
+            <div style={{ flex: 0.95 }}>
+              <TextCard
+                title={services[0].title}
+                desc={services[0].desc}
+                logo={services[0].logo}
+              />
+            </div>
+            {/* marginRight: 0 → flush against image */}
+            <div style={{ flex: 0.95 }}>
+              <TextCard
+                title={services[1].title}
+                desc={services[1].desc}
+                logo={services[1].logo}
+              />
+            </div>
+            <div
+              style={{ flex: 1.5 }}
+              className="overflow-hidden rounded-l-[18px]"
+            >
+              <img
+                src="/images/landing/domain-1.webp"
+                alt="Domain visual 1"
+                className="w-full h-full object-cover"
+              />
+            </div>
           </div>
-          {/* marginRight: 0 → flush against image */}
-          <div style={{ flex: 0.95 }}>
-            <TextCard
-              title={services[1].title}
-              desc={services[1].desc}
-              logo={services[1].logo}
-            />
-          </div>
-          <div
-            style={{ flex: 1.5 }}
-            className="overflow-hidden rounded-l-[18px] ml-[1rem]"
-          >
-            <img
-              src="/images/landing/domain-1.webp"
-              alt="Domain visual 1"
-              className="w-full h-full object-cover"
-            />
-          </div>
-        </div>
 
-        {/* Row 2 */}
-        <div className="flex items-stretch h-[300px]">
-          <div
-            style={{ flex: 1.5 }}
-            className="overflow-hidden rounded-r-[18px] mr-[1rem]"
-          >
-            <img
-              src="/images/landing/domain-2.webp"
-              alt="Domain visual 2"
-              className="w-full h-full object-cover"
-            />
-          </div>
-          {/* marginLeft: 0 → flush against image */}
-          <div style={{ flex: 0.95, marginRight: CARD_GAP }}>
-            <TextCard
-              title={services[2].title}
-              desc={services[2].desc}
-              logo={services[2].logo}
-            />
-          </div>
-          <div style={{ flex: 0.95, marginRight: OUTER_MARGIN }}>
-            <TextCard
-              title={services[3].title}
-              desc={services[3].desc}
-              logo={services[3].logo}
-            />
+          {/* Row 2 */}
+          <div className="flex items-stretch h-[300px] gap-4">
+            <div
+              style={{ flex: 1.5 }}
+              className="overflow-hidden rounded-r-[18px]"
+            >
+              <img
+                src="/images/landing/domain-2.webp"
+                alt="Domain visual 2"
+                className="w-full h-full object-cover"
+              />
+            </div>
+            {/* marginLeft: 0 → flush against image */}
+            <div style={{ flex: 0.95 }}>
+              <TextCard
+                title={services[2].title}
+                desc={services[2].desc}
+                logo={services[2].logo}
+              />
+            </div>
+            <div style={{ flex: 0.95 }}>
+              <TextCard
+                title={services[3].title}
+                desc={services[3].desc}
+                logo={services[3].logo}
+              />
+            </div>
+            <div
+              className="flex-shrink-0"
+              style={{ width: 'calc(16rem + 80px)', marginRight: '-80px' }}
+            >
+              <FillerCard />
+            </div>
           </div>
         </div>
       </div>
