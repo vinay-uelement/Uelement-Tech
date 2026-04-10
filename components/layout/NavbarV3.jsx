@@ -68,6 +68,57 @@ const navbarList = [
       },
     ],
   },
+  { id: 7, label: 'Industries', link: '#' },
+  {
+    id: 8,
+    label: 'Company',
+    link: '/company',
+    children: [
+      {
+        id: 1,
+        label: 'About Us',
+        desc: 'Learn about our mission, vision, and the team driving innovation.',
+        link: '/company',
+      },
+      {
+        id: 2,
+        label: 'Partnerships',
+        desc: 'Explore our strategic alliances that enhance our technology and services.',
+        link: '/our-partners',
+      },
+      {
+        id: 3,
+        label: 'News Room',
+        desc: 'Stay updated with our latest announcements, media coverage, and press releases.',
+        link: '#',
+      },
+      {
+        id: 4,
+        label: 'Blogs',
+        desc: 'Read insights, trends, and expert perspectives from our team.',
+        link: '/resources',
+      },
+      {
+        id: 5,
+        label: 'Careers',
+        desc: 'Discover opportunities to grow your career and work with us.',
+        link: '#',
+      },
+      {
+        id: 6,
+        label: 'Investor Relations',
+        desc: 'Access financial reports, investor updates, and company performance insights.',
+        link: '#',
+      },
+      {
+        id: 7,
+        label: 'Success Stories',
+        desc: 'See how we have helped clients achieve measurable results.',
+        link: '#',
+      },
+    ],
+  },
+
   // {
   //   id: 2,
   //   label: 'Resources',
@@ -93,33 +144,33 @@ const navbarList = [
   //     },
   //   ],
   // },
-  {
-    id: 3,
-    label: 'Partnership',
-    link: '/our-partners',
-    children: [
-      {
-        id: 1,
-        label: 'AI & ML',
-        desc: 'Intelligent Automation',
-        link: '/our-partners?tab=ai-ml#partners',
-      },
-      {
-        id: 2,
-        label: 'Cybersecurity',
-        desc: 'Zero-Trust Protection',
-        link: '/our-partners?tab=cybersecurity#partners',
-      },
-      {
-        id: 3,
-        label: 'Cloud Solutions',
-        desc: 'Cloud-Native Platforms',
-        link: '/our-partners?tab=cloud#partners',
-      },
-    ],
-  },
-  { id: 4, label: 'Company', link: '/company' },
-  { id: 5, label: 'Blogs', link: '/resources' },
+  // {
+  //   id: 3,
+  //   label: 'Partnership',
+  //   link: '/our-partners',
+  //   children: [
+  //     {
+  //       id: 1,
+  //       label: 'AI & ML',
+  //       desc: 'Intelligent Automation',
+  //       link: '/our-partners?tab=ai-ml#partners',
+  //     },
+  //     {
+  //       id: 2,
+  //       label: 'Cybersecurity',
+  //       desc: 'Zero-Trust Protection',
+  //       link: '/our-partners?tab=cybersecurity#partners',
+  //     },
+  //     {
+  //       id: 3,
+  //       label: 'Cloud Solutions',
+  //       desc: 'Cloud-Native Platforms',
+  //       link: '/our-partners?tab=cloud#partners',
+  //     },
+  //   ],
+  // },
+  // { id: 4, label: 'Company', link: '/company' },
+  // { id: 5, label: 'Blogs', link: '/resources' },
 ];
 
 const NO_DROPDOWN_LINKS = [];
@@ -129,6 +180,8 @@ const MOBILE_DROPDOWN_HEIGHT = {
   2: 'h-[260px]', // Resources
   3: 'h-[200px]', // Partnership
   6: 'h-[300px]', // Partnership
+  8: 'h-[485px]',
+
 };
 
 const DESKTOP_DROPDOWN_HEIGHT = {
@@ -136,6 +189,7 @@ const DESKTOP_DROPDOWN_HEIGHT = {
   2: 'h-[350px]', // Resources
   3: 'h-[350px]', // Partnership
   6: 'h-[425px]', // Solutions
+  8: 'h-[485px]',
 };
 
 const NavbarV3 = () => {
@@ -249,7 +303,7 @@ const NavbarV3 = () => {
                           <button
                             type="button"
                             onClick={() => toggleDesktopMenu(navItem)}
-                            className="flex items-center font-reddit-sans font-semibold md:text-14 xl:text-18 text-[#fff] px-3 uppercase relative h-full cursor-pointer"
+                            className="flex items-center font-reddit-sans font-semibold md:text-14 xl:text-16 text-[#fff] px-3 relative h-full cursor-pointer"
                           >
                             <span
                               className={`transition-all duration-500 ${
@@ -263,7 +317,7 @@ const NavbarV3 = () => {
                         ) : (
                           <Link
                             href={navItem.link}
-                            className="flex items-center font-reddit-sans font-semibold md:text-14 xl:text-18 text-[#fff] px-3 uppercase relative h-full cursor-pointer"
+                            className="flex items-center font-reddit-sans font-semibold md:text-14 xl:text-16 text-[#fff] px-3 relative h-full cursor-pointer"
                           >
                             {navItem.label}
                           </Link>
@@ -332,20 +386,28 @@ const NavbarV3 = () => {
                         )}
                       </div>
 
-                      {openMenu.children.map((child) => (
-                        <Link
-                          key={child.id}
-                          href={child.link}
-                          className="block py-4 last:border-none border-primary-blue hover:text-primary-blue max-w-[100%]"
-                        >
-                          <div className="font-semibold text-18 text-[#fff] font-reddit-sans capitalize">
-                            {child.label}
-                          </div>
-                          <div className="text-16 font-light text-[#fff] font-reddit-sans">
-                            {child.desc}
-                          </div>
-                        </Link>
-                      ))}
+                      <div
+                        className={
+                          openMenu.id === 8
+                            ? 'grid grid-cols-2 gap-x-6'
+                            : 'flex flex-col'
+                        }
+                      >
+                        {openMenu.children.map((child) => (
+                          <Link
+                            key={child.id}
+                            href={child.link}
+                            className="block py-4 last:border-none border-primary-blue hover:text-primary-blue"
+                          >
+                            <div className="font-semibold text-18 text-[#fff] font-reddit-sans capitalize">
+                              {child.label}
+                            </div>
+                            <div className="text-16 font-light text-[#fff] font-reddit-sans">
+                              {child.desc}
+                            </div>
+                          </Link>
+                        ))}
+                      </div>
                     </div>
                   </div>
                 )}

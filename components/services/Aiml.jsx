@@ -134,7 +134,7 @@ const Aiml = () => {
   return (
     <div className="mb-0 md:mb-0">
       {/* Hero Section */}
-      <section className="min-h-screen relative flex lg:flex-row flex-col items-center overflow-hidden section-block-padding ">
+      <section className="min-h-svh h-svh md:min-h-[92vh] md:h-[92vh] relative flex lg:flex-row flex-col items-center overflow-hidden section-block-padding ">
         {/* Desktop background */}
         <Image
           src="/images/global/hero-bg.webp"

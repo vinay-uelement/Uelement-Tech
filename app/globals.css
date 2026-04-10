@@ -192,13 +192,169 @@
     @apply text-16 xl:text-18 bg-[#0C142D] hover:scale-105 text-white rounded-[40px] py-2 px-6 2xl:px-7 2xl:py-2;
   }
   .btn-yellow {
-    @apply bg-[#9B7025] rounded-[8px] text-white font-reddit-sans font-semibold shadow-[1px_4px_2px_0px_rgba(0,0,0,0.15)] text-12 md:text-16 xl:text-18 py-2 px-[40px] hover:shadow-inset-white transition-all duration-300;
+    @apply appearance-none
+  bg-[linear-gradient(135deg,#774D05_0%,#9B7025_100%)]
+  rounded-full text-white font-reddit-sans font-semibold
+  text-12 md:text-16 xl:text-18
+  py-0 h-[2.25rem] leading-none       /* ← replaces py-[10px] */
+  inline-flex items-center justify-center   /* ← centers text vertically */
+  px-[40px]
+  border border-[#E9D7C266]
+  shadow-[inset_0px_1px_0px_0px_#FFFFFF59,0px_10px_24px_0px_#00000052,0px_0px_18px_0px_#B5885E3D]
+  transition-all duration-300
+  hover:border-[#F2E2CF99]
+  hover:bg-[linear-gradient(135deg,#8A5C10_0%,#A87A2A_100%)]
+  hover:shadow-[inset_0px_1px_0px_0px_#FFFFFF80,0px_14px_30px_0px_#00000066,0px_0px_22px_0px_#B5885E66];
   }
+
+  .btn-yellow {
+    height: 2.45rem !important;
+    min-height: unset !important;
+    max-height: 2.45rem !important;
+  }
+
   .btn-blue {
-    @apply bg-hero-gradient text-white font-reddit-sans font-semibold shadow-[1px_4px_2px_0px_rgba(0,0,0,0.15)] !rounded-[8px] text-12 md:text-16 xl:text-18 py-2 px-[40px] hover:shadow-inset-white transition-all duration-300;
+    @apply bg-hero-gradient text-white font-reddit-sans font-semibold shadow-[1px_4px_2px_0px_rgba(0,0,0,0.15)] !rounded-full text-12 md:text-16 xl:text-18 py-2 px-[40px] hover:shadow-inset-white transition-all duration-300;
   }
+
+  /* ── Animated Arrow Button ── */
+  /* ── Animated Arrow Button — base ── */
+  .btn-arrow {
+    --arrow-bg-start: #0c142d;
+    --arrow-bg-mid1: #15224a;
+    --arrow-bg-mid2: #22397e;
+    --arrow-bg-end: #0f1939;
+    --arrow-text: #22397e;
+
+    position: relative;
+    width: clamp(9.5rem, 14vw, 12rem);
+    min-height: 2.25rem;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    color: var(--arrow-text);
+    font-family: var(--font-reddit-sans, inherit);
+    font-weight: 600;
+    cursor: pointer;
+    vertical-align: middle;
+  }
+
+  /* ── Yellow modifier — just override the variables ── */
+  .btn-arrow-yellow {
+    --arrow-text: #bf8a2d;
+  }
+
+  /* ── Circle uses the variables ── */
+  .btn-arrow .btn-arrow-circle {
+    position: relative;
+    display: block;
+    width: 2.25rem;
+    height: 2.25rem;
+    border-radius: 999px;
+    background-image: linear-gradient(
+      97.27deg,
+      var(--arrow-bg-start) 5.62%,
+      var(--arrow-bg-mid1) 34.57%,
+      var(--arrow-bg-mid2) 62.65%,
+      var(--arrow-bg-end) 96.86%
+    );
+    transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+  }
+
+  .btn-arrow-yellow .btn-arrow-circle {
+    background-image: linear-gradient(97.27deg, #774d05 0%, #9b7025 100%);
+    border: 1px solid #e9d7c266;
+    box-shadow:
+      inset 0px 1px 0px 0px #ffffff59,
+      0px 10px 24px 0px #00000052,
+      0px 0px 18px 0px #b5885e3d;
+  }
+
+  .btn-arrow-yellow:hover .btn-arrow-circle,
+  .btn-arrow-yellow:focus-visible .btn-arrow-circle {
+    width: 100%;
+    border: 1px solid #f2e2cf99;
+    box-shadow:
+      inset 0px 1px 0px 0px #ffffff80,
+      0px 14px 30px 0px #00000066,
+      0px 0px 22px 0px #b5885e66;
+  }
+
+  /* rest of styles unchanged... */
+
+  .btn-arrow .btn-arrow-icon {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0.46875rem;
+    margin: auto;
+    width: 0.84375rem;
+    height: 0.09375rem;
+    background: transparent;
+    transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+  }
+
+  .btn-arrow .btn-arrow-icon::before {
+    content: '';
+    position: absolute;
+    top: -0.1875rem;
+    right: 0.046875rem;
+    width: 0.46875rem;
+    height: 0.46875rem;
+    border-top: 0.09375rem solid #fff;
+    border-right: 0.09375rem solid #fff;
+    transform: rotate(45deg);
+  }
+
+  .btn-arrow .btn-arrow-text {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5625rem 0 0.5625rem 1.5rem;
+    margin-inline-start: 10px;
+    color: var(--btn-text);
+    font-weight: 600;
+    font-size: 0.875rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    white-space: nowrap;
+    transition: color 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+  }
+
+  /* Hover */
+  .btn-arrow:hover .btn-arrow-circle,
+  .btn-arrow:focus-visible .btn-arrow-circle {
+    width: 100%;
+  }
+
+  .btn-arrow:hover .btn-arrow-icon,
+  .btn-arrow:focus-visible .btn-arrow-icon {
+    background: #fff;
+    transform: translateX(0.75rem);
+  }
+
+  .btn-arrow:hover .btn-arrow-text,
+  .btn-arrow:focus-visible .btn-arrow-text {
+    color: #fff;
+  }
+
+  .btn-arrow:focus-visible {
+    outline: 2px solid rgba(255, 255, 255, 0.85);
+    outline-offset: 4px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .btn-arrow .btn-arrow-circle,
+    .btn-arrow .btn-arrow-icon,
+    .btn-arrow .btn-arrow-text {
+      transition: none;
+    }
+  }
+
   .fl-main {
-    @apply font-cal-sans text-white text-26 md:text-[46px] xl:text-[60px];
+    @apply font-cal-sans text-white text-26 md:text-[46px] xl:text-[60px] 2xl:text-[55px];
   }
   .fl-slash {
     @apply text-12 md:text-16 xl:text-20 font-reddit-sans font-medium mb-6 md:mb-8 3xl:mb-10 text-[#23223] tracking-[0.03em];
@@ -227,6 +383,10 @@
       #22397e 62.65%,
       #0f1939 96.86%
     );
+  }
+
+  .bg-yellow-gradient {
+    background-image: linear-gradient(97.27deg, #9b7025 5.62%, #774d05 96.86%);
   }
 }
 
@@ -514,26 +674,68 @@
   width: 100% !important;
 }
 
+/* Default (mobile) */
+:root {
+  --dg-center-x: -80px;
+  --dg-right-x: -190px;
+  --dg-hidden-x: -100px;
+  --dg-center-scale: 0.85;
+  --dg-right-scale: 0.7;
+}
+
+/* Tablet */
+@media (min-width: 768px) {
+  :root {
+    --dg-center-x: -120px;
+    --dg-right-x: -240px;
+    --dg-hidden-x: -140px;
+    --dg-center-scale: 0.82;
+    --dg-right-scale: 0.67;
+  }
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+  :root {
+    --dg-center-x: -60px;
+    --dg-right-x: -190px;
+    --dg-hidden-x: -180px;
+    --dg-center-scale: 0.8;
+    --dg-right-scale: 0.65;
+  }
+}
+
+/* xl */
+@media (min-width: 1280px) {
+  :root {
+    --dg-center-x: -120px;
+    --dg-right-x: -320px;
+    --dg-hidden-x: -180px;
+    --dg-center-scale: 0.8;
+    --dg-right-scale: 0.65;
+  }
+}
+
+/* The actual classes — defined only once */
 .dg-left-big {
   transform: scale(1) translateX(0);
 }
 
 .dg-center-medium {
-  transform: scale(0.85) translateX(-90px);
+  transform: scale(var(--dg-center-scale)) translateX(var(--dg-center-x));
   opacity: 0.7;
 }
 
 .dg-right-small {
-  transform: scale(0.7) translateX(-220px);
+  transform: scale(var(--dg-right-scale)) translateX(var(--dg-right-x));
   opacity: 0.5;
 }
 
 .dg-hidden-small {
-  transform: scale(0.6) translateX(-180px);
+  transform: scale(0.6) translateX(var(--dg-hidden-x));
   opacity: 0;
   pointer-events: none;
 }
-
 /*------------------------------------------------------------------------------------------------------------------------------------------------ MEDIA QUERIES -----------------------------------------------------------------------------------------------------------------*/
 
 @media screen and (max-width: 1400px) {

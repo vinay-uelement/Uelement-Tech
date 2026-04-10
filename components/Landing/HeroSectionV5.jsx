@@ -61,7 +61,7 @@ const HeroSectionV5 = () => {
   };
 
   return (
-    <section className="min-h-screen h-screen flex flex-col relative">
+    <section className="min-h-svh h-svh md:min-h-[92vh] md:h-[92vh] flex flex-col relative">
       {/* Desktop background */}
       <Image
         src="/images/landing/hero_bg1.webp"
@@ -88,32 +88,33 @@ const HeroSectionV5 = () => {
         <div className="h-full w-full flex flex-col md:flex-row">
           <div
             className="w-[80%] h-[60%] md:h-full md:w-[39%] pl-[40px] md:pl-[70px] flex flex-col justify-center md:justify-start"
-            style={{ paddingTop: 'clamp(24px, 5vh, 100px)' }}
+            style={{ paddingTop: 'clamp(24px, 30vh, 90px)' }}
           >
             <h1 className="fl-main italic tracking-wider leading-[1.2]">
               We are <br /> Digital <br className="md:block" /> Mavericks.
             </h1>
-            <p className="mt-8 fl3 !text-[#ffffff] !text-[12px] md:!text-[20px] md:mb-10 xl:mb-20 mb-8">
-              Engineering Quantum-Driven Digital Synapses at the intersection of
-              Cybersecurity, Cloud & AI.
+            <p className="mt-8 fl3 !text-[#ffffff] !text-[12px] md:!text-[18px] md:mb-10 xl:mb-20 mb-8">
+              Engineering Digital Synapses at the Intersection of Cybersecurity,
+              Quantum & AI
             </p>
             <button
               onClick={handleContactus}
-              className="btn-yellow w-fit md:hidden"
+              className="btn-yellow w-fit md:!hidden"
             >
-              Contact Us
+              About Us
             </button>
           </div>
           <div className="flex-1 h-[40%] md:h-full flex items-end justify-end" />
         </div>
         {/* Desktop bottom bar */}
-        <div className="absolute right-8 top-[78vh] w-full flex justify-between">
+        <div className="absolute right-8 top-[74vh] w-full flex justify-between">
           <button
             onClick={handleContactus}
-            className="btn-yellow w-fit translate-x-7/12 hidden md:block"
+            className="btn-yellow w-fit translate-x-7/12 !hidden md:!block"
           >
-            Contact Us
+            About Us
           </button>
+
           <div
             className="w-[65vw] hidden md:flex items-center bg-[#D4D4D41A] backdrop-blur-2xl rounded-[40px] px-1 py-1 shadow-lg z-50"
             onMouseEnter={handlePauseStart}
@@ -126,7 +127,7 @@ const HeroSectionV5 = () => {
             >
               {ReactIcons.leftChev}
             </button>
-            <div className="flex-1 overflow-hidden min-h-10 flex items-center justify-center">
+            <div className="flex-1 overflow-hidden min-h-10 flex items-center justify-center ">
               <div
                 className="flex transition-transform duration-500 ease-in-out w-full"
                 style={{ transform: `translateX(-${index * 100}%)` }}
@@ -164,7 +165,7 @@ const HeroSectionV5 = () => {
           >
             {ReactIcons.leftChev}
           </button>
-          <div className="flex-1 overflow-hidden min-h-9 flex items-center justify-center mx-1">
+          <div className="flex-1 overflow-hidden min-h-9 flex items-center justify-center mx-1 ">
             <div
               className="flex transition-transform duration-500 ease-in-out w-full"
               style={{ transform: `translateX(-${index * 100}%)` }}
