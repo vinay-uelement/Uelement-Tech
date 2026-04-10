@@ -245,7 +245,7 @@ const ServicesSection = () => {
           </div>
 
           {/* Tab Content */}
-          <div className="bg-hero-gradient text-white! p-6 sm:p-8 lg:p-10 xl:p-12 transition-all duration-300 ease-in-out rounded-tr-[10px] rounded-b-[10px] shadow-[0_-2px_4px_rgba(0,0,0,0.1)]">
+          <div className="bg-gradient-to-br from-[#0C142D] via-[#0F1937] to-[#22397e] text-white! p-6 sm:p-8 lg:p-10 xl:p-12 transition-all duration-300 ease-in-out rounded-tr-[10px] rounded-b-[10px] shadow-[0_-2px_4px_rgba(0,0,0,0.1)]">
             <div className="animate-fade-in">
               <h3 className="fl1 text-white! mb-4 sm:mb-6">
                 {selectedTab.title}

@@ -61,7 +61,7 @@ const HeroSectionV5 = () => {
   };
 
   return (
-    <section className="min-h-screen h-screen flex flex-col relative">
+    <section className="min-h-svh h-svh md:min-h-[92vh] md:h-[92vh] flex flex-col relative">
       {/* Desktop background */}
       <Image
         src="/images/landing/hero_bg1.webp"
@@ -107,25 +107,14 @@ const HeroSectionV5 = () => {
           <div className="flex-1 h-[40%] md:h-full flex items-end justify-end" />
         </div>
         {/* Desktop bottom bar */}
-        <div className="absolute right-8 top-[78vh] w-full flex justify-between">
+        <div className="absolute right-8 top-[74vh] w-full flex justify-between">
           <button
             onClick={handleContactus}
             className="btn-yellow w-fit translate-x-7/12 hidden md:block !py-0"
           >
             About Us
           </button>
-          {/* <button
-            className="btn-arrow btn-arrow-yellow translate-x-7/12 !hidden md:!block"
-            onClick={handleContactus}
-          >
-            <span
-              className="btn-arrow-circle bg-hero-gradient"
-              aria-hidden="true"
-            >
-              <span className="btn-arrow-icon" />
-            </span>
-            <span className="btn-arrow-text">About us</span>
-          </button> */}
+
           <div
             className="w-[65vw] hidden md:flex items-center bg-[#D4D4D41A] backdrop-blur-2xl rounded-[40px] px-1 py-1 shadow-lg z-50"
             onMouseEnter={handlePauseStart}
@@ -138,7 +127,7 @@ const HeroSectionV5 = () => {
             >
               {ReactIcons.leftChev}
             </button>
-            <div className="flex-1 overflow-hidden min-h-10 flex items-center justify-center">
+            <div className="flex-1 overflow-hidden min-h-10 flex items-center justify-center ">
               <div
                 className="flex transition-transform duration-500 ease-in-out w-full"
                 style={{ transform: `translateX(-${index * 100}%)` }}
@@ -176,7 +165,7 @@ const HeroSectionV5 = () => {
           >
             {ReactIcons.leftChev}
           </button>
-          <div className="flex-1 overflow-hidden min-h-9 flex items-center justify-center mx-1">
+          <div className="flex-1 overflow-hidden min-h-9 flex items-center justify-center mx-1 ">
             <div
               className="flex transition-transform duration-500 ease-in-out w-full"
               style={{ transform: `translateX(-${index * 100}%)` }}
