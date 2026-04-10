@@ -32,11 +32,7 @@ const TwinVisual = () => (
           <stop offset="100%" stopColor="#C98F28" stopOpacity="0.05" />
         </linearGradient>
       </defs>
-
-      {/* Grid bg */}
       <rect width="620" height="440" fill="url(#tg)" rx="16" />
-
-      {/* Labels */}
       <text
         x="90"
         y="32"
@@ -61,8 +57,6 @@ const TwinVisual = () => (
       >
         DIGITAL TWIN
       </text>
-
-      {/* Divider */}
       <line
         x1="310"
         y1="20"
@@ -72,8 +66,6 @@ const TwinVisual = () => (
         strokeWidth="1"
         strokeDasharray="4 6"
       />
-
-      {/* ── Physical nodes (left) ── */}
       {[80, 165, 255, 345].map((cy, i) => (
         <g key={i}>
           <circle
@@ -95,8 +87,6 @@ const TwinVisual = () => (
           <circle cx="90" cy={cy} r="4" fill="#C98F28" />
         </g>
       ))}
-
-      {/* ── Feed lines physical → hub ── */}
       {[80, 165, 255, 345].map((cy, i) => (
         <line
           key={i}
@@ -109,8 +99,6 @@ const TwinVisual = () => (
           strokeDasharray="5 5"
         />
       ))}
-
-      {/* ── Central IoET hub ── */}
       <circle
         cx="310"
         cy="213"
@@ -158,8 +146,6 @@ const TwinVisual = () => (
       >
         SYNC
       </text>
-
-      {/* ── Feed lines hub → twin ── */}
       {[80, 165, 255, 345].map((cy, i) => (
         <line
           key={i}
@@ -171,8 +157,6 @@ const TwinVisual = () => (
           strokeWidth="1.2"
         />
       ))}
-
-      {/* ── Digital twin nodes (right, wireframe) ── */}
       {[80, 165, 255, 345].map((cy, i) => (
         <g key={i}>
           <rect
@@ -219,8 +203,6 @@ const TwinVisual = () => (
           />
         </g>
       ))}
-
-      {/* Sensor type labels */}
       {['LiDAR', 'IMU', 'Thermal', 'Force/T'].map((label, i) => (
         <text
           key={i}
@@ -248,8 +230,6 @@ const TwinVisual = () => (
         )
       )}
     </svg>
-
-    {/* Floating stat badges */}
     <div className="absolute top-3 left-3 bg-[#0C142D]/80 backdrop-blur-sm border border-[#C98F28]/20 rounded-lg px-3 py-2">
       <p className="text-[#C98F28] font-bold text-sm leading-none">10×</p>
       <p className="text-white/50 text-xs mt-0.5">Faster iteration</p>
@@ -269,7 +249,7 @@ const TwinVisual = () => (
   </div>
 );
 
-// ─── Platform section: pipeline flow ────────────────────────────────────────
+// ─── Platform section: pipeline flow ─────────────────────────────────────────
 const PipelineVisual = () => {
   const steps = [
     { label: 'Physical\nSystem', abbr: 'PHY' },
@@ -313,74 +293,120 @@ const PipelineVisual = () => {
 const IoETDigitalTwin = () => {
   const sliderRef = useRef(null);
   const [activeIndex, setActiveIndex] = useState(0);
+  const [activeTab, setActiveTab] = useState('industrial');
 
+  // ── 8 Business & Engineering Use Cases ──
   const capabilities = [
     {
       id: 1,
-      title: 'Manufacturing Twins',
+      title: 'Mobility Envelope Certification',
       description:
-        'Mirror production lines in real time. Detect anomalies before they become failures. Simulate shift changes, new equipment, or process redesigns without downtime.',
+        'Establish operating boundaries across stair geometries, slope gradients, terrain classes, and surface conditions. Defines exactly where the robot is safe, marginal, or unsafe before any real-world deployment.',
     },
     {
       id: 2,
-      title: 'Humanoid Robot Twins',
+      title: 'Payload-Aware Gait Optimisation',
       description:
-        'Full URDF model ingestion with kinematic chain simulation. Test advanced locomotion — stairs, slopes, uneven terrain, payload scenarios — before physical deployment.',
+        'Simulate how backpacks and payloads affect centre of mass, joint loading, balance margin, and gait efficiency. Determines maximum safe payload and the required controller adjustments per terrain type.',
     },
     {
       id: 3,
-      title: 'Smart City Infrastructure',
+      title: 'Failure Replay & Root-Cause Analysis',
       description:
-        'Live replicas of traffic corridors, utility grids, and public safety networks. Run policy simulations and crisis response modelling for civic planning bodies.',
+        'Capture every failed run with full telemetry — foot contacts, CoM drift, torque spikes, slip events, and controller states — for repeatable debugging far faster than physical-only testing.',
     },
     {
       id: 4,
-      title: 'Real-Time Sensor Fusion',
+      title: 'Sim-to-Real Controller Tuning',
       description:
-        'Aggregate data from heterogeneous IoT sensor networks — LiDAR, IMU, thermal, force/torque — into a unified, timestamped simulation state vector.',
+        'Refine locomotion and balance parameters in simulation and export validated settings directly to the physical robot. Reduces hardware wear and shortens controller development cycles significantly.',
     },
     {
       id: 5,
-      title: 'AI Anomaly Detection',
+      title: 'Recovery & Disturbance Testing',
       description:
-        'Edge AI inference engines continuously compare twin state to physical state — surfacing drift, anomalies, and predictive failure signals in real time.',
+        'Validate robot response to missed steps, lateral pushes, slips, and transition instabilities across terrain classes — improving safety and robustness before any physical trials begin.',
     },
     {
       id: 6,
-      title: 'Quantum-Secured Transport',
+      title: 'AR/VR Mission Rehearsal',
       description:
-        'Telemetry streams secured with QKD protocols and post-quantum encryption — ensuring twin data integrity in high-security and defence deployments.',
+        'Visualise test scenarios in Unity/Unreal for immersive operator familiarisation and stakeholder demonstrations. Useful for customer presentations, training, and human-in-the-loop testing.',
+    },
+    {
+      id: 7,
+      title: 'Synthetic Data Generation',
+      description:
+        'Generate large-scale randomised terrain and payload scenarios to test or train learned locomotion behaviours at scale — expanding coverage far beyond what is feasible in physical environments.',
+    },
+    {
+      id: 8,
+      title: 'Predictive Stress & Robot Health',
+      description:
+        'Estimate repeated stress, foot slippage frequency, joint overload, and high-risk contact patterns during aggressive manoeuvres to plan safer physical testing and support robot longevity.',
     },
   ];
 
-  const industryApplications = [
+  // ── Validated use cases — two groups ──
+  const industrialCases = [
     {
       id: 1,
-      sector: 'DEFENCE',
-      title: 'Humanoid Robotics',
+      sector: 'INDUSTRIAL INSPECTION',
+      title: 'Hazardous Facility Inspection',
       description:
-        'Pre-mission rehearsal for autonomous platforms in contested environments. BEL / DRDO alignment.',
+        'Oil & gas, nuclear, and chemical plant inspection using a semantic twin that models plant ontology and predicts fall risk on grating floors, wet surfaces, and narrow catwalks. Result: 50% fewer inspection-induced incidents, 3× faster survey cycles, and a full audit trail via knowledge graph.',
     },
     {
       id: 2,
-      sector: 'MANUFACTURING',
-      title: 'Industry 4.0',
+      sector: 'DEFENCE',
+      title: 'Perimeter Patrol & Border Security',
       description:
-        'OEE optimisation, predictive maintenance, and process simulation for discrete and process industries.',
+        'Autonomous perimeter patrol on rough and mixed terrain — day/night with varying payloads. Semantic context switches between patrol, alert, and extraction modes with PINN-optimised gait per terrain class. Result: continuous 8-hour autonomous patrol validated in twin.',
     },
     {
       id: 3,
-      sector: 'SMART CITIES',
-      title: 'Urban Planning',
+      sector: 'SMART MANUFACTURING',
+      title: 'Assembly Line Assistance',
       description:
-        'Civic infrastructure modelling for traffic, energy, and emergency response scenario planning.',
+        'Carrying components across multi-level factory floors with dynamic obstacles. Factory layout modelled as a semantic graph; rigid-body torque models govern arm and payload gait compensation. Result: zero hardware downtime in first 90 days, 40% faster integration vs. direct deployment.',
     },
     {
       id: 4,
-      sector: 'CLINICAL',
-      title: 'Biophysics Twins',
+      sector: 'SEARCH & RESCUE',
+      title: 'Disaster Response Navigation',
       description:
-        'Patient-level physiological digital twins for treatment simulation and diagnostics augmentation.',
+        'Navigating collapsed building debris, uneven rubble, and soft ground carrying a 10 kg rescue kit. Semantic debris scene graph enables safe path planning; soft-ground deformation physics prevent leg sinkage. Result: full collapse scenario validated, control policy ready for real-world trials.',
+    },
+  ];
+
+  const healthcareCases = [
+    {
+      id: 1,
+      sector: 'HEALTHCARE',
+      title: 'Hospital & Care Facility Delivery',
+      description:
+        'Medication and equipment delivery across multi-floor hospitals with lifts, ramps, and wet floors. Hospital layout modelled as a semantic ontology (HL7 FHIR compatible) with slip-prevention physics. Result: zero near-miss incidents in 200-hour simulation; gait policy certified before ward deployment.',
+    },
+    {
+      id: 2,
+      sector: 'LOGISTICS',
+      title: 'Last-Mile Urban Delivery',
+      description:
+        'Urban delivery on uneven pavements, kerb drops, ramps, and staircases with a 15 kg payload. City block semantic map with PINN-modelled payload-adjusted CoM and dynamic stability constraints. Result: delivery policy tested across 50 synthetic urban scenarios; 3× gait tuning cycles saved.',
+    },
+    {
+      id: 3,
+      sector: 'RESEARCH & EDUCATION',
+      title: 'University Robotics Lab',
+      description:
+        'Rapid experimentation with locomotion algorithms and control strategies. PINN surrogate model enables 100× faster experimentation than physical tests, with semantic logging for academic papers. Result: 80% reduction in physical test hours per paper; curriculum uploaded after twin validation.',
+    },
+    {
+      id: 4,
+      sector: 'DRDO / iDEX',
+      title: 'Military Logistics & Casualty Extraction',
+      description:
+        'Joint R&D under Make-II / iDEX — autonomous military logistics and casualty extraction scenarios. Classified terrain maps as semantic assets; QKD-encrypted twin data with post-quantum cryptography. Result: proposal-ready PoC aligned with DRDO Make-II framework; CRL partnership accelerates fielding.',
     },
   ];
 
@@ -411,6 +437,9 @@ const IoETDigitalTwin = () => {
     },
   ];
 
+  const activeCases =
+    activeTab === 'industrial' ? industrialCases : healthcareCases;
+
   const getDotSize = (dotIndex) => {
     const distance = Math.abs(activeIndex - dotIndex);
     if (distance === 0) return 16;
@@ -425,8 +454,6 @@ const IoETDigitalTwin = () => {
   const handlePlay = () => {
     if (sliderRef.current) sliderRef.current.slickPlay();
   };
-  const handleTouchStart = () => handlePause();
-  const handleTouchEnd = () => setTimeout(() => handlePlay(), 300);
 
   const sliderSettings = {
     dots: true,
@@ -465,8 +492,7 @@ const IoETDigitalTwin = () => {
   return (
     <div className="mb-0 md:mb-0">
       {/* ── Hero ── */}
-      <section className="min-h-screen relative flex lg:flex-row flex-col items-center overflow-hidden section-block-padding">
-        {/* Desktop background */}
+      <section className="min-h-svh h-svh md:min-h-[92vh] md:h-[92vh] relative flex lg:flex-row flex-col items-center overflow-hidden section-block-padding">
         <Image
           src="/images/global/hero-bg.webp"
           alt="IoET Digital Twin background"
@@ -475,25 +501,16 @@ const IoETDigitalTwin = () => {
           width={1000}
           priority
         />
-
-        {/* Mobile background */}
         <div className="absolute inset-0 -z-10 block md:hidden p-2">
-          <div className="bg-hero-gradient w-full h-full rounded-[28px] relative overflow-hidden"></div>
+          <div className="bg-hero-gradient w-full h-full rounded-[28px] relative overflow-hidden" />
         </div>
 
         <div className="container-padding w-full flex flex-col lg:flex-row gap-2 lg:gap-12 justify-between mt-[var(--mobile-navbar-gap)] lg:my-0 lg:py-0">
           {/* Left: 40% */}
           <div className="text-white w-full lg:w-[40%] flex flex-col justify-center order-1">
-            {/* Icon + Label — inline SVG icon, no file needed */}
             <div className="flex items-center mb-10 md:mb-16">
               <div className="size-[40px] md:size-[60px] bg-[#60606059] backdrop-blur-lg flex-shrink-0 rounded-full flex items-center justify-center">
-                <svg
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
                   <circle
                     cx="5"
                     cy="12"
@@ -554,12 +571,11 @@ const IoETDigitalTwin = () => {
 
             <p className="fl3 !text-white leading-relaxed">
               UElement's IoET Digital Twin platform fuses live sensor telemetry,
-              quantum-secured data transport, and AI driven physics simulation
+              quantum-secured data transport, and AI-driven physics simulation
               to create persistent, high-fidelity virtual replicas of any
-              physical system from factory floors to humanoid robots.
+              physical system — from factory floors to humanoid robots.
             </p>
 
-            {/* Tech stack badge strip */}
             <div className="flex flex-wrap gap-2 mt-8">
               {['NVIDIA Isaac Sim', 'ROS2', 'PhysX 5', 'QKD Transport'].map(
                 (tag) => (
@@ -574,7 +590,7 @@ const IoETDigitalTwin = () => {
             </div>
           </div>
 
-          {/* Right: 60% — SVG visual */}
+          {/* Right: 60% */}
           <div className="w-full lg:w-[60%] order-2">
             <div className="relative w-full h-[300px] sm:h-[400px] lg:h-[500px] xl:h-[600px]">
               <TwinVisual />
@@ -582,7 +598,6 @@ const IoETDigitalTwin = () => {
           </div>
         </div>
 
-        {/* Notch — mobile only */}
         <svg
           className="md:hidden absolute pointer-events-none z-10"
           style={{ bottom: '8px', right: '8px' }}
@@ -590,7 +605,6 @@ const IoETDigitalTwin = () => {
           height="60"
           viewBox="0 0 302 59"
           fill="none"
-          xmlns="http://www.w3.org/2000/svg"
         >
           <path
             d="M49.73 0.5H310.5V59.5H0.34C7.72 58.02 12.68 54.97 16.12 50.95C21.03 45.21 22.75 37.58 24.11 30.09C25.47 22.54 26.47 15.16 29.84 9.64C31.51 6.89 33.76 4.62 36.94 3.03C40.12 1.43 44.26 0.5 49.73 0.5Z"
@@ -604,7 +618,6 @@ const IoETDigitalTwin = () => {
       <section className="bg-[#fcfcfc] py-[var(--section-block-padding)]">
         <div className="container-padding">
           <div className="bg-[#f3f3f3] rounded-[18px] shadow-lg p-6 sm:p-8 md:p-10 lg:p-12">
-            {/* Stats row */}
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
               {[
                 { val: '10×', label: 'Faster scenario iteration' },
@@ -625,13 +638,9 @@ const IoETDigitalTwin = () => {
                 </div>
               ))}
             </div>
-
-            {/* Pipeline visual */}
             <div className="mb-8">
               <PipelineVisual />
             </div>
-
-            {/* Text */}
             <div>
               <h2 className="fl1 !mb-4 sm:!mb-6">
                 AI-Powered Digital Twin Infrastructure
@@ -655,13 +664,15 @@ const IoETDigitalTwin = () => {
         </div>
       </section>
 
-      {/* ── Core Capabilities ── */}
+      {/* ── Business & Engineering Use Cases ── */}
       <section className="bg-[#fcfcfc] pb-[var(--section-block-padding)]">
         <div className="container-padding">
-          <h2 className="fl1 text-left !mb-4 md:!mb-6">Core Capabilities</h2>
+          <h2 className="fl1 text-left !mb-4 md:!mb-6">
+            Business & Engineering Use Cases
+          </h2>
           <p className="fl3 !text-[#5F6D7E] !mb-8 md:w-[60%]">
-            What the platform delivers — built on proven simulation
-            infrastructure.
+            Eight validated simulation workflows — from certification to
+            synthetic data generation.
           </p>
 
           {/* Desktop: 2×3 grid */}
@@ -684,8 +695,8 @@ const IoETDigitalTwin = () => {
           {/* Mobile: slider */}
           <div
             className="md:hidden"
-            onTouchStart={handleTouchStart}
-            onTouchEnd={handleTouchEnd}
+            onTouchStart={() => handlePause()}
+            onTouchEnd={() => setTimeout(() => handlePlay(), 300)}
           >
             <Slider ref={sliderRef} {...sliderSettings}>
               {capabilities.map((cap) => (
@@ -705,18 +716,39 @@ const IoETDigitalTwin = () => {
         </div>
       </section>
 
-      {/* ── Industry Applications ── */}
+      {/* ── Validated Use Cases ── */}
       <section className="bg-[#f3f3f3] py-[var(--section-block-padding)]">
         <div className="container-padding">
-          <h2 className="fl1 text-left !mb-4 md:!mb-6">
-            Industry Applications
-          </h2>
+          <h2 className="fl1 text-left !mb-4 md:!mb-6">Validated Use Cases</h2>
+
+          {/* Tab switcher */}
+          <div className="flex gap-3 mb-6 flex-wrap">
+            {[
+              { key: 'industrial', label: 'Industrial & Defence' },
+              { key: 'healthcare', label: 'Healthcare, Logistics & Research' },
+            ].map((tab) => (
+              <button
+                key={tab.key}
+                onClick={() => setActiveTab(tab.key)}
+                className={`px-4 py-2 rounded-full text-[13px] font-semibold font-noto-sans transition-all duration-200 border ${
+                  activeTab === tab.key
+                    ? 'bg-[#0C142D] text-white border-[#0C142D]'
+                    : 'bg-white text-[#5F6D7E] border-[#d0d0d0] hover:border-[#0C142D]'
+                }`}
+              >
+                {tab.label}
+              </button>
+            ))}
+          </div>
+
           <p className="fl3 !text-[#5F6D7E] !mb-8 md:w-[60%]">
-            Deployed across sectors where simulation accuracy and data security
-            are non-negotiable.
+            {activeTab === 'industrial'
+              ? 'Pre-validated in simulation — zero risk to the physical system before field deployment.'
+              : 'Semantic contextualisation enables G1 to reason about its environment — not just navigate it.'}
           </p>
+
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {industryApplications.map((app) => (
+            {activeCases.map((app) => (
               <div key={app.id} className="bg-[#fcfcfc] rounded-[18px] p-6">
                 <p className="font-noto-sans font-bold text-[10px] tracking-[0.15em] text-[#9B7025] uppercase mb-2">
                   {app.sector}
