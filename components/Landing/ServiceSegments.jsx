@@ -86,31 +86,24 @@ const ServiceSegments = () => {
         <div className="flex flex-col gap-8">
           {/* Row 1 */}
           <div className="flex items-stretch h-[300px] gap-4">
+            {/* FillerCard — flex:1 so it absorbs leftover space */}
             <div
-              className="flex-shrink-0"
-              style={{ width: 'calc(16rem + 80px)', marginLeft: '-80px' }}
+              className="flex-1 overflow-hidden"
+              style={{ marginLeft: '-80px' }}
             >
               <FillerCard />
             </div>
-            <div style={{ flex: 0.95 }}>
-              <TextCard
-                title={services[0].title}
-                desc={services[0].desc}
-                logo={services[0].logo}
-              />
+
+            {/* TextCards — fixed width, never shrink */}
+            <div className="flex-shrink-0 w-[260px] xl:w-[300px]">
+              <TextCard {...services[0]} />
             </div>
-            {/* marginRight: 0 → flush against image */}
-            <div style={{ flex: 0.95 }}>
-              <TextCard
-                title={services[1].title}
-                desc={services[1].desc}
-                logo={services[1].logo}
-              />
+            <div className="flex-shrink-0 w-[260px] xl:w-[300px]">
+              <TextCard {...services[1]} />
             </div>
-            <div
-              style={{ flex: 1.5 }}
-              className="overflow-hidden rounded-l-[18px]"
-            >
+
+            {/* Image — flex:1 to fill the rest */}
+            <div className="flex-1 overflow-hidden rounded-l-[18px]">
               <img
                 src="/images/landing/domain-1.webp"
                 alt="Domain visual 1"
@@ -121,34 +114,27 @@ const ServiceSegments = () => {
 
           {/* Row 2 */}
           <div className="flex items-stretch h-[300px] gap-4">
-            <div
-              style={{ flex: 1.5 }}
-              className="overflow-hidden rounded-r-[18px]"
-            >
+            {/* Image — flex:1 */}
+            <div className="flex-1 overflow-hidden rounded-r-[18px]">
               <img
                 src="/images/landing/domain-2.webp"
                 alt="Domain visual 2"
                 className="w-full h-full object-cover"
               />
             </div>
-            {/* marginLeft: 0 → flush against image */}
-            <div style={{ flex: 0.95 }}>
-              <TextCard
-                title={services[2].title}
-                desc={services[2].desc}
-                logo={services[2].logo}
-              />
+
+            {/* TextCards — fixed width, never shrink */}
+            <div className="flex-shrink-0 w-[260px] xl:w-[300px]">
+              <TextCard {...services[2]} />
             </div>
-            <div style={{ flex: 0.95 }}>
-              <TextCard
-                title={services[3].title}
-                desc={services[3].desc}
-                logo={services[3].logo}
-              />
+            <div className="flex-shrink-0 w-[260px] xl:w-[300px]">
+              <TextCard {...services[3]} />
             </div>
+
+            {/* FillerCard — flex:1 */}
             <div
-              className="flex-shrink-0"
-              style={{ width: 'calc(16rem + 80px)', marginRight: '-80px' }}
+              className="flex-1 overflow-hidden"
+              style={{ marginRight: '-80px' }}
             >
               <FillerCard />
             </div>
