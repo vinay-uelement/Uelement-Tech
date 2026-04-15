@@ -208,9 +208,9 @@ const DrivingGrowthSection = () => {
               }
 
               return (
-                <div key={item.id}>
+                <div key={item.id} className=' !w-[80%] -mr-10 md:-mr-20 2xl:-mr-10'>
                   <div
-                    className={`dg-card-wrapper ml-6 md:ml-0 bg ${posClass}`}
+                    className={`dg-card-wrapper ml-6 md:ml-0 ${posClass}`}
                     style={{ zIndex, position: 'relative' }}
                   >
                     <div

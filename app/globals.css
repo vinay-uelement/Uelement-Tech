@@ -686,8 +686,8 @@
 /* Tablet */
 @media (min-width: 768px) {
   :root {
-    --dg-center-x: -120px;
-    --dg-right-x: -240px;
+    --dg-center-x: -85px;
+    --dg-right-x: -220px;
     --dg-hidden-x: -140px;
     --dg-center-scale: 0.82;
     --dg-right-scale: 0.67;
@@ -697,8 +697,8 @@
 /* Desktop */
 @media (min-width: 1024px) {
   :root {
-    --dg-center-x: -60px;
-    --dg-right-x: -190px;
+    --dg-center-x: -90px;
+    --dg-right-x: -250px;
     --dg-hidden-x: -180px;
     --dg-center-scale: 0.8;
     --dg-right-scale: 0.65;
