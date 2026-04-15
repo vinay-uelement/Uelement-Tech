@@ -295,24 +295,62 @@ const NavbarV3 = () => {
                       <div
                         className={
                           GRID_DROPDOWN_IDS.has(openMenu.id)
-                            ? 'grid grid-cols-2 gap-x-6'
+                            ? 'grid grid-cols-[1fr_1px_1fr] gap-x-6'
                             : 'flex flex-col'
                         }
                       >
-                        {openMenu.children.map((child) => (
-                          <Link
-                            key={child.id}
-                            href={child.link}
-                            className="block py-4 last:border-none border-primary-blue hover:text-primary-blue"
-                          >
-                            <div className="font-semibold text-18 text-[#fff] font-reddit-sans capitalize">
-                              {child.label}
-                            </div>
-                            <div className="text-16 font-light text-[#fff] font-reddit-sans">
-                              {child.desc}
-                            </div>
-                          </Link>
-                        ))}
+                        {GRID_DROPDOWN_IDS.has(openMenu.id)
+                          ? openMenu.children.reduce((acc, child, index) => {
+                              const isFirstCol = index % 2 === 0;
+                              const colIndex = Math.floor(index / 2);
+
+                              // Insert divider once (as a row-spanning element after first column)
+                              if (index === 0) {
+                                acc.push(
+                                  <div
+                                    key="divider"
+                                    className="col-start-2 row-span-full w-px bg-[#ffffff20] self-stretch"
+                                    style={{
+                                      gridRow: `1 / span ${Math.ceil(openMenu.children.length / 2)}`,
+                                    }}
+                                  />
+                                );
+                              }
+
+                              acc.push(
+                                <Link
+                                  key={child.id}
+                                  href={child.link}
+                                  className={`block py-4 last:border-none border-primary-blue hover:text-primary-blue ${
+                                    isFirstCol ? 'col-start-1' : 'col-start-3'
+                                  }`}
+                                  style={{ gridRow: colIndex + 1 }}
+                                >
+                                  <div className="font-semibold text-18 text-[#fff] font-reddit-sans capitalize">
+                                    {child.label}
+                                  </div>
+                                  <div className="text-16 font-light text-[#fff] font-reddit-sans">
+                                    {child.desc}
+                                  </div>
+                                </Link>
+                              );
+
+                              return acc;
+                            }, [])
+                          : openMenu.children.map((child) => (
+                              <Link
+                                key={child.id}
+                                href={child.link}
+                                className="block py-4 last:border-none border-primary-blue hover:text-primary-blue"
+                              >
+                                <div className="font-semibold text-18 text-[#fff] font-reddit-sans capitalize">
+                                  {child.label}
+                                </div>
+                                <div className="text-16 font-light text-[#fff] font-reddit-sans">
+                                  {child.desc}
+                                </div>
+                              </Link>
+                            ))}
                       </div>
                     </div>
                   </div>
