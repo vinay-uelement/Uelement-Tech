@@ -7,7 +7,7 @@ import Image from 'next/image';
 
 // ─── Hero right: Physical ↔ Digital Twin visualisation ───────────────────────
 const TwinVisual = () => (
-  <div className="relative w-full h-full flex items-center justify-center">
+  <div className="w-full h-full flex items-center justify-center">
     <svg
       viewBox="0 0 620 440"
       className="w-full h-full"
@@ -32,6 +32,7 @@ const TwinVisual = () => (
           <stop offset="100%" stopColor="#C98F28" stopOpacity="0.05" />
         </linearGradient>
       </defs>
+
       <rect width="620" height="440" fill="url(#tg)" rx="16" />
       <text
         x="90"
@@ -66,6 +67,7 @@ const TwinVisual = () => (
         strokeWidth="1"
         strokeDasharray="4 6"
       />
+
       {[80, 165, 255, 345].map((cy, i) => (
         <g key={i}>
           <circle
@@ -87,6 +89,7 @@ const TwinVisual = () => (
           <circle cx="90" cy={cy} r="4" fill="#C98F28" />
         </g>
       ))}
+
       {[80, 165, 255, 345].map((cy, i) => (
         <line
           key={i}
@@ -99,6 +102,7 @@ const TwinVisual = () => (
           strokeDasharray="5 5"
         />
       ))}
+
       <circle
         cx="310"
         cy="213"
@@ -146,6 +150,7 @@ const TwinVisual = () => (
       >
         SYNC
       </text>
+
       {[80, 165, 255, 345].map((cy, i) => (
         <line
           key={i}
@@ -157,6 +162,7 @@ const TwinVisual = () => (
           strokeWidth="1.2"
         />
       ))}
+
       {[80, 165, 255, 345].map((cy, i) => (
         <g key={i}>
           <rect
@@ -203,6 +209,7 @@ const TwinVisual = () => (
           />
         </g>
       ))}
+
       {['LiDAR', 'IMU', 'Thermal', 'Force/T'].map((label, i) => (
         <text
           key={i}
@@ -215,6 +222,7 @@ const TwinVisual = () => (
           {label}
         </text>
       ))}
+
       {['Mfg Twin', 'Robot Twin', 'Smart City', 'Biophysics'].map(
         (label, i) => (
           <text
@@ -229,23 +237,144 @@ const TwinVisual = () => (
           </text>
         )
       )}
+
+      {/* ✅ Floating badges — inside SVG, locked to viewBox coordinates */}
+      {/* Top-left */}
+      <foreignObject x="8" y="-30" width="105" height="48">
+        <div
+          xmlns="http://www.w3.org/1999/xhtml"
+          style={{
+            background: 'rgba(12,20,45,0.85)',
+            backdropFilter: 'blur(4px)',
+            border: '1px solid rgba(201,143,40,0.2)',
+            borderRadius: '8px',
+            padding: '6px 10px',
+          }}
+        >
+          <p
+            style={{
+              color: '#C98F28',
+              fontWeight: 'bold',
+              fontSize: '13px',
+              lineHeight: 1,
+            }}
+          >
+            10×
+          </p>
+          <p
+            style={{
+              color: 'rgba(255,255,255,0.5)',
+              fontSize: '10px',
+              marginTop: '3px',
+            }}
+          >
+            Faster iteration
+          </p>
+        </div>
+      </foreignObject>
+
+      {/* Top-right */}
+      <foreignObject x="507" y="-30" width="106" height="48">
+        <div
+          xmlns="http://www.w3.org/1999/xhtml"
+          style={{
+            background: 'rgba(12,20,45,0.85)',
+            backdropFilter: 'blur(4px)',
+            border: '1px solid rgba(201,143,40,0.2)',
+            borderRadius: '8px',
+            padding: '6px 10px',
+          }}
+        >
+          <p
+            style={{
+              color: '#C98F28',
+              fontWeight: 'bold',
+              fontSize: '13px',
+              lineHeight: 1,
+            }}
+          >
+            99.4%
+          </p>
+          <p
+            style={{
+              color: 'rgba(255,255,255,0.5)',
+              fontSize: '10px',
+              marginTop: '3px',
+            }}
+          >
+            Sim accuracy
+          </p>
+        </div>
+      </foreignObject>
+
+      {/* Bottom-left */}
+      <foreignObject x="8" y="372" width="105" height="48">
+        <div
+          xmlns="http://www.w3.org/1999/xhtml"
+          style={{
+            background: 'rgba(12,20,45,0.85)',
+            backdropFilter: 'blur(4px)',
+            border: '1px solid rgba(201,143,40,0.2)',
+            borderRadius: '8px',
+            padding: '6px 10px',
+          }}
+        >
+          <p
+            style={{
+              color: '#C98F28',
+              fontWeight: 'bold',
+              fontSize: '13px',
+              lineHeight: 1,
+            }}
+          >
+            360°
+          </p>
+          <p
+            style={{
+              color: 'rgba(255,255,255,0.5)',
+              fontSize: '10px',
+              marginTop: '3px',
+            }}
+          >
+            AR/VR ready
+          </p>
+        </div>
+      </foreignObject>
+
+      {/* Bottom-right */}
+      <foreignObject x="507" y="372" width="106" height="48">
+        <div
+          xmlns="http://www.w3.org/1999/xhtml"
+          style={{
+            background: 'rgba(12,20,45,0.85)',
+            backdropFilter: 'blur(4px)',
+            border: '1px solid rgba(201,143,40,0.2)',
+            borderRadius: '8px',
+            padding: '6px 10px',
+          }}
+        >
+          <p
+            style={{
+              color: '#C98F28',
+              fontWeight: 'bold',
+              fontSize: '13px',
+              lineHeight: 1,
+            }}
+          >
+            0
+          </p>
+          <p
+            style={{
+              color: 'rgba(255,255,255,0.5)',
+              fontSize: '10px',
+              marginTop: '3px',
+            }}
+          >
+            Hardware risk
+          </p>
+        </div>
+      </foreignObject>
     </svg>
-    <div className="absolute top-3 left-3 bg-[#0C142D]/80 backdrop-blur-sm border border-[#C98F28]/20 rounded-lg px-3 py-2">
-      <p className="text-[#C98F28] font-bold text-sm leading-none">10×</p>
-      <p className="text-white/50 text-xs mt-0.5">Faster iteration</p>
-    </div>
-    <div className="absolute top-3 right-3 bg-[#0C142D]/80 backdrop-blur-sm border border-[#C98F28]/20 rounded-lg px-3 py-2">
-      <p className="text-[#C98F28] font-bold text-sm leading-none">99.4%</p>
-      <p className="text-white/50 text-xs mt-0.5">Sim accuracy</p>
-    </div>
-    <div className="absolute bottom-3 left-3 bg-[#0C142D]/80 backdrop-blur-sm border border-[#C98F28]/20 rounded-lg px-3 py-2">
-      <p className="text-[#C98F28] font-bold text-sm leading-none">360°</p>
-      <p className="text-white/50 text-xs mt-0.5">AR/VR ready</p>
-    </div>
-    <div className="absolute bottom-3 right-3 bg-[#0C142D]/80 backdrop-blur-sm border border-[#C98F28]/20 rounded-lg px-3 py-2">
-      <p className="text-[#C98F28] font-bold text-sm leading-none">0</p>
-      <p className="text-white/50 text-xs mt-0.5">Hardware risk</p>
-    </div>
   </div>
 );
 
