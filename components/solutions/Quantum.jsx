@@ -16,7 +16,12 @@ const QuantumCircuitVisual = () => (
     >
       <defs>
         <pattern id="qg" width="32" height="32" patternUnits="userSpaceOnUse">
-          <path d="M 32 0 L 0 0 0 32" fill="none" stroke="rgba(192,132,252,0.05)" strokeWidth="0.5" />
+          <path
+            d="M 32 0 L 0 0 0 32"
+            fill="none"
+            stroke="rgba(192,132,252,0.05)"
+            strokeWidth="0.5"
+          />
         </pattern>
         <radialGradient id="qglow" cx="50%" cy="50%" r="50%">
           <stop offset="0%" stopColor="rgba(192,132,252,0.12)" />
@@ -30,102 +35,379 @@ const QuantumCircuitVisual = () => (
       {/* Qubit rails */}
       {[130, 220, 310].map((cy, i) => (
         <g key={i}>
-          <line x1="60" y1={cy} x2="560" y2={cy} stroke="rgba(192,132,252,0.2)" strokeWidth="1.5" />
-          <text x="44" y={cy + 4} fill="rgba(192,132,252,0.6)" fontSize="10" fontFamily="monospace" textAnchor="middle" fontWeight="700">q{i}</text>
+          <line
+            x1="60"
+            y1={cy}
+            x2="560"
+            y2={cy}
+            stroke="rgba(192,132,252,0.2)"
+            strokeWidth="1.5"
+          />
+          <text
+            x="44"
+            y={cy + 4}
+            fill="rgba(192,132,252,0.6)"
+            fontSize="10"
+            fontFamily="monospace"
+            textAnchor="middle"
+            fontWeight="700"
+          >
+            q{i}
+          </text>
         </g>
       ))}
 
       {/* Hadamard gates */}
       {[130, 220, 310].map((cy, i) => (
         <g key={i}>
-          <rect x="96" y={cy - 16} width="32" height="32" rx="4" fill="rgba(192,132,252,0.15)" stroke="#C98F28" strokeWidth="1.5" />
-          <text x="112" y={cy + 5} fill="#C98F28" fontSize="11" fontFamily="monospace" textAnchor="middle" fontWeight="800">H</text>
+          <rect
+            x="96"
+            y={cy - 16}
+            width="32"
+            height="32"
+            rx="4"
+            fill="rgba(192,132,252,0.15)"
+            stroke="#C98F28"
+            strokeWidth="1.5"
+          />
+          <text
+            x="112"
+            y={cy + 5}
+            fill="#C98F28"
+            fontSize="11"
+            fontFamily="monospace"
+            textAnchor="middle"
+            fontWeight="800"
+          >
+            H
+          </text>
         </g>
       ))}
 
       {/* CNOT gate (q0 → q1) */}
-      <line x1="196" y1="130" x2="196" y2="220" stroke="#C98F28" strokeWidth="1.5" />
+      <line
+        x1="196"
+        y1="130"
+        x2="196"
+        y2="220"
+        stroke="#C98F28"
+        strokeWidth="1.5"
+      />
       <circle cx="196" cy="130" r="5" fill="#C98F28" />
-      <circle cx="196" cy="220" r="12" fill="rgba(192,132,252,0.1)" stroke="#C98F28" strokeWidth="1.5" />
-      <line x1="188" y1="220" x2="204" y2="220" stroke="#C98F28" strokeWidth="1.5" />
-      <line x1="196" y1="212" x2="196" y2="228" stroke="#C98F28" strokeWidth="1.5" />
+      <circle
+        cx="196"
+        cy="220"
+        r="12"
+        fill="rgba(192,132,252,0.1)"
+        stroke="#C98F28"
+        strokeWidth="1.5"
+      />
+      <line
+        x1="188"
+        y1="220"
+        x2="204"
+        y2="220"
+        stroke="#C98F28"
+        strokeWidth="1.5"
+      />
+      <line
+        x1="196"
+        y1="212"
+        x2="196"
+        y2="228"
+        stroke="#C98F28"
+        strokeWidth="1.5"
+      />
 
       {/* CNOT gate (q1 → q2) */}
-      <line x1="260" y1="220" x2="260" y2="310" stroke="#C98F28" strokeWidth="1.5" />
+      <line
+        x1="260"
+        y1="220"
+        x2="260"
+        y2="310"
+        stroke="#C98F28"
+        strokeWidth="1.5"
+      />
       <circle cx="260" cy="220" r="5" fill="#C98F28" />
-      <circle cx="260" cy="310" r="12" fill="rgba(192,132,252,0.1)" stroke="#C98F28" strokeWidth="1.5" />
-      <line x1="252" y1="310" x2="268" y2="310" stroke="#C98F28" strokeWidth="1.5" />
-      <line x1="260" y1="302" x2="260" y2="318" stroke="#C98F28" strokeWidth="1.5" />
+      <circle
+        cx="260"
+        cy="310"
+        r="12"
+        fill="rgba(192,132,252,0.1)"
+        stroke="#C98F28"
+        strokeWidth="1.5"
+      />
+      <line
+        x1="252"
+        y1="310"
+        x2="268"
+        y2="310"
+        stroke="#C98F28"
+        strokeWidth="1.5"
+      />
+      <line
+        x1="260"
+        y1="302"
+        x2="260"
+        y2="318"
+        stroke="#C98F28"
+        strokeWidth="1.5"
+      />
 
       {/* Rz rotation gates */}
       {[130, 220, 310].map((cy, i) => (
         <g key={i}>
-          <rect x="318" y={cy - 16} width="52" height="32" rx="4" fill="rgba(192,132,252,0.12)" stroke="#C98F28" strokeWidth="1.2" />
-          <text x="344" y={cy + 5} fill="#C98F28" fontSize="9" fontFamily="monospace" textAnchor="middle" fontWeight="700">Rz(θ)</text>
+          <rect
+            x="318"
+            y={cy - 16}
+            width="52"
+            height="32"
+            rx="4"
+            fill="rgba(192,132,252,0.12)"
+            stroke="#C98F28"
+            strokeWidth="1.2"
+          />
+          <text
+            x="344"
+            y={cy + 5}
+            fill="#C98F28"
+            fontSize="9"
+            fontFamily="monospace"
+            textAnchor="middle"
+            fontWeight="700"
+          >
+            Rz(θ)
+          </text>
         </g>
       ))}
 
       {/* Barrier */}
-      <line x1="392" y1="108" x2="392" y2="332" stroke="rgba(192,132,252,0.25)" strokeWidth="1" strokeDasharray="4 4" />
+      <line
+        x1="392"
+        y1="108"
+        x2="392"
+        y2="332"
+        stroke="rgba(192,132,252,0.25)"
+        strokeWidth="1"
+        strokeDasharray="4 4"
+      />
 
       {/* Measurement gates */}
       {[130, 220, 310].map((cy, i) => (
         <g key={i}>
-          <rect x="420" y={cy - 18} width="36" height="36" rx="4" fill="rgba(192,132,252,0.08)" stroke="#C98F28" strokeWidth="1.5" />
-          <path d={`M ${426} ${cy + 10} Q ${438} ${cy - 10} ${450} ${cy + 10}`} stroke="#C98F28" strokeWidth="1.5" fill="none" />
-          <line x1="438" y1={cy + 10} x2="446" y2={cy - 4} stroke="#C98F28" strokeWidth="1.2" />
-          <text x="438" y={cy + 24} fill="rgba(192,132,252,0.5)" fontSize="7" fontFamily="monospace" textAnchor="middle">M</text>
+          <rect
+            x="420"
+            y={cy - 18}
+            width="36"
+            height="36"
+            rx="4"
+            fill="rgba(192,132,252,0.08)"
+            stroke="#C98F28"
+            strokeWidth="1.5"
+          />
+          <path
+            d={`M ${426} ${cy + 10} Q ${438} ${cy - 10} ${450} ${cy + 10}`}
+            stroke="#C98F28"
+            strokeWidth="1.5"
+            fill="none"
+          />
+          <line
+            x1="438"
+            y1={cy + 10}
+            x2="446"
+            y2={cy - 4}
+            stroke="#C98F28"
+            strokeWidth="1.2"
+          />
+          <text
+            x="438"
+            y={cy + 24}
+            fill="rgba(192,132,252,0.5)"
+            fontSize="7"
+            fontFamily="monospace"
+            textAnchor="middle"
+          >
+            M
+          </text>
         </g>
       ))}
 
       {/* Output lines */}
       {[130, 220, 310].map((cy, i) => (
-        <line key={i} x1="456" y1={cy} x2="540" y2={cy} stroke="rgba(192,132,252,0.2)" strokeWidth="1" strokeDasharray="3 3" />
+        <line
+          key={i}
+          x1="456"
+          y1={cy}
+          x2="540"
+          y2={cy}
+          stroke="rgba(192,132,252,0.2)"
+          strokeWidth="1"
+          strokeDasharray="3 3"
+        />
       ))}
 
       {/* Circuit label */}
-      <text x="310" y="378" fill="rgba(192,132,252,0.35)" fontSize="8.5" fontFamily="monospace" textAnchor="middle" fontWeight="600" letterSpacing="1">
+      <text
+        x="310"
+        y="378"
+        fill="rgba(192,132,252,0.35)"
+        fontSize="8.5"
+        fontFamily="monospace"
+        textAnchor="middle"
+        fontWeight="600"
+        letterSpacing="1"
+      >
         QUANTUM CIRCUIT — ML-KEM KEY ENCAPSULATION
       </text>
 
       {/* Corner labels */}
-      <text x="16" y="26" fill="rgba(192,132,252,0.35)" fontSize="8" fontFamily="monospace" fontWeight="700" letterSpacing="1.5">QUANTUM READY</text>
+      <text
+        x="16"
+        y="26"
+        fill="rgba(192,132,252,0.35)"
+        fontSize="8"
+        fontFamily="monospace"
+        fontWeight="700"
+        letterSpacing="1.5"
+      >
+        QUANTUM READY
+      </text>
       {/* <text x="604" y="26" fill="rgba(192,132,252,0.35)" fontSize="8" fontFamily="monospace" textAnchor="end" letterSpacing="1">NIST FIPS 203/204/205</text> */}
 
       {/* ✅ Floating badges — inside SVG, locked to viewBox coordinates */}
       {/* Top-left */}
       <foreignObject x="8" y="4" width="130" height="48">
-        <div xmlns="http://www.w3.org/1999/xhtml"
-          style={{ background: 'rgba(12,20,45,0.85)', backdropFilter: 'blur(4px)', border: '1px solid rgba(201,143,40,0.2)', borderRadius: '8px', padding: '6px 10px' }}>
-          <p style={{ color: '#C98F28', fontWeight: 'bold', fontSize: '13px', lineHeight: 1 }}>2030</p>
-          <p style={{ color: 'rgba(255,255,255,0.5)', fontSize: '10px', marginTop: '3px' }}>Quantum threat horizon</p>
+        <div
+          xmlns="http://www.w3.org/1999/xhtml"
+          style={{
+            background: 'rgba(12,20,45,0.85)',
+            backdropFilter: 'blur(4px)',
+            border: '1px solid rgba(201,143,40,0.2)',
+            borderRadius: '8px',
+            padding: '6px 10px',
+          }}
+        >
+          <p
+            style={{
+              color: '#C98F28',
+              fontWeight: 'bold',
+              fontSize: '13px',
+              lineHeight: 1,
+            }}
+          >
+            2030
+          </p>
+          <p
+            style={{
+              color: 'rgba(255,255,255,0.5)',
+              fontSize: '10px',
+              marginTop: '3px',
+            }}
+          >
+            Quantum threat horizon
+          </p>
         </div>
       </foreignObject>
 
       {/* Top-right */}
       <foreignObject x="494" y="4" width="120" height="48">
-        <div xmlns="http://www.w3.org/1999/xhtml"
-          style={{ background: 'rgba(12,20,45,0.85)', backdropFilter: 'blur(4px)', border: '1px solid rgba(201,143,40,0.2)', borderRadius: '8px', padding: '6px 10px' }}>
-          <p style={{ color: '#C98F28', fontWeight: 'bold', fontSize: '13px', lineHeight: 1 }}>NIST</p>
-          <p style={{ color: 'rgba(255,255,255,0.5)', fontSize: '10px', marginTop: '3px' }}>FIPS 203/204/205</p>
+        <div
+          xmlns="http://www.w3.org/1999/xhtml"
+          style={{
+            background: 'rgba(12,20,45,0.85)',
+            backdropFilter: 'blur(4px)',
+            border: '1px solid rgba(201,143,40,0.2)',
+            borderRadius: '8px',
+            padding: '6px 10px',
+          }}
+        >
+          <p
+            style={{
+              color: '#C98F28',
+              fontWeight: 'bold',
+              fontSize: '13px',
+              lineHeight: 1,
+            }}
+          >
+            NIST
+          </p>
+          <p
+            style={{
+              color: 'rgba(255,255,255,0.5)',
+              fontSize: '10px',
+              marginTop: '3px',
+            }}
+          >
+            FIPS 203/204/205
+          </p>
         </div>
       </foreignObject>
 
       {/* Bottom-left */}
       <foreignObject x="8" y="384" width="105" height="48">
-        <div xmlns="http://www.w3.org/1999/xhtml"
-          style={{ background: 'rgba(12,20,45,0.85)', backdropFilter: 'blur(4px)', border: '1px solid rgba(201,143,40,0.2)', borderRadius: '8px', padding: '6px 10px' }}>
-          <p style={{ color: '#C98F28', fontWeight: 'bold', fontSize: '13px', lineHeight: 1 }}>QKD</p>
-          <p style={{ color: 'rgba(255,255,255,0.5)', fontSize: '10px', marginTop: '3px' }}>Key distribution</p>
+        <div
+          xmlns="http://www.w3.org/1999/xhtml"
+          style={{
+            background: 'rgba(12,20,45,0.85)',
+            backdropFilter: 'blur(4px)',
+            border: '1px solid rgba(201,143,40,0.2)',
+            borderRadius: '8px',
+            padding: '6px 10px',
+          }}
+        >
+          <p
+            style={{
+              color: '#C98F28',
+              fontWeight: 'bold',
+              fontSize: '13px',
+              lineHeight: 1,
+            }}
+          >
+            QKD
+          </p>
+          <p
+            style={{
+              color: 'rgba(255,255,255,0.5)',
+              fontSize: '10px',
+              marginTop: '3px',
+            }}
+          >
+            Key distribution
+          </p>
         </div>
       </foreignObject>
 
       {/* Bottom-right */}
       <foreignObject x="507" y="384" width="106" height="48">
-        <div xmlns="http://www.w3.org/1999/xhtml"
-          style={{ background: 'rgba(12,20,45,0.85)', backdropFilter: 'blur(4px)', border: '1px solid rgba(201,143,40,0.2)', borderRadius: '8px', padding: '6px 10px' }}>
-          <p style={{ color: '#C98F28', fontWeight: 'bold', fontSize: '13px', lineHeight: 1 }}>Now</p>
-          <p style={{ color: 'rgba(255,255,255,0.5)', fontSize: '10px', marginTop: '3px' }}>Migration window</p>
+        <div
+          xmlns="http://www.w3.org/1999/xhtml"
+          style={{
+            background: 'rgba(12,20,45,0.85)',
+            backdropFilter: 'blur(4px)',
+            border: '1px solid rgba(201,143,40,0.2)',
+            borderRadius: '8px',
+            padding: '6px 10px',
+          }}
+        >
+          <p
+            style={{
+              color: '#C98F28',
+              fontWeight: 'bold',
+              fontSize: '13px',
+              lineHeight: 1,
+            }}
+          >
+            Now
+          </p>
+          <p
+            style={{
+              color: 'rgba(255,255,255,0.5)',
+              fontSize: '10px',
+              marginTop: '3px',
+            }}
+          >
+            Migration window
+          </p>
         </div>
       </foreignObject>
     </svg>
@@ -141,7 +423,7 @@ const MigrationPathway = () => {
     { abbr: 'PH4', label: 'Full PQC\nDeploy' },
   ];
   return (
-    <div className="w-full bg-[#0C142D] rounded-[4px] p-6 sm:p-8 overflow-x-auto">
+    <div className="w-full bg-hero-gradient rounded-[14px] p-6 sm:p-8 overflow-x-auto">
       <p className="text-[#C98F28]/50 text-[9px] font-mono font-bold tracking-[0.2em] uppercase mb-5">
         PQC Migration Pathway — Structured Path to Quantum Resilience
       </p>
@@ -478,7 +760,7 @@ const QuantumSolutions = () => {
               ].map((s) => (
                 <div
                   key={s.val}
-                  className="bg-[#0C142D] rounded-[18px] px-4 py-5 flex flex-col gap-1"
+                  className="bg-hero-gradient rounded-[14px] px-4 py-5 flex flex-col gap-1"
                 >
                   <p className="font-reddit-sans font-bold text-[22px] md:text-[28px] text-[#C98F28] leading-none">
                     {s.val}
@@ -579,10 +861,7 @@ const QuantumSolutions = () => {
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {migrationPhases.map((phase) => (
-              <div
-                key={phase.id}
-                className="bg-[#fcfcfc] rounded-[18px] p-6 "
-              >
+              <div key={phase.id} className="bg-[#fcfcfc] rounded-[18px] p-6 ">
                 <p className="font-noto-sans font-bold text-[10px] tracking-[0.15em] text-[#9B7025] uppercase mb-2">
                   {phase.phase}
                 </p>
@@ -607,10 +886,7 @@ const QuantumSolutions = () => {
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {targetSectors.map((s) => (
-              <div
-                key={s.id}
-                className="bg-[#f3f3f3] p-6 rounded-[18px] "
-              >
+              <div key={s.id} className="bg-[#f3f3f3] p-6 rounded-[18px] ">
                 <p className="font-noto-sans font-bold text-[10px] tracking-[0.15em] text-[#9B7025] uppercase mb-2">
                   {s.sector}
                 </p>

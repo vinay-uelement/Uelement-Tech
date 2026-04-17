@@ -389,7 +389,7 @@ const PipelineVisual = () => {
     { label: 'Validated\nPolicy', abbr: 'POL' },
   ];
   return (
-    <div className="w-full bg-[#0C142D] rounded-[4px] p-6 sm:p-8 overflow-x-auto">
+    <div className="w-full bg-hero-gradient rounded-[14px] p-6 sm:p-8 overflow-x-auto">
       <div className="flex items-center justify-between min-w-[520px] gap-1">
         {steps.map((step, i) => (
           <React.Fragment key={i}>
@@ -756,7 +756,7 @@ const IoETDigitalTwin = () => {
               ].map((s) => (
                 <div
                   key={s.val}
-                  className="bg-[#0C142D] rounded-[18px] px-4 py-5 flex flex-col gap-1"
+                  className="bg-hero-gradient rounded-[14px] px-4 py-5 flex flex-col gap-1"
                 >
                   <p className="font-reddit-sans font-bold text-[22px] md:text-[28px] text-[#C98F28] leading-none">
                     {s.val}
