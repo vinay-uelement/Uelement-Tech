@@ -16,7 +16,12 @@ const TwinVisual = () => (
     >
       <defs>
         <pattern id="tg" width="32" height="32" patternUnits="userSpaceOnUse">
-          <path d="M 32 0 L 0 0 0 32" fill="none" stroke="rgba(0,229,255,0.06)" strokeWidth="0.5" />
+          <path
+            d="M 32 0 L 0 0 0 32"
+            fill="none"
+            stroke="rgba(0,229,255,0.06)"
+            strokeWidth="0.5"
+          />
         </pattern>
         <linearGradient id="ltr" x1="0" y1="0" x2="1" y2="0">
           <stop offset="0%" stopColor="#C98F28" stopOpacity="0.7" />
@@ -31,92 +36,350 @@ const TwinVisual = () => (
       <rect width="620" height="440" fill="url(#tg)" rx="16" />
 
       {/* Column labels — below badges */}
-      <text x="90" y="68" fill="rgba(0,229,255,0.45)" fontSize="9" fontFamily="monospace" textAnchor="middle" fontWeight="700" letterSpacing="2">PHYSICAL</text>
-      <text x="530" y="68" fill="rgba(0,229,255,0.45)" fontSize="9" fontFamily="monospace" textAnchor="middle" fontWeight="700" letterSpacing="2">DIGITAL TWIN</text>
+      <text
+        x="90"
+        y="68"
+        fill="rgba(0,229,255,0.45)"
+        fontSize="9"
+        fontFamily="monospace"
+        textAnchor="middle"
+        fontWeight="700"
+        letterSpacing="2"
+      >
+        PHYSICAL
+      </text>
+      <text
+        x="530"
+        y="68"
+        fill="rgba(0,229,255,0.45)"
+        fontSize="9"
+        fontFamily="monospace"
+        textAnchor="middle"
+        fontWeight="700"
+        letterSpacing="2"
+      >
+        DIGITAL TWIN
+      </text>
 
       {/* Centre divider */}
-      <line x1="310" y1="20" x2="310" y2="420" stroke="rgba(0,229,255,0.1)" strokeWidth="1" strokeDasharray="4 6" />
+      <line
+        x1="310"
+        y1="20"
+        x2="310"
+        y2="420"
+        stroke="rgba(0,229,255,0.1)"
+        strokeWidth="1"
+        strokeDasharray="4 6"
+      />
 
       {/* Physical nodes */}
       {[120, 210, 320].map((cy, i) => (
         <g key={i}>
-          <circle cx="90" cy={cy} r="18" fill="rgba(0,229,255,0.04)" stroke="rgba(0,229,255,0.15)" strokeWidth="1" />
-          <circle cx="90" cy={cy} r="10" fill="rgba(0,229,255,0.15)" stroke="#C98F28" strokeWidth="1.5" />
+          <circle
+            cx="90"
+            cy={cy}
+            r="18"
+            fill="rgba(0,229,255,0.04)"
+            stroke="rgba(0,229,255,0.15)"
+            strokeWidth="1"
+          />
+          <circle
+            cx="90"
+            cy={cy}
+            r="10"
+            fill="rgba(0,229,255,0.15)"
+            stroke="#C98F28"
+            strokeWidth="1.5"
+          />
           <circle cx="90" cy={cy} r="4" fill="#C98F28" />
         </g>
       ))}
 
       {/* Spokes — physical → centre */}
       {[120, 210, 320].map((cy, i) => (
-        <line key={i} x1="108" y1={cy} x2="252" y2="213" stroke="url(#ltr)" strokeWidth="1.2" strokeDasharray="5 5" />
+        <line
+          key={i}
+          x1="108"
+          y1={cy}
+          x2="252"
+          y2="213"
+          stroke="url(#ltr)"
+          strokeWidth="1.2"
+          strokeDasharray="5 5"
+        />
       ))}
 
       {/* Centre core */}
-      <circle cx="310" cy="213" r="58" fill="rgba(0,229,255,0.03)" stroke="rgba(0,229,255,0.08)" strokeWidth="1" />
-      <circle cx="310" cy="213" r="42" fill="rgba(0,229,255,0.06)" stroke="rgba(0,229,255,0.18)" strokeWidth="1.5" />
-      <circle cx="310" cy="213" r="28" fill="rgba(0,229,255,0.1)" stroke="#C98F28" strokeWidth="1.8" />
-      <text x="310" y="207" fill="#C98F28" fontSize="8" fontFamily="monospace" textAnchor="middle" fontWeight="800" letterSpacing="1">IoET</text>
-      <text x="310" y="221" fill="#C98F28" fontSize="8" fontFamily="monospace" textAnchor="middle" letterSpacing="1">SYNC</text>
+      <circle
+        cx="310"
+        cy="213"
+        r="58"
+        fill="rgba(0,229,255,0.03)"
+        stroke="rgba(0,229,255,0.08)"
+        strokeWidth="1"
+      />
+      <circle
+        cx="310"
+        cy="213"
+        r="42"
+        fill="rgba(0,229,255,0.06)"
+        stroke="rgba(0,229,255,0.18)"
+        strokeWidth="1.5"
+      />
+      <circle
+        cx="310"
+        cy="213"
+        r="28"
+        fill="rgba(0,229,255,0.1)"
+        stroke="#C98F28"
+        strokeWidth="1.8"
+      />
+      <text
+        x="310"
+        y="207"
+        fill="#C98F28"
+        fontSize="8"
+        fontFamily="monospace"
+        textAnchor="middle"
+        fontWeight="800"
+        letterSpacing="1"
+      >
+        IoET
+      </text>
+      <text
+        x="310"
+        y="221"
+        fill="#C98F28"
+        fontSize="8"
+        fontFamily="monospace"
+        textAnchor="middle"
+        letterSpacing="1"
+      >
+        SYNC
+      </text>
 
       {/* Spokes — centre → digital twin */}
       {[120, 210, 320].map((cy, i) => (
-        <line key={i} x1="368" y1="213" x2="512" y2={cy} stroke="url(#rtl)" strokeWidth="1.2" />
+        <line
+          key={i}
+          x1="368"
+          y1="213"
+          x2="512"
+          y2={cy}
+          stroke="url(#rtl)"
+          strokeWidth="1.2"
+        />
       ))}
 
       {/* Digital twin nodes */}
       {[120, 210, 320].map((cy, i) => (
         <g key={i}>
-          <rect x="514" y={cy - 14} width="28" height="28" rx="5" fill="rgba(0,229,255,0.08)" stroke="#C98F28" strokeWidth="1.5" />
-          <rect x="519" y={cy - 9} width="6" height="6" rx="1" fill="rgba(0,229,255,0.35)" />
-          <rect x="529" y={cy - 9} width="10" height="2" rx="1" fill="rgba(0,229,255,0.25)" />
-          <rect x="519" y={cy - 1} width="20" height="2" rx="1" fill="rgba(0,229,255,0.2)" />
-          <rect x="519" y={cy + 3} width="14" height="2" rx="1" fill="rgba(0,229,255,0.15)" />
+          <rect
+            x="514"
+            y={cy - 14}
+            width="28"
+            height="28"
+            rx="5"
+            fill="rgba(0,229,255,0.08)"
+            stroke="#C98F28"
+            strokeWidth="1.5"
+          />
+          <rect
+            x="519"
+            y={cy - 9}
+            width="6"
+            height="6"
+            rx="1"
+            fill="rgba(0,229,255,0.35)"
+          />
+          <rect
+            x="529"
+            y={cy - 9}
+            width="10"
+            height="2"
+            rx="1"
+            fill="rgba(0,229,255,0.25)"
+          />
+          <rect
+            x="519"
+            y={cy - 1}
+            width="20"
+            height="2"
+            rx="1"
+            fill="rgba(0,229,255,0.2)"
+          />
+          <rect
+            x="519"
+            y={cy + 3}
+            width="14"
+            height="2"
+            rx="1"
+            fill="rgba(0,229,255,0.15)"
+          />
         </g>
       ))}
 
       {/* Physical labels */}
       {['LiDAR', 'IMU', 'Thermal'].map((label, i) => (
-        <text key={i} x="130" y={[124, 214, 324][i]} fill="rgba(0,229,255,0.35)" fontSize="8" fontFamily="monospace">{label}</text>
+        <text
+          key={i}
+          x="130"
+          y={[124, 214, 324][i]}
+          fill="rgba(0,229,255,0.35)"
+          fontSize="8"
+          fontFamily="monospace"
+        >
+          {label}
+        </text>
       ))}
 
       {/* Digital twin labels */}
       {['Mfg Twin', 'Robot Twin', 'Smart City'].map((label, i) => (
-        <text key={i} x="549" y={[124, 214, 324][i]} fill="rgba(0,229,255,0.35)" fontSize="8" fontFamily="monospace">{label}</text>
+        <text
+          key={i}
+          x="549"
+          y={[124, 214, 324][i]}
+          fill="rgba(0,229,255,0.35)"
+          fontSize="8"
+          fontFamily="monospace"
+        >
+          {label}
+        </text>
       ))}
 
       {/* Floating badges — top-left */}
       <foreignObject x="8" y="4" width="105" height="48">
-        <div xmlns="http://www.w3.org/1999/xhtml"
-          style={{ background: 'rgba(12,20,45,0.85)', backdropFilter: 'blur(4px)', border: '1px solid rgba(201,143,40,0.2)', borderRadius: '8px', padding: '6px 10px' }}>
-          <p style={{ color: '#C98F28', fontWeight: 'bold', fontSize: '13px', lineHeight: 1 }}>10×</p>
-          <p style={{ color: 'rgba(255,255,255,0.5)', fontSize: '10px', marginTop: '3px' }}>Faster iteration</p>
+        <div
+          xmlns="http://www.w3.org/1999/xhtml"
+          style={{
+            background: 'rgba(12,20,45,0.85)',
+            backdropFilter: 'blur(4px)',
+            border: '1px solid rgba(201,143,40,0.2)',
+            borderRadius: '8px',
+            padding: '6px 10px',
+          }}
+        >
+          <p
+            style={{
+              color: '#C98F28',
+              fontWeight: 'bold',
+              fontSize: '13px',
+              lineHeight: 1,
+            }}
+          >
+            10×
+          </p>
+          <p
+            style={{
+              color: 'rgba(255,255,255,0.5)',
+              fontSize: '10px',
+              marginTop: '3px',
+            }}
+          >
+            Faster iteration
+          </p>
         </div>
       </foreignObject>
 
       {/* Floating badges — top-right */}
       <foreignObject x="507" y="4" width="106" height="48">
-        <div xmlns="http://www.w3.org/1999/xhtml"
-          style={{ background: 'rgba(12,20,45,0.85)', backdropFilter: 'blur(4px)', border: '1px solid rgba(201,143,40,0.2)', borderRadius: '8px', padding: '6px 10px' }}>
-          <p style={{ color: '#C98F28', fontWeight: 'bold', fontSize: '13px', lineHeight: 1 }}>99.4%</p>
-          <p style={{ color: 'rgba(255,255,255,0.5)', fontSize: '10px', marginTop: '3px' }}>Sim accuracy</p>
+        <div
+          xmlns="http://www.w3.org/1999/xhtml"
+          style={{
+            background: 'rgba(12,20,45,0.85)',
+            backdropFilter: 'blur(4px)',
+            border: '1px solid rgba(201,143,40,0.2)',
+            borderRadius: '8px',
+            padding: '6px 10px',
+          }}
+        >
+          <p
+            style={{
+              color: '#C98F28',
+              fontWeight: 'bold',
+              fontSize: '13px',
+              lineHeight: 1,
+            }}
+          >
+            99.4%
+          </p>
+          <p
+            style={{
+              color: 'rgba(255,255,255,0.5)',
+              fontSize: '10px',
+              marginTop: '3px',
+            }}
+          >
+            Sim accuracy
+          </p>
         </div>
       </foreignObject>
 
       {/* Floating badges — bottom-left */}
       <foreignObject x="8" y="380" width="105" height="48">
-        <div xmlns="http://www.w3.org/1999/xhtml"
-          style={{ background: 'rgba(12,20,45,0.85)', backdropFilter: 'blur(4px)', border: '1px solid rgba(201,143,40,0.2)', borderRadius: '8px', padding: '6px 10px' }}>
-          <p style={{ color: '#C98F28', fontWeight: 'bold', fontSize: '13px', lineHeight: 1 }}>360°</p>
-          <p style={{ color: 'rgba(255,255,255,0.5)', fontSize: '10px', marginTop: '3px' }}>AR/VR ready</p>
+        <div
+          xmlns="http://www.w3.org/1999/xhtml"
+          style={{
+            background: 'rgba(12,20,45,0.85)',
+            backdropFilter: 'blur(4px)',
+            border: '1px solid rgba(201,143,40,0.2)',
+            borderRadius: '8px',
+            padding: '6px 10px',
+          }}
+        >
+          <p
+            style={{
+              color: '#C98F28',
+              fontWeight: 'bold',
+              fontSize: '13px',
+              lineHeight: 1,
+            }}
+          >
+            360°
+          </p>
+          <p
+            style={{
+              color: 'rgba(255,255,255,0.5)',
+              fontSize: '10px',
+              marginTop: '3px',
+            }}
+          >
+            AR/VR ready
+          </p>
         </div>
       </foreignObject>
 
       {/* Floating badges — bottom-right */}
       <foreignObject x="507" y="380" width="106" height="48">
-        <div xmlns="http://www.w3.org/1999/xhtml"
-          style={{ background: 'rgba(12,20,45,0.85)', backdropFilter: 'blur(4px)', border: '1px solid rgba(201,143,40,0.2)', borderRadius: '8px', padding: '6px 10px' }}>
-          <p style={{ color: '#C98F28', fontWeight: 'bold', fontSize: '13px', lineHeight: 1 }}>0</p>
-          <p style={{ color: 'rgba(255,255,255,0.5)', fontSize: '10px', marginTop: '3px' }}>Hardware risk</p>
+        <div
+          xmlns="http://www.w3.org/1999/xhtml"
+          style={{
+            background: 'rgba(12,20,45,0.85)',
+            backdropFilter: 'blur(4px)',
+            border: '1px solid rgba(201,143,40,0.2)',
+            borderRadius: '8px',
+            padding: '6px 10px',
+          }}
+        >
+          <p
+            style={{
+              color: '#C98F28',
+              fontWeight: 'bold',
+              fontSize: '13px',
+              lineHeight: 1,
+            }}
+          >
+            0
+          </p>
+          <p
+            style={{
+              color: 'rgba(255,255,255,0.5)',
+              fontSize: '10px',
+              marginTop: '3px',
+            }}
+          >
+            Hardware risk
+          </p>
         </div>
       </foreignObject>
     </svg>
@@ -366,17 +629,17 @@ const IoETDigitalTwin = () => {
   return (
     <div className="mb-0 md:mb-0">
       {/* ── Hero ── */}
-      <section className="min-h-svh h-svh md:min-h-[92vh] md:h-[92vh] relative flex lg:flex-row flex-col items-center overflow-hidden section-block-padding">
+      <section className="min-h-svh h-auto md:min-h-[92vh] md:h-auto relative flex xl:flex-row flex-col items-center overflow-visible section-block-padding">
         <Image
           src="/images/global/hero-bg.webp"
-          alt="IoET Digital Twin background"
-          className="absolute -z-10 object-fill h-full w-full hidden md:block p-2"
+          alt="SaaS Platform background"
+          className="absolute -z-10 object-fill h-full w-full hidden xl:block p-2"
           height={1000}
           width={1000}
           priority
         />
-        <div className="absolute inset-0 -z-10 block md:hidden p-2">
-          <div className="bg-hero-gradient w-full h-full rounded-[28px] relative overflow-hidden" />
+        <div className="absolute inset-0 -z-10 xl:hidden p-2">
+          <div className="bg-hero-gradient w-full h-full rounded-[28px] relative overflow-hidden"></div>
         </div>
 
         <div className="container-padding w-full flex flex-col lg:flex-row gap-2 lg:gap-12 justify-between mt-[var(--mobile-navbar-gap)] lg:my-0 lg:py-0">
