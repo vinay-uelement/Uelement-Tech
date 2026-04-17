@@ -60,7 +60,7 @@ const EmpoweringInnovation = () => {
             Cybersecurity, Cloud, and AI. We deliver integrated solutions that
             simplify complexity and shape the future of Quantum Computing.
           </p>
-          <div className="flex justify-start flex-wrap gap-2 xl:gap-8 mt-12">
+          <div className="flex justify-center md:justify-start flex-wrap gap-2 xl:gap-8 mt-12">
             {bullet.map((point) => (
               <div
                 key={point.id}
@@ -90,7 +90,7 @@ const EmpoweringInnovation = () => {
       </div>
 
       {/* Carousel/Slider Bar - bottom absolute */}
-      <div className="my-6 flex items-center w-[90%] md:w-2/3 bg-[#D4D4D41A] backdrop-blur-2xl px-1 rounded-[40px] py-1 shadow-lg z-50">
+      <div className="mt-2 mb-14 flex items-center w-[90%] md:w-2/3 bg-[#D4D4D41A] backdrop-blur-2xl px-1 rounded-[40px] py-1 shadow-lg z-50">
         <button
           onClick={prevSlide}
           className="size-11 bg-white rounded-full text-black text-2xl flex items-center justify-center hover:bg-gray-200 transition flex-shrink-0"
