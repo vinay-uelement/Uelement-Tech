@@ -600,17 +600,17 @@ const Observability = () => {
   return (
     <div className="mb-0 md:mb-0">
       {/* ── Hero ── */}
-      <section className="min-h-svh h-auto md:min-h-[92vh] md:h-auto relative flex xl:flex-row flex-col items-center overflow-visible section-block-padding">
+      <section className="min-h-svh h-auto md:min-h-[92vh] md:h-auto relative flex lg:flex-row flex-col items-center overflow-hidden section-block-padding">
         {/* Background — show from xl: to match the row layout */}
         <Image
           src="/images/global/hero-bg.webp"
           alt="SaaS Platform background"
-          className="absolute -z-10 object-fill h-full w-full hidden xl:block p-2"
+          className="absolute -z-10 object-fill h-full w-full hidden lg:block p-2"
           height={1000}
           width={1000}
           priority
         />
-        <div className="absolute inset-0 -z-10 xl:hidden p-2">
+        <div className="absolute inset-0 -z-10 block lg:hidden p-2">
           <div className="bg-hero-gradient w-full h-full rounded-[28px] relative overflow-hidden"></div>
         </div>
 
