@@ -7,7 +7,7 @@ import Image from 'next/image';
 
 // ─── Hero right: Quantum circuit visual ──────────────────────────────────────
 const QuantumCircuitVisual = () => (
-  <div className="relative w-full h-full flex items-center justify-center">
+  <div className="w-full h-full flex items-center justify-center">
     <svg
       viewBox="0 0 620 440"
       className="w-full h-full"
@@ -32,10 +32,9 @@ const QuantumCircuitVisual = () => (
       <rect width="620" height="440" fill="url(#qg)" rx="16" />
       <ellipse cx="310" cy="220" rx="190" ry="180" fill="url(#qglow)" />
 
-      {/* ── Qubit rails ── */}
+      {/* Qubit rails */}
       {[130, 220, 310].map((cy, i) => (
         <g key={i}>
-          {/* Rail line */}
           <line
             x1="60"
             y1={cy}
@@ -44,7 +43,6 @@ const QuantumCircuitVisual = () => (
             stroke="rgba(192,132,252,0.2)"
             strokeWidth="1.5"
           />
-          {/* Qubit label */}
           <text
             x="44"
             y={cy + 4}
@@ -59,7 +57,7 @@ const QuantumCircuitVisual = () => (
         </g>
       ))}
 
-      {/* ── Hadamard gates ── */}
+      {/* Hadamard gates */}
       {[130, 220, 310].map((cy, i) => (
         <g key={i}>
           <rect
@@ -86,7 +84,7 @@ const QuantumCircuitVisual = () => (
         </g>
       ))}
 
-      {/* ── CNOT gate (q0 → q1) ── */}
+      {/* CNOT gate (q0 → q1) */}
       <line
         x1="196"
         y1="130"
@@ -121,7 +119,7 @@ const QuantumCircuitVisual = () => (
         strokeWidth="1.5"
       />
 
-      {/* ── CNOT gate (q1 → q2) ── */}
+      {/* CNOT gate (q1 → q2) */}
       <line
         x1="260"
         y1="220"
@@ -156,7 +154,7 @@ const QuantumCircuitVisual = () => (
         strokeWidth="1.5"
       />
 
-      {/* ── Rz rotation gates ── */}
+      {/* Rz rotation gates */}
       {[130, 220, 310].map((cy, i) => (
         <g key={i}>
           <rect
@@ -183,7 +181,7 @@ const QuantumCircuitVisual = () => (
         </g>
       ))}
 
-      {/* ── Barrier ── */}
+      {/* Barrier */}
       <line
         x1="392"
         y1="108"
@@ -194,7 +192,7 @@ const QuantumCircuitVisual = () => (
         strokeDasharray="4 4"
       />
 
-      {/* ── Measurement gates ── */}
+      {/* Measurement gates */}
       {[130, 220, 310].map((cy, i) => (
         <g key={i}>
           <rect
@@ -207,7 +205,6 @@ const QuantumCircuitVisual = () => (
             stroke="#C98F28"
             strokeWidth="1.5"
           />
-          {/* Meter arc */}
           <path
             d={`M ${426} ${cy + 10} Q ${438} ${cy - 10} ${450} ${cy + 10}`}
             stroke="#C98F28"
@@ -235,7 +232,7 @@ const QuantumCircuitVisual = () => (
         </g>
       ))}
 
-      {/* ── Output lines ── */}
+      {/* Output lines */}
       {[130, 220, 310].map((cy, i) => (
         <line
           key={i}
@@ -249,7 +246,7 @@ const QuantumCircuitVisual = () => (
         />
       ))}
 
-      {/* ── Circuit label ── */}
+      {/* Circuit label */}
       <text
         x="310"
         y="378"
@@ -275,36 +272,145 @@ const QuantumCircuitVisual = () => (
       >
         QUANTUM READY
       </text>
-      <text
-        x="604"
-        y="26"
-        fill="rgba(192,132,252,0.35)"
-        fontSize="8"
-        fontFamily="monospace"
-        textAnchor="end"
-        letterSpacing="1"
-      >
-        NIST FIPS 203/204/205
-      </text>
-    </svg>
+      {/* <text x="604" y="26" fill="rgba(192,132,252,0.35)" fontSize="8" fontFamily="monospace" textAnchor="end" letterSpacing="1">NIST FIPS 203/204/205</text> */}
 
-    {/* Floating badges */}
-    <div className="absolute top-3 left-3 bg-[#0C142D]/80 backdrop-blur-sm border border-[#C98F28]/20 rounded-lg px-3 py-2">
-      <p className="text-[#C98F28] font-bold text-sm leading-none">2030</p>
-      <p className="text-white/50 text-xs mt-0.5">Quantum threat horizon</p>
-    </div>
-    <div className="absolute top-3 right-3 bg-[#0C142D]/80 backdrop-blur-sm border border-[#C98F28]/20 rounded-lg px-3 py-2">
-      <p className="text-[#C98F28] font-bold text-sm leading-none">NIST</p>
-      <p className="text-white/50 text-xs mt-0.5">FIPS 203/204/205</p>
-    </div>
-    <div className="absolute bottom-3 left-3 bg-[#0C142D]/80 backdrop-blur-sm border border-[#C98F28]/20 rounded-lg px-3 py-2">
-      <p className="text-[#C98F28] font-bold text-sm leading-none">QKD</p>
-      <p className="text-white/50 text-xs mt-0.5">Key distribution</p>
-    </div>
-    <div className="absolute bottom-3 right-3 bg-[#0C142D]/80 backdrop-blur-sm border border-[#C98F28]/20 rounded-lg px-3 py-2">
-      <p className="text-[#C98F28] font-bold text-sm leading-none">Now</p>
-      <p className="text-white/50 text-xs mt-0.5">Migration window</p>
-    </div>
+      {/* ✅ Floating badges — inside SVG, locked to viewBox coordinates */}
+      {/* Top-left */}
+      <foreignObject x="8" y="4" width="130" height="48">
+        <div
+          xmlns="http://www.w3.org/1999/xhtml"
+          style={{
+            background: 'rgba(12,20,45,0.85)',
+            backdropFilter: 'blur(4px)',
+            border: '1px solid rgba(201,143,40,0.2)',
+            borderRadius: '8px',
+            padding: '6px 10px',
+          }}
+        >
+          <p
+            style={{
+              color: '#C98F28',
+              fontWeight: 'bold',
+              fontSize: '13px',
+              lineHeight: 1,
+            }}
+          >
+            2030
+          </p>
+          <p
+            style={{
+              color: 'rgba(255,255,255,0.5)',
+              fontSize: '10px',
+              marginTop: '3px',
+            }}
+          >
+            Quantum threat horizon
+          </p>
+        </div>
+      </foreignObject>
+
+      {/* Top-right */}
+      <foreignObject x="494" y="4" width="120" height="48">
+        <div
+          xmlns="http://www.w3.org/1999/xhtml"
+          style={{
+            background: 'rgba(12,20,45,0.85)',
+            backdropFilter: 'blur(4px)',
+            border: '1px solid rgba(201,143,40,0.2)',
+            borderRadius: '8px',
+            padding: '6px 10px',
+          }}
+        >
+          <p
+            style={{
+              color: '#C98F28',
+              fontWeight: 'bold',
+              fontSize: '13px',
+              lineHeight: 1,
+            }}
+          >
+            NIST
+          </p>
+          <p
+            style={{
+              color: 'rgba(255,255,255,0.5)',
+              fontSize: '10px',
+              marginTop: '3px',
+            }}
+          >
+            FIPS 203/204/205
+          </p>
+        </div>
+      </foreignObject>
+
+      {/* Bottom-left */}
+      <foreignObject x="8" y="384" width="105" height="48">
+        <div
+          xmlns="http://www.w3.org/1999/xhtml"
+          style={{
+            background: 'rgba(12,20,45,0.85)',
+            backdropFilter: 'blur(4px)',
+            border: '1px solid rgba(201,143,40,0.2)',
+            borderRadius: '8px',
+            padding: '6px 10px',
+          }}
+        >
+          <p
+            style={{
+              color: '#C98F28',
+              fontWeight: 'bold',
+              fontSize: '13px',
+              lineHeight: 1,
+            }}
+          >
+            QKD
+          </p>
+          <p
+            style={{
+              color: 'rgba(255,255,255,0.5)',
+              fontSize: '10px',
+              marginTop: '3px',
+            }}
+          >
+            Key distribution
+          </p>
+        </div>
+      </foreignObject>
+
+      {/* Bottom-right */}
+      <foreignObject x="507" y="384" width="106" height="48">
+        <div
+          xmlns="http://www.w3.org/1999/xhtml"
+          style={{
+            background: 'rgba(12,20,45,0.85)',
+            backdropFilter: 'blur(4px)',
+            border: '1px solid rgba(201,143,40,0.2)',
+            borderRadius: '8px',
+            padding: '6px 10px',
+          }}
+        >
+          <p
+            style={{
+              color: '#C98F28',
+              fontWeight: 'bold',
+              fontSize: '13px',
+              lineHeight: 1,
+            }}
+          >
+            Now
+          </p>
+          <p
+            style={{
+              color: 'rgba(255,255,255,0.5)',
+              fontSize: '10px',
+              marginTop: '3px',
+            }}
+          >
+            Migration window
+          </p>
+        </div>
+      </foreignObject>
+    </svg>
   </div>
 );
 
@@ -317,7 +423,7 @@ const MigrationPathway = () => {
     { abbr: 'PH4', label: 'Full PQC\nDeploy' },
   ];
   return (
-    <div className="w-full bg-[#0C142D] rounded-[4px] p-6 sm:p-8 overflow-x-auto">
+    <div className="w-full bg-hero-gradient rounded-[14px] p-6 sm:p-8 overflow-x-auto">
       <p className="text-[#C98F28]/50 text-[9px] font-mono font-bold tracking-[0.2em] uppercase mb-5">
         PQC Migration Pathway — Structured Path to Quantum Resilience
       </p>
@@ -507,19 +613,20 @@ const QuantumSolutions = () => {
   return (
     <div className="mb-0 md:mb-0">
       {/* ── Hero ── */}
-      <section className="min-h-svh h-svh md:min-h-[92vh] md:h-[92vh] relative flex lg:flex-row flex-col items-center overflow-hidden section-block-padding">
+      <section className="min-h-svh h-auto md:min-h-[92vh] md:h-auto relative flex xl:flex-row flex-col items-center overflow-visible section-block-padding">
+        {' '}
+        {/* Background — show from xl: to match the row layout */}
         <Image
           src="/images/global/hero-bg.webp"
-          alt="Quantum Solutions background"
-          className="absolute -z-10 object-fill h-full w-full hidden md:block p-2"
+          alt="SaaS Platform background"
+          className="absolute -z-10 object-fill h-full w-full hidden xl:block p-2"
           height={1000}
           width={1000}
           priority
         />
-        <div className="absolute inset-0 -z-10 block md:hidden p-2">
+        <div className="absolute inset-0 -z-10 xl:hidden p-2">
           <div className="bg-hero-gradient w-full h-full rounded-[28px] relative overflow-hidden"></div>
         </div>
-
         <div className="container-padding w-full flex flex-col lg:flex-row gap-2 lg:gap-12 justify-between mt-[var(--mobile-navbar-gap)] lg:my-0 lg:py-0">
           {/* Left: 40% */}
           <div className="text-white w-full lg:w-[40%] flex flex-col justify-center order-1">
@@ -622,7 +729,6 @@ const QuantumSolutions = () => {
             </div>
           </div>
         </div>
-
         {/* Mobile notch */}
         <svg
           className="md:hidden absolute pointer-events-none z-10"
@@ -654,7 +760,7 @@ const QuantumSolutions = () => {
               ].map((s) => (
                 <div
                   key={s.val}
-                  className="bg-[#0C142D] rounded-[18px] px-4 py-5 flex flex-col gap-1"
+                  className="bg-hero-gradient rounded-[14px] px-4 py-5 flex flex-col gap-1"
                 >
                   <p className="font-reddit-sans font-bold text-[22px] md:text-[28px] text-[#C98F28] leading-none">
                     {s.val}
@@ -755,10 +861,7 @@ const QuantumSolutions = () => {
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {migrationPhases.map((phase) => (
-              <div
-                key={phase.id}
-                className="bg-[#fcfcfc] rounded-[18px] p-6 "
-              >
+              <div key={phase.id} className="bg-[#fcfcfc] rounded-[18px] p-6 ">
                 <p className="font-noto-sans font-bold text-[10px] tracking-[0.15em] text-[#9B7025] uppercase mb-2">
                   {phase.phase}
                 </p>
@@ -783,10 +886,7 @@ const QuantumSolutions = () => {
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {targetSectors.map((s) => (
-              <div
-                key={s.id}
-                className="bg-[#f3f3f3] p-6 rounded-[18px] "
-              >
+              <div key={s.id} className="bg-[#f3f3f3] p-6 rounded-[18px] ">
                 <p className="font-noto-sans font-bold text-[10px] tracking-[0.15em] text-[#9B7025] uppercase mb-2">
                   {s.sector}
                 </p>

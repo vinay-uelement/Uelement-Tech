@@ -114,7 +114,7 @@ const SaaSHubVisual = () => {
           );
         })}
 
-        {/* Central platform hexagon */}
+        {/* Central hexagon */}
         <polygon
           points={`${cx},${cy - 38} ${cx + 33},${cy - 19} ${cx + 33},${cy + 19} ${cx},${cy + 38} ${cx - 33},${cy + 19} ${cx - 33},${cy - 19}`}
           fill="rgba(96,165,250,0.1)"
@@ -152,7 +152,7 @@ const SaaSHubVisual = () => {
           SaaS
         </text>
 
-        {/* Data flow pulses on spokes (small dots) */}
+        {/* Pulse dots */}
         {apps.map((app, i) => {
           const pos = getPos(app.angle);
           const mx = cx + (pos.x - cx) * 0.55;
@@ -169,7 +169,7 @@ const SaaSHubVisual = () => {
           );
         })}
 
-        {/* Corner labels */}
+        {/* Corner text labels */}
         <text
           x="16"
           y="26"
@@ -202,27 +202,144 @@ const SaaSHubVisual = () => {
         >
           UNIFIED CONTROL PLANE
         </text>
-      </svg>
 
-      {/* Floating badges */}
-      <div className="absolute top-3 left-3 bg-[#0C142D]/80 backdrop-blur-sm border border-[#C98F28]/20 rounded-lg px-3 py-2">
-        <p className="text-[#C98F28] font-bold text-sm leading-none">35%</p>
-        <p className="text-white/50 text-xs mt-0.5">Cost reduction</p>
-      </div>
-      <div className="absolute top-3 right-3 bg-[#0C142D]/80 backdrop-blur-sm border border-[#C98F28]/20 rounded-lg px-3 py-2">
-        <p className="text-[#C98F28] font-bold text-sm leading-none">500+</p>
-        <p className="text-white/50 text-xs mt-0.5">Integrations</p>
-      </div>
-      <div className="absolute bottom-3 left-3 bg-[#0C142D]/80 backdrop-blur-sm border border-[#C98F28]/20 rounded-lg px-3 py-2">
-        <p className="text-[#C98F28] font-bold text-sm leading-none">100%</p>
-        <p className="text-white/50 text-xs mt-0.5">License visibility</p>
-      </div>
-      <div className="absolute bottom-3 right-3 bg-[#0C142D]/80 backdrop-blur-sm border border-[#C98F28]/20 rounded-lg px-3 py-2">
-        <p className="text-[#C98F28] font-bold text-sm leading-none">
-          &lt;5 min
-        </p>
-        <p className="text-white/50 text-xs mt-0.5">App onboarding</p>
-      </div>
+        {/* ✅ Floating badges — inside SVG via foreignObject, always clipped to SVG bounds */}
+        {/* Top-left badge */}
+        <foreignObject x="8" y="48" width="110" height="48">
+          <div
+            xmlns="http://www.w3.org/1999/xhtml"
+            style={{
+              background: 'rgba(12,20,45,0.85)',
+              backdropFilter: 'blur(4px)',
+              border: '1px solid rgba(201,143,40,0.2)',
+              borderRadius: '8px',
+              padding: '6px 10px',
+            }}
+          >
+            <p
+              style={{
+                color: '#C98F28',
+                fontWeight: 'bold',
+                fontSize: '13px',
+                lineHeight: 1,
+              }}
+            >
+              35%
+            </p>
+            <p
+              style={{
+                color: 'rgba(255,255,255,0.5)',
+                fontSize: '10px',
+                marginTop: '3px',
+              }}
+            >
+              Cost reduction
+            </p>
+          </div>
+        </foreignObject>
+
+        {/* Top-right badge */}
+        <foreignObject x="502" y="48" width="110" height="48">
+          <div
+            xmlns="http://www.w3.org/1999/xhtml"
+            style={{
+              background: 'rgba(12,20,45,0.85)',
+              backdropFilter: 'blur(4px)',
+              border: '1px solid rgba(201,143,40,0.2)',
+              borderRadius: '8px',
+              padding: '6px 10px',
+            }}
+          >
+            <p
+              style={{
+                color: '#C98F28',
+                fontWeight: 'bold',
+                fontSize: '13px',
+                lineHeight: 1,
+              }}
+            >
+              500+
+            </p>
+            <p
+              style={{
+                color: 'rgba(255,255,255,0.5)',
+                fontSize: '10px',
+                marginTop: '3px',
+              }}
+            >
+              Integrations
+            </p>
+          </div>
+        </foreignObject>
+
+        {/* Bottom-left badge */}
+        <foreignObject x="8" y="372" width="120" height="48">
+          <div
+            xmlns="http://www.w3.org/1999/xhtml"
+            style={{
+              background: 'rgba(12,20,45,0.85)',
+              backdropFilter: 'blur(4px)',
+              border: '1px solid rgba(201,143,40,0.2)',
+              borderRadius: '8px',
+              padding: '6px 10px',
+            }}
+          >
+            <p
+              style={{
+                color: '#C98F28',
+                fontWeight: 'bold',
+                fontSize: '13px',
+                lineHeight: 1,
+              }}
+            >
+              100%
+            </p>
+            <p
+              style={{
+                color: 'rgba(255,255,255,0.5)',
+                fontSize: '10px',
+                marginTop: '3px',
+              }}
+            >
+              License visibility
+            </p>
+          </div>
+        </foreignObject>
+
+        {/* Bottom-right badge */}
+        <foreignObject x="498" y="362" width="115" height="48">
+          <div
+            xmlns="http://www.w3.org/1999/xhtml"
+            style={{
+              background: 'rgba(12,20,45,0.85)',
+              backdropFilter: 'blur(4px)',
+              border: '1px solid rgba(201,143,40,0.2)',
+              borderRadius: '8px',
+              padding: '6px 10px',
+            }}
+          >
+            <p
+              style={{
+                color: '#C98F28',
+                fontWeight: 'bold',
+                fontSize: '13px',
+                lineHeight: 1,
+              }}
+            >
+              &lt;5 min
+            </p>
+            <p
+              style={{
+                color: 'rgba(255,255,255,0.5)',
+                fontSize: '10px',
+                marginTop: '3px',
+              }}
+            >
+              App onboarding
+            </p>
+          </div>
+        </foreignObject>
+      </svg>
     </div>
   );
 };
@@ -237,7 +354,7 @@ const LifecycleVisual = () => {
     { abbr: 'RENEW', label: 'Renewal' },
   ];
   return (
-    <div className="w-full bg-[#0C142D] rounded-[4px] p-6 sm:p-8 overflow-x-auto">
+    <div className="w-full bg-hero-gradient rounded-[14px] p-6 sm:p-8 overflow-x-auto">
       <p className="text-[#C98F28]/50 text-[9px] font-mono font-bold tracking-[0.2em] uppercase mb-5">
         Full-Lifecycle Visibility — Discovery to Decommission
       </p>
@@ -417,16 +534,17 @@ const SaaSPlatform = () => {
   return (
     <div className="mb-0 md:mb-0">
       {/* ── Hero ── */}
-      <section className="min-h-svh h-svh md:min-h-[92vh] md:h-[92vh] relative flex lg:flex-row flex-col items-center overflow-hidden section-block-padding">
+      <section className="min-h-svh h-auto md:min-h-[92vh] md:h-auto relative flex xl:flex-row flex-col items-center overflow-visible section-block-padding">
+        {/* Background — show from xl: to match the row layout */}
         <Image
           src="/images/global/hero-bg.webp"
           alt="SaaS Platform background"
-          className="absolute -z-10 object-fill h-full w-full hidden md:block p-2"
+          className="absolute -z-10 object-fill h-full w-full hidden xl:block p-2"
           height={1000}
           width={1000}
           priority
         />
-        <div className="absolute inset-0 -z-10 block md:hidden p-2">
+        <div className="absolute inset-0 -z-10 xl:hidden p-2">
           <div className="bg-hero-gradient w-full h-full rounded-[28px] relative overflow-hidden"></div>
         </div>
 
@@ -552,7 +670,7 @@ const SaaSPlatform = () => {
               ].map((s) => (
                 <div
                   key={s.val}
-                  className="bg-[#0C142D] rounded-[18px] px-4 py-5 flex flex-col gap-1"
+                  className="bg-hero-gradient rounded-[14px] px-4 py-5 flex flex-col gap-1"
                 >
                   <p className="font-reddit-sans font-bold text-[22px] md:text-[28px] text-[#C98F28] leading-none">
                     {s.val}

@@ -7,7 +7,7 @@ import Image from 'next/image';
 
 // ─── Hero right: Physical ↔ Digital Twin visualisation ───────────────────────
 const TwinVisual = () => (
-  <div className="relative w-full h-full flex items-center justify-center">
+  <div className="w-full h-full flex items-center justify-center">
     <svg
       viewBox="0 0 620 440"
       className="w-full h-full"
@@ -32,10 +32,13 @@ const TwinVisual = () => (
           <stop offset="100%" stopColor="#C98F28" stopOpacity="0.05" />
         </linearGradient>
       </defs>
+
       <rect width="620" height="440" fill="url(#tg)" rx="16" />
+
+      {/* Column labels — below badges */}
       <text
         x="90"
-        y="32"
+        y="68"
         fill="rgba(0,229,255,0.45)"
         fontSize="9"
         fontFamily="monospace"
@@ -47,7 +50,7 @@ const TwinVisual = () => (
       </text>
       <text
         x="530"
-        y="32"
+        y="68"
         fill="rgba(0,229,255,0.45)"
         fontSize="9"
         fontFamily="monospace"
@@ -57,6 +60,8 @@ const TwinVisual = () => (
       >
         DIGITAL TWIN
       </text>
+
+      {/* Centre divider */}
       <line
         x1="310"
         y1="20"
@@ -66,7 +71,9 @@ const TwinVisual = () => (
         strokeWidth="1"
         strokeDasharray="4 6"
       />
-      {[80, 165, 255, 345].map((cy, i) => (
+
+      {/* Physical nodes */}
+      {[120, 210, 320].map((cy, i) => (
         <g key={i}>
           <circle
             cx="90"
@@ -87,7 +94,9 @@ const TwinVisual = () => (
           <circle cx="90" cy={cy} r="4" fill="#C98F28" />
         </g>
       ))}
-      {[80, 165, 255, 345].map((cy, i) => (
+
+      {/* Spokes — physical → centre */}
+      {[120, 210, 320].map((cy, i) => (
         <line
           key={i}
           x1="108"
@@ -99,6 +108,8 @@ const TwinVisual = () => (
           strokeDasharray="5 5"
         />
       ))}
+
+      {/* Centre core */}
       <circle
         cx="310"
         cy="213"
@@ -146,7 +157,9 @@ const TwinVisual = () => (
       >
         SYNC
       </text>
-      {[80, 165, 255, 345].map((cy, i) => (
+
+      {/* Spokes — centre → digital twin */}
+      {[120, 210, 320].map((cy, i) => (
         <line
           key={i}
           x1="368"
@@ -157,7 +170,9 @@ const TwinVisual = () => (
           strokeWidth="1.2"
         />
       ))}
-      {[80, 165, 255, 345].map((cy, i) => (
+
+      {/* Digital twin nodes */}
+      {[120, 210, 320].map((cy, i) => (
         <g key={i}>
           <rect
             x="514"
@@ -203,11 +218,13 @@ const TwinVisual = () => (
           />
         </g>
       ))}
-      {['LiDAR', 'IMU', 'Thermal', 'Force/T'].map((label, i) => (
+
+      {/* Physical labels */}
+      {['LiDAR', 'IMU', 'Thermal'].map((label, i) => (
         <text
           key={i}
           x="130"
-          y={[84, 169, 259, 349][i]}
+          y={[124, 214, 324][i]}
           fill="rgba(0,229,255,0.35)"
           fontSize="8"
           fontFamily="monospace"
@@ -215,37 +232,157 @@ const TwinVisual = () => (
           {label}
         </text>
       ))}
-      {['Mfg Twin', 'Robot Twin', 'Smart City', 'Biophysics'].map(
-        (label, i) => (
-          <text
-            key={i}
-            x="549"
-            y={[84, 169, 259, 349][i]}
-            fill="rgba(0,229,255,0.35)"
-            fontSize="8"
-            fontFamily="monospace"
+
+      {/* Digital twin labels */}
+      {['Mfg Twin', 'Robot Twin', 'Smart City'].map((label, i) => (
+        <text
+          key={i}
+          x="549"
+          y={[124, 214, 324][i]}
+          fill="rgba(0,229,255,0.35)"
+          fontSize="8"
+          fontFamily="monospace"
+        >
+          {label}
+        </text>
+      ))}
+
+      {/* Floating badges — top-left */}
+      <foreignObject x="8" y="4" width="105" height="48">
+        <div
+          xmlns="http://www.w3.org/1999/xhtml"
+          style={{
+            background: 'rgba(12,20,45,0.85)',
+            backdropFilter: 'blur(4px)',
+            border: '1px solid rgba(201,143,40,0.2)',
+            borderRadius: '8px',
+            padding: '6px 10px',
+          }}
+        >
+          <p
+            style={{
+              color: '#C98F28',
+              fontWeight: 'bold',
+              fontSize: '13px',
+              lineHeight: 1,
+            }}
           >
-            {label}
-          </text>
-        )
-      )}
+            10×
+          </p>
+          <p
+            style={{
+              color: 'rgba(255,255,255,0.5)',
+              fontSize: '10px',
+              marginTop: '3px',
+            }}
+          >
+            Faster iteration
+          </p>
+        </div>
+      </foreignObject>
+
+      {/* Floating badges — top-right */}
+      <foreignObject x="507" y="4" width="106" height="48">
+        <div
+          xmlns="http://www.w3.org/1999/xhtml"
+          style={{
+            background: 'rgba(12,20,45,0.85)',
+            backdropFilter: 'blur(4px)',
+            border: '1px solid rgba(201,143,40,0.2)',
+            borderRadius: '8px',
+            padding: '6px 10px',
+          }}
+        >
+          <p
+            style={{
+              color: '#C98F28',
+              fontWeight: 'bold',
+              fontSize: '13px',
+              lineHeight: 1,
+            }}
+          >
+            99.4%
+          </p>
+          <p
+            style={{
+              color: 'rgba(255,255,255,0.5)',
+              fontSize: '10px',
+              marginTop: '3px',
+            }}
+          >
+            Sim accuracy
+          </p>
+        </div>
+      </foreignObject>
+
+      {/* Floating badges — bottom-left */}
+      <foreignObject x="8" y="380" width="105" height="48">
+        <div
+          xmlns="http://www.w3.org/1999/xhtml"
+          style={{
+            background: 'rgba(12,20,45,0.85)',
+            backdropFilter: 'blur(4px)',
+            border: '1px solid rgba(201,143,40,0.2)',
+            borderRadius: '8px',
+            padding: '6px 10px',
+          }}
+        >
+          <p
+            style={{
+              color: '#C98F28',
+              fontWeight: 'bold',
+              fontSize: '13px',
+              lineHeight: 1,
+            }}
+          >
+            360°
+          </p>
+          <p
+            style={{
+              color: 'rgba(255,255,255,0.5)',
+              fontSize: '10px',
+              marginTop: '3px',
+            }}
+          >
+            AR/VR ready
+          </p>
+        </div>
+      </foreignObject>
+
+      {/* Floating badges — bottom-right */}
+      <foreignObject x="507" y="380" width="106" height="48">
+        <div
+          xmlns="http://www.w3.org/1999/xhtml"
+          style={{
+            background: 'rgba(12,20,45,0.85)',
+            backdropFilter: 'blur(4px)',
+            border: '1px solid rgba(201,143,40,0.2)',
+            borderRadius: '8px',
+            padding: '6px 10px',
+          }}
+        >
+          <p
+            style={{
+              color: '#C98F28',
+              fontWeight: 'bold',
+              fontSize: '13px',
+              lineHeight: 1,
+            }}
+          >
+            0
+          </p>
+          <p
+            style={{
+              color: 'rgba(255,255,255,0.5)',
+              fontSize: '10px',
+              marginTop: '3px',
+            }}
+          >
+            Hardware risk
+          </p>
+        </div>
+      </foreignObject>
     </svg>
-    <div className="absolute top-3 left-3 bg-[#0C142D]/80 backdrop-blur-sm border border-[#C98F28]/20 rounded-lg px-3 py-2">
-      <p className="text-[#C98F28] font-bold text-sm leading-none">10×</p>
-      <p className="text-white/50 text-xs mt-0.5">Faster iteration</p>
-    </div>
-    <div className="absolute top-3 right-3 bg-[#0C142D]/80 backdrop-blur-sm border border-[#C98F28]/20 rounded-lg px-3 py-2">
-      <p className="text-[#C98F28] font-bold text-sm leading-none">99.4%</p>
-      <p className="text-white/50 text-xs mt-0.5">Sim accuracy</p>
-    </div>
-    <div className="absolute bottom-3 left-3 bg-[#0C142D]/80 backdrop-blur-sm border border-[#C98F28]/20 rounded-lg px-3 py-2">
-      <p className="text-[#C98F28] font-bold text-sm leading-none">360°</p>
-      <p className="text-white/50 text-xs mt-0.5">AR/VR ready</p>
-    </div>
-    <div className="absolute bottom-3 right-3 bg-[#0C142D]/80 backdrop-blur-sm border border-[#C98F28]/20 rounded-lg px-3 py-2">
-      <p className="text-[#C98F28] font-bold text-sm leading-none">0</p>
-      <p className="text-white/50 text-xs mt-0.5">Hardware risk</p>
-    </div>
   </div>
 );
 
@@ -260,7 +397,7 @@ const PipelineVisual = () => {
     { label: 'Validated\nPolicy', abbr: 'POL' },
   ];
   return (
-    <div className="w-full bg-[#0C142D] rounded-[4px] p-6 sm:p-8 overflow-x-auto">
+    <div className="w-full bg-hero-gradient rounded-[14px] p-6 sm:p-8 overflow-x-auto">
       <div className="flex items-center justify-between min-w-[520px] gap-1">
         {steps.map((step, i) => (
           <React.Fragment key={i}>
@@ -492,17 +629,17 @@ const IoETDigitalTwin = () => {
   return (
     <div className="mb-0 md:mb-0">
       {/* ── Hero ── */}
-      <section className="min-h-svh h-svh md:min-h-[92vh] md:h-[92vh] relative flex lg:flex-row flex-col items-center overflow-hidden section-block-padding">
+      <section className="min-h-svh h-auto md:min-h-[92vh] md:h-auto relative flex xl:flex-row flex-col items-center overflow-visible section-block-padding">
         <Image
           src="/images/global/hero-bg.webp"
-          alt="IoET Digital Twin background"
-          className="absolute -z-10 object-fill h-full w-full hidden md:block p-2"
+          alt="SaaS Platform background"
+          className="absolute -z-10 object-fill h-full w-full hidden xl:block p-2"
           height={1000}
           width={1000}
           priority
         />
-        <div className="absolute inset-0 -z-10 block md:hidden p-2">
-          <div className="bg-hero-gradient w-full h-full rounded-[28px] relative overflow-hidden" />
+        <div className="absolute inset-0 -z-10 xl:hidden p-2">
+          <div className="bg-hero-gradient w-full h-full rounded-[28px] relative overflow-hidden"></div>
         </div>
 
         <div className="container-padding w-full flex flex-col lg:flex-row gap-2 lg:gap-12 justify-between mt-[var(--mobile-navbar-gap)] lg:my-0 lg:py-0">
@@ -627,7 +764,7 @@ const IoETDigitalTwin = () => {
               ].map((s) => (
                 <div
                   key={s.val}
-                  className="bg-[#0C142D] rounded-[18px] px-4 py-5 flex flex-col gap-1"
+                  className="bg-hero-gradient rounded-[14px] px-4 py-5 flex flex-col gap-1"
                 >
                   <p className="font-reddit-sans font-bold text-[22px] md:text-[28px] text-[#C98F28] leading-none">
                     {s.val}

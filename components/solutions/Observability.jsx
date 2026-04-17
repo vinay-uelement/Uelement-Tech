@@ -113,7 +113,6 @@ const ObsVisual = () => {
               >
                 {d.abbr}
               </text>
-              {/* Domain label outside */}
               <text
                 x={pos.x + (pos.x > cx ? 36 : pos.x < cx ? -36 : 0)}
                 y={pos.y + (pos.y > cy ? 36 : pos.y < cy ? -26 : 4)}
@@ -224,25 +223,144 @@ const ObsVisual = () => {
         >
           4-IN-1 OPS DOMAINS
         </text>
-      </svg>
 
-      {/* Floating badges */}
-      <div className="absolute top-3 left-3 bg-[#0C142D]/80 backdrop-blur-sm border border-[#C98F28]/20 rounded-lg px-3 py-2">
-        <p className="text-[#C98F28] font-bold text-sm leading-none">92%</p>
-        <p className="text-white/50 text-xs mt-0.5">MTTD reduction</p>
-      </div>
-      <div className="absolute top-3 right-3 bg-[#0C142D]/80 backdrop-blur-sm border border-[#C98F28]/20 rounded-lg px-3 py-2">
-        <p className="text-[#C98F28] font-bold text-sm leading-none">&lt;60s</p>
-        <p className="text-white/50 text-xs mt-0.5">Threat detection</p>
-      </div>
-      <div className="absolute bottom-3 left-3 bg-[#0C142D]/80 backdrop-blur-sm border border-[#C98F28]/20 rounded-lg px-3 py-2">
-        <p className="text-[#C98F28] font-bold text-sm leading-none">40%</p>
-        <p className="text-white/50 text-xs mt-0.5">Cloud cost savings</p>
-      </div>
-      <div className="absolute bottom-3 right-3 bg-[#0C142D]/80 backdrop-blur-sm border border-[#C98F28]/20 rounded-lg px-3 py-2">
-        <p className="text-[#C98F28] font-bold text-sm leading-none">4-in-1</p>
-        <p className="text-white/50 text-xs mt-0.5">Ops domains</p>
-      </div>
+        {/* ✅ Floating badges — inside SVG, locked to viewBox coordinates */}
+        {/* Top-left */}
+        <foreignObject x="8" y="36" width="110" height="48">
+          <div
+            xmlns="http://www.w3.org/1999/xhtml"
+            style={{
+              background: 'rgba(12,20,45,0.85)',
+              backdropFilter: 'blur(4px)',
+              border: '1px solid rgba(201,143,40,0.2)',
+              borderRadius: '8px',
+              padding: '6px 10px',
+            }}
+          >
+            <p
+              style={{
+                color: '#C98F28',
+                fontWeight: 'bold',
+                fontSize: '13px',
+                lineHeight: 1,
+              }}
+            >
+              92%
+            </p>
+            <p
+              style={{
+                color: 'rgba(255,255,255,0.5)',
+                fontSize: '10px',
+                marginTop: '3px',
+              }}
+            >
+              MTTD reduction
+            </p>
+          </div>
+        </foreignObject>
+
+        {/* Top-right */}
+        <foreignObject x="502" y="36" width="112" height="48">
+          <div
+            xmlns="http://www.w3.org/1999/xhtml"
+            style={{
+              background: 'rgba(12,20,45,0.85)',
+              backdropFilter: 'blur(4px)',
+              border: '1px solid rgba(201,143,40,0.2)',
+              borderRadius: '8px',
+              padding: '6px 10px',
+            }}
+          >
+            <p
+              style={{
+                color: '#C98F28',
+                fontWeight: 'bold',
+                fontSize: '13px',
+                lineHeight: 1,
+              }}
+            >
+              &lt;60s
+            </p>
+            <p
+              style={{
+                color: 'rgba(255,255,255,0.5)',
+                fontSize: '10px',
+                marginTop: '3px',
+              }}
+            >
+              Threat detection
+            </p>
+          </div>
+        </foreignObject>
+
+        {/* Bottom-left */}
+        <foreignObject x="8" y="372" width="120" height="48">
+          <div
+            xmlns="http://www.w3.org/1999/xhtml"
+            style={{
+              background: 'rgba(12,20,45,0.85)',
+              backdropFilter: 'blur(4px)',
+              border: '1px solid rgba(201,143,40,0.2)',
+              borderRadius: '8px',
+              padding: '6px 10px',
+            }}
+          >
+            <p
+              style={{
+                color: '#C98F28',
+                fontWeight: 'bold',
+                fontSize: '13px',
+                lineHeight: 1,
+              }}
+            >
+              40%
+            </p>
+            <p
+              style={{
+                color: 'rgba(255,255,255,0.5)',
+                fontSize: '10px',
+                marginTop: '3px',
+              }}
+            >
+              Cloud cost savings
+            </p>
+          </div>
+        </foreignObject>
+
+        {/* Bottom-right */}
+        <foreignObject x="502" y="372" width="112" height="48">
+          <div
+            xmlns="http://www.w3.org/1999/xhtml"
+            style={{
+              background: 'rgba(12,20,45,0.85)',
+              backdropFilter: 'blur(4px)',
+              border: '1px solid rgba(201,143,40,0.2)',
+              borderRadius: '8px',
+              padding: '6px 10px',
+            }}
+          >
+            <p
+              style={{
+                color: '#C98F28',
+                fontWeight: 'bold',
+                fontSize: '13px',
+                lineHeight: 1,
+              }}
+            >
+              4-in-1
+            </p>
+            <p
+              style={{
+                color: 'rgba(255,255,255,0.5)',
+                fontSize: '10px',
+                marginTop: '3px',
+              }}
+            >
+              Ops domains
+            </p>
+          </div>
+        </foreignObject>
+      </svg>
     </div>
   );
 };
@@ -252,7 +370,7 @@ const TelemetryPipeline = () => {
   const sources = ['Metrics', 'Logs', 'Traces', 'Events', 'Cost'];
   const outputs = ['SecOps', 'CloudOps', 'AIOps', 'FinOps'];
   return (
-    <div className="w-full bg-[#0C142D] rounded-[4px] p-6 sm:p-8 overflow-x-auto">
+    <div className="w-full bg-hero-gradient rounded-[14px] p-6 sm:p-8 overflow-x-auto">
       <p className="text-[#C98F28]/50 text-[9px] font-mono font-bold tracking-[0.2em] uppercase mb-5">
         Unified Telemetry Pipeline — Single Data Model & Correlation Engine
       </p>
@@ -482,16 +600,17 @@ const Observability = () => {
   return (
     <div className="mb-0 md:mb-0">
       {/* ── Hero ── */}
-      <section className="min-h-svh h-svh md:min-h-[92vh] md:h-[92vh] relative flex lg:flex-row flex-col items-center overflow-hidden section-block-padding">
+      <section className="min-h-svh h-auto md:min-h-[92vh] md:h-auto relative flex xl:flex-row flex-col items-center overflow-visible section-block-padding">
+        {/* Background — show from xl: to match the row layout */}
         <Image
           src="/images/global/hero-bg.webp"
-          alt="Observability background"
-          className="absolute -z-10 object-fill h-full w-full hidden md:block p-2"
+          alt="SaaS Platform background"
+          className="absolute -z-10 object-fill h-full w-full hidden xl:block p-2"
           height={1000}
           width={1000}
           priority
         />
-        <div className="absolute inset-0 -z-10 block md:hidden p-2">
+        <div className="absolute inset-0 -z-10 xl:hidden p-2">
           <div className="bg-hero-gradient w-full h-full rounded-[28px] relative overflow-hidden"></div>
         </div>
 
@@ -620,7 +739,7 @@ const Observability = () => {
               ].map((s) => (
                 <div
                   key={s.val}
-                  className="bg-[#0C142D] rounded-[18px] px-4 py-5 flex flex-col gap-1"
+                  className="bg-hero-gradient rounded-[14px] px-4 py-5 flex flex-col gap-1"
                 >
                   <p className="font-reddit-sans font-bold text-[22px] md:text-[28px] text-[#C98F28] leading-none">
                     {s.val}
