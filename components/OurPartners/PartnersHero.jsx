@@ -18,7 +18,7 @@ const PartnersHero = () => {
     setIndex((prev) => (prev - 1 + slides.length) % slides.length);
 
   return (
-    <div className="lg:h-screen h-auto relative flex flex-col lg:flex-row items-center overflow-hidden">
+    <div className="lg:min-h-screen h-auto relative flex flex-col items-center pb-6 lg:pb-10">
       {/* Desktop background */}
       <Image
         src="/images/global/hero-bg.webp"
@@ -31,10 +31,11 @@ const PartnersHero = () => {
 
       {/* Mobile background */}
       <div className="absolute inset-0 -z-10 block md:hidden p-2">
-        <div className="bg-hero-gradient w-full h-full rounded-[28px] relative overflow-hidden"></div>
+        <div className="bg-hero-gradient w-full h-full rounded-[28px] relative overflow-hidden" />
       </div>
 
-      <div className="container-padding w-full flex flex-col lg:flex-row gap-10 justify-between mt-[var(--mobile-navbar-gap)] lg:my-0">
+      {/* Main content row */}
+      <div className="container-padding w-full flex flex-col lg:flex-row gap-10 justify-between mt-[var(--mobile-navbar-gap)] lg:mt-[var(--navbar-height,_100px)] flex-1">
         {/* Left: Text Content */}
         <div className="text-white flex-1 flex flex-col">
           <div>
@@ -79,10 +80,10 @@ const PartnersHero = () => {
       </div>
 
       {/* Carousel/Slider Bar - bottom absolute */}
-      <div className="my-10 lg:mt-0 lg:mb-0 flex items-center lg:absolute lg:left-1/2 lg:-translate-x-1/2  lg:bottom-22 w-[90%] lg:w-2/3 bg-[#D4D4D41A] backdrop-blur-2xl rounded-[40px] px-1 py-1 shadow-lg z-50">
+      <div className="mt-0 mb-16 flex items-center w-[90%] md:w-2/3 bg-[#D4D4D41A] backdrop-blur-2xl px-1 rounded-[40px] py-1 shadow-lg z-50">
         <button
           onClick={prevSlide}
-          className="size-11 bg-white rounded-full text-black text-2xl flex items-center justify-center hover:bg-gray-200 transition"
+          className="size-11 bg-white rounded-full text-black text-2xl flex items-center justify-center hover:bg-gray-200 transition flex-shrink-0"
           aria-label="Previous slide"
         >
           {ReactIcons.leftChev}
@@ -94,7 +95,7 @@ const PartnersHero = () => {
         </div>
         <button
           onClick={nextSlide}
-          className="size-11 bg-white rounded-full text-black text-2xl flex items-center justify-center hover:bg-gray-200 transition"
+          className="size-11 bg-white rounded-full text-black text-2xl flex items-center justify-center hover:bg-gray-200 transition flex-shrink-0"
           aria-label="Next slide"
         >
           {ReactIcons.rightChev}

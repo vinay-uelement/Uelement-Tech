@@ -5,21 +5,9 @@ import { ReactIcons } from '@/utils/ReactIcons';
 import { useState } from 'react';
 
 const bullet = [
-  {
-    id: 1,
-    desc: 'Uptime for cloud infrastructure',
-    number: '99.9%',
-  },
-  {
-    id: 2,
-    desc: 'Reduction in security incidents',
-    number: '85%',
-  },
-  {
-    id: 3,
-    desc: 'Enterprise Client Worldwide',
-    number: '24/7',
-  },
+  { id: 1, desc: 'Uptime for cloud infrastructure', number: '99.9%' },
+  { id: 2, desc: 'Reduction in security incidents', number: '85%' },
+  { id: 3, desc: 'Enterprise Client Worldwide', number: '24/7' },
 ];
 
 const EmpoweringInnovation = () => {
@@ -36,7 +24,7 @@ const EmpoweringInnovation = () => {
     setIndex((prev) => (prev - 1 + slides.length) % slides.length);
 
   return (
-    <div className="lg:h-screen h-auto relative flex flex-col lg:flex-row items-center overflow-hidden">
+    <div className="lg:min-h-screen h-auto relative flex flex-col items-center pb-6 lg:pb-10">
       {/* Desktop background */}
       <Image
         src="/images/global/hero-bg.webp"
@@ -49,12 +37,11 @@ const EmpoweringInnovation = () => {
 
       {/* Mobile background */}
       <div className="absolute inset-0 -z-10 block md:hidden p-2">
-        <div className="bg-hero-gradient w-full h-full rounded-[28px] relative overflow-hidden">
-        
-        </div>
+        <div className="bg-hero-gradient w-full h-full rounded-[28px] relative overflow-hidden" />
       </div>
 
-      <div className="container-padding w-full flex flex-col lg:flex-row gap-10 justify-between mt-[var(--mobile-navbar-gap)] lg:my-0">
+      {/* Main content row — takes up all available space above the slider */}
+      <div className="container-padding w-full flex flex-col lg:flex-row gap-10 justify-between mt-[var(--mobile-navbar-gap)] lg:mt-[var(--navbar-height,_120px)] flex-1">
         {/* Left: Text Content */}
         <div className="text-white flex-1 flex flex-col justify-between">
           <div>
@@ -65,7 +52,7 @@ const EmpoweringInnovation = () => {
               Protecting what matters across every cloud.
             </div>
           </div>
-          <h3 className="text-20 md:text-22 xl:text-[35px] mb-4 md:mb-6 3xl:mb-8 text-[#232223] tracking-[0.03em] !text-white leading-[1.2] !font-medium xl:w-[80%] w-full">
+          <h3 className="text-20 md:text-22 xl:text-[35px] mb-4 md:mb-6 3xl:mb-8 tracking-[0.03em] !text-white leading-[1.2] !font-medium xl:w-[80%] w-full">
             Empowering Innovation at the Intersection of Technology and Strategy
           </h3>
           <p className="fl3 !text-white xl:w-[80%] w-full">
@@ -103,10 +90,10 @@ const EmpoweringInnovation = () => {
       </div>
 
       {/* Carousel/Slider Bar - bottom absolute */}
-      <div className="my-10 lg:mt-0 lg:mb-0 flex items-center lg:absolute lg:left-1/2 lg:-translate-x-1/2  md:bottom-6 xl:bottom-22 w-[90%] md:w-2/3 bg-[#D4D4D41A] backdrop-blur-2xl px-1 rounded-[40px] py-1 shadow-lg z-50">
+      <div className="my-6 flex items-center w-[90%] md:w-2/3 bg-[#D4D4D41A] backdrop-blur-2xl px-1 rounded-[40px] py-1 shadow-lg z-50">
         <button
           onClick={prevSlide}
-          className="size-11 bg-white rounded-full text-black text-2xl flex items-center justify-center hover:bg-gray-200 transition"
+          className="size-11 bg-white rounded-full text-black text-2xl flex items-center justify-center hover:bg-gray-200 transition flex-shrink-0"
           aria-label="Previous slide"
         >
           {ReactIcons.leftChev}
@@ -118,7 +105,7 @@ const EmpoweringInnovation = () => {
         </div>
         <button
           onClick={nextSlide}
-          className="size-11 bg-white rounded-full text-black text-2xl flex items-center justify-center hover:bg-gray-200 transition"
+          className="size-11 bg-white rounded-full text-black text-2xl flex items-center justify-center hover:bg-gray-200 transition flex-shrink-0"
           aria-label="Next slide"
         >
           {ReactIcons.rightChev}
