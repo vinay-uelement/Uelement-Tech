@@ -61,15 +61,25 @@ const HeroSectionV5 = () => {
   };
 
   return (
-    <section className="min-h-svh h-svh md:min-h-[92vh] md:h-[92vh] flex flex-col relative">
+    <section className="min-h-svh h-svh md:min-h-[92vh] md:h-[92vh] flex flex-col relative md:rounded-[28px] md:overflow-hidden">
       {/* Desktop background */}
-      <Image
-        src="/images/landing/hero_bg1.webp"
-        alt="hero_bg"
-        className="absolute -z-10 object-fill h-full w-full hidden md:block p-2"
-        height={1000}
-        width={1000}
-      />
+      <div className="absolute -z-10 h-full w-full hidden md:block p-2">
+        <div
+          className="relative w-full h-full rounded-[28px] overflow-hidden isolate"
+          style={{
+            transform: 'translateZ(0)',
+            WebkitMaskImage: '-webkit-radial-gradient(white, black)',
+          }}
+        >
+          <Image
+            src="/images/landing/hero_bg1.webp"
+            alt="hero_bg"
+            className="object-fill"
+            fill
+            priority
+          />
+        </div>
+      </div>
 
       {/* Mobile background */}
       <div className="absolute inset-0 -z-10 block md:hidden p-2">
@@ -84,13 +94,10 @@ const HeroSectionV5 = () => {
         </div>
       </div>
 
-      {/* Main content — just the text, no bottom bar involvement */}
+      {/* Main content */}
       <div className="flex-1 min-h-0 w-full flex flex-col relative text-white pt-[72px] md:pt-[90px]">
         <div className="w-full flex flex-col md:flex-row flex-1 min-h-0 pb-0 md:pb-[26vh]">
-          <div
-            className="w-[80%] md:w-[39%] pl-[40px] md:pl-[70px] flex flex-col justify-center pt-[20vh] md:pt-0"
-            // style={{ paddingTop: 'clamp(16px, 4vh, 60px)' }}
-          >
+          <div className="w-[80%] md:w-[39%] pl-[40px] md:pl-[70px] flex flex-col justify-center pt-[20vh] md:pt-0">
             <h1 className="fl-main italic tracking-wider leading-[1.2]">
               We are <br /> Digital <br className="md:block" /> Mavericks.
             </h1>
@@ -109,8 +116,8 @@ const HeroSectionV5 = () => {
           <div className="flex-1 hidden md:block" />
         </div>
 
-        {/* Desktop bottom row — bottom-18 */}
-        <div className="absolute bottom-[10vh]  right-8 left-0 hidden md:flex items-center justify-between pl-[70px]">
+        {/* Desktop bottom row */}
+        <div className="absolute bottom-[10vh] right-8 left-0 hidden md:flex items-center justify-between pl-[70px]">
           <button
             onClick={handleContactus}
             className="btn-yellow w-fit flex-shrink-0"
