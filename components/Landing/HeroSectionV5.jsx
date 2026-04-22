@@ -84,39 +84,42 @@ const HeroSectionV5 = () => {
         </div>
       </div>
 
-      <div className="flex-1 min-h-0 w-full relative text-white pt-[72px] md:pt-[90px]">
-        <div className="h-full w-full flex flex-col md:flex-row">
+      {/* Main content — just the text, no bottom bar involvement */}
+      <div className="flex-1 min-h-0 w-full flex flex-col relative text-white pt-[72px] md:pt-[90px]">
+        <div className="w-full flex flex-col md:flex-row flex-1 min-h-0 pb-0 md:pb-[26vh]">
           <div
-            className="w-[80%] h-[60%] md:h-full md:w-[39%] pl-[40px] md:pl-[70px] flex flex-col justify-center md:justify-start"
-            style={{ paddingTop: 'clamp(24px, 30vh, 90px)' }}
+            className="w-[80%] md:w-[39%] pl-[40px] md:pl-[70px] flex flex-col justify-center pt-[20vh] md:pt-0"
+            // style={{ paddingTop: 'clamp(16px, 4vh, 60px)' }}
           >
             <h1 className="fl-main italic tracking-wider leading-[1.2]">
               We are <br /> Digital <br className="md:block" /> Mavericks.
             </h1>
-            <p className="mt-8 fl3 !text-[#ffffff] !text-[12px] md:!text-[18px] md:mb-10 xl:mb-20 mb-8">
+            <p className="mt-4 md:mt-8 fl3 !text-[#ffffff] !text-[12px] md:!text-[18px]">
               Engineering Digital Synapses at the Intersection of Cybersecurity,
               Quantum & AI
             </p>
+            {/* Mobile About Us */}
             <button
               onClick={handleContactus}
-              className="btn-yellow w-fit md:!hidden"
+              className="btn-yellow w-fit mt-6 md:!hidden"
             >
               About Us
             </button>
           </div>
-          <div className="flex-1 h-[40%] md:h-full flex items-end justify-end" />
+          <div className="flex-1 hidden md:block" />
         </div>
-        {/* Desktop bottom bar */}
-        <div className="absolute right-8 top-[74vh] w-full flex justify-between">
+
+        {/* Desktop bottom row — bottom-18 */}
+        <div className="absolute bottom-[10vh]  right-8 left-0 hidden md:flex items-center justify-between pl-[70px]">
           <button
             onClick={handleContactus}
-            className="btn-yellow w-fit translate-x-7/12 !hidden md:!block"
+            className="btn-yellow w-fit flex-shrink-0"
           >
             About Us
           </button>
 
           <div
-            className="w-[65vw] hidden md:flex items-center bg-[#D4D4D41A] backdrop-blur-2xl rounded-[40px] px-1 py-1 shadow-lg z-50"
+            className="w-[65vw] flex items-center bg-[#D4D4D41A] backdrop-blur-2xl rounded-[40px] px-1 py-1 shadow-lg z-50"
             onMouseEnter={handlePauseStart}
             onMouseLeave={handlePauseEnd}
           >
@@ -127,7 +130,7 @@ const HeroSectionV5 = () => {
             >
               {ReactIcons.leftChev}
             </button>
-            <div className="flex-1 overflow-hidden min-h-10 flex items-center justify-center ">
+            <div className="flex-1 overflow-hidden min-h-10 flex items-center justify-center">
               <div
                 className="flex transition-transform duration-500 ease-in-out w-full"
                 style={{ transform: `translateX(-${index * 100}%)` }}
@@ -151,45 +154,46 @@ const HeroSectionV5 = () => {
             </button>
           </div>
         </div>
-        {/* Mobile bottom bar */}
-        <div
-          className="absolute z-30 bottom-20 left-4 right-4 flex md:hidden items-center bg-[#D4D4D41A] backdrop-blur-2xl rounded-[40px] px-1 py-1 shadow-lg"
-          onTouchStart={handleTouchStart}
-          onTouchMove={handleTouchMove}
-          onTouchEnd={handleTouchEnd}
+      </div>
+
+      {/* Mobile slider */}
+      <div
+        className="absolute z-30 bottom-20 left-4 right-4 flex md:hidden items-center bg-[#D4D4D41A] backdrop-blur-2xl rounded-[40px] px-1 py-1 shadow-lg"
+        onTouchStart={handleTouchStart}
+        onTouchMove={handleTouchMove}
+        onTouchEnd={handleTouchEnd}
+      >
+        <button
+          onClick={prevSlide}
+          className="size-9 bg-white rounded-full text-black text-xl flex items-center justify-center flex-shrink-0 hover:bg-gray-200 transition"
+          aria-label="Previous slide"
         >
-          <button
-            onClick={prevSlide}
-            className="size-9 bg-white rounded-full text-black text-xl flex items-center justify-center flex-shrink-0 hover:bg-gray-200 transition"
-            aria-label="Previous slide"
+          {ReactIcons.leftChev}
+        </button>
+        <div className="flex-1 overflow-hidden min-h-9 flex items-center justify-center mx-1">
+          <div
+            className="flex transition-transform duration-500 ease-in-out w-full"
+            style={{ transform: `translateX(-${index * 100}%)` }}
           >
-            {ReactIcons.leftChev}
-          </button>
-          <div className="flex-1 overflow-hidden min-h-9 flex items-center justify-center mx-1 ">
-            <div
-              className="flex transition-transform duration-500 ease-in-out w-full"
-              style={{ transform: `translateX(-${index * 100}%)` }}
-            >
-              {slides.map((text, i) => (
-                <div
-                  key={i}
-                  className="min-w-full flex items-center justify-center"
-                >
-                  <span className="fl4 text-center text-white text-[11px] leading-tight px-1">
-                    {text}
-                  </span>
-                </div>
-              ))}
-            </div>
+            {slides.map((text, i) => (
+              <div
+                key={i}
+                className="min-w-full flex items-center justify-center"
+              >
+                <span className="fl4 text-center text-white text-[11px] leading-tight px-1">
+                  {text}
+                </span>
+              </div>
+            ))}
           </div>
-          <button
-            onClick={nextSlide}
-            className="size-9 bg-white rounded-full text-black text-xl flex items-center justify-center flex-shrink-0 hover:bg-gray-200 transition"
-            aria-label="Next slide"
-          >
-            {ReactIcons.rightChev}
-          </button>
         </div>
+        <button
+          onClick={nextSlide}
+          className="size-9 bg-white rounded-full text-black text-xl flex items-center justify-center flex-shrink-0 hover:bg-gray-200 transition"
+          aria-label="Next slide"
+        >
+          {ReactIcons.rightChev}
+        </button>
       </div>
 
       {/* Notch — bottom-right, mobile only */}
