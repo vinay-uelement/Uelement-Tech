@@ -62,14 +62,10 @@ const HeroSectionV5 = () => {
 
   return (
     <section className="min-h-svh h-svh md:min-h-[92vh] md:h-[92vh] flex flex-col relative md:rounded-[28px] md:overflow-hidden">
-      {/* Desktop background */}
       <div className="absolute -z-10 h-full w-full hidden md:block p-2">
         <div
-          className="relative w-full h-full rounded-[28px] overflow-hidden isolate"
-          style={{
-            transform: 'translateZ(0)',
-            WebkitMaskImage: '-webkit-radial-gradient(white, black)',
-          }}
+          className="relative w-full h-full"
+          style={{ clipPath: 'inset(0 round 30px)' }}
         >
           <Image
             src="/images/landing/hero_bg1.webp"
