@@ -13,21 +13,21 @@ const PartnerSolution = () => {
       slug: 'cybersecurity',
       boxes: [
         {
-          logo: '/icons/global/sentinel.png',
+          logo: '../icons/global/sentinel.png',
           tagline: 'Managed Endpoint Security Partner',
           boxTitle: 'Solution',
           desc: `We leverage SentinelOne's unified Singularity XDR platform for integrated prevention, detection, and response across endpoint, cloud, and identity. Our managed services ensure robust, AI-powered protection against advanced threats`,
           tags: ['Managed Endpoint Security & Cloud Security Services'],
         },
         {
-          logo: '/icons/global/paloalto.svg',
+          logo: '../icons/global/paloalto.svg',
           tagline: 'Certified Cloud Security Integrator',
           boxTitle: 'Solution',
           desc: 'As a certified partner, we implement and manage the full suite of Palo Alto Networks solutions, including Cloud Security (Prisma), Network Security, and Cortex XDR/XSOAR. We ensure unified threat management and compliance across your entire enterprise.',
           tags: ['Prisma Cloud Security Expert'],
         },
         {
-          logo: '/icons/global/wiz.svg',
+          logo: '../icons/global/wiz.svg',
           tagline: 'Cloud Risk Visibility & Remediation Partner',
           boxTitle: 'Solution',
           desc: `We integrate and manage Wiz's agentless platform to provide deep visibility into your entire cloud-native environment. We ensure continuous security and compliance by identifying and remediating risks across VMs, containers, and serverless architectures.`,
@@ -41,21 +41,21 @@ const PartnerSolution = () => {
       slug: 'ai-ml',
       boxes: [
         {
-          logo: '/icons/global/ionq.png',
+          logo: '../icons/global/ionq.png',
           tagline: 'Managed Quantum Computing Partner',
           boxTitle: 'Solution',
           desc: `We leverage IonQ's unified Quantum OS and Hybrid Services suite for accelerated quantum algorithm development, optimization, and deployment across cloud, edge, and on-prem environments. Our managed services ensure scalable, enterprise-grade quantum workloads with robust error mitigation and classical-quantum integration.`,
           tags: ['Managed  Hybrid Computing Services'],
         },
         {
-          logo: '/icons/global/nvidia1.png',
+          logo: '../icons/global/nvidia1.png',
           tagline: 'Managed AI/ML Acceleration Partner',
           boxTitle: 'Solution',
           desc: `We leverage NVIDIA's unified AI Enterprise platform for accelerated model training, inference, and deployment across edge, cloud, and data center. Our managed services ensure scalable, GPU-optimized AI/ML pipelines with robust performance and security.`,
           tags: ['Managed AI/ML & Edge Computing Services'],
         },
         {
-          logo: '/icons/global/tsecond1.png',
+          logo: '../icons/global/tsecond1.png',
           tagline: 'Managed Data & Edge AI Partner',
           boxTitle: 'Solution',
           desc: 'We leverage Tsecond’s hyper-scale data appliances and edge AI platforms to ingest, move, and process massive datasets securely across field, core, and cloud environments. Our managed services enable high-performance AI/ML pipelines at the edge and in the data center, ensuring fast access, governance, and analytics for mission-critical workloads.',
@@ -69,21 +69,21 @@ const PartnerSolution = () => {
       title: 'Cloud Solution',
       boxes: [
         {
-          logo: '/icons/global/oracle2.png',
+          logo: '../icons/global/oracle2.png',
           tagline: 'Managed Enterprise Cloud Partner',
           boxTitle: 'Solution',
           desc: `We leverage Oracle Cloud Infrastructure (OCI)'s unified platform for high-performance databases, autonomous operations, and hybrid cloud deployments across multitenant environments. Our managed services ensure mission-critical workloads with built-in security, extreme performance, and cost governance.`,
           tags: ['Managed Database & Hybrid Cloud Services'],
         },
         {
-          logo: '/icons/global/aws2.png',
+          logo: '../icons/global/aws2.png',
           tagline: 'Managed Cloud Infrastructure Partner',
           boxTitle: 'Solution',
           desc: `We leverage AWS's unified cloud platform for scalable infrastructure, serverless computing, and hybrid cloud orchestration across global regions. Our managed services ensure resilient, cost-optimized cloud environments with automated scaling and security.`,
           tags: ['Managed Multi/Hybrid Cloud Services'],
         },
         {
-          logo: '/icons/global/gcs.png',
+          logo: '../icons/global/gcs.png',
           tagline: 'Managed Cloud Native Partner',
           boxTitle: 'Solution',
           desc: `We leverage Google Cloud's unified platform for Kubernetes-native applications, Anthos hybrid management, and AI/ML acceleration across edge-to-cloud. Our managed services ensure developer velocity with FinOps, IaaC, and zero-trust security.`,
