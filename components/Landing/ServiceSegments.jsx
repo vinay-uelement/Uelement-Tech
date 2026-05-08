@@ -2,6 +2,7 @@
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import Slider from 'react-slick';
+import { imgUrl } from '@/lib/imageUrl';
 
 const services = [
   {
@@ -105,7 +106,7 @@ const ServiceSegments = () => {
             {/* Image — flex:1 to fill the rest */}
             <div className="flex-1 overflow-hidden rounded-l-[18px]">
               <img
-                src="/images/landing/domain-1.webp"
+                src={imgUrl('/images/landing/domain-1.webp')}
                 alt="Domain visual 1"
                 className="w-full h-full object-cover"
               />
@@ -117,7 +118,7 @@ const ServiceSegments = () => {
             {/* Image — flex:1 */}
             <div className="flex-1 overflow-hidden rounded-r-[18px]">
               <img
-                src="/images/landing/domain-2.webp"
+                src={imgUrl('/images/landing/domain-2.webp')}
                 alt="Domain visual 2"
                 className="w-full h-full object-cover"
               />
@@ -149,7 +150,7 @@ const ServiceSegments = () => {
           {/* Row 1: Image top-left | Card 1 top-right */}
           <div className="rounded-[18px] overflow-hidden min-h-[200px] hidden md:block">
             <img
-              src="/images/landing/domain-1.webp"
+              src={imgUrl('/images/landing/domain-1.webp')}
               alt="Domain visual 1"
               className="w-full h-full object-cover"
             />
@@ -180,7 +181,7 @@ const ServiceSegments = () => {
           />
           <div className="rounded-[18px] overflow-hidden min-h-[200px] hidden md:block">
             <img
-              src="/images/landing/domain-2.webp"
+              src={imgUrl('/images/landing/domain-2.webp')}
               alt="Domain visual 2"
               className="w-full h-full object-cover"
             />

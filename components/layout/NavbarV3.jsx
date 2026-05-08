@@ -4,6 +4,7 @@ import { usePathname } from 'next/navigation';
 import { ReactIcons } from '../../utils/ReactIcons';
 import Link from 'next/link';
 import MobileNav from './MobileNav';
+import { imgUrl } from '@/lib/imageUrl';
 
 const navbarList = [
   {
@@ -199,7 +200,7 @@ const NavbarV3 = () => {
                 flex items-center relative z-40 transition-all duration-300`}
             >
               <img
-                src="/icons/global/UElement_Logo_White 3.svg"
+                src={imgUrl('/icons/global/UElement_Logo_White 3.svg')}
                 alt="uelement"
                 className="2xl:w-auto md:w-[140px] h-auto"
               />

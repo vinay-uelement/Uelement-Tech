@@ -7,6 +7,7 @@ import Icon from '../resources/Icon';
 import { usePathname } from 'next/navigation';
 import { useState } from 'react';
 import useWeb3Forms from '@web3forms/react';
+import { imgUrl } from '@/lib/imageUrl';
 
 const Footer = () => {
   const pathname = usePathname();
@@ -396,7 +397,7 @@ const FooterContent = () => {
           {/* Company Details */}
           <div className="company-details">
             <img
-              src="/icons/global/UElement_Logo_White 3.svg"
+              src={imgUrl('/icons/global/UElement_Logo_White 3.svg')}
               alt="UElement logo"
               className="h-[35px] sm:h-[48px] w-auto mb-4 mb-20"
             />

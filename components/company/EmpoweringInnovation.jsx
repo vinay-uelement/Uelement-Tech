@@ -3,6 +3,7 @@
 import Image from 'next/image';
 import { ReactIcons } from '@/utils/ReactIcons';
 import { useState } from 'react';
+import { imgUrl } from '@/lib/imageUrl';
 
 const bullet = [
   { id: 1, desc: 'Uptime for cloud infrastructure', number: '99.9%' },
@@ -27,7 +28,7 @@ const EmpoweringInnovation = () => {
     <div className="lg:min-h-screen h-auto relative flex flex-col items-center pb-6 lg:pb-10">
       {/* Desktop background */}
       <Image
-        src="/images/global/hero-bg.webp"
+        src={imgUrl('/images/global/hero-bg.webp')}
         alt="about background"
         className="absolute -z-10 object-fill h-full w-full hidden md:block p-2"
         height={1000}
@@ -81,7 +82,7 @@ const EmpoweringInnovation = () => {
         <div className="flex-1 my-auto">
           <div className="rounded-[4px] shadow-lg w-full">
             <img
-              src="/images/service/company-hero2.png"
+              src={imgUrl('/images/service/company-hero2.png')}
               alt="Team meeting"
               className="w-full h-auto object-cover rounded-[4px]"
             />

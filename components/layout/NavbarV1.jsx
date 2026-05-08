@@ -4,6 +4,7 @@ import { usePathname } from 'next/navigation';
 import { ReactIcons } from '../../utils/ReactIcons';
 import Link from 'next/link';
 import MobileNav from './MobileNav';
+import { imgUrl } from '@/lib/imageUrl';
 
 const navbarList = [
   {
@@ -187,7 +188,7 @@ const NavbarV1 = () => {
               className="bg-primary-blue rounded-l-[22px] rounded-tl-[4px] md:w-[220px] 2xl:w-[290px] w-[180px] h-full ps-4 pe-12 md:pe-0 flex items-center relative z-40"
             >
               <img
-                src="/icons/global/UElement_Logo_White 3.svg"
+                src={imgUrl('/icons/global/UElement_Logo_White 3.svg')}
                 alt="uelement"
                 className="xl:w-auto md:w-[140px] h-auto"
               />

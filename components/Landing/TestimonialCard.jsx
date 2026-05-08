@@ -1,11 +1,12 @@
 import React from 'react';
+import { imgUrl } from '@/lib/imageUrl';
 
 const TestimonialCard = () => {
   return (
     <div className="bg-secondary rounded-[4px] px-4 sm:px-10 py-5 flex flex-col-reverse sm:flex-col gap-3 sm:gap-5 lg:gap-10">
       <div className="flex gap-3 sm:gap-5 items-start flex-col sm:flex-row">
         <img
-          src="/icons/landing/quote.svg"
+          src={imgUrl('/icons/landing/quote.svg')}
           alt="quote"
           className="w-[40px] md:w-[60px] mx-auto sm:mx-[unset]"
         />
@@ -18,7 +19,7 @@ const TestimonialCard = () => {
       </div>
       <div className="flex gap-3 items-center flex-col sm:flex-row">
         <img
-          src="/images/landing/user1.svg"
+          src={imgUrl('/images/landing/user1.svg')}
           alt="user"
           className="size-[75px] md:size-[100px] xl:size-[140px] rounded-full mx-auto sm:mx-[unset]"
         />

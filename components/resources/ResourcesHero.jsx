@@ -1,6 +1,7 @@
 'use client'
 import Link from 'next/link';
 import React from 'react';
+import { imgUrl } from '@/lib/imageUrl';
 
 const ResourcesHero = () => {
   return (
@@ -31,7 +32,7 @@ const ResourcesHero = () => {
         </div>
         <div className="flex-1">
           <img
-            src="/images/resources/resources_hero.jpg"
+            src={imgUrl('/images/resources/resources_hero.jpg')}
             alt="resources"
             className="max-w-[90%] mx-auto rounded-[4px] shadow-left-down"
           />
