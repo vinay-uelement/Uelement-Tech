@@ -18,7 +18,7 @@ const TestimonialCard = () => {
       </div>
       <div className="flex gap-3 items-center flex-col sm:flex-row">
         <img
-          src="../images/landing/user1.svg"
+          src="/images/landing/user1.svg"
           alt="user"
           className="size-[75px] md:size-[100px] xl:size-[140px] rounded-full mx-auto sm:mx-[unset]"
         />

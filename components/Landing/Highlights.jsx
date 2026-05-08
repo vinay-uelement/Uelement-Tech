@@ -7,7 +7,7 @@ export default function Highlight() {
   const sliderData = [
     {
       id: 1,
-      image: "../images/company/high1.jpg",
+      image: "/images/company/high1.jpg",
       title: "Driving growth through strategic collaborations",
       desc:
         "SI Partnerships (SI) represents strategic alliances that help organizations grow, innovate, and expand their reach. It focuses on collaboration with trusted partners to drive mutual value and long-term success. Through these partnerships, businesses can unlock new opportunities, strengthen capabilities, and achieve shared goals.",
@@ -15,7 +15,7 @@ export default function Highlight() {
     },
     {
       id: 2,
-      image: "../images/company/high1.jpg",
+      image: "/images/company/high1.jpg",
       title: "Driving growth through strategic collaborations",
       desc:
         "SI Partnerships  represents strategic alliances that help organizations grow, innovate, and expand their reach. It focuses on collaboration with trusted partners to drive mutual value and long-term success. Through these partnerships, businesses can unlock new opportunities, strengthen capabilities, and achieve shared goals.",
@@ -24,7 +24,7 @@ export default function Highlight() {
     ,
     {
       id: 3,
-      image: "../images/company/high1.jpg",
+      image: "/images/company/high1.jpg",
       title: "Driving growth through strategic collaborations",
       desc:
         "SI Partnerships  represents strategic alliances that help organizations grow, innovate, and expand their reach. It focuses on collaboration with trusted partners to drive mutual value and long-term success. Through these partnerships, businesses can unlock new opportunities, strengthen capabilities, and achieve shared goals.",
@@ -33,7 +33,7 @@ export default function Highlight() {
     ,
     {
       id: 4,
-      image: "../images/company/high1.jpg",
+      image: "/images/company/high1.jpg",
       title: "Driving growth through strategic collaborations",
       desc:
         "SI Partnerships  represents strategic alliances that help organizations grow, innovate, and expand their reach. It focuses on collaboration with trusted partners to drive mutual value and long-term success. Through these partnerships, businesses can unlock new opportunities, strengthen capabilities, and achieve shared goals.",
