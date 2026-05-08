@@ -10,25 +10,25 @@ const services = [
   {
     id: 1,
     title: 'Digital Safety',
-    logo: media('images/landing/digital_safety.svg'),
+    logo: media('../images/landing/digital_safety.svg'),
     desc: "Securing the future with quantum-resistant and zero-trust architecture. Resilient defenses against today's threats and quantum attacks.",
   },
   {
     id: 2,
     title: 'Cloud Mastery',
-    logo: media('images/landing/cloud_mastery.svg'),
+    logo: media('../images/landing/cloud_mastery.svg'),
     desc: 'Architecting, optimizing and managing seamless multi-cloud environments. Scalable, secure infra with Zero Trust and FinOps.',
   },
   {
     id: 3,
     title: 'Accelerated AI',
-    logo: media('images/landing/accelarated_ai.svg'),
+    logo: media('../images/landing/accelarated_ai.svg'),
     desc: 'Accelerating intelligence with responsible AI and advanced analytics. Ethical AI for precise insights and analytics.',
   },
   {
     id: 4,
     title: 'Quantum & Web3',
-    logo: media('images/landing/future_tech.svg'),
+    logo: media('../images/landing/future_tech.svg'),
     desc: 'Pioneering transformation with Quantum, Web3 and digital modernization. Quantum-ready, decentralized innovation.',
   },
 ];
@@ -106,7 +106,7 @@ const ServiceSegments = () => {
 
             <div className="flex-1 overflow-hidden rounded-l-[18px]">
               <img
-                src={media('images/landing/domain-1.webp')}
+                src={media('../images/landing/domain-1.webp')}
                 alt="Domain visual 1"
                 className="w-full h-full object-cover"
               />
@@ -117,7 +117,7 @@ const ServiceSegments = () => {
           <div className="flex items-stretch h-[300px] gap-4">
             <div className="flex-1 overflow-hidden rounded-r-[18px]">
               <img
-                src={media('images/landing/domain-2.webp')}
+                src={media('../images/landing/domain-2.webp')}
                 alt="Domain visual 2"
                 className="w-full h-full object-cover"
               />
@@ -146,7 +146,7 @@ const ServiceSegments = () => {
         <div className="grid grid-cols-1 gap-3">
           <div className="rounded-[18px] overflow-hidden min-h-[200px] hidden md:block">
             <img
-              src={media('images/landing/domain-1.webp')}
+              src={media('../images/landing/domain-1.webp')}
               alt="Domain visual 1"
               className="w-full h-full object-cover"
             />
@@ -178,7 +178,7 @@ const ServiceSegments = () => {
 
           <div className="rounded-[18px] overflow-hidden min-h-[200px] hidden md:block">
             <img
-              src={media('images/landing/domain-2.webp')}
+              src={media('../images/landing/domain-2.webp')}
               alt="Domain visual 2"
               className="w-full h-full object-cover"
             />
