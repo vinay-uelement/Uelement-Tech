@@ -203,7 +203,7 @@ const CaseStudyDetail = ({ caseStudy, otherCaseStudies }) => {
                         />
                         <div className="bg-white shadow-md size-12 rounded-full absolute right-3 -bottom-6 flex items-center justify-center">
                           <img
-                            src={'/icons/global/enterprise-icon.svg'}
+                            src={'../icons/global/enterprise-icon.svg'}
                             alt={item.label}
                           />
                         </div>

@@ -31,7 +31,7 @@ const ResourcesHero = () => {
         </div>
         <div className="flex-1">
           <img
-            src="/images/resources/resources_hero.jpg"
+            src="../images/resources/resources_hero.jpg"
             alt="resources"
             className="max-w-[90%] mx-auto rounded-[4px] shadow-left-down"
           />
