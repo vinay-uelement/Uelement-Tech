@@ -14,21 +14,21 @@ const blogs = [
     title: 'High- Quality Content Writing',
     desc: 'We deliver comprehensive Enterprise Security Solutions & Services that safeguard critical assets, ensure compliance, and mitigate risks.',
     label: 'services',
-    image: '../images/resources/blog-1.jpg',
+    image: '/images/resources/blog-1.jpg',
   },
   {
     id: 2,
     title: 'High- Quality Content Writing',
     desc: 'We deliver comprehensive Enterprise Security Solutions & Services that safeguard critical assets, ensure compliance, and mitigate risks.',
     label: 'training',
-    image: '../images/resources/blog-2.jpg',
+    image: '/images/resources/blog-2.jpg',
   },
   {
     id: 3,
     title: 'Personality Development.',
     desc: 'We deliver comprehensive Enterprise Security Solutions & Services that safeguard critical assets, ensure compliance, and mitigate risks.',
     label: 'personality',
-    image: '../images/resources/blog-3.jpg',
+    image: '/images/resources/blog-3.jpg',
   },
 ];
 
@@ -38,14 +38,14 @@ const casestudy = [
     title: 'Aerospace-Grade Cloud Transformation',
     desc: 'Secure Cloud Transformation for Aerospace & Defense Modernizing infrastructure with Zero Trust and CMMC-compliant architecture.',
     label: 'services',
-    image: '../images/resources/case-study/aerospacecard.png',
+    image: '/images/resources/case-study/aerospacecard.png',
   },
   {
   id: 2,
   title: 'Identity Security & Governance Transformation',
   desc: 'Identity Security & Governance Transformation for a Mid-Sized Telecom Provider.',
   label: 'services',
-  image: '../images/resources/case-study/telecomcard.png',
+  image: '/images/resources/case-study/telecomcard.png',
 }
 
 ];
@@ -56,21 +56,21 @@ const research = [
     title: 'Cybersecurity Trends 2025',
     desc: 'In-depth research on emerging cybersecurity threats and best practices for enterprise protection.',
     label: 'research',
-    image: '../images/resources/blog-1.jpg',
+    image: '/images/resources/blog-1.jpg',
   },
   {
     id: 2,
     title: 'Cloud Security Framework',
     desc: 'Comprehensive study on building secure cloud infrastructure with compliance standards.',
     label: 'research',
-    image: '../images/resources/blog-2.jpg',
+    image: '/images/resources/blog-2.jpg',
   },
   {
     id: 3,
     title: 'AI in Security Operations',
     desc: 'Exploring the role of artificial intelligence in modern security operations centers.',
     label: 'research',
-    image: '../images/resources/blog-3.jpg',
+    image: '/images/resources/blog-3.jpg',
   },
 ];
 
@@ -78,17 +78,17 @@ const categories = [
   // {
   //   id: 1,
   //   name: 'Blogs',
-  //   icon: '../icons/resources/blogs-icon.svg',
+  //   icon: '/icons/resources/blogs-icon.svg',
   // },
   {
     id: 2,
     name: 'Case Study',
-    icon: '../icons/resources/case-study-icon.svg',
+    icon: '/icons/resources/case-study-icon.svg',
   },
   // {
   //   id: 3,
   //   name: 'Research',
-  //   icon: '../icons/resources/research-icon.svg',
+  //   icon: '/icons/resources/research-icon.svg',
   // },
 ];
 
@@ -247,7 +247,7 @@ const KnowledgeHub = () => {
                   />
                   <div className="bg-[#ffffff] shadow-md size-12 rounded-full absolute right-3 -bottom-6 flex items-center justify-center">
                     <img
-                      src={'../icons/global/enterprise-icon.svg'}
+                      src="/icons/global/enterprise-icon.svg"
                       alt={item.label}
                     />
                   </div>
