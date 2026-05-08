@@ -15,7 +15,7 @@ const slides = [
     desc: 'Strategic integration and managed services leveraging 15+ global technology partners.',
     desc1:
       'We partner across the cloud ecosystem to deliver seamless integrations, managed services, and compliant cybersecurity advisory, driving measurable outcomes through global alliances and faster go-to-market solutions.Together, we turn innovation into scalable, real-world business value.',
-    img: '../images/landing/si-partnership.jpg',
+    img: '/images/landing/si-partnership.jpg',
   },
   {
     id: 2,
@@ -25,7 +25,7 @@ const slides = [
     desc: 'End-to-end professional services across cloud, cybersecurity, and AI.',
     desc1:
       'We deliver comprehensive professional services spanning strategy and architecture through implementation and optimization. Our specialist teams enable measurable results via technology roadmaps, change management, and seamless integration of new capabilities.',
-    img: '../images/landing/professional-services.jpg',
+    img: '/images/landing/professional-services.jpg',
   },
   {
     id: 3,
@@ -35,7 +35,7 @@ const slides = [
     desc: 'Design and build full-stack, multi-tenant SaaS and AI-native platforms.',
     desc1: `We engineer full-stack, multi-tenant SaaS/PaaS solutions with cloud-native architectures, AI/ML integration, and robust backend infrastructure.
 From MVP development and microservices to analytics dashboards and LLM integration, we deliver extensible platforms optimized for enterprise scale`,
-    img: '../images/landing/managed-ser2.jpg',
+    img: '/images/landing/managed-ser2.jpg',
   },
   {
     id: 4,
@@ -45,7 +45,7 @@ From MVP development and microservices to analytics dashboards and LLM integrati
     desc: 'Comprehensive strategy-to-execution digital transformation programs.',
     desc1:
       'We orchestrate digital transformation initiatives spanning modernization, cloud migration, agile delivery, and emerging technology adoption. From legacy system refactoring to AI integration and customer experience enhancement, we create measurable and lasting business impact.',
-    img: '../images/landing/cloud-solution.jpg',
+    img: '/images/landing/cloud-solution.jpg',
   },
 ];
 
