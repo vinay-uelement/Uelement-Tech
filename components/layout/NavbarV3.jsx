@@ -199,7 +199,7 @@ const NavbarV3 = () => {
                 flex items-center relative z-40 transition-all duration-300`}
             >
               <img
-                src="/icons/global/UElement_Logo_White 3.svg"
+                src="../icons/global/UElement_Logo_White 3.svg"
                 alt="uelement"
                 className="2xl:w-auto md:w-[140px] h-auto"
               />

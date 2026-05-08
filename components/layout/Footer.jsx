@@ -396,7 +396,7 @@ const FooterContent = () => {
           {/* Company Details */}
           <div className="company-details">
             <img
-              src="/icons/global/UElement_Logo_White 3.svg"
+              src="../icons/global/UElement_Logo_White 3.svg"
               alt="UElement logo"
               className="h-[35px] sm:h-[48px] w-auto mb-4 mb-20"
             />

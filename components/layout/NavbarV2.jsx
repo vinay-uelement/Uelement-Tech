@@ -191,7 +191,7 @@ const NavbarV2 = () => {
               }`}
             >
               <img
-                src="/icons/global/UElement_Logo_White 3.svg"
+                src="../icons/global/UElement_Logo_White 3.svg"
                 alt="uelement"
                 className="w-auto h-auto"
               />
