@@ -68,7 +68,7 @@ const HeroSectionV5 = () => {
           style={{ clipPath: 'inset(0 round 30px)' }}
         >
           <Image
-            src="../images/landing/hero_bg1.webp"
+            src="/images/landing/hero_bg1.webp"
             alt="hero_bg"
             className="object-fill"
             fill
@@ -81,7 +81,7 @@ const HeroSectionV5 = () => {
       <div className="absolute inset-0 -z-10 block md:hidden p-2">
         <div className="bg-hero-gradient w-full h-full rounded-[28px] relative overflow-hidden">
           <Image
-            src="../images/landing/UElement-Mudra.png"
+            src="/images/landing/UElement-Mudra.png"
             alt="Rudra"
             width={320}
             height={320}
