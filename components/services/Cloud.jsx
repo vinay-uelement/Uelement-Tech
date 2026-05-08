@@ -186,7 +186,7 @@ const Cloud = () => {
           <div className="w-full lg:w-[60%] order-2">
             <div className="relative w-full h-[300px] sm:h-[400px] lg:h-[500px] xl:h-[600px]">
               <img
-                src="/images/service/cloud/cloudhero.png"
+                src="/images/service/cloudhero.png"
                 alt="Digital Security Lock"
                 className="w-full h-full object-contain rounded-[4px]"
               />
@@ -218,7 +218,7 @@ const Cloud = () => {
           <div className="bg-[#f3f3f3] rounded-[4px] shadow-lg p-6 sm:p-8 md:p-10 lg:p-12">
             <div className="w-full h-[150px] sm:h-[300px] md:h-[350px] lg:h-[400px] mb-6 sm:mb-8">
               <img
-                src="/images/service/cloud/cloud2.png"
+                src="/images/service/cloud2.png"
                 alt="VPN Security"
                 className="w-full h-full object-cover rounded-[4px]"
               />

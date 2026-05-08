@@ -187,7 +187,7 @@ const CyberSecurity = () => {
           <div className="w-full lg:w-[60%] order-2">
             <div className="relative w-full h-[300px] sm:h-[400px] lg:h-[500px] xl:h-[600px]">
               <img
-                src="/images/service/cybersecurity/cybersecurityHero.png"
+                src="/images/service/cybersecurityHero.png"
                 alt="Digital Security Lock"
                 className="w-full h-full object-contain rounded-[4px]"
               />
@@ -219,7 +219,7 @@ const CyberSecurity = () => {
           <div className="bg-[#F3F3F3] rounded-[4px] shadow-lg p-6 sm:p-8 md:p-10 lg:p-12">
             <div className="w-full h-[150px] sm:h-[300px] md:h-[350px] lg:h-[400px] mb-6 sm:mb-8">
               <img
-                src="/images/service/cybersecurity/cybersecurityContent.png"
+                src="/images/service/cybersecurityContent.png"
                 alt="VPN Security"
                 className="w-full h-full object-cover rounded-[4px]"
               />
