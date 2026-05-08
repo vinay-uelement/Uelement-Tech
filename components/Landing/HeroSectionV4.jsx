@@ -207,13 +207,13 @@ const HeroSection = () => {
         className="block md:hidden absolute inset-0 w-full h-full -z-10"
         style={{
           backgroundColor: '#0C142D',
-          backgroundImage: "url('/images/landing/UElement-Mudra.png')",
+          backgroundImage: "url('../images/landing/UElement-Mudra.png')",
           backgroundSize: 'contain',
           backgroundPosition: 'bottom',
           backgroundRepeat: 'no-repeat',
           WebkitMask:
-            "url('/icons/landing/mobile-bg.svg') no-repeat center / cover",
-          mask: "url('/icons/landing/mobile-bg.svg') no-repeat center / cover",
+            "url('../icons/landing/mobile-bg.svg') no-repeat center / cover",
+          mask: "url('../icons/landing/mobile-bg.svg') no-repeat center / cover",
           WebkitMaskRepeat: 'no-repeat',
           maskRepeat: 'no-repeat',
         }}

@@ -4,7 +4,7 @@ export default function HighlightV2() {
   const sliderData = [
     {
       id: 1,
-      image: '/images/company/high1.jpg',
+      image: '../images/company/high1.jpg',
       date: '10th to 15th May - 2026',
       title: 'Driving growth through strategic collaborations',
       desc: 'SI Partnerships (SI) represents strategic alliances that help organizations grow, innovate, and expand their reach. It focuses on collaboration with trusted partners to drive mutual value and long-term success. Through these partnerships, businesses can unlock new opportunities, strengthen capabilities, and achieve shared goals.',
@@ -12,7 +12,7 @@ export default function HighlightV2() {
     },
     // {
     //   id: 2,
-    //   image: '/images/company/high1.jpg',
+    //   image: '../images/company/high1.jpg',
     //   date: '18th to 22nd June - 2026',
     //   title: 'Driving growth through strategic collaborations',
     //   desc: 'SI Partnerships represents strategic alliances that help organizations grow, innovate, and expand their reach. It focuses on collaboration with trusted partners to drive mutual value and long-term success.',
@@ -20,7 +20,7 @@ export default function HighlightV2() {
     // },
     // {
     //   id: 3,
-    //   image: '/images/company/high1.jpg',
+    //   image: '../images/company/high1.jpg',
     //   date: '5th to 8th July - 2026',
     //   title: 'Driving growth through strategic collaborations',
     //   desc: 'SI Partnerships represents strategic alliances that help organizations grow, innovate, and expand their reach. It focuses on collaboration with trusted partners to drive mutual value and long-term success.',
@@ -28,7 +28,7 @@ export default function HighlightV2() {
     // },
     // {
     //   id: 4,
-    //   image: '/images/company/high1.jpg',
+    //   image: '../images/company/high1.jpg',
     //   date: '20th to 25th August - 2026',
     //   title: 'Driving growth through strategic collaborations',
     //   desc: 'SI Partnerships represents strategic alliances that help organizations grow, innovate, and expand their reach. It focuses on collaboration with trusted partners to drive mutual value and long-term success.',

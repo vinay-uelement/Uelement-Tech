@@ -5,25 +5,25 @@ const transformBullet = [
   {
     id: 1,
     title: 'Assess & Strategize',
-    icon: '/icons/landing/key.svg',
+    icon: '../icons/landing/key.svg',
     desc: 'Assess the current situation to identify needs and gaps. Strategize by setting clear goals and creating a focused action plan.',
   },
   {
     id: 2,
     title: 'Architect & Design',
-    icon: '/icons/landing/settings.svg',
+    icon: '../icons/landing/settings.svg',
     desc: 'Re-architect cloud environments, design secure infrastructure (Iaac), and develop product MVPs with clear roadmaps.',
   },
   {
     id: 3,
     title: 'Implement & Integrate',
-    icon: '/icons/landing/manage.svg',
+    icon: '../icons/landing/manage.svg',
     desc: 'Execute full-stack development, platform integration, cloud migration, and deploy Zero Trust/Quantum Security solutions.',
   },
   {
     id: 4,
     title: 'Manage & Optimize',
-    icon: '/icons/landing/ticked-light.svg',
+    icon: '../icons/landing/ticked-light.svg',
     desc: 'Provide ongoing Managed Cloud Infra, SecOps, FinOps, and continuous performance optimization.',
   },
 ];
