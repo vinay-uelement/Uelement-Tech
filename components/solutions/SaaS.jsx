@@ -4,6 +4,7 @@ import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import Image from 'next/image';
+import { imgUrl } from '@/lib/imageUrl';
 
 // ─── Hero right: SaaS hub-and-spoke visual ───────────────────────────────────
 const SaaSHubVisual = () => {
@@ -536,7 +537,7 @@ const SaaSPlatform = () => {
       {/* ── Hero ── */}
       <section className="min-h-svh h-auto md:min-h-[92vh] md:h-auto relative flex lg:flex-row flex-col items-center overflow-hidden section-block-padding">
         <Image
-          src="/images/global/hero-bg.webp"
+          src={imgUrl('/images/global/hero-bg.webp')}
           alt="SaaS Platform background"
           className="absolute -z-10 object-fill h-full w-full hidden lg:block p-2"
           height={1000}

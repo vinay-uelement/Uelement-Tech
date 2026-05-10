@@ -3,6 +3,7 @@
 import Image from 'next/image';
 import { ReactIcons } from '@/utils/ReactIcons';
 import { useState } from 'react';
+import { imgUrl } from '@/lib/imageUrl';
 
 const ServicesHero = () => {
   const slides = [
@@ -21,7 +22,7 @@ const ServicesHero = () => {
     <div className="lg:h-screen h-auto relative flex lg:flex-row flex-col items-center overflow-hidden">
       {/* Desktop background */}
       <Image
-        src="/images/global/hero-bg.webp"
+        src={imgUrl('/images/global/hero-bg.webp')}
         alt="services background"
         className="absolute -z-10 object-fill h-full w-full hidden md:block p-2"
         height={1000}
@@ -68,7 +69,7 @@ const ServicesHero = () => {
         <div className="flex-1">
           <div className="overflow-hidden w-full">
             <img
-              src="/images/service/services-hero2.png"
+              src={imgUrl('/images/service/services-hero2.png')}
               alt="Team meeting"
               className="w-full h-auto rounded-[4px] object-cover"
             />

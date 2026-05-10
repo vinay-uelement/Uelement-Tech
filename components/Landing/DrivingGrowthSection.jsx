@@ -5,6 +5,7 @@ import { ReactIcons } from '@/utils/ReactIcons';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import { useRouter } from 'next/navigation';
+import { imgUrl } from '@/lib/imageUrl';
 
 const slides = [
   {
@@ -133,7 +134,7 @@ const DrivingGrowthSection = () => {
               {slides[active].number}
             </div>
             <img
-              src="/icons/landing/horizontal-line.svg"
+              src={imgUrl('/icons/landing/horizontal-line.svg')}
               alt="icon"
               className="w-[120px] sm:w-[250px] md:w-[auto]"
             />

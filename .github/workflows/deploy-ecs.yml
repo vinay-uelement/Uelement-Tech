@@ -1,65 +1,37 @@
-name: Deploy uelement-website-next to ECS
+name: Deploy to Cloudflare Pages
 
 on:
-  push:
-    branches: [ main ]
-
-env:
-  AWS_REGION: ${{ vars.AWS_REGION }}           # set repo variable AWS_REGION (e.g. us-west-2)
-  AWS_ACCOUNT_ID: ${{ vars.AWS_ACCOUNT_ID }}   # set repo variable AWS_ACCOUNT_ID
-  ECR_REPOSITORY: uelement-web                 # adjust if your ECR repo differs
-  ECS_CLUSTER: uelement-cluster                # set to your ECS cluster
-  ECS_SERVICE: uelement-service                # set to your ECS service
-  CONTAINER_NAME: uelement-web
-  IMAGE_TAG: ${{ github.sha }}
+  workflow_dispatch:
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
     permissions:
       contents: read
-      id-token: write
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Configure AWS credentials
-        uses: aws-actions/configure-aws-credentials@v4
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
         with:
-          role-to-assume: arn:aws:iam::${{ env.AWS_ACCOUNT_ID }}:role/GitHubECSDeployRole
-          aws-region: ${{ env.AWS_REGION }}
-          role-session-name: github-actions-ecs
+          node-version: 20
+          cache: npm
 
-      - name: Login to Amazon ECR
-        id: login-ecr
-        uses: aws-actions/amazon-ecr-login@v2
+      - name: Install dependencies
+        run: npm ci
 
-      - name: Build and push image
-        id: build-image
+      - name: Build static export
+        run: npm run build
         env:
-          REGISTRY: ${{ steps.login-ecr.outputs.registry }}
-        run: |
-          IMAGE_URI="${REGISTRY}/${ECR_REPOSITORY}:${IMAGE_TAG}"
-          docker build -t "$IMAGE_URI" .
-          docker push "$IMAGE_URI"
-          echo "image_uri=$IMAGE_URI" >> "$GITHUB_OUTPUT"
+          NEXT_PUBLIC_IMAGE_BASE_URL: ${{ vars.NEXT_PUBLIC_IMAGE_BASE_URL }}
 
-      - name: Inject AWS account into task definition
-        run: |
-          sed "s/<ACCOUNT_ID>/${AWS_ACCOUNT_ID}/g" ecs-task-def.json > ecs-task-def-rendered.json
-
-      - name: Render ECS task definition
-        id: render-task-def
-        uses: aws-actions/amazon-ecs-render-task-definition@v2
+      - name: Deploy to Cloudflare Pages
+        uses: cloudflare/pages-action@v1
         with:
-          task-definition: ecs-task-def-rendered.json
-          container-name: ${{ env.CONTAINER_NAME }}
-          image: ${{ steps.build-image.outputs.image_uri }}
-
-      - name: Deploy to Amazon ECS
-        uses: aws-actions/amazon-ecs-deploy-task-definition@v2
-        with:
-          task-definition: ${{ steps.render-task-def.outputs.task-definition }}
-          service: ${{ env.ECS_SERVICE }}
-          cluster: ${{ env.ECS_CLUSTER }}
-          wait-for-service-stability: true
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          projectName: uelement-website-next
+          directory: out
+          gitHubToken: ${{ secrets.GITHUB_TOKEN }}
