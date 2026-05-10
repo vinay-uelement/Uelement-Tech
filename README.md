@@ -1,38 +1,142 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# UElement Website (Next.js + Cloudflare Pages + R2)
 
-## Getting Started
+This project is a static-exported Next.js site deployed on Cloudflare Pages, with image assets served from an R2 bucket.
 
-First, run the development server:
+## Current architecture
+
+- App domain: `https://uelement.in`
+- Image bucket: `uelement-images` (R2)
+- Optional image domain: `https://images.uelement.in`
+- Next.js output mode: `output: 'export'`
+- Pages Function route: `/images/*` via `functions/images/[[path]].js`
+
+The app code uses paths like `/images/...`. Those requests are handled by the Cloudflare Pages Function and fetched from R2.
+
+## What was changed in code
+
+- Hardened image function: [`functions/images/[[path]].js`](/home/satrajit/Documents/Development/uelement-website-next/functions/images/[[path]].js)
+  - Handles both R2 key styles:
+    - `landing/hero.webp`
+    - `images/landing/hero.webp`
+  - Adds long-lived cache headers.
+  - Adds permissive CORS header for cross-domain image embedding.
+- Fixed relative image paths in [`components/resources/KnowledgeHub.jsx`](/home/satrajit/Documents/Development/uelement-website-next/components/resources/KnowledgeHub.jsx)
+  - Changed `images/...` to `/images/...` so nested routes do not break.
+- Updated Wrangler config in [`wrangler.toml`](/home/satrajit/Documents/Development/uelement-website-next/wrangler.toml)
+  - Added `compatibility_date`.
+  - Added `preview_bucket_name`.
+
+## Required Cloudflare settings
+
+## 1) Pages project
+
+- Framework build command: `npm run build`
+- Build output directory: `out`
+- Deploy using Wrangler or Git integration.
+- If using Direct Upload from dashboard drag-and-drop, `functions/` is not compiled.
+
+In Pages project settings:
+
+- Go to `Settings -> Functions -> R2 bucket bindings`
+- Add binding:
+  - Variable name: `IMAGE_BUCKET`
+  - Bucket: `uelement-images`
+
+## 2) R2 bucket
+
+- Bucket `uelement-images` must have all required files.
+- Object keys are case-sensitive.
+- Recommended key structure for this codebase:
+  - `landing/...`
+  - `global/...`
+  - `service/...`
+  - `resources/...`
+  - `company/...`
+- Supported fallback in code also allows `images/landing/...` style keys.
+
+## 3) DNS and custom domains
+
+- `uelement.in` should point to your Cloudflare Pages project.
+- `images.uelement.in` should be attached as a custom domain on bucket `uelement-images`.
+- Verify `images.uelement.in` custom domain status:
+  - Ownership: `active`
+  - SSL: `active`
+
+## 4) Cache/CORS (recommended)
+
+- R2 custom domain can return CORS based on bucket CORS policy.
+- Add a bucket CORS rule for `GET`, `HEAD` with origin `https://uelement.in`.
+- Purge cache after changing CORS or image contents.
+
+## Deployment steps
+
+1. Install dependencies
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Build static output
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+```bash
+npm run build
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+3. Deploy Pages output (with Functions)
 
-## Learn More
+```bash
+npm run deploy
+```
 
-To learn more about Next.js, take a look at the following resources:
+`npm run deploy` runs:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+npm run build && wrangler pages deploy out
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Run this command from repo root so Wrangler uploads `out/` and includes `functions/`.
 
-## Deploy on Vercel
+## Image troubleshooting checklist
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Use this exact sequence:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+1. Check if an image exists via main domain function route:
+   - `https://uelement.in/images/landing/hero_bg1.webp`
+2. Check if image exists via R2 custom domain:
+   - `https://images.uelement.in/landing/hero_bg1.webp`
+3. If #2 works but #1 fails:
+   - Missing/incorrect Pages R2 binding `IMAGE_BUCKET`
+   - Function not deployed (often due dashboard drag-and-drop upload)
+4. If both fail:
+   - Object key missing or wrong case/path in R2
+5. If only some pages fail:
+   - Look for relative image paths like `images/...` (without leading `/`)
+6. Purge Cloudflare cache and retest.
 
-## CICD for AWS DevOps
+## Optional pattern: serve directly from `images.uelement.in`
+
+If you want to bypass `/images/*` function routing entirely, you can switch URLs in code to absolute URLs:
+
+- From: `/images/landing/hero_bg1.webp`
+- To: `https://images.uelement.in/landing/hero_bg1.webp`
+
+If you do this, keep CORS and cache headers configured on the R2 custom domain.
+
+## Guidelines for adding new images
+
+1. Keep file names lowercase and kebab/underscore only.
+2. Avoid spaces in file names.
+3. Upload with stable folder layout (`landing/`, `resources/`, etc.).
+4. Prefer modern formats (`.webp`, optimized `.png`, `.svg` when vector).
+5. After replacing existing objects, purge cache.
+
+## Useful Cloudflare references
+
+- Pages Functions get started:
+  - https://developers.cloudflare.com/pages/functions/get-started/
+- Pages Functions routing:
+  - https://developers.cloudflare.com/pages/functions/routing/
+- Pages Direct Upload behavior (`functions/` caveat):
+  - https://developers.cloudflare.com/pages/get-started/direct-upload/
+- R2 CORS configuration:
+  - https://developers.cloudflare.com/r2/buckets/cors/
