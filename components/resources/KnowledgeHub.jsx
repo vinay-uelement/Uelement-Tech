@@ -14,21 +14,21 @@ const blogs = [
     title: 'High- Quality Content Writing',
     desc: 'We deliver comprehensive Enterprise Security Solutions & Services that safeguard critical assets, ensure compliance, and mitigate risks.',
     label: 'services',
-    image: 'images/resources/blog-1.jpg',
+    image: '/images/resources/blog-1.jpg',
   },
   {
     id: 2,
     title: 'High- Quality Content Writing',
     desc: 'We deliver comprehensive Enterprise Security Solutions & Services that safeguard critical assets, ensure compliance, and mitigate risks.',
     label: 'training',
-    image: 'images/resources/blog-2.jpg',
+    image: '/images/resources/blog-2.jpg',
   },
   {
     id: 3,
     title: 'Personality Development.',
     desc: 'We deliver comprehensive Enterprise Security Solutions & Services that safeguard critical assets, ensure compliance, and mitigate risks.',
     label: 'personality',
-    image: 'images/resources/blog-3.jpg',
+    image: '/images/resources/blog-3.jpg',
   },
 ];
 
@@ -56,21 +56,21 @@ const research = [
     title: 'Cybersecurity Trends 2025',
     desc: 'In-depth research on emerging cybersecurity threats and best practices for enterprise protection.',
     label: 'research',
-    image: 'images/resources/blog-1.jpg',
+    image: '/images/resources/blog-1.jpg',
   },
   {
     id: 2,
     title: 'Cloud Security Framework',
     desc: 'Comprehensive study on building secure cloud infrastructure with compliance standards.',
     label: 'research',
-    image: 'images/resources/blog-2.jpg',
+    image: '/images/resources/blog-2.jpg',
   },
   {
     id: 3,
     title: 'AI in Security Operations',
     desc: 'Exploring the role of artificial intelligence in modern security operations centers.',
     label: 'research',
-    image: 'images/resources/blog-3.jpg',
+    image: '/images/resources/blog-3.jpg',
   },
 ];
 

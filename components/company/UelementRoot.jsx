@@ -1,12 +1,13 @@
 'use client';
 import { useRouter } from 'next/navigation';
+import { imgUrl } from '@/lib/imageUrl';
 
 const UelementRoot = () => {
   const router = useRouter();
   return (
     <div className="container-small py-10 xl:py-16">
       <img
-        src="/icons/global/dark-logo.svg"
+        src={imgUrl('/icons/global/dark-logo.svg')}
         alt="logo"
         className="h-[75px] md:w-[300px] 2xl:w-[450px] mb-5 md:mb-10 mx-auto"
       />
@@ -42,7 +43,7 @@ const UelementRoot = () => {
         </div>
         <div className="flex-1 bg-[#f3f3f3] p-6 rounded-[4px]">
           <img
-            src="/images/company/behind-idea.jpg"
+            src={imgUrl('/images/company/behind-idea.jpg')}
             alt="image"
             className="w-full rounded-[4px]"
           />

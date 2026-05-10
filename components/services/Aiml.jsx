@@ -5,6 +5,7 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import GlobalSlider from '@/components/Slider/GlobalSlider';
 import Image from 'next/image';
+import { imgUrl } from '@/lib/imageUrl';
 
 const Aiml = () => {
   const sliderRef = useRef(null);
@@ -137,7 +138,7 @@ const Aiml = () => {
       <section className="min-h-svh h-svh md:min-h-[92vh] md:h-[92vh] relative flex lg:flex-row flex-col items-center overflow-hidden section-block-padding ">
         {/* Desktop background */}
         <Image
-          src="/images/global/hero-bg.webp"
+          src={imgUrl('/images/global/hero-bg.webp')}
           alt="about background"
           className="absolute -z-10 object-fill h-full w-full hidden md:block p-2"
           height={1000}
@@ -157,7 +158,7 @@ const Aiml = () => {
             <div className="flex items-center mb-10 md:mb-16">
               <div className="size-[40px] md:size-[60px] bg-[#60606059] backdrop-blur-lg flex-shrink-0 rounded-full flex items-center justify-center">
                 <img
-                  src="/icons/global/machinelearning-icon.svg"
+                  src={imgUrl('/icons/global/machinelearning-icon.svg')}
                   alt="AI & Machine Learning"
                   className="size-6 sm:size-8"
                 />
@@ -188,7 +189,7 @@ const Aiml = () => {
           <div className="w-full lg:w-[60%] order-2">
             <div className="relative w-full h-[300px] sm:h-[400px] lg:h-[500px] xl:h-[600px]">
               <img
-                src="/images/service/ai-ml/ai-ml-hero.png"
+                src={imgUrl('/images/service/ai-ml/ai-ml-hero.png')}
                 alt="Digital Security Lock"
                 className="w-full h-full object-contain rounded-[4px]"
               />
@@ -220,7 +221,7 @@ const Aiml = () => {
           <div className="bg-[#f3f3f3] rounded-[4px] shadow-lg p-6 sm:p-8 md:p-10 lg:p-12">
             <div className="w-full h-[150px] sm:h-[300px] md:h-[350px] lg:h-[400px] mb-6 sm:mb-8">
               <img
-                src="/images/service/ai-ml/ai-ml2.png"
+                src={imgUrl('/images/service/ai-ml/ai-ml2.png')}
                 alt="VPN Security"
                 className="w-full h-full object-cover rounded-[4px]"
               />

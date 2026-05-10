@@ -1,0 +1,8 @@
+name = "uelement-website-next"
+compatibility_date = "2026-05-10"
+pages_build_output_dir = "out"
+
+[[r2_buckets]]
+binding = "IMAGE_BUCKET"
+bucket_name = "uelement-images"
+preview_bucket_name = "uelement-images"
