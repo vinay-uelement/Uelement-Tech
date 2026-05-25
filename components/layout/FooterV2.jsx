@@ -11,7 +11,7 @@ import { imgUrl } from '@/lib/imageUrl';
 
 const FooterV2 = () => {
   const pathname = usePathname();
-  if (pathname === '/contact-us') return null;
+  if (pathname === '/contact-us/') return null;
 
   return (
     <div>
