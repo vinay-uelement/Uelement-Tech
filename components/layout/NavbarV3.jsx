@@ -294,64 +294,25 @@ const NavbarV3 = () => {
 
                       {/* 2-col grid for Services (1), Solutions (6), and Company (8) */}
                       <div
-                        className={
-                          GRID_DROPDOWN_IDS.has(openMenu.id)
-                            ? 'grid grid-cols-[1fr_1px_1fr] gap-x-6'
-                            : 'flex flex-col'
-                        }
+                        className={`${GRID_DROPDOWN_IDS.has(openMenu.id) ? 'flex flex-wrap' : 'flex flex-col'} pt-2 gap-y-1`}
                       >
-                        {GRID_DROPDOWN_IDS.has(openMenu.id)
-                          ? openMenu.children.reduce((acc, child, index) => {
-                              const isFirstCol = index % 2 === 0;
-                              const colIndex = Math.floor(index / 2);
-
-                              // Insert divider once (as a row-spanning element after first column)
-                              if (index === 0) {
-                                acc.push(
-                                  <div
-                                    key="divider"
-                                    className="col-start-2 row-span-full w-px bg-[#ffffff20] self-stretch"
-                                    style={{
-                                      gridRow: `1 / span ${Math.ceil(openMenu.children.length / 2)}`,
-                                    }}
-                                  />
-                                );
-                              }
-
-                              acc.push(
-                                <Link
-                                  key={child.id}
-                                  href={child.link}
-                                  className={`block py-4 last:border-none border-primary-blue hover:text-primary-blue ${
-                                    isFirstCol ? 'col-start-1' : 'col-start-3'
-                                  }`}
-                                  style={{ gridRow: colIndex + 1 }}
-                                >
-                                  <div className="font-semibold text-18 text-[#fff] font-reddit-sans capitalize">
-                                    {child.label}
-                                  </div>
-                                  <div className="text-16 font-light text-[#fff] font-reddit-sans">
-                                    {child.desc}
-                                  </div>
-                                </Link>
-                              );
-
-                              return acc;
-                            }, [])
-                          : openMenu.children.map((child) => (
-                              <Link
-                                key={child.id}
-                                href={child.link}
-                                className="block py-4 last:border-none border-primary-blue hover:text-primary-blue"
-                              >
-                                <div className="font-semibold text-18 text-[#fff] font-reddit-sans capitalize">
-                                  {child.label}
-                                </div>
-                                <div className="text-16 font-light text-[#fff] font-reddit-sans">
-                                  {child.desc}
-                                </div>
-                              </Link>
-                            ))}
+                        {openMenu.children.map((child) => (
+                          <Link
+                            key={child.id}
+                            href={child.link}
+                            className={`group/item flex flex-col py-3 px-3 rounded-[12px] transition-all duration-200
+        hover:bg-white/10  
+        border-l-2 border-transparent
+        ${GRID_DROPDOWN_IDS.has(openMenu.id) ? 'w-1/2' : 'w-full'}`}
+                          >
+                            <div className="font-semibold text-16 xl:text-18 text-white font-reddit-sans capitalize group-hover/item:text-[#bf8a2d] transition-colors duration-200">
+                              {child.label}
+                            </div>
+                            <div className="text-14 xl:text-16 font-light text-white/70 font-reddit-sans group-hover/item:text-white/90 transition-colors duration-200">
+                              {child.desc}
+                            </div>
+                          </Link>
+                        ))}
                       </div>
                     </div>
                   </div>
