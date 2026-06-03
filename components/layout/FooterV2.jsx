@@ -15,44 +15,46 @@ const FooterV2 = () => {
 
   return (
     <div>
-      <ContactUs />
-      <FooterContent />
-      <div className="border-t border-white/10 pt-6 sm:pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 bg-hero-gradient container-padding py-8 lg:py-12">
-        <div className="flex flex-wrap gap-3 sm:gap-5 lg:gap-8 justify-center sm:justify-start text-center">
-          <Link
-            href="/company"
-            className="font-reddit-sans text-[#808080] text-13 sm:text-16 hover:text-white transition-colors"
-          >
-            About us
-          </Link>
-          <Link
-            href="/contact-us"
-            className="font-reddit-sans text-[#808080] text-13 sm:text-16 hover:text-white transition-colors"
-          >
-            Contact
-          </Link>
-          <Link
-            href="/legal?page=privacy"
-            className="font-reddit-sans text-[#808080] text-13 sm:text-16 hover:text-white transition-colors"
-          >
-            Privacy policy
-          </Link>
-          <Link
-            href="/legal?page=sitemap"
-            className="font-reddit-sans text-[#808080] text-13 sm:text-16 hover:text-white transition-colors"
-          >
-            Sitemap
-          </Link>
-          <Link
-            href="/legal?page=terms"
-            className="font-reddit-sans text-[#808080] text-13 sm:text-16 hover:text-white transition-colors"
-          >
-            Terms of Use
-          </Link>
+      <div className="bg-hero-gradient">
+        <ContactUs />
+        <FooterContent />
+        <div className="border-t border-white/10 pt-6 sm:pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 container-padding py-8 lg:py-12">
+          <div className="flex flex-wrap gap-3 sm:gap-5 lg:gap-8 justify-center sm:justify-start text-center">
+            <Link
+              href="/company"
+              className="font-reddit-sans text-[#808080] text-13 sm:text-16 hover:text-white transition-colors"
+            >
+              About us
+            </Link>
+            <Link
+              href="/contact-us"
+              className="font-reddit-sans text-[#808080] text-13 sm:text-16 hover:text-white transition-colors"
+            >
+              Contact
+            </Link>
+            <Link
+              href="/legal?page=privacy"
+              className="font-reddit-sans text-[#808080] text-13 sm:text-16 hover:text-white transition-colors"
+            >
+              Privacy policy
+            </Link>
+            <Link
+              href="/legal?page=sitemap"
+              className="font-reddit-sans text-[#808080] text-13 sm:text-16 hover:text-white transition-colors"
+            >
+              Sitemap
+            </Link>
+            <Link
+              href="/legal?page=terms"
+              className="font-reddit-sans text-[#808080] text-13 sm:text-16 hover:text-white transition-colors"
+            >
+              Terms of Use
+            </Link>
+          </div>
+          <p className="font-reddit-sans text-[#808080] text-13 sm:text-16">
+            © {new Date().getFullYear()}, All Rights Reserved
+          </p>
         </div>
-        <p className="font-reddit-sans text-[#808080] text-13 sm:text-16">
-          © 2025, All Rights Reserved
-        </p>
       </div>
     </div>
   );
@@ -291,12 +293,12 @@ const ContactUs = () => {
 
   return (
     <section className="relative">
-      <div className="absolute inset-0 -z-10">
-        <div className="h-[60%] bg-[#F3F3F3] mx-2"></div>
-        <div className="h-[40%] bg-hero-gradient"></div>
+      <div className="absolute inset-0 z-0">
+        <div className="h-[60%] bg-[#F3F3F3]"></div>
+        <div className="h-[40%]"></div>
       </div>
 
-      <div className="container-padding py-10 sm:py-12 lg:py-16">
+      <div className="container-padding py-10 sm:py-12 lg:py-16 relative z-10">
         <div className="title-div text-primary-blue text-center mb-8 sm:mb-10 lg:mb-12">
           <p className="fl-slash">/ Contact Us</p>
           <h4 className="fl1 leading-tight mb-10 md:mb-14">
@@ -345,11 +347,10 @@ const ContactUs = () => {
             {/* Success/Error Message */}
             {submitStatus.message && (
               <div
-                className={`mb-6 p-4 rounded-[4px] ${
-                  submitStatus.type === 'success'
-                    ? 'bg-green-100 text-green-700 border border-green-300'
-                    : 'bg-red-100 text-red-700 border border-red-300'
-                }`}
+                className={`mb-6 p-4 rounded-[4px] ${submitStatus.type === 'success'
+                  ? 'bg-green-100 text-green-700 border border-green-300'
+                  : 'bg-red-100 text-red-700 border border-red-300'
+                  }`}
               >
                 {submitStatus.message}
               </div>
@@ -469,9 +470,8 @@ const ContactUs = () => {
                   onBlur={handleBlur}
                   placeholder="Write your message.."
                   rows="1"
-                  className={`w-full placeholder:text-gray-8080 border-b ${
-                    errors.message ? 'border-b-red-600' : 'border-b-[#D7D7D7]'
-                  } font-reddit-sans text-14 py-2 resize-none focus:border-primary-blue transition-colors`}
+                  className={`w-full placeholder:text-gray-8080 border-b ${errors.message ? 'border-b-red-600' : 'border-b-[#D7D7D7]'
+                    } font-reddit-sans text-14 py-2 resize-none focus:border-primary-blue transition-colors`}
                 ></textarea>
                 {errors.message && (
                   <p className="text-red-600 text-12 mt-1 font-reddit-sans">
@@ -550,7 +550,7 @@ const FooterContent = () => {
   };
   return (
     <>
-      <footer className="hidden md:block bg-hero-gradient pt-2 lg:pt-4 pb-6 container-padding -mt-px">
+      <footer className="hidden md:block pt-2 lg:pt-4 pb-6 container-padding">
         <div className="max-w-[1400px] mx-auto">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-10 lg:gap-12 xl:gap-16 pb-8 sm:pb-10 lg:pb-12">
             {/* Company Details */}
@@ -682,11 +682,10 @@ const FooterContent = () => {
 
               {newsletterStatus.message && (
                 <div
-                  className={`mb-3 rounded-full px-3 py-2 text-13 sm:text-14 ${
-                    newsletterStatus.type === 'success'
-                      ? 'bg-green-100 text-green-700 border border-green-300'
-                      : 'bg-red-100 text-red-700 border border-red-300'
-                  }`}
+                  className={`mb-3 rounded-full px-3 py-2 text-13 sm:text-14 ${newsletterStatus.type === 'success'
+                    ? 'bg-green-100 text-green-700 border border-green-300'
+                    : 'bg-red-100 text-red-700 border border-red-300'
+                    }`}
                 >
                   {newsletterStatus.message}
                 </div>
@@ -722,7 +721,7 @@ const FooterContent = () => {
           </div>
         </div>
       </footer>
-      <footer className="block md:hidden bg-hero-gradient pt-2 lg:pt-4 pb-6 container-padding -mt-px">
+      <footer className="block md:hidden pt-2 lg:pt-4 pb-6 container-padding">
         <div className="max-w-[1400px] mx-auto">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-10 lg:gap-12 xl:gap-16 pb-8 sm:pb-10 lg:pb-12">
             {/* Company Details */}
@@ -844,11 +843,10 @@ const FooterContent = () => {
 
               {newsletterStatus.message && (
                 <div
-                  className={`mb-3 rounded-full px-3 py-2 text-13 sm:text-14 ${
-                    newsletterStatus.type === 'success'
-                      ? 'bg-green-100 text-green-700 border border-green-300'
-                      : 'bg-red-100 text-red-700 border border-red-300'
-                  }`}
+                  className={`mb-3 rounded-full px-3 py-2 text-13 sm:text-14 ${newsletterStatus.type === 'success'
+                    ? 'bg-green-100 text-green-700 border border-green-300'
+                    : 'bg-red-100 text-red-700 border border-red-300'
+                    }`}
                 >
                   {newsletterStatus.message}
                 </div>
