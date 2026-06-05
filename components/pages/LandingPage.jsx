@@ -1,4 +1,4 @@
-import RevampedLanding from '../landing/RevampedLanding';
+import RevampedLanding from '../Landing/RevampedLanding';
 
 const LandingPage = () => {
   return (
