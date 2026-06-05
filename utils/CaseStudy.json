@@ -164,6 +164,84 @@
       "title": "Future-ready identity foundation aligned with cloud, AI-driven security, and compliance"
     }
   ]
+},
+{
+  "id": 3,
+  "title": "magChain Supply Chain Platform Modernization",
+  "desc": "Draft case study for magChain focused on modernizing supply chain visibility, workflow automation, and secure partner collaboration across a growing logistics ecosystem.",
+  "label": "services",
+  "industry": "Supply Chain & Logistics",
+  "companySize": "Growth-Stage Enterprise (Multi-Partner Supply Chain Platform)",
+  "servicesProvided": [
+    "Platform Modernization",
+    "Workflow Automation",
+    "Cloud Architecture",
+    "Data Visibility & Reporting"
+  ],
+  "headerImage": "/images/resources/case-study/magchainhero.png",
+  "challenge": "magChain needed to evolve its platform to support a larger network of suppliers, operators, and downstream partners while improving visibility across distributed workflows. Legacy processes, fragmented integrations, and limited real-time reporting made it difficult to scale operations efficiently, coordinate stakeholders, and maintain consistent service performance as transaction volumes increased.",
+  "keyRequirements": [
+    {
+      "id": 1,
+      "title": "Unified visibility across supply chain operations and partner activity"
+    },
+    {
+      "id": 2,
+      "title": "Automation of manual workflows, approvals, and status tracking"
+    },
+    {
+      "id": 3,
+      "title": "Scalable cloud architecture for growth, resilience, and performance"
+    },
+    {
+      "id": 4,
+      "title": "Actionable reporting and dashboards for operational decision-making"
+    }
+  ],
+  "solution": {
+    "img": "/images/resources/case-study/magchain.png",
+    "intro": "UElement Technologies partnered with magChain to shape a modernization roadmap and deliver a more scalable, insight-driven platform foundation. As a draft engagement summary, the solution scope includes:",
+    "items": [
+      "Assessment of the existing application, workflows, integrations, and operational bottlenecks",
+      "Design of a scalable cloud-native architecture to support platform growth and partner onboarding",
+      "Streamlining of core workflows to reduce manual coordination and improve status transparency",
+      "Implementation approach for centralized data capture, reporting, and dashboarding",
+      "Improved integration patterns for external systems, stakeholders, and operational data sources",
+      "Security and access control considerations for internal teams and external partner collaboration",
+      "Phased delivery model to minimize disruption while enabling measurable operational gains"
+    ],
+    "conclusion": "The proposed approach positions magChain for stronger operational visibility, better partner coordination, and a platform foundation that can scale with future demand."
+  },
+  "results": [
+    "Draft: improved end-to-end visibility across key supply chain workflows",
+    "Draft: reduced manual effort through workflow automation and standardized processes",
+    "Draft: faster decision-making enabled by centralized dashboards and reporting",
+    "Draft: improved partner collaboration through clearer status tracking and shared operational data",
+    "Draft: scalable platform foundation prepared for higher transaction volume and future feature expansion"
+  ],
+  "resultConclusion": "This is a draft case study entry and can be updated with validated delivery outcomes, metrics, and platform specifics once final magChain details are confirmed.",
+  "whyUElement": [
+    {
+      "id": 1,
+      "title": "Strong capability in platform modernization and workflow transformation"
+    },
+    {
+      "id": 2,
+      "title": "Experience designing scalable cloud architectures for growth-stage digital platforms"
+    },
+    {
+      "id": 3,
+      "title": "Cross-functional delivery across application, data, automation, and security workstreams"
+    },
+    {
+      "id": 4,
+      "title": "Pragmatic phased execution approach that reduces disruption while accelerating value"
+    },
+    {
+      "id": 5,
+      "title": "Focus on long-term operational visibility, partner enablement, and future-ready scalability"
+    }
+  ]
 }
 
 ]
