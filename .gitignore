@@ -42,3 +42,5 @@ next-env.d.ts
 
 # local images (migrated to R2)
 /public/images/
+
+/.github/

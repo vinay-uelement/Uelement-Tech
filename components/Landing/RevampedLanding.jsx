@@ -2,6 +2,7 @@
 import { useState, useEffect, useRef } from 'react';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
+import { ShieldCheck, Cloud, Bot, Atom, Search, PenTool, Settings, TrendingUp, Lock, Zap, Brain } from 'lucide-react';
 
 /* ─────────────────────────────────────────────
    DATA
@@ -9,28 +10,28 @@ import Link from 'next/link';
 const services = [
   {
     id: 1,
-    icon: '🛡️',
+    icon: <ShieldCheck className="w-8 h-8" />,
     title: 'Cybersecurity',
     desc: 'Enterprise-grade Zero Trust protection, advanced threat intelligence, and automated SecOps across multi-cloud, hybrid, and Government Cloud environments.',
     link: '/cybersecurity',
   },
   {
     id: 2,
-    icon: '☁️',
+    icon: <Cloud className="w-8 h-8" />,
     title: 'Cloud Solutions',
     desc: 'Architecting, optimizing and managing seamless multi-cloud environments with DevOps, FinOps, Infrastructure as Code, and intelligent orchestration.',
     link: '/cloud-solutions',
   },
   {
     id: 3,
-    icon: '🤖',
+    icon: <Bot className="w-8 h-8" />,
     title: 'AI & ML',
     desc: 'End-to-end AI/ML services from model development to production deployment, including EdgeAI, LLM integration, and real-time decision intelligence.',
     link: '/ai-ml',
   },
   {
     id: 4,
-    icon: '⚛️',
+    icon: <Atom className="w-8 h-8" />,
     title: 'Quantum & Web3',
     desc: 'Pioneering transformation with post-quantum cryptography, Web3 decentralization, and digital modernization for future-proof infrastructure.',
     link: '/future-tech',
@@ -61,10 +62,10 @@ const segments = [
 ];
 
 const process_steps = [
-  { icon: '🔍', title: 'Assess & Strategize', desc: 'Identify needs, gaps, and create a focused action plan.' },
-  { icon: '📐', title: 'Architect & Design', desc: 'Re-architect cloud environments, design secure IaaC infrastructure.' },
-  { icon: '⚙️', title: 'Implement & Integrate', desc: 'Execute full-stack development, platform integration, and migration.' },
-  { icon: '📊', title: 'Manage & Optimize', desc: 'Ongoing Managed Cloud, SecOps, FinOps, and performance optimization.' },
+  { icon: <Search className="w-6 h-6" />, title: 'Assess & Strategize', desc: 'Identify needs, gaps, and create a focused action plan.' },
+  { icon: <PenTool className="w-6 h-6" />, title: 'Architect & Design', desc: 'Re-architect cloud environments, design secure IaaC infrastructure.' },
+  { icon: <Settings className="w-6 h-6" />, title: 'Implement & Integrate', desc: 'Execute full-stack development, platform integration, and migration.' },
+  { icon: <TrendingUp className="w-6 h-6" />, title: 'Manage & Optimize', desc: 'Ongoing Managed Cloud, SecOps, FinOps, and performance optimization.' },
 ];
 
 const techStack = [
@@ -261,7 +262,7 @@ const RevampedLanding = () => {
                 key={s.id}
                 className="group relative rounded-2xl p-6 md:p-7 border border-[#e8e8e8] bg-white hover:bg-gradient-to-br hover:from-[#0C142D] hover:to-[#22397e] transition-all duration-500 hover:border-transparent hover:shadow-2xl hover:-translate-y-1"
               >
-                <div className="text-3xl mb-5 group-hover:scale-110 transition-transform duration-300">{s.icon}</div>
+                <div className="text-3xl mb-5 text-[#232223] group-hover:text-white group-hover:scale-110 transition-all duration-300">{s.icon}</div>
                 <h3 className="font-noto-sans font-bold text-lg md:text-xl text-[#232223] group-hover:text-white mb-3 transition-colors duration-300">
                   {s.title}
                 </h3>
@@ -310,7 +311,7 @@ const RevampedLanding = () => {
                     <div className="absolute top-4 right-4 text-4xl font-bold font-noto-sans text-[#f0f0f0] group-hover:text-[#9B7025]/10 transition-colors select-none">
                       {String(i + 1).padStart(2, '0')}
                     </div>
-                    <div className="text-2xl mb-3">{step.icon}</div>
+                    <div className="text-2xl mb-3 text-[#232223] group-hover:text-[#9B7025] transition-colors duration-300">{step.icon}</div>
                     <h4 className="font-noto-sans font-bold text-base md:text-lg text-[#232223] mb-2">{step.title}</h4>
                     <p className="font-reddit-sans font-light text-sm text-[#808080] leading-relaxed">{step.desc}</p>
                   </div>
@@ -378,12 +379,12 @@ const RevampedLanding = () => {
           {/* USP cards */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-6">
             {[
-              { icon: '🔒', title: 'Zero Trust Architecture', desc: 'End-to-end security with micro-segmentation, identity-centric controls, and continuous verification across your entire stack.' },
-              { icon: '⚡', title: 'Cloud-Native First', desc: 'Infrastructure as Code, containerized microservices, and DevOps automation for maximum velocity and reliability.' },
-              { icon: '🧠', title: 'AI-Driven Innovation', desc: 'Custom ML models, LLM integrations, and intelligent automation that deliver measurable business outcomes at enterprise scale.' },
+              { icon: <Lock className="w-8 h-8" />, title: 'Zero Trust Architecture', desc: 'End-to-end security with micro-segmentation, identity-centric controls, and continuous verification across your entire stack.' },
+              { icon: <Zap className="w-8 h-8" />, title: 'Cloud-Native First', desc: 'Infrastructure as Code, containerized microservices, and DevOps automation for maximum velocity and reliability.' },
+              { icon: <Brain className="w-8 h-8" />, title: 'AI-Driven Innovation', desc: 'Custom ML models, LLM integrations, and intelligent automation that deliver measurable business outcomes at enterprise scale.' },
             ].map((item, i) => (
               <div key={i} className="p-7 md:p-8 rounded-2xl bg-white/5 backdrop-blur-md border border-white/10 hover:bg-white/10 hover:border-white/20 transition-all duration-400 group">
-                <div className="text-3xl mb-4 group-hover:scale-110 transition-transform">{item.icon}</div>
+                <div className="text-3xl mb-4 text-white/80 group-hover:text-white group-hover:scale-110 transition-all duration-300">{item.icon}</div>
                 <h3 className="font-noto-sans font-bold text-lg text-white mb-3">{item.title}</h3>
                 <p className="font-reddit-sans font-light text-sm text-white/60 leading-relaxed">{item.desc}</p>
               </div>
