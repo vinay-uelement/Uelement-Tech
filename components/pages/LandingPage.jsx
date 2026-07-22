@@ -1,31 +1,20 @@
-import DrivingGrowthSection from '../Landing/DrivingGrowthSection';
-import AboutSection from '../Landing/AboutSection';
-import ServiceSegments from '../Landing/ServiceSegments';
-import ServicesSection from '../Landing/ServicesSectionV2';
 import HeroSection from '../Landing/HeroSectionV5';
-import Testimonial from '../Landing/Testimonial';
-import HighlightV2 from '../Landing/HighlightsV2';
+import ServicesSectionV3 from '../Landing/ServicesSectionV3';
+import IndustriesSection from '../Landing/IndustriesSection';
+import StatsSection from '../Landing/StatsSection';
+import TestimonialSection from '../Landing/TestimonialSection';
+import VerticalsSection from '../Landing/VerticalsSection';
+import LandingFooter from '../Landing/LandingFooter';
 
 const LandingPage = () => {
   return (
     <div>
       <HeroSection />
-      <div className="py-18 md:py-25">
-        <DrivingGrowthSection />
-      </div>
-      <div>
-        <AboutSection />
-      </div>
-      <div>
-        <HighlightV2 />
-      </div>
-      <div>
-        <ServiceSegments />
-      </div>
-      <div className="container-outer">
-        <ServicesSection />
-      </div>
-      {/* <Testimonial /> */}
+      <ServicesSectionV3 />
+      <IndustriesSection />
+      <StatsSection />
+      <TestimonialSection />
+      <VerticalsSection />
     </div>
   );
 };

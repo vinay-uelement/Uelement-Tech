@@ -41,16 +41,10 @@ export default function AboutSection() {
           <div className="flex-1 bg-hero-gradient rounded-[18px] p-6 xl:p-8 flex flex-col justify-between ">
             <div>
               <h2 className="fl1 w-full md:w-[100%] !text-white">
-                Established by Innovators to Define Tomorrow's Digital
-                Landscape.
+                We engineer the infrastructure that powers tomorrow's breakthroughs.
               </h2>
               <p className="fl3 mt-4 w-full md:w-[100%] !text-white ">
-                Our strategic focus on Cybersecurity, AI, and Enterprise Cloud
-                empowers organizations to navigate complex digital environments
-                confidently and resiliently. We blend deep technical expertise
-                with curiosity and collaboration to deliver transformative,
-                future-ready solutions, while advancing Quantum Computing to
-                redefine industry standards and fortify the digital landscape.
+                UElement partners with enterprises to build quantum-ready systems, AI-driven platforms, and resilient digital infrastructure. We turn complex technology into competitive advantage, bridging the gap between today's challenges and tomorrow's possibilities.
               </p>
             </div>
 

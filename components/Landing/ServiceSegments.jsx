@@ -7,27 +7,27 @@ import { imgUrl } from '@/lib/imageUrl';
 const services = [
   {
     id: 1,
-    title: 'Digital Safety',
+    title: 'Quantum Security',
     logo: '/images/landing/digital_safety.svg',
-    desc: "Securing the future with quantum-resistant and zero-trust architecture. Resilient defenses against today's threats and quantum attacks.",
+    desc: "Securing the future with quantum-resistant frameworks. Resilient defenses against today's threats and quantum attacks.",
   },
   {
     id: 2,
-    title: 'Cloud Mastery',
+    title: 'Digital Infrastructure',
     logo: '/images/landing/cloud_mastery.svg',
-    desc: 'Architecting, optimizing and managing seamless multi-cloud environments. Scalable, secure infra with Zero Trust and FinOps.',
+    desc: 'Architecting and managing seamless multi-cloud environments. Scalable, secure infrastructure with IaC and observability.',
   },
   {
     id: 3,
-    title: 'Accelerated AI',
+    title: 'Artificial Intelligence',
     logo: '/images/landing/accelarated_ai.svg',
-    desc: 'Accelerating intelligence with responsible AI and advanced analytics. Ethical AI for precise insights and analytics.',
+    desc: 'Accelerating intelligence with production-grade AI/ML pipelines. Full MLOps lifecycle for precise insights and edge AI.',
   },
   {
     id: 4,
-    title: 'Quantum & Web3',
+    title: 'Cybersecurity',
     logo: '/images/landing/future_tech.svg',
-    desc: 'Pioneering transformation with Quantum, Web3 and digital modernization. Quantum-ready, decentralized innovation.',
+    desc: 'Implement Zero Trust architecture and threat detection. Compliance frameworks protecting cloud, on-premise, and edge assets.',
   },
 ];
 

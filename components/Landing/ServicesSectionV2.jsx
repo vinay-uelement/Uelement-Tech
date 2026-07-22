@@ -15,32 +15,42 @@ const ServicesSection = () => {
   const tabs = [
     {
       id: 1,
-      title: 'Cloud Computing',
-      desc: 'Built to secure and scale multi cloud hybrid private and Government Cloud environments. We drive operational efficiency through DevOps FinOps Infrastructure as Code and intelligent orchestration. From automated workload migrations to continuous cost optimization and unified cloud governance our approach maximizes performance control and ROI across complex cloud landscapes.',
+      title: 'Quantum Security',
+      desc: 'Design and implement quantum-ready cryptographic systems, quantum simulation environments, and post-quantum security frameworks for enterprises preparing for the quantum era. Stay ahead of evolving threats with next-generation protection.',
       slides: [
-        'Expert Multi/Hybrid-cloud management, migration, and modernization. We ensure peak efficiency via DevOps, FinOps, and Infrastructure as Code (IaaC).',
-        'Secure multi/hybrid-cloud environments with Zero Trust architecture, continuous threat detection, and automated compliance across private, public, and GCC clouds.',
-        'Embed security into DevOps pipelines with IaaC, FinOps governance, and orchestration to ensure efficiency without compromising protection.',
+        'Quantum-ready cryptographic systems implementation.',
+        'Advanced quantum simulation environments for secure computing.',
+        'Post-quantum security frameworks to safeguard mission-critical data.',
       ],
     },
     {
       id: 2,
-      title: 'AI & ML',
-      desc: 'Designed to power enterprise AI across cloud edge and hybrid ecosystems. We enable intelligent automation predictive insights and scalable MLOps backed by strong security and governance. Our end to end capabilities cover model building fine tuning deployment and monitoring including EdgeAI optimization and LLM integration for real time decision making.',
+      title: 'Artificial Intelligence',
+      desc: 'Deploy production-grade AI/ML pipelines, from model training infrastructure to real-time inference systems, with full MLOps lifecycle management. We empower intelligence automation and insights at an enterprise scale.',
       slides: [
-        'Comprehensive AI/ML services from model development to production deployment, including EdgeAI applications, LLM integration, and real-time decision intelligence.',
-        'Specialize in industry-specific models, multimodal AI, and MLOps frameworks that drive operational efficiency, hyper-personalization, and predictive insights at enterprise scale.',
-        'Accelerate AI adoption with custom model training, federated learning, and ethical AI frameworks that ensure compliance, bias mitigation, and measurable business impact.',
+        'Production-grade AI/ML pipelines and training infrastructure.',
+        'Real-time inference systems and EdgeAI application deployment.',
+        'Full MLOps lifecycle management for continuous model performance.',
       ],
     },
     {
       id: 3,
-      title: 'Cyber Security',
-      desc: 'Expertise in enterprise-grade cybersecurity across multi-cloud, hybrid, private, and Government Cloud (GCC) environments. We deliver Zero Trust protection, advanced threat intelligence, and automated SecOps to reduce risk and response time. Our solutions ensure continuous compliance, high availability, and resilience against evolving cyber threats while safeguarding mission-critical systems.',
+      title: 'Digital Infrastructure',
+      desc: 'Architect and manage multi-cloud, hybrid, and edge computing environments with Infrastructure-as-Code, continuous deployment, and observability at scale. Maximizing performance, control, and ROI across complex landscapes.',
       slides: [
-        'Expert multi/hybrid-cloud security management, migration, and modernization ensure peak efficiency via DevOps, FinOps, and Infrastructure as Code (IaaC).',
-        'Implement advanced threat detection, AI-powered anomaly monitoring, and post-quantum cryptography readiness to protect against evolving attack surfaces.',
-        'Embed security governance through identity threat detection, micro-segmentation, and continuous vulnerability management across the enterprise stack.',
+        'Multi-cloud, hybrid, and edge computing architecture.',
+        'Infrastructure-as-Code (IaC) and continuous deployment (CI/CD).',
+        'Unified observability, monitoring, and automated orchestration at scale.',
+      ],
+    },
+    {
+      id: 4,
+      title: 'Cybersecurity',
+      desc: 'Implement Zero Trust architecture, threat detection systems, and compliance frameworks that protect critical assets across cloud, on-premise, and edge environments. Safeguard your operations against modern evolving cyber threats.',
+      slides: [
+        'Zero Trust architecture for resilient digital perimeters.',
+        'Advanced threat detection and continuous security monitoring.',
+        'Compliance frameworks protecting cloud, on-premise, and edge assets.',
       ],
     },
   ];
