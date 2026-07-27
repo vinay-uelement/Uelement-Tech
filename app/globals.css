@@ -65,10 +65,10 @@
   --text-60: 60px;
 
   /* Shadow */
-  --shadow-down: 0 3px 4px 0 rgba(0, 0, 0, 0.25);
-  --shadow-left-down: -4px 4px 4px 0px #00000040;
-  --shadow-circle: 0px 0px 12px 0px #00000029;
-  --shadow-hover: inset 0px 0px 12px 0px #00000029;
+  --shadow-down: 0 3px 4px 0 rgba(35, 34, 35, 0.25);
+  --shadow-left-down: -4px 4px 4px 0px #23222340;
+  --shadow-circle: 0px 0px 12px 0px #23222329;
+  --shadow-hover: inset 0px 0px 12px 0px #23222329;
   --shadow-inset-white: inset 0px 0px 12px 0px #ffffff70;
 
   --breakpoint-sm: 600px;
@@ -157,7 +157,7 @@
 
   box-shadow:
     inset 0 1px 0 #FFFFFF59,
-    0 10px 24px #00000052,
+    0 10px 24px #23222352,
     0 0 18px #B5885E3D;
 }
 
@@ -170,7 +170,7 @@
 
   box-shadow:
     inset 0 1px 0 #FFFFFF80,
-    0 14px 30px #00000066,
+    0 14px 30px #23222366,
     0 0 22px #B5885E66;
 }
 
@@ -182,7 +182,7 @@
 
 .btn-blue {
   @apply bg-hero-gradient text-white font-reddit-sans font-semibold text-12 md:text-16 xl:text-18 py-2 hover:shadow-inset-white transition-all duration-300;
-  box-shadow: 1px 4px 2px 0px rgba(0, 0, 0, 0.15);
+  box-shadow: 1px 4px 2px 0px rgba(35, 34, 35, 0.15);
   border-radius: 9999px !important;
   padding-left: 40px;
   padding-right: 40px;
@@ -235,7 +235,7 @@
   border: 1px solid #e9d7c266;
   box-shadow:
     inset 0px 1px 0px 0px #ffffff59,
-    0px 10px 24px 0px #00000052,
+    0px 10px 24px 0px #23222352,
     0px 0px 18px 0px #b5885e3d;
 }
 
@@ -245,7 +245,7 @@
   border: 1px solid #f2e2cf99;
   box-shadow:
     inset 0px 1px 0px 0px #ffffff80,
-    0px 14px 30px 0px #00000066,
+    0px 14px 30px 0px #23222366,
     0px 0px 22px 0px #b5885e66;
 }
 
@@ -391,7 +391,7 @@
   --ember-600: #f5c116;
   --ink-950: #101010;
   --ink-900: #1c1c1c;
-  --ink-850: #232223;
+  --ink-850: #f5f5f5;
   --ink-800: #282828;
   --ink-700: #323232;
   --ink-600: #505050;
@@ -402,7 +402,7 @@
   --grey-150: #e4e4e7;
   --grey-100: #f5f5f5;
   --white: #ffffff;
-  --black: #000000;
+  --black: #232223;
   --border-dark: rgba(255, 255, 255, 0.12);
   --border-dark-soft: rgba(255, 255, 255, 0.06);
 
@@ -518,7 +518,7 @@ a {
   top: 0;
   z-index: 100;
   border-bottom: 1px solid rgba(255, 255, 255, 0.15);
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 30px rgba(35, 34, 35, 0.1);
 }
 
 .nav {
@@ -589,7 +589,7 @@ a {
   border: 1px solid rgba(255, 255, 255, 0.15);
   border-radius: 12px;
   padding: 8px;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 30px rgba(35, 34, 35, 0.1);
   opacity: 0;
   visibility: hidden;
   transform: translateX(-50%) translateY(-4px);
@@ -650,8 +650,7 @@ a {
   gap: 2px;
 }
 
-.dropdown.mega.comp {
-}
+.dropdown.mega.comp {}
 
 .dropdown.mega.prod {
   grid-template-columns: 1fr 1fr 1fr;
@@ -995,7 +994,7 @@ h3.h {
   background-size: 200% 100%;
   color: var(--navy-900);
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.55), inset 0 -2px 3px rgba(122, 84, 22, 0.45),
-    0 6px 18px rgba(224, 167, 105, 0.22), 0 1px 3px rgba(0, 0, 0, 0.4);
+    0 6px 18px rgba(224, 167, 105, 0.22), 0 1px 3px rgba(35, 34, 35, 0.4);
   text-shadow: 0 1px 0 rgba(255, 255, 255, 0.25);
 }
 
@@ -1014,7 +1013,7 @@ h3.h {
 .btn-gold:hover {
   filter: brightness(1.05);
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.6), inset 0 -2px 3px rgba(122, 84, 22, 0.45),
-    0 10px 26px rgba(224, 167, 105, 0.32), 0 1px 3px rgba(0, 0, 0, 0.4);
+    0 10px 26px rgba(224, 167, 105, 0.32), 0 1px 3px rgba(35, 34, 35, 0.4);
 }
 
 .btn-gold:hover::before {
@@ -1033,7 +1032,7 @@ h3.h {
 }
 
 .btn-line {
-  background: linear-gradient(#141414, #141414) padding-box, var(--metal-edge) border-box;
+  background: linear-gradient(#232223, #232223) padding-box, var(--metal-edge) border-box;
   border: 1px solid transparent;
   color: var(--cream-100);
 }
@@ -1045,7 +1044,7 @@ h3.h {
 .light .btn-line,
 .cream .btn-line {
   background: linear-gradient(#ffffff, #ffffff) padding-box,
-    linear-gradient(135deg, rgba(155, 112, 37, 0.5), rgba(0, 0, 0, 0.08)) border-box;
+    linear-gradient(135deg, rgba(155, 112, 37, 0.5), rgba(35, 34, 35, 0.08)) border-box;
   color: var(--navy-900);
 }
 
@@ -1122,7 +1121,7 @@ h3.h {
 
 .card.link:hover {
   transform: translateY(-4px);
-  box-shadow: 0 18px 44px rgba(0, 0, 0, 0.45);
+  box-shadow: 0 18px 44px rgba(35, 34, 35, 0.45);
 }
 
 .navy .card {
@@ -1133,9 +1132,9 @@ h3.h {
 
 .light .card {
   background: linear-gradient(#ffffff, #ffffff) padding-box,
-    linear-gradient(135deg, rgba(155, 112, 37, 0.28), rgba(0, 0, 0, 0.06)) border-box;
+    linear-gradient(135deg, rgba(155, 112, 37, 0.28), rgba(35, 34, 35, 0.06)) border-box;
   border: 1px solid transparent;
-  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+  box-shadow: 0 4px 24px rgba(35, 34, 35, 0.06);
 }
 
 .card h4 {
@@ -1227,7 +1226,7 @@ h3.h {
   -webkit-backdrop-filter: blur(12px);
   border: 1px solid rgba(255, 255, 255, 0.14);
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.18), inset 0 -8px 16px rgba(255, 255, 255, 0.03),
-    0 8px 24px rgba(0, 0, 0, 0.3);
+    0 8px 24px rgba(35, 34, 35, 0.3);
   transition: all 0.2s;
 }
 
@@ -1466,7 +1465,7 @@ table.spec td:first-child {
 
 .light table.spec td {
   color: var(--grey-500);
-  border-color: rgba(0, 0, 0, 0.07);
+  border-color: rgba(35, 34, 35, 0.07);
 }
 
 .light table.spec td:first-child {
@@ -1486,7 +1485,7 @@ table.spec td:first-child {
   padding: 6px 13px;
   border-radius: var(--radius-pill);
   color: var(--grey-350);
-  background: linear-gradient(#141414, #141414) padding-box, var(--metal-edge-soft) border-box;
+  background: linear-gradient(#232223, #232223) padding-box, var(--metal-edge-soft) border-box;
   border: 1px solid transparent;
 }
 
@@ -1499,7 +1498,7 @@ table.spec td:first-child {
 .light .chip,
 .cream .chip {
   background: linear-gradient(#fff, #fff) padding-box,
-    linear-gradient(135deg, rgba(155, 112, 37, 0.35), rgba(0, 0, 0, 0.08)) border-box;
+    linear-gradient(135deg, rgba(155, 112, 37, 0.35), rgba(35, 34, 35, 0.08)) border-box;
   color: var(--slate-700);
 }
 

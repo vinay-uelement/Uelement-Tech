@@ -100,7 +100,7 @@ export default function Header() {
         </nav>
 
         <Link href="/contact" className="nav-cta nav-cta-desktop">
-          Request a briefing
+          Contact Us
         </Link>
 
         <button

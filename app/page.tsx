@@ -20,7 +20,7 @@ export default function HomePage() {
           </p>
           <div style={{ display: 'flex', gap: 14, marginTop: 34, flexWrap: 'wrap' }}>
             <Link href="/contact" className="btn btn-gold">
-              Request a briefing
+              Contact Us
             </Link>
             <Link href="/mainstay" className="btn btn-line">
               Explore the platforms

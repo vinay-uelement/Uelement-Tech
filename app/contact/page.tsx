@@ -37,7 +37,7 @@ export default function ContactPage() {
               value={formData.name}
               onChange={(e) => setFormData({ ...formData, name: e.target.value })}
               style={{
-                background: 'var(--ink-850)',
+                background: 'transparent',
                 border: '1px solid var(--border-dark)',
                 borderRadius: 'var(--radius-md)',
                 padding: '13px 16px',
@@ -52,7 +52,7 @@ export default function ContactPage() {
               value={formData.email}
               onChange={(e) => setFormData({ ...formData, email: e.target.value })}
               style={{
-                background: 'var(--ink-850)',
+                background: 'transparent',
                 border: '1px solid var(--border-dark)',
                 borderRadius: 'var(--radius-md)',
                 padding: '13px 16px',
@@ -65,7 +65,7 @@ export default function ContactPage() {
               value={formData.interest}
               onChange={(e) => setFormData({ ...formData, interest: e.target.value })}
               style={{
-                background: 'var(--ink-850)',
+                background: 'transparent',
                 border: '1px solid var(--border-dark)',
                 borderRadius: 'var(--radius-md)',
                 padding: '13px 16px',
@@ -86,7 +86,7 @@ export default function ContactPage() {
               value={formData.message}
               onChange={(e) => setFormData({ ...formData, message: e.target.value })}
               style={{
-                background: 'var(--ink-850)',
+                background: 'transparent',
                 border: '1px solid var(--border-dark)',
                 borderRadius: 'var(--radius-md)',
                 padding: '13px 16px',
