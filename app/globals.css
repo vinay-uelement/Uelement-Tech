@@ -1032,9 +1032,22 @@ h3.h {
 }
 
 .btn-line {
-  background: linear-gradient(#232223, #232223) padding-box, var(--metal-edge) border-box;
-  border: 1px solid transparent;
+  background: transparent;
+  border: 2px solid transparent;
   color: var(--cream-100);
+}
+
+.btn-line::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 2px;
+  background: var(--metal-edge);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
 }
 
 .btn-line:hover {
@@ -1043,9 +1056,13 @@ h3.h {
 
 .light .btn-line,
 .cream .btn-line {
-  background: linear-gradient(#ffffff, #ffffff) padding-box,
-    linear-gradient(135deg, rgba(155, 112, 37, 0.5), rgba(35, 34, 35, 0.08)) border-box;
+  background: transparent;
   color: var(--navy-900);
+}
+
+.light .btn-line::before,
+.cream .btn-line::before {
+  background: linear-gradient(135deg, rgba(155, 112, 37, 0.5), rgba(35, 34, 35, 0.08));
 }
 
 /* ═══════════ GRIDS ═══════════ */
@@ -1399,6 +1416,13 @@ h3.h {
   position: relative;
   padding: 120px 0 100px;
   overflow: hidden;
+  min-height: calc(100vh - 67px);
+  display: flex;
+  align-items: center;
+  background-image: url('/ue-quantum-bg-transparent.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .hero-fabric {
@@ -1430,6 +1454,7 @@ h3.h {
 
 .hero .wrap {
   position: relative;
+  width: 100%;
 }
 
 /* ═══════════ TABLES ═══════════ */
