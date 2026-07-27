@@ -1,8 +1,10 @@
 'use client';
 
 import Link from 'next/link';
-import { useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
+import { usePathname } from 'next/navigation';
 import { navItems, type NavItem, type DropdownGroup } from '@/lib/navigation';
+import { ReactIcons } from '../../utils/ReactIcons';
 
 function DropdownContent({ groups, megaVariant }: { groups: DropdownGroup[]; megaVariant?: string }) {
   return (
@@ -26,17 +28,21 @@ function DropdownContent({ groups, megaVariant }: { groups: DropdownGroup[]; meg
   );
 }
 
-function NavDropdown({ item }: { item: NavItem }) {
+function NavDropdown({ item, isOpen, onClick }: { item: NavItem, isOpen: boolean, onClick: () => void }) {
+  const baseDropdown = 'dropdown backdrop-blur-lg bg-[#32323259]';
   const megaClass = item.megaVariant === 'prod'
-    ? 'dropdown mega prod'
+    ? `${baseDropdown} mega prod`
     : item.megaVariant === 'comp'
-      ? 'dropdown mega comp'
-      : 'dropdown mega';
+      ? `${baseDropdown} mega comp`
+      : `${baseDropdown} mega`;
 
   return (
-    <div>
-      <span className="navlink">
-        {item.label} <i className="plus">+</i>
+    <div className={isOpen ? 'open' : ''}>
+      <span className="navlink" onClick={onClick}>
+        <span className={`transition-all duration-500 ${isOpen ? 'rotate-0' : 'rotate-45'}`}>
+          {ReactIcons.slash}
+        </span>
+        {item.label}
       </span>
       <div className={megaClass}>
         <DropdownContent groups={item.groups!} megaVariant={item.megaVariant} />
@@ -47,10 +53,29 @@ function NavDropdown({ item }: { item: NavItem }) {
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [openDropdownId, setOpenDropdownId] = useState<string | null>(null);
+  const navRef = useRef<HTMLDivElement>(null);
+  const pathname = usePathname();
+
+  useEffect(() => {
+    setOpenDropdownId(null);
+    setMenuOpen(false);
+  }, [pathname]);
+
+  useEffect(() => {
+    const handleClickOutside = (e: MouseEvent) => {
+      if (navRef.current && !navRef.current.contains(e.target as Node)) {
+        setOpenDropdownId(null);
+      }
+    };
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
 
   return (
     <header className="site-header">
-      <div className="wrap nav">
+      <div className="absolute inset-0 bg-[#32323259] backdrop-blur-[16px] -z-10"></div>
+      <div className="wrap nav" ref={navRef}>
         <Link href="/" className="logo">
           UElement<em>.</em>
         </Link>
@@ -58,7 +83,12 @@ export default function Header() {
         <nav className={`navlinks${menuOpen ? ' open' : ''}`} id="navlinks">
           {navItems.map((item, i) =>
             item.groups ? (
-              <NavDropdown item={item} key={i} />
+              <NavDropdown 
+                item={item} 
+                key={i} 
+                isOpen={openDropdownId === item.label}
+                onClick={() => setOpenDropdownId(prev => prev === item.label ? null : item.label)}
+              />
             ) : (
               <div key={i}>
                 <Link href={item.href || '#'} className="navlink">

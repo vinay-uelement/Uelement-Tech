@@ -74,6 +74,10 @@ export const navItems: NavItem[] = [
             description: 'Purdue-native, 40+ OT protocols',
             href: '/industries#ind-mfg',
           },
+        ],
+      },
+      {
+        items: [
           {
             label: 'Government & Public Sector',
             description: 'Sovereign cloud, CERT-In ready',
@@ -114,6 +118,10 @@ export const navItems: NavItem[] = [
             description: 'Autonomy for DDIL environments',
             href: '/mainspar',
           },
+        ],
+      },
+      {
+        items: [
           {
             label: 'Everything as a Service',
             description: 'Physical assets, metered and verified',
@@ -159,6 +167,10 @@ export const navItems: NavItem[] = [
             description: 'How our platforms deliver measurable outcomes.',
             href: '/stories',
           },
+        ],
+      },
+      {
+        items: [
           {
             label: 'Partnerships',
             description: 'Strategic alliances that extend our technology.',
