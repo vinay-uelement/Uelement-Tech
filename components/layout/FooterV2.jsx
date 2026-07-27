@@ -292,7 +292,7 @@ const ContactUs = () => {
   return (
     <section className="relative">
       <div className="absolute inset-0 -z-10">
-        <div className="h-[60%] bg-[#F3F3F3] mx-2"></div>
+        <div className="h-[60%] bg-[#F3F3F3]"></div>
         <div className="h-[40%] bg-hero-gradient"></div>
       </div>
 
@@ -341,7 +341,7 @@ const ContactUs = () => {
           </div>
 
           {/* Right Side - Contact Form */}
-          <div className="p-4 sm:p-6 lg:p-8 xl:p-10 md:!pb-36 ">
+          <div className="p-4 sm:p-6 lg:p-8 xl:p-10 md:!pb-36 text-black">
             {/* Success/Error Message */}
             {submitStatus.message && (
               <div
@@ -425,9 +425,9 @@ const ContactUs = () => {
               </div>
 
               <div>
-                <h6 className="font-reddit-sans font-semibold text-13 sm:text-14 text-black mb-3">
+                <h6 className="font-reddit-sans text-[15px] font-semibold text-[#232223] mb-3">
                   Select Subject?{' '}
-                  <span className="text-gray-400 font-normal">(Optional)</span>
+                  <span className="text-[#808080] font-normal">(Optional)</span>
                 </h6>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                   <Checkbox
@@ -457,8 +457,8 @@ const ContactUs = () => {
                 </div>
               </div>
 
-              <div>
-                <label className="font-reddit-sans text-12 sm:text-13 font-medium text-black block mb-2">
+              <div className="flex flex-col gap-2">
+                <label className="font-reddit-sans text-[15px] font-semibold text-[#232223]">
                   Message
                 </label>
                 <textarea
@@ -468,8 +468,8 @@ const ContactUs = () => {
                   onBlur={handleBlur}
                   placeholder="Write your message.."
                   rows="1"
-                  className={`w-full placeholder:text-gray-8080 border-b ${errors.message ? 'border-b-red-600' : 'border-b-[#D7D7D7]'
-                    } font-reddit-sans text-14 py-2 resize-none focus:border-primary-blue transition-colors`}
+                  className={`w-full bg-transparent placeholder:text-[#808080] border-b outline-none focus:border-black font-reddit-sans text-[14px] text-[#232223] py-2 px-0 resize-none transition-colors ${errors.message ? 'border-b-red-600' : 'border-b-[#D7D7D7]'
+                    }`}
                 ></textarea>
                 {errors.message && (
                   <p className="text-red-600 text-12 mt-1 font-reddit-sans">

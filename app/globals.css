@@ -1,4 +1,7 @@
 @import 'tailwindcss';
+@source "../components";
+@source "../lib";
+@source "../utils";
 
 /* ═══════════════════════════════════════════════════════════════
    UElement — Global Styles (pixel-perfect from UElement_Website.html)
@@ -14,6 +17,362 @@
   --font-reddit-sans: 'Reddit Sans';
   --font-montserrat: 'Montserrat';
   --font-noto-sans: 'Noto Sans';
+
+  --font-lato: Lato;
+  --font-poppins: Poppins;
+  --font-roboto: Roboto;
+  --font-montserrat: Montserrat;
+  --font-dm-serif: 'DM Serif';
+  --font-noto-sans: 'Noto Sans';
+  --font-reddit-sans: 'Reddit Sans';
+  --font-cal-sans: 'Cal Sans';
+
+  /* COLORS */
+  --color-primary-blue: #0c142d;
+  --color-muted-blue-100: #cdd5db;
+  --color-muted-blue-200: #a4b5c4;
+  --color-muted-blue-300: #4b6382;
+  --color-secondary: #9b7025;
+  --color-secondary-200: #fffaf2;
+  --color-gray-8080: #808080;
+  --color-about-white: #cdd5db;
+  --color-secondary-muted: #fff4e4;
+  --color-honey-gold-300: #fff4e4;
+  --color-black-1: #232223;
+  --text-10: 10px;
+  --text-11: 11px;
+  --text-12: 12px;
+  --text-13: 13px;
+  --text-14: 14px;
+  --text-16: 16px;
+  --text-18: 18px;
+  --text-20: 20px;
+  --text-22: 22px;
+  --text-24: 24px;
+  --text-26: 26px;
+  --text-28: 28px;
+  --text-30: 30px;
+  --text-32: 32px;
+  --text-34: 34px;
+  --text-35: 35px;
+  --text-36: 36px;
+  --text-38: 38px;
+  --text-40: 40px;
+  --text-42: 42px;
+  --text-45: 45px;
+  --text-46: 46px;
+  --text-55: 55px;
+  --text-60: 60px;
+
+  /* Shadow */
+  --shadow-down: 0 3px 4px 0 rgba(0, 0, 0, 0.25);
+  --shadow-left-down: -4px 4px 4px 0px #00000040;
+  --shadow-circle: 0px 0px 12px 0px #00000029;
+  --shadow-hover: inset 0px 0px 12px 0px #00000029;
+  --shadow-inset-white: inset 0px 0px 12px 0px #ffffff70;
+
+  --breakpoint-sm: 600px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1000px;
+  --breakpoint-xl: 1215px;
+  --breakpoint-2xl: 1400px;
+  --breakpoint-3xl: 1600px;
+  --breakpoint-4xl: 1920px;
+
+  --background-image-hero-gradient: linear-gradient(97.27deg,
+      #0c142d 5.62%,
+      #15224a 34.57%,
+      #22397e 62.65%,
+      #0f1939 96.86%);
+}
+
+
+.container-outer {
+  @apply mx-auto;
+  padding-left: 10px;
+  padding-right: 10px;
+  max-width: 1920px;
+}
+
+.container-small {
+  @apply mx-auto;
+  max-width: 1600px;
+  width: 90%;
+}
+
+.container-padding {
+  @apply px-5 sm:px-12 md:px-16;
+}
+
+.container-padding-small {
+  @apply px-3 sm:px-6 md:px-8;
+}
+
+.section-block-padding {
+  @apply py-10 md:py-16 3xl:py-22;
+}
+
+.section-block-top {
+  @apply pt-10 md:pt-16 3xl:pt-22;
+}
+
+.section-block-bottom {
+  @apply pb-10 md:pb-16 3xl:pb-22;
+}
+
+.slash {
+  @apply text-14 md:text-16 3xl:text-18 font-reddit-sans mb-6 md:mb-8 3xl:mb-10;
+}
+
+.title {
+  @apply font-montserrat font-bold text-2xl md:text-3xl lg:text-4xl mb-4 md:mb-6 3xl:mb-8;
+}
+
+.sub-title {
+  @apply font-montserrat text-20 md:text-24 3xl:text-28 mb-10 md:mb-14;
+}
+
+.btn-1 {
+  @apply text-16 xl:text-18 bg-black hover:scale-105 text-white py-2 px-6 2xl:px-7 2xl:py-2;
+  border-radius: 40px;
+}
+
+.btn-primary {
+  @apply text-16 xl:text-18 hover:scale-105 text-white py-2 px-6 2xl:px-7 2xl:py-2;
+  background-color: #0c142d;
+  border-radius: 40px;
+}
+
+.btn-yellow {
+  @apply appearance-none rounded-full text-white font-reddit-sans font-semibold text-12 md:text-16 xl:text-18 leading-none inline-flex items-center justify-center border transition-all duration-300;
+
+  height: 2.25rem;
+  padding-inline: 40px;
+
+  background-image: linear-gradient(135deg,
+      #774D05 0%,
+      #9B7025 100%);
+
+  border-color: #E9D7C266;
+
+  box-shadow:
+    inset 0 1px 0 #FFFFFF59,
+    0 10px 24px #00000052,
+    0 0 18px #B5885E3D;
+}
+
+.btn-yellow:hover {
+  background-image: linear-gradient(135deg,
+      #8A5C10 0%,
+      #A87A2A 100%);
+
+  border-color: #F2E2CF99;
+
+  box-shadow:
+    inset 0 1px 0 #FFFFFF80,
+    0 14px 30px #00000066,
+    0 0 22px #B5885E66;
+}
+
+.btn-yellow {
+  height: 2.45rem !important;
+  min-height: unset !important;
+  max-height: 2.45rem !important;
+}
+
+.btn-blue {
+  @apply bg-hero-gradient text-white font-reddit-sans font-semibold text-12 md:text-16 xl:text-18 py-2 hover:shadow-inset-white transition-all duration-300;
+  box-shadow: 1px 4px 2px 0px rgba(0, 0, 0, 0.15);
+  border-radius: 9999px !important;
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+/* ── Animated Arrow Button ── */
+/* ── Animated Arrow Button — base ── */
+.btn-arrow {
+  --arrow-bg-start: #0c142d;
+  --arrow-bg-mid1: #15224a;
+  --arrow-bg-mid2: #22397e;
+  --arrow-bg-end: #0f1939;
+  --arrow-text: #22397e;
+
+  position: relative;
+  width: clamp(9.5rem, 14vw, 12rem);
+  min-height: 2.25rem;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--arrow-text);
+  font-family: var(--font-reddit-sans, inherit);
+  font-weight: 600;
+  cursor: pointer;
+  vertical-align: middle;
+}
+
+/* ── Yellow modifier — just override the variables ── */
+.btn-arrow-yellow {
+  --arrow-text: #bf8a2d;
+}
+
+/* ── Circle uses the variables ── */
+.btn-arrow .btn-arrow-circle {
+  position: relative;
+  display: block;
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 999px;
+  background-image: linear-gradient(97.27deg,
+      var(--arrow-bg-start) 5.62%,
+      var(--arrow-bg-mid1) 34.57%,
+      var(--arrow-bg-mid2) 62.65%,
+      var(--arrow-bg-end) 96.86%);
+  transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+}
+
+.btn-arrow-yellow .btn-arrow-circle {
+  background-image: linear-gradient(97.27deg, #774d05 0%, #9b7025 100%);
+  border: 1px solid #e9d7c266;
+  box-shadow:
+    inset 0px 1px 0px 0px #ffffff59,
+    0px 10px 24px 0px #00000052,
+    0px 0px 18px 0px #b5885e3d;
+}
+
+.btn-arrow-yellow:hover .btn-arrow-circle,
+.btn-arrow-yellow:focus-visible .btn-arrow-circle {
+  width: 100%;
+  border: 1px solid #f2e2cf99;
+  box-shadow:
+    inset 0px 1px 0px 0px #ffffff80,
+    0px 14px 30px 0px #00000066,
+    0px 0px 22px 0px #b5885e66;
+}
+
+/* rest of styles unchanged... */
+
+.btn-arrow .btn-arrow-icon {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0.46875rem;
+  margin: auto;
+  width: 0.84375rem;
+  height: 0.09375rem;
+  background: transparent;
+  transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+}
+
+.btn-arrow .btn-arrow-icon::before {
+  content: '';
+  position: absolute;
+  top: -0.1875rem;
+  right: 0.046875rem;
+  width: 0.46875rem;
+  height: 0.46875rem;
+  border-top: 0.09375rem solid #fff;
+  border-right: 0.09375rem solid #fff;
+  transform: rotate(45deg);
+}
+
+.btn-arrow .btn-arrow-text {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5625rem 0 0.5625rem 1.5rem;
+  margin-inline-start: 10px;
+  color: var(--btn-text);
+  font-weight: 600;
+  font-size: 0.875rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  transition: color 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+}
+
+/* Hover */
+.btn-arrow:hover .btn-arrow-circle,
+.btn-arrow:focus-visible .btn-arrow-circle {
+  width: 100%;
+}
+
+.btn-arrow:hover .btn-arrow-icon,
+.btn-arrow:focus-visible .btn-arrow-icon {
+  background: #fff;
+  transform: translateX(0.75rem);
+}
+
+.btn-arrow:hover .btn-arrow-text,
+.btn-arrow:focus-visible .btn-arrow-text {
+  color: #fff;
+}
+
+.btn-arrow:focus-visible {
+  outline: 2px solid rgba(255, 255, 255, 0.85);
+  outline-offset: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+  .btn-arrow .btn-arrow-circle,
+  .btn-arrow .btn-arrow-icon,
+  .btn-arrow .btn-arrow-text {
+    transition: none;
+  }
+}
+
+.fl-main {
+  @apply font-cal-sans text-white text-26 md:text-46 xl:text-60 2xl:text-55;
+}
+
+.fl-slash {
+  @apply text-12 md:text-16 xl:text-20 font-reddit-sans font-medium mb-6 md:mb-8 3xl:mb-10;
+  color: #232223;
+  letter-spacing: 0.03em;
+}
+
+.fl1 {
+  @apply font-noto-sans font-bold text-18 md:text-24 xl:text-30 mb-4 md:mb-6 3xl:mb-8;
+  color: #232223;
+  letter-spacing: 0.03em;
+}
+
+.fl1-sep {
+  @apply font-noto-sans font-semibold text-20 md:text-26 xl:text-35 mb-4 md:mb-6 3xl:mb-8;
+  color: #232223;
+  letter-spacing: 0.03em;
+}
+
+.fl2 {
+  @apply font-montserrat font-semibold text-16 md:text-22 xl:text-26 mb-2 md:mb-4 3xl:mb-6;
+  color: #232223;
+  letter-spacing: 0.03em;
+}
+
+.fl3 {
+  @apply font-reddit-sans font-light text-14 xl:text-16;
+  color: #232223;
+  letter-spacing: 0.03em;
+}
+
+.fl4 {
+  @apply font-noto-sans italic text-12 md:text-14 xl:text-18 font-medium text-white;
+  letter-spacing: 0.03em;
+}
+
+
+@utility bg-hero-gradient {
+  background-image: linear-gradient(97.27deg,
+      #0c142d 5.62%,
+      #15224a 34.57%,
+      #22397e 62.65%,
+      #0f1939 96.86%);
+}
+
+@utility bg-yellow-gradient {
+  background-image: linear-gradient(97.27deg, #9b7025 5.62%, #774d05 96.86%);
 }
 
 /* ── CSS Custom Properties ── */
@@ -97,11 +456,7 @@
 }
 
 /* ── Reset ── */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+
 
 html {
   scroll-behavior: smooth;
@@ -1188,13 +1543,6 @@ table.spec td:first-child {
   color: var(--grey-350);
 }
 
-/* ═══════════ FORM INPUTS ═══════════ */
-input:not(.bg-transparent):not([type="checkbox"]),
-select:not(.bg-transparent),
-textarea:not(.bg-transparent) {
-  background: linear-gradient(#141414, #141414) padding-box, var(--metal-edge-soft) border-box;
-  border: 1px solid transparent;
-}
 
 /* ═══════════ FOOTER ═══════════ */
 .site-footer {

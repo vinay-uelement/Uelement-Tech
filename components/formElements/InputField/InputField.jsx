@@ -1,8 +1,8 @@
 const InputField = ({
-  wrapperClassName,
+  wrapperClassName = "flex flex-col gap-2",
   label,
-  labelClassName,
-  inputClassName,
+  labelClassName = "font-reddit-sans text-[15px] font-semibold text-[#232223]",
+  inputClassName = "w-full bg-transparent border-b border-[#D7D7D7] outline-none focus:border-black font-reddit-sans text-[14px] text-[#232223] placeholder:text-[#808080] py-2 px-0 transition-colors",
   type = "text",
   name = "",
   value,
@@ -11,17 +11,17 @@ const InputField = ({
   errMsg,
 }) => {
   return (
-    <div className={`${wrapperClassName}`}>
-      <label className={`${labelClassName} font-reddit-sans text-14 font-medium`}>{label}</label>
+    <div className={wrapperClassName}>
+      <label className={labelClassName}>{label}</label>
       <input
         type={type}
         name={name}
         value={value}
         onChange={onChangeHandler}
         placeholder={placeholder}
-        className={`${inputClassName} placeholder:text-gray-8080 border-b border-b-[#D7D7D7] font-medium text-12 font-reddit-sans p-2`}
+        className={inputClassName}
       />
-      {errMsg && <p className="text-12 text-red-400">{errMsg}</p>}
+      {errMsg && <p className="text-12 text-red-600">{errMsg}</p>}
     </div>
   );
 };
