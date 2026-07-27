@@ -6,18 +6,18 @@ import { usePathname } from 'next/navigation';
 import { navItems, type NavItem, type DropdownGroup } from '@/lib/navigation';
 import { ReactIcons } from '../../utils/ReactIcons';
 
-function DropdownContent({ groups, megaVariant }: { groups: DropdownGroup[]; megaVariant?: string }) {
+function DropdownContent({ groups, megaVariant, onClose }: { groups: DropdownGroup[]; megaVariant?: string, onClose?: () => void }) {
   return (
     <>
       {groups.map((group, gi) => (
         <div className="dgroup" key={gi}>
           {group.heading && (
-            <Link href={group.headingHref || '#'} className="dhead">
+            <Link href={group.headingHref || '#'} className="dhead" onClick={onClose}>
               {group.heading}
             </Link>
           )}
           {group.items.map((item, ii) => (
-            <Link href={item.href} className="ditem" key={ii}>
+            <Link href={item.href} className="ditem" key={ii} onClick={onClose}>
               <b>{item.label}</b>
               <span>{item.description}</span>
             </Link>
@@ -28,7 +28,7 @@ function DropdownContent({ groups, megaVariant }: { groups: DropdownGroup[]; meg
   );
 }
 
-function NavDropdown({ item, isOpen, onClick }: { item: NavItem, isOpen: boolean, onClick: () => void }) {
+function NavDropdown({ item, isOpen, onClick, onClose }: { item: NavItem, isOpen: boolean, onClick: () => void, onClose?: () => void }) {
   const baseDropdown = 'dropdown backdrop-blur-lg bg-[#32323259]';
   const megaClass = item.megaVariant === 'prod'
     ? `${baseDropdown} mega prod`
@@ -45,7 +45,7 @@ function NavDropdown({ item, isOpen, onClick }: { item: NavItem, isOpen: boolean
         {item.label}
       </span>
       <div className={megaClass}>
-        <DropdownContent groups={item.groups!} megaVariant={item.megaVariant} />
+        <DropdownContent groups={item.groups!} megaVariant={item.megaVariant} onClose={onClose} />
       </div>
     </div>
   );
@@ -88,10 +88,17 @@ export default function Header() {
                 key={i} 
                 isOpen={openDropdownId === item.label}
                 onClick={() => setOpenDropdownId(prev => prev === item.label ? null : item.label)}
+                onClose={() => { 
+                  setOpenDropdownId(null); 
+                  setMenuOpen(false); 
+                  if (document.activeElement instanceof HTMLElement) {
+                    document.activeElement.blur();
+                  }
+                }}
               />
             ) : (
               <div key={i}>
-                <Link href={item.href || '#'} className="navlink">
+                <Link href={item.href || '#'} className="navlink" onClick={() => setMenuOpen(false)}>
                   {item.label}
                 </Link>
               </div>
