@@ -1,0 +1,1162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>UElement Technologies — Sovereign DeepTech, Quantum Security & Enterprise Fabric</title>
+<meta name="description" content="UElement builds sovereign deeptech for the tactical edge, quantum-safe security for BFSI and critical infrastructure, and the enterprise digital fabric. Pune · Singapore · UAE — operating globally.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=Montserrat:wght@400;500;600;700&family=Noto+Sans:wght@400;500;600;700&family=Reddit+Sans:wght@400;500;600;700;800&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+--navy-900:#071739;--navy-800:#0c142d;
+--slate-700:#4b6382;--slate-500:#75839a;--slate-300:#a4b5c4;--slate-200:#cdd5db;--slate-100:#e4e8eb;
+--gold-700:#9b7025;--gold-600:#b6842c;--gold-500:#e0a769;
+--cream-100:#f3e7d3;--ember-600:#f5c116;
+--ink-950:#101010;--ink-900:#1c1c1c;--ink-850:#232223;--ink-800:#282828;--ink-700:#323232;--ink-600:#505050;
+--grey-500:#808080;--grey-450:#8d8d8d;--grey-350:#a1a1aa;--grey-300:#d4d4d4;--grey-150:#e4e4e7;--grey-100:#f5f5f5;
+--white:#ffffff;--black:#000000;
+--border-dark:rgba(255,255,255,0.12);--border-dark-soft:rgba(255,255,255,0.06);
+--font-hero:"Reddit Sans","Poppins",-apple-system,sans-serif;
+--font-serif:"DM Serif Text",Georgia,serif;
+--font-heading:"Montserrat",-apple-system,sans-serif;
+--font-body:"Noto Sans",-apple-system,sans-serif;
+--font-mono:"Roboto Mono",ui-monospace,monospace;
+--text-hero:clamp(40px,5vw,72px);--text-display:clamp(32px,4vw,50px);
+--radius-sm:6px;--radius-md:9px;--radius-lg:16px;--radius-pill:999px;
+--container-max:1180px;--container-pad:32px;
+/* metallic gradients */
+--metal-gold:linear-gradient(105deg,#9b7025 0%,#e0a769 28%,#f3e7d3 50%,#e0a769 72%,#9b7025 100%);
+--metal-gold-soft:linear-gradient(135deg,rgba(224,167,105,.55),rgba(243,231,211,.25) 45%,rgba(155,112,37,.35));
+--metal-steel:linear-gradient(135deg,rgba(164,181,196,.5),rgba(255,255,255,.12) 45%,rgba(75,99,130,.4));
+--metal-edge:linear-gradient(135deg,rgba(224,167,105,.45),rgba(255,255,255,.10) 38%,rgba(255,255,255,.04) 62%,rgba(224,167,105,.18));
+--metal-edge-soft:linear-gradient(135deg,rgba(255,255,255,.14),rgba(255,255,255,.04) 50%,rgba(255,255,255,.09));
+--surface-sheen:linear-gradient(165deg,#1e1e1e 0%,#151515 55%,#191918 100%);
+--surface-deep:linear-gradient(180deg,#131313,#0f0f0f);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:#0e0e0e;color:var(--white);font-family:var(--font-body);font-size:15px;line-height:1.65;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:var(--container-max);margin:0 auto;padding:0 var(--container-pad)}
+::selection{background:var(--gold-500);color:var(--navy-900)}
+:focus-visible{outline:2px solid var(--gold-500);outline-offset:2px}
+
+/* metallic text */
+.mtext{background:var(--metal-gold);-webkit-background-clip:text;background-clip:text;color:transparent;background-size:200% 100%}
+@keyframes sheen{0%{background-position:120% 0}100%{background-position:-20% 0}}
+
+/* ---------- Nav ---------- */
+header{position:sticky;top:0;z-index:100;background:rgba(14,14,14,.82);backdrop-filter:blur(16px);border-bottom:1px solid transparent;border-image:linear-gradient(90deg,transparent,rgba(224,167,105,.35),transparent) 1}
+.nav{display:flex;align-items:center;justify-content:space-between;height:66px}
+.logo{display:flex;align-items:center;gap:10px;font-family:var(--font-hero);font-weight:800;font-size:19px;letter-spacing:-0.01em;cursor:pointer}
+.logo em{font-style:normal;background:var(--metal-gold);-webkit-background-clip:text;background-clip:text;color:transparent}
+.navlinks{display:flex;gap:2px;align-items:center}
+.navlinks>div{position:relative}
+.navlink{display:inline-block;padding:8px 13px;border-radius:var(--radius-pill);font-family:var(--font-heading);font-size:12.5px;font-weight:500;letter-spacing:.02em;color:var(--grey-350);cursor:pointer;transition:color .15s,background .15s}
+.navlink:hover,.navlink.active{color:var(--cream-100);background:rgba(255,255,255,.05)}
+.dropdown{position:absolute;top:calc(100% + 10px);left:0;min-width:255px;background:linear-gradient(#161616,#161616) padding-box,var(--metal-edge) border-box;border:1px solid transparent;border-radius:12px;padding:8px;box-shadow:0 20px 50px rgba(0,0,0,.5);opacity:0;visibility:hidden;transform:translateY(-4px);transition:all .18s}
+.navlinks>div:hover .dropdown,.navlinks>div:focus-within .dropdown{opacity:1;visibility:visible;transform:translateY(0)}
+.plus{font-style:normal;font-weight:400;font-size:13px;color:var(--grey-450);margin-left:3px;display:inline-block;transition:transform .2s,color .2s}
+.navlinks>div:hover .plus{transform:rotate(45deg);color:var(--gold-500)}
+.dgroup{display:flex;flex-direction:column;gap:1px}
+.dhead{font-family:var(--font-heading);font-size:10.5px;font-weight:700;letter-spacing:1.8px;text-transform:uppercase;padding:10px 12px 6px;cursor:pointer;background:var(--metal-gold);background-size:200% 100%;-webkit-background-clip:text;background-clip:text;color:transparent}
+.dhead:hover{filter:brightness(1.15)}
+.dropdown.mega.comp{right:0;left:auto}
+.dropdown.mega.prod{min-width:760px;grid-template-columns:1fr 1fr 1fr;left:50%;right:auto;transform:translateX(-50%) translateY(-4px)}
+.navlinks>div:hover .dropdown.mega.prod,.navlinks>div:focus-within .dropdown.mega.comp{right:0;left:auto}
+.dropdown.mega.prod{transform:translateX(-50%) translateY(0)}
+@media(max-width:960px){.dropdown.mega.comp{right:0;left:auto}
+.dropdown.mega.prod{min-width:0;display:flex;flex-direction:column;transform:none;left:0}.navlinks>div:hover .dropdown.mega.comp{right:0;left:auto}
+.dropdown.mega.prod{transform:none}.plus{display:none}}
+.dropdown.mega{min-width:560px;display:grid;grid-template-columns:1fr 1fr;gap:2px;right:0;left:auto}
+@media(max-width:960px){.plus{font-style:normal;font-weight:400;font-size:13px;color:var(--grey-450);margin-left:3px;display:inline-block;transition:transform .2s,color .2s}
+.navlinks>div:hover .plus{transform:rotate(45deg);color:var(--gold-500)}
+.dgroup{display:flex;flex-direction:column;gap:1px}
+.dhead{font-family:var(--font-heading);font-size:10.5px;font-weight:700;letter-spacing:1.8px;text-transform:uppercase;padding:10px 12px 6px;cursor:pointer;background:var(--metal-gold);background-size:200% 100%;-webkit-background-clip:text;background-clip:text;color:transparent}
+.dhead:hover{filter:brightness(1.15)}
+.dropdown.mega.comp{right:0;left:auto}
+.dropdown.mega.prod{min-width:760px;grid-template-columns:1fr 1fr 1fr;left:50%;right:auto;transform:translateX(-50%) translateY(-4px)}
+.navlinks>div:hover .dropdown.mega.prod,.navlinks>div:focus-within .dropdown.mega.comp{right:0;left:auto}
+.dropdown.mega.prod{transform:translateX(-50%) translateY(0)}
+@media(max-width:960px){.dropdown.mega.comp{right:0;left:auto}
+.dropdown.mega.prod{min-width:0;display:flex;flex-direction:column;transform:none;left:0}.navlinks>div:hover .dropdown.mega.comp{right:0;left:auto}
+.dropdown.mega.prod{transform:none}.plus{display:none}}
+.dropdown.mega{display:flex;flex-direction:column;min-width:0}}
+.ditem{display:block;padding:10px 12px;border-radius:8px;cursor:pointer;transition:background .12s}
+.ditem:hover{background:rgba(224,167,105,.08)}
+.ditem b{display:block;font-family:var(--font-heading);font-size:12.5px;font-weight:600;color:var(--cream-100)}
+.ditem span{display:block;font-size:11.5px;color:var(--grey-450);margin-top:1px}
+.nav-cta{font-family:var(--font-heading);font-size:12px;font-weight:700;letter-spacing:.04em;background:var(--metal-gold);background-size:200% 100%;color:var(--navy-900);padding:10px 20px;border-radius:var(--radius-pill);cursor:pointer;border:none;transition:all .2s;position:relative;overflow:hidden;box-shadow:inset 0 1px 0 rgba(255,255,255,.5),inset 0 -2px 3px rgba(122,84,22,.4),0 4px 12px rgba(224,167,105,.2)}
+.nav-cta::before{content:"";position:absolute;top:0;bottom:0;left:-70%;width:45%;background:linear-gradient(105deg,transparent,rgba(255,255,255,.6) 50%,transparent);transform:skewX(-18deg);transition:left .5s ease}
+.nav-cta:hover{filter:brightness(1.06)}
+.nav-cta:hover::before{left:125%}
+@media(prefers-reduced-motion:reduce){.nav-cta::before{display:none}}
+.burger{display:none;background:none;border:1px solid var(--border-dark);border-radius:var(--radius-sm);color:var(--white);padding:7px 11px;font-size:15px;cursor:pointer}
+@media(max-width:960px){
+.navlinks{display:none;position:absolute;top:66px;left:0;right:0;background:#131313;flex-direction:column;align-items:stretch;padding:12px;gap:2px;border-bottom:1px solid var(--border-dark)}
+.navlinks.open{display:flex}
+.dropdown{position:static;opacity:1;visibility:visible;transform:none;box-shadow:none;border:none;background:transparent;padding-left:14px;min-width:0}
+.burger{display:block}
+.nav-cta{display:none}
+}
+
+/* ---------- Shared ---------- */
+.kicker{font-family:var(--font-heading);font-size:10.5px;font-weight:700;letter-spacing:2.2px;text-transform:uppercase;color:var(--gold-500);margin-bottom:16px;display:flex;align-items:center;gap:12px}
+.kicker::before{content:"";width:26px;height:1px;background:var(--metal-gold-soft)}
+.section{padding:104px 0;position:relative}
+.section.tight{padding:60px 0}
+.section.alt{background:var(--surface-deep)}
+.section.alt::before,.section.navy::before,.section.cream::before{content:"";position:absolute;top:0;left:10%;right:10%;height:1px;background:linear-gradient(90deg,transparent,rgba(224,167,105,.28),rgba(255,255,255,.12),rgba(224,167,105,.28),transparent)}
+.section.navy{background:linear-gradient(170deg,#0c1a3e 0%,#071739 55%,#091531 100%)}
+.section.light{background:linear-gradient(175deg,#fafafa,#efefef 60%,#f6f4f0);color:var(--ink-900)}
+.section.cream{background:linear-gradient(160deg,#f7ecda,#f3e7d3 50%,#eddcc0);color:var(--ink-900)}
+h1.display,h2.display{font-family:var(--font-hero);font-weight:800;line-height:1.06;letter-spacing:-0.028em}
+h1.display{font-size:var(--text-hero)}
+h2.display{font-size:var(--text-display)}
+h1.display,h2.display{background:linear-gradient(180deg,#ffffff 0%,#e8e8e8 55%,#b9b9b9 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
+.light h1.display,.light h2.display,.cream h1.display,.cream h2.display{background:linear-gradient(180deg,#1c1c1c,#4b4b4b);-webkit-background-clip:text;background-clip:text;color:transparent}
+h1.display .au,h2.display .au{background:var(--metal-gold);background-size:200% 100%;-webkit-background-clip:text;background-clip:text;color:transparent}
+.serif-line{font-family:var(--font-serif);font-size:clamp(22px,2.6vw,30px);line-height:1.32;background:var(--metal-gold);background-size:200% 100%;-webkit-background-clip:text;background-clip:text;color:transparent}
+.light .serif-line,.cream .serif-line{background:linear-gradient(105deg,#8a621f,#b6842c 45%,#9b7025);-webkit-background-clip:text;background-clip:text;color:transparent}
+h3.h{font-family:var(--font-heading);font-weight:700;font-size:24px}
+.lede{font-size:17px;color:var(--grey-350);line-height:1.7;max-width:620px;font-weight:400}
+.light .lede,.cream .lede{color:var(--ink-600)}
+.mut{color:var(--grey-350)}
+.light .mut,.cream .mut{color:var(--grey-500)}
+.btn{display:inline-block;font-family:var(--font-heading);font-size:13px;font-weight:700;letter-spacing:.04em;padding:14px 28px;border-radius:var(--radius-pill);cursor:pointer;border:none;transition:all .2s;position:relative;overflow:hidden}
+.btn-gold{background:var(--metal-gold);background-size:200% 100%;color:var(--navy-900);box-shadow:inset 0 1px 0 rgba(255,255,255,.55),inset 0 -2px 3px rgba(122,84,22,.45),0 6px 18px rgba(224,167,105,.22),0 1px 3px rgba(0,0,0,.4);text-shadow:0 1px 0 rgba(255,255,255,.25)}
+.btn-gold::before{content:"";position:absolute;top:0;bottom:0;left:-70%;width:45%;background:linear-gradient(105deg,transparent,rgba(255,255,255,.65) 50%,transparent);transform:skewX(-18deg);transition:left .5s ease}
+.btn-gold:hover{filter:brightness(1.05);box-shadow:inset 0 1px 0 rgba(255,255,255,.6),inset 0 -2px 3px rgba(122,84,22,.45),0 10px 26px rgba(224,167,105,.32),0 1px 3px rgba(0,0,0,.4)}
+.btn-gold:hover::before{left:125%}
+.btn-gold:active{transform:translateY(1px);box-shadow:inset 0 2px 5px rgba(122,84,22,.5),0 3px 10px rgba(224,167,105,.2)}
+@media(prefers-reduced-motion:reduce){.btn-gold::before{display:none}}
+.btn-line{background:linear-gradient(#141414,#141414) padding-box,var(--metal-edge) border-box;border:1px solid transparent;color:var(--cream-100)}
+.btn-line:hover{color:var(--gold-500)}
+.light .btn-line,.cream .btn-line{background:linear-gradient(#ffffff,#ffffff) padding-box,linear-gradient(135deg,rgba(155,112,37,.5),rgba(0,0,0,.08)) border-box;color:var(--navy-900)}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:30px}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+@media(max-width:920px){.grid3,.grid4{grid-template-columns:1fr 1fr}}
+@media(max-width:640px){.grid2,.grid3,.grid4{grid-template-columns:1fr}}
+.card{background:linear-gradient(#171716,#171716) padding-box,var(--metal-edge-soft) border-box;border:1px solid transparent;border-radius:var(--radius-lg);padding:30px;transition:transform .2s,box-shadow .2s;position:relative}
+.card::after{content:"";position:absolute;inset:0;border-radius:var(--radius-lg);background:linear-gradient(170deg,rgba(255,255,255,.035),transparent 40%);pointer-events:none}
+.card:hover{background:linear-gradient(#181817,#181817) padding-box,var(--metal-edge) border-box}
+.card.link{cursor:pointer}
+.card.link:hover{transform:translateY(-4px);box-shadow:0 18px 44px rgba(0,0,0,.45)}
+.navy .card{background:linear-gradient(rgba(12,26,62,.75),rgba(12,26,62,.75)) padding-box,var(--metal-steel) border-box;border:1px solid transparent}
+.light .card{background:linear-gradient(#ffffff,#ffffff) padding-box,linear-gradient(135deg,rgba(155,112,37,.28),rgba(0,0,0,.06)) border-box;border:1px solid transparent;box-shadow:0 4px 24px rgba(0,0,0,.06)}
+.card h4{font-family:var(--font-heading);font-weight:600;font-size:16px;margin-bottom:8px;color:var(--cream-100)}
+.light .card h4{color:var(--navy-900)}
+.card p{font-size:13.5px;color:var(--grey-350);line-height:1.65}
+.light .card p{color:var(--grey-500)}
+.tag{display:inline-block;font-family:var(--font-heading);font-size:10px;font-weight:700;letter-spacing:1.4px;text-transform:uppercase;padding:6px 14px;border-radius:var(--radius-pill);background:rgba(224,167,105,.07);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border:1px solid rgba(224,167,105,.28);box-shadow:inset 0 1px 0 rgba(255,255,255,.14),inset 0 -6px 12px rgba(255,255,255,.02);color:var(--gold-500);margin-bottom:14px}
+.tag.ember{background:rgba(245,193,22,.06);border-color:rgba(245,193,22,.3);color:var(--ember-600)}
+.tag.slate{background:rgba(164,181,196,.06);border-color:rgba(164,181,196,.28);color:var(--slate-300)}
+.light .tag,.cream .tag{background:rgba(255,255,255,.45);border-color:rgba(155,112,37,.35);color:var(--gold-700)}
+.mono{font-family:var(--font-mono);font-size:12px}
+
+
+/* stat */
+/* program text labels */
+.proglist{display:flex;gap:14px;flex-wrap:wrap;align-items:center}
+.proglist a{font-family:var(--font-heading);font-size:12.5px;font-weight:700;letter-spacing:2.2px;text-transform:uppercase;cursor:pointer;padding:11px 22px;border-radius:var(--radius-pill);position:relative;background:rgba(255,255,255,.045);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.14);box-shadow:inset 0 1px 0 rgba(255,255,255,.18),inset 0 -8px 16px rgba(255,255,255,.03),0 8px 24px rgba(0,0,0,.3);transition:all .2s}
+.proglist a span{background:var(--metal-gold);background-size:200% 100%;-webkit-background-clip:text;background-clip:text;color:transparent}
+.proglist a:nth-child(2) span{background:linear-gradient(105deg,#75839a,#cdd5db 50%,#75839a);-webkit-background-clip:text;background-clip:text}
+.proglist a:hover{background:rgba(255,255,255,.075);border-color:rgba(224,167,105,.45);transform:translateY(-2px)}
+.light .proglist a,.cream .proglist a{background:rgba(255,255,255,.5);border-color:rgba(0,0,0,.1);box-shadow:inset 0 1px 0 rgba(255,255,255,.8),0 6px 18px rgba(0,0,0,.08)}
+.proglabel{display:inline-block;font-family:var(--font-heading);font-size:11px;font-weight:700;letter-spacing:2.2px;text-transform:uppercase;margin-bottom:18px;padding:7px 16px;border-radius:var(--radius-pill);background:rgba(255,255,255,.045);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border:1px solid rgba(224,167,105,.3);box-shadow:inset 0 1px 0 rgba(255,255,255,.15);color:var(--gold-500)}
+.proglabel.slate{border-color:rgba(164,181,196,.3);color:var(--slate-300)}
+.stat b{display:block;font-family:var(--font-hero);font-weight:800;font-size:clamp(30px,3vw,42px);letter-spacing:-.02em;background:var(--metal-gold);background-size:200% 100%;-webkit-background-clip:text;background-clip:text;color:transparent}
+.stat span{font-size:12.5px;color:var(--grey-450)}
+.light .stat span{color:var(--grey-500)}
+
+.card.team{padding-top:26px}
+.tphoto{width:100%;aspect-ratio:4/3;border-radius:10px;overflow:hidden;position:relative;margin-bottom:16px;background:linear-gradient(160deg,#16233f,#0c142d)}
+.tphoto img{width:100%;height:100%;object-fit:cover;display:block}
+.tphoto .tinit{display:none;position:absolute;inset:0;place-items:center;font-family:var(--font-heading);font-size:34px;font-weight:700;background:var(--metal-gold);-webkit-background-clip:text;background-clip:text;color:transparent}
+.tphoto.noimg .tinit{display:grid}
+.tphoto.noimg::after{content:"";position:absolute;inset:0;background:radial-gradient(ellipse 70% 60% at 50% 30%,rgba(224,167,105,.12),transparent 70%)}
+.trow{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:4px}
+.trow h4{margin-bottom:0}
+.li{width:30px;height:30px;flex-shrink:0;display:grid;place-items:center;border-radius:8px;color:var(--slate-300);background:rgba(255,255,255,.05);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.12);transition:all .2s}
+.li:hover{color:var(--navy-900);background:var(--metal-gold);border-color:transparent}
+.crumb{font-family:var(--font-mono);font-size:11px;color:var(--grey-450);margin-bottom:24px}
+.crumb a{color:var(--slate-300);cursor:pointer}
+.crumb a:hover{color:var(--gold-500)}
+
+footer{background:#0a0a0a;border-top:1px solid transparent;border-image:linear-gradient(90deg,transparent,rgba(224,167,105,.3),transparent) 1;padding:68px 0 34px}
+.fgrid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr 1fr;gap:32px;margin-bottom:46px}
+@media(max-width:920px){.fgrid{grid-template-columns:1fr 1fr}}
+.fcol h5{font-family:var(--font-heading);font-size:10.5px;font-weight:700;letter-spacing:1.6px;text-transform:uppercase;color:var(--grey-450);margin-bottom:14px}
+.fcol a{display:block;font-size:13px;color:var(--grey-350);padding:4px 0;cursor:pointer}
+.fcol a:hover{color:var(--gold-500)}
+.fbottom{border-top:1px solid rgba(255,255,255,.06);padding-top:24px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font-size:12px;color:var(--grey-450)}
+
+.page{display:none}
+.page.on{display:block;animation:fadein .35s ease}
+@keyframes fadein{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+@media(prefers-reduced-motion:reduce){.page.on{animation:none}html{scroll-behavior:auto}}
+
+/* hero — metallic aura */
+.hero{position:relative;padding:120px 0 100px;overflow:hidden}
+.hero-fabric{position:absolute;inset:0;pointer-events:none;background:
+radial-gradient(ellipse 60% 55% at 72% -10%,rgba(224,167,105,.13),transparent 65%),
+radial-gradient(ellipse 45% 40% at 12% 8%,rgba(164,181,196,.07),transparent 70%),
+conic-gradient(from 210deg at 78% 18%,transparent 0deg,rgba(243,231,211,.05) 40deg,transparent 90deg)}
+.hero-fabric::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:linear-gradient(90deg,transparent,rgba(224,167,105,.35) 30%,rgba(255,255,255,.14) 50%,rgba(224,167,105,.35) 70%,transparent)}
+.hero .wrap{position:relative}
+
+table.spec{width:100%;border-collapse:collapse;font-size:13.5px}
+table.spec th{text-align:left;font-family:var(--font-heading);font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--grey-450);padding:10px 14px;border-bottom:1px solid var(--border-dark)}
+table.spec td{padding:13px 14px;border-bottom:1px solid rgba(255,255,255,.06);color:var(--grey-350);vertical-align:top}
+table.spec td:first-child{color:var(--cream-100);font-weight:500}
+.light table.spec td{color:var(--grey-500);border-color:rgba(0,0,0,.07)}
+.light table.spec td:first-child{color:var(--navy-900)}
+
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{font-family:var(--font-mono);font-size:11px;padding:6px 13px;border-radius:var(--radius-pill);color:var(--grey-350);background:linear-gradient(#141414,#141414) padding-box,var(--metal-edge-soft) border-box;border:1px solid transparent}
+.navy .chip{background:linear-gradient(rgba(12,26,62,.6),rgba(12,26,62,.6)) padding-box,var(--metal-steel) border-box;color:var(--slate-300)}
+.light .chip,.cream .chip{background:linear-gradient(#fff,#fff) padding-box,linear-gradient(135deg,rgba(155,112,37,.35),rgba(0,0,0,.08)) border-box;color:var(--slate-700)}
+
+.steps{border-left:1px solid transparent;border-image:linear-gradient(180deg,rgba(224,167,105,.5),rgba(255,255,255,.08)) 1;padding-left:28px;display:flex;flex-direction:column;gap:28px}
+.step{position:relative}
+.step::before{content:"";position:absolute;left:-34px;top:5px;width:11px;height:11px;border-radius:50%;background:var(--metal-gold)}
+.step b{display:block;font-family:var(--font-heading);font-weight:600;font-size:15px;margin-bottom:4px;color:var(--cream-100)}
+.step p{font-size:13.5px;color:var(--grey-350)}
+input,select,textarea{background:linear-gradient(#141414,#141414) padding-box,var(--metal-edge-soft) border-box !important;border:1px solid transparent !important}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap nav">
+    <a class="logo" data-go="home">UElement<em>.</em></a>
+    <nav class="navlinks" id="navlinks">
+      <div>
+        <span class="navlink">Products <i class="plus">+</i></span>
+        <div class="dropdown mega prod">
+          <div class="dgroup">
+            <div class="dhead" data-go="mainstay">MainSTAY</div>
+            <a class="ditem" data-go="nexus"><b>Nexus</b><span>The Enterprise Digital Fabric</span></a>
+            <a class="ditem" data-go="vizor"><b>Vizor</b><span>Observability · Security · GRC</span></a>
+            <a class="ditem" data-go="kayak"><b>Kayak</b><span>Everything as a Service</span></a>
+          </div>
+          <div class="dgroup">
+            <div class="dhead" data-go="mainspar">MainSPAR</div>
+            <a class="ditem" data-go="merlinos"><b>MerlinOS</b><span>Sovereign edge AI OS</span></a>
+            <a class="ditem" data-go="mustang"><b>MustangC3</b><span>Agentic command &amp; control</span></a>
+            <a class="ditem" data-go="mesogrid"><b>MesoGRID</b><span>Resilient decentralised mesh</span></a>
+          </div>
+          <div class="dgroup">
+            <div class="dhead" data-go="u92">U92 Quantum</div>
+            <a class="ditem" data-go="u92pqc"><b>PQC</b><span>Post-quantum cryptography</span></a>
+            <a class="ditem" data-go="u92qkd"><b>QKD</b><span>Quantum key distribution</span></a>
+            <a class="ditem" data-go="u92agility"><b>Crypto-Agility</b><span>Axis · Codex · Crucible</span></a>
+          </div>
+        </div>
+      </div>
+      <div>
+        <span class="navlink">Industries <i class="plus">+</i></span>
+        <div class="dropdown mega">
+          <a class="ditem" data-go="industries" data-anchor="ind-def"><b>Defence &amp; Aerospace</b><span>DDIL autonomy, air-gap, post-quantum comms</span></a>
+          <a class="ditem" data-go="industries" data-anchor="ind-bfsi"><b>Banking &amp; Financial Services</b><span>Quantum-safe, RBI &amp; SEBI compliant</span></a>
+          <a class="ditem" data-go="industries" data-anchor="ind-mfg"><b>Manufacturing &amp; OT</b><span>Purdue-native, 40+ OT protocols</span></a>
+          <a class="ditem" data-go="industries" data-anchor="ind-gov"><b>Government &amp; Public Sector</b><span>Sovereign cloud, CERT-In ready</span></a>
+          <a class="ditem" data-go="industries" data-anchor="ind-health"><b>Healthcare &amp; Pharma</b><span>HIPAA, DPDP, serialized provenance</span></a>
+          <a class="ditem" data-go="industries" data-anchor="ind-dc"><b>Datacenter &amp; Warehouse</b><span>Assets and space as metered services</span></a>
+        </div>
+      </div>
+      <div>
+        <span class="navlink">Solutions <i class="plus">+</i></span>
+        <div class="dropdown mega">
+          <a class="ditem" data-go="u92pqc"><b>Quantum Risk Assessment</b><span>CBOM discovery and migration planning</span></a>
+          <a class="ditem" data-go="vizor"><b>45-Day Proof of Value</b><span>Observability on one critical journey</span></a>
+          <a class="ditem" data-go="mainspar"><b>Tactical Edge Briefing</b><span>Autonomy for DDIL environments</span></a>
+          <a class="ditem" data-go="kayak"><b>Everything as a Service</b><span>Physical assets, metered and verified</span></a>
+          <a class="ditem" data-go="u92agility"><b>Crypto-Agility Program</b><span>Rotation drills and policy control</span></a>
+          <a class="ditem" data-go="nexus"><b>Digital Presence Build-out</b><span>Web, mobile, GenAI search, workflows</span></a>
+        </div>
+      </div>
+      <div>
+        <span class="navlink" data-go="company">Company <i class="plus">+</i></span>
+        <div class="dropdown mega comp">
+          <a class="ditem" data-go="company"><b>About Us</b><span>Our mission, vision, and the team driving sovereign deeptech.</span></a>
+          <a class="ditem" data-go="news"><b>News Room</b><span>Announcements, media coverage, and press mentions.</span></a>
+          <a class="ditem" data-go="careers"><b>Careers</b><span>Grow your career building systems that cannot fail.</span></a>
+          <a class="ditem" data-go="stories"><b>Success Stories</b><span>How our platforms deliver measurable outcomes.</span></a>
+          <a class="ditem" data-go="partnerships"><b>Partnerships</b><span>Strategic alliances that extend our technology.</span></a>
+          <a class="ditem" data-go="blogs"><b>Blogs</b><span>Insights, trends, and expert perspectives from our team.</span></a>
+          <a class="ditem" data-go="investors"><b>Investor Relations</b><span>Structure, governance, and investor inquiries.</span></a>
+          <a class="ditem" data-go="contact"><b>Contact</b><span>Talk to our team.</span></a>
+        </div>
+      </div>
+      <div><span class="navlink" data-go="careers">Careers</span></div>
+      <div><span class="navlink" data-go="news">News</span></div>
+    </nav>
+    <button class="nav-cta" data-go="contact">Request a briefing</button>
+    <button class="burger" id="burger" aria-label="Menu">☰</button>
+  </div>
+</header>
+
+<main>
+
+<!-- ============ HOME ============ -->
+<div class="page" id="p-home">
+  <div class="hero"><div class="hero-fabric"></div>
+    <div class="wrap">
+      <div class="kicker">UElement Technologies</div>
+      <h1 class="display">Sovereign deeptech for the<br>systems that <span class="au">cannot fail</span>.</h1>
+      <p class="lede" style="margin-top:22px">We build the platforms nations and enterprises run when the stakes are absolute — quantum-safe security, autonomous resilience at the tactical edge, and a digital fabric that binds the enterprise together. Headquartered in Pune. Operating globally.</p>
+      <div style="display:flex;gap:14px;margin-top:34px;flex-wrap:wrap">
+        <button class="btn btn-gold" data-go="contact">Request a briefing</button>
+        <button class="btn btn-line" data-go="mainstay">Explore the platforms</button>
+      </div>
+      <div class="proglist" style="margin-top:64px">
+        <a data-go="mainstay"><span>MainSTAY</span></a>
+        <a data-go="mainspar"><span>MainSPAR</span></a>
+        <a data-go="u92"><span>U92 Quantum</span></a>
+      </div>
+    </div>
+  </div>
+
+  <div class="section alt"><div class="wrap">
+    <div class="kicker">The portfolio</div>
+    <h2 class="display">Two programs. One practice.<br>Every layer of <span class="au">sovereignty</span>.</h2>
+    <div class="grid3" style="margin-top:44px">
+      <div class="card link" data-go="mainstay">
+        <div class="proglabel">MainSTAY</div>
+        <h4>MainSTAY</h4>
+        <p>The enterprise platform trio. Nexus projects your business outward, Vizor watches every digital signal, Kayak commands the physical world. One control plane, one identity, one audit trail.</p>
+        <p class="mono" style="margin-top:14px;color:var(--gold-500)">Nexus · Vizor · Kayak →</p>
+      </div>
+      <div class="card link" data-go="mainspar">
+        <div class="proglabel slate">MainSPAR</div>
+        <h4>MainSPAR</h4>
+        <p>Autonomous resilience for the tactical edge. A sovereign MLOps ecosystem for denied, degraded, intermittent and limited environments — we don't connect the edge to the cloud, we turn the edge into the cloud.</p>
+        <p class="mono" style="margin-top:14px;color:var(--gold-500)">MerlinOS · MustangC3 · MesoGRID →</p>
+      </div>
+      <div class="card link" data-go="u92">
+        <div class="proglabel">U92</div>
+        <h4>U92 Quantum Security</h4>
+        <p>Named for uranium's atomic number, engineered for the quantum decade. Post-quantum cryptography, quantum key distribution, and crypto-agility for banks, governments, and critical infrastructure.</p>
+        <p class="mono" style="margin-top:14px;color:var(--gold-500)">PQC · QKD · Crypto-Agility →</p>
+      </div>
+    </div>
+  </div></div>
+
+  <div class="section"><div class="wrap grid2" style="align-items:center">
+    <div>
+      <div class="kicker">Why UElement</div>
+      <p class="serif-line">Harvest now, decrypt later is not a hypothesis. It is a procurement line item in adversary budgets.</p>
+      <p class="mut" style="margin-top:18px">Every platform we ship is built on the same convictions: cryptography must survive the quantum transition, systems must operate when networks are denied, and evidence must be generated as operational exhaust — not reconstructed for audit season.</p>
+    </div>
+    <div class="grid2">
+      <div class="stat"><b>3</b><span>Global offices — Pune HQ, Singapore, UAE</span></div>
+      <div class="stat"><b>2 + 1</b><span>DeepTech programs and a dedicated quantum practice</span></div>
+      <div class="stat"><b>500+</b><span>Pre-built adaptors and protocol parsers across IT and OT</span></div>
+      <div class="stat"><b>0</b><span>Blind spots we consider acceptable</span></div>
+    </div>
+  </div></div>
+
+  <div class="section navy"><div class="wrap">
+    <div class="kicker">Industries</div>
+    <h2 class="display">Built where failure is <span class="au">not an option</span>.</h2>
+    <div class="grid3" style="margin-top:40px">
+      <div class="card link" data-go="industries"><h4>Defence &amp; Aerospace</h4><p>Air-gapped deployment, DDIL operation, ITAR-free export eligibility.</p></div>
+      <div class="card link" data-go="industries"><h4>Banking &amp; Financial Services</h4><p>Quantum-safe transactions, UPI/CBS journey observability, RBI and SEBI compliance fabric.</p></div>
+      <div class="card link" data-go="industries"><h4>Manufacturing &amp; Industrial OT</h4><p>Purdue-native monitoring, 40+ OT protocol parsers, passive-by-architecture at Levels 0–2.</p></div>
+      <div class="card link" data-go="industries"><h4>Government &amp; Public Sector</h4><p>Sovereign cloud, CERT-In 6-hour reporting, Make-in-India GeM procurement readiness.</p></div>
+      <div class="card link" data-go="industries"><h4>Healthcare &amp; Pharma</h4><p>HIPAA and DPDP compliance, clinical uptime, serialized provenance from factory to patient.</p></div>
+      <div class="card link" data-go="industries"><h4>Datacenter &amp; Warehouse</h4><p>Rack space, hardware, power and movement metered as services on a blockchain-verified fabric.</p></div>
+    </div>
+  </div></div>
+
+  <div class="section cream"><div class="wrap" style="text-align:center">
+    <p class="serif-line" style="max-width:760px;margin:0 auto">"We don't connect the edge to the cloud.<br>We turn the edge into the cloud."</p>
+    <p class="mut" style="margin-top:16px;font-family:var(--font-heading);font-size:12px;letter-spacing:1px;text-transform:uppercase">The MainSPAR thesis</p>
+    <button class="btn btn-gold" data-go="mainspar" style="margin-top:28px">See how</button>
+  </div></div>
+</div>
+<!-- ============ MAINSTAY ============ -->
+<div class="page" id="p-mainstay">
+  <div class="hero"><div class="hero-fabric"></div><div class="wrap">
+    <div class="crumb"><a data-go="home">Home</a> / MainSTAY</div>
+    <h1 class="display" style="font-size:var(--text-display)">MainSTAY</h1>
+    <p class="serif-line" style="font-size:20px;margin-top:8px">One program. Three planes of the enterprise.</p>
+    <p class="lede" style="margin-top:26px">Every enterprise lives in three worlds at once: the outward-facing digital surfaces its customers touch, the internal signals its operations emit, and the physical assets it actually owns. MainSTAY is one platform family that governs all three — with shared tenant identity, shared RBAC, and one audit trail.</p>
+  </div></div>
+
+  <div class="section alt"><div class="wrap grid3">
+    <div class="card link" data-go="nexus">
+      <div class="tag">Projects outward</div>
+      <h4>MainSTAY Nexus</h4>
+      <p class="serif-line" style="font-size:16px;margin-bottom:10px">The Enterprise Digital Fabric</p>
+      <p>Web platforms, mobile applications, GenAI search, SEO/SEM, and a scalable portal to design application workflows. Everything your customer sees, on one fabric.</p>
+    </div>
+    <div class="card link" data-go="vizor">
+      <div class="tag">Watches the digital</div>
+      <h4>MainSTAY Vizor</h4>
+      <p class="serif-line" style="font-size:16px;margin-bottom:10px">One Platform. Seven Dimensions. Zero Blind Spots.</p>
+      <p>Unified observability, security and compliance fabric for enterprise IT and industrial OT — from business KPIs down to packet level.</p>
+    </div>
+    <div class="card link" data-go="kayak">
+      <div class="tag">Commands the physical</div>
+      <h4>MainSTAY Kayak</h4>
+      <p class="serif-line" style="font-size:16px;margin-bottom:10px">Everything as a Service</p>
+      <p>Every physical asset, inventory unit, cubic foot of space and unit of movement becomes a metered, queryable, blockchain-verified service.</p>
+    </div>
+  </div></div>
+
+  <div class="section"><div class="wrap">
+    <div class="kicker">How the trio composes</div>
+    <h2 class="display" style="font-size:32px">Better together, by design.</h2>
+    <div class="steps" style="margin-top:36px;max-width:720px">
+      <div class="step"><b>Kayak feeds Vizor</b><p>Physical asset telemetry flows into Vizor's Collection Plane; compliance evidence flows to the Evidence Plane for unified GRC reporting.</p></div>
+      <div class="step"><b>Nexus fronts Kayak</b><p>Customer-facing surfaces — billing subscriptions, partner portals, support — for Kayak's as-a-service offerings run on Nexus.</p></div>
+      <div class="step"><b>One control plane</b><p>All three share tenant identity, role-based access, and audit through the MainSTAY control plane. Adopt one, expand to three, without re-platforming.</p></div>
+    </div>
+  </div></div>
+</div>
+
+<!-- ============ NEXUS ============ -->
+<div class="page" id="p-nexus">
+  <div class="hero"><div class="hero-fabric"></div><div class="wrap">
+    <div class="crumb"><a data-go="home">Home</a> / <a data-go="mainstay">MainSTAY</a> / Nexus</div>
+    <div class="tag">MainSTAY · Projects outward</div>
+    <h1 class="display" style="font-size:var(--text-display)">Nexus</h1>
+    <p class="serif-line">The Enterprise Digital Fabric.</p>
+    <p class="lede" style="margin-top:22px">Nexus is the platform for building your enterprise's outward-facing online properties — every digital surface, channel, and workflow your customers, partners, and candidates touch.</p>
+    <button class="btn btn-gold" data-go="contact" style="margin-top:28px">Talk to the Nexus team</button>
+  </div></div>
+
+  <div class="section alt"><div class="wrap">
+    <div class="kicker">Product scope</div>
+    <div class="grid3" style="margin-top:26px">
+      <div class="card"><h4>Web platforms</h4><p>Websites, Google search presence, GenAI search optimization, SEO and SEM — engineered as one discipline, not four vendors.</p></div>
+      <div class="card"><h4>Mobile applications</h4><p>Native-quality mobile surfaces that share content, identity, and analytics with your web estate.</p></div>
+      <div class="card"><h4>Workflow portal</h4><p>A scalable portal to design application workflows — public sites, e-commerce, help centers, and careers portals composed from one system.</p></div>
+    </div>
+  </div></div>
+
+  <div class="section"><div class="wrap grid2" style="align-items:start">
+    <div>
+      <div class="kicker">AI built in</div>
+      <h2 class="display" style="font-size:30px">Intelligence is not a module. It's the core.</h2>
+      <div style="margin-top:26px;display:flex;flex-direction:column;gap:16px">
+        <div class="card"><h4>Agentic AI automation</h4><p>Autonomous agents handle routing, personalization, and process execution across your digital surfaces.</p></div>
+        <div class="card"><h4>GenAI &amp; OpenLM</h4><p>Generative experiences and open LLM operations — deploy, monitor, and govern the models behind every AI touchpoint.</p></div>
+        <div class="card"><h4>Advanced data analytics</h4><p>Every visit, journey, and conversion feeding one analytical fabric.</p></div>
+      </div>
+    </div>
+    <div>
+      <div class="kicker">Design pillars</div>
+      <table class="spec" style="margin-top:26px">
+        <tr><td>Modular</td><td>Enable only what you need, expand as you grow</td></tr>
+        <tr><td>API-first</td><td>Every capability exposed through documented APIs</td></tr>
+        <tr><td>Cloud-native</td><td>Built for scale, resilience, global deployment</td></tr>
+        <tr><td>Multi-tenant SaaS</td><td>Isolated, secure workspaces with enterprise-grade controls</td></tr>
+        <tr><td>AI-ready</td><td>Intelligent automation and insights built into the core</td></tr>
+      </table>
+    </div>
+  </div></div>
+</div>
+
+<!-- ============ VIZOR ============ -->
+<div class="page" id="p-vizor">
+  <div class="hero"><div class="hero-fabric"></div><div class="wrap">
+    <div class="crumb"><a data-go="home">Home</a> / <a data-go="mainstay">MainSTAY</a> / Vizor</div>
+    <div class="tag">MainSTAY · Watches the digital</div>
+    <h1 class="display" style="font-size:var(--text-display)">Vizor</h1>
+    <p class="serif-line">One Platform. Seven Dimensions. Zero Blind Spots.</p>
+    <p class="lede" style="margin-top:22px">A unified observability, security and compliance fabric for enterprise IT and industrial OT. One data lake, one topology graph, one AI engine — from board-level KPIs down to the packet on the wire.</p>
+    <div style="display:flex;gap:14px;margin-top:28px;flex-wrap:wrap">
+      <button class="btn btn-gold" data-go="contact">Start a 45-day proof of value</button>
+      <button class="btn btn-line" data-go="contact">Request the architecture briefing</button>
+    </div>
+  </div></div>
+
+  <div class="section alt"><div class="wrap">
+    <div class="kicker">The seven dimensions</div>
+    <h2 class="display" style="font-size:30px">Everything that can fail, watched.</h2>
+    <div class="grid4" style="margin-top:36px">
+      <div class="card"><h4>Enterprise</h4><p>Business processes, KPIs, SLAs, customer journeys.</p></div>
+      <div class="card"><h4>Apps</h4><p>Full APM, code-level profiling, distributed tracing, GenAI/LLM observability.</p></div>
+      <div class="card"><h4>Network</h4><p>Deep FCAPS, SNMP, NetFlow, packet level, WAN &amp; SD-WAN.</p></div>
+      <div class="card"><h4>Cloud</h4><p>Hybrid, multi-cloud, Kubernetes, serverless, FinOps.</p></div>
+      <div class="card"><h4>Security</h4><p>Runtime AppSec, SIEM, XDR, continuous vulnerability management.</p></div>
+      <div class="card"><h4>Compliance</h4><p>Automated frameworks embedded in daily operations.</p></div>
+      <div class="card"><h4>Risk</h4><p>Risk register, controls, KRIs, business continuity planning.</p></div>
+      <div class="card" style="border-color:rgba(224,167,105,0.5)"><h4 style="color:var(--gold-500)">One shared fabric</h4><p>Data lake + topology graph + AI engine unify all seven.</p></div>
+    </div>
+  </div></div>
+
+  <div class="section"><div class="wrap grid2" style="align-items:start">
+    <div>
+      <div class="kicker">Four architectural planes</div>
+      <div class="steps" style="margin-top:26px">
+        <div class="step"><b>Collection</b><p>Purdue-aware hardware taps, software sensors, lightweight agents. Every byte timestamped and zone-tagged at source. Passive by architecture at Levels 0–2.</p></div>
+        <div class="step"><b>Processing</b><p>Behavioral baselining per device, conduit, and operator. Config-drift detection alongside real-time rule and ML threat detections.</p></div>
+        <div class="step"><b>Evidence</b><p>Telemetry structured into an immutable zone/conduit graph. Tamper-evident, cryptographically signed audit store.</p></div>
+        <div class="step"><b>Experience</b><p>Role-based dashboards, control-room screens, mobile on-call, and an investigation workbench with time-travel scrub.</p></div>
+      </div>
+    </div>
+    <div>
+      <div class="kicker">VizorIQ intelligence</div>
+      <div style="display:flex;flex-direction:column;gap:14px;margin-top:26px">
+        <div class="card"><h4>Causal AI</h4><p>Deterministic root-cause analysis grounded in live topology — ≤30 seconds to root cause.</p></div>
+        <div class="card"><h4>Predictive AI</h4><p>72-hour forward forecasting for capacity, SLO burn, and attack-surface drift.</p></div>
+        <div class="card"><h4>Generative AI</h4><p>An audit-backed, citation-supported natural-language copilot on a private LLM.</p></div>
+        <div class="card"><h4>Five-agent fleet</h4><p>SecOps, SRE, GRC, FinOps and Developer agents — triage, diagnose, evidence, right-size, fix.</p></div>
+      </div>
+    </div>
+  </div></div>
+
+  <div class="section navy"><div class="wrap">
+    <div class="kicker">Protocol coverage</div>
+    <h2 class="display" style="font-size:28px">Fluent in the languages of industry.</h2>
+    <div class="chips" style="margin-top:26px">
+      <span class="chip">Modbus</span><span class="chip">DNP3</span><span class="chip">IEC 60870-5-104</span><span class="chip">IEC 61850</span><span class="chip">OPC UA</span><span class="chip">EtherNet/IP + CIP</span><span class="chip">PROFINET</span><span class="chip">S7</span><span class="chip">CC-Link IE</span><span class="chip">HART-IP</span><span class="chip">WirelessHART</span><span class="chip">ISA-100.11a</span><span class="chip">LoRaWAN</span><span class="chip">Zigbee</span><span class="chip">BLE</span><span class="chip">SMB</span><span class="chip">RDP</span><span class="chip">SSH</span><span class="chip">LDAP/Kerberos</span><span class="chip">NetFlow</span><span class="chip">Zeek</span><span class="chip">MQTT</span><span class="chip">Kafka</span><span class="chip">BACnet/IP</span><span class="chip">+ open templates for proprietary parsers</span>
+    </div>
+    <div class="grid4" style="margin-top:44px">
+      <div class="stat"><b>28B+</b><span>Monitored events per month, by design target</span></div>
+      <div class="stat"><b>≤30s</b><span>Causal root-cause time</span></div>
+      <div class="stat"><b>500+</b><span>Pre-built adaptors and parsers</span></div>
+      <div class="stat"><b>99.99%</b><span>Platform availability SLA</span></div>
+    </div>
+  </div></div>
+
+  <div class="section light"><div class="wrap grid2" style="align-items:start">
+    <div>
+      <div class="kicker">Compliance as exhaust</div>
+      <h2 class="display" style="font-size:28px;color:var(--navy-900)">Evidence generated daily, not reconstructed for audit season.</h2>
+      <p class="mut" style="margin-top:16px">Compliance packs for IEC 62443, CERT-In / CEA 6-hour reporting, DPDP Act, RBI &amp; SEBI frameworks, NIST SP 800-82 / CSF 2.0, PCI-DSS v4.0, HIPAA, NERC CIP, ISO 27001:2022, ISO 27019, and EU AI Act model lineage.</p>
+    </div>
+    <div>
+      <div class="kicker">Deployment topologies</div>
+      <table class="spec" style="margin-top:20px">
+        <tr><td>On-prem air-gapped</td><td>Defence, nuclear, sovereign facilities</td></tr>
+        <tr><td>On-prem connected</td><td>Tier-1 BFSI and government</td></tr>
+        <tr><td>Sovereign cloud</td><td>In-region cloud partners</td></tr>
+        <tr><td>Hybrid managed</td><td>Regulated enterprise</td></tr>
+        <tr><td>Managed SaaS</td><td>Mid-market and fintech</td></tr>
+      </table>
+      <p class="mut" style="margin-top:14px;font-size:13px">Five topologies. One control plane, one VizorIQ, one set of APIs.</p>
+    </div>
+  </div></div>
+
+  <div class="section"><div class="wrap">
+    <div class="kicker">Engagement model</div>
+    <h2 class="display" style="font-size:28px">Five gates from first call to steady state.</h2>
+    <div class="grid4" style="margin-top:34px;grid-template-columns:repeat(5,1fr)">
+      <div class="card"><p class="mono" style="color:var(--gold-500);margin-bottom:8px">G0 · 2 wks</p><h4>Discovery</h4><p>Signed scoping pack: assets, zones, deployment shape.</p></div>
+      <div class="card"><p class="mono" style="color:var(--gold-500);margin-bottom:8px">G1 · 4 wks</p><h4>Reference</h4><p>Live telemetry from a candidate reference site.</p></div>
+      <div class="card"><p class="mono" style="color:var(--gold-500);margin-bottom:8px">G2 · 6 wks</p><h4>Expansion</h4><p>End-to-end identity stitching and data correlation.</p></div>
+      <div class="card"><p class="mono" style="color:var(--gold-500);margin-bottom:8px">G3 · 4 wks</p><h4>Assurance</h4><p>Detection tuning, operator training, sign-off.</p></div>
+      <div class="card"><p class="mono" style="color:var(--gold-500);margin-bottom:8px">G4 · ∞</p><h4>Operate</h4><p>Governance reviews and continuous detection refresh.</p></div>
+    </div>
+    <p class="mut" style="margin-top:22px">Standard entry motion: a 45-day proof of value scoped to one critical business journey.</p>
+  </div></div>
+</div>
+
+<!-- ============ KAYAK ============ -->
+<div class="page" id="p-kayak">
+  <div class="hero"><div class="hero-fabric"></div><div class="wrap">
+    <div class="crumb"><a data-go="home">Home</a> / <a data-go="mainstay">MainSTAY</a> / Kayak</div>
+    <div class="tag">MainSTAY · Commands the physical</div>
+    <h1 class="display" style="font-size:var(--text-display)">Kayak</h1>
+    <p class="serif-line">Everything as a Service.</p>
+    <p class="lede" style="margin-top:22px">Every physical asset, inventory unit, cubic foot of space, and unit of movement becomes a metered, queryable, blockchain-verified service. Kayak extends "track a needle in a haystack" precision to the whole physical enterprise.</p>
+    <button class="btn btn-gold" data-go="contact" style="margin-top:28px">See Kayak on your floor</button>
+  </div></div>
+
+  <div class="section alt"><div class="wrap">
+    <div class="kicker">Three verticals</div>
+    <div class="grid3" style="margin-top:26px">
+      <div class="card"><h4>Enterprise</h4><p>Corporate assets, campus infrastructure, and IT/office equipment lifecycle on one queryable fabric.</p></div>
+      <div class="card"><h4>Datacenter</h4><p>Rack space, hardware assets, power and cooling infrastructure, capacity metering.</p></div>
+      <div class="card"><h4>Warehouse</h4><p>SKUs, pallets, dock doors, AGVs, and fulfillment operations — live, verified, and billable.</p></div>
+    </div>
+  </div></div>
+
+  <div class="section"><div class="wrap">
+    <div class="kicker">The EaaS catalog</div>
+    <h2 class="display" style="font-size:30px">Eight services. One physical fabric.</h2>
+    <div class="grid4" style="margin-top:34px">
+      <div class="card"><h4>Asset</h4><p>Physical assets tracked, metered, and billed by usage.</p></div>
+      <div class="card"><h4>Inventory</h4><p>SKU pools digital-twinned and available on demand.</p></div>
+      <div class="card"><h4>Space</h4><p>Racks, bins, and floor slots as bookable resources.</p></div>
+      <div class="card"><h4>Custody</h4><p>Blockchain chain-of-custody exposed as a service.</p></div>
+      <div class="card"><h4>Provenance</h4><p>"Where did this come from" as an API.</p></div>
+      <div class="card"><h4>Movement</h4><p>Fleet, AGV, and robotics orchestration on demand.</p></div>
+      <div class="card"><h4>Compliance</h4><p>Automated jurisdiction-specific audit reporting.</p></div>
+      <div class="card"><h4>Fulfillment</h4><p>Pick, pack, and ship as a metered service.</p></div>
+    </div>
+  </div></div>
+
+  <div class="section navy"><div class="wrap grid2" style="align-items:start">
+    <div>
+      <div class="kicker">Trust, engineered</div>
+      <h2 class="display" style="font-size:28px">Every serialized asset gets a cryptographic twin.</h2>
+      <p style="color:var(--slate-300);margin-top:16px">Chain-of-custody entries record actor, action, location, timestamp, and a sensor hash — on Hyperledger Fabric or Besu. Smart contracts govern asset lifecycle, quality gates, compliance oracles, recall management, and audit trails.</p>
+      <div class="chips" style="margin-top:22px">
+        <span class="chip">RFID · passive &amp; active</span><span class="chip">NFC / QR</span><span class="chip">GPS / GNSS</span><span class="chip">Computer vision</span><span class="chip">LiDAR &amp; drones</span><span class="chip">Kalman-fused attestation</span>
+      </div>
+    </div>
+    <div>
+      <div class="kicker">Design targets</div>
+      <div class="grid2" style="margin-top:22px">
+        <div class="stat"><b>95%+</b><span>Identification accuracy, RFID + CV fusion</span></div>
+        <div class="stat"><b>&lt;1s</b><span>Provenance queries across millions of assets</span></div>
+        <div class="stat"><b>50%</b><span>Downtime reduction target via predictive maintenance</span></div>
+        <div class="stat"><b>25%</b><span>Operational cost reduction target</span></div>
+      </div>
+      <p class="mut" style="margin-top:20px;font-size:13px">All AI decisions carry SHAP/LIME attribution for auditor inspection. Five deployment topologies from air-gapped to managed SaaS.</p>
+    </div>
+  </div></div>
+</div>
+<!-- ============ MAINSPAR ============ -->
+<div class="page" id="p-mainspar">
+  <div class="hero"><div class="hero-fabric"></div><div class="wrap">
+    <div class="crumb"><a data-go="home">Home</a> / MainSPAR</div>
+    <h1 class="display" style="font-size:var(--text-display)">MainSPAR</h1>
+    <p class="serif-line" style="font-size:20px;margin-top:8px">Autonomous Resilience for the Tactical Edge.</p>
+    <p class="lede" style="margin-top:26px">A sovereign MLOps ecosystem for D3 and DDIL environments — denied, degraded, intermittent, limited. When the network goes dark and the cloud is a memory, MainSPAR keeps thinking. We don't connect the edge to the cloud. We turn the edge into the cloud.</p>
+    <div style="display:flex;gap:14px;margin-top:28px;flex-wrap:wrap">
+      <button class="btn btn-gold" data-go="contact">Request the defence briefing</button>
+      <button class="btn btn-line" data-go="merlinos">Explore the triad</button>
+    </div>
+  </div></div>
+
+  <div class="section alt"><div class="wrap">
+    <div class="kicker">The triad</div>
+    <div class="grid3" style="margin-top:26px">
+      <div class="card link" data-go="merlinos"><div class="tag slate">The Brain</div><h4>MerlinOS</h4><p>A sovereign edge AI operating system in Light and Standard builds — inference, orchestration, and model lifecycle at the node.</p></div>
+      <div class="card link" data-go="mustang"><div class="tag slate">The Commander</div><h4>MustangC3</h4><p>Agentic AI command, control and communications — mission continuity through 60%+ node attrition.</p></div>
+      <div class="card link" data-go="mesogrid"><div class="tag slate">The Fabric</div><h4>MesoGRID</h4><p>A resilient decentralised mesh with stochastic path optimisation. Self-healing by construction.</p></div>
+    </div>
+  </div></div>
+
+  <div class="section"><div class="wrap">
+    <div class="kicker">Four pillars of differentiation</div>
+    <div class="grid4" style="margin-top:26px">
+      <div class="card"><h4>Self-healing networks</h4><p>Topology reforms around loss automatically.</p></div>
+      <div class="card"><h4>Post-quantum cryptography</h4><p>ML-KEM, ML-DSA, and SLH-DSA at the tactical edge.</p></div>
+      <div class="card"><h4>Zero-trust intelligence</h4><p>Every node, every message, continuously verified.</p></div>
+      <div class="card"><h4>Fully offline operation</h4><p>Complete air-gapped capability. No cloud dependency, ever.</p></div>
+    </div>
+    <div style="margin-top:40px;display:flex;gap:28px;flex-wrap:wrap;align-items:center">
+      <span class="tag ember">ITAR-free · Export-eligible</span>
+      <span class="mut" style="font-size:13px">Spanning Defence, Environment, and Energy. Baselined solution architecture: UE-MSP-SAD-001.</span>
+    </div>
+  </div></div>
+
+  <div class="section navy"><div class="wrap grid2" style="align-items:center">
+    <div>
+      <div class="kicker">Go to market</div>
+      <h2 class="display" style="font-size:28px">Anchored in India. Reaching outward.</h2>
+      <p style="color:var(--slate-300);margin-top:16px">India is the primary market with anchor public-sector procurement relationships, expanding through Singapore and the UAE with regional operations alliances across JAPAC and the Middle East — as part of UElement's global footprint.</p>
+    </div>
+    <div class="card">
+      <h4>Four revenue streams</h4>
+      <table class="spec" style="margin-top:12px">
+        <tr><td>Licensing</td><td>Modular, per-node</td></tr>
+        <tr><td>AMC</td><td>Annual maintenance on licence value</td></tr>
+        <tr><td>NRE</td><td>Engineering for bespoke integration</td></tr>
+        <tr><td>OEM royalty</td><td>Per-unit on embedded deployments</td></tr>
+      </table>
+    </div>
+  </div></div>
+</div>
+
+<!-- ============ MERLINOS ============ -->
+<div class="page" id="p-merlinos">
+  <div class="hero"><div class="hero-fabric"></div><div class="wrap">
+    <div class="crumb"><a data-go="home">Home</a> / <a data-go="mainspar">MainSPAR</a> / MerlinOS</div>
+    <div class="tag slate">MainSPAR · The Brain</div>
+    <h1 class="display" style="font-size:var(--text-display)">MerlinOS</h1>
+    <p class="serif-line">The operating system for intelligence at the edge.</p>
+    <p class="lede" style="margin-top:22px">A sovereign edge AI operating system that brings model inference, orchestration, and lifecycle management to nodes that may never see a datacenter. Available in Light and Standard builds to match node class and power envelope.</p>
+  </div></div>
+  <div class="section alt"><div class="wrap grid3">
+    <div class="card"><h4>Light build</h4><p>Minimal footprint for constrained sensors and disposable nodes — inference where every milliwatt counts.</p></div>
+    <div class="card"><h4>Standard build</h4><p>Full MLOps at the node: model serving, retraining hooks, fleet orchestration for vehicle-class and station-class hardware.</p></div>
+    <div class="card"><h4>Sovereign by default</h4><p>No mandatory external calls. Air-gap first. Post-quantum key exchange between every node pair.</p></div>
+  </div></div>
+</div>
+
+<!-- ============ MUSTANGC3 ============ -->
+<div class="page" id="p-mustang">
+  <div class="hero"><div class="hero-fabric"></div><div class="wrap">
+    <div class="crumb"><a data-go="home">Home</a> / <a data-go="mainspar">MainSPAR</a> / MustangC3</div>
+    <div class="tag slate">MainSPAR · The Commander</div>
+    <h1 class="display" style="font-size:var(--text-display)">MustangC3</h1>
+    <p class="serif-line">Command that survives the loss of most of itself.</p>
+    <p class="lede" style="margin-top:22px">Agentic AI command, control, and communications engineered for graceful degradation. MustangC3 maintains mission continuity through the attrition of 60% or more of its nodes — reforming hierarchies, re-tasking assets, and preserving intent when links are cut.</p>
+  </div></div>
+  <div class="section alt"><div class="wrap grid3">
+    <div class="card"><h4>Agentic C2</h4><p>AI agents hold mission intent locally and execute against it when higher echelons are unreachable.</p></div>
+    <div class="card"><h4>Attrition-resilient</h4><p>Formal degradation contract: capability declines predictably, never catastrophically.</p></div>
+    <div class="card"><h4>Zero-trust command</h4><p>Every order verified end-to-end with post-quantum signatures — no spoofed hierarchy.</p></div>
+  </div></div>
+</div>
+
+<!-- ============ MESOGRID ============ -->
+<div class="page" id="p-mesogrid">
+  <div class="hero"><div class="hero-fabric"></div><div class="wrap">
+    <div class="crumb"><a data-go="home">Home</a> / <a data-go="mainspar">MainSPAR</a> / MesoGRID</div>
+    <div class="tag slate">MainSPAR · The Fabric</div>
+    <h1 class="display" style="font-size:var(--text-display)">MesoGRID</h1>
+    <p class="serif-line">The mesh that refuses to die.</p>
+    <p class="lede" style="margin-top:22px">A resilient decentralised mesh network with stochastic path optimisation. MesoGRID treats disruption as the operating condition, not the exception — routing around jamming, loss, and partition without central coordination.</p>
+  </div></div>
+  <div class="section alt"><div class="wrap grid3">
+    <div class="card"><h4>Stochastic routing</h4><p>Probabilistic path selection that adversaries cannot predict or pre-empt.</p></div>
+    <div class="card"><h4>Self-healing topology</h4><p>The mesh reforms around node loss in real time — no operator intervention.</p></div>
+    <div class="card"><h4>Partition-tolerant</h4><p>Islands of the network keep operating independently and reconcile on rejoin.</p></div>
+  </div></div>
+</div>
+
+<!-- ============ U92 ============ -->
+<div class="page" id="p-u92">
+  <div class="hero"><div class="hero-fabric"></div><div class="wrap">
+    <div class="crumb"><a data-go="home">Home</a> / U92 Quantum</div>
+    <h1 class="display" style="font-size:var(--text-display)">U92 Quantum Security</h1>
+    <p class="serif-line" style="font-size:20px;margin-top:8px">Named for the element that changed everything. Built for the computer that will.</p>
+    <p class="lede" style="margin-top:26px">U92 is UElement's dedicated quantum security practice. We prepare banks, governments, telecoms, and critical infrastructure for the quantum decade — from cryptographic discovery to post-quantum migration, quantum key distribution, and lasting crypto-agility.</p>
+    <div style="display:flex;gap:14px;margin-top:28px;flex-wrap:wrap">
+      <button class="btn btn-gold" data-go="contact">Request a quantum risk assessment</button>
+      <button class="btn btn-line" data-go="u92pqc">Explore the practice</button>
+    </div>
+  </div></div>
+
+  <div class="section alt"><div class="wrap">
+    <div class="kicker">The threat is already here</div>
+    <div class="grid2" style="align-items:center">
+      <p class="serif-line" style="font-size:24px">Data stolen today will be decrypted tomorrow. Harvest-now-decrypt-later makes every long-lived secret a quantum liability — now.</p>
+      <div style="display:flex;flex-direction:column;gap:14px">
+        <div class="card"><h4>Shor's algorithm</h4><p>Breaks RSA, ECC, and DH — the public-key foundations of banking, identity, and the internet.</p></div>
+        <div class="card"><h4>Grover's algorithm</h4><p>Halves effective symmetric key strength, forcing upgrades across storage and transport.</p></div>
+      </div>
+    </div>
+  </div></div>
+
+  <div class="section"><div class="wrap">
+    <div class="kicker">Three solution lines</div>
+    <div class="grid3" style="margin-top:26px">
+      <div class="card link" data-go="u92pqc"><h4>U92 PQC</h4><p>Discovery to migration: CBOM cryptographic inventory, NIST FIPS 203/204/205/206 alignment, hybrid key exchange, phased rollout.</p><p class="mono" style="margin-top:12px;color:var(--gold-500)">Learn more →</p></div>
+      <div class="card link" data-go="u92qkd"><h4>U92 QKD</h4><p>Quantum key distribution for links where physics, not mathematics, guarantees secrecy.</p><p class="mono" style="margin-top:12px;color:var(--gold-500)">Learn more →</p></div>
+      <div class="card link" data-go="u92agility"><h4>U92 Crypto-Agility</h4><p>Axis, Codex, and Crucible — the abstraction layer, registry, and drill harness that make your next migration a config change.</p><p class="mono" style="margin-top:12px;color:var(--gold-500)">Learn more →</p></div>
+    </div>
+  </div></div>
+
+  <div class="section navy"><div class="wrap">
+    <div class="kicker">Coverage</div>
+    <h2 class="display" style="font-size:28px">Ten domains. One quantum posture.</h2>
+    <div class="chips" style="margin-top:26px">
+      <span class="chip">Application</span><span class="chip">Infrastructure</span><span class="chip">Services</span><span class="chip">Website</span><span class="chip">Mobile application</span><span class="chip">Data center</span><span class="chip">Organizational</span><span class="chip">Industrial</span><span class="chip">Telecommunication</span><span class="chip">Storage</span>
+    </div>
+    <p style="color:var(--slate-300);margin-top:26px;max-width:640px">Regulatory drivers we work with daily: RBI quantum-safe directions for Indian banking, the National Quantum Mission, and NIST's finalized post-quantum standards.</p>
+  </div></div>
+</div>
+
+<!-- ============ U92 PQC ============ -->
+<div class="page" id="p-u92pqc">
+  <div class="hero"><div class="hero-fabric"></div><div class="wrap">
+    <div class="crumb"><a data-go="home">Home</a> / <a data-go="u92">U92</a> / PQC</div>
+    <div class="tag">U92 · Post-Quantum Cryptography</div>
+    <h1 class="display" style="font-size:var(--text-display)">U92 PQC</h1>
+    <p class="serif-line">Migrate before the countdown ends.</p>
+    <p class="lede" style="margin-top:22px">A complete post-quantum migration practice: discover every cryptographic asset you own, prioritize by exposure, and migrate on NIST-standardized algorithms — without breaking production.</p>
+  </div></div>
+  <div class="section alt"><div class="wrap grid2" style="align-items:start">
+    <div>
+      <div class="kicker">The method</div>
+      <div class="steps" style="margin-top:24px">
+        <div class="step"><b>CBOM discovery</b><p>A cryptographic bill of materials across codebases, TLS configurations, certificates, and APIs — surfacing every RSA, ECC, and DH exposure.</p></div>
+        <div class="step"><b>Risk modelling</b><p>Crack-timeline modelling per asset class, so migration order follows actual exposure.</p></div>
+        <div class="step"><b>Hybrid rollout</b><p>Hybrid key exchange (X25519MLKEM768) bridges classical and post-quantum — secure against both worlds during transition.</p></div>
+        <div class="step"><b>Standards alignment</b><p>NIST FIPS 203 (ML-KEM), 204 (ML-DSA), 205 (SLH-DSA), and 206 — mapped to your estate with compliance evidence.</p></div>
+      </div>
+    </div>
+    <div class="card">
+      <h4>Who this is for</h4>
+      <p>Banks under RBI quantum-safe guidance. Telecoms with decade-long infrastructure. Governments with secrets that must outlive the quantum transition. Anyone whose data has a shelf life longer than the countdown.</p>
+      <button class="btn btn-gold" data-go="contact" style="margin-top:20px">Start with a CBOM assessment</button>
+    </div>
+  </div></div>
+</div>
+
+<!-- ============ U92 QKD ============ -->
+<div class="page" id="p-u92qkd">
+  <div class="hero"><div class="hero-fabric"></div><div class="wrap">
+    <div class="crumb"><a data-go="home">Home</a> / <a data-go="u92">U92</a> / QKD</div>
+    <div class="tag">U92 · Quantum Key Distribution</div>
+    <h1 class="display" style="font-size:var(--text-display)">U92 QKD</h1>
+    <p class="serif-line">Secrecy guaranteed by physics.</p>
+    <p class="lede" style="margin-top:22px">For the links that matter most, quantum key distribution offers what no algorithm can: keys whose interception is detectable by the laws of quantum mechanics themselves. U92 designs, integrates, and operates QKD for sovereign and financial backbones.</p>
+  </div></div>
+  <div class="section alt"><div class="wrap grid3">
+    <div class="card"><h4>Link design</h4><p>Fiber and free-space QKD architecture matched to your topology, distances, and threat model.</p></div>
+    <div class="card"><h4>Integration</h4><p>QKD-derived keys feeding your existing encryptors, HSMs, and key-management systems.</p></div>
+    <div class="card"><h4>Hybrid assurance</h4><p>QKD layered with PQC for defense in depth — physics and mathematics, together.</p></div>
+  </div></div>
+</div>
+
+<!-- ============ U92 CRYPTO-AGILITY ============ -->
+<div class="page" id="p-u92agility">
+  <div class="hero"><div class="hero-fabric"></div><div class="wrap">
+    <div class="crumb"><a data-go="home">Home</a> / <a data-go="u92">U92</a> / Crypto-Agility</div>
+    <div class="tag">U92 · Crypto-Agility</div>
+    <h1 class="display" style="font-size:var(--text-display)">U92 Crypto-Agility</h1>
+    <p class="serif-line">The last migration you do by hand.</p>
+    <p class="lede" style="margin-top:22px">Algorithms will be broken again. Crypto-agility means the next transition is a policy change, not a five-year program. Three products make it real.</p>
+  </div></div>
+  <div class="section alt"><div class="wrap grid3">
+    <div class="card"><div class="tag">Product</div><h4>U92 Axis</h4><p>A crypto-abstraction layer between your applications and their algorithms — swap primitives without touching application code.</p></div>
+    <div class="card"><div class="tag">Product</div><h4>U92 Codex</h4><p>The algorithm registry and policy control plane — declare which algorithms are approved, where, and until when.</p></div>
+    <div class="card"><div class="tag">Product</div><h4>U92 Crucible</h4><p>A rotation drill harness — rehearse algorithm swaps in production-like conditions until migration is muscle memory.</p></div>
+  </div></div>
+  <div class="section"><div class="wrap" style="text-align:center">
+    <p class="serif-line" style="max-width:680px;margin:0 auto">Agility is not a document. It is a rehearsed capability.</p>
+    <button class="btn btn-gold" data-go="contact" style="margin-top:26px">Schedule a rotation drill</button>
+  </div></div>
+</div>
+<!-- ============ INDUSTRIES ============ -->
+<div class="page" id="p-industries">
+  <div class="hero"><div class="hero-fabric"></div><div class="wrap">
+    <div class="crumb"><a data-go="home">Home</a> / Industries</div>
+    <div class="kicker">Industries</div>
+    <h1 class="display" style="font-size:var(--text-display)">Where we operate.</h1>
+    <p class="lede" style="margin-top:20px">UElement builds for sectors where downtime is measured in consequences, not minutes. Each industry pairing below maps our platforms to the problems that define it.</p>
+  </div></div>
+  <div class="section alt"><div class="wrap" style="display:flex;flex-direction:column;gap:22px">
+    <div class="card" id="ind-def"><div class="grid2" style="align-items:center"><div><h4>Defence &amp; Aerospace</h4><p>DDIL-native autonomy, air-gapped deployment, and post-quantum communications. ITAR-free and export-eligible by design.</p></div><div class="chips"><span class="chip">MainSPAR</span><span class="chip">U92 PQC</span><span class="chip">Kayak custody</span></div></div></div>
+    <div class="card" id="ind-bfsi"><div class="grid2" style="align-items:center"><div><h4>Banking &amp; Financial Services</h4><p>Quantum-safe transaction protection, UPI/CBS journey observability, RBI &amp; SEBI compliance evidence generated as daily exhaust.</p></div><div class="chips"><span class="chip">U92 PQC</span><span class="chip">U92 Crypto-Agility</span><span class="chip">Vizor</span><span class="chip">Nexus</span></div></div></div>
+    <div class="card" id="ind-mfg"><div class="grid2" style="align-items:center"><div><h4>Manufacturing &amp; Industrial OT</h4><p>Purdue-native observability across 40+ OT protocols, passive by architecture at Levels 0–2, IEC 62443 conformance graphed in real time.</p></div><div class="chips"><span class="chip">Vizor OT</span><span class="chip">Kayak</span><span class="chip">U92 Industrial</span></div></div></div>
+    <div class="card" id="ind-gov"><div class="grid2" style="align-items:center"><div><h4>Government &amp; Public Sector</h4><p>Sovereign cloud and air-gapped topologies, CERT-In 6-hour incident reporting, GeM procurement readiness under Make-in-India.</p></div><div class="chips"><span class="chip">Vizor</span><span class="chip">MainSPAR</span><span class="chip">U92 QKD</span></div></div></div>
+    <div class="card" id="ind-health"><div class="grid2" style="align-items:center"><div><h4>Healthcare &amp; Pharma</h4><p>HIPAA and DPDP-aligned operations, clinical uptime, and serialized provenance from production line to patient.</p></div><div class="chips"><span class="chip">Kayak provenance</span><span class="chip">Vizor</span><span class="chip">U92</span></div></div></div>
+    <div class="card" id="ind-dc"><div class="grid2" style="align-items:center"><div><h4>Datacenter &amp; Warehouse</h4><p>Rack space, hardware, power, cooling, SKUs, and movement — metered, digital-twinned, and billed as services on a verified fabric.</p></div><div class="chips"><span class="chip">Kayak EaaS</span><span class="chip">Vizor Cloud</span><span class="chip">Nexus portals</span></div></div></div>
+  </div></div>
+</div>
+
+<!-- ============ COMPANY / ABOUT US ============ -->
+<div class="page" id="p-company">
+  <div class="hero"><div class="hero-fabric"></div><div class="wrap">
+    <div class="crumb"><a data-go="home">Home</a> / Company / About Us</div>
+    <div class="kicker">About Us</div>
+    <h1 class="display" style="font-size:var(--text-display)">UElement Technologies.</h1>
+    <p class="serif-line" style="font-size:22px;margin-top:10px">Sovereign platforms for the quantum decade.</p>
+    <p class="lede" style="margin-top:22px">UElement Technologies Private Limited is a deeptech company headquartered in Pune, India, with offices in Singapore and the UAE — operating globally. We build the platforms critical enterprises and nations depend on when the stakes are absolute.</p>
+  </div></div>
+
+  <div class="section alt"><div class="wrap grid2" style="align-items:start">
+    <div>
+      <div class="kicker">Mission</div>
+      <h2 class="display" style="font-size:28px">Make critical systems sovereign, quantum-safe, and self-healing.</h2>
+      <p class="mut" style="margin-top:16px">Every platform we ship answers to the operator who runs it — never to a mandatory external dependency. That is what sovereignty means in engineering terms, and it is the thread through everything we build.</p>
+    </div>
+    <div>
+      <div class="kicker">Vision</div>
+      <h2 class="display" style="font-size:28px">The trusted deeptech partner of the quantum decade.</h2>
+      <p class="mut" style="margin-top:16px">As quantum computing rewrites the rules of security and autonomy rewrites the rules of operations, we intend to be the partner that critical sectors — defence, banking, industry, government — already trust when the transition arrives.</p>
+    </div>
+  </div></div>
+
+  <div class="section"><div class="wrap">
+    <div class="kicker">What we believe</div>
+    <div class="grid4" style="margin-top:26px">
+      <div class="card"><h4>Sovereignty is a feature</h4><p>Air-gap first. No mandatory external dependency. Your infrastructure answers to you.</p></div>
+      <div class="card"><h4>The quantum transition is now</h4><p>Harvest-now-decrypt-later means the migration clock started years ago.</p></div>
+      <div class="card"><h4>Evidence over assertion</h4><p>Compliance and trust should be generated continuously as operational exhaust.</p></div>
+      <div class="card"><h4>Resilience by construction</h4><p>Systems should degrade predictably and heal autonomously — not fail loudly.</p></div>
+    </div>
+  </div></div>
+
+  <div class="section navy"><div class="wrap">
+    <div class="kicker">Leadership</div>
+    <h2 class="display" style="font-size:30px">The team.</h2>
+    <p class="lede" style="margin-top:14px">Operators, engineers, and researchers who have chosen to build where failure is not an option.</p>
+    <div class="grid3" style="margin-top:38px">
+      <div class="card team">
+        <div class="tphoto"><img src="images/team/cvg.jpg" alt="Chaitanya Vijay Ghate (CVG)" loading="lazy" onerror="this.style.display='none';this.parentElement.classList.add('noimg')"><span class="tinit">CG</span></div>
+        <div class="trow"><h4>Chaitanya Vijay Ghate (CVG)</h4><a class="li" href="https://www.linkedin.com" target="_blank" rel="noopener" aria-label="Chaitanya Vijay Ghate (CVG) on LinkedIn"><svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.36V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45z"/></svg></a></div>
+        <p class="mono" style="color:var(--gold-500);margin-bottom:8px">Co-founder &amp; Chief Executive Officer</p>
+        <p>Leads UElement's strategy and programs, and represents the company's quantum security and deeptech narrative in public forums and national media.</p>
+      </div>
+      <div class="card team">
+        <div class="tphoto"><img src="images/team/kaustubh.jpg" alt="Kaustubh Narwade" loading="lazy" onerror="this.style.display='none';this.parentElement.classList.add('noimg')"><span class="tinit">KN</span></div>
+        <div class="trow"><h4>Kaustubh Narwade</h4><a class="li" href="https://www.linkedin.com" target="_blank" rel="noopener" aria-label="Kaustubh Narwade on LinkedIn"><svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.36V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45z"/></svg></a></div>
+        <p class="mono" style="color:var(--gold-500);margin-bottom:8px">Co-founder &amp; Chief Product Officer</p>
+        <p>Owns the MainSTAY product line, including the Vizor observability, security and GRC fabric.</p>
+      </div>
+      <div class="card team">
+        <div class="tphoto"><img src="images/team/rohit.jpg" alt="Rohit Shrivastava" loading="lazy" onerror="this.style.display='none';this.parentElement.classList.add('noimg')"><span class="tinit">RS</span></div>
+        <div class="trow"><h4>Rohit Shrivastava</h4><a class="li" href="https://www.linkedin.com" target="_blank" rel="noopener" aria-label="Rohit Shrivastava on LinkedIn"><svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.36V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45z"/></svg></a></div>
+        <p class="mono" style="color:var(--gold-500);margin-bottom:8px">President</p>
+        <p>Drives company operations and go-to-market execution across regions.</p>
+      </div>
+      <div class="card team">
+        <div class="tphoto"><img src="images/team/niraj.jpg" alt="Niraj Sanghvi" loading="lazy" onerror="this.style.display='none';this.parentElement.classList.add('noimg')"><span class="tinit">NS</span></div>
+        <div class="trow"><h4>Niraj Sanghvi</h4><a class="li" href="https://www.linkedin.com" target="_blank" rel="noopener" aria-label="Niraj Sanghvi on LinkedIn"><svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.36V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45z"/></svg></a></div>
+        <p class="mono" style="color:var(--gold-500);margin-bottom:8px">Chief Financial Officer</p>
+        <p>Leads finance, governance, and corporate structuring.</p>
+      </div>
+      <div class="card team">
+        <div class="tphoto"><img src="images/team/bhagyashree.jpg" alt="Bhagyashree Pancholi" loading="lazy" onerror="this.style.display='none';this.parentElement.classList.add('noimg')"><span class="tinit">BP</span></div>
+        <div class="trow"><h4>Bhagyashree Pancholi</h4><a class="li" href="https://www.linkedin.com" target="_blank" rel="noopener" aria-label="Bhagyashree Pancholi on LinkedIn"><svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.36V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45z"/></svg></a></div>
+        <p class="mono" style="color:var(--gold-500);margin-bottom:8px">General Counsel</p>
+        <p>Leads legal affairs, contracts, and regulatory alignment.</p>
+      </div>
+      <div class="card team">
+        <div class="tphoto"><img src="images/team/anoop.jpg" alt="Anoop Kumar" loading="lazy" onerror="this.style.display='none';this.parentElement.classList.add('noimg')"><span class="tinit">AK</span></div>
+        <div class="trow"><h4>Anoop Kumar</h4><a class="li" href="https://www.linkedin.com" target="_blank" rel="noopener" aria-label="Anoop Kumar on LinkedIn"><svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.36V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45z"/></svg></a></div>
+        <p class="mono" style="color:var(--gold-500);margin-bottom:8px">VP Engineering, Service Delivery</p>
+        <p>Leads engineering delivery across platform engagements.</p>
+      </div>
+      <div class="card team">
+        <div class="tphoto"><img src="images/team/uday.jpg" alt="Uday Wad" loading="lazy" onerror="this.style.display='none';this.parentElement.classList.add('noimg')"><span class="tinit">UW</span></div>
+        <div class="trow"><h4>Uday Wad</h4><a class="li" href="https://www.linkedin.com" target="_blank" rel="noopener" aria-label="Uday Wad on LinkedIn"><svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.36V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45z"/></svg></a></div>
+        <p class="mono" style="color:var(--gold-500);margin-bottom:8px">VP R&amp;D, Quantum &amp; AI</p>
+        <p>Leads research across quantum technologies and applied AI.</p>
+      </div>
+      <div class="card team">
+        <div class="tphoto"><img src="images/team/hiren.jpg" alt="Hiren Mehta" loading="lazy" onerror="this.style.display='none';this.parentElement.classList.add('noimg')"><span class="tinit">HM</span></div>
+        <div class="trow"><h4>Hiren Mehta</h4><a class="li" href="https://www.linkedin.com" target="_blank" rel="noopener" aria-label="Hiren Mehta on LinkedIn"><svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.36V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45z"/></svg></a></div>
+        <p class="mono" style="color:var(--gold-500);margin-bottom:8px">Chairman</p>
+        <p>Chairs the board and leads UDTechs, UElement's parent group.</p>
+      </div>
+    </div>
+    <div style="margin-top:44px">
+      <div class="kicker">Advisors</div>
+      <div class="grid3" style="margin-top:18px">
+        <div class="card"><div class="trow"><h4>Urbasi Sinha</h4><a class="li" href="https://www.linkedin.com" target="_blank" rel="noopener" aria-label="Urbasi Sinha on LinkedIn"><svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.36V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45z"/></svg></a></div><p>Advisor</p></div>
+        <div class="card"><div class="trow"><h4>Utsav Banerjee</h4><a class="li" href="https://www.linkedin.com" target="_blank" rel="noopener" aria-label="Utsav Banerjee on LinkedIn"><svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.36V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45z"/></svg></a></div><p>Advisor</p></div>
+        <div class="card"><div class="trow"><h4>Raajat Agarwal</h4><a class="li" href="https://www.linkedin.com" target="_blank" rel="noopener" aria-label="Raajat Agarwal on LinkedIn"><svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.36V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45z"/></svg></a></div><p>Advisor</p></div>
+      </div>
+    </div>
+  </div></div>
+
+  <div class="section cream"><div class="wrap">
+    <div class="kicker">Global presence</div>
+    <h2 class="display" style="font-size:28px">Three offices. One standard.</h2>
+    <div class="grid3" style="margin-top:30px">
+      <div class="card"><h4>Pune, India</h4><p>Global headquarters — engineering, research, and program leadership.</p></div>
+      <div class="card"><h4>Singapore</h4><p>JAPAC operations and partnerships.</p></div>
+      <div class="card"><h4>UAE</h4><p>Middle East operations and regional pursuits.</p></div>
+    </div>
+    <div style="margin-top:36px;display:flex;gap:14px;flex-wrap:wrap;align-items:center">
+      <button class="btn btn-gold" data-go="careers">Join the team</button>
+      <button class="btn btn-line" data-go="contact">Talk to us</button>
+    </div>
+  </div></div>
+</div>
+
+<!-- ============ NEWS ROOM ============ -->
+<div class="page" id="p-news">
+  <div class="hero"><div class="hero-fabric"></div><div class="wrap">
+    <div class="crumb"><a data-go="home">Home</a> / Company / News Room</div>
+    <div class="kicker">News Room</div>
+    <h1 class="display" style="font-size:var(--text-display)">In the conversation.</h1>
+    <p class="lede" style="margin-top:20px">Announcements, media coverage, and the public conversation on quantum security and sovereign technology.</p>
+  </div></div>
+  <div class="section alt"><div class="wrap">
+    <div class="grid3">
+      <div class="card"><div class="tag">Media</div><h4>All India Radio</h4><p>Leadership commentary on quantum security and India's deeptech moment, broadcast nationally.</p></div>
+      <div class="card"><div class="tag">Commentary</div><h4>Professional insights</h4><p>Ongoing perspectives on quantum-safe migration, sovereign platforms, and the deeptech economy on LinkedIn.</p></div>
+      <div class="card"><div class="tag">Forums</div><h4>Industry engagements</h4><p>Briefings and talks across BFSI, defence, and public-sector technology forums.</p></div>
+    </div>
+    <div class="card" style="margin-top:26px"><div class="grid2" style="align-items:center"><div><h4>Press &amp; media inquiries</h4><p>For interviews, comments, and press material, reach the communications desk.</p></div><div style="text-align:right"><button class="btn btn-gold" data-go="contact">Contact communications</button></div></div></div>
+  </div></div>
+</div>
+
+<!-- ============ SUCCESS STORIES ============ -->
+<div class="page" id="p-stories">
+  <div class="hero"><div class="hero-fabric"></div><div class="wrap">
+    <div class="crumb"><a data-go="home">Home</a> / Company / Success Stories</div>
+    <div class="kicker">Success Stories</div>
+    <h1 class="display" style="font-size:var(--text-display)">Measured in outcomes.</h1>
+    <p class="lede" style="margin-top:20px">How our platforms deliver for the sectors where downtime is measured in consequences.</p>
+  </div></div>
+  <div class="section alt"><div class="wrap">
+    <div class="grid3">
+      <div class="card"><div class="tag">BFSI</div><h4>Quantum-readiness for banking</h4><p>Cryptographic discovery and post-quantum migration planning aligned to RBI quantum-safe directions for financial institutions.</p></div>
+      <div class="card"><div class="tag">Industrial OT</div><h4>Zero blind spots on the plant floor</h4><p>Purdue-native observability proofs of value spanning IT and OT — one topology, one evidence trail.</p></div>
+      <div class="card"><div class="tag">Enterprise IT</div><h4>Cloud migration at scale</h4><p>Partner-led infrastructure modernization engagements moving mission-critical estates to new platforms.</p></div>
+    </div>
+    <p class="mut" style="margin-top:24px;font-size:13px">Client identities are shared under NDA. Ask us for reference conversations relevant to your sector.</p>
+    <button class="btn btn-line" data-go="contact" style="margin-top:16px">Request references</button>
+  </div></div>
+</div>
+
+<!-- ============ PARTNERSHIPS ============ -->
+<div class="page" id="p-partnerships">
+  <div class="hero"><div class="hero-fabric"></div><div class="wrap">
+    <div class="crumb"><a data-go="home">Home</a> / Company / Partnerships</div>
+    <div class="kicker">Partnerships</div>
+    <h1 class="display" style="font-size:var(--text-display)">Stronger through alliances.</h1>
+    <p class="lede" style="margin-top:20px">We deliver alongside systems integrators, cloud and infrastructure providers, and regional operations partners across India, JAPAC, and the Middle East.</p>
+  </div></div>
+  <div class="section alt"><div class="wrap">
+    <div class="grid4">
+      <div class="card"><h4>Systems integrators</h4><p>Co-delivery on enterprise and government engagements.</p></div>
+      <div class="card"><h4>Cloud &amp; infrastructure</h4><p>Sovereign and hyperscale deployment partnerships.</p></div>
+      <div class="card"><h4>OEM embedding</h4><p>Platform capabilities embedded in partner hardware, with per-unit royalty models.</p></div>
+      <div class="card"><h4>Regional alliances</h4><p>Operations partners across JAPAC and the Middle East.</p></div>
+    </div>
+    <div class="card" style="margin-top:26px"><div class="grid2" style="align-items:center"><div><h4>Become a partner</h4><p>Tell us about your practice, your region, and the clients you serve.</p></div><div style="text-align:right"><button class="btn btn-gold" data-go="contact">Start the conversation</button></div></div></div>
+  </div></div>
+</div>
+
+<!-- ============ BLOGS ============ -->
+<div class="page" id="p-blogs">
+  <div class="hero"><div class="hero-fabric"></div><div class="wrap">
+    <div class="crumb"><a data-go="home">Home</a> / Company / Blogs</div>
+    <div class="kicker">Blogs</div>
+    <h1 class="display" style="font-size:var(--text-display)">Perspectives worth your time.</h1>
+    <p class="lede" style="margin-top:20px">Insights, trends, and expert perspectives from the UElement team.</p>
+  </div></div>
+  <div class="section alt"><div class="wrap">
+    <div class="grid3">
+      <div class="card link" data-go="u92pqc"><div class="tag">Quantum</div><h4>Why harvest-now-decrypt-later changes your migration math</h4><p>The quantum threat to today's encrypted archives — and what a CBOM-first response looks like.</p><p class="mono" style="margin-top:12px;color:var(--gold-500)">Read the practice →</p></div>
+      <div class="card link" data-go="vizor"><div class="tag">Observability</div><h4>Compliance as exhaust, not archaeology</h4><p>What changes when audit evidence is generated continuously by the systems themselves.</p><p class="mono" style="margin-top:12px;color:var(--gold-500)">Read the practice →</p></div>
+      <div class="card link" data-go="mainspar"><div class="tag">Tactical Edge</div><h4>The edge is the cloud</h4><p>Designing for denied, degraded, intermittent, and limited environments from first principles.</p><p class="mono" style="margin-top:12px;color:var(--gold-500)">Read the practice →</p></div>
+      <div class="card link" data-go="u92agility"><div class="tag">Crypto-Agility</div><h4>The last migration you do by hand</h4><p>Why algorithm rotation should be a rehearsed capability, not a five-year program.</p><p class="mono" style="margin-top:12px;color:var(--gold-500)">Read the practice →</p></div>
+      <div class="card link" data-go="kayak"><div class="tag">Physical Fabric</div><h4>When the warehouse becomes an API</h4><p>Everything as a Service, and what a cryptographic twin means for physical trust.</p><p class="mono" style="margin-top:12px;color:var(--gold-500)">Read the practice →</p></div>
+      <div class="card link" data-go="nexus"><div class="tag">Digital Fabric</div><h4>GenAI search is the new front door</h4><p>Why enterprises must be discoverable to both people and models.</p><p class="mono" style="margin-top:12px;color:var(--gold-500)">Read the practice →</p></div>
+    </div>
+  </div></div>
+</div>
+
+<!-- ============ INVESTOR RELATIONS ============ -->
+<div class="page" id="p-investors">
+  <div class="hero"><div class="hero-fabric"></div><div class="wrap">
+    <div class="crumb"><a data-go="home">Home</a> / Company / Investor Relations</div>
+    <div class="kicker">Investor Relations</div>
+    <h1 class="display" style="font-size:var(--text-display)">Built for the long horizon.</h1>
+    <p class="lede" style="margin-top:20px">UElement Technologies Private Limited is part of the UDTechs group, building deeptech platforms across quantum security, autonomous resilience, and enterprise fabric.</p>
+  </div></div>
+  <div class="section alt"><div class="wrap grid2" style="align-items:start">
+    <div>
+      <div class="kicker">Structure &amp; governance</div>
+      <table class="spec" style="margin-top:20px">
+        <tr><td>Entity</td><td>UElement Technologies Private Limited</td></tr>
+        <tr><td>Group</td><td>Part of the UDTechs group</td></tr>
+        <tr><td>Headquarters</td><td>Pune, Maharashtra, India</td></tr>
+        <tr><td>Regional offices</td><td>Singapore · UAE</td></tr>
+        <tr><td>Programs</td><td>MainSTAY · MainSPAR · U92 Quantum</td></tr>
+        <tr><td>Revenue model</td><td>Licensing · AMC · Engineering services · OEM royalty</td></tr>
+      </table>
+    </div>
+    <div class="card">
+      <h4>Investor inquiries</h4>
+      <p>Financial reports, updates, and performance materials are shared with qualified investors directly. Reach the investor desk to begin a conversation.</p>
+      <button class="btn btn-gold" data-go="contact" style="margin-top:20px">Contact investor desk</button>
+    </div>
+  </div></div>
+</div>
+
+<!-- ============ CAREERS ============ -->
+<div class="page" id="p-careers">
+  <div class="hero"><div class="hero-fabric"></div><div class="wrap">
+    <div class="crumb"><a data-go="home">Home</a> / Company / Careers</div>
+    <div class="kicker">Careers</div>
+    <h1 class="display" style="font-size:var(--text-display)">Build things that must not fail.</h1>
+    <p class="lede" style="margin-top:20px">We hire engineers, researchers, and operators who want their work to matter at national scale — quantum cryptographers, edge AI engineers, OT security specialists, roboticists, and platform builders.</p>
+    <button class="btn btn-gold" data-go="contact" style="margin-top:28px">Write to us</button>
+  </div></div>
+  <div class="section alt"><div class="wrap grid3">
+    <div class="card"><h4>Quantum &amp; cryptography</h4><p>PQC migration engineering, QKD integration, crypto-agility tooling.</p></div>
+    <div class="card"><h4>Edge AI &amp; autonomy</h4><p>Sovereign MLOps, agentic C2, mesh networking for DDIL environments.</p></div>
+    <div class="card"><h4>Platform engineering</h4><p>Observability at scale, OT protocol engineering, blockchain custody, robotics.</p></div>
+  </div></div>
+</div>
+
+<!-- ============ CONTACT ============ -->
+<div class="page" id="p-contact">
+  <div class="hero"><div class="hero-fabric"></div><div class="wrap">
+    <div class="crumb"><a data-go="home">Home</a> / Contact</div>
+    <div class="kicker">Contact</div>
+    <h1 class="display" style="font-size:var(--text-display)">Start the conversation.</h1>
+    <p class="lede" style="margin-top:20px">Whether it's a quantum risk assessment, a 45-day Vizor proof of value, a tactical-edge briefing, or a partnership — tell us what you're solving for.</p>
+  </div></div>
+  <div class="section alt"><div class="wrap grid2" style="align-items:start">
+    <div class="card">
+      <h4 style="margin-bottom:18px">Send us a message</h4>
+      <div style="display:flex;flex-direction:column;gap:14px">
+        <input type="text" placeholder="Full name" style="background:var(--ink-850);border:1px solid var(--border-dark);border-radius:var(--radius-md);padding:13px 16px;color:var(--white);font-family:var(--font-body);font-size:14px">
+        <input type="email" placeholder="Work email" style="background:var(--ink-850);border:1px solid var(--border-dark);border-radius:var(--radius-md);padding:13px 16px;color:var(--white);font-family:var(--font-body);font-size:14px">
+        <select style="background:var(--ink-850);border:1px solid var(--border-dark);border-radius:var(--radius-md);padding:13px 16px;color:var(--slate-300);font-family:var(--font-body);font-size:14px">
+          <option>I'm interested in…</option>
+          <option>MainSTAY — Nexus / Vizor / Kayak</option>
+          <option>MainSPAR — tactical edge</option>
+          <option>U92 — quantum security</option>
+          <option>Partnership or careers</option>
+        </select>
+        <textarea rows="4" placeholder="What are you solving for?" style="background:var(--ink-850);border:1px solid var(--border-dark);border-radius:var(--radius-md);padding:13px 16px;color:var(--white);font-family:var(--font-body);font-size:14px;resize:vertical"></textarea>
+        <button class="btn btn-gold" onclick="alert('Demo form — wire to your CRM or mail endpoint.')">Send message</button>
+      </div>
+    </div>
+    <div>
+      <div class="kicker">Reach us directly</div>
+      <table class="spec" style="margin-top:20px">
+        <tr><td>MainSTAY</td><td class="mono">mainstay@uelement.in</td></tr>
+        <tr><td>Vizor</td><td class="mono">vizor.uelement.in</td></tr>
+        <tr><td>Headquarters</td><td>Pune, Maharashtra, India</td></tr>
+        <tr><td>Regional</td><td>Singapore · UAE</td></tr>
+      </table>
+      <p class="mut" style="margin-top:22px;font-size:13px">For defence and government pursuits, request a classified-appropriate briefing channel through the form.</p>
+    </div>
+  </div></div>
+</div>
+
+</main>
+
+<footer><div class="wrap">
+  <div class="fgrid">
+    <div class="fcol">
+      <a class="logo" data-go="home" style="margin-bottom:14px;display:inline-block">UElement<em>.</em></a>
+      <p style="font-size:12.5px;color:var(--grey-450);max-width:230px">Sovereign deeptech for the systems that cannot fail. Pune · Singapore · UAE — operating globally.</p>
+    </div>
+    <div class="fcol"><h5>MainSTAY</h5><a data-go="mainstay">Program overview</a><a data-go="nexus">Nexus</a><a data-go="vizor">Vizor</a><a data-go="kayak">Kayak</a></div>
+    <div class="fcol"><h5>MainSPAR</h5><a data-go="mainspar">Program overview</a><a data-go="merlinos">MerlinOS</a><a data-go="mustang">MustangC3</a><a data-go="mesogrid">MesoGRID</a></div>
+    <div class="fcol"><h5>U92 Quantum</h5><a data-go="u92">Practice overview</a><a data-go="u92pqc">PQC</a><a data-go="u92qkd">QKD</a><a data-go="u92agility">Crypto-Agility</a></div>
+    <div class="fcol"><h5>Company</h5><a data-go="company">About Us</a><a data-go="news">News Room</a><a data-go="stories">Success Stories</a><a data-go="partnerships">Partnerships</a><a data-go="blogs">Blogs</a><a data-go="investors">Investor Relations</a><a data-go="industries">Industries</a><a data-go="careers">Careers</a><a data-go="contact">Contact</a></div>
+  </div>
+  <div class="fbottom">
+    <span>© 2026 UElement Technologies Private Limited. All rights reserved.</span>
+    <span class="mono" lang="hi" style="font-family:var(--font-body);color:var(--gold-500);letter-spacing:.05em">सशक्त · सक्षम · सुरक्षित</span>
+  </div>
+</div></footer>
+
+<script>
+(function(){
+  var pages=["home","mainstay","nexus","vizor","kayak","mainspar","merlinos","mustang","mesogrid","u92","u92pqc","u92qkd","u92agility","industries","company","news","stories","partnerships","blogs","investors","careers","contact"];
+  function go(p){
+    if(pages.indexOf(p)===-1)p="home";
+    document.querySelectorAll(".page").forEach(function(el){el.classList.remove("on")});
+    var t=document.getElementById("p-"+p);
+    if(t)t.classList.add("on");
+    document.querySelectorAll(".navlink").forEach(function(n){n.classList.remove("active")});
+    window.scrollTo({top:0,behavior:"instant"});
+    if(location.hash!=="#"+p)history.replaceState(null,"","#"+p);
+    document.getElementById("navlinks").classList.remove("open");
+  }
+  document.addEventListener("click",function(e){
+    var el=e.target.closest("[data-go]");
+    if(el){
+      e.preventDefault();
+      go(el.getAttribute("data-go"));
+      var a=el.getAttribute("data-anchor");
+      if(a){var t=document.getElementById(a);if(t)setTimeout(function(){t.scrollIntoView({behavior:"smooth"})},60);}
+    }
+  });
+  document.getElementById("burger").addEventListener("click",function(){
+    document.getElementById("navlinks").classList.toggle("open");
+  });
+  window.addEventListener("hashchange",function(){go(location.hash.slice(1)||"home")});
+  go(location.hash.slice(1)||"home");
+})();
+</script>
+</body>
+</html>
