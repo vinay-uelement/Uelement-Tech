@@ -91,7 +91,7 @@ export default function HomePage() {
       </div>
 
       {/* ═══════ WHY UELEMENT ═══════ */}
-      <div className="section">
+      <div className="section navy">
         <div className="wrap grid2" style={{ alignItems: 'center' }}>
           <div>
             <div className="kicker">Why UElement</div>
