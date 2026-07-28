@@ -1438,7 +1438,7 @@ h3.h {
 /* ═══════════ HERO ═══════════ */
 .hero {
   position: relative;
-  padding: 120px 0 100px;
+  padding: 0;
   overflow: hidden;
   min-height: calc(100svh - 67px);
   max-height: calc(100svh - 67px);

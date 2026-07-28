@@ -17,9 +17,9 @@ export default function HomePage() {
           </div>
         </div>
 
-        <div className="wrap relative z-10">
+        <div className="wrap relative z-10 mt-12 lg:mt-20">
           <div className="text-(--gold-500)">सशक्त · सक्षम · सुरक्षित</div>
-          <h1 className="display ">
+          <h1 className="display " style={{ fontSize: 'calc(var(--text-hero) * 0.8)' }}>
             Sovereign <span className='au'>DeepTech</span> 
             <br />
             systems for 
