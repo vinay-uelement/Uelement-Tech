@@ -1448,7 +1448,7 @@ h3.h {
   /* Gradient: primary navy → lightish blue */
   background:
     url('/ue-quantum-bg-transparent.png') center / cover no-repeat,
-    linear-gradient(135deg, #071739 30%, #0c2248 50%, #132f5c 70%, #1a3d72 100%);
+    linear-gradient(97.27deg, #071739 5.62%, #0d2450 34.57%, #163068 62.65%, #0a1e45 96.86%);
 }
 
 .hero-fabric {
@@ -1592,6 +1592,27 @@ table.spec td:first-child {
 .step p {
   font-size: 13.5px;
   color: var(--grey-350);
+}
+
+/* Alternate light section text colors */
+.section.alt .kicker {
+  color: #a87228;
+}
+
+.section.alt .steps {
+  border-image: linear-gradient(180deg, rgba(200, 138, 62, 0.4), rgba(0, 0, 0, 0.05)) 1;
+}
+
+.section.alt .step::before {
+  background: #a87228;
+}
+
+.section.alt .step b {
+  color: var(--navy-900);
+}
+
+.section.alt .step p {
+  color: var(--ink-600);
 }
 
 
