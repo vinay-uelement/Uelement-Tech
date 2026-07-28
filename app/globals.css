@@ -517,7 +517,6 @@ a {
   position: sticky;
   top: 0;
   z-index: 100;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
   box-shadow: 0 4px 30px rgba(35, 34, 35, 0.1);
 }
 

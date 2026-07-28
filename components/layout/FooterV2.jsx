@@ -21,7 +21,7 @@ const FooterV2 = () => {
         <p className="font-reddit-sans text-[#808080] text-13 sm:text-16 text-center sm:text-left">
           © 2026 UElement Technologies Private Limited. All rights reserved.
         </p>
-        <p 
+        <p
           className="font-reddit-sans font-medium text-13 sm:text-16 tracking-wider text-center sm:text-right"
           style={{ color: 'var(--gold-500)' }}
         >
@@ -272,7 +272,7 @@ const ContactUs = () => {
 
       <div className="container-padding py-10 sm:py-12 lg:py-16">
         <div className="title-div text-primary-blue text-center mb-8 sm:mb-10 lg:mb-12">
-          <p className="fl-slash">/ Contact Us</p>
+          <p className="font-family-[--font-heading] text-center text-xl mb-2"> / Contact Us</p>
           <h4 className="fl1 leading-tight mb-10 md:mb-14">
             Ready to Transform Your Enterprise Security?
           </h4>
