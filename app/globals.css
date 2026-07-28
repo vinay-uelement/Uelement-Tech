@@ -1443,7 +1443,8 @@ h3.h {
   position: relative;
   padding: 120px 0 100px;
   overflow: hidden;
-  min-height: calc(100vh - 67px);
+  min-height: calc(100svh - 67px);
+  max-height: calc(100svh - 67px);
   display: flex;
   align-items: center;
   /* Gradient: primary navy → lightish blue */

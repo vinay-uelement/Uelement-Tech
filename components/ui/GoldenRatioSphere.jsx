@@ -91,7 +91,7 @@ const GoldenRatioSphere = ({ className = '', showControls = true }) => {
         let radius = Math.sqrt(1 - y * y);
         let x = Math.cos(theta) * radius;
         let z = Math.sin(theta) * radius;
-        vertices.push(x * 190, y * 190, z * 190);
+        vertices.push(x * 180, y * 180, z * 180);
       }
       geometry.setAttribute("position", new THREE.Float32BufferAttribute(vertices, 3));
       geometry.attributes.position.needsUpdate = true;
