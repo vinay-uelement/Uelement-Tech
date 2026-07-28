@@ -9,18 +9,18 @@ export default function HomePage() {
         <div className="hero-fabric" />
         
         {/* Golden Ratio Sphere Background */}
-        <div className="absolute -right-10 top-1/2 -translate-y-1/2 w-full md:w-1/2 pointer-events-none mix-blend-screen hidden md:block z-0">
+        <div className="absolute right-6 top-1/2 -translate-y-1/2 w-full md:w-1/2 pointer-events-none mix-blend-screen hidden md:block z-0">
           <GoldenRatioSphere showControls={false} />
         </div>
 
         <div className="wrap relative z-10">
           <div className="text-(--gold-500)">सशक्त · सक्षम · सुरक्षित</div>
-          <h1 className="display">
-            Sovereign deeptech
+          <h1 className="display ">
+            Sovereign <span className='text-(--gold-500)'>DeepTech</span>
             <br />
-            for the systems that
+            for the <span className='text-(--gold-500)'>Systems</span> that
             <br />
-            <span className="au">cannot fail</span>.
+            <span className="">cannot fail</span>.
           </h1>
           <p className="lede" style={{ marginTop: 22 }}>
             We build the platforms nations and enterprises run when the stakes are absolute —

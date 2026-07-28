@@ -23,9 +23,9 @@ const GoldenRatioSphere = ({ className = '', showControls = true }) => {
     let gui;
 
     const controls = {
-      totalPoints: 10500,
+      totalPoints: 9000,
       distributionConstant: 0.6180339887, // Golden Ratio
-      pointSize: 1,
+      pointSize: 2,
       rotationSpeed: 0.002,
       pointColor: "#FFD700", // Golden secondary color
       highlightEnabled: false,
@@ -91,7 +91,7 @@ const GoldenRatioSphere = ({ className = '', showControls = true }) => {
         let radius = Math.sqrt(1 - y * y);
         let x = Math.cos(theta) * radius;
         let z = Math.sin(theta) * radius;
-        vertices.push(x * 250, y * 250, z * 250);
+        vertices.push(x * 190, y * 190, z * 190);
       }
       geometry.setAttribute("position", new THREE.Float32BufferAttribute(vertices, 3));
       geometry.attributes.position.needsUpdate = true;
