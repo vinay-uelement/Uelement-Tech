@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import GoldenRatioSphere from '@/components/ui/GoldenRatioSphere';
 
 export default function HomePage() {
   return (
@@ -6,12 +7,20 @@ export default function HomePage() {
       {/* ═══════ HERO ═══════ */}
       <div className="hero">
         <div className="hero-fabric" />
-        <div className="wrap">
+        
+        {/* Golden Ratio Sphere Background */}
+        <div className="absolute -right-10 top-1/2 -translate-y-1/2 w-full md:w-1/2 pointer-events-none mix-blend-screen hidden md:block z-0">
+          <GoldenRatioSphere showControls={false} />
+        </div>
+
+        <div className="wrap relative z-10">
           <div className="text-(--gold-500)">सशक्त · सक्षम · सुरक्षित</div>
           <h1 className="display">
-            Sovereign deeptech for the
+            Sovereign deeptech
             <br />
-            systems that <span className="au">cannot fail</span>.
+            for the systems that
+            <br />
+            <span className="au">cannot fail</span>.
           </h1>
           <p className="lede" style={{ marginTop: 22 }}>
             We build the platforms nations and enterprises run when the stakes are absolute —
