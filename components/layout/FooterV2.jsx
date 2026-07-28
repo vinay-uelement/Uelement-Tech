@@ -624,8 +624,8 @@ const FooterContent = () => {
 
             <div className="grid grid-cols-2 lg:flex lg:flex-1 lg:justify-end gap-8 lg:gap-6 xl:gap-10 my-6 md:my-0">
               <div className="footer-links-group">
-                <h6 className="font-semibold text-13 sm:text-14 font-reddit-sans text-white uppercase mb-4 sm:mb-5 tracking-wider">
-                  MAINSTAY
+                <h6 className="font-semibold text-13 sm:text-14 font-reddit-sans text-white mb-4 sm:mb-5 tracking-wider">
+                  MainSTAY
                 </h6>
                 <div className="flex flex-col gap-3 sm:gap-4 font-reddit-sans font-light">
                   <Link href="/mainstay" className="fl3 !text-[#e2e2e2] text-12 sm:text-13 hover:text-white transition-colors">Program overview</Link>
@@ -636,8 +636,8 @@ const FooterContent = () => {
               </div>
 
               <div className="footer-links-group">
-                <h6 className="font-semibold text-13 sm:text-14 font-reddit-sans text-white uppercase mb-4 sm:mb-5 tracking-wider">
-                  MAINSPAR
+                <h6 className="font-semibold text-13 sm:text-14 font-reddit-sans text-white  mb-4 sm:mb-5 tracking-wider">
+                  MainSPAR
                 </h6>
                 <div className="flex flex-col gap-3 sm:gap-4 font-reddit-sans font-light">
                   <Link href="/mainspar" className="fl3 !text-[#e2e2e2] text-12 sm:text-13 hover:text-white transition-colors">Program overview</Link>
@@ -648,8 +648,8 @@ const FooterContent = () => {
               </div>
 
               <div className="footer-links-group">
-                <h6 className="font-semibold text-13 sm:text-14 font-reddit-sans text-white uppercase mb-4 sm:mb-5 tracking-wider">
-                  U92 QUANTUM
+                <h6 className="font-semibold text-13 sm:text-14 font-reddit-sans text-white  mb-4 sm:mb-5 tracking-wider">
+                  U92 Quantum
                 </h6>
                 <div className="flex flex-col gap-3 sm:gap-4 font-reddit-sans font-light">
                   <Link href="/u92" className="fl3 !text-[#e2e2e2] text-12 sm:text-13 hover:text-white transition-colors">Practice overview</Link>
