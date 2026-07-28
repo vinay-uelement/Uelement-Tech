@@ -11,7 +11,7 @@ export default function HomePage() {
         {/* Golden Ratio Sphere Background */}
         <div className="absolute inset-0 pointer-events-none mix-blend-screen hidden md:flex justify-center z-0">
           <div className="w-full max-w-[1100px] relative h-full mx-auto">
-            <div className="absolute -right-10 top-1/2 -translate-y-1/2 w-full md:w-1/2">
+            <div className="absolute -right-14 top-1/2 -translate-y-1/2 w-full md:w-1/2">
               <GoldenRatioSphere showControls={false} />
             </div>
           </div>
