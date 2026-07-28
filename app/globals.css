@@ -1281,7 +1281,8 @@ h3.h {
   color: transparent;
 }
 
-.proglist a:nth-child(2) span {
+.proglist a:nth-child(2) span,
+.proglist a:nth-child(3) span {
   background: linear-gradient(105deg, #75839a, #cdd5db 50%, #75839a);
   -webkit-background-clip: text;
   background-clip: text;

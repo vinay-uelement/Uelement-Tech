@@ -289,7 +289,7 @@ const ContactUs = () => {
 
         <div className="max-w-[1100px] mx-auto bg-white rounded-[20px] p-[8px] sm:p-[10px] grid grid-cols-1 lg:grid-cols-[40%_60%] shadow-[0px_4px_72.2px_0px_rgba(0,0,0,0.25)]">
           <div className="bg-[linear-gradient(154.11deg,#0C142D_20%,#274193_100%)] rounded-[18px] p-6 sm:p-8 lg:p-10 xl:p-12 text-white flex flex-col justify-start gap-8 lg:gap-16 relative overflow-hidden min-h-[350px]">
-            <div className="absolute -bottom-8 -right-3 text-[160px] sm:text-[180px] lg:text-[200px] xl:text-[250px] font-bold text-[#488bf0]/8 select-none pointer-events-none leading-none">
+            <div className="absolute -bottom-8 -right-3 text-[160px] sm:text-[180px] lg:text-[200px] xl:text-[250px] font-bold text-[#488bf0]/8 select-none pointer-events-none leading-none font-reddit-sans!">
               92
             </div>
 
@@ -529,9 +529,9 @@ const FooterContent = () => {
     <>
       <footer className="hidden md:block bg-hero-gradient pt-2 lg:pt-4 pb-6 container-padding -mt-px">
         <div className="max-w-[1100px] mx-auto">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10 lg:gap-12 xl:gap-16 pb-8 sm:pb-10 lg:pb-12">
+          <div className="flex flex-col lg:flex-row lg:justify-between gap-6 sm:gap-8 lg:gap-10 xl:gap-14 pb-8 sm:pb-10 lg:pb-12">
             {/* Company Details */}
-            <div className="company-details flex flex-col gap-12 sm:gap-16">
+            <div className="company-details flex flex-col gap-12 sm:gap-16 lg:w-[220px] xl:w-[230px] shrink-0">
               <div>
                 <img
                   src='/icons/global/UElement_Tech_Logo_White.png'
@@ -622,7 +622,7 @@ const FooterContent = () => {
               </div>
             </div>
 
-            <div className="grid grid-cols-2 lg:grid-cols-4 lg:col-span-3 gap-8 my-6 md:my-0">
+            <div className="grid grid-cols-2 lg:flex lg:flex-1 lg:justify-end gap-8 lg:gap-6 xl:gap-10 my-6 md:my-0">
               <div className="footer-links-group">
                 <h6 className="font-semibold text-13 sm:text-14 font-reddit-sans text-white uppercase mb-4 sm:mb-5 tracking-wider">
                   MAINSTAY

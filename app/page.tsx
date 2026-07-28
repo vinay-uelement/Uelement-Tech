@@ -9,16 +9,20 @@ export default function HomePage() {
         <div className="hero-fabric" />
         
         {/* Golden Ratio Sphere Background */}
-        <div className="absolute right-6 top-1/2 -translate-y-1/2 w-full md:w-1/2 pointer-events-none mix-blend-screen hidden md:block z-0">
-          <GoldenRatioSphere showControls={false} />
+        <div className="absolute inset-0 pointer-events-none mix-blend-screen hidden md:flex justify-center z-0">
+          <div className="w-full max-w-[1100px] relative h-full mx-auto">
+            <div className="absolute -right-10 top-1/2 -translate-y-1/2 w-full md:w-1/2">
+              <GoldenRatioSphere showControls={false} />
+            </div>
+          </div>
         </div>
 
         <div className="wrap relative z-10">
           <div className="text-(--gold-500)">सशक्त · सक्षम · सुरक्षित</div>
           <h1 className="display ">
-            Sovereign <span className='text-(--gold-500)'>DeepTech</span>
+            Sovereign <span className='au'>DeepTech</span>
             <br />
-            for the <span className='text-(--gold-500)'>Systems</span> that
+            for the <span className='au'>Systems</span> that
             <br />
             <span className="">cannot fail</span>.
           </h1>
@@ -84,7 +88,7 @@ export default function HomePage() {
               </p>
             </Link>
             <Link href="/mainspar" className="card link" style={{ textDecoration: 'none' }}>
-              <div className="proglabel">MainSPAR</div>
+              <div className="proglabel slate">MainSPAR</div>
               <h4>MainSPAR</h4>
               <p>
                 Autonomous resilience for the tactical edge. A sovereign MLOps ecosystem for denied,
