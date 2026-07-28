@@ -41,13 +41,13 @@ export default function HomePage() {
       </div>
 
       {/* ═══════ THE PORTFOLIO ═══════ */}
-      <div className="section alt light">
+      <div className="section alt">
         <div className="wrap">
           <div className="kicker" style={{ color: 'var(--navy-800)' }}>The portfolio</div>
           <h2 className="display text-navy-gradient">
             Two programs. One practice.
             <br />
-            Every layer of <span className="au">sovereignty</span>.
+            Every layer of <span className="au">sovereignty.</span>
           </h2>
           <div className="grid3" style={{ marginTop: 44 }}>
             <Link href="/u92" className="card link" style={{ textDecoration: 'none' }}>

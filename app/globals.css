@@ -426,8 +426,8 @@
   --metal-gold: linear-gradient(105deg,
       #c88a3e 0%,
       #e0a769 28%,
-      #f5ead8 50%,
-      #e0a769 72%,
+      #f5ead8 70%,
+      #e0a769 90%,
       #c88a3e 100%);
   --metal-gold-soft: linear-gradient(135deg,
       rgba(224, 167, 105, 0.55),
@@ -814,12 +814,22 @@ a {
 }
 
 /* ═══════════ SHARED ELEMENTS ═══════════ */
-.text-navy-gradient {
-  background: linear-gradient(135deg, #1e3a8a, #2563eb, #3b82f6);
+h1.display.text-navy-gradient,
+h2.display.text-navy-gradient {
+  background: linear-gradient(90deg, #192034, #103483, #3b82f6);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  color: #1e3a8a;
+  color: transparent;
+}
+
+h1.display.text-black-gradient,
+h2.display.text-black-gradient {
+  background: linear-gradient(90deg, #0a0a0a, #333333, #555555);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
 }
 
 .kicker {
@@ -924,6 +934,15 @@ h2.display {
 h1.display .au,
 h2.display .au {
   background: var(--metal-gold);
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+h1.display .au-blue,
+h2.display .au-blue {
+  background: linear-gradient(105deg, #071739 0%, #163068 35%, #2a5098 65%, #3d6abf 100%);
   background-size: 200% 100%;
   -webkit-background-clip: text;
   background-clip: text;
@@ -1111,11 +1130,7 @@ h3.h {
 
 /* ═══════════ CARDS ═══════════ */
 .card {
-  background: linear-gradient(97.27deg,
-      #071739 5.62%,
-      #0d2450 34.57%,
-      #163068 62.65%,
-      #0a1e45 96.86%) padding-box, var(--metal-edge-soft) border-box;
+  background: linear-gradient(154.11deg, #0C142D 20%, #274193 100%) padding-box, var(--metal-edge-soft) border-box;
   border: 1px solid transparent;
   border-radius: var(--radius-lg);
   padding: 30px;
@@ -1156,13 +1171,10 @@ h3.h {
 }
 
 .light .card {
-  background: linear-gradient(135deg,
-      #071739 0%,
-      #0d2450 40%,
-      #163068 100%) padding-box,
-    linear-gradient(135deg, rgba(224, 167, 105, 0.28), rgba(255, 255, 255, 0.08)) border-box;
+  background: linear-gradient(#ffffff, #ffffff) padding-box,
+    linear-gradient(135deg, rgba(155, 112, 37, 0.28), rgba(35, 34, 35, 0.06)) border-box;
   border: 1px solid transparent;
-  box-shadow: 0 4px 24px rgba(7, 23, 57, 0.25);
+  box-shadow: 0 4px 24px rgba(35, 34, 35, 0.06);
 }
 
 .card h4 {
