@@ -17,12 +17,15 @@ const FooterV2 = () => {
     <div>
       <ContactUs />
       <FooterContent />
-      <div className="border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4 bg-hero-gradient container-padding py-3 sm:py-4">
-        <p className="font-reddit-sans text-[#808080] text-13 sm:text-16 text-center sm:text-left">
+      <div
+        className="flex flex-col sm:flex-row items-center justify-between gap-4 bg-hero-gradient container-padding py-3 sm:py-4"
+        style={{ borderTop: '1px solid transparent', borderImage: 'linear-gradient(90deg, transparent, rgba(224, 167, 105, 0.4), transparent) 1' }}
+      >
+        <p className="font-reddit-sans text-[#808080] text-[15px] text-center sm:text-left">
           © 2026 UElement Technologies Private Limited. All rights reserved.
         </p>
         <p
-          className="font-reddit-sans font-medium text-13 sm:text-16 tracking-wider text-center sm:text-right"
+          className=" text-[15px] tracking-wider text-center sm:text-right"
           style={{ color: 'var(--gold-500)' }}
         >
           सशक्त · सक्षम · सुरक्षित
@@ -529,7 +532,7 @@ const FooterContent = () => {
             <div className="company-details flex flex-col gap-12 sm:gap-16">
               <div>
                 <img
-                  src={imgUrl('/icons/global/UElement_Logo_White 3.svg')}
+                  src='/icons/global/UElement_Tech_Logo_White.png'
                   alt="UElement logo"
                   className=" w-auto md:mb-3"
                 />

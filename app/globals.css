@@ -1447,7 +1447,7 @@ h3.h {
   align-items: center;
   /* Gradient: primary navy → lightish blue */
   background:
-    url('/ue-quantum-bg-transparent.png') center / cover no-repeat,
+    /* url('/ue-quantum-bg-transparent.png') center / cover no-repeat, */
     linear-gradient(97.27deg, #071739 5.62%, #0d2450 34.57%, #163068 62.65%, #0a1e45 96.86%);
 }
 
