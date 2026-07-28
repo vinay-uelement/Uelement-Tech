@@ -27,7 +27,7 @@ const GoldenRatioSphere = ({ className = '', showControls = true }) => {
       distributionConstant: 0.6180339887, // Golden Ratio
       pointSize: 2,
       rotationSpeed: 0.002,
-      pointColor: "#FFD700", // Golden secondary color
+      pointColor: "#cfa007", // Golden secondary color
       highlightEnabled: false,
       highlightPercentage: 0,
       offset: 0
