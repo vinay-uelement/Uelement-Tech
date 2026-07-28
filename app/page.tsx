@@ -20,11 +20,11 @@ export default function HomePage() {
         <div className="wrap relative z-10">
           <div className="text-(--gold-500)">सशक्त · सक्षम · सुरक्षित</div>
           <h1 className="display ">
-            Sovereign <span className='au'>DeepTech</span>
+            Sovereign <span className='au'>DeepTech</span> 
             <br />
-            for the <span className='au'>Systems</span> that
+            systems for 
             <br />
-            <span className="">cannot fail</span>.
+            Enterprise <span className='au'>resilience</span>.
           </h1>
           <p className="lede" style={{ marginTop: 22 }}>
             We build the platforms nations and enterprises run when the stakes are absolute —
