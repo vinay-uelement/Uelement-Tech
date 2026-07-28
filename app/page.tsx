@@ -27,14 +27,14 @@ export default function HomePage() {
             </Link>
           </div>
           <div className="proglist" style={{ marginTop: 64 }}>
+            <Link href="/u92">
+              <span>U92 Quantum</span>
+            </Link>
             <Link href="/mainstay">
               <span>MainSTAY</span>
             </Link>
             <Link href="/mainspar">
               <span>MainSPAR</span>
-            </Link>
-            <Link href="/u92">
-              <span>U92 Quantum</span>
             </Link>
           </div>
         </div>
@@ -50,8 +50,20 @@ export default function HomePage() {
             Every layer of <span className="au">sovereignty</span>.
           </h2>
           <div className="grid3" style={{ marginTop: 44 }}>
+            <Link href="/u92" className="card link" style={{ textDecoration: 'none' }}>
+              <div className="proglabel">U92</div>
+              <h4>U92 Quantum Security</h4>
+              <p>
+                Named for uranium&apos;s atomic number, engineered for the quantum decade. Post-quantum
+                cryptography, quantum key distribution, and crypto-agility for banks, governments,
+                and critical infrastructure.
+              </p>
+              <p className="mono" style={{ marginTop: 14, color: 'var(--gold-500)' }}>
+                PQC · QKD · Crypto-Agility →
+              </p>
+            </Link>
             <Link href="/mainstay" className="card link" style={{ textDecoration: 'none' }}>
-              <div className="proglabel">MainSTAY</div>
+              <div className="proglabel slate">MainSTAY</div>
               <h4>MainSTAY</h4>
               <p>
                 The enterprise platform trio. Nexus projects your business outward, Vizor watches
@@ -63,7 +75,7 @@ export default function HomePage() {
               </p>
             </Link>
             <Link href="/mainspar" className="card link" style={{ textDecoration: 'none' }}>
-              <div className="proglabel slate">MainSPAR</div>
+              <div className="proglabel">MainSPAR</div>
               <h4>MainSPAR</h4>
               <p>
                 Autonomous resilience for the tactical edge. A sovereign MLOps ecosystem for denied,
@@ -72,18 +84,6 @@ export default function HomePage() {
               </p>
               <p className="mono" style={{ marginTop: 14, color: 'var(--gold-500)' }}>
                 MerlinOS · MustangC3 · MesoGRID →
-              </p>
-            </Link>
-            <Link href="/u92" className="card link" style={{ textDecoration: 'none' }}>
-              <div className="proglabel">U92</div>
-              <h4>U92 Quantum Security</h4>
-              <p>
-                Named for uranium&apos;s atomic number, engineered for the quantum decade. Post-quantum
-                cryptography, quantum key distribution, and crypto-agility for banks, governments,
-                and critical infrastructure.
-              </p>
-              <p className="mono" style={{ marginTop: 14, color: 'var(--gold-500)' }}>
-                PQC · QKD · Crypto-Agility →
               </p>
             </Link>
           </div>

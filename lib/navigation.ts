@@ -25,6 +25,15 @@ export const navItems: NavItem[] = [
     megaVariant: 'prod',
     groups: [
       {
+        heading: 'U92 Quantum',
+        headingHref: '/u92',
+        items: [
+          { label: 'PQC', description: 'Post-quantum cryptography', href: '/u92pqc' },
+          { label: 'QKD', description: 'Quantum key distribution', href: '/u92qkd' },
+          { label: 'Crypto-Agility', description: 'Axis · Codex · Crucible', href: '/u92agility' },
+        ],
+      },
+      {
         heading: 'MainSTAY',
         headingHref: '/mainstay',
         items: [
@@ -40,15 +49,6 @@ export const navItems: NavItem[] = [
           { label: 'MerlinOS', description: 'Sovereign edge AI OS', href: '/merlinos' },
           { label: 'MustangC3', description: 'Agentic command & control', href: '/mustang' },
           { label: 'MesoGRID', description: 'Resilient decentralised mesh', href: '/mesogrid' },
-        ],
-      },
-      {
-        heading: 'U92 Quantum',
-        headingHref: '/u92',
-        items: [
-          { label: 'PQC', description: 'Post-quantum cryptography', href: '/u92pqc' },
-          { label: 'QKD', description: 'Quantum key distribution', href: '/u92qkd' },
-          { label: 'Crypto-Agility', description: 'Axis · Codex · Crucible', href: '/u92agility' },
         ],
       },
     ],

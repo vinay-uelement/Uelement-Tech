@@ -27,17 +27,17 @@
   --font-reddit-sans: 'Reddit Sans';
   --font-cal-sans: 'Cal Sans';
 
-  /* COLORS */
-  --color-primary-blue: #0c142d;
-  --color-muted-blue-100: #cdd5db;
-  --color-muted-blue-200: #a4b5c4;
-  --color-muted-blue-300: #4b6382;
-  --color-secondary: #9b7025;
-  --color-secondary-200: #fffaf2;
+  /* COLORS — derived from primary #071739 and secondary #e0a769 */
+  --color-primary-blue: #071739;
+  --color-muted-blue-100: #c5d0dc;
+  --color-muted-blue-200: #8a9bb3;
+  --color-muted-blue-300: #3d5578;
+  --color-secondary: #c88a3e;
+  --color-secondary-200: #fdf6ed;
   --color-gray-8080: #808080;
-  --color-about-white: #cdd5db;
-  --color-secondary-muted: #fff4e4;
-  --color-honey-gold-300: #fff4e4;
+  --color-about-white: #c5d0dc;
+  --color-secondary-muted: #faf0e0;
+  --color-honey-gold-300: #faf0e0;
   --color-black-1: #232223;
   --text-10: 10px;
   --text-11: 11px;
@@ -79,8 +79,7 @@
   --breakpoint-3xl: 1600px;
   --breakpoint-4xl: 1920px;
 
-  --background-image-hero-gradient: linear-gradient(97.27deg, #0c142d 5.62%, #15224a 34.57%, #22397e 62.65%, #0f1939 96.86%);
-  ;
+  --background-image-hero-gradient: linear-gradient(97.27deg, #071739 5.62%, #0d2450 34.57%, #163068 62.65%, #0a1e45 96.86%);
 }
 
 
@@ -136,7 +135,7 @@
 
 .btn-primary {
   @apply text-16 xl:text-18 hover:scale-105 text-white py-2 px-6 2xl:px-7 2xl:py-2;
-  background-color: #0c142d;
+  background-color: #071739;
   border-radius: 40px;
 }
 
@@ -147,8 +146,8 @@
   padding-inline: 40px;
 
   background-image: linear-gradient(135deg,
-      #774D05 0%,
-      #9B7025 100%);
+      #a87228 0%,
+      #c88a3e 100%);
 
   border-color: #E9D7C266;
 
@@ -188,11 +187,11 @@
 /* ── Animated Arrow Button ── */
 /* ── Animated Arrow Button — base ── */
 .btn-arrow {
-  --arrow-bg-start: #0c142d;
-  --arrow-bg-mid1: #15224a;
-  --arrow-bg-mid2: #22397e;
-  --arrow-bg-end: #0f1939;
-  --arrow-text: #22397e;
+  --arrow-bg-start: #071739;
+  --arrow-bg-mid1: #0d2450;
+  --arrow-bg-mid2: #163068;
+  --arrow-bg-end: #0a1e45;
+  --arrow-text: #163068;
 
   position: relative;
   width: clamp(9.5rem, 14vw, 12rem);
@@ -228,7 +227,7 @@
 }
 
 .btn-arrow-yellow .btn-arrow-circle {
-  background-image: linear-gradient(97.27deg, #774d05 0%, #9b7025 100%);
+  background-image: linear-gradient(97.27deg, #a87228 0%, #c88a3e 100%);
   border: 1px solid #e9d7c266;
   box-shadow:
     inset 0px 1px 0px 0px #ffffff59,
@@ -361,26 +360,29 @@
 
 
 @utility bg-hero-gradient {
-  background-image: linear-gradient(97.27deg, #0c142d 5.62%, #15224a 34.57%, #22397e 62.65%, #0f1939 96.86%);
+  background-image: linear-gradient(97.27deg, #071739 5.62%, #0d2450 34.57%, #163068 62.65%, #0a1e45 96.86%);
 }
 
 @utility bg-yellow-gradient {
-  background-image: linear-gradient(97.27deg, #9b7025 5.62%, #774d05 96.86%);
+  background-image: linear-gradient(97.27deg, #c88a3e 5.62%, #a87228 96.86%);
 }
 
 /* ── CSS Custom Properties ── */
 :root {
+  /* Navy scale — shades of primary #071739 */
   --navy-900: #071739;
-  --navy-800: #0c142d;
-  --slate-700: #4b6382;
-  --slate-500: #75839a;
-  --slate-300: #a4b5c4;
-  --slate-200: #cdd5db;
-  --slate-100: #e4e8eb;
-  --gold-700: #9b7025;
-  --gold-600: #b6842c;
+  --navy-800: #0a1e45;
+  /* Slate scale — desaturated tints of primary */
+  --slate-700: #3d5578;
+  --slate-500: #6b809a;
+  --slate-300: #8a9bb3;
+  --slate-200: #c5d0dc;
+  --slate-100: #e0e6ed;
+  /* Gold scale — shades & tints of secondary #e0a769 */
+  --gold-700: #c88a3e;
+  --gold-600: #d49750;
   --gold-500: #e0a769;
-  --cream-100: #f3e7d3;
+  --cream-100: #f5ead8;
   --ember-600: #f5c116;
   --ink-950: #101010;
   --ink-900: #1c1c1c;
@@ -420,21 +422,21 @@
   --container-max: 1180px;
   --container-pad: 32px;
 
-  /* Metallic gradients */
+  /* Metallic gradients — derived from secondary #e0a769 */
   --metal-gold: linear-gradient(105deg,
-      #9b7025 0%,
+      #c88a3e 0%,
       #e0a769 28%,
-      #f3e7d3 50%,
+      #f5ead8 50%,
       #e0a769 72%,
-      #9b7025 100%);
+      #c88a3e 100%);
   --metal-gold-soft: linear-gradient(135deg,
       rgba(224, 167, 105, 0.55),
-      rgba(243, 231, 211, 0.25) 45%,
-      rgba(155, 112, 37, 0.35));
+      rgba(245, 234, 216, 0.25) 45%,
+      rgba(200, 138, 62, 0.35));
   --metal-steel: linear-gradient(135deg,
-      rgba(164, 181, 196, 0.5),
+      rgba(138, 155, 179, 0.5),
       rgba(255, 255, 255, 0.12) 45%,
-      rgba(75, 99, 130, 0.4));
+      rgba(61, 85, 120, 0.4));
   --metal-edge: linear-gradient(135deg,
       rgba(224, 167, 105, 0.45),
       rgba(255, 255, 255, 0.1) 38%,
@@ -456,7 +458,7 @@ html {
 }
 
 body {
-  background: linear-gradient(97.27deg, #0c142d 5.62%, #15224a 34.57%, #22397e 62.65%, #0f1939 96.86%);
+  background: linear-gradient(97.27deg, #071739 5.62%, #0d2450 34.57%, #163068 62.65%, #0a1e45 96.86%);
   color: var(--white);
   font-family: var(--font-body);
   font-size: 15px;
@@ -942,7 +944,7 @@ h2.display .au {
 
 .light .serif-line,
 .cream .serif-line {
-  background: linear-gradient(105deg, #8a621f, #b6842c 45%, #9b7025);
+  background: linear-gradient(105deg, #a87228, #d49750 45%, #c88a3e);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -1110,10 +1112,10 @@ h3.h {
 /* ═══════════ CARDS ═══════════ */
 .card {
   background: linear-gradient(97.27deg,
-      #0c142d 5.62%,
-      #15224a 34.57%,
-      #22397e 62.65%,
-      #0f1939 96.86%) padding-box, var(--metal-edge-soft) border-box;
+      #071739 5.62%,
+      #0d2450 34.57%,
+      #163068 62.65%,
+      #0a1e45 96.86%) padding-box, var(--metal-edge-soft) border-box;
   border: 1px solid transparent;
   border-radius: var(--radius-lg);
   padding: 30px;
@@ -1132,10 +1134,10 @@ h3.h {
 
 .card:hover {
   background: linear-gradient(97.27deg,
-      #0c142d 5.62%,
-      #15224a 34.57%,
-      #22397e 62.65%,
-      #0f1939 96.86%)padding-box, var(--metal-edge) border-box;
+      #071739 5.62%,
+      #0d2450 34.57%,
+      #163068 62.65%,
+      #0a1e45 96.86%)padding-box, var(--metal-edge) border-box;
 }
 
 .card.link {
@@ -1154,10 +1156,13 @@ h3.h {
 }
 
 .light .card {
-  background: linear-gradient(#ffffff, #ffffff) padding-box,
-    linear-gradient(135deg, rgba(155, 112, 37, 0.28), rgba(35, 34, 35, 0.06)) border-box;
+  background: linear-gradient(135deg,
+      #071739 0%,
+      #0d2450 40%,
+      #163068 100%) padding-box,
+    linear-gradient(135deg, rgba(224, 167, 105, 0.28), rgba(255, 255, 255, 0.08)) border-box;
   border: 1px solid transparent;
-  box-shadow: 0 4px 24px rgba(35, 34, 35, 0.06);
+  box-shadow: 0 4px 24px rgba(7, 23, 57, 0.25);
 }
 
 .card h4 {
@@ -1169,7 +1174,7 @@ h3.h {
 }
 
 .light .card h4 {
-  color: var(--navy-900);
+  color: #ffffff;
 }
 
 .card p {
@@ -1179,7 +1184,7 @@ h3.h {
 }
 
 .light .card p {
-  color: var(--grey-500);
+  color: rgba(255, 255, 255, 0.7);
 }
 
 /* ═══════════ TAGS ═══════════ */
@@ -1331,7 +1336,7 @@ h3.h {
   overflow: hidden;
   position: relative;
   margin-bottom: 16px;
-  background: linear-gradient(160deg, #16233f, #0c142d);
+  background: linear-gradient(160deg, #0d2450, #071739);
 }
 
 .tphoto img {
@@ -1425,11 +1430,10 @@ h3.h {
   min-height: calc(100vh - 67px);
   display: flex;
   align-items: center;
-  /* Add the gradient behind the transparent image smartly */
-  background-image: url('/ue-quantum-bg-transparent.png'), var(--background-image-hero-gradient);
-  background-size: cover, cover;
-  background-position: center, center;
-  background-repeat: no-repeat, no-repeat;
+  /* Gradient: primary navy → lightish blue */
+  background:
+    url('/ue-quantum-bg-transparent.png') center / cover no-repeat,
+    linear-gradient(135deg, #071739 30%, #0c2248 50%, #132f5c 70%, #1a3d72 100%);
 }
 
 .hero-fabric {
