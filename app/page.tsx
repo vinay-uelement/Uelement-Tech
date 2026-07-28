@@ -7,7 +7,7 @@ export default function HomePage() {
       <div className="hero">
         <div className="hero-fabric" />
         <div className="wrap">
-          <div className="kicker">UElement Technologies</div>
+          <div className="text-(--gold-500)">सशक्त · सक्षम · सुरक्षित</div>
           <h1 className="display">
             Sovereign deeptech for the
             <br />
@@ -19,8 +19,8 @@ export default function HomePage() {
             that binds the enterprise together. Headquartered in Pune. Operating globally.
           </p>
           <div style={{ display: 'flex', gap: 14, marginTop: 34, flexWrap: 'wrap' }}>
-            <Link href="/contact" className="btn btn-gold">
-              Contact Us
+            <Link href="/company" className="btn btn-gold">
+              About Us
             </Link>
             <Link href="/mainstay" className="btn btn-line">
               Explore the platforms

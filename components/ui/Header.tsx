@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { useState, useRef, useEffect } from 'react';
 import { usePathname } from 'next/navigation';
 import { navItems, type NavItem, type DropdownGroup } from '@/lib/navigation';
@@ -77,7 +78,7 @@ export default function Header() {
       <div className="absolute inset-0 bg-[#32323259] backdrop-blur-[16px] -z-10"></div>
       <div className="wrap nav" ref={navRef}>
         <Link href="/" className="logo">
-          UElement<em>.</em>
+          <Image src="/icons/global/UElement_Logo_White%203.svg" alt={"logo"} width={150} height={150} />
         </Link>
 
         <nav className={`navlinks${menuOpen ? ' open' : ''}`} id="navlinks">
