@@ -455,7 +455,7 @@ const ContactUs = () => {
               <div className="flex justify-center sm:justify-end items-center">
                 {/* items-center prevents stretch */}
                 <button
-                  className="btn-yellow"
+                  className="btn btn-gold"
                   onClick={() => router.push('/ai-ml')}
                 >
                   Request a meeting
@@ -607,7 +607,7 @@ const FooterContent = () => {
                     />
                   </div>
                   <button
-                    className="btn-yellow w-full hover:scale-101 disabled:opacity-50 disabled:cursor-not-allowed"
+                    className="btn btn-gold w-full hover:scale-101 disabled:opacity-50 disabled:cursor-not-allowed"
                     type="submit"
                     disabled={newsletterSubmitting}
                   >
@@ -762,7 +762,7 @@ const FooterContent = () => {
                     />
                   </div>
                   <button
-                    className="btn-yellow w-full hover:scale-101 disabled:opacity-50 disabled:cursor-not-allowed"
+                    className="btn btn-gold w-full disabled:opacity-50 disabled:cursor-not-allowed"
                     type="submit"
                     disabled={newsletterSubmitting}
                   >
