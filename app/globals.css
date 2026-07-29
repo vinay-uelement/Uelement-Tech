@@ -1492,10 +1492,12 @@ h3.h {
 
 @media (max-width: 768px) {
   .hero {
-    padding: 80px 0 24px;
+    padding: 60px 0 0;
     min-height: calc(100svh - 67px);
     max-height: none;
-    align-items: flex-start;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
   }
 }
 

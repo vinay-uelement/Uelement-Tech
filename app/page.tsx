@@ -17,6 +17,8 @@ export default function HomePage() {
           </div>
         </div>
 
+        
+
         <div className="wrap relative z-10">
           <div className="flex flex-col items-center md:items-start max-w-full md:max-w-[65%] gap-0 text-center md:text-left mx-auto md:mx-0">
             {/* Kicker */}
@@ -42,14 +44,14 @@ export default function HomePage() {
                 Explore the platforms
               </Link>
             </div>
-
-            {/* Mobile Golden Ratio Sphere (visible only on small screens) */}
-            <div className=" -translate-y-1/3 md:hidden w-full flex justify-center mix-blend-screen opacity-80 pointer-events-none">
-              <div className="w-full max-w-[400px] scale-[1.7] transform origin-top">
-                 <GoldenRatioSphere showControls={false} className="w-full aspect-square" />
-              </div>
-            </div>
           </div>
+        </div>
+
+        {/* Mobile Golden Ratio Sphere (visible only on small screens) */}
+        <div className="md:hidden w-full flex justify-center pointer-events-none mt-auto overflow-hidden opacity-80 mix-blend-screen z-0">
+            <div className="w-[120%] max-w-[500px] flex justify-center">
+              <GoldenRatioSphere showControls={false} radius={250} totalPoints={2000} className="w-full aspect-square" />
+            </div>
         </div>
       </div>
 
