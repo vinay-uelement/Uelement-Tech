@@ -11,7 +11,7 @@ export default function HomePage() {
         {/* Golden Ratio Sphere Background (Desktop) / Below Buttons (Mobile) */}
         <div className="absolute inset-0 pointer-events-none mix-blend-screen hidden md:flex justify-center z-0">
           <div className="w-full max-w-[1100px] relative h-full mx-auto">
-            <div className="absolute -right-20 top-1/2 -translate-y-1/2 w-full md:w-1/2 h-full">
+            <div className="absolute -right-20 top-1/2 -translate-y-1/2 w-full md:w-1/2 h-full scale-[1.15]">
               <GoldenRatioSphere showControls={false} className="w-full h-full" />
             </div>
           </div>
@@ -22,17 +22,18 @@ export default function HomePage() {
         <div className="wrap relative z-10">
           <div className="flex flex-col items-center md:items-start max-w-full md:max-w-[65%] gap-0 text-center md:text-left mx-auto md:mx-0">
             {/* Kicker */}
-            <div className="text-(--gold-500) mb-4 text-[13px] tracking-[2.5px]">सशक्त · सक्षम · सुरक्षित</div>
+            <div className="text-(--gold-500) mb-2 text-[13px] tracking-[1px]">सशक्त · सक्षम · सुरक्षित</div>
             
-            {/* Heading */}
             <h1 className="display-sm mb-0">
-              Sovereign <span className='au'>DeepTech</span> systems <br className="hidden md:inline" />
-              for Enterprise <span className='au'>Resilience</span>.
+              Sovereign <span className='au'>DeepTech</span> <br className="hidden md:block" />
+              systems for Enterprise <br className="hidden md:block" />
+              <span className='au'>Resilience</span>.
             </h1>
 
             {/* Description */}
             <p className="lede mt-6 md:mt-8">
-             Engineering Quantum-secure and resilient autonomous systems that create a seamless Digital Fabric for the tactical edge.
+             Engineering <span className="italic font-medium">Quantum-secure</span> and <span className="italic font-medium">resilient </span> autonomous systems <br className="hidden md:block" />
+             that create a seamless Digital Fabric for the tactical edge.
             </p>
 
             {/* CTA Buttons */}
@@ -64,40 +65,63 @@ export default function HomePage() {
             <br />
             Every layer of <span className="au">sovereignty.</span>
           </h2>
-          <div className="grid3" style={{ marginTop: 44 }}>
-            <Link href="/u92" className="card link" style={{ textDecoration: 'none' }}>
-              <div className="proglabel">U92</div>
-              <h4>U92 Quantum Security</h4>
-              <p>
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6" style={{ marginTop: 44 }}>
+            {/* Card 01 */}
+            <Link href="/u92" className="group relative flex flex-col p-8 lg:p-10 bg-[#040f26] hover:-translate-y-2 hover:shadow-2xl hover:brightness-105 transition-all duration-300 shadow-lg" style={{ textDecoration: 'none' }}>
+              <div className="absolute top-0 left-0 right-0 h-[8px] bg-[var(--gold-500)] overflow-hidden">
+                <div className="absolute top-0 bottom-0 -left-[70%] w-[45%] bg-gradient-to-r from-transparent via-white/65 to-transparent skew-x-[-18deg] group-hover:left-[125%] transition-all duration-1000 ease-in-out" />
+              </div>
+              <div className="flex justify-between items-start mb-6 lg:mb-8">
+                <span className="text-[72px] leading-none font-bold text-[#5c728f]">01</span>
+                <span className="font-bold text-[16px] text-[var(--gold-500)] tracking-wide pt-2">U92</span>
+              </div>
+              <h4 className="text-white text-[24px] font-bold leading-tight mb-5">U92 Quantum Security</h4>
+              <p className="italic text-[#9ca3af] font-light text-[15px] leading-relaxed m-0 flex-1">
                 Named for uranium&apos;s atomic number, engineered for the quantum decade. Post-quantum
                 cryptography, quantum key distribution, and crypto-agility for banks, governments,
                 and critical infrastructure.
               </p>
-              <p className="mono" style={{ marginTop: 14, color: 'var(--gold-500)' }}>
+              <p className="mono" style={{ marginTop: 24, color: 'var(--gold-500)' }}>
                 PQC · QKD · Crypto-Agility →
               </p>
             </Link>
-            <Link href="/mainstay" className="card link" style={{ textDecoration: 'none' }}>
-              <div className="proglabel slate">MainSTAY</div>
-              <h4>MainSTAY</h4>
-              <p>
+
+            {/* Card 02 */}
+            <Link href="/mainstay" className="group relative flex flex-col p-8 lg:p-10 bg-[#b8c6d9] hover:-translate-y-2 hover:shadow-2xl hover:brightness-105 transition-all duration-300 shadow-lg" style={{ textDecoration: 'none' }}>
+              <div className="absolute top-0 left-0 right-0 h-[8px] bg-[var(--gold-500)] overflow-hidden">
+                <div className="absolute top-0 bottom-0 -left-[70%] w-[45%] bg-gradient-to-r from-transparent via-white/65 to-transparent skew-x-[-18deg] group-hover:left-[125%] transition-all duration-1000 ease-in-out" />
+              </div>
+              <div className="flex justify-between items-start mb-6 lg:mb-8">
+                <span className="text-[72px] leading-none font-bold text-white/70">02</span>
+                <span className="font-bold text-[16px] text-[#b3833b] tracking-wide pt-2">MainSTAY</span>
+              </div>
+              <h4 className="text-[#051330] text-[24px] font-bold leading-tight mb-5">MainSTAY</h4>
+              <p className="italic text-[#051330]/75 font-light text-[15px] leading-relaxed m-0 flex-1">
                 The enterprise platform trio. Nexus projects your business outward, Vizor watches
                 every digital signal, Kayak commands the physical world. One control plane, one
                 identity, one audit trail.
               </p>
-              <p className="mono" style={{ marginTop: 14, color: 'var(--gold-500)' }}>
+              <p className="mono" style={{ marginTop: 24, color: '#b3833b' }}>
                 Nexus · Vizor · Kayak →
               </p>
             </Link>
-            <Link href="/mainspar" className="card link" style={{ textDecoration: 'none' }}>
-              <div className="proglabel slate">MainSPAR</div>
-              <h4>MainSPAR</h4>
-              <p>
+
+            {/* Card 03 */}
+            <Link href="/mainspar" className="group relative flex flex-col p-8 lg:p-10 bg-[#dcb96f] hover:-translate-y-2 hover:shadow-2xl hover:brightness-105 transition-all duration-300 shadow-lg" style={{ textDecoration: 'none' }}>
+              <div className="absolute top-0 left-0 right-0 h-[8px] bg-[#c0994d] overflow-hidden">
+                <div className="absolute top-0 bottom-0 -left-[70%] w-[45%] bg-gradient-to-r from-transparent via-white/65 to-transparent skew-x-[-18deg] group-hover:left-[125%] transition-all duration-1000 ease-in-out" />
+              </div>
+              <div className="flex justify-between items-start mb-6 lg:mb-8">
+                <span className="text-[72px] leading-none font-bold text-white/80">03</span>
+                <span className="font-bold text-[16px] text-[#051330] tracking-wide pt-2">MainSPAR</span>
+              </div>
+              <h4 className="text-[#051330] text-[24px] font-bold leading-tight mb-5">MainSPAR</h4>
+              <p className="italic text-[#051330]/75 font-light text-[15px] leading-relaxed m-0 flex-1">
                 Autonomous resilience for the tactical edge. A sovereign MLOps ecosystem for denied,
                 degraded, intermittent and limited environments — we don&apos;t connect the edge to the
                 cloud, we turn the edge into the cloud.
               </p>
-              <p className="mono" style={{ marginTop: 14, color: 'var(--gold-500)' }}>
+              <p className="mono" style={{ marginTop: 24, color: '#051330' }}>
                 MerlinOS · MustangC3 · MesoGRID →
               </p>
             </Link>
