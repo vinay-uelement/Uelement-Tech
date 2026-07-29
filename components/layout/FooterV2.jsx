@@ -23,7 +23,7 @@ const FooterV2 = () => {
       >
         <div className="max-w-[1100px] mx-auto w-full flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="font-reddit-sans text-[#808080] text-[15px] text-center sm:text-left">
-            &copy; {new Date().getFullYear()} UElement Technologies Private Limited&nbsp; |&nbsp; All Rights Reserved.
+            &copy; {new Date().getFullYear()}{' '}UElement Technologies Private Limited&nbsp; |&nbsp; All Rights Reserved.
           </p>
           <p
             className=" text-[15px] tracking-wider text-center sm:text-right"
