@@ -11,44 +11,39 @@ export default function HomePage() {
         {/* Golden Ratio Sphere Background */}
         <div className="absolute inset-0 pointer-events-none mix-blend-screen hidden md:flex justify-center z-0">
           <div className="w-full max-w-[1100px] relative h-full mx-auto">
-            <div className="absolute -right-14 top-1/2 -translate-y-1/2 w-full md:w-1/2">
+            <div className="absolute -right-20 top-1/2 -translate-y-1/2 w-full md:w-1/2">
               <GoldenRatioSphere showControls={false} />
             </div>
           </div>
         </div>
 
-        <div className="wrap relative z-10 mt-12 lg:mt-20">
-          <div className="text-(--gold-500)">सशक्त · सक्षम · सुरक्षित</div>
-          <h1 className="display " style={{ fontSize: 'calc(var(--text-hero) * 0.8)' }}>
-            Sovereign <span className='au'>DeepTech</span> 
-            <br />
-            systems for 
-            <br />
-            Enterprise <span className='au'>resilience</span>.
-          </h1>
-          <p className="lede" style={{ marginTop: 22 }}>
-            We build the platforms nations and enterprises run when the stakes are absolute —
-            quantum-safe security, autonomous resilience at the tactical edge, and a digital fabric
-            that binds the enterprise together. Headquartered in Pune. Operating globally.
-          </p>
-          <div style={{ display: 'flex', gap: 14, marginTop: 34, flexWrap: 'wrap' }}>
-            <Link href="/company" className="btn btn-gold">
-              About Us
-            </Link>
-            <Link href="/mainstay" className="btn btn-line">
-              Explore the platforms
-            </Link>
-          </div>
-          <div className="proglist" style={{ marginTop: 64 }}>
-            <Link href="/u92">
-              <span>U92 Quantum</span>
-            </Link>
-            <Link href="/mainstay">
-              <span>MainSTAY</span>
-            </Link>
-            <Link href="/mainspar">
-              <span>MainSPAR</span>
-            </Link>
+        <div className="wrap relative z-10">
+          <div className="flex flex-col" style={{ maxWidth: '65%', gap: 0 }}>
+            {/* Kicker */}
+            <div className="text-(--gold-500)" style={{ marginBottom: 16, fontSize: 13, letterSpacing: '2.5px' }}>सशक्त · सक्षम · सुरक्षित</div>
+            
+            {/* Heading */}
+            <h1 className="display" style={{ fontSize: 'calc(var(--text-hero) * 0.8)', marginBottom: 0 }}>
+              Sovereign <span className='au'>DeepTech</span> systems<br />
+              for Enterprise <span className='au'>Resilience</span>.
+            </h1>
+
+            {/* Description */}
+            <p className="lede" style={{ marginTop: 32 }}>
+              We build the platforms nations and enterprises run when the stakes are absolute —
+              quantum-safe security, autonomous resilience at the tactical edge, and a digital fabric
+              that binds the enterprise together. Headquartered in Pune. Operating globally.
+            </p>
+
+            {/* CTA Buttons */}
+            <div style={{ display: 'flex', gap: 16, marginTop: 80, flexWrap: 'wrap' }}>
+              <Link href="/company" className="btn btn-gold">
+                About Us
+              </Link>
+              <Link href="/mainstay" className="btn btn-line">
+                Explore the platforms
+              </Link>
+            </div>
           </div>
         </div>
       </div>
