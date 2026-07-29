@@ -493,6 +493,12 @@ a {
   padding: 0 var(--container-pad);
 }
 
+@media (max-width: 768px) {
+  .wrap {
+    padding: 0 20px;
+  }
+}
+
 /* ── Metallic text ── */
 .mtext {
   background: var(--metal-gold);
@@ -860,6 +866,12 @@ h2.display.text-black-gradient {
   position: relative;
 }
 
+@media (max-width: 768px) {
+  .section {
+    padding: 64px 0;
+  }
+}
+
 .section.tight {
   padding: 60px 0;
 }
@@ -912,11 +924,20 @@ h1.display {
   font-size: var(--text-hero);
 }
 
+h1.display-sm {
+  font-family: var(--font-hero);
+  font-weight: 800;
+  line-height: 1.06;
+  letter-spacing: -0.028em;
+  font-size: calc(var(--text-hero) * 0.8);
+}
+
 h2.display {
   font-size: var(--text-display);
 }
 
 h1.display,
+h1.display-sm,
 h2.display {
   background: linear-gradient(180deg, #ffffff 0%, #e8e8e8 55%, #b9b9b9 100%);
   -webkit-background-clip: text;
@@ -925,8 +946,10 @@ h2.display {
 }
 
 .light h1.display,
+.light h1.display-sm,
 .light h2.display,
 .cream h1.display,
+.cream h1.display-sm,
 .cream h2.display {
   background: linear-gradient(180deg, #1c1c1c, #4b4b4b);
   -webkit-background-clip: text;
@@ -935,6 +958,7 @@ h2.display {
 }
 
 h1.display .au,
+h1.display-sm .au,
 h2.display .au {
   background: var(--metal-gold);
   background-size: 200% 100%;
@@ -944,6 +968,7 @@ h2.display .au {
 }
 
 h1.display .au-blue,
+h1.display-sm .au-blue,
 h2.display .au-blue {
   background: linear-gradient(105deg, #071739 0%, #163068 35%, #2a5098 65%, #3d6abf 100%);
   background-size: 200% 100%;
@@ -1135,9 +1160,16 @@ h3.h {
   background: linear-gradient(154.11deg, #0C142D 20%, #274193 100%) padding-box, var(--metal-edge-soft) border-box;
   border: 1px solid transparent;
   border-radius: var(--radius-lg);
-  padding: 30px;
-  transition: transform 0.2s, box-shadow 0.2s;
+  padding: 32px;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
   position: relative;
+  will-change: transform;
+}
+
+@media (max-width: 768px) {
+  .card {
+    padding: 24px;
+  }
 }
 
 .card::after {
@@ -1448,6 +1480,15 @@ h3.h {
   background:
     /* url('/ue-quantum-bg-transparent.png') center / cover no-repeat, */
     linear-gradient(97.27deg, #071739 5.62%, #0d2450 34.57%, #163068 62.65%, #0a1e45 96.86%);
+}
+
+@media (max-width: 768px) {
+  .hero {
+    padding: 80px 0 24px;
+    min-height: 100svh;
+    max-height: none;
+    align-items: flex-start;
+  }
 }
 
 .hero-fabric {

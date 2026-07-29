@@ -8,41 +8,46 @@ export default function HomePage() {
       <div className="hero">
         <div className="hero-fabric" />
         
-        {/* Golden Ratio Sphere Background */}
+        {/* Golden Ratio Sphere Background (Desktop) / Below Buttons (Mobile) */}
         <div className="absolute inset-0 pointer-events-none mix-blend-screen hidden md:flex justify-center z-0">
           <div className="w-full max-w-[1100px] relative h-full mx-auto">
-            <div className="absolute -right-20 top-1/2 -translate-y-1/2 w-full md:w-1/2">
-              <GoldenRatioSphere showControls={false} />
+            <div className="absolute -right-20 top-1/2 -translate-y-1/2 w-full md:w-1/2 h-full">
+              <GoldenRatioSphere showControls={false} className="w-full h-full" />
             </div>
           </div>
         </div>
 
         <div className="wrap relative z-10">
-          <div className="flex flex-col" style={{ maxWidth: '65%', gap: 0 }}>
+          <div className="flex flex-col items-center md:items-start max-w-full md:max-w-[65%] gap-0 text-center md:text-left mx-auto md:mx-0">
             {/* Kicker */}
-            <div className="text-(--gold-500)" style={{ marginBottom: 16, fontSize: 13, letterSpacing: '2.5px' }}>सशक्त · सक्षम · सुरक्षित</div>
+            <div className="text-(--gold-500) mb-4 text-[13px] tracking-[2.5px]">सशक्त · सक्षम · सुरक्षित</div>
             
             {/* Heading */}
-            <h1 className="display" style={{ fontSize: 'calc(var(--text-hero) * 0.8)', marginBottom: 0 }}>
-              Sovereign <span className='au'>DeepTech</span> systems<br />
+            <h1 className="display-sm mb-0">
+              Sovereign <span className='au'>DeepTech</span> systems <br className="hidden md:inline" />
               for Enterprise <span className='au'>Resilience</span>.
             </h1>
 
             {/* Description */}
-            <p className="lede" style={{ marginTop: 32 }}>
-              We build the platforms nations and enterprises run when the stakes are absolute —
-              quantum-safe security, autonomous resilience at the tactical edge, and a digital fabric
-              that binds the enterprise together. Headquartered in Pune. Operating globally.
+            <p className="lede mt-6 md:mt-8">
+             Engineering Quantum-secure and resilient autonomous systems that create a seamless Digital Fabric for the tactical edge.
             </p>
 
             {/* CTA Buttons */}
-            <div style={{ display: 'flex', gap: 16, marginTop: 80, flexWrap: 'wrap' }}>
+            <div className="flex flex-col md:flex-row items-center md:items-start justify-center md:justify-start gap-4 mt-10 md:mt-16 w-full md:w-auto">
               <Link href="/company" className="btn btn-gold">
                 About Us
               </Link>
               <Link href="/mainstay" className="btn btn-line">
                 Explore the platforms
               </Link>
+            </div>
+
+            {/* Mobile Golden Ratio Sphere (visible only on small screens) */}
+            <div className=" -translate-y-1/3 md:hidden w-full flex justify-center mix-blend-screen opacity-80 pointer-events-none">
+              <div className="w-full max-w-[400px] scale-[1.7] transform origin-top">
+                 <GoldenRatioSphere showControls={false} className="w-full aspect-square" />
+              </div>
             </div>
           </div>
         </div>
