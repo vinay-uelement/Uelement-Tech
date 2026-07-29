@@ -46,6 +46,13 @@ const casestudy = [
   desc: 'Identity Security & Governance Transformation for a Mid-Sized Telecom Provider.',
   label: 'services',
   image: '/images/resources/case-study/telecomcard.png',
+  },
+  {
+    id: 3,
+    title: 'magChain Supply Chain Platform Modernization',
+    desc: 'Draft case study for magChain focused on modernizing supply chain visibility, workflow automation, and secure partner collaboration.',
+    label: 'services',
+    image: '/images/resources/case-study/magchaincard.png',
 }
 
 ];

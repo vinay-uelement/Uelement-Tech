@@ -17,42 +17,21 @@ const FooterV2 = () => {
     <div>
       <ContactUs />
       <FooterContent />
-      <div className="border-t border-white/10 pt-6 sm:pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 bg-hero-gradient container-padding py-8 lg:py-12">
-        <div className="flex flex-wrap gap-3 sm:gap-5 lg:gap-8 justify-center sm:justify-start text-center">
-          <Link
-            href="/company"
-            className="font-reddit-sans text-[#808080] text-13 sm:text-16 hover:text-white transition-colors"
+      <div
+        className="bg-hero-gradient container-padding py-3 sm:py-4"
+        style={{ borderTop: '1px solid transparent', borderImage: 'linear-gradient(90deg, transparent, rgba(224, 167, 105, 0.4), transparent) 1' }}
+      >
+        <div className="max-w-[1100px] mx-auto w-full flex flex-col sm:flex-row items-center justify-between gap-4">
+          <p className="font-reddit-sans text-[#808080] text-[15px] text-center sm:text-left">
+            © 2026 UElement Technologies Private Limited. All rights reserved.
+          </p>
+          <p
+            className=" text-[15px] tracking-wider text-center sm:text-right"
+            style={{ color: 'var(--gold-500)' }}
           >
-            About us
-          </Link>
-          <Link
-            href="/contact-us"
-            className="font-reddit-sans text-[#808080] text-13 sm:text-16 hover:text-white transition-colors"
-          >
-            Contact
-          </Link>
-          <Link
-            href="/legal?page=privacy"
-            className="font-reddit-sans text-[#808080] text-13 sm:text-16 hover:text-white transition-colors"
-          >
-            Privacy policy
-          </Link>
-          <Link
-            href="/legal?page=sitemap"
-            className="font-reddit-sans text-[#808080] text-13 sm:text-16 hover:text-white transition-colors"
-          >
-            Sitemap
-          </Link>
-          <Link
-            href="/legal?page=terms"
-            className="font-reddit-sans text-[#808080] text-13 sm:text-16 hover:text-white transition-colors"
-          >
-            Terms of Use
-          </Link>
+            सशक्त · सक्षम · सुरक्षित
+          </p>
         </div>
-        <p className="font-reddit-sans text-[#808080] text-13 sm:text-16">
-          © 2025, All Rights Reserved
-        </p>
       </div>
     </div>
   );
@@ -292,13 +271,13 @@ const ContactUs = () => {
   return (
     <section className="relative">
       <div className="absolute inset-0 -z-10">
-        <div className="h-[60%] bg-[#F3F3F3] mx-2"></div>
+        <div className="h-[60%] bg-[#F3F3F3]"></div>
         <div className="h-[40%] bg-hero-gradient"></div>
       </div>
 
       <div className="container-padding py-10 sm:py-12 lg:py-16">
         <div className="title-div text-primary-blue text-center mb-8 sm:mb-10 lg:mb-12">
-          <p className="fl-slash">/ Contact Us</p>
+          <p className="font-family-[--font-heading] text-center text-xl mb-2"> / Contact Us</p>
           <h4 className="fl1 leading-tight mb-10 md:mb-14">
             Ready to Transform Your Enterprise Security?
           </h4>
@@ -310,7 +289,7 @@ const ContactUs = () => {
 
         <div className="max-w-[1100px] mx-auto bg-white rounded-[20px] p-[8px] sm:p-[10px] grid grid-cols-1 lg:grid-cols-[40%_60%] shadow-[0px_4px_72.2px_0px_rgba(0,0,0,0.25)]">
           <div className="bg-[linear-gradient(154.11deg,#0C142D_20%,#274193_100%)] rounded-[18px] p-6 sm:p-8 lg:p-10 xl:p-12 text-white flex flex-col justify-start gap-8 lg:gap-16 relative overflow-hidden min-h-[350px]">
-            <div className="absolute -bottom-8 -right-3 text-[160px] sm:text-[180px] lg:text-[200px] xl:text-[250px] font-bold text-[#488bf0]/8 select-none pointer-events-none leading-none">
+            <div className="absolute -bottom-8 -right-3 text-[160px] sm:text-[180px] lg:text-[200px] xl:text-[250px] font-bold text-[#488bf0]/8 select-none pointer-events-none leading-none font-reddit-sans!">
               92
             </div>
 
@@ -341,15 +320,14 @@ const ContactUs = () => {
           </div>
 
           {/* Right Side - Contact Form */}
-          <div className="p-4 sm:p-6 lg:p-8 xl:p-10 md:!pb-36 ">
+          <div className="p-4 sm:p-6 lg:p-8 xl:p-10 md:!pb-36 text-black">
             {/* Success/Error Message */}
             {submitStatus.message && (
               <div
-                className={`mb-6 p-4 rounded-[4px] ${
-                  submitStatus.type === 'success'
-                    ? 'bg-green-100 text-green-700 border border-green-300'
-                    : 'bg-red-100 text-red-700 border border-red-300'
-                }`}
+                className={`mb-6 p-4 rounded-[4px] ${submitStatus.type === 'success'
+                  ? 'bg-green-100 text-green-700 border border-green-300'
+                  : 'bg-red-100 text-red-700 border border-red-300'
+                  }`}
               >
                 {submitStatus.message}
               </div>
@@ -426,9 +404,9 @@ const ContactUs = () => {
               </div>
 
               <div>
-                <h6 className="font-reddit-sans font-semibold text-13 sm:text-14 text-black mb-3">
+                <h6 className="font-reddit-sans text-[15px] font-semibold text-[#232223] mb-3">
                   Select Subject?{' '}
-                  <span className="text-gray-400 font-normal">(Optional)</span>
+                  <span className="text-[#808080] font-normal">(Optional)</span>
                 </h6>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                   <Checkbox
@@ -458,8 +436,8 @@ const ContactUs = () => {
                 </div>
               </div>
 
-              <div>
-                <label className="font-reddit-sans text-12 sm:text-13 font-medium text-black block mb-2">
+              <div className="flex flex-col gap-2">
+                <label className="font-reddit-sans text-[15px] font-semibold text-[#232223]">
                   Message
                 </label>
                 <textarea
@@ -469,9 +447,8 @@ const ContactUs = () => {
                   onBlur={handleBlur}
                   placeholder="Write your message.."
                   rows="1"
-                  className={`w-full placeholder:text-gray-8080 border-b ${
-                    errors.message ? 'border-b-red-600' : 'border-b-[#D7D7D7]'
-                  } font-reddit-sans text-14 py-2 resize-none focus:border-primary-blue transition-colors`}
+                  className={`w-full bg-transparent placeholder:text-[#808080] border-b outline-none focus:border-black font-reddit-sans text-[14px] text-[#232223] py-2 px-0 resize-none transition-colors ${errors.message ? 'border-b-red-600' : 'border-b-[#D7D7D7]'
+                    }`}
                 ></textarea>
                 {errors.message && (
                   <p className="text-red-600 text-12 mt-1 font-reddit-sans">
@@ -483,7 +460,7 @@ const ContactUs = () => {
               <div className="flex justify-center sm:justify-end items-center">
                 {/* items-center prevents stretch */}
                 <button
-                  className="btn-yellow"
+                  className="btn btn-gold"
                   onClick={() => router.push('/ai-ml')}
                 >
                   Request a meeting
@@ -551,179 +528,161 @@ const FooterContent = () => {
   return (
     <>
       <footer className="hidden md:block bg-hero-gradient pt-2 lg:pt-4 pb-6 container-padding -mt-px">
-        <div className="max-w-[1400px] mx-auto">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-10 lg:gap-12 xl:gap-16 pb-8 sm:pb-10 lg:pb-12">
+        <div className="max-w-[1100px] mx-auto">
+          <div className="flex flex-col lg:flex-row lg:justify-between gap-6 sm:gap-8 lg:gap-10 xl:gap-14 pb-8 sm:pb-10 lg:pb-12">
             {/* Company Details */}
-            <div className="company-details">
-              <img
-                src={imgUrl('/icons/global/UElement_Logo_White 3.svg')}
-                alt="UElement logo"
-                className=" w-auto md:mb-3"
-              />
-              <p className="text-[#808080] font-reddit-sans text-[14px] sm:mb-5">
-                Empowering Secure Digital Transformation
-              </p>
+            <div className="company-details flex flex-col gap-12 sm:gap-16 lg:w-[220px] xl:w-[230px] shrink-0">
+              <div>
+                <img
+                  src='/icons/global/UElement_Tech_Logo_White.png'
+                  alt="UElement logo"
+                  className=" w-auto md:mb-3"
+                />
+                <p className="text-[#808080] font-reddit-sans text-[14px] sm:mb-5">
+                  Empowering Secure Digital Transformation
+                </p>
+                <div className="flex items-center justify-start gap-6">
+                  <Link
+                    href="https://www.linkedin.com/company/uelement-technologies/posts/?feedView=all"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className=" hover:translate-y-[-3px] duration-300 ease-in-out transition-all hover:text-white/70"
+                  >
+                    <Icon name="linkedin2" size={35} />
+                  </Link>
+                  <Link
+                    href="https://facebook.com/uelement.technologies"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className=" hover:translate-y-[-3px] duration-300 ease-in-out transition-all hover:text-white/70"
+                  >
+                    <Icon name="facebook3" size={35} />
+                  </Link>
+                  <Link
+                    href="https://www.instagram.com/uelement_technologies/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:translate-y-[-3px] duration-300 ease-in-out transition-all hover:text-white/70"
+                  >
+                    <Icon name="instagram2" size={35} />
+                  </Link>
+                  <Link
+                    href="https://x.com/uelement_tech"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:translate-y-[-3px] duration-300 ease-in-out transition-all hover:text-white/70"
+                  >
+                    <Icon name="facebook2" size={35} />
+                  </Link>
+                </div>
+              </div>
 
-              <div className="flex items-center justify-start gap-6">
-                <Link
-                  href="https://www.linkedin.com/company/uelement-technologies/posts/?feedView=all"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className=" hover:translate-y-[-3px] duration-300 ease-in-out transition-all hover:text-white/70"
+              <div className="newsletter w-full">
+                <h6 className="font-semibold text-13 sm:text-14 font-reddit-sans text-white uppercase mb-4 sm:mb-5 tracking-wider">
+                  NEWSLETTER
+                </h6>
+
+                {newsletterStatus.message && (
+                  <div
+                    className={`mb-3 rounded-full px-3 py-2 text-13 sm:text-14 ${newsletterStatus.type === 'success'
+                      ? 'bg-green-100 text-green-700 border border-green-300'
+                      : 'bg-red-100 text-red-700 border border-red-300'
+                      }`}
+                  >
+                    {newsletterStatus.message}
+                  </div>
+                )}
+
+                <form
+                  className="w-[200px] md:w-full space-y-3 "
+                  onSubmit={handleNewsletterSubmit}
                 >
-                  <Icon name="linkedin2" size={35} />
-                </Link>
-                <Link
-                  href="https://facebook.com/uelement.technologies"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className=" hover:translate-y-[-3px] duration-300 ease-in-out transition-all hover:text-white/70"
-                >
-                  <Icon name="facebook3" size={35} />
-                </Link>
-                <Link
-                  href="https://www.instagram.com/uelement_technologies/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hover:translate-y-[-3px] duration-300 ease-in-out transition-all hover:text-white/70"
-                >
-                  <Icon name="instagram2" size={35} />
-                </Link>
-                <Link
-                  href="https://x.com/uelement_tech"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hover:translate-y-[-3px] duration-300 ease-in-out transition-all hover:text-white/70"
-                >
-                  <Icon name="facebook2" size={35} />
-                </Link>
-                {/* <Link
-                href="#"
-                className="  hover:translate-y-[-3px] duration-300 ease-in-out transition-all hover:text-white/70"
-              >
-                <Icon name="youtube" size={35} />
-              </Link> */}
-                {/* <Link
-                href="#"
-                className="  hover:translate-y-[-3px] duration-300 ease-in-out transition-all hover:text-white/70"
-              >
-                <Icon name="github" size={35} />
-              </Link> */}
+                  <div className="relative bg-white rounded-full px-4 py-[10px] flex items-center gap-2">
+                    <span className="text-gray-400 text-16">
+                      {ReactIcons.email}
+                    </span>
+                    <input
+                      type="email"
+                      name="email"
+                      required
+                      value={newsletterEmail}
+                      onChange={(e) => setNewsletterEmail(e.target.value)}
+                      placeholder="Email Address"
+                      className="font-reddit-sans text-13 sm:text-14 text-gray-700 w-full placeholder:text-gray-400 outline-none"
+                    />
+                  </div>
+                  <button
+                    className="btn btn-gold w-full hover:scale-101 disabled:opacity-50 disabled:cursor-not-allowed"
+                    type="submit"
+                    disabled={newsletterSubmitting}
+                  >
+                    {newsletterSubmitting ? 'Submitting...' : 'Submit Now'}
+                  </button>
+                </form>
               </div>
             </div>
 
-            <div className="flex flex-row md-flex-col justify-start gap-32 md:gap-20 my-6 md:my-0">
-              {/* Company Links */}
-              <div className="company-links">
-                <h6 className=" font-semibold text-14 sm:text-22 font-reddit-sans text-white uppercase mb-4 sm:mb-5">
+            <div className="grid grid-cols-2 lg:flex lg:flex-1 lg:justify-end gap-8 lg:gap-6 xl:gap-10 my-6 md:my-0">
+              <div className="footer-links-group">
+                <h6 className="font-semibold text-13 sm:text-14 font-reddit-sans text-white mb-4 sm:mb-5 tracking-wider">
+                  MainSTAY
+                </h6>
+                <div className="flex flex-col gap-3 sm:gap-4 font-reddit-sans font-light">
+                  <Link href="/mainstay" className="fl3 !text-[#e2e2e2] text-12 sm:text-13 hover:text-white transition-colors">Program overview</Link>
+                  <Link href="/mainstay#nexus" className="fl3 !text-[#e2e2e2] text-12 sm:text-13 hover:text-white transition-colors">Nexus</Link>
+                  <Link href="/mainstay#vizor" className="fl3 !text-[#e2e2e2] text-12 sm:text-13 hover:text-white transition-colors">Vizor</Link>
+                  <Link href="/mainstay#kayak" className="fl3 !text-[#e2e2e2] text-12 sm:text-13 hover:text-white transition-colors">Kayak</Link>
+                </div>
+              </div>
+
+              <div className="footer-links-group">
+                <h6 className="font-semibold text-13 sm:text-14 font-reddit-sans text-white  mb-4 sm:mb-5 tracking-wider">
+                  MainSPAR
+                </h6>
+                <div className="flex flex-col gap-3 sm:gap-4 font-reddit-sans font-light">
+                  <Link href="/mainspar" className="fl3 !text-[#e2e2e2] text-12 sm:text-13 hover:text-white transition-colors">Program overview</Link>
+                  <Link href="/mainspar#merlinos" className="fl3 !text-[#e2e2e2] text-12 sm:text-13 hover:text-white transition-colors">MerlinOS</Link>
+                  <Link href="/mainspar#mustangc3" className="fl3 !text-[#e2e2e2] text-12 sm:text-13 hover:text-white transition-colors">MustangC3</Link>
+                  <Link href="/mainspar#mesogrid" className="fl3 !text-[#e2e2e2] text-12 sm:text-13 hover:text-white transition-colors">MesoGRID</Link>
+                </div>
+              </div>
+
+              <div className="footer-links-group">
+                <h6 className="font-semibold text-13 sm:text-14 font-reddit-sans text-white  mb-4 sm:mb-5 tracking-wider">
+                  U92 Quantum
+                </h6>
+                <div className="flex flex-col gap-3 sm:gap-4 font-reddit-sans font-light">
+                  <Link href="/u92" className="fl3 !text-[#e2e2e2] text-12 sm:text-13 hover:text-white transition-colors">Practice overview</Link>
+                  <Link href="/u92#pqc" className="fl3 !text-[#e2e2e2] text-12 sm:text-13 hover:text-white transition-colors">PQC</Link>
+                  <Link href="/u92#qkd" className="fl3 !text-[#e2e2e2] text-12 sm:text-13 hover:text-white transition-colors">QKD</Link>
+                  <Link href="/u92#crypto-agility" className="fl3 !text-[#e2e2e2] text-12 sm:text-13 hover:text-white transition-colors">Crypto-Agility</Link>
+                </div>
+              </div>
+
+              <div className="footer-links-group">
+                <h6 className="font-semibold text-13 sm:text-14 font-reddit-sans text-white uppercase mb-4 sm:mb-5 tracking-wider">
                   COMPANY
                 </h6>
                 <div className="flex flex-col gap-3 sm:gap-4 font-reddit-sans font-light">
-                  <Link
-                    href="/company"
-                    className="fl3 !text-[#e2e2e2] text-13 sm:text-16 hover:text-white transition-colors"
-                  >
-                    About us
-                  </Link>
-                  <Link
-                    href="/our-partners"
-                    className="fl3 !text-[#e2e2e2] text-13 sm:text-16 hover:text-white transition-colors"
-                  >
-                    Partnerships
-                  </Link>
-                  {/* <Link
-                  href="/our-partners"
-                  className="fl3 !text-[#e2e2e2] text-13 sm:text-16 hover:text-white transition-colors"
-                >
-                  Partners
-                </Link> */}
-                </div>
-              </div>
-
-              {/* Resources Links */}
-              <div className="resources-links">
-                <h6 className=" font-semibold text-14 sm:text-22 font-reddit-sans text-white uppercase mb-4 sm:mb-5">
-                  Services
-                </h6>
-                <div className="flex flex-col gap-3 sm:gap-4 font-reddit-sans font-light">
-                  <Link
-                    href="/ai-ml"
-                    className="fl3 !text-[#e2e2e2] text-13 sm:text-16 hover:text-white transition-colors"
-                  >
-                    AI-ML
-                  </Link>
-                  <Link
-                    href="/cybersecurity"
-                    className="fl3 !text-[#e2e2e2] text-13 sm:text-16 hover:text-white transition-colors"
-                  >
-                    CyberSecurity
-                  </Link>
-                  <Link
-                    href="/cloud-solutions"
-                    className="fl3 !text-[#e2e2e2] text-13 sm:text-16 hover:text-white transition-colors"
-                  >
-                    Cloud Solutions
-                  </Link>
-                  <Link
-                    href="/future-tech"
-                    className="fl3 !text-[#e2e2e2] text-13 sm:text-16 hover:text-white transition-colors"
-                  >
-                    Future Tech
-                  </Link>
+                  <Link href="/company" className="fl3 !text-[#e2e2e2] text-12 sm:text-13 hover:text-white transition-colors">About Us</Link>
+                  <Link href="/news" className="fl3 !text-[#e2e2e2] text-12 sm:text-13 hover:text-white transition-colors">News Room</Link>
+                  <Link href="/success-stories" className="fl3 !text-[#e2e2e2] text-12 sm:text-13 hover:text-white transition-colors">Success Stories</Link>
+                  <Link href="/our-partners" className="fl3 !text-[#e2e2e2] text-12 sm:text-13 hover:text-white transition-colors">Partnerships</Link>
+                  <Link href="/blogs" className="fl3 !text-[#e2e2e2] text-12 sm:text-13 hover:text-white transition-colors">Blogs</Link>
+                  <Link href="/investor-relations" className="fl3 !text-[#e2e2e2] text-12 sm:text-13 hover:text-white transition-colors">Investor Relations</Link>
+                  <Link href="/industries" className="fl3 !text-[#e2e2e2] text-12 sm:text-13 hover:text-white transition-colors">Industries</Link>
+                  <Link href="/careers" className="fl3 !text-[#e2e2e2] text-12 sm:text-13 hover:text-white transition-colors">Careers</Link>
+                  <Link href="/contact-us" className="fl3 !text-[#e2e2e2] text-12 sm:text-13 hover:text-white transition-colors">Contact</Link>
                 </div>
               </div>
             </div>
 
-            {/* Newsletter */}
-            <div className="newsletter ml-auto w-[23vw]">
-              <h6 className="font-semibold text-14 sm:text-22 font-reddit-sans text-white uppercase mb-4 sm:mb-5">
-                NEWSLETTER
-              </h6>
 
-              {newsletterStatus.message && (
-                <div
-                  className={`mb-3 rounded-full px-3 py-2 text-13 sm:text-14 ${
-                    newsletterStatus.type === 'success'
-                      ? 'bg-green-100 text-green-700 border border-green-300'
-                      : 'bg-red-100 text-red-700 border border-red-300'
-                  }`}
-                >
-                  {newsletterStatus.message}
-                </div>
-              )}
-
-              <form
-                className="w-[200px] md:w-full space-y-3 "
-                onSubmit={handleNewsletterSubmit}
-              >
-                <div className="relative bg-white rounded-full px-4 py-[10px] flex items-center gap-2">
-                  <span className="text-gray-400 text-16">
-                    {ReactIcons.email}
-                  </span>
-                  <input
-                    type="email"
-                    name="email"
-                    required
-                    value={newsletterEmail}
-                    onChange={(e) => setNewsletterEmail(e.target.value)}
-                    placeholder="Email Address"
-                    className="font-reddit-sans text-13 sm:text-14 text-gray-700 w-full placeholder:text-gray-400 outline-none"
-                  />
-                </div>
-                <button
-                  className="btn-yellow w-full hover:scale-101 disabled:opacity-50 disabled:cursor-not-allowed"
-                  type="submit"
-                  disabled={newsletterSubmitting}
-                >
-                  {newsletterSubmitting ? 'Submitting...' : 'Submit Now'}
-                </button>
-              </form>
-            </div>
           </div>
         </div>
       </footer>
       <footer className="block md:hidden bg-hero-gradient pt-2 lg:pt-4 pb-6 container-padding -mt-px">
-        <div className="max-w-[1400px] mx-auto">
+        <div className="max-w-[1100px] mx-auto">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-10 lg:gap-12 xl:gap-16 pb-8 sm:pb-10 lg:pb-12">
             {/* Company Details */}
             <div className="company-details flex flex-col container-padding justify-center items-center">
@@ -772,115 +731,108 @@ const FooterContent = () => {
                   </Link>
                 </div>
               </div>
+
+              <div className="newsletter w-full mt-10">
+                <h6 className="font-semibold text-13 sm:text-14 font-reddit-sans text-white uppercase mb-4 sm:mb-5 tracking-wider text-center">
+                  NEWSLETTER
+                </h6>
+
+                {newsletterStatus.message && (
+                  <div
+                    className={`mb-3 rounded-full px-3 py-2 text-13 sm:text-14 ${newsletterStatus.type === 'success'
+                      ? 'bg-green-100 text-green-700 border border-green-300'
+                      : 'bg-red-100 text-red-700 border border-red-300'
+                      }`}
+                  >
+                    {newsletterStatus.message}
+                  </div>
+                )}
+
+                <form
+                  className="w-[300px] md:w-[350px] space-y-3 mx-auto"
+                  onSubmit={handleNewsletterSubmit}
+                >
+                  <div className="relative bg-white rounded-full px-4 py-[10px] flex items-center gap-2">
+                    <span className="text-gray-400 text-16">
+                      {ReactIcons.email}
+                    </span>
+                    <input
+                      type="email"
+                      name="email"
+                      required
+                      value={newsletterEmail}
+                      onChange={(e) => setNewsletterEmail(e.target.value)}
+                      placeholder="Email Address"
+                      className="font-reddit-sans text-13 sm:text-14 text-gray-700 w-full placeholder:text-gray-400 outline-none"
+                    />
+                  </div>
+                  <button
+                    className="btn btn-gold w-full disabled:opacity-50 disabled:cursor-not-allowed"
+                    type="submit"
+                    disabled={newsletterSubmitting}
+                  >
+                    {newsletterSubmitting ? 'Submitting...' : 'Submit Now'}
+                  </button>
+                </form>
+              </div>
             </div>
 
-            <div className="flex flex-row md-flex-col justify-center gap-32 md:gap-20 my-6 md:my-0 container-padding">
-              {/* Company Links */}
-              <div className="company-links">
-                <h6 className=" font-semibold text-14 sm:text-22 font-reddit-sans text-white uppercase mb-4 sm:mb-5">
+            <div className="grid grid-cols-2 gap-8 sm:gap-12 my-6 md:my-0 container-padding w-full">
+              <div className="footer-links-group">
+                <h6 className="font-semibold text-13 sm:text-14 font-reddit-sans text-white uppercase mb-4 sm:mb-5 tracking-wider">
+                  MAINSTAY
+                </h6>
+                <div className="flex flex-col gap-3 sm:gap-4 font-reddit-sans font-light">
+                  <Link href="/mainstay" className="fl3 !text-[#e2e2e2] text-12 sm:text-13 hover:text-white transition-colors">Program overview</Link>
+                  <Link href="/mainstay#nexus" className="fl3 !text-[#e2e2e2] text-12 sm:text-13 hover:text-white transition-colors">Nexus</Link>
+                  <Link href="/mainstay#vizor" className="fl3 !text-[#e2e2e2] text-12 sm:text-13 hover:text-white transition-colors">Vizor</Link>
+                  <Link href="/mainstay#kayak" className="fl3 !text-[#e2e2e2] text-12 sm:text-13 hover:text-white transition-colors">Kayak</Link>
+                </div>
+              </div>
+
+              <div className="footer-links-group">
+                <h6 className="font-semibold text-13 sm:text-14 font-reddit-sans text-white uppercase mb-4 sm:mb-5 tracking-wider">
+                  MAINSPAR
+                </h6>
+                <div className="flex flex-col gap-3 sm:gap-4 font-reddit-sans font-light">
+                  <Link href="/mainspar" className="fl3 !text-[#e2e2e2] text-12 sm:text-13 hover:text-white transition-colors">Program overview</Link>
+                  <Link href="/mainspar#merlinos" className="fl3 !text-[#e2e2e2] text-12 sm:text-13 hover:text-white transition-colors">MerlinOS</Link>
+                  <Link href="/mainspar#mustangc3" className="fl3 !text-[#e2e2e2] text-12 sm:text-13 hover:text-white transition-colors">MustangC3</Link>
+                  <Link href="/mainspar#mesogrid" className="fl3 !text-[#e2e2e2] text-12 sm:text-13 hover:text-white transition-colors">MesoGRID</Link>
+                </div>
+              </div>
+
+              <div className="footer-links-group">
+                <h6 className="font-semibold text-13 sm:text-14 font-reddit-sans text-white uppercase mb-4 sm:mb-5 tracking-wider">
+                  U92 QUANTUM
+                </h6>
+                <div className="flex flex-col gap-3 sm:gap-4 font-reddit-sans font-light">
+                  <Link href="/u92" className="fl3 !text-[#e2e2e2] text-12 sm:text-13 hover:text-white transition-colors">Practice overview</Link>
+                  <Link href="/u92#pqc" className="fl3 !text-[#e2e2e2] text-12 sm:text-13 hover:text-white transition-colors">PQC</Link>
+                  <Link href="/u92#qkd" className="fl3 !text-[#e2e2e2] text-12 sm:text-13 hover:text-white transition-colors">QKD</Link>
+                  <Link href="/u92#crypto-agility" className="fl3 !text-[#e2e2e2] text-12 sm:text-13 hover:text-white transition-colors">Crypto-Agility</Link>
+                </div>
+              </div>
+
+              <div className="footer-links-group">
+                <h6 className="font-semibold text-13 sm:text-14 font-reddit-sans text-white uppercase mb-4 sm:mb-5 tracking-wider">
                   COMPANY
                 </h6>
                 <div className="flex flex-col gap-3 sm:gap-4 font-reddit-sans font-light">
-                  <Link
-                    href="/company"
-                    className="fl3 !text-[#e2e2e2] text-13 sm:text-16 hover:text-white transition-colors"
-                  >
-                    About us
-                  </Link>
-                  <Link
-                    href="/our-partners"
-                    className="fl3 !text-[#e2e2e2] text-13 sm:text-16 hover:text-white transition-colors"
-                  >
-                    Partnerships
-                  </Link>
-                  {/* <Link
-                  href="/our-partners"
-                  className="fl3 !text-[#e2e2e2] text-13 sm:text-16 hover:text-white transition-colors"
-                >
-                  Partners
-                </Link> */}
-                </div>
-              </div>
-
-              {/* Resources Links */}
-              <div className="resources-links">
-                <h6 className=" font-semibold text-14 sm:text-22 font-reddit-sans text-white uppercase mb-4 sm:mb-5">
-                  SERVICES
-                </h6>
-                <div className="flex flex-col gap-3 sm:gap-4 font-reddit-sans font-light">
-                  <Link
-                    href="/ai-ml"
-                    className="fl3 !text-[#e2e2e2] text-13 sm:text-16 hover:text-white transition-colors"
-                  >
-                    AI-ML
-                  </Link>
-                  <Link
-                    href="/cybersecurity"
-                    className="fl3 !text-[#e2e2e2] text-13 sm:text-16 hover:text-white transition-colors"
-                  >
-                    CyberSecurity
-                  </Link>
-                  <Link
-                    href="/cloud-solutions"
-                    className="fl3 !text-[#e2e2e2] text-13 sm:text-16 hover:text-white transition-colors"
-                  >
-                    Cloud Solutions
-                  </Link>
-                  <Link
-                    href="/future-tech"
-                    className="fl3 !text-[#e2e2e2] text-13 sm:text-16 hover:text-white transition-colors"
-                  >
-                    Future Tech
-                  </Link>
+                  <Link href="/company" className="fl3 !text-[#e2e2e2] text-12 sm:text-13 hover:text-white transition-colors">About Us</Link>
+                  <Link href="/news" className="fl3 !text-[#e2e2e2] text-12 sm:text-13 hover:text-white transition-colors">News Room</Link>
+                  <Link href="/success-stories" className="fl3 !text-[#e2e2e2] text-12 sm:text-13 hover:text-white transition-colors">Success Stories</Link>
+                  <Link href="/our-partners" className="fl3 !text-[#e2e2e2] text-12 sm:text-13 hover:text-white transition-colors">Partnerships</Link>
+                  <Link href="/blogs" className="fl3 !text-[#e2e2e2] text-12 sm:text-13 hover:text-white transition-colors">Blogs</Link>
+                  <Link href="/investor-relations" className="fl3 !text-[#e2e2e2] text-12 sm:text-13 hover:text-white transition-colors">Investor Relations</Link>
+                  <Link href="/industries" className="fl3 !text-[#e2e2e2] text-12 sm:text-13 hover:text-white transition-colors">Industries</Link>
+                  <Link href="/careers" className="fl3 !text-[#e2e2e2] text-12 sm:text-13 hover:text-white transition-colors">Careers</Link>
+                  <Link href="/contact-us" className="fl3 !text-[#e2e2e2] text-12 sm:text-13 hover:text-white transition-colors">Contact</Link>
                 </div>
               </div>
             </div>
 
-            {/* Newsletter */}
-            <div className="newsletter mx-auto">
-              <h6 className="font-semibold text-14 sm:text-22 font-reddit-sans text-white uppercase mb-4 sm:mb-5">
-                NEWSLETTER
-              </h6>
 
-              {newsletterStatus.message && (
-                <div
-                  className={`mb-3 rounded-full px-3 py-2 text-13 sm:text-14 ${
-                    newsletterStatus.type === 'success'
-                      ? 'bg-green-100 text-green-700 border border-green-300'
-                      : 'bg-red-100 text-red-700 border border-red-300'
-                  }`}
-                >
-                  {newsletterStatus.message}
-                </div>
-              )}
-
-              <form
-                className="w-[300px] md:w-[350px] space-y-3"
-                onSubmit={handleNewsletterSubmit}
-              >
-                <div className="relative bg-white rounded-full px-4 py-[10px] flex items-center gap-2">
-                  <span className="text-gray-400 text-16">
-                    {ReactIcons.email}
-                  </span>
-                  <input
-                    type="email"
-                    name="email"
-                    required
-                    value={newsletterEmail}
-                    onChange={(e) => setNewsletterEmail(e.target.value)}
-                    placeholder="Email Address"
-                    className="font-reddit-sans text-13 sm:text-14 text-gray-700 w-full placeholder:text-gray-400 outline-none"
-                  />
-                </div>
-                <button
-                  className="btn-yellow w-full hover:scale-101 disabled:opacity-50 disabled:cursor-not-allowed"
-                  type="submit"
-                  disabled={newsletterSubmitting}
-                >
-                  {newsletterSubmitting ? 'Submitting...' : 'Submit Now'}
-                </button>
-              </form>
-            </div>
           </div>
         </div>
       </footer>
