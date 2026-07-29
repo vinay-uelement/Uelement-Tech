@@ -3,7 +3,7 @@
 import React, { useEffect, useRef } from 'react';
 import * as THREE from 'three';
 
-const GoldenRatioSphere = ({ className = '', showControls = true }) => {
+const GoldenRatioSphere = ({ className = '', showControls = true, totalPoints = 9000, radius = 180 }) => {
   const mountRef = useRef(null);
 
   useEffect(() => {
@@ -23,7 +23,7 @@ const GoldenRatioSphere = ({ className = '', showControls = true }) => {
     let gui;
 
     const controls = {
-      totalPoints: 9000,
+      totalPoints: totalPoints,
       distributionConstant: 0.6180339887, // Golden Ratio
       pointSize: 2,
       rotationSpeed: 0.002,
@@ -82,16 +82,16 @@ const GoldenRatioSphere = ({ className = '', showControls = true }) => {
       animate();
     };
 
-    const createSphere = (totalPoints, phi) => {
+    const createSphere = (pts, phi) => {
       vertices = [];
       highlightVertices = [];
-      for (let i = 0; i < totalPoints; i++) {
+      for (let i = 0; i < pts; i++) {
         let theta = 2 * Math.PI * i * phi;
-        let y = 1 - (i / (totalPoints - 1)) * 2;
-        let radius = Math.sqrt(1 - y * y);
-        let x = Math.cos(theta) * radius;
-        let z = Math.sin(theta) * radius;
-        vertices.push(x * 180, y * 180, z * 180);
+        let y = 1 - (i / (pts - 1)) * 2;
+        let r = Math.sqrt(1 - y * y);
+        let x = Math.cos(theta) * r;
+        let z = Math.sin(theta) * r;
+        vertices.push(x * radius, y * radius, z * radius);
       }
       geometry.setAttribute("position", new THREE.Float32BufferAttribute(vertices, 3));
       geometry.attributes.position.needsUpdate = true;

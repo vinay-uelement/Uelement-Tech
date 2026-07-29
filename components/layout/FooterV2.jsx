@@ -23,7 +23,7 @@ const FooterV2 = () => {
       >
         <div className="max-w-[1100px] mx-auto w-full flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="font-reddit-sans text-[#808080] text-[15px] text-center sm:text-left">
-            © 2026 UElement Technologies Private Limited. All rights reserved.
+            &copy; {new Date().getFullYear()}{' '}UElement Technologies Private Limited&nbsp; |&nbsp; All Rights Reserved.
           </p>
           <p
             className=" text-[15px] tracking-wider text-center sm:text-right"
@@ -622,28 +622,30 @@ const FooterContent = () => {
               </div>
             </div>
 
-            <div className="grid grid-cols-2 lg:flex lg:flex-1 lg:justify-end gap-8 lg:gap-6 xl:gap-10 my-6 md:my-0">
-              <div className="footer-links-group">
-                <h6 className="font-semibold text-13 sm:text-14 font-reddit-sans text-white mb-4 sm:mb-5 tracking-wider">
-                  MainSTAY
-                </h6>
-                <div className="flex flex-col gap-3 sm:gap-4 font-reddit-sans font-light">
-                  <Link href="/mainstay" className="fl3 !text-[#e2e2e2] text-12 sm:text-13 hover:text-white transition-colors">Program overview</Link>
-                  <Link href="/mainstay#nexus" className="fl3 !text-[#e2e2e2] text-12 sm:text-13 hover:text-white transition-colors">Nexus</Link>
-                  <Link href="/mainstay#vizor" className="fl3 !text-[#e2e2e2] text-12 sm:text-13 hover:text-white transition-colors">Vizor</Link>
-                  <Link href="/mainstay#kayak" className="fl3 !text-[#e2e2e2] text-12 sm:text-13 hover:text-white transition-colors">Kayak</Link>
+            <div className="grid grid-cols-2 lg:flex lg:flex-1 lg:justify-end gap-8 lg:gap-16 xl:gap-24 my-6 md:my-0">
+              <div className="flex flex-col gap-8">
+                <div className="footer-links-group">
+                  <h6 className="font-semibold text-13 sm:text-14 font-reddit-sans text-white mb-4 sm:mb-5 tracking-wider">
+                    MainSTAY
+                  </h6>
+                  <div className="flex flex-col gap-3 sm:gap-4 font-reddit-sans font-light">
+                    <Link href="/mainstay" className="fl3 !text-[#e2e2e2] text-12 sm:text-13 hover:text-white transition-colors">Program overview</Link>
+                    <Link href="/mainstay#nexus" className="fl3 !text-[#e2e2e2] text-12 sm:text-13 hover:text-white transition-colors">Nexus</Link>
+                    <Link href="/mainstay#vizor" className="fl3 !text-[#e2e2e2] text-12 sm:text-13 hover:text-white transition-colors">Vizor</Link>
+                    <Link href="/mainstay#kayak" className="fl3 !text-[#e2e2e2] text-12 sm:text-13 hover:text-white transition-colors">Kayak</Link>
+                  </div>
                 </div>
-              </div>
 
-              <div className="footer-links-group">
-                <h6 className="font-semibold text-13 sm:text-14 font-reddit-sans text-white  mb-4 sm:mb-5 tracking-wider">
-                  MainSPAR
-                </h6>
-                <div className="flex flex-col gap-3 sm:gap-4 font-reddit-sans font-light">
-                  <Link href="/mainspar" className="fl3 !text-[#e2e2e2] text-12 sm:text-13 hover:text-white transition-colors">Program overview</Link>
-                  <Link href="/mainspar#merlinos" className="fl3 !text-[#e2e2e2] text-12 sm:text-13 hover:text-white transition-colors">MerlinOS</Link>
-                  <Link href="/mainspar#mustangc3" className="fl3 !text-[#e2e2e2] text-12 sm:text-13 hover:text-white transition-colors">MustangC3</Link>
-                  <Link href="/mainspar#mesogrid" className="fl3 !text-[#e2e2e2] text-12 sm:text-13 hover:text-white transition-colors">MesoGRID</Link>
+                <div className="footer-links-group">
+                  <h6 className="font-semibold text-13 sm:text-14 font-reddit-sans text-white mb-4 sm:mb-5 tracking-wider">
+                    MainSPAR
+                  </h6>
+                  <div className="flex flex-col gap-3 sm:gap-4 font-reddit-sans font-light">
+                    <Link href="/mainspar" className="fl3 !text-[#e2e2e2] text-12 sm:text-13 hover:text-white transition-colors">Program overview</Link>
+                    <Link href="/mainspar#merlinos" className="fl3 !text-[#e2e2e2] text-12 sm:text-13 hover:text-white transition-colors">MerlinOS</Link>
+                    <Link href="/mainspar#mustangc3" className="fl3 !text-[#e2e2e2] text-12 sm:text-13 hover:text-white transition-colors">MustangC3</Link>
+                    <Link href="/mainspar#mesogrid" className="fl3 !text-[#e2e2e2] text-12 sm:text-13 hover:text-white transition-colors">MesoGRID</Link>
+                  </div>
                 </div>
               </div>
 
@@ -778,56 +780,60 @@ const FooterContent = () => {
             </div>
 
             <div className="grid grid-cols-2 gap-8 sm:gap-12 my-6 md:my-0 container-padding w-full">
-              <div className="footer-links-group">
-                <h6 className="font-semibold text-13 sm:text-14 font-reddit-sans text-white uppercase mb-4 sm:mb-5 tracking-wider">
-                  MAINSTAY
-                </h6>
-                <div className="flex flex-col gap-3 sm:gap-4 font-reddit-sans font-light">
-                  <Link href="/mainstay" className="fl3 !text-[#e2e2e2] text-12 sm:text-13 hover:text-white transition-colors">Program overview</Link>
-                  <Link href="/mainstay#nexus" className="fl3 !text-[#e2e2e2] text-12 sm:text-13 hover:text-white transition-colors">Nexus</Link>
-                  <Link href="/mainstay#vizor" className="fl3 !text-[#e2e2e2] text-12 sm:text-13 hover:text-white transition-colors">Vizor</Link>
-                  <Link href="/mainstay#kayak" className="fl3 !text-[#e2e2e2] text-12 sm:text-13 hover:text-white transition-colors">Kayak</Link>
+              <div className="flex flex-col gap-8">
+                <div className="footer-links-group">
+                  <h6 className="font-semibold text-13 sm:text-14 font-reddit-sans text-white uppercase mb-4 sm:mb-5 tracking-wider">
+                    MAINSTAY
+                  </h6>
+                  <div className="flex flex-col gap-3 sm:gap-4 font-reddit-sans font-light">
+                    <Link href="/mainstay" className="fl3 !text-[#e2e2e2] text-12 sm:text-13 hover:text-white transition-colors">Program overview</Link>
+                    <Link href="/mainstay#nexus" className="fl3 !text-[#e2e2e2] text-12 sm:text-13 hover:text-white transition-colors">Nexus</Link>
+                    <Link href="/mainstay#vizor" className="fl3 !text-[#e2e2e2] text-12 sm:text-13 hover:text-white transition-colors">Vizor</Link>
+                    <Link href="/mainstay#kayak" className="fl3 !text-[#e2e2e2] text-12 sm:text-13 hover:text-white transition-colors">Kayak</Link>
+                  </div>
+                </div>
+
+                <div className="footer-links-group">
+                  <h6 className="font-semibold text-13 sm:text-14 font-reddit-sans text-white uppercase mb-4 sm:mb-5 tracking-wider">
+                    MAINSPAR
+                  </h6>
+                  <div className="flex flex-col gap-3 sm:gap-4 font-reddit-sans font-light">
+                    <Link href="/mainspar" className="fl3 !text-[#e2e2e2] text-12 sm:text-13 hover:text-white transition-colors">Program overview</Link>
+                    <Link href="/mainspar#merlinos" className="fl3 !text-[#e2e2e2] text-12 sm:text-13 hover:text-white transition-colors">MerlinOS</Link>
+                    <Link href="/mainspar#mustangc3" className="fl3 !text-[#e2e2e2] text-12 sm:text-13 hover:text-white transition-colors">MustangC3</Link>
+                    <Link href="/mainspar#mesogrid" className="fl3 !text-[#e2e2e2] text-12 sm:text-13 hover:text-white transition-colors">MesoGRID</Link>
+                  </div>
                 </div>
               </div>
 
-              <div className="footer-links-group">
-                <h6 className="font-semibold text-13 sm:text-14 font-reddit-sans text-white uppercase mb-4 sm:mb-5 tracking-wider">
-                  MAINSPAR
-                </h6>
-                <div className="flex flex-col gap-3 sm:gap-4 font-reddit-sans font-light">
-                  <Link href="/mainspar" className="fl3 !text-[#e2e2e2] text-12 sm:text-13 hover:text-white transition-colors">Program overview</Link>
-                  <Link href="/mainspar#merlinos" className="fl3 !text-[#e2e2e2] text-12 sm:text-13 hover:text-white transition-colors">MerlinOS</Link>
-                  <Link href="/mainspar#mustangc3" className="fl3 !text-[#e2e2e2] text-12 sm:text-13 hover:text-white transition-colors">MustangC3</Link>
-                  <Link href="/mainspar#mesogrid" className="fl3 !text-[#e2e2e2] text-12 sm:text-13 hover:text-white transition-colors">MesoGRID</Link>
+              <div className="flex flex-col gap-8">
+                <div className="footer-links-group">
+                  <h6 className="font-semibold text-13 sm:text-14 font-reddit-sans text-white uppercase mb-4 sm:mb-5 tracking-wider">
+                    U92 QUANTUM
+                  </h6>
+                  <div className="flex flex-col gap-3 sm:gap-4 font-reddit-sans font-light">
+                    <Link href="/u92" className="fl3 !text-[#e2e2e2] text-12 sm:text-13 hover:text-white transition-colors">Practice overview</Link>
+                    <Link href="/u92#pqc" className="fl3 !text-[#e2e2e2] text-12 sm:text-13 hover:text-white transition-colors">PQC</Link>
+                    <Link href="/u92#qkd" className="fl3 !text-[#e2e2e2] text-12 sm:text-13 hover:text-white transition-colors">QKD</Link>
+                    <Link href="/u92#crypto-agility" className="fl3 !text-[#e2e2e2] text-12 sm:text-13 hover:text-white transition-colors">Crypto-Agility</Link>
+                  </div>
                 </div>
-              </div>
 
-              <div className="footer-links-group">
-                <h6 className="font-semibold text-13 sm:text-14 font-reddit-sans text-white uppercase mb-4 sm:mb-5 tracking-wider">
-                  U92 QUANTUM
-                </h6>
-                <div className="flex flex-col gap-3 sm:gap-4 font-reddit-sans font-light">
-                  <Link href="/u92" className="fl3 !text-[#e2e2e2] text-12 sm:text-13 hover:text-white transition-colors">Practice overview</Link>
-                  <Link href="/u92#pqc" className="fl3 !text-[#e2e2e2] text-12 sm:text-13 hover:text-white transition-colors">PQC</Link>
-                  <Link href="/u92#qkd" className="fl3 !text-[#e2e2e2] text-12 sm:text-13 hover:text-white transition-colors">QKD</Link>
-                  <Link href="/u92#crypto-agility" className="fl3 !text-[#e2e2e2] text-12 sm:text-13 hover:text-white transition-colors">Crypto-Agility</Link>
-                </div>
-              </div>
-
-              <div className="footer-links-group">
-                <h6 className="font-semibold text-13 sm:text-14 font-reddit-sans text-white uppercase mb-4 sm:mb-5 tracking-wider">
-                  COMPANY
-                </h6>
-                <div className="flex flex-col gap-3 sm:gap-4 font-reddit-sans font-light">
-                  <Link href="/company" className="fl3 !text-[#e2e2e2] text-12 sm:text-13 hover:text-white transition-colors">About Us</Link>
-                  <Link href="/news" className="fl3 !text-[#e2e2e2] text-12 sm:text-13 hover:text-white transition-colors">News Room</Link>
-                  <Link href="/success-stories" className="fl3 !text-[#e2e2e2] text-12 sm:text-13 hover:text-white transition-colors">Success Stories</Link>
-                  <Link href="/our-partners" className="fl3 !text-[#e2e2e2] text-12 sm:text-13 hover:text-white transition-colors">Partnerships</Link>
-                  <Link href="/blogs" className="fl3 !text-[#e2e2e2] text-12 sm:text-13 hover:text-white transition-colors">Blogs</Link>
-                  <Link href="/investor-relations" className="fl3 !text-[#e2e2e2] text-12 sm:text-13 hover:text-white transition-colors">Investor Relations</Link>
-                  <Link href="/industries" className="fl3 !text-[#e2e2e2] text-12 sm:text-13 hover:text-white transition-colors">Industries</Link>
-                  <Link href="/careers" className="fl3 !text-[#e2e2e2] text-12 sm:text-13 hover:text-white transition-colors">Careers</Link>
-                  <Link href="/contact-us" className="fl3 !text-[#e2e2e2] text-12 sm:text-13 hover:text-white transition-colors">Contact</Link>
+                <div className="footer-links-group">
+                  <h6 className="font-semibold text-13 sm:text-14 font-reddit-sans text-white uppercase mb-4 sm:mb-5 tracking-wider">
+                    COMPANY
+                  </h6>
+                  <div className="flex flex-col gap-3 sm:gap-4 font-reddit-sans font-light">
+                    <Link href="/company" className="fl3 !text-[#e2e2e2] text-12 sm:text-13 hover:text-white transition-colors">About Us</Link>
+                    <Link href="/news" className="fl3 !text-[#e2e2e2] text-12 sm:text-13 hover:text-white transition-colors">News Room</Link>
+                    <Link href="/success-stories" className="fl3 !text-[#e2e2e2] text-12 sm:text-13 hover:text-white transition-colors">Success Stories</Link>
+                    <Link href="/our-partners" className="fl3 !text-[#e2e2e2] text-12 sm:text-13 hover:text-white transition-colors">Partnerships</Link>
+                    <Link href="/blogs" className="fl3 !text-[#e2e2e2] text-12 sm:text-13 hover:text-white transition-colors">Blogs</Link>
+                    <Link href="/investor-relations" className="fl3 !text-[#e2e2e2] text-12 sm:text-13 hover:text-white transition-colors">Investor Relations</Link>
+                    <Link href="/industries" className="fl3 !text-[#e2e2e2] text-12 sm:text-13 hover:text-white transition-colors">Industries</Link>
+                    <Link href="/careers" className="fl3 !text-[#e2e2e2] text-12 sm:text-13 hover:text-white transition-colors">Careers</Link>
+                    <Link href="/contact-us" className="fl3 !text-[#e2e2e2] text-12 sm:text-13 hover:text-white transition-colors">Contact</Link>
+                  </div>
                 </div>
               </div>
             </div>
