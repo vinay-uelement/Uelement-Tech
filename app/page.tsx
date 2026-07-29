@@ -11,7 +11,7 @@ export default function HomePage() {
         {/* Golden Ratio Sphere Background (Desktop) / Below Buttons (Mobile) */}
         <div className="absolute inset-0 pointer-events-none mix-blend-screen hidden md:flex justify-center z-0">
           <div className="w-full max-w-[1100px] relative h-full mx-auto">
-            <div className="absolute -right-20 top-1/2 -translate-y-1/2 w-full md:w-1/2 h-full">
+            <div className="absolute -right-20 top-1/2 -translate-y-1/2 w-full md:w-1/2 h-full scale-[1.15]">
               <GoldenRatioSphere showControls={false} className="w-full h-full" />
             </div>
           </div>
@@ -24,15 +24,16 @@ export default function HomePage() {
             {/* Kicker */}
             <div className="text-(--gold-500) mb-4 text-[13px] tracking-[2.5px]">सशक्त · सक्षम · सुरक्षित</div>
             
-            {/* Heading */}
             <h1 className="display-sm mb-0">
-              Sovereign <span className='au'>DeepTech</span> systems <br className="hidden md:inline" />
-              for Enterprise <span className='au'>Resilience</span>.
+              Sovereign <span className='au'>DeepTech</span> <br className="hidden md:block" />
+              systems for Enterprise <br className="hidden md:block" />
+              <span className='au'>Resilience</span>.
             </h1>
 
             {/* Description */}
             <p className="lede mt-6 md:mt-8">
-             Engineering Quantum-secure and resilient autonomous systems that create a seamless Digital Fabric for the tactical edge.
+             Engineering <span className="italic font-medium">Quantum-secure</span> and <span className="italic font-medium">resilient autonomous</span> systems <br className="hidden md:block" />
+             that create a seamless Digital Fabric for the tactical edge.
             </p>
 
             {/* CTA Buttons */}
