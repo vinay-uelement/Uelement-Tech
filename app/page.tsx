@@ -22,7 +22,7 @@ export default function HomePage() {
         <div className="wrap relative z-10">
           <div className="flex flex-col items-center md:items-start max-w-full md:max-w-[65%] gap-0 text-center md:text-left mx-auto md:mx-0">
             {/* Kicker */}
-            <div className="text-(--gold-500) mb-4 text-[13px] tracking-[2.5px]">सशक्त · सक्षम · सुरक्षित</div>
+            <div className="text-(--gold-500) mb-2 text-[13px] tracking-[1px]">सशक्त · सक्षम · सुरक्षित</div>
             
             <h1 className="display-sm mb-0">
               Sovereign <span className='au'>DeepTech</span> <br className="hidden md:block" />
