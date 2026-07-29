@@ -9,6 +9,7 @@ import {
 import './globals.css';
 import Header from '@/components/ui/Header';
 import Footer from '@/components/layout/FooterV2';
+import SplashScreen from '@/components/ui/SplashScreen';
 
 const redditSans = Reddit_Sans({
   subsets: ['latin'],
@@ -77,6 +78,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <link rel="icon" href="/favicon.ico" />
       </head>
       <body>
+        <SplashScreen />
         <Header />
         <main>{children}</main>
         <Footer />
