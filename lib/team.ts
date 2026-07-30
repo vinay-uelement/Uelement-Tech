@@ -57,14 +57,14 @@ export const teamMembers: TeamMember[] = [
     photo: '/images/team/bhagyashree.jpg',
     linkedIn: 'https://www.linkedin.com',
   },
-  {
-    name: 'Anoop Kumar',
-    initials: 'AK',
-    title: 'VP Engineering, Service Delivery',
-    description: 'Leads engineering delivery across platform engagements.',
-    photo: '/images/team/anoop.jpg',
-    linkedIn: 'https://www.linkedin.com',
-  },
+  // {
+  //   name: 'Anoop Kumar',
+  //   initials: 'AK',
+  //   title: 'VP Engineering, Service Delivery',
+  //   description: 'Leads engineering delivery across platform engagements.',
+  //   photo: '/images/team/anoop.jpg',
+  //   linkedIn: 'https://www.linkedin.com',
+  // },
   {
     name: 'Uday Wad',
     initials: 'UW',
@@ -73,18 +73,18 @@ export const teamMembers: TeamMember[] = [
     photo: '/images/team/uday.jpg',
     linkedIn: 'https://www.linkedin.com',
   },
-  {
-    name: 'Hiren Mehta',
-    initials: 'HM',
-    title: 'Chairman',
-    description: "Chairs the board and leads UDTechs, UElement's parent group.",
-    photo: '/images/team/hiren.jpg',
-    linkedIn: 'https://www.linkedin.com',
-  },
+  // {
+  //   name: 'Hiren Mehta',
+  //   initials: 'HM',
+  //   title: 'Chairman',
+  //   description: "Chairs the board and leads UDTechs, UElement's parent group.",
+  //   photo: '/images/team/hiren.jpg',
+  //   linkedIn: 'https://www.linkedin.com',
+  // },
 ];
 
 export const advisors: Advisor[] = [
-  { name: 'Urbasi Sinha', linkedIn: 'https://www.linkedin.com' },
+  // { name: 'Urbasi Sinha', linkedIn: 'https://www.linkedin.com' },
   { name: 'Utsav Banerjee', linkedIn: 'https://www.linkedin.com' },
   { name: 'Raajat Agarwal', linkedIn: 'https://www.linkedin.com' },
 ];
