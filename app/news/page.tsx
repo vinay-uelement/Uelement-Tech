@@ -74,8 +74,8 @@ export default function NewsPage() {
   return (
     <>
       {/* ═══════ HERO ═══════ */}
-      <div className="hero">
-        <div className="hero-fabric" />
+      <div className="hero hero-half">
+        <div className="" />
         <div className="wrap" style={{ position: 'relative', zIndex: 1 }}>
           <div className="crumb">
             <Link href="/">Home</Link> / Company / News Room

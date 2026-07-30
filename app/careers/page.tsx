@@ -12,7 +12,7 @@ export default function CareersPage() {
   return (
     <>
       {/* ═══════ HERO ═══════ */}
-      <div className="hero">
+      <div className="hero hero-half">
         <div className="hero-fabric" />
         <div className="wrap">
           <div className="crumb">
