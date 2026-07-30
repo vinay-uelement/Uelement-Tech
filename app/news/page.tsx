@@ -256,22 +256,13 @@ export default function NewsPage() {
                 key={t.label}
                 className="card"
                 style={{
-                  borderLeft: '2px solid',
-                  borderImageSource: 'var(--metal-gold)',
-                  borderImageSlice: 1,
+                  border: 'none',
+                  borderLeft: '2px solid var(--gold-500)',
                 }}
               >
-                <div
-                  style={{
-                    fontFamily: 'var(--font-mono)',
-                    fontSize: 10,
-                    color: 'var(--grey-450)',
-                    letterSpacing: '0.1em',
-                    marginBottom: 10,
-                  }}
-                >
-                  {String(i + 1).padStart(2, '0')}
-                </div>
+
+                {String(i + 1).padStart(2, '0')}
+
                 <h4>{t.label}</h4>
                 <p>{t.desc}</p>
               </div>
